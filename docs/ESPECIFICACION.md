@@ -84,7 +84,7 @@ Desde el entorno de desarrollo no se puede abrir Betano ni Sofascore. Para const
 
 ## Método de análisis
 
-Primero se usa un modelo estadístico. La red neuronal viene después, cuando haya suficiente historial (se necesitan miles de registros por mercado).
+Esta sección describe el análisis estadístico. La red neuronal es un modelo aparte, independiente de este (ver la sección "Red neuronal").
 
 ### Fútbol (goles, corners, corners del primer tiempo, tarjetas, tiros al arco, remates)
 1. Últimos 10 partidos de cada equipo, separados en local y visitante, con más peso para los más recientes.
@@ -113,15 +113,21 @@ Primero se usa un modelo estadístico. La red neuronal viene después, cuando ha
 ## Resultado del análisis
 
 - Orden: deporte → partido → mercados en el orden de la lista de arriba.
-- Por cada mercado se muestra la línea candidata, el lado recomendado y solo su probabilidad. Ejemplo: `Under 2.5 — 58%`.
+- Por cada mercado se muestra la línea candidata, el lado recomendado y la probabilidad de cada modelo, una al lado de la otra. Ejemplo: `Under 2.5 — Estadístico 58% · Red 61%`.
+- Si la red no tiene un modelo aprobado para ese mercado, se muestra "Red: sin modelo todavía".
+- Pendiente: cómo mostrar el mercado cuando los dos modelos eligen lados distintos.
 
 ## Historial
 
-Se guarda todo lo analizado, se haya apostado o no. Por cada partido y mercado:
+La página muestra todos los partidos extraídos de Sofascore, pero solo se analizan los partidos que el usuario selecciona. Todos los seleccionados se analizan y se guardan, se haya apostado o no. Los que solo aparecen en la página y no se seleccionan no se guardan.
+
+Por cada partido y mercado:
 
 - Estadísticas disponibles **antes** del partido, tal como se usaron en el análisis (no deben mezclarse datos posteriores, para no contaminar el entrenamiento de la red neuronal).
 - Todas las líneas y cuotas de Betano y de las casas de referencia, con la hora de extracción.
-- Línea candidata, probabilidad calculada por el modelo y lado recomendado.
+- Línea candidata, probabilidad del análisis estadístico y lado recomendado.
+- Probabilidad de la red neuronal y versión del modelo que la calculó.
+- Vector de datos de entrada exacto que recibió la red.
 - Probabilidad implícita de la cuota (sin margen) y promedio del mercado.
 - Si se apostó, el monto y la cuota tomada.
 - Resultado real del mercado y si se ganó o se perdió.
@@ -129,6 +135,58 @@ Se guarda todo lo analizado, se haya apostado o no. Por cada partido y mercado:
 Actualización de resultados: al abrir Sofascore después del partido, la extensión lee los resultados de los partidos pendientes y los marca automáticamente.
 
 Vista del historial: una lista general por deporte, con filtros por fecha, liga y mercado, y un resumen del porcentaje de acierto por mercado.
+
+## Red neuronal
+
+Modelo separado del análisis estadístico. No recibe la probabilidad del análisis estadístico: aprende sola a partir de los datos, y así se puede comparar cuál de los dos acierta más.
+
+### Qué aprende
+Cada registro es un partido con un mercado y su línea candidata. La red recibe los datos previos al partido y predice la probabilidad de que salga el lado A (Más, Sí o Local).
+
+### Datos de entrada (solo información previa al partido)
+- Estadísticas de los equipos: promedios de los últimos 5 y 10 partidos, separados en local y visitante, de lo que producen y conceden en la estadística del mercado.
+- La línea.
+- Cuotas: las dos de Betano, su probabilidad sin margen, el margen, el promedio de las casas de referencia y la diferencia entre Betano y ese promedio.
+- Contexto: liga, días de descanso, bajas, promedio del árbitro en tarjetas y estadísticas del lanzador abridor en béisbol.
+
+La página guarda en el historial el vector de entrada exacto y también las estadísticas originales, para que el entrenamiento use los mismos datos que el uso diario y se puedan recalcular si se agregan nuevas entradas.
+
+### Arquitectura
+- Red pequeña: 2 o 3 capas ocultas de 32 a 64 neuronas, con dropout y parada temprana.
+- Un modelo por mercado. Si un mercado tiene pocos datos, puede compartir modelo con otros del mismo deporte.
+- Como comparación se entrena también una regresión logística. Si la red no le gana, el problema está en los datos y no en la arquitectura.
+
+### Entrenamiento
+- Se ejecuta de forma manual en GitHub Actions, con un script en Python que lee el historial del repositorio.
+- Separación por fecha: se entrena con los partidos más antiguos y se evalúa con los más recientes. Nunca se mezclan al azar.
+- Un mercado no se entrena hasta que tenga al menos 1,000 registros con resultado (punto de partida, se puede ajustar).
+
+### Reemplazo del modelo: solo si el nuevo es mejor
+En cada ejecución, por cada mercado:
+1. Se apartan los registros más recientes como conjunto de prueba. El modelo nuevo no los usa para entrenar.
+2. Se entrena el modelo nuevo con el resto.
+3. El modelo nuevo y el modelo publicado se evalúan con el mismo conjunto de prueba.
+4. Si el nuevo tiene mejor log loss, reemplaza al publicado. Si es igual o peor, se queda el anterior.
+5. La decisión es independiente por mercado: el nuevo puede reemplazar al de goles y no al de corners.
+6. Cada ejecución guarda un informe con las métricas de los dos modelos y la decisión tomada. Los modelos anteriores se conservan para poder volver a ellos.
+
+### Evaluación
+- Porcentaje de acierto.
+- Calibración: si la red dice 60%, el resultado debería salir alrededor de 6 de cada 10 veces.
+- Log loss y Brier.
+- Referencias a superar: la probabilidad de Betano sin margen y el análisis estadístico.
+- La predicción de la red solo se muestra en los mercados donde supera a la probabilidad de Betano sin margen.
+
+### Uso en la página
+El entrenamiento guarda los pesos del modelo en un archivo del repositorio, con su fecha y sus métricas. La página carga ese archivo y calcula la predicción en el navegador.
+
+### Datos históricos
+Se cargan temporadas pasadas desde Sofascore para tener más datos desde el inicio. Esos partidos no tienen cuotas históricas de Betano, así que sirven para un modelo que usa solo estadísticas, que después se ajusta con los registros que sí tienen cuotas. Las estadísticas de cada partido histórico se calculan solo con los partidos anteriores a él.
+
+Pendiente: cuántas temporadas y de qué ligas.
+
+### Intuición
+Pendiente de definir: si "intuición" se refiere a los patrones que la red encuentra sola al combinar variables, o a registrar la corazonada del usuario en cada mercado.
 
 ## Orden de construcción
 
@@ -139,7 +197,8 @@ Vista del historial: una lista general por deporte, con filtros por fecha, liga 
 5. Motor de análisis real por deporte.
 6. Guardado del historial en el repositorio y publicación con GitHub Actions.
 7. Casas de referencia (Apuesta Total y Te Apuesto primero).
-8. Red neuronal, cuando haya suficiente historial.
+8. Carga de temporadas pasadas desde Sofascore.
+9. Red neuronal: script de entrenamiento, comparación con el modelo publicado y uso en la página.
 
 ## Limitaciones conocidas
 

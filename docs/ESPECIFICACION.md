@@ -64,11 +64,12 @@ Margen de la casa de una línea: `1/cuota_A + 1/cuota_B - 1`.
 - **Casa principal:** Betano Perú (betano.pe).
 - **Casas de referencia:** Apuesta Total y Te Apuesto para empezar. Las demás se agregan cuando esas dos funcionen bien.
 - **Partidos, ligas, estadísticas y resultados:** Sofascore. En la página se cargan todas las ligas que aparecen en Sofascore para cada deporte, y el usuario elige cuáles analizar.
-- Muchas ligas pequeñas no tienen en Sofascore datos de corners, tiros, tarjetas o estadísticas por jugador. En esos casos el análisis de esos mercados queda incompleto o no se hace.
+- **Fuente complementaria de estadísticas:** Flashscore. Completa los datos que falten en Sofascore (bajas, alineaciones probables, estadísticas) y su sección de comentarios tiene el minuto de cada corner.
+- Muchas ligas pequeñas no tienen en Sofascore datos de corners, tiros, tarjetas o estadísticas por jugador. En esos casos se busca en Flashscore; si tampoco hay, el análisis de esos mercados queda incompleto o no se hace.
 
 ## Arquitectura
 
-- **Extensión de navegador** (Brave, Manifest V3, instalada en modo desarrollador con "Cargar descomprimida"). Lee los datos de Betano, Sofascore y las casas de referencia mientras el usuario tiene abiertas esas páginas, y se los pasa a la página web. Si un sitio cambia su diseño, hay que ajustar su extractor. Si la extensión no consigue un dato, se ingresa a mano.
+- **Extensión de navegador** (Brave, Manifest V3, instalada en modo desarrollador con "Cargar descomprimida"). Lee los datos de Betano, Sofascore, Flashscore y las casas de referencia mientras el usuario tiene abiertas esas páginas, y se los pasa a la página web. Si un sitio cambia su diseño, hay que ajustar su extractor. Si la extensión no consigue un dato, se ingresa a mano.
 - **Página web** publicada en GitHub Pages. Carga los partidos del día, permite filtrar por deporte y liga, seleccionar partidos y lanzar el análisis. El análisis se ejecuta en el navegador. Tiene una sección separada para el historial.
 - **Repositorio** (público): guarda el historial en archivos de datos. La página escribe en el repositorio con un token de GitHub de alcance limitado a este repositorio. El token se guarda solo en el navegador, nunca en el repositorio.
 - **GitHub Actions:** publica la página cuando hay cambios y, más adelante, entrena la red neuronal con el historial. No se usa para extraer datos, porque no tiene acceso al navegador y los sitios suelen bloquear conexiones desde servidores.
@@ -147,13 +148,22 @@ Cada registro es un partido con un mercado y su línea candidata. La red recibe 
 - Estadísticas de los equipos: promedios de los últimos 5 y 10 partidos, separados en local y visitante, de lo que producen y conceden en la estadística del mercado.
 - La línea.
 - Cuotas: las dos de Betano, su probabilidad sin margen, el margen, el promedio de las casas de referencia y la diferencia entre Betano y ese promedio.
-- Contexto: liga, días de descanso, bajas, promedio del árbitro en tarjetas y estadísticas del lanzador abridor en béisbol.
+- Contexto: liga, días de descanso, bajas y alineaciones probables (de Sofascore o Flashscore), promedio del árbitro en tarjetas y estadísticas del lanzador abridor en béisbol.
+- Partidos jugados por cada equipo en la temporada actual. A comienzos de temporada los promedios de los últimos 5 o 10 partidos incluyen partidos de la temporada anterior; con este dato la red puede aprender a confiar menos en esos promedios al inicio.
+- Nivel de los equipos y rendimiento relativo (ver "Nivel de los equipos y sorpresas").
 
 La página guarda en el historial el vector de entrada exacto y también las estadísticas originales, para que el entrenamiento use los mismos datos que el uso diario y se puedan recalcular si se agregan nuevas entradas.
 
 ### Arquitectura
 - Red pequeña: 2 o 3 capas ocultas de 32 a 64 neuronas, con dropout y parada temprana.
-- Un modelo por mercado. Si un mercado tiene pocos datos, puede compartir modelo con otros del mismo deporte.
+- Un modelo especializado por mercado, siguiendo la lista de mercados de este documento. No hay una red única para los tres deportes:
+  - Fútbol: goles, ambos anotan, corners, tarjetas, tiros al arco, remates, corners del 1T.
+  - Básquet: total de puntos, handicap, props de jugador, handicap 1T, total 1T.
+  - Béisbol: ganador, handicap, total.
+- Los mercados del primer tiempo tienen su propio modelo y usan estadísticas del primer tiempo cuando existen (cuartos 1 y 2 en básquet, estadísticas por período en fútbol).
+- Si un mercado tiene pocos datos, puede compartir modelo con otros del mismo deporte.
+- Especialización por liga: solo cuando una liga tenga historial suficiente. Antes de eso, la liga entra como variable en el modelo general del mercado. Un modelo de liga solo reemplaza al general si le gana en la prueba (misma regla de reemplazo de abajo).
+- No hay meta-modelo al inicio (ver "Fases posteriores").
 - Como comparación se entrena también una regresión logística. Si la red no le gana, el problema está en los datos y no en la arquitectura.
 
 ### Entrenamiento
@@ -188,20 +198,46 @@ Se cargan las 2 últimas temporadas de las ligas que más se analizan. No se usa
 ### Intuición
 La "intuición" de la red son los patrones que encuentra sola al combinar las variables de entrada (por ejemplo, local con pocos días de descanso contra un rival que concede muchos corners). No se agrega ningún dato extra para esto. La red solo puede encontrar patrones que existan en los datos que recibe.
 
+### Nivel de los equipos y sorpresas
+En fútbol, NBA y otras ligas pasa que el último de la tabla le da pelea al primero o a los de arriba. Para que la red pueda detectarlo:
+- Cada equipo tiene un rating tipo Elo, calculado con sus resultados. Se puede calcular para las temporadas históricas porque solo necesita resultados, no cuotas.
+- Variables de rendimiento relativo: cuánto rinde el equipo por encima o por debajo de lo que su rating anticipaba, y cómo le va contra rivales de rating alto (por ejemplo, si pierde por márgenes pequeños contra los primeros).
+
+## Explicabilidad
+
+- Debajo de cada mercado del resultado hay una sección desplegable con las variables que más empujaron la predicción.
+- **Análisis estadístico:** se calcula cuánto cambia la probabilidad si un factor se reemplaza por el promedio de la liga. Se muestra como impacto aproximado (por ejemplo: forma reciente +8%, localía +4%, rival concede corners +6%, árbitro 0%), porque con Poisson las contribuciones no se suman exactamente.
+- **Red neuronal:** se usa SHAP o una técnica parecida para mostrar sus variables principales.
+- La explicación dice qué movió al modelo, no qué causa el resultado en la cancha.
+- En el dashboard se muestra qué variables pesan más en cada modelo. Un patrón concreto (por ejemplo, "equipos de abajo contra el líder") solo se muestra si se repite en los datos de prueba, junto con la cantidad de casos que lo respaldan.
+
+## Fases posteriores
+
+Se hacen después de que la red base funcione:
+
+- **Meta-modelo** que combine el análisis estadístico y la red para un mismo mercado. Solo cuando los dos tengan varios meses de historial y se pueda medir si combinarlos mejora la predicción.
+- **Noticias convertidas en variables.** Se clasifican en categorías fijas (jugador_clave_ausente, rotacion_probable, cambio_entrenador, fatiga, motivacion_competitiva, etc.) con intensidad y fiabilidad de la fuente. Por cada variable se guarda el enlace, el titular, la fuente, la fecha y hora de publicación y la clasificación asignada, para poder auditarla. Condiciones:
+  - Solo cuentan noticias publicadas antes de extraer las cuotas.
+  - No hay noticias para las temporadas históricas: la red aprende de estas variables desde que se empiecen a recolectar.
+  - Clasificar con una IA tiene costo por uso y requiere una clave de API que no puede guardarse en el repositorio público.
+  - La fiabilidad de cada fuente se define en una lista calificada por el usuario.
+- **Estilo del equipo según el marcador (fútbol).** Cómo cambian sus corners cuando va ganando, empatando o perdiendo. El minuto de cada corner sale de los comentarios de Flashscore y el marcador en ese minuto, de los goles del partido. Requiere abrir más páginas por partido, lo que aumenta el riesgo de bloqueo.
+
 ## Orden de construcción
 
 1. Estructura del repositorio y formato de los datos (partido, mercado, análisis, registro del historial).
 2. Página con datos de prueba: carga, filtros, análisis y sección de historial.
-3. Extractor de Sofascore: partidos del día, ligas, estadísticas y resultados.
+3. Extractor de Sofascore: partidos del día, ligas, estadísticas y resultados. Después, extractor de Flashscore para completar datos.
 4. Extractor de Betano: mercados y cuotas, y emparejamiento de partidos.
 5. Motor de análisis real por deporte.
 6. Guardado del historial en el repositorio y publicación con GitHub Actions.
 7. Casas de referencia (Apuesta Total y Te Apuesto primero).
 8. Carga de temporadas pasadas desde Sofascore.
-9. Red neuronal: script de entrenamiento, comparación con el modelo publicado y uso en la página.
+9. Red neuronal: script de entrenamiento, comparación con el modelo publicado, uso en la página y explicabilidad.
+10. Fases posteriores, en el orden que se decida.
 
 ## Limitaciones conocidas
 
 - Ningún modelo garantiza ganar. El objetivo es estimar la probabilidad un poco mejor que la casa en algunos partidos.
-- Betano y Sofascore no tienen API pública. Extraer sus datos puede ir contra sus términos de uso y los extractores pueden dejar de funcionar sin aviso.
+- Betano, Sofascore y Flashscore no tienen API pública. Extraer sus datos puede ir contra sus términos de uso y los extractores pueden dejar de funcionar sin aviso.
 - El repositorio es público: el historial queda visible para cualquiera.

@@ -115,7 +115,7 @@ Esta sección describe el análisis estadístico. La red neuronal es un modelo a
 - Orden: deporte → partido → mercados en el orden de la lista de arriba.
 - Por cada mercado se muestra la línea candidata, el lado recomendado y la probabilidad de cada modelo, una al lado de la otra. Ejemplo: `Under 2.5 — Estadístico 58% · Red 61%`.
 - Si la red no tiene un modelo aprobado para ese mercado, se muestra "Red: sin modelo todavía".
-- Pendiente: cómo mostrar el mercado cuando los dos modelos eligen lados distintos.
+- Si los dos modelos eligen lados distintos, no se oculta nada: se muestra el lado y la probabilidad de cada uno y se marca el mercado como en desacuerdo. Ejemplo: `Estadístico: Under 2.5 58% · Red: Over 2.5 55% ⚠️`.
 
 ## Historial
 
@@ -183,10 +183,10 @@ El entrenamiento guarda los pesos del modelo en un archivo del repositorio, con 
 ### Datos históricos
 Se cargan temporadas pasadas desde Sofascore para tener más datos desde el inicio. Esos partidos no tienen cuotas históricas de Betano, así que sirven para un modelo que usa solo estadísticas, que después se ajusta con los registros que sí tienen cuotas. Las estadísticas de cada partido histórico se calculan solo con los partidos anteriores a él.
 
-Pendiente: cuántas temporadas y de qué ligas.
+Se cargan las 2 últimas temporadas de las ligas que más se analizan. No se usan más temporadas porque cada temporada trae cambios en los equipos y en el nivel. La extensión hace la carga de a pocos para que Sofascore no la bloquee.
 
 ### Intuición
-Pendiente de definir: si "intuición" se refiere a los patrones que la red encuentra sola al combinar variables, o a registrar la corazonada del usuario en cada mercado.
+La "intuición" de la red son los patrones que encuentra sola al combinar las variables de entrada (por ejemplo, local con pocos días de descanso contra un rival que concede muchos corners). No se agrega ningún dato extra para esto. La red solo puede encontrar patrones que existan en los datos que recibe.
 
 ## Orden de construcción
 

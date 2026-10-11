@@ -225,7 +225,7 @@ Se hacen después de que la red base funcione:
 
 ## Orden de construcción
 
-1. Estructura del repositorio y formato de los datos (partido, mercado, análisis, registro del historial).
+1. Estructura del repositorio y formato de los datos (partido, mercado, análisis, registro del historial). Hecho: ver `docs/FORMATO_DATOS.md`.
 2. Página con datos de prueba: carga, filtros, análisis y sección de historial.
 3. Extractor de Sofascore: partidos del día, ligas, estadísticas y resultados. Después, extractor de Flashscore para completar datos.
 4. Extractor de Betano: mercados y cuotas, y emparejamiento de partidos.

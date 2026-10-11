@@ -1,0 +1,13 @@
+{
+  "version_formato": 1,
+  "casas": [
+    { "codigo": "betano", "nombre": "Betano Perú", "rol": "principal" },
+    { "codigo": "apuesta_total", "nombre": "Apuesta Total", "rol": "referencia" },
+    { "codigo": "te_apuesto", "nombre": "Te Apuesto", "rol": "referencia" }
+  ],
+  "fuentes": [
+    { "codigo": "sofascore", "nombre": "Sofascore", "rol": "principal" },
+    { "codigo": "flashscore", "nombre": "Flashscore", "rol": "complementaria" }
+  ],
+  "nota": "El orden de las casas es la prioridad para elegir la línea candidata: se usa la primera casa que ofrezca el mercado."
+}

@@ -1,0 +1,27 @@
+{
+  "version_formato": 1,
+  "ligas": [
+    {
+      "id": "ejemplo:liga-basquet",
+      "nombre": "Liga de Básquet de Ejemplo",
+      "alias": {
+        "apuesta_total": [
+          "Liga Ejemplo"
+        ]
+      }
+    }
+  ],
+  "equipos": [],
+  "jugadores": [
+    {
+      "id": "ejemplo:juan-ejemplar",
+      "nombre": "Juan Ejemplar",
+      "alias": {
+        "apuesta_total": [
+          "J. Ejemplar"
+        ]
+      },
+      "confirmado_en": "2026-10-11T15:03:00Z"
+    }
+  ]
+}

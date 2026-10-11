@@ -1,0 +1,167 @@
+{
+  "version_formato": 1,
+  "partidos": [
+    {
+      "id": "ejemplo:e1",
+      "deporte": "beisbol",
+      "liga": {
+        "id": "ejemplo:liga-beisbol",
+        "nombre": "Liga de Béisbol de Ejemplo"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026",
+        "nombre": "2026"
+      },
+      "inicio": "2026-10-10T23:05:00Z",
+      "fecha_local": "2026-10-10",
+      "local": {
+        "id": "ejemplo:piratas",
+        "nombre": "Piratas Ejemplo"
+      },
+      "visitante": {
+        "id": "ejemplo:leones",
+        "nombre": "Leones Muestra"
+      },
+      "estado": "finalizado",
+      "marcador": {
+        "local": 4,
+        "visitante": 3
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-10-11T02:40:00Z",
+        "carreras_por_entrada": {
+          "local": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            1
+          ],
+          "visitante": [
+            0,
+            1,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "equipos": {
+          "local": {
+            "hits": 9,
+            "errores": 1,
+            "home_runs": 1
+          },
+          "visitante": {
+            "hits": 7,
+            "errores": 0,
+            "home_runs": 0
+          }
+        },
+        "lanzadores": [
+          {
+            "jugador": {
+              "id": "ejemplo:andres-abridor",
+              "nombre": "Andrés Abridor"
+            },
+            "equipo": "local",
+            "abridor": true,
+            "outs": 18,
+            "hits": 5,
+            "carreras": 3,
+            "carreras_limpias": 2,
+            "bases_por_bolas": 2,
+            "ponches": 7
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:bruno-brazo",
+              "nombre": "Bruno Brazo"
+            },
+            "equipo": "visitante",
+            "abridor": true,
+            "outs": 20,
+            "hits": 6,
+            "carreras": 3,
+            "carreras_limpias": 3,
+            "bases_por_bolas": 1,
+            "ponches": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "ejemplo:e2",
+      "deporte": "beisbol",
+      "liga": {
+        "id": "ejemplo:liga-beisbol",
+        "nombre": "Liga de Béisbol de Ejemplo"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026",
+        "nombre": "2026"
+      },
+      "inicio": "2026-10-11T23:10:00Z",
+      "fecha_local": "2026-10-11",
+      "local": {
+        "id": "ejemplo:leones",
+        "nombre": "Leones Muestra"
+      },
+      "visitante": {
+        "id": "ejemplo:piratas",
+        "nombre": "Piratas Ejemplo"
+      },
+      "estado": "programado",
+      "previa": {
+        "extraido_en": "2026-10-11T16:00:00Z",
+        "fuentes": [
+          "sofascore"
+        ],
+        "abridores": {
+          "local": {
+            "jugador": {
+              "id": "ejemplo:carlos-curva",
+              "nombre": "Carlos Curva"
+            },
+            "mano": "zurda",
+            "estadisticas": {
+              "era": 3.41,
+              "whip": 1.18,
+              "ponches_por_9": 8.9
+            }
+          },
+          "visitante": {
+            "jugador": {
+              "id": "ejemplo:diego-recta",
+              "nombre": "Diego Recta"
+            },
+            "mano": "derecha",
+            "estadisticas": {
+              "era": 4.12,
+              "whip": 1.31,
+              "ponches_por_9": 7.6
+            }
+          }
+        },
+        "ultimos_partidos": {
+          "local": [
+            "ejemplo:e1"
+          ],
+          "visitante": [
+            "ejemplo:e1"
+          ]
+        }
+      }
+    }
+  ]
+}

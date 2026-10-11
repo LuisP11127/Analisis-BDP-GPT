@@ -1,0 +1,399 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://luisp11127.github.io/Analisis-BDP-GPT/esquemas/partido.schema.json",
+  "title": "Partido",
+  "description": "Un partido con sus datos previos (solo si se analizó) y sus estadísticas finales.",
+  "type": "object",
+  "required": ["id", "deporte", "liga", "temporada", "inicio", "fecha_local", "local", "visitante", "estado"],
+  "properties": {
+    "id": { "$ref": "comun.schema.json#/$defs/id" },
+    "deporte": { "$ref": "comun.schema.json#/$defs/deporte" },
+    "liga": {
+      "type": "object",
+      "required": ["id", "nombre"],
+      "properties": {
+        "id": { "$ref": "comun.schema.json#/$defs/id" },
+        "nombre": { "$ref": "comun.schema.json#/$defs/texto" },
+        "pais": { "$ref": "comun.schema.json#/$defs/texto" }
+      },
+      "additionalProperties": false
+    },
+    "temporada": { "$ref": "comun.schema.json#/$defs/ref" },
+    "inicio": { "$ref": "comun.schema.json#/$defs/fecha_hora" },
+    "fecha_local": { "$ref": "comun.schema.json#/$defs/fecha" },
+    "local": { "$ref": "comun.schema.json#/$defs/ref" },
+    "visitante": { "$ref": "comun.schema.json#/$defs/ref" },
+    "estado": { "enum": ["programado", "en_juego", "finalizado", "aplazado", "suspendido", "cancelado"] },
+    "ids_externos": {
+      "description": "Id del mismo partido en otras fuentes o casas. Ej.: { \"flashscore\": \"abc123\" }.",
+      "type": "object",
+      "propertyNames": { "$ref": "comun.schema.json#/$defs/codigo" },
+      "additionalProperties": { "$ref": "comun.schema.json#/$defs/texto" }
+    },
+    "marcador": {
+      "description": "Marcador del período completo (fútbol: tiempo reglamentario; básquet: con prórroga; béisbol: con entradas extra).",
+      "type": "object",
+      "required": ["local", "visitante"],
+      "properties": {
+        "local": { "type": "integer", "minimum": 0 },
+        "visitante": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "previa": { "type": "object" },
+    "estadisticas": { "type": "object" },
+    "actualizado_en": { "$ref": "comun.schema.json#/$defs/fecha_hora" }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": { "type": "object", "properties": { "deporte": { "const": "futbol" } }, "required": ["deporte"] },
+      "then": {
+        "type": "object",
+        "properties": {
+          "previa": { "$ref": "#/$defs/previa_futbol" },
+          "estadisticas": { "$ref": "#/$defs/estadisticas_futbol" }
+        }
+      }
+    },
+    {
+      "if": { "type": "object", "properties": { "deporte": { "const": "basquet" } }, "required": ["deporte"] },
+      "then": {
+        "type": "object",
+        "properties": {
+          "previa": { "$ref": "#/$defs/previa_basquet" },
+          "estadisticas": { "$ref": "#/$defs/estadisticas_basquet" }
+        }
+      }
+    },
+    {
+      "if": { "type": "object", "properties": { "deporte": { "const": "beisbol" } }, "required": ["deporte"] },
+      "then": {
+        "type": "object",
+        "properties": {
+          "previa": { "$ref": "#/$defs/previa_beisbol" },
+          "estadisticas": { "$ref": "#/$defs/estadisticas_beisbol" }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "par_ids": {
+      "type": "object",
+      "required": ["local", "visitante"],
+      "properties": {
+        "local": { "type": "array", "items": { "$ref": "comun.schema.json#/$defs/id" } },
+        "visitante": { "type": "array", "items": { "$ref": "comun.schema.json#/$defs/id" } }
+      },
+      "additionalProperties": false
+    },
+    "tabla_equipo": {
+      "type": "object",
+      "properties": {
+        "posicion": { "type": "integer", "minimum": 1 },
+        "partidos_jugados": { "type": "integer", "minimum": 0 },
+        "puntos": { "type": "integer" },
+        "ganados": { "type": "integer", "minimum": 0 },
+        "empatados": { "type": "integer", "minimum": 0 },
+        "perdidos": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "previa_base": {
+      "description": "Datos extraídos antes del partido. Solo existe en los partidos analizados.",
+      "type": "object",
+      "required": ["extraido_en", "fuentes", "ultimos_partidos"],
+      "properties": {
+        "extraido_en": { "$ref": "comun.schema.json#/$defs/fecha_hora" },
+        "fuentes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "comun.schema.json#/$defs/codigo" }
+        },
+        "bajas": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["equipo", "jugador", "motivo"],
+            "properties": {
+              "equipo": { "$ref": "comun.schema.json#/$defs/equipo_partido" },
+              "jugador": { "$ref": "comun.schema.json#/$defs/persona" },
+              "motivo": { "enum": ["lesion", "sancion", "duda", "otro", "desconocido"] },
+              "detalle": { "$ref": "comun.schema.json#/$defs/texto" },
+              "fuente": { "$ref": "comun.schema.json#/$defs/codigo" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "alineaciones_probables": {
+          "type": "object",
+          "required": ["confirmadas", "local", "visitante"],
+          "properties": {
+            "confirmadas": { "type": "boolean" },
+            "fuente": { "$ref": "comun.schema.json#/$defs/codigo" },
+            "local": { "type": "array", "items": { "$ref": "comun.schema.json#/$defs/persona" } },
+            "visitante": { "type": "array", "items": { "$ref": "comun.schema.json#/$defs/persona" } }
+          },
+          "additionalProperties": false
+        },
+        "tabla": {
+          "type": "object",
+          "required": ["local", "visitante"],
+          "properties": {
+            "local": { "$ref": "#/$defs/tabla_equipo" },
+            "visitante": { "$ref": "#/$defs/tabla_equipo" }
+          },
+          "additionalProperties": false
+        },
+        "ultimos_partidos": {
+          "description": "Ids de los partidos guardados que se usaron para calcular las estadísticas previas de cada equipo.",
+          "$ref": "#/$defs/par_ids"
+        }
+      }
+    },
+    "previa_futbol": {
+      "type": "object",
+      "$ref": "#/$defs/previa_base",
+      "properties": {
+        "arbitro": {
+          "type": "object",
+          "required": ["nombre"],
+          "properties": {
+            "id": { "$ref": "comun.schema.json#/$defs/id" },
+            "nombre": { "$ref": "comun.schema.json#/$defs/texto" },
+            "estadisticas": { "$ref": "comun.schema.json#/$defs/valores_numericos" }
+          },
+          "additionalProperties": false
+        }
+      },
+      "unevaluatedProperties": false
+    },
+    "previa_basquet": {
+      "type": "object",
+      "$ref": "#/$defs/previa_base",
+      "unevaluatedProperties": false
+    },
+    "previa_beisbol": {
+      "type": "object",
+      "$ref": "#/$defs/previa_base",
+      "properties": {
+        "abridores": {
+          "type": "object",
+          "required": ["local", "visitante"],
+          "properties": {
+            "local": { "$ref": "#/$defs/abridor" },
+            "visitante": { "$ref": "#/$defs/abridor" }
+          },
+          "additionalProperties": false
+        }
+      },
+      "unevaluatedProperties": false
+    },
+    "abridor": {
+      "type": "object",
+      "required": ["jugador"],
+      "properties": {
+        "jugador": { "$ref": "comun.schema.json#/$defs/persona" },
+        "mano": { "enum": ["derecha", "zurda"] },
+        "estadisticas": { "$ref": "comun.schema.json#/$defs/valores_numericos" }
+      },
+      "additionalProperties": false
+    },
+    "estadisticas_futbol": {
+      "type": "object",
+      "required": ["fuente", "extraido_en", "completo"],
+      "properties": {
+        "fuente": { "$ref": "comun.schema.json#/$defs/codigo" },
+        "extraido_en": { "$ref": "comun.schema.json#/$defs/fecha_hora" },
+        "completo": { "$ref": "#/$defs/futbol_periodo" },
+        "primer_tiempo": { "$ref": "#/$defs/futbol_periodo" },
+        "eventos": { "type": "array", "items": { "$ref": "#/$defs/futbol_evento" } }
+      },
+      "additionalProperties": false
+    },
+    "futbol_periodo": {
+      "type": "object",
+      "required": ["local", "visitante"],
+      "properties": {
+        "local": { "$ref": "#/$defs/futbol_equipo" },
+        "visitante": { "$ref": "#/$defs/futbol_equipo" }
+      },
+      "additionalProperties": false
+    },
+    "futbol_equipo": {
+      "type": "object",
+      "properties": {
+        "goles": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "corners": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "amarillas": {
+          "description": "Amarillas mostradas, incluida la segunda amarilla de una doble amarilla.",
+          "$ref": "comun.schema.json#/$defs/conteo"
+        },
+        "rojas": {
+          "description": "Rojas, directas y por doble amarilla.",
+          "$ref": "comun.schema.json#/$defs/conteo"
+        },
+        "dobles_amarillas": {
+          "description": "Cuántas de las rojas vinieron por doble amarilla.",
+          "$ref": "comun.schema.json#/$defs/conteo"
+        },
+        "tiros_al_arco": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "remates": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "faltas": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "fueras_de_juego": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "posesion": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "xg": { "type": ["number", "null"], "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "futbol_evento": {
+      "type": "object",
+      "required": ["minuto", "tipo", "equipo"],
+      "properties": {
+        "minuto": { "type": "integer", "minimum": 0, "maximum": 130 },
+        "minuto_extra": { "type": "integer", "minimum": 0 },
+        "tipo": { "enum": ["gol", "corner", "amarilla", "roja", "doble_amarilla"] },
+        "equipo": { "$ref": "comun.schema.json#/$defs/equipo_partido" }
+      },
+      "additionalProperties": false
+    },
+    "estadisticas_basquet": {
+      "type": "object",
+      "required": ["fuente", "extraido_en", "formato_periodos", "periodos"],
+      "properties": {
+        "fuente": { "$ref": "comun.schema.json#/$defs/codigo" },
+        "extraido_en": { "$ref": "comun.schema.json#/$defs/fecha_hora" },
+        "formato_periodos": { "enum": ["cuartos", "mitades"] },
+        "periodos": { "$ref": "#/$defs/puntos_por_periodo" },
+        "prorrogas": { "$ref": "#/$defs/puntos_por_periodo" },
+        "equipos": {
+          "type": "object",
+          "required": ["local", "visitante"],
+          "properties": {
+            "local": { "$ref": "#/$defs/basquet_equipo" },
+            "visitante": { "$ref": "#/$defs/basquet_equipo" }
+          },
+          "additionalProperties": false
+        },
+        "jugadores": { "type": "array", "items": { "$ref": "#/$defs/basquet_jugador" } }
+      },
+      "additionalProperties": false
+    },
+    "puntos_por_periodo": {
+      "type": "object",
+      "required": ["local", "visitante"],
+      "properties": {
+        "local": { "type": "array", "items": { "type": "integer", "minimum": 0 } },
+        "visitante": { "type": "array", "items": { "type": "integer", "minimum": 0 } }
+      },
+      "additionalProperties": false
+    },
+    "basquet_equipo": {
+      "type": "object",
+      "properties": {
+        "tiros_campo_anotados": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "tiros_campo_intentados": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "triples_anotados": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "triples_intentados": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "tiros_libres_anotados": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "tiros_libres_intentados": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "rebotes_ofensivos": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "rebotes_defensivos": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "rebotes": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "asistencias": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "robos": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "tapones": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "perdidas": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "faltas": { "$ref": "comun.schema.json#/$defs/conteo" }
+      },
+      "additionalProperties": false
+    },
+    "basquet_jugador": {
+      "type": "object",
+      "required": ["jugador", "equipo", "jugo"],
+      "properties": {
+        "jugador": { "$ref": "comun.schema.json#/$defs/ref" },
+        "equipo": { "$ref": "comun.schema.json#/$defs/equipo_partido" },
+        "titular": { "type": "boolean" },
+        "jugo": { "type": "boolean" },
+        "minutos": { "type": ["number", "null"], "minimum": 0 },
+        "puntos": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "rebotes": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "asistencias": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "triples": {
+          "description": "Triples anotados.",
+          "$ref": "comun.schema.json#/$defs/conteo"
+        },
+        "robos": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "tapones": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "perdidas": { "$ref": "comun.schema.json#/$defs/conteo" }
+      },
+      "additionalProperties": false
+    },
+    "estadisticas_beisbol": {
+      "type": "object",
+      "required": ["fuente", "extraido_en", "carreras_por_entrada"],
+      "properties": {
+        "fuente": { "$ref": "comun.schema.json#/$defs/codigo" },
+        "extraido_en": { "$ref": "comun.schema.json#/$defs/fecha_hora" },
+        "carreras_por_entrada": {
+          "description": "Una posición por entrada, incluidas las extra. null si el equipo no batea esa entrada (local que ya ganaba en la 9.ª).",
+          "type": "object",
+          "required": ["local", "visitante"],
+          "properties": {
+            "local": { "$ref": "#/$defs/carreras_entradas" },
+            "visitante": { "$ref": "#/$defs/carreras_entradas" }
+          },
+          "additionalProperties": false
+        },
+        "equipos": {
+          "type": "object",
+          "required": ["local", "visitante"],
+          "properties": {
+            "local": { "$ref": "#/$defs/beisbol_equipo" },
+            "visitante": { "$ref": "#/$defs/beisbol_equipo" }
+          },
+          "additionalProperties": false
+        },
+        "lanzadores": { "type": "array", "items": { "$ref": "#/$defs/beisbol_lanzador" } }
+      },
+      "additionalProperties": false
+    },
+    "carreras_entradas": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": ["integer", "null"], "minimum": 0 }
+    },
+    "beisbol_equipo": {
+      "type": "object",
+      "properties": {
+        "hits": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "errores": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "home_runs": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "bases_por_bolas": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "ponches": { "$ref": "comun.schema.json#/$defs/conteo" }
+      },
+      "additionalProperties": false
+    },
+    "beisbol_lanzador": {
+      "type": "object",
+      "required": ["jugador", "equipo", "abridor"],
+      "properties": {
+        "jugador": { "$ref": "comun.schema.json#/$defs/ref" },
+        "equipo": { "$ref": "comun.schema.json#/$defs/equipo_partido" },
+        "abridor": { "type": "boolean" },
+        "outs": {
+          "description": "Outs registrados. 6.1 entradas = 19 outs.",
+          "$ref": "comun.schema.json#/$defs/conteo"
+        },
+        "hits": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "carreras": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "carreras_limpias": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "bases_por_bolas": { "$ref": "comun.schema.json#/$defs/conteo" },
+        "ponches": { "$ref": "comun.schema.json#/$defs/conteo" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

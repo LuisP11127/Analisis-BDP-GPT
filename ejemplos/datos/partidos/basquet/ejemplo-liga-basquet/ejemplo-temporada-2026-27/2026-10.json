@@ -1,0 +1,180 @@
+{
+  "version_formato": 1,
+  "partidos": [
+    {
+      "id": "ejemplo:b1",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026-27",
+        "nombre": "2026/27"
+      },
+      "inicio": "2026-10-09T00:30:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:halcones",
+        "nombre": "Halcones Ejemplo"
+      },
+      "visitante": {
+        "id": "ejemplo:toros",
+        "nombre": "Toros Muestra"
+      },
+      "estado": "finalizado",
+      "marcador": {
+        "local": 108,
+        "visitante": 106
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-10-09T03:10:00Z",
+        "formato_periodos": "cuartos",
+        "periodos": {
+          "local": [
+            25,
+            22,
+            27,
+            24
+          ],
+          "visitante": [
+            24,
+            26,
+            23,
+            25
+          ]
+        },
+        "prorrogas": {
+          "local": [
+            10
+          ],
+          "visitante": [
+            8
+          ]
+        },
+        "equipos": {
+          "local": {
+            "tiros_campo_anotados": 40,
+            "tiros_campo_intentados": 88,
+            "triples_anotados": 12,
+            "triples_intentados": 33,
+            "tiros_libres_anotados": 16,
+            "tiros_libres_intentados": 20,
+            "rebotes": 46,
+            "asistencias": 24,
+            "robos": 7,
+            "tapones": 5,
+            "perdidas": 13
+          },
+          "visitante": {
+            "tiros_campo_anotados": 39,
+            "tiros_campo_intentados": 90,
+            "triples_anotados": 13,
+            "triples_intentados": 36,
+            "tiros_libres_anotados": 15,
+            "tiros_libres_intentados": 19,
+            "rebotes": 44,
+            "asistencias": 22,
+            "robos": 8,
+            "tapones": 3,
+            "perdidas": 12
+          }
+        },
+        "jugadores": [
+          {
+            "jugador": {
+              "id": "ejemplo:pedro-prueba",
+              "nombre": "Pedro Prueba"
+            },
+            "equipo": "local",
+            "titular": true,
+            "jugo": true,
+            "minutos": 38,
+            "puntos": 18,
+            "rebotes": 11,
+            "asistencias": 3,
+            "triples": 1,
+            "robos": 1,
+            "tapones": 2,
+            "perdidas": 2
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:juan-ejemplar",
+              "nombre": "Juan Ejemplar"
+            },
+            "equipo": "visitante",
+            "titular": true,
+            "jugo": true,
+            "minutos": 40.5,
+            "puntos": 31,
+            "rebotes": 6,
+            "asistencias": 4,
+            "triples": 3,
+            "robos": 1,
+            "tapones": 0,
+            "perdidas": 3
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:luis-banca",
+              "nombre": "Luis Banca"
+            },
+            "equipo": "visitante",
+            "titular": false,
+            "jugo": false,
+            "minutos": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "ejemplo:b2",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026-27",
+        "nombre": "2026/27"
+      },
+      "inicio": "2026-10-12T00:00:00Z",
+      "fecha_local": "2026-10-11",
+      "local": {
+        "id": "ejemplo:toros",
+        "nombre": "Toros Muestra"
+      },
+      "visitante": {
+        "id": "ejemplo:halcones",
+        "nombre": "Halcones Ejemplo"
+      },
+      "estado": "programado",
+      "previa": {
+        "extraido_en": "2026-10-11T15:00:00Z",
+        "fuentes": [
+          "sofascore"
+        ],
+        "tabla": {
+          "local": {
+            "posicion": 4,
+            "partidos_jugados": 3
+          },
+          "visitante": {
+            "posicion": 6,
+            "partidos_jugados": 3
+          }
+        },
+        "ultimos_partidos": {
+          "local": [
+            "ejemplo:b1"
+          ],
+          "visitante": [
+            "ejemplo:b1"
+          ]
+        }
+      }
+    }
+  ]
+}

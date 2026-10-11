@@ -1,0 +1,17 @@
+{
+  "name": "analisis-bdp-gpt",
+  "private": true,
+  "type": "module",
+  "description": "Análisis de mercados de apuestas deportivas de dos resultados.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "validar": "node herramientas/validar.mjs datos ejemplos/datos",
+    "test": "node --test \"pruebas/**/*.test.mjs\""
+  },
+  "devDependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1"
+  }
+}

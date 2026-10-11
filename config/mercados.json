@@ -1,0 +1,184 @@
+{
+  "version_formato": 1,
+  "deportes": [
+    {
+      "codigo": "futbol",
+      "nombre": "Fútbol",
+      "periodos": {
+        "completo": "Tiempo reglamentario: 90 minutos más el descuento. No incluye prórroga ni penales.",
+        "primer_tiempo": "Primer tiempo: 45 minutos más el descuento."
+      },
+      "mercados": [
+        {
+          "codigo": "futbol_goles",
+          "nombre": "Goles totales Más/Menos",
+          "tipo": "mas_menos",
+          "periodo": "completo",
+          "estadistica": "goles",
+          "lado_a": "Más",
+          "lado_b": "Menos"
+        },
+        {
+          "codigo": "futbol_ambos_anotan",
+          "nombre": "Ambos equipos anotan",
+          "tipo": "si_no",
+          "periodo": "completo",
+          "estadistica": "goles",
+          "lado_a": "Sí",
+          "lado_b": "No"
+        },
+        {
+          "codigo": "futbol_corners",
+          "nombre": "Corners Más/Menos",
+          "tipo": "mas_menos",
+          "periodo": "completo",
+          "estadistica": "corners",
+          "lado_a": "Más",
+          "lado_b": "Menos"
+        },
+        {
+          "codigo": "futbol_tarjetas",
+          "nombre": "Total de tarjetas",
+          "tipo": "mas_menos",
+          "periodo": "completo",
+          "estadistica": "tarjetas",
+          "lado_a": "Más",
+          "lado_b": "Menos",
+          "nota": "Como en Betano: amarilla = 1, roja = 2. Pendiente de verificar cómo cuenta Betano la doble amarilla."
+        },
+        {
+          "codigo": "futbol_tiros_arco",
+          "nombre": "Tiros al arco",
+          "tipo": "mas_menos",
+          "periodo": "completo",
+          "estadistica": "tiros_al_arco",
+          "lado_a": "Más",
+          "lado_b": "Menos"
+        },
+        {
+          "codigo": "futbol_remates",
+          "nombre": "Remates totales",
+          "tipo": "mas_menos",
+          "periodo": "completo",
+          "estadistica": "remates",
+          "lado_a": "Más",
+          "lado_b": "Menos"
+        },
+        {
+          "codigo": "futbol_corners_1t",
+          "nombre": "Corners en el primer tiempo Más/Menos",
+          "tipo": "mas_menos",
+          "periodo": "primer_tiempo",
+          "estadistica": "corners",
+          "lado_a": "Más",
+          "lado_b": "Menos"
+        }
+      ]
+    },
+    {
+      "codigo": "basquet",
+      "nombre": "Básquet",
+      "periodos": {
+        "completo": "Partido completo, incluida la prórroga.",
+        "primer_tiempo": "Cuartos 1 y 2 (en ligas que juegan por mitades, la primera mitad). No incluye prórroga."
+      },
+      "mercados": [
+        {
+          "codigo": "basquet_puntos",
+          "nombre": "Total de puntos",
+          "tipo": "mas_menos",
+          "periodo": "completo",
+          "estadistica": "puntos",
+          "lado_a": "Más",
+          "lado_b": "Menos"
+        },
+        {
+          "codigo": "basquet_handicap",
+          "nombre": "Handicap",
+          "tipo": "handicap",
+          "periodo": "completo",
+          "estadistica": "puntos",
+          "lado_a": "Local",
+          "lado_b": "Visitante"
+        },
+        {
+          "codigo": "basquet_jugador",
+          "nombre": "Jugador Más/Menos",
+          "tipo": "mas_menos",
+          "por_jugador": true,
+          "periodo": "completo",
+          "lado_a": "Más",
+          "lado_b": "Menos",
+          "estadisticas_jugador": [
+            { "codigo": "puntos", "nombre": "Puntos", "componentes": ["puntos"] },
+            { "codigo": "rebotes", "nombre": "Rebotes", "componentes": ["rebotes"] },
+            { "codigo": "asistencias", "nombre": "Asistencias", "componentes": ["asistencias"] },
+            { "codigo": "triples", "nombre": "Triples anotados", "componentes": ["triples"] },
+            { "codigo": "robos", "nombre": "Robos", "componentes": ["robos"] },
+            { "codigo": "tapones", "nombre": "Tapones", "componentes": ["tapones"] },
+            { "codigo": "puntos_rebotes", "nombre": "Puntos + rebotes", "componentes": ["puntos", "rebotes"] },
+            { "codigo": "puntos_asistencias", "nombre": "Puntos + asistencias", "componentes": ["puntos", "asistencias"] },
+            { "codigo": "rebotes_asistencias", "nombre": "Rebotes + asistencias", "componentes": ["rebotes", "asistencias"] },
+            { "codigo": "puntos_rebotes_asistencias", "nombre": "Puntos + rebotes + asistencias", "componentes": ["puntos", "rebotes", "asistencias"] },
+            { "codigo": "robos_tapones", "nombre": "Robos + tapones", "componentes": ["robos", "tapones"] }
+          ],
+          "nota": "Lista inicial de estadísticas. Se ajusta cuando lleguen las muestras de Betano y Apuesta Total. Si el jugador no juega, la apuesta se anula."
+        },
+        {
+          "codigo": "basquet_handicap_1t",
+          "nombre": "Primer tiempo: handicap",
+          "tipo": "handicap",
+          "periodo": "primer_tiempo",
+          "estadistica": "puntos",
+          "lado_a": "Local",
+          "lado_b": "Visitante"
+        },
+        {
+          "codigo": "basquet_puntos_1t",
+          "nombre": "Primer tiempo: total de puntos",
+          "tipo": "mas_menos",
+          "periodo": "primer_tiempo",
+          "estadistica": "puntos",
+          "lado_a": "Más",
+          "lado_b": "Menos"
+        }
+      ]
+    },
+    {
+      "codigo": "beisbol",
+      "nombre": "Béisbol",
+      "periodos": {
+        "completo": "Partido completo, incluidas las entradas extra."
+      },
+      "mercados": [
+        {
+          "codigo": "beisbol_ganador",
+          "nombre": "Ganador",
+          "tipo": "ganador",
+          "periodo": "completo",
+          "estadistica": "carreras",
+          "lado_a": "Local",
+          "lado_b": "Visitante"
+        },
+        {
+          "codigo": "beisbol_handicap",
+          "nombre": "Handicap",
+          "tipo": "handicap",
+          "periodo": "completo",
+          "estadistica": "carreras",
+          "lado_a": "Local",
+          "lado_b": "Visitante"
+        },
+        {
+          "codigo": "beisbol_total",
+          "nombre": "Total de carreras",
+          "tipo": "mas_menos",
+          "periodo": "completo",
+          "estadistica": "carreras",
+          "lado_a": "Más",
+          "lado_b": "Menos"
+        }
+      ]
+    }
+  ]
+}

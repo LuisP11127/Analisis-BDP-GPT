@@ -1,0 +1,40 @@
+{
+  "version_formato": 1,
+  "ligas": [
+    {
+      "id": "ejemplo:liga-futbol",
+      "nombre": "Liga de Ejemplo",
+      "alias": {
+        "betano": [
+          "Ejemplo - Liga"
+        ]
+      }
+    }
+  ],
+  "equipos": [
+    {
+      "id": "ejemplo:deportivo-ejemplo",
+      "nombre": "Deportivo Ejemplo",
+      "alias": {
+        "betano": [
+          "Dep. Ejemplo"
+        ],
+        "flashscore": [
+          "Deportivo Ejemplo"
+        ]
+      },
+      "confirmado_en": "2026-10-10T15:02:00Z"
+    },
+    {
+      "id": "ejemplo:atletico-muestra",
+      "nombre": "Atlético Muestra",
+      "alias": {
+        "betano": [
+          "Atl. Muestra"
+        ]
+      },
+      "confirmado_en": "2026-10-11T14:05:00Z"
+    }
+  ],
+  "jugadores": []
+}

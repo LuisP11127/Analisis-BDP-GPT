@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://luisp11127.github.io/Analisis-BDP-GPT/esquemas/config-mercados.schema.json",
+  "title": "Catálogo de mercados",
+  "description": "Mercados por deporte, en el orden en que se muestran en el resultado.",
+  "type": "object",
+  "required": ["version_formato", "deportes"],
+  "properties": {
+    "version_formato": { "$ref": "comun.schema.json#/$defs/version_formato" },
+    "deportes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["codigo", "nombre", "periodos", "mercados"],
+        "properties": {
+          "codigo": { "$ref": "comun.schema.json#/$defs/deporte" },
+          "nombre": { "$ref": "comun.schema.json#/$defs/texto" },
+          "periodos": {
+            "type": "object",
+            "required": ["completo"],
+            "properties": {
+              "completo": { "$ref": "comun.schema.json#/$defs/texto" },
+              "primer_tiempo": { "$ref": "comun.schema.json#/$defs/texto" }
+            },
+            "additionalProperties": false
+          },
+          "mercados": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/mercado" } }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "mercado": {
+      "type": "object",
+      "required": ["codigo", "nombre", "tipo", "periodo", "lado_a", "lado_b"],
+      "properties": {
+        "codigo": { "$ref": "comun.schema.json#/$defs/codigo" },
+        "nombre": { "$ref": "comun.schema.json#/$defs/texto" },
+        "tipo": {
+          "description": "mas_menos y handicap llevan línea .5; si_no y ganador no llevan línea.",
+          "enum": ["mas_menos", "si_no", "handicap", "ganador"]
+        },
+        "por_jugador": { "type": "boolean" },
+        "periodo": { "enum": ["completo", "primer_tiempo"] },
+        "estadistica": { "enum": ["goles", "corners", "tarjetas", "tiros_al_arco", "remates", "puntos", "carreras"] },
+        "estadisticas_jugador": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["codigo", "nombre", "componentes"],
+            "properties": {
+              "codigo": { "$ref": "comun.schema.json#/$defs/codigo" },
+              "nombre": { "$ref": "comun.schema.json#/$defs/texto" },
+              "componentes": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": { "enum": ["puntos", "rebotes", "asistencias", "triples", "robos", "tapones", "perdidas"] }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "lado_a": { "$ref": "comun.schema.json#/$defs/texto" },
+        "lado_b": { "$ref": "comun.schema.json#/$defs/texto" },
+        "nota": { "$ref": "comun.schema.json#/$defs/texto" }
+      },
+      "additionalProperties": false,
+      "if": { "type": "object", "properties": { "por_jugador": { "const": true } }, "required": ["por_jugador"] },
+      "then": { "type": "object", "required": ["estadisticas_jugador"], "properties": { "tipo": { "const": "mas_menos" } } },
+      "else": { "type": "object", "required": ["estadistica"], "not": { "type": "object", "required": ["estadisticas_jugador"] } }
+    }
+  }
+}

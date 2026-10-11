@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://luisp11127.github.io/Analisis-BDP-GPT/esquemas/registro.schema.json",
+  "title": "Registro del historial",
+  "description": "Un mercado analizado de un partido: cuotas, línea candidata, predicciones, apuesta y resultado.",
+  "type": "object",
+  "required": [
+    "id", "partido_id", "deporte", "liga", "inicio", "fecha_local", "local", "visitante",
+    "mercado", "analizado_en", "ofertas", "candidata", "estadistico", "red", "resultado"
+  ],
+  "properties": {
+    "id": {
+      "description": "partido_id|mercado, y en props de jugador partido_id|mercado|jugador_id|estadistica.",
+      "$ref": "comun.schema.json#/$defs/texto"
+    },
+    "partido_id": { "$ref": "comun.schema.json#/$defs/id" },
+    "deporte": { "$ref": "comun.schema.json#/$defs/deporte" },
+    "liga": { "$ref": "comun.schema.json#/$defs/ref" },
+    "inicio": { "$ref": "comun.schema.json#/$defs/fecha_hora" },
+    "fecha_local": { "$ref": "comun.schema.json#/$defs/fecha" },
+    "local": { "$ref": "comun.schema.json#/$defs/ref" },
+    "visitante": { "$ref": "comun.schema.json#/$defs/ref" },
+    "mercado": { "$ref": "comun.schema.json#/$defs/codigo" },
+    "jugador": {
+      "description": "Solo en props de jugador.",
+      "type": "object",
+      "required": ["id", "nombre", "equipo"],
+      "properties": {
+        "id": { "$ref": "comun.schema.json#/$defs/id" },
+        "nombre": { "$ref": "comun.schema.json#/$defs/texto" },
+        "equipo": { "$ref": "comun.schema.json#/$defs/equipo_partido" }
+      },
+      "additionalProperties": false
+    },
+    "estadistica_jugador": {
+      "description": "Solo en props de jugador. Código de config/mercados.json (puntos, rebotes...).",
+      "$ref": "comun.schema.json#/$defs/codigo"
+    },
+    "analizado_en": { "$ref": "comun.schema.json#/$defs/fecha_hora" },
+    "ofertas": {
+      "description": "Todas las líneas y cuotas de cada casa para este mercado.",
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/oferta" }
+    },
+    "candidata": { "$ref": "#/$defs/candidata" },
+    "estadistico": { "$ref": "#/$defs/prediccion" },
+    "red": {
+      "description": "null mientras no haya un modelo aprobado para este mercado.",
+      "anyOf": [{ "type": "null" }, { "$ref": "#/$defs/prediccion" }]
+    },
+    "entrada_red": {
+      "description": "Datos de entrada exactos de la red. null hasta que se definan sus variables.",
+      "anyOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "required": ["version", "valores"],
+          "properties": {
+            "version": { "$ref": "comun.schema.json#/$defs/texto" },
+            "valores": { "$ref": "comun.schema.json#/$defs/valores_numericos" }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "apuesta": {
+      "description": "null si no se apostó.",
+      "anyOf": [{ "type": "null" }, { "$ref": "#/$defs/apuesta" }]
+    },
+    "resultado": { "$ref": "#/$defs/resultado" }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "linea": {
+      "description": "null en mercados sin línea (ganador, ambos anotan).",
+      "anyOf": [{ "type": "null" }, { "$ref": "comun.schema.json#/$defs/linea_media" }]
+    },
+    "oferta": {
+      "type": "object",
+      "required": ["casa", "extraido_en", "lineas"],
+      "properties": {
+        "casa": { "$ref": "comun.schema.json#/$defs/codigo" },
+        "extraido_en": { "$ref": "comun.schema.json#/$defs/fecha_hora" },
+        "lineas": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["linea", "cuota_a", "cuota_b"],
+            "properties": {
+              "linea": { "$ref": "#/$defs/linea" },
+              "cuota_a": { "$ref": "comun.schema.json#/$defs/cuota" },
+              "cuota_b": { "$ref": "comun.schema.json#/$defs/cuota" }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "candidata": {
+      "description": "Línea elegida con la regla de la especificación. Los valores calculados se redondean a 4 decimales.",
+      "type": "object",
+      "required": ["casa", "linea", "cuota_a", "cuota_b", "diferencia", "margen", "prob_sin_margen_a", "promedio_mercado_a"],
+      "properties": {
+        "casa": { "$ref": "comun.schema.json#/$defs/codigo" },
+        "linea": { "$ref": "#/$defs/linea" },
+        "cuota_a": { "$ref": "comun.schema.json#/$defs/cuota" },
+        "cuota_b": { "$ref": "comun.schema.json#/$defs/cuota" },
+        "diferencia": { "type": "number", "minimum": 0 },
+        "margen": { "type": "number" },
+        "prob_sin_margen_a": { "$ref": "comun.schema.json#/$defs/probabilidad" },
+        "promedio_mercado_a": {
+          "description": "Promedio de la probabilidad sin margen del lado A en las otras casas, para la misma línea. null si ninguna la ofrece.",
+          "anyOf": [{ "type": "null" }, { "$ref": "comun.schema.json#/$defs/probabilidad" }]
+        }
+      },
+      "additionalProperties": false
+    },
+    "prediccion": {
+      "type": "object",
+      "required": ["version", "prob_a", "lado"],
+      "properties": {
+        "version": { "$ref": "comun.schema.json#/$defs/texto" },
+        "prob_a": { "$ref": "comun.schema.json#/$defs/probabilidad" },
+        "lado": { "$ref": "comun.schema.json#/$defs/lado" },
+        "explicacion": {
+          "description": "Factores que más movieron la predicción. impacto en puntos de probabilidad hacia el lado A (0.08 = +8%).",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["factor", "impacto"],
+            "properties": {
+              "factor": { "$ref": "comun.schema.json#/$defs/codigo" },
+              "impacto": { "type": "number", "minimum": -1, "maximum": 1 }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "apuesta": {
+      "type": "object",
+      "required": ["casa", "linea", "lado", "cuota", "monto", "moneda", "registrada_en"],
+      "properties": {
+        "casa": { "$ref": "comun.schema.json#/$defs/codigo" },
+        "linea": { "$ref": "#/$defs/linea" },
+        "lado": { "$ref": "comun.schema.json#/$defs/lado" },
+        "cuota": { "$ref": "comun.schema.json#/$defs/cuota" },
+        "monto": { "type": "number", "exclusiveMinimum": 0 },
+        "moneda": { "type": "string", "pattern": "^[A-Z]{3}$" },
+        "registrada_en": { "$ref": "comun.schema.json#/$defs/fecha_hora" }
+      },
+      "additionalProperties": false
+    },
+    "resultado": {
+      "type": "object",
+      "required": ["estado", "valor_real", "lado_ganador"],
+      "properties": {
+        "estado": { "enum": ["pendiente", "resuelto", "anulado"] },
+        "valor_real": {
+          "description": "Más/Menos: el total contado. Handicap y ganador: local menos visitante. Ambos anotan: 1 si anotaron los dos, 0 si no.",
+          "type": ["number", "null"]
+        },
+        "lado_ganador": { "anyOf": [{ "type": "null" }, { "$ref": "comun.schema.json#/$defs/lado" }] },
+        "motivo": { "$ref": "comun.schema.json#/$defs/texto" },
+        "fuente": { "$ref": "comun.schema.json#/$defs/codigo" },
+        "actualizado_en": { "$ref": "comun.schema.json#/$defs/fecha_hora" }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": { "type": "object", "properties": { "estado": { "const": "pendiente" } } },
+          "then": { "type": "object", "properties": { "valor_real": { "type": "null" }, "lado_ganador": { "type": "null" } } }
+        },
+        {
+          "if": { "type": "object", "properties": { "estado": { "const": "resuelto" } } },
+          "then": {
+            "type": "object",
+            "required": ["fuente", "actualizado_en"],
+            "properties": { "valor_real": { "type": "number" }, "lado_ganador": { "$ref": "comun.schema.json#/$defs/lado" } }
+          }
+        },
+        {
+          "if": { "type": "object", "properties": { "estado": { "const": "anulado" } } },
+          "then": {
+            "type": "object",
+            "required": ["motivo", "actualizado_en"],
+            "properties": { "lado_ganador": { "type": "null" } }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "version_formato": 1,
+  "registros": [
+    {
+      "id": "ejemplo:b2|basquet_puntos",
+      "partido_id": "ejemplo:b2",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "inicio": "2026-10-12T00:00:00Z",
+      "fecha_local": "2026-10-11",
+      "local": {
+        "id": "ejemplo:toros",
+        "nombre": "Toros Muestra"
+      },
+      "visitante": {
+        "id": "ejemplo:halcones",
+        "nombre": "Halcones Ejemplo"
+      },
+      "mercado": "basquet_puntos",
+      "analizado_en": "2026-10-11T15:05:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T15:00:00Z",
+          "lineas": [
+            {
+              "linea": 212.5,
+              "cuota_a": 1.8,
+              "cuota_b": 2
+            },
+            {
+              "linea": 213.5,
+              "cuota_a": 1.87,
+              "cuota_b": 1.93
+            },
+            {
+              "linea": 214.5,
+              "cuota_a": 1.95,
+              "cuota_b": 1.85
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-11T15:00:00Z",
+          "lineas": [
+            {
+              "linea": 213.5,
+              "cuota_a": 1.85,
+              "cuota_b": 1.91
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 213.5,
+        "cuota_a": 1.87,
+        "cuota_b": 1.93,
+        "diferencia": 0.06,
+        "margen": 0.0529,
+        "prob_sin_margen_a": 0.5079,
+        "promedio_mercado_a": 0.508
+      },
+      "estadistico": {
+        "version": "ejemplo-1",
+        "prob_a": 0.54,
+        "lado": "a"
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "pendiente",
+        "valor_real": null,
+        "lado_ganador": null
+      }
+    },
+    {
+      "id": "ejemplo:b2|basquet_handicap",
+      "partido_id": "ejemplo:b2",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "inicio": "2026-10-12T00:00:00Z",
+      "fecha_local": "2026-10-11",
+      "local": {
+        "id": "ejemplo:toros",
+        "nombre": "Toros Muestra"
+      },
+      "visitante": {
+        "id": "ejemplo:halcones",
+        "nombre": "Halcones Ejemplo"
+      },
+      "mercado": "basquet_handicap",
+      "analizado_en": "2026-10-11T15:05:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T15:00:00Z",
+          "lineas": [
+            {
+              "linea": -2.5,
+              "cuota_a": 1.83,
+              "cuota_b": 1.97
+            },
+            {
+              "linea": -3.5,
+              "cuota_a": 1.95,
+              "cuota_b": 1.85
+            },
+            {
+              "linea": -4.5,
+              "cuota_a": 2.05,
+              "cuota_b": 1.75
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": -3.5,
+        "cuota_a": 1.95,
+        "cuota_b": 1.85,
+        "diferencia": 0.1,
+        "margen": 0.0534,
+        "prob_sin_margen_a": 0.4868,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-1",
+        "prob_a": 0.49,
+        "lado": "b"
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "pendiente",
+        "valor_real": null,
+        "lado_ganador": null
+      }
+    },
+    {
+      "id": "ejemplo:b2|basquet_jugador|ejemplo:juan-ejemplar|puntos",
+      "partido_id": "ejemplo:b2",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "inicio": "2026-10-12T00:00:00Z",
+      "fecha_local": "2026-10-11",
+      "local": {
+        "id": "ejemplo:toros",
+        "nombre": "Toros Muestra"
+      },
+      "visitante": {
+        "id": "ejemplo:halcones",
+        "nombre": "Halcones Ejemplo"
+      },
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:juan-ejemplar",
+        "nombre": "Juan Ejemplar",
+        "equipo": "local"
+      },
+      "estadistica_jugador": "puntos",
+      "analizado_en": "2026-10-11T15:05:00Z",
+      "ofertas": [
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-11T15:00:00Z",
+          "lineas": [
+            {
+              "linea": 27.5,
+              "cuota_a": 1.83,
+              "cuota_b": 1.87
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "apuesta_total",
+        "linea": 27.5,
+        "cuota_a": 1.83,
+        "cuota_b": 1.87,
+        "diferencia": 0.04,
+        "margen": 0.0812,
+        "prob_sin_margen_a": 0.5054,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-1",
+        "prob_a": 0.56,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "promedio_jugador",
+            "impacto": 0.04
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": 0.02
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "pendiente",
+        "valor_real": null,
+        "lado_ganador": null
+      }
+    },
+    {
+      "id": "ejemplo:b2|basquet_puntos_1t",
+      "partido_id": "ejemplo:b2",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "inicio": "2026-10-12T00:00:00Z",
+      "fecha_local": "2026-10-11",
+      "local": {
+        "id": "ejemplo:toros",
+        "nombre": "Toros Muestra"
+      },
+      "visitante": {
+        "id": "ejemplo:halcones",
+        "nombre": "Halcones Ejemplo"
+      },
+      "mercado": "basquet_puntos_1t",
+      "analizado_en": "2026-10-11T15:05:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T15:00:00Z",
+          "lineas": [
+            {
+              "linea": 106.5,
+              "cuota_a": 1.9,
+              "cuota_b": 1.9
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 106.5,
+        "cuota_a": 1.9,
+        "cuota_b": 1.9,
+        "diferencia": 0,
+        "margen": 0.0526,
+        "prob_sin_margen_a": 0.5,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-1",
+        "prob_a": 0.51,
+        "lado": "a"
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "pendiente",
+        "valor_real": null,
+        "lado_ganador": null
+      }
+    }
+  ]
+}

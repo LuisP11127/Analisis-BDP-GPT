@@ -38,7 +38,8 @@ El orden de esta lista es el orden en que se muestran los mercados en el resulta
 - Solo se usan líneas terminadas en .5. Se descartan las líneas enteras (pueden devolver el dinero) y los handicaps asiáticos (.25 / .75).
 - **Fútbol:** los mercados del partido se cuentan en el tiempo reglamentario (90 minutos más el descuento), sin prórroga ni penales. El primer tiempo es de 45 minutos más el descuento.
 - **Tarjetas:** se cuentan como en Betano: amarilla = 1, roja = 2, con líneas .5. El usuario confirmó en Betano que la roja vale como 2 amarillas.
-  - Pendiente: confirmar con un ejemplo cuánto suma una doble amarilla (amarilla, segunda amarilla y roja): 3 (la primera amarilla más la roja) o 2.
+  - Doble amarilla: suma 2, las dos amarillas. La roja que resulta no suma aparte (confirmado por el usuario).
+  - Una amarilla y después una roja directa al mismo jugador suman 3 (1 + 2).
   - Como cada roja suma 2, el análisis de tarjetas indica también si habrá roja en el partido.
 - **Básquet, primer tiempo:** 1.er y 2.º cuarto. No incluye prórroga.
 - **Básquet, tiempo completo:** incluye prórroga.

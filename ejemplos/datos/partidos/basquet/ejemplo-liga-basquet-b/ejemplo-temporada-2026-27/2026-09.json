@@ -19,13 +19,13 @@
         "nombre": "Lobos Prototipo"
       },
       "visitante": {
-        "id": "ejemplo:basquet-delfines-borrador",
-        "nombre": "Delfines Borrador"
+        "id": "ejemplo:basquet-zorros-maqueta",
+        "nombre": "Zorros Maqueta"
       },
       "estado": "finalizado",
       "marcador": {
-        "local": 66,
-        "visitante": 50
+        "local": 84,
+        "visitante": 64
       },
       "estadisticas": {
         "fuente": "sofascore",
@@ -33,12 +33,12 @@
         "formato_periodos": "mitades",
         "periodos": {
           "local": [
-            32,
-            34
+            40,
+            44
           ],
           "visitante": [
-            26,
-            24
+            29,
+            35
           ]
         }
       }
@@ -57,17 +57,17 @@
       "inicio": "2026-09-27T00:00:00Z",
       "fecha_local": "2026-09-26",
       "local": {
+        "id": "ejemplo:basquet-delfines-borrador",
+        "nombre": "Delfines Borrador"
+      },
+      "visitante": {
         "id": "ejemplo:basquet-aguilas-modelo",
         "nombre": "Águilas Modelo"
       },
-      "visitante": {
-        "id": "ejemplo:basquet-zorros-maqueta",
-        "nombre": "Zorros Maqueta"
-      },
       "estado": "finalizado",
       "marcador": {
-        "local": 74,
-        "visitante": 73
+        "local": 66,
+        "visitante": 74
       },
       "estadisticas": {
         "fuente": "sofascore",
@@ -75,20 +75,12 @@
         "formato_periodos": "mitades",
         "periodos": {
           "local": [
-            26,
-            38
+            31,
+            35
           ],
           "visitante": [
-            32,
-            32
-          ]
-        },
-        "prorrogas": {
-          "local": [
-            10
-          ],
-          "visitante": [
-            9
+            40,
+            34
           ]
         }
       }
@@ -107,17 +99,17 @@
       "inicio": "2026-09-29T22:00:00Z",
       "fecha_local": "2026-09-29",
       "local": {
-        "id": "ejemplo:basquet-zorros-maqueta",
-        "nombre": "Zorros Maqueta"
-      },
-      "visitante": {
         "id": "ejemplo:basquet-delfines-borrador",
         "nombre": "Delfines Borrador"
       },
+      "visitante": {
+        "id": "ejemplo:basquet-zorros-maqueta",
+        "nombre": "Zorros Maqueta"
+      },
       "estado": "finalizado",
       "marcador": {
-        "local": 66,
-        "visitante": 67
+        "local": 68,
+        "visitante": 76
       },
       "estadisticas": {
         "fuente": "sofascore",
@@ -125,12 +117,12 @@
         "formato_periodos": "mitades",
         "periodos": {
           "local": [
-            36,
-            30
+            31,
+            37
           ],
           "visitante": [
-            33,
-            34
+            37,
+            39
           ]
         }
       }
@@ -149,17 +141,17 @@
       "inicio": "2026-09-30T00:00:00Z",
       "fecha_local": "2026-09-29",
       "local": {
-        "id": "ejemplo:basquet-aguilas-modelo",
-        "nombre": "Águilas Modelo"
-      },
-      "visitante": {
         "id": "ejemplo:basquet-lobos-prototipo",
         "nombre": "Lobos Prototipo"
       },
+      "visitante": {
+        "id": "ejemplo:basquet-aguilas-modelo",
+        "nombre": "Águilas Modelo"
+      },
       "estado": "finalizado",
       "marcador": {
-        "local": 64,
-        "visitante": 72
+        "local": 69,
+        "visitante": 71
       },
       "estadisticas": {
         "fuente": "sofascore",
@@ -167,12 +159,12 @@
         "formato_periodos": "mitades",
         "periodos": {
           "local": [
-            28,
-            36
+            32,
+            37
           ],
           "visitante": [
-            35,
-            37
+            38,
+            33
           ]
         }
       }

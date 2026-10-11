@@ -115,6 +115,19 @@ export function ladoGanador(tipo, linea, valor) {
   }
 }
 
+/**
+ * Tarjetas de un equipo como las cuenta Betano: amarilla = 1, roja directa = 2 y doble amarilla = 2
+ * (las dos amarillas; la roja que resulta no suma aparte). En el formato, `amarillas` incluye la segunda
+ * amarilla y `rojas` incluye las que vienen de doble amarilla. Devuelve null si falta un dato necesario.
+ */
+export function totalTarjetas({ amarillas, rojas, dobles_amarillas: dobles }) {
+  const falta = (valor) => valor === null || valor === undefined;
+  if (falta(amarillas) || falta(rojas)) return null;
+  // Sin saber cuántas rojas fueron por doble amarilla, el total con rojas es incierto.
+  if (rojas > 0 && falta(dobles)) return null;
+  return amarillas + 2 * (rojas - (dobles ?? 0));
+}
+
 /** Id de un registro: partido_id|mercado, y en props de jugador se agregan jugador y estadística. */
 export function idRegistro({ partido_id, mercado, jugador, estadistica_jugador }) {
   const partes = [partido_id, mercado];

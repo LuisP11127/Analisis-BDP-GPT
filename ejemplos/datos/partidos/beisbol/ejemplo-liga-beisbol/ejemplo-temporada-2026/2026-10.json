@@ -15,57 +15,57 @@
       "inicio": "2026-10-01T18:05:00Z",
       "fecha_local": "2026-10-01",
       "local": {
-        "id": "ejemplo:beisbol-piratas-ejemplo",
-        "nombre": "Piratas Ejemplo"
-      },
-      "visitante": {
         "id": "ejemplo:beisbol-leones-muestra",
         "nombre": "Leones Muestra"
       },
+      "visitante": {
+        "id": "ejemplo:beisbol-caribes-ficticio",
+        "nombre": "Caribes Ficticio"
+      },
       "estado": "finalizado",
       "marcador": {
-        "local": 7,
-        "visitante": 6
+        "local": 9,
+        "visitante": 8
       },
       "estadisticas": {
         "fuente": "sofascore",
         "extraido_en": "2026-10-01T20:35:00Z",
         "carreras_por_entrada": {
           "local": [
+            1,
+            2,
             3,
             0,
             1,
             1,
             1,
             0,
-            1,
-            0,
             null
           ],
           "visitante": [
             0,
+            1,
+            2,
             0,
             0,
             0,
             1,
             2,
-            2,
-            0,
-            1
+            2
           ]
         },
         "equipos": {
           "local": {
             "hits": 12,
-            "errores": 0,
-            "home_runs": 0,
-            "bases_por_bolas": 6,
-            "ponches": 10
+            "errores": 2,
+            "home_runs": 2,
+            "bases_por_bolas": 1,
+            "ponches": 9
           },
           "visitante": {
-            "hits": 10,
-            "errores": 1,
-            "home_runs": 1,
+            "hits": 15,
+            "errores": 0,
+            "home_runs": 0,
             "bases_por_bolas": 2,
             "ponches": 8
           }
@@ -73,31 +73,31 @@
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-piratas-ejemplo-1",
-              "nombre": "Mateo Ramos"
-            },
-            "equipo": "local",
-            "abridor": true,
-            "outs": 18,
-            "hits": 6,
-            "carreras": 4,
-            "carreras_limpias": 4,
-            "bases_por_bolas": 1,
-            "ponches": 6
-          },
-          {
-            "jugador": {
               "id": "ejemplo:lanzador-leones-muestra-1",
               "nombre": "Sebastián Vargas"
             },
+            "equipo": "local",
+            "abridor": true,
+            "outs": 19,
+            "hits": 9,
+            "carreras": 7,
+            "carreras_limpias": 7,
+            "bases_por_bolas": 2,
+            "ponches": 5
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:lanzador-caribes-ficticio-1",
+              "nombre": "Emiliano Ramos"
+            },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 12,
-            "hits": 4,
-            "carreras": 5,
-            "carreras_limpias": 5,
-            "bases_por_bolas": 1,
-            "ponches": 6
+            "outs": 19,
+            "hits": 5,
+            "carreras": 7,
+            "carreras_limpias": 7,
+            "bases_por_bolas": 2,
+            "ponches": 7
           }
         ]
       }
@@ -116,16 +116,16 @@
       "inicio": "2026-10-01T23:10:00Z",
       "fecha_local": "2026-10-01",
       "local": {
-        "id": "ejemplo:beisbol-caribes-ficticio",
-        "nombre": "Caribes Ficticio"
+        "id": "ejemplo:beisbol-cardenales-simulado",
+        "nombre": "Cardenales Simulado"
       },
       "visitante": {
-        "id": "ejemplo:beisbol-tigres-prueba",
-        "nombre": "Tigres Prueba"
+        "id": "ejemplo:beisbol-piratas-ejemplo",
+        "nombre": "Piratas Ejemplo"
       },
       "estado": "finalizado",
       "marcador": {
-        "local": 3,
+        "local": 4,
         "visitante": 5
       },
       "estadisticas": {
@@ -137,9 +137,10 @@
             0,
             0,
             0,
-            0,
             1,
-            2,
+            1,
+            1,
+            1,
             0,
             0
           ],
@@ -150,55 +151,56 @@
             1,
             0,
             1,
-            1,
-            1,
+            2,
+            0,
+            0,
             1
           ]
         },
         "equipos": {
           "local": {
-            "hits": 5,
+            "hits": 8,
             "errores": 0,
             "home_runs": 0,
-            "bases_por_bolas": 3,
-            "ponches": 12
+            "bases_por_bolas": 4,
+            "ponches": 7
           },
           "visitante": {
-            "hits": 5,
-            "errores": 0,
-            "home_runs": 0,
-            "bases_por_bolas": 8,
-            "ponches": 5
+            "hits": 12,
+            "errores": 1,
+            "home_runs": 1,
+            "bases_por_bolas": 0,
+            "ponches": 6
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-caribes-ficticio-1",
-              "nombre": "Emiliano Ramos"
+              "id": "ejemplo:lanzador-cardenales-simulado-1",
+              "nombre": "Thiago Vargas"
             },
             "equipo": "local",
             "abridor": true,
-            "outs": 21,
-            "hits": 7,
-            "carreras": 5,
-            "carreras_limpias": 4,
+            "outs": 15,
+            "hits": 4,
+            "carreras": 1,
+            "carreras_limpias": 0,
             "bases_por_bolas": 0,
-            "ponches": 2
+            "ponches": 3
           },
           {
             "jugador": {
-              "id": "ejemplo:lanzador-tigres-prueba-1",
-              "nombre": "Nicolás Mendoza"
+              "id": "ejemplo:lanzador-piratas-ejemplo-1",
+              "nombre": "Mateo Ramos"
             },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 21,
-            "hits": 6,
-            "carreras": 3,
-            "carreras_limpias": 3,
-            "bases_por_bolas": 4,
-            "ponches": 4
+            "outs": 16,
+            "hits": 3,
+            "carreras": 2,
+            "carreras_limpias": 2,
+            "bases_por_bolas": 3,
+            "ponches": 5
           }
         ]
       }
@@ -217,12 +219,12 @@
       "inicio": "2026-10-02T00:05:00Z",
       "fecha_local": "2026-10-01",
       "local": {
-        "id": "ejemplo:beisbol-navegantes-demo",
-        "nombre": "Navegantes Demo"
+        "id": "ejemplo:beisbol-tigres-prueba",
+        "nombre": "Tigres Prueba"
       },
       "visitante": {
-        "id": "ejemplo:beisbol-cardenales-simulado",
-        "nombre": "Cardenales Simulado"
+        "id": "ejemplo:beisbol-navegantes-demo",
+        "nombre": "Navegantes Demo"
       },
       "estado": "finalizado",
       "marcador": {
@@ -277,8 +279,8 @@
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-navegantes-demo-1",
-              "nombre": "Tomás Huamán"
+              "id": "ejemplo:lanzador-tigres-prueba-1",
+              "nombre": "Nicolás Mendoza"
             },
             "equipo": "local",
             "abridor": true,
@@ -291,8 +293,8 @@
           },
           {
             "jugador": {
-              "id": "ejemplo:lanzador-cardenales-simulado-1",
-              "nombre": "Thiago Vargas"
+              "id": "ejemplo:lanzador-navegantes-demo-1",
+              "nombre": "Tomás Huamán"
             },
             "equipo": "visitante",
             "abridor": true,
@@ -301,7 +303,7 @@
             "carreras": 3,
             "carreras_limpias": 3,
             "bases_por_bolas": 2,
-            "ponches": 4
+            "ponches": 6
           }
         ]
       }
@@ -320,89 +322,89 @@
       "inicio": "2026-10-02T18:05:00Z",
       "fecha_local": "2026-10-02",
       "local": {
-        "id": "ejemplo:beisbol-caribes-ficticio",
-        "nombre": "Caribes Ficticio"
+        "id": "ejemplo:beisbol-piratas-ejemplo",
+        "nombre": "Piratas Ejemplo"
       },
       "visitante": {
-        "id": "ejemplo:beisbol-navegantes-demo",
-        "nombre": "Navegantes Demo"
+        "id": "ejemplo:beisbol-tigres-prueba",
+        "nombre": "Tigres Prueba"
       },
       "estado": "finalizado",
       "marcador": {
-        "local": 4,
-        "visitante": 0
+        "local": 2,
+        "visitante": 3
       },
       "estadisticas": {
         "fuente": "sofascore",
         "extraido_en": "2026-10-02T20:35:00Z",
         "carreras_por_entrada": {
           "local": [
-            2,
             0,
             0,
             0,
-            1,
             0,
             0,
-            1,
-            null
+            0,
+            0,
+            0,
+            2
           ],
           "visitante": [
+            1,
             0,
             0,
             0,
+            1,
             0,
             0,
-            0,
-            0,
-            0,
+            1,
             0
           ]
         },
         "equipos": {
           "local": {
-            "hits": 9,
-            "errores": 0,
-            "home_runs": 2,
-            "bases_por_bolas": 1,
-            "ponches": 14
-          },
-          "visitante": {
-            "hits": 4,
+            "hits": 7,
             "errores": 1,
             "home_runs": 0,
-            "bases_por_bolas": 1,
-            "ponches": 10
+            "bases_por_bolas": 6,
+            "ponches": 11
+          },
+          "visitante": {
+            "hits": 5,
+            "errores": 0,
+            "home_runs": 0,
+            "bases_por_bolas": 4,
+            "ponches": 7
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-caribes-ficticio-2",
-              "nombre": "Santiago Castro"
+              "id": "ejemplo:lanzador-piratas-ejemplo-2",
+              "nombre": "Gabriel Castro"
             },
             "equipo": "local",
             "abridor": true,
-            "outs": 21,
-            "hits": 7,
-            "carreras": 0,
-            "carreras_limpias": 0,
-            "bases_por_bolas": 4,
+            "outs": 20,
+            "hits": 2,
+            "carreras": 2,
+            "carreras_limpias": 2,
+            "bases_por_bolas": 3,
             "ponches": 5
           },
           {
             "jugador": {
-              "id": "ejemplo:lanzador-navegantes-demo-2",
-              "nombre": "Lucas Flores"
+              "id": "ejemplo:lanzador-tigres-prueba-2",
+              "nombre": "Bruno Salazar"
             },
             "equipo": "visitante",
             "abridor": true,
             "outs": 17,
-            "hits": 7,
-            "carreras": 4,
-            "carreras_limpias": 3,
-            "bases_por_bolas": 2,
-            "ponches": 6
+            "hits": 4,
+            "carreras": 2,
+            "carreras_limpias": 2,
+            "bases_por_bolas": 3,
+            "ponches": 3
           }
         ]
       }
@@ -421,16 +423,16 @@
       "inicio": "2026-10-02T23:10:00Z",
       "fecha_local": "2026-10-02",
       "local": {
-        "id": "ejemplo:beisbol-piratas-ejemplo",
-        "nombre": "Piratas Ejemplo"
-      },
-      "visitante": {
         "id": "ejemplo:beisbol-cardenales-simulado",
         "nombre": "Cardenales Simulado"
       },
+      "visitante": {
+        "id": "ejemplo:beisbol-caribes-ficticio",
+        "nombre": "Caribes Ficticio"
+      },
       "estado": "finalizado",
       "marcador": {
-        "local": 3,
+        "local": 4,
         "visitante": 5
       },
       "estadisticas": {
@@ -438,72 +440,72 @@
         "extraido_en": "2026-10-03T01:40:00Z",
         "carreras_por_entrada": {
           "local": [
+            1,
+            1,
             0,
             0,
             0,
             0,
             2,
             0,
-            0,
-            1,
             0
           ],
           "visitante": [
-            1,
-            0,
-            1,
             0,
             1,
             1,
             0,
+            1,
             0,
-            1
+            1,
+            1,
+            0
           ]
         },
         "equipos": {
           "local": {
             "hits": 6,
             "errores": 1,
-            "home_runs": 3,
-            "bases_por_bolas": 4,
-            "ponches": 8
+            "home_runs": 0,
+            "bases_por_bolas": 3,
+            "ponches": 10
           },
           "visitante": {
-            "hits": 11,
-            "errores": 2,
-            "home_runs": 0,
+            "hits": 9,
+            "errores": 1,
+            "home_runs": 1,
             "bases_por_bolas": 4,
-            "ponches": 8
+            "ponches": 10
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-piratas-ejemplo-2",
-              "nombre": "Gabriel Castro"
-            },
-            "equipo": "local",
-            "abridor": true,
-            "outs": 19,
-            "hits": 7,
-            "carreras": 4,
-            "carreras_limpias": 4,
-            "bases_por_bolas": 1,
-            "ponches": 9
-          },
-          {
-            "jugador": {
               "id": "ejemplo:lanzador-cardenales-simulado-2",
               "nombre": "Diego Silva"
             },
+            "equipo": "local",
+            "abridor": true,
+            "outs": 20,
+            "hits": 7,
+            "carreras": 3,
+            "carreras_limpias": 3,
+            "bases_por_bolas": 3,
+            "ponches": 6
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:lanzador-caribes-ficticio-2",
+              "nombre": "Santiago Castro"
+            },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 15,
-            "hits": 5,
-            "carreras": 0,
-            "carreras_limpias": 0,
-            "bases_por_bolas": 2,
-            "ponches": 2
+            "outs": 17,
+            "hits": 4,
+            "carreras": 3,
+            "carreras_limpias": 3,
+            "bases_por_bolas": 6,
+            "ponches": 3
           }
         ]
       }
@@ -526,53 +528,53 @@
         "nombre": "Leones Muestra"
       },
       "visitante": {
-        "id": "ejemplo:beisbol-tigres-prueba",
-        "nombre": "Tigres Prueba"
+        "id": "ejemplo:beisbol-navegantes-demo",
+        "nombre": "Navegantes Demo"
       },
       "estado": "finalizado",
       "marcador": {
-        "local": 9,
-        "visitante": 2
+        "local": 5,
+        "visitante": 8
       },
       "estadisticas": {
         "fuente": "sofascore",
         "extraido_en": "2026-10-03T02:35:00Z",
         "carreras_por_entrada": {
           "local": [
-            2,
-            0,
-            2,
             1,
             0,
-            2,
-            2,
             0,
-            null
+            0,
+            0,
+            1,
+            1,
+            2,
+            0
           ],
           "visitante": [
             0,
             0,
+            2,
             0,
-            0,
-            0,
-            0,
+            2,
             1,
             1,
-            0
+            1,
+            1
           ]
         },
         "equipos": {
           "local": {
-            "hits": 11,
+            "hits": 8,
             "errores": 0,
             "home_runs": 2,
             "bases_por_bolas": 4,
             "ponches": 8
           },
           "visitante": {
-            "hits": 6,
+            "hits": 12,
             "errores": 1,
-            "home_runs": 2,
+            "home_runs": 3,
             "bases_por_bolas": 3,
             "ponches": 16
           }
@@ -586,25 +588,25 @@
             "equipo": "local",
             "abridor": true,
             "outs": 13,
-            "hits": 9,
-            "carreras": 1,
-            "carreras_limpias": 1,
-            "bases_por_bolas": 2,
+            "hits": 4,
+            "carreras": 2,
+            "carreras_limpias": 2,
+            "bases_por_bolas": 1,
             "ponches": 3
           },
           {
             "jugador": {
-              "id": "ejemplo:lanzador-tigres-prueba-2",
-              "nombre": "Bruno Salazar"
+              "id": "ejemplo:lanzador-navegantes-demo-2",
+              "nombre": "Lucas Flores"
             },
             "equipo": "visitante",
             "abridor": true,
             "outs": 18,
-            "hits": 7,
-            "carreras": 6,
-            "carreras_limpias": 6,
-            "bases_por_bolas": 1,
-            "ponches": 9
+            "hits": 3,
+            "carreras": 2,
+            "carreras_limpias": 2,
+            "bases_por_bolas": 3,
+            "ponches": 7
           }
         ]
       }
@@ -627,55 +629,55 @@
         "nombre": "Tigres Prueba"
       },
       "visitante": {
-        "id": "ejemplo:beisbol-caribes-ficticio",
-        "nombre": "Caribes Ficticio"
+        "id": "ejemplo:beisbol-piratas-ejemplo",
+        "nombre": "Piratas Ejemplo"
       },
       "estado": "finalizado",
       "marcador": {
-        "local": 5,
-        "visitante": 4
+        "local": 4,
+        "visitante": 5
       },
       "estadisticas": {
         "fuente": "sofascore",
         "extraido_en": "2026-10-03T20:35:00Z",
         "carreras_por_entrada": {
           "local": [
-            1,
+            0,
+            0,
             0,
             1,
             0,
             1,
-            1,
-            1,
             0,
-            null
+            1,
+            1
           ],
           "visitante": [
+            1,
+            1,
+            0,
             0,
             0,
             1,
             2,
             0,
-            0,
-            0,
-            1,
             0
           ]
         },
         "equipos": {
           "local": {
-            "hits": 13,
+            "hits": 7,
+            "errores": 0,
+            "home_runs": 0,
+            "bases_por_bolas": 5,
+            "ponches": 10
+          },
+          "visitante": {
+            "hits": 10,
             "errores": 0,
             "home_runs": 2,
             "bases_por_bolas": 4,
-            "ponches": 11
-          },
-          "visitante": {
-            "hits": 5,
-            "errores": 0,
-            "home_runs": 2,
-            "bases_por_bolas": 1,
-            "ponches": 12
+            "ponches": 5
           }
         },
         "lanzadores": [
@@ -686,26 +688,26 @@
             },
             "equipo": "local",
             "abridor": true,
-            "outs": 13,
-            "hits": 7,
-            "carreras": 2,
-            "carreras_limpias": 2,
+            "outs": 14,
+            "hits": 3,
+            "carreras": 3,
+            "carreras_limpias": 3,
             "bases_por_bolas": 2,
             "ponches": 3
           },
           {
             "jugador": {
-              "id": "ejemplo:lanzador-caribes-ficticio-3",
-              "nombre": "Tomás Paredes"
+              "id": "ejemplo:lanzador-piratas-ejemplo-3",
+              "nombre": "Thiago Paredes"
             },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 18,
-            "hits": 5,
+            "outs": 16,
+            "hits": 7,
             "carreras": 2,
-            "carreras_limpias": 1,
+            "carreras_limpias": 2,
             "bases_por_bolas": 1,
-            "ponches": 6
+            "ponches": 1
           }
         ]
       }
@@ -724,8 +726,8 @@
       "inicio": "2026-10-03T23:10:00Z",
       "fecha_local": "2026-10-03",
       "local": {
-        "id": "ejemplo:beisbol-navegantes-demo",
-        "nombre": "Navegantes Demo"
+        "id": "ejemplo:beisbol-caribes-ficticio",
+        "nombre": "Caribes Ficticio"
       },
       "visitante": {
         "id": "ejemplo:beisbol-leones-muestra",
@@ -733,66 +735,66 @@
       },
       "estado": "finalizado",
       "marcador": {
-        "local": 5,
-        "visitante": 7
+        "local": 6,
+        "visitante": 2
       },
       "estadisticas": {
         "fuente": "sofascore",
         "extraido_en": "2026-10-04T01:40:00Z",
         "carreras_por_entrada": {
           "local": [
-            0,
-            1,
-            0,
-            0,
             2,
-            1,
             0,
             1,
-            0
+            0,
+            0,
+            0,
+            1,
+            2,
+            null
           ],
           "visitante": [
-            2,
-            0,
-            0,
-            3,
+            1,
             1,
             0,
             0,
             0,
-            1
+            0,
+            0,
+            0,
+            0
           ]
         },
         "equipos": {
           "local": {
-            "hits": 11,
-            "errores": 1,
-            "home_runs": 3,
+            "hits": 10,
+            "errores": 3,
+            "home_runs": 0,
             "bases_por_bolas": 5,
-            "ponches": 5
+            "ponches": 9
           },
           "visitante": {
-            "hits": 9,
-            "errores": 0,
-            "home_runs": 1,
+            "hits": 8,
+            "errores": 1,
+            "home_runs": 2,
             "bases_por_bolas": 5,
-            "ponches": 8
+            "ponches": 5
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-navegantes-demo-3",
-              "nombre": "Nicolás Rojas"
+              "id": "ejemplo:lanzador-caribes-ficticio-3",
+              "nombre": "Tomás Paredes"
             },
             "equipo": "local",
             "abridor": true,
-            "outs": 15,
-            "hits": 5,
-            "carreras": 4,
-            "carreras_limpias": 4,
-            "bases_por_bolas": 1,
-            "ponches": 2
+            "outs": 13,
+            "hits": 4,
+            "carreras": 1,
+            "carreras_limpias": 1,
+            "bases_por_bolas": 2,
+            "ponches": 7
           },
           {
             "jugador": {
@@ -801,12 +803,12 @@
             },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 18,
-            "hits": 7,
-            "carreras": 2,
-            "carreras_limpias": 2,
-            "bases_por_bolas": 2,
-            "ponches": 3
+            "outs": 12,
+            "hits": 1,
+            "carreras": 3,
+            "carreras_limpias": 3,
+            "bases_por_bolas": 1,
+            "ponches": 4
           }
         ]
       }
@@ -825,16 +827,16 @@
       "inicio": "2026-10-04T00:05:00Z",
       "fecha_local": "2026-10-03",
       "local": {
-        "id": "ejemplo:beisbol-piratas-ejemplo",
-        "nombre": "Piratas Ejemplo"
-      },
-      "visitante": {
         "id": "ejemplo:beisbol-cardenales-simulado",
         "nombre": "Cardenales Simulado"
       },
+      "visitante": {
+        "id": "ejemplo:beisbol-navegantes-demo",
+        "nombre": "Navegantes Demo"
+      },
       "estado": "finalizado",
       "marcador": {
-        "local": 5,
+        "local": 4,
         "visitante": 3
       },
       "estadisticas": {
@@ -842,72 +844,72 @@
         "extraido_en": "2026-10-04T02:35:00Z",
         "carreras_por_entrada": {
           "local": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
             2,
-            0,
-            0,
-            0,
-            0,
-            3,
-            0,
             0,
             null
           ],
           "visitante": [
             0,
-            1,
             0,
             1,
-            0,
-            0,
             1,
+            1,
+            0,
+            0,
             0,
             0
           ]
         },
         "equipos": {
           "local": {
-            "hits": 11,
-            "errores": 0,
+            "hits": 6,
+            "errores": 2,
             "home_runs": 1,
             "bases_por_bolas": 2,
-            "ponches": 5
+            "ponches": 4
           },
           "visitante": {
-            "hits": 5,
+            "hits": 10,
             "errores": 0,
             "home_runs": 1,
-            "bases_por_bolas": 3,
+            "bases_por_bolas": 5,
             "ponches": 6
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-piratas-ejemplo-3",
-              "nombre": "Thiago Paredes"
-            },
-            "equipo": "local",
-            "abridor": true,
-            "outs": 19,
-            "hits": 3,
-            "carreras": 3,
-            "carreras_limpias": 3,
-            "bases_por_bolas": 1,
-            "ponches": 6
-          },
-          {
-            "jugador": {
               "id": "ejemplo:lanzador-cardenales-simulado-3",
               "nombre": "Emiliano Quispe"
             },
+            "equipo": "local",
+            "abridor": true,
+            "outs": 12,
+            "hits": 2,
+            "carreras": 2,
+            "carreras_limpias": 2,
+            "bases_por_bolas": 0,
+            "ponches": 3
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:lanzador-navegantes-demo-3",
+              "nombre": "Nicolás Rojas"
+            },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 16,
+            "outs": 15,
             "hits": 4,
-            "carreras": 3,
-            "carreras_limpias": 3,
-            "bases_por_bolas": 4,
-            "ponches": 3
+            "carreras": 2,
+            "carreras_limpias": 2,
+            "bases_por_bolas": 1,
+            "ponches": 2
           }
         ]
       }
@@ -926,20 +928,20 @@
       "inicio": "2026-10-04T18:05:00Z",
       "fecha_local": "2026-10-04",
       "local": {
-        "id": "ejemplo:beisbol-piratas-ejemplo",
-        "nombre": "Piratas Ejemplo"
+        "id": "ejemplo:beisbol-leones-muestra",
+        "nombre": "Leones Muestra"
       },
       "visitante": {
-        "id": "ejemplo:beisbol-caribes-ficticio",
-        "nombre": "Caribes Ficticio"
+        "id": "ejemplo:beisbol-navegantes-demo",
+        "nombre": "Navegantes Demo"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900010"
       },
       "marcador": {
-        "local": 2,
-        "visitante": 4
+        "local": 12,
+        "visitante": 6
       },
       "previa": {
         "extraido_en": "2026-10-04T12:05:00Z",
@@ -948,10 +950,10 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 2,
+            "posicion": 6,
             "partidos_jugados": 3,
-            "ganados": 2,
-            "perdidos": 1
+            "ganados": 1,
+            "perdidos": 2
           },
           "visitante": {
             "posicion": 4,
@@ -963,39 +965,39 @@
         "abridores": {
           "local": {
             "jugador": {
-              "id": "ejemplo:lanzador-piratas-ejemplo-1",
-              "nombre": "Mateo Ramos"
+              "id": "ejemplo:lanzador-leones-muestra-1",
+              "nombre": "Sebastián Vargas"
             },
-            "mano": "zurda",
+            "mano": "derecha",
             "estadisticas": {
-              "era": 4.01,
-              "whip": 1.28,
-              "ponches_por_9": 8.7
+              "era": 4.4,
+              "whip": 1.22,
+              "ponches_por_9": 7.6
             }
           },
           "visitante": {
             "jugador": {
-              "id": "ejemplo:lanzador-caribes-ficticio-1",
-              "nombre": "Emiliano Ramos"
+              "id": "ejemplo:lanzador-navegantes-demo-1",
+              "nombre": "Tomás Huamán"
             },
-            "mano": "derecha",
+            "mano": "zurda",
             "estadisticas": {
-              "era": 4.13,
-              "whip": 1.22,
-              "ponches_por_9": 8.6
+              "era": 3.38,
+              "whip": 1.13,
+              "ponches_por_9": 10.4
             }
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:beis-009",
-            "ejemplo:beis-005",
+            "ejemplo:beis-008",
+            "ejemplo:beis-006",
             "ejemplo:beis-001"
           ],
           "visitante": [
-            "ejemplo:beis-007",
-            "ejemplo:beis-004",
-            "ejemplo:beis-002"
+            "ejemplo:beis-009",
+            "ejemplo:beis-006",
+            "ejemplo:beis-003"
           ]
         }
       },
@@ -1004,15 +1006,15 @@
         "extraido_en": "2026-10-04T20:35:00Z",
         "carreras_por_entrada": {
           "local": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
+            2,
+            2,
+            1,
             2,
             0,
-            0
+            0,
+            3,
+            2,
+            null
           ],
           "visitante": [
             1,
@@ -1020,56 +1022,56 @@
             0,
             0,
             0,
-            2,
+            3,
             1,
             0,
-            0
+            1
           ]
         },
         "equipos": {
           "local": {
-            "hits": 6,
-            "errores": 1,
-            "home_runs": 2,
-            "bases_por_bolas": 0,
-            "ponches": 11
+            "hits": 13,
+            "errores": 0,
+            "home_runs": 0,
+            "bases_por_bolas": 1,
+            "ponches": 6
           },
           "visitante": {
-            "hits": 6,
-            "errores": 4,
-            "home_runs": 2,
-            "bases_por_bolas": 3,
-            "ponches": 12
+            "hits": 13,
+            "errores": 0,
+            "home_runs": 1,
+            "bases_por_bolas": 4,
+            "ponches": 8
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-piratas-ejemplo-1",
-              "nombre": "Mateo Ramos"
+              "id": "ejemplo:lanzador-leones-muestra-1",
+              "nombre": "Sebastián Vargas"
             },
             "equipo": "local",
             "abridor": true,
-            "outs": 16,
-            "hits": 2,
-            "carreras": 4,
+            "outs": 18,
+            "hits": 8,
+            "carreras": 3,
             "carreras_limpias": 3,
-            "bases_por_bolas": 2,
-            "ponches": 8
+            "bases_por_bolas": 1,
+            "ponches": 9
           },
           {
             "jugador": {
-              "id": "ejemplo:lanzador-caribes-ficticio-1",
-              "nombre": "Emiliano Ramos"
+              "id": "ejemplo:lanzador-navegantes-demo-1",
+              "nombre": "Tomás Huamán"
             },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 13,
-            "hits": 4,
-            "carreras": 1,
-            "carreras_limpias": 1,
-            "bases_por_bolas": 1,
-            "ponches": 3
+            "outs": 17,
+            "hits": 2,
+            "carreras": 11,
+            "carreras_limpias": 11,
+            "bases_por_bolas": 0,
+            "ponches": 9
           }
         ]
       }
@@ -1088,19 +1090,19 @@
       "inicio": "2026-10-04T23:10:00Z",
       "fecha_local": "2026-10-04",
       "local": {
-        "id": "ejemplo:beisbol-cardenales-simulado",
-        "nombre": "Cardenales Simulado"
+        "id": "ejemplo:beisbol-caribes-ficticio",
+        "nombre": "Caribes Ficticio"
       },
       "visitante": {
-        "id": "ejemplo:beisbol-navegantes-demo",
-        "nombre": "Navegantes Demo"
+        "id": "ejemplo:beisbol-tigres-prueba",
+        "nombre": "Tigres Prueba"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900011"
       },
       "marcador": {
-        "local": 5,
+        "local": 4,
         "visitante": 3
       },
       "previa": {
@@ -1110,52 +1112,52 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 5,
+            "posicion": 1,
             "partidos_jugados": 3,
-            "ganados": 1,
-            "perdidos": 2
+            "ganados": 2,
+            "perdidos": 1
           },
           "visitante": {
-            "posicion": 6,
+            "posicion": 3,
             "partidos_jugados": 3,
-            "ganados": 1,
-            "perdidos": 2
+            "ganados": 2,
+            "perdidos": 1
           }
         },
         "abridores": {
           "local": {
             "jugador": {
-              "id": "ejemplo:lanzador-cardenales-simulado-1",
-              "nombre": "Thiago Vargas"
+              "id": "ejemplo:lanzador-caribes-ficticio-1",
+              "nombre": "Emiliano Ramos"
             },
-            "mano": "zurda",
+            "mano": "derecha",
             "estadisticas": {
-              "era": 4.18,
-              "whip": 1.32,
-              "ponches_por_9": 7.8
+              "era": 4.22,
+              "whip": 1.23,
+              "ponches_por_9": 9
             }
           },
           "visitante": {
             "jugador": {
-              "id": "ejemplo:lanzador-navegantes-demo-1",
-              "nombre": "Tomás Huamán"
+              "id": "ejemplo:lanzador-tigres-prueba-1",
+              "nombre": "Nicolás Mendoza"
             },
-            "mano": "zurda",
+            "mano": "derecha",
             "estadisticas": {
-              "era": 3.25,
-              "whip": 1.13,
-              "ponches_por_9": 10
+              "era": 4.57,
+              "whip": 1.32,
+              "ponches_por_9": 7.1
             }
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:beis-009",
+            "ejemplo:beis-008",
             "ejemplo:beis-005",
-            "ejemplo:beis-003"
+            "ejemplo:beis-001"
           ],
           "visitante": [
-            "ejemplo:beis-008",
+            "ejemplo:beis-007",
             "ejemplo:beis-004",
             "ejemplo:beis-003"
           ]
@@ -1166,72 +1168,72 @@
         "extraido_en": "2026-10-05T01:40:00Z",
         "carreras_por_entrada": {
           "local": [
-            1,
-            0,
-            1,
-            1,
-            0,
-            0,
-            0,
             2,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
             null
           ],
           "visitante": [
             0,
             0,
             0,
-            1,
-            0,
-            0,
             0,
             1,
-            1
+            0,
+            1,
+            1,
+            0
           ]
         },
         "equipos": {
           "local": {
+            "hits": 7,
+            "errores": 1,
+            "home_runs": 2,
+            "bases_por_bolas": 1,
+            "ponches": 2
+          },
+          "visitante": {
             "hits": 6,
             "errores": 0,
             "home_runs": 2,
-            "bases_por_bolas": 0,
-            "ponches": 6
-          },
-          "visitante": {
-            "hits": 5,
-            "errores": 1,
-            "home_runs": 1,
             "bases_por_bolas": 2,
-            "ponches": 7
+            "ponches": 8
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-cardenales-simulado-1",
-              "nombre": "Thiago Vargas"
+              "id": "ejemplo:lanzador-caribes-ficticio-1",
+              "nombre": "Emiliano Ramos"
             },
             "equipo": "local",
             "abridor": true,
-            "outs": 15,
-            "hits": 6,
+            "outs": 12,
+            "hits": 3,
             "carreras": 1,
             "carreras_limpias": 1,
-            "bases_por_bolas": 3,
-            "ponches": 1
+            "bases_por_bolas": 1,
+            "ponches": 6
           },
           {
             "jugador": {
-              "id": "ejemplo:lanzador-navegantes-demo-1",
-              "nombre": "Tomás Huamán"
+              "id": "ejemplo:lanzador-tigres-prueba-1",
+              "nombre": "Nicolás Mendoza"
             },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 18,
+            "outs": 19,
             "hits": 3,
             "carreras": 4,
             "carreras_limpias": 4,
-            "bases_por_bolas": 2,
-            "ponches": 5
+            "bases_por_bolas": 1,
+            "ponches": 1
           }
         ]
       }
@@ -1250,20 +1252,20 @@
       "inicio": "2026-10-05T00:05:00Z",
       "fecha_local": "2026-10-04",
       "local": {
-        "id": "ejemplo:beisbol-leones-muestra",
-        "nombre": "Leones Muestra"
+        "id": "ejemplo:beisbol-cardenales-simulado",
+        "nombre": "Cardenales Simulado"
       },
       "visitante": {
-        "id": "ejemplo:beisbol-tigres-prueba",
-        "nombre": "Tigres Prueba"
+        "id": "ejemplo:beisbol-piratas-ejemplo",
+        "nombre": "Piratas Ejemplo"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900012"
       },
       "marcador": {
-        "local": 1,
-        "visitante": 3
+        "local": 5,
+        "visitante": 1
       },
       "previa": {
         "extraido_en": "2026-10-04T18:05:00Z",
@@ -1272,10 +1274,10 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 1,
+            "posicion": 5,
             "partidos_jugados": 3,
-            "ganados": 2,
-            "perdidos": 1
+            "ganados": 1,
+            "perdidos": 2
           },
           "visitante": {
             "posicion": 2,
@@ -1287,38 +1289,38 @@
         "abridores": {
           "local": {
             "jugador": {
-              "id": "ejemplo:lanzador-leones-muestra-1",
-              "nombre": "Sebastián Vargas"
+              "id": "ejemplo:lanzador-cardenales-simulado-1",
+              "nombre": "Thiago Vargas"
             },
-            "mano": "derecha",
+            "mano": "zurda",
             "estadisticas": {
-              "era": 4.6,
-              "whip": 1.33,
-              "ponches_por_9": 7.7
+              "era": 4.82,
+              "whip": 1.34,
+              "ponches_por_9": 7.6
             }
           },
           "visitante": {
             "jugador": {
-              "id": "ejemplo:lanzador-tigres-prueba-1",
-              "nombre": "Nicolás Mendoza"
+              "id": "ejemplo:lanzador-piratas-ejemplo-1",
+              "nombre": "Mateo Ramos"
             },
-            "mano": "derecha",
+            "mano": "zurda",
             "estadisticas": {
-              "era": 4.6,
-              "whip": 1.34,
-              "ponches_por_9": 7.9
+              "era": 4.28,
+              "whip": 1.26,
+              "ponches_por_9": 8.4
             }
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:beis-008",
-            "ejemplo:beis-006",
-            "ejemplo:beis-001"
+            "ejemplo:beis-009",
+            "ejemplo:beis-005",
+            "ejemplo:beis-002"
           ],
           "visitante": [
             "ejemplo:beis-007",
-            "ejemplo:beis-006",
+            "ejemplo:beis-004",
             "ejemplo:beis-002"
           ]
         }
@@ -1328,23 +1330,23 @@
         "extraido_en": "2026-10-05T02:35:00Z",
         "carreras_por_entrada": {
           "local": [
+            1,
+            1,
+            1,
+            1,
             0,
             0,
             0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            1
+            1,
+            null
           ],
           "visitante": [
+            0,
+            0,
+            0,
             1,
             0,
             0,
-            1,
-            0,
-            1,
             0,
             0,
             0
@@ -1352,48 +1354,48 @@
         },
         "equipos": {
           "local": {
-            "hits": 3,
-            "errores": 1,
-            "home_runs": 1,
-            "bases_por_bolas": 3,
-            "ponches": 6
+            "hits": 7,
+            "errores": 0,
+            "home_runs": 0,
+            "bases_por_bolas": 2,
+            "ponches": 7
           },
           "visitante": {
-            "hits": 10,
+            "hits": 6,
             "errores": 0,
             "home_runs": 1,
-            "bases_por_bolas": 4,
-            "ponches": 6
+            "bases_por_bolas": 2,
+            "ponches": 9
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-leones-muestra-1",
-              "nombre": "Sebastián Vargas"
+              "id": "ejemplo:lanzador-cardenales-simulado-1",
+              "nombre": "Thiago Vargas"
             },
             "equipo": "local",
             "abridor": true,
-            "outs": 17,
-            "hits": 2,
-            "carreras": 2,
-            "carreras_limpias": 2,
-            "bases_por_bolas": 2,
-            "ponches": 7
-          },
-          {
-            "jugador": {
-              "id": "ejemplo:lanzador-tigres-prueba-1",
-              "nombre": "Nicolás Mendoza"
-            },
-            "equipo": "visitante",
-            "abridor": true,
-            "outs": 13,
-            "hits": 2,
+            "outs": 15,
+            "hits": 5,
             "carreras": 0,
             "carreras_limpias": 0,
             "bases_por_bolas": 0,
-            "ponches": 5
+            "ponches": 4
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:lanzador-piratas-ejemplo-1",
+              "nombre": "Mateo Ramos"
+            },
+            "equipo": "visitante",
+            "abridor": true,
+            "outs": 17,
+            "hits": 1,
+            "carreras": 3,
+            "carreras_limpias": 3,
+            "bases_por_bolas": 2,
+            "ponches": 7
           }
         ]
       }
@@ -1412,20 +1414,20 @@
       "inicio": "2026-10-05T18:05:00Z",
       "fecha_local": "2026-10-05",
       "local": {
-        "id": "ejemplo:beisbol-cardenales-simulado",
-        "nombre": "Cardenales Simulado"
+        "id": "ejemplo:beisbol-caribes-ficticio",
+        "nombre": "Caribes Ficticio"
       },
       "visitante": {
-        "id": "ejemplo:beisbol-navegantes-demo",
-        "nombre": "Navegantes Demo"
+        "id": "ejemplo:beisbol-piratas-ejemplo",
+        "nombre": "Piratas Ejemplo"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900013"
       },
       "marcador": {
-        "local": 6,
-        "visitante": 5
+        "local": 0,
+        "visitante": 2
       },
       "previa": {
         "extraido_en": "2026-10-05T12:05:00Z",
@@ -1434,56 +1436,56 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 4,
+            "posicion": 1,
+            "partidos_jugados": 4,
+            "ganados": 3,
+            "perdidos": 1
+          },
+          "visitante": {
+            "posicion": 5,
             "partidos_jugados": 4,
             "ganados": 2,
             "perdidos": 2
-          },
-          "visitante": {
-            "posicion": 6,
-            "partidos_jugados": 4,
-            "ganados": 1,
-            "perdidos": 3
           }
         },
         "abridores": {
           "local": {
             "jugador": {
-              "id": "ejemplo:lanzador-cardenales-simulado-2",
-              "nombre": "Diego Silva"
+              "id": "ejemplo:lanzador-caribes-ficticio-2",
+              "nombre": "Santiago Castro"
             },
             "mano": "derecha",
             "estadisticas": {
-              "era": 3.69,
-              "whip": 1.19,
-              "ponches_por_9": 9.9
+              "era": 5,
+              "whip": 1.32,
+              "ponches_por_9": 7.6
             }
           },
           "visitante": {
             "jugador": {
-              "id": "ejemplo:lanzador-navegantes-demo-2",
-              "nombre": "Lucas Flores"
+              "id": "ejemplo:lanzador-piratas-ejemplo-2",
+              "nombre": "Gabriel Castro"
             },
-            "mano": "derecha",
+            "mano": "zurda",
             "estadisticas": {
-              "era": 4.2,
-              "whip": 1.16,
-              "ponches_por_9": 8.7
+              "era": 3.44,
+              "whip": 1.15,
+              "ponches_por_9": 9.3
             }
           }
         },
         "ultimos_partidos": {
           "local": [
             "ejemplo:beis-011",
-            "ejemplo:beis-009",
+            "ejemplo:beis-008",
             "ejemplo:beis-005",
-            "ejemplo:beis-003"
+            "ejemplo:beis-001"
           ],
           "visitante": [
-            "ejemplo:beis-011",
-            "ejemplo:beis-008",
+            "ejemplo:beis-012",
+            "ejemplo:beis-007",
             "ejemplo:beis-004",
-            "ejemplo:beis-003"
+            "ejemplo:beis-002"
           ]
         }
       },
@@ -1492,74 +1494,72 @@
         "extraido_en": "2026-10-05T20:35:00Z",
         "carreras_por_entrada": {
           "local": [
-            1,
-            1,
-            1,
             0,
             0,
             0,
             0,
-            2,
             0,
-            1
+            0,
+            0,
+            0,
+            0
           ],
           "visitante": [
             0,
             0,
             0,
+            0,
+            0,
+            0,
             1,
-            0,
-            2,
-            2,
-            0,
-            0,
+            1,
             0
           ]
         },
         "equipos": {
           "local": {
-            "hits": 9,
-            "errores": 0,
+            "hits": 4,
+            "errores": 1,
+            "home_runs": 0,
+            "bases_por_bolas": 1,
+            "ponches": 14
+          },
+          "visitante": {
+            "hits": 6,
+            "errores": 1,
             "home_runs": 1,
             "bases_por_bolas": 4,
             "ponches": 8
-          },
-          "visitante": {
-            "hits": 9,
-            "errores": 0,
-            "home_runs": 1,
-            "bases_por_bolas": 3,
-            "ponches": 4
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-cardenales-simulado-2",
-              "nombre": "Diego Silva"
+              "id": "ejemplo:lanzador-caribes-ficticio-2",
+              "nombre": "Santiago Castro"
             },
             "equipo": "local",
             "abridor": true,
-            "outs": 18,
+            "outs": 19,
             "hits": 4,
-            "carreras": 3,
+            "carreras": 2,
             "carreras_limpias": 2,
-            "bases_por_bolas": 1,
+            "bases_por_bolas": 3,
             "ponches": 3
           },
           {
             "jugador": {
-              "id": "ejemplo:lanzador-navegantes-demo-2",
-              "nombre": "Lucas Flores"
+              "id": "ejemplo:lanzador-piratas-ejemplo-2",
+              "nombre": "Gabriel Castro"
             },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 13,
-            "hits": 1,
-            "carreras": 3,
-            "carreras_limpias": 2,
-            "bases_por_bolas": 1,
-            "ponches": 7
+            "outs": 18,
+            "hits": 9,
+            "carreras": 0,
+            "carreras_limpias": 0,
+            "bases_por_bolas": 0,
+            "ponches": 5
           }
         ]
       }
@@ -1578,8 +1578,8 @@
       "inicio": "2026-10-05T23:10:00Z",
       "fecha_local": "2026-10-05",
       "local": {
-        "id": "ejemplo:beisbol-caribes-ficticio",
-        "nombre": "Caribes Ficticio"
+        "id": "ejemplo:beisbol-cardenales-simulado",
+        "nombre": "Cardenales Simulado"
       },
       "visitante": {
         "id": "ejemplo:beisbol-leones-muestra",
@@ -1591,7 +1591,7 @@
       },
       "marcador": {
         "local": 4,
-        "visitante": 5
+        "visitante": 3
       },
       "previa": {
         "extraido_en": "2026-10-05T17:10:00Z",
@@ -1600,13 +1600,13 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 4,
+            "posicion": 3,
             "partidos_jugados": 4,
             "ganados": 2,
             "perdidos": 2
           },
           "visitante": {
-            "posicion": 3,
+            "posicion": 4,
             "partidos_jugados": 4,
             "ganados": 2,
             "perdidos": 2
@@ -1615,14 +1615,14 @@
         "abridores": {
           "local": {
             "jugador": {
-              "id": "ejemplo:lanzador-caribes-ficticio-2",
-              "nombre": "Santiago Castro"
+              "id": "ejemplo:lanzador-cardenales-simulado-2",
+              "nombre": "Diego Silva"
             },
             "mano": "derecha",
             "estadisticas": {
-              "era": 4.8,
-              "whip": 1.32,
-              "ponches_por_9": 7.6
+              "era": 3.57,
+              "whip": 1.22,
+              "ponches_por_9": 10.1
             }
           },
           "visitante": {
@@ -1632,21 +1632,21 @@
             },
             "mano": "derecha",
             "estadisticas": {
-              "era": 4.01,
-              "whip": 1.23,
-              "ponches_por_9": 8.2
+              "era": 4.22,
+              "whip": 1.22,
+              "ponches_por_9": 8.3
             }
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:beis-010",
-            "ejemplo:beis-007",
-            "ejemplo:beis-004",
+            "ejemplo:beis-012",
+            "ejemplo:beis-009",
+            "ejemplo:beis-005",
             "ejemplo:beis-002"
           ],
           "visitante": [
-            "ejemplo:beis-012",
+            "ejemplo:beis-010",
             "ejemplo:beis-008",
             "ejemplo:beis-006",
             "ejemplo:beis-001"
@@ -1659,57 +1659,59 @@
         "carreras_por_entrada": {
           "local": [
             0,
-            2,
+            0,
+            1,
+            0,
+            0,
             1,
             0,
             0,
             0,
-            0,
-            0,
-            1
+            2
           ],
           "visitante": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             1,
-            1,
             0,
             1,
-            2,
-            0,
-            0,
-            0,
-            0
+            1
           ]
         },
         "equipos": {
           "local": {
-            "hits": 4,
+            "hits": 12,
             "errores": 0,
             "home_runs": 0,
-            "bases_por_bolas": 2,
+            "bases_por_bolas": 4,
             "ponches": 4
           },
           "visitante": {
-            "hits": 8,
+            "hits": 5,
             "errores": 0,
             "home_runs": 1,
-            "bases_por_bolas": 3,
-            "ponches": 2
+            "bases_por_bolas": 2,
+            "ponches": 4
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-caribes-ficticio-2",
-              "nombre": "Santiago Castro"
+              "id": "ejemplo:lanzador-cardenales-simulado-2",
+              "nombre": "Diego Silva"
             },
             "equipo": "local",
             "abridor": true,
-            "outs": 13,
-            "hits": 4,
-            "carreras": 0,
-            "carreras_limpias": 0,
-            "bases_por_bolas": 1,
-            "ponches": 5
+            "outs": 18,
+            "hits": 5,
+            "carreras": 3,
+            "carreras_limpias": 3,
+            "bases_por_bolas": 0,
+            "ponches": 2
           },
           {
             "jugador": {
@@ -1718,12 +1720,12 @@
             },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 13,
+            "outs": 17,
             "hits": 5,
-            "carreras": 3,
-            "carreras_limpias": 3,
+            "carreras": 0,
+            "carreras_limpias": 0,
             "bases_por_bolas": 0,
-            "ponches": 4
+            "ponches": 6
           }
         ]
       }
@@ -1742,8 +1744,8 @@
       "inicio": "2026-10-06T00:05:00Z",
       "fecha_local": "2026-10-05",
       "local": {
-        "id": "ejemplo:beisbol-piratas-ejemplo",
-        "nombre": "Piratas Ejemplo"
+        "id": "ejemplo:beisbol-navegantes-demo",
+        "nombre": "Navegantes Demo"
       },
       "visitante": {
         "id": "ejemplo:beisbol-tigres-prueba",
@@ -1754,8 +1756,8 @@
         "betano": "900015"
       },
       "marcador": {
-        "local": 4,
-        "visitante": 2
+        "local": 5,
+        "visitante": 7
       },
       "previa": {
         "extraido_en": "2026-10-05T18:05:00Z",
@@ -1764,29 +1766,29 @@
         ],
         "tabla": {
           "local": {
+            "posicion": 6,
+            "partidos_jugados": 4,
+            "ganados": 1,
+            "perdidos": 3
+          },
+          "visitante": {
             "posicion": 4,
             "partidos_jugados": 4,
             "ganados": 2,
             "perdidos": 2
-          },
-          "visitante": {
-            "posicion": 1,
-            "partidos_jugados": 4,
-            "ganados": 3,
-            "perdidos": 1
           }
         },
         "abridores": {
           "local": {
             "jugador": {
-              "id": "ejemplo:lanzador-piratas-ejemplo-2",
-              "nombre": "Gabriel Castro"
+              "id": "ejemplo:lanzador-navegantes-demo-2",
+              "nombre": "Lucas Flores"
             },
-            "mano": "zurda",
+            "mano": "derecha",
             "estadisticas": {
-              "era": 3.72,
-              "whip": 1.12,
-              "ponches_por_9": 9.5
+              "era": 4.36,
+              "whip": 1.31,
+              "ponches_por_9": 8.5
             }
           },
           "visitante": {
@@ -1796,9 +1798,9 @@
             },
             "mano": "derecha",
             "estadisticas": {
-              "era": 4.22,
-              "whip": 1.34,
-              "ponches_por_9": 8.1
+              "era": 4.26,
+              "whip": 1.23,
+              "ponches_por_9": 8.2
             }
           }
         },
@@ -1806,14 +1808,14 @@
           "local": [
             "ejemplo:beis-010",
             "ejemplo:beis-009",
-            "ejemplo:beis-005",
-            "ejemplo:beis-001"
+            "ejemplo:beis-006",
+            "ejemplo:beis-003"
           ],
           "visitante": [
-            "ejemplo:beis-012",
+            "ejemplo:beis-011",
             "ejemplo:beis-007",
-            "ejemplo:beis-006",
-            "ejemplo:beis-002"
+            "ejemplo:beis-004",
+            "ejemplo:beis-003"
           ]
         }
       },
@@ -1823,57 +1825,57 @@
         "carreras_por_entrada": {
           "local": [
             1,
-            1,
-            0,
             0,
             0,
             1,
             1,
             0,
-            null
+            0,
+            1,
+            1
           ],
           "visitante": [
             0,
-            0,
-            0,
+            2,
             1,
             1,
-            0,
-            0,
+            1,
+            1,
+            1,
             0,
             0
           ]
         },
         "equipos": {
           "local": {
-            "hits": 10,
-            "errores": 0,
+            "hits": 6,
+            "errores": 1,
             "home_runs": 1,
-            "bases_por_bolas": 3,
-            "ponches": 2
+            "bases_por_bolas": 1,
+            "ponches": 11
           },
           "visitante": {
-            "hits": 5,
-            "errores": 2,
-            "home_runs": 1,
-            "bases_por_bolas": 3,
-            "ponches": 5
+            "hits": 11,
+            "errores": 0,
+            "home_runs": 0,
+            "bases_por_bolas": 2,
+            "ponches": 9
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-piratas-ejemplo-2",
-              "nombre": "Gabriel Castro"
+              "id": "ejemplo:lanzador-navegantes-demo-2",
+              "nombre": "Lucas Flores"
             },
             "equipo": "local",
             "abridor": true,
             "outs": 18,
             "hits": 7,
-            "carreras": 2,
-            "carreras_limpias": 1,
-            "bases_por_bolas": 3,
-            "ponches": 5
+            "carreras": 6,
+            "carreras_limpias": 6,
+            "bases_por_bolas": 0,
+            "ponches": 6
           },
           {
             "jugador": {
@@ -1882,11 +1884,11 @@
             },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 15,
-            "hits": 10,
+            "outs": 14,
+            "hits": 1,
             "carreras": 3,
             "carreras_limpias": 3,
-            "bases_por_bolas": 2,
+            "bases_por_bolas": 4,
             "ponches": 8
           }
         ]
@@ -1906,20 +1908,20 @@
       "inicio": "2026-10-06T18:05:00Z",
       "fecha_local": "2026-10-06",
       "local": {
-        "id": "ejemplo:beisbol-piratas-ejemplo",
-        "nombre": "Piratas Ejemplo"
+        "id": "ejemplo:beisbol-cardenales-simulado",
+        "nombre": "Cardenales Simulado"
       },
       "visitante": {
-        "id": "ejemplo:beisbol-navegantes-demo",
-        "nombre": "Navegantes Demo"
+        "id": "ejemplo:beisbol-tigres-prueba",
+        "nombre": "Tigres Prueba"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900016"
       },
       "marcador": {
-        "local": 7,
-        "visitante": 6
+        "local": 9,
+        "visitante": 7
       },
       "previa": {
         "extraido_en": "2026-10-06T12:05:00Z",
@@ -1928,56 +1930,56 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 3,
+            "posicion": 1,
             "partidos_jugados": 5,
             "ganados": 3,
             "perdidos": 2
           },
           "visitante": {
-            "posicion": 6,
+            "posicion": 3,
             "partidos_jugados": 5,
-            "ganados": 1,
-            "perdidos": 4
+            "ganados": 3,
+            "perdidos": 2
           }
         },
         "abridores": {
           "local": {
             "jugador": {
-              "id": "ejemplo:lanzador-piratas-ejemplo-3",
-              "nombre": "Thiago Paredes"
+              "id": "ejemplo:lanzador-cardenales-simulado-3",
+              "nombre": "Emiliano Quispe"
             },
             "mano": "zurda",
             "estadisticas": {
-              "era": 4.72,
-              "whip": 1.37,
-              "ponches_por_9": 7.3
+              "era": 4.4,
+              "whip": 1.2,
+              "ponches_por_9": 9.3
             }
           },
           "visitante": {
             "jugador": {
-              "id": "ejemplo:lanzador-navegantes-demo-3",
-              "nombre": "Nicolás Rojas"
+              "id": "ejemplo:lanzador-tigres-prueba-3",
+              "nombre": "Sebastián Torres"
             },
             "mano": "zurda",
             "estadisticas": {
-              "era": 4.7,
-              "whip": 1.28,
-              "ponches_por_9": 7.9
+              "era": 4.33,
+              "whip": 1.31,
+              "ponches_por_9": 8
             }
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:beis-015",
-            "ejemplo:beis-010",
+            "ejemplo:beis-014",
+            "ejemplo:beis-012",
             "ejemplo:beis-009",
             "ejemplo:beis-005",
-            "ejemplo:beis-001"
+            "ejemplo:beis-002"
           ],
           "visitante": [
-            "ejemplo:beis-013",
+            "ejemplo:beis-015",
             "ejemplo:beis-011",
-            "ejemplo:beis-008",
+            "ejemplo:beis-007",
             "ejemplo:beis-004",
             "ejemplo:beis-003"
           ]
@@ -1988,25 +1990,25 @@
         "extraido_en": "2026-10-06T20:35:00Z",
         "carreras_por_entrada": {
           "local": [
-            2,
-            0,
             0,
             2,
-            1,
-            0,
-            2,
-            0,
-            null
-          ],
-          "visitante": [
             1,
             0,
             3,
             1,
             0,
             0,
+            2
+          ],
+          "visitante": [
             1,
             0,
+            1,
+            2,
+            0,
+            0,
+            2,
+            1,
             0
           ]
         },
@@ -2015,45 +2017,45 @@
             "hits": 12,
             "errores": 0,
             "home_runs": 0,
-            "bases_por_bolas": 2,
-            "ponches": 10
+            "bases_por_bolas": 5,
+            "ponches": 6
           },
           "visitante": {
-            "hits": 10,
-            "errores": 2,
+            "hits": 11,
+            "errores": 0,
             "home_runs": 1,
-            "bases_por_bolas": 4,
-            "ponches": 9
+            "bases_por_bolas": 1,
+            "ponches": 8
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-piratas-ejemplo-3",
-              "nombre": "Thiago Paredes"
+              "id": "ejemplo:lanzador-cardenales-simulado-3",
+              "nombre": "Emiliano Quispe"
             },
             "equipo": "local",
             "abridor": true,
-            "outs": 12,
-            "hits": 3,
-            "carreras": 3,
-            "carreras_limpias": 2,
-            "bases_por_bolas": 3,
-            "ponches": 2
+            "outs": 21,
+            "hits": 5,
+            "carreras": 6,
+            "carreras_limpias": 5,
+            "bases_por_bolas": 1,
+            "ponches": 7
           },
           {
             "jugador": {
-              "id": "ejemplo:lanzador-navegantes-demo-3",
-              "nombre": "Nicolás Rojas"
+              "id": "ejemplo:lanzador-tigres-prueba-3",
+              "nombre": "Sebastián Torres"
             },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 16,
-            "hits": 2,
-            "carreras": 3,
-            "carreras_limpias": 3,
-            "bases_por_bolas": 3,
-            "ponches": 10
+            "outs": 12,
+            "hits": 5,
+            "carreras": 4,
+            "carreras_limpias": 4,
+            "bases_por_bolas": 0,
+            "ponches": 0
           }
         ]
       }
@@ -2072,20 +2074,20 @@
       "inicio": "2026-10-06T23:10:00Z",
       "fecha_local": "2026-10-06",
       "local": {
-        "id": "ejemplo:beisbol-tigres-prueba",
-        "nombre": "Tigres Prueba"
+        "id": "ejemplo:beisbol-navegantes-demo",
+        "nombre": "Navegantes Demo"
       },
       "visitante": {
-        "id": "ejemplo:beisbol-leones-muestra",
-        "nombre": "Leones Muestra"
+        "id": "ejemplo:beisbol-piratas-ejemplo",
+        "nombre": "Piratas Ejemplo"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900017"
       },
       "marcador": {
-        "local": 5,
-        "visitante": 6
+        "local": 6,
+        "visitante": 9
       },
       "previa": {
         "extraido_en": "2026-10-06T17:10:00Z",
@@ -2094,13 +2096,13 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 4,
+            "posicion": 6,
             "partidos_jugados": 5,
-            "ganados": 3,
-            "perdidos": 2
+            "ganados": 1,
+            "perdidos": 4
           },
           "visitante": {
-            "posicion": 2,
+            "posicion": 3,
             "partidos_jugados": 5,
             "ganados": 3,
             "perdidos": 2
@@ -2109,43 +2111,43 @@
         "abridores": {
           "local": {
             "jugador": {
-              "id": "ejemplo:lanzador-tigres-prueba-3",
-              "nombre": "Sebastián Torres"
+              "id": "ejemplo:lanzador-navegantes-demo-3",
+              "nombre": "Nicolás Rojas"
             },
             "mano": "zurda",
             "estadisticas": {
-              "era": 4.29,
-              "whip": 1.28,
-              "ponches_por_9": 8.3
+              "era": 4.51,
+              "whip": 1.29,
+              "ponches_por_9": 7.5
             }
           },
           "visitante": {
             "jugador": {
-              "id": "ejemplo:lanzador-leones-muestra-3",
-              "nombre": "Mateo Quispe"
+              "id": "ejemplo:lanzador-piratas-ejemplo-3",
+              "nombre": "Thiago Paredes"
             },
-            "mano": "derecha",
+            "mano": "zurda",
             "estadisticas": {
-              "era": 3.78,
-              "whip": 1.34,
-              "ponches_por_9": 8.6
+              "era": 4.64,
+              "whip": 1.38,
+              "ponches_por_9": 7.6
             }
           }
         },
         "ultimos_partidos": {
           "local": [
             "ejemplo:beis-015",
-            "ejemplo:beis-012",
-            "ejemplo:beis-007",
+            "ejemplo:beis-010",
+            "ejemplo:beis-009",
             "ejemplo:beis-006",
-            "ejemplo:beis-002"
+            "ejemplo:beis-003"
           ],
           "visitante": [
-            "ejemplo:beis-014",
+            "ejemplo:beis-013",
             "ejemplo:beis-012",
-            "ejemplo:beis-008",
-            "ejemplo:beis-006",
-            "ejemplo:beis-001"
+            "ejemplo:beis-007",
+            "ejemplo:beis-004",
+            "ejemplo:beis-002"
           ]
         }
       },
@@ -2154,74 +2156,72 @@
         "extraido_en": "2026-10-07T01:40:00Z",
         "carreras_por_entrada": {
           "local": [
+            0,
+            0,
+            1,
+            2,
+            1,
+            1,
+            0,
+            1,
+            0
+          ],
+          "visitante": [
+            0,
+            1,
+            3,
+            0,
             2,
             0,
             0,
             0,
-            3,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "visitante": [
-            1,
-            1,
-            1,
-            0,
-            1,
-            0,
-            1,
-            0,
-            0,
-            1
+            3
           ]
         },
         "equipos": {
           "local": {
-            "hits": 12,
+            "hits": 7,
             "errores": 0,
             "home_runs": 1,
-            "bases_por_bolas": 3,
-            "ponches": 10
+            "bases_por_bolas": 2,
+            "ponches": 13
           },
           "visitante": {
             "hits": 12,
-            "errores": 0,
-            "home_runs": 2,
-            "bases_por_bolas": 5,
+            "errores": 1,
+            "home_runs": 0,
+            "bases_por_bolas": 3,
             "ponches": 8
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-tigres-prueba-3",
-              "nombre": "Sebastián Torres"
+              "id": "ejemplo:lanzador-navegantes-demo-3",
+              "nombre": "Nicolás Rojas"
             },
             "equipo": "local",
             "abridor": true,
-            "outs": 20,
-            "hits": 6,
+            "outs": 17,
+            "hits": 4,
             "carreras": 5,
             "carreras_limpias": 5,
-            "bases_por_bolas": 4,
-            "ponches": 7
+            "bases_por_bolas": 2,
+            "ponches": 4
           },
           {
             "jugador": {
-              "id": "ejemplo:lanzador-leones-muestra-3",
-              "nombre": "Mateo Quispe"
+              "id": "ejemplo:lanzador-piratas-ejemplo-3",
+              "nombre": "Thiago Paredes"
             },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 13,
-            "hits": 3,
-            "carreras": 3,
-            "carreras_limpias": 3,
-            "bases_por_bolas": 2,
-            "ponches": 10
+            "outs": 16,
+            "hits": 4,
+            "carreras": 4,
+            "carreras_limpias": 4,
+            "bases_por_bolas": 4,
+            "ponches": 6
           }
         ]
       }
@@ -2244,16 +2244,16 @@
         "nombre": "Caribes Ficticio"
       },
       "visitante": {
-        "id": "ejemplo:beisbol-cardenales-simulado",
-        "nombre": "Cardenales Simulado"
+        "id": "ejemplo:beisbol-leones-muestra",
+        "nombre": "Leones Muestra"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900018"
       },
       "marcador": {
-        "local": 4,
-        "visitante": 8
+        "local": 3,
+        "visitante": 1
       },
       "previa": {
         "extraido_en": "2026-10-06T18:05:00Z",
@@ -2262,16 +2262,16 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 5,
-            "partidos_jugados": 5,
-            "ganados": 2,
-            "perdidos": 3
-          },
-          "visitante": {
             "posicion": 3,
             "partidos_jugados": 5,
             "ganados": 3,
             "perdidos": 2
+          },
+          "visitante": {
+            "posicion": 5,
+            "partidos_jugados": 5,
+            "ganados": 2,
+            "perdidos": 3
           }
         },
         "abridores": {
@@ -2282,38 +2282,38 @@
             },
             "mano": "derecha",
             "estadisticas": {
-              "era": 3.88,
-              "whip": 1.26,
-              "ponches_por_9": 8.8
+              "era": 3.86,
+              "whip": 1.23,
+              "ponches_por_9": 9.2
             }
           },
           "visitante": {
             "jugador": {
-              "id": "ejemplo:lanzador-cardenales-simulado-3",
-              "nombre": "Emiliano Quispe"
+              "id": "ejemplo:lanzador-leones-muestra-3",
+              "nombre": "Mateo Quispe"
             },
-            "mano": "zurda",
+            "mano": "derecha",
             "estadisticas": {
-              "era": 4.22,
-              "whip": 1.23,
+              "era": 4.15,
+              "whip": 1.3,
               "ponches_por_9": 9.1
             }
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:beis-014",
-            "ejemplo:beis-010",
-            "ejemplo:beis-007",
-            "ejemplo:beis-004",
-            "ejemplo:beis-002"
-          ],
-          "visitante": [
             "ejemplo:beis-013",
             "ejemplo:beis-011",
-            "ejemplo:beis-009",
+            "ejemplo:beis-008",
             "ejemplo:beis-005",
-            "ejemplo:beis-003"
+            "ejemplo:beis-001"
+          ],
+          "visitante": [
+            "ejemplo:beis-014",
+            "ejemplo:beis-010",
+            "ejemplo:beis-008",
+            "ejemplo:beis-006",
+            "ejemplo:beis-001"
           ]
         }
       },
@@ -2324,39 +2324,39 @@
           "local": [
             0,
             0,
-            0,
-            0,
-            0,
+            1,
+            1,
             0,
             0,
             1,
-            3
+            0,
+            null
           ],
           "visitante": [
-            1,
-            1,
-            0,
-            2,
             0,
             0,
             1,
-            1,
-            2
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
           ]
         },
         "equipos": {
           "local": {
             "hits": 6,
-            "errores": 0,
+            "errores": 1,
             "home_runs": 0,
-            "bases_por_bolas": 6,
-            "ponches": 9
+            "bases_por_bolas": 4,
+            "ponches": 4
           },
           "visitante": {
-            "hits": 13,
-            "errores": 2,
+            "hits": 6,
+            "errores": 1,
             "home_runs": 1,
-            "bases_por_bolas": 1,
+            "bases_por_bolas": 7,
             "ponches": 10
           }
         },
@@ -2368,26 +2368,26 @@
             },
             "equipo": "local",
             "abridor": true,
-            "outs": 20,
-            "hits": 9,
-            "carreras": 6,
-            "carreras_limpias": 6,
-            "bases_por_bolas": 1,
-            "ponches": 10
+            "outs": 18,
+            "hits": 5,
+            "carreras": 1,
+            "carreras_limpias": 1,
+            "bases_por_bolas": 2,
+            "ponches": 8
           },
           {
             "jugador": {
-              "id": "ejemplo:lanzador-cardenales-simulado-3",
-              "nombre": "Emiliano Quispe"
+              "id": "ejemplo:lanzador-leones-muestra-3",
+              "nombre": "Mateo Quispe"
             },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 12,
+            "outs": 15,
             "hits": 5,
             "carreras": 2,
-            "carreras_limpias": 1,
-            "bases_por_bolas": 2,
-            "ponches": 1
+            "carreras_limpias": 2,
+            "bases_por_bolas": 3,
+            "ponches": 9
           }
         ]
       }
@@ -2406,20 +2406,20 @@
       "inicio": "2026-10-07T18:05:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:beisbol-leones-muestra",
-        "nombre": "Leones Muestra"
-      },
-      "visitante": {
         "id": "ejemplo:beisbol-tigres-prueba",
         "nombre": "Tigres Prueba"
+      },
+      "visitante": {
+        "id": "ejemplo:beisbol-piratas-ejemplo",
+        "nombre": "Piratas Ejemplo"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900019"
       },
       "marcador": {
-        "local": 6,
-        "visitante": 5
+        "local": 4,
+        "visitante": 9
       },
       "previa": {
         "extraido_en": "2026-10-07T12:05:00Z",
@@ -2428,58 +2428,58 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 1,
-            "partidos_jugados": 6,
-            "ganados": 4,
-            "perdidos": 2
-          },
-          "visitante": {
             "posicion": 4,
             "partidos_jugados": 6,
             "ganados": 3,
             "perdidos": 3
+          },
+          "visitante": {
+            "posicion": 3,
+            "partidos_jugados": 6,
+            "ganados": 4,
+            "perdidos": 2
           }
         },
         "abridores": {
           "local": {
-            "jugador": {
-              "id": "ejemplo:lanzador-leones-muestra-1",
-              "nombre": "Sebastián Vargas"
-            },
-            "mano": "derecha",
-            "estadisticas": {
-              "era": 4.59,
-              "whip": 1.33,
-              "ponches_por_9": 7.4
-            }
-          },
-          "visitante": {
             "jugador": {
               "id": "ejemplo:lanzador-tigres-prueba-1",
               "nombre": "Nicolás Mendoza"
             },
             "mano": "derecha",
             "estadisticas": {
-              "era": 4.45,
-              "whip": 1.3,
-              "ponches_por_9": 7.6
+              "era": 4.84,
+              "whip": 1.26,
+              "ponches_por_9": 8.2
+            }
+          },
+          "visitante": {
+            "jugador": {
+              "id": "ejemplo:lanzador-piratas-ejemplo-1",
+              "nombre": "Mateo Ramos"
+            },
+            "mano": "zurda",
+            "estadisticas": {
+              "era": 4.18,
+              "whip": 1.24,
+              "ponches_por_9": 7.7
             }
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:beis-017",
-            "ejemplo:beis-014",
-            "ejemplo:beis-012",
-            "ejemplo:beis-008",
-            "ejemplo:beis-006"
+            "ejemplo:beis-016",
+            "ejemplo:beis-015",
+            "ejemplo:beis-011",
+            "ejemplo:beis-007",
+            "ejemplo:beis-004"
           ],
           "visitante": [
             "ejemplo:beis-017",
-            "ejemplo:beis-015",
+            "ejemplo:beis-013",
             "ejemplo:beis-012",
             "ejemplo:beis-007",
-            "ejemplo:beis-006"
+            "ejemplo:beis-004"
           ]
         }
       },
@@ -2488,72 +2488,72 @@
         "extraido_en": "2026-10-07T20:35:00Z",
         "carreras_por_entrada": {
           "local": [
-            0,
             1,
             1,
             0,
             0,
-            1,
-            1,
+            0,
+            0,
             2,
-            null
+            0,
+            0
           ],
           "visitante": [
-            0,
+            3,
             1,
-            0,
-            0,
-            1,
+            2,
             0,
             2,
+            0,
             1,
+            0,
             0
           ]
         },
         "equipos": {
           "local": {
-            "hits": 11,
+            "hits": 7,
             "errores": 0,
-            "home_runs": 2,
-            "bases_por_bolas": 2,
-            "ponches": 9
-          },
-          "visitante": {
-            "hits": 8,
-            "errores": 0,
-            "home_runs": 1,
+            "home_runs": 0,
             "bases_por_bolas": 2,
             "ponches": 10
+          },
+          "visitante": {
+            "hits": 17,
+            "errores": 1,
+            "home_runs": 3,
+            "bases_por_bolas": 2,
+            "ponches": 7
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-leones-muestra-1",
-              "nombre": "Sebastián Vargas"
-            },
-            "equipo": "local",
-            "abridor": true,
-            "outs": 16,
-            "hits": 4,
-            "carreras": 4,
-            "carreras_limpias": 3,
-            "bases_por_bolas": 2,
-            "ponches": 6
-          },
-          {
-            "jugador": {
               "id": "ejemplo:lanzador-tigres-prueba-1",
               "nombre": "Nicolás Mendoza"
             },
+            "equipo": "local",
+            "abridor": true,
+            "outs": 15,
+            "hits": 5,
+            "carreras": 6,
+            "carreras_limpias": 5,
+            "bases_por_bolas": 3,
+            "ponches": 3
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:lanzador-piratas-ejemplo-1",
+              "nombre": "Mateo Ramos"
+            },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 20,
-            "hits": 9,
-            "carreras": 4,
-            "carreras_limpias": 3,
+            "outs": 13,
+            "hits": 4,
+            "carreras": 0,
+            "carreras_limpias": 0,
             "bases_por_bolas": 1,
-            "ponches": 8
+            "ponches": 3
           }
         ]
       }
@@ -2572,8 +2572,8 @@
       "inicio": "2026-10-07T23:10:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:beisbol-piratas-ejemplo",
-        "nombre": "Piratas Ejemplo"
+        "id": "ejemplo:beisbol-leones-muestra",
+        "nombre": "Leones Muestra"
       },
       "visitante": {
         "id": "ejemplo:beisbol-cardenales-simulado",
@@ -2590,10 +2590,10 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 3,
+            "posicion": 5,
             "partidos_jugados": 6,
-            "ganados": 4,
-            "perdidos": 2
+            "ganados": 2,
+            "perdidos": 4
           },
           "visitante": {
             "posicion": 2,
@@ -2605,14 +2605,14 @@
         "abridores": {
           "local": {
             "jugador": {
-              "id": "ejemplo:lanzador-piratas-ejemplo-1",
-              "nombre": "Mateo Ramos"
+              "id": "ejemplo:lanzador-leones-muestra-1",
+              "nombre": "Sebastián Vargas"
             },
-            "mano": "zurda",
+            "mano": "derecha",
             "estadisticas": {
-              "era": 4.32,
-              "whip": 1.24,
-              "ponches_por_9": 8.2
+              "era": 4.31,
+              "whip": 1.36,
+              "ponches_por_9": 7.8
             }
           },
           "visitante": {
@@ -2622,24 +2622,24 @@
             },
             "mano": "zurda",
             "estadisticas": {
-              "era": 4.28,
-              "whip": 1.33,
-              "ponches_por_9": 7.6
+              "era": 4.49,
+              "whip": 1.34,
+              "ponches_por_9": 8
             }
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:beis-016",
-            "ejemplo:beis-015",
+            "ejemplo:beis-018",
+            "ejemplo:beis-014",
             "ejemplo:beis-010",
-            "ejemplo:beis-009",
-            "ejemplo:beis-005"
+            "ejemplo:beis-008",
+            "ejemplo:beis-006"
           ],
           "visitante": [
-            "ejemplo:beis-018",
-            "ejemplo:beis-013",
-            "ejemplo:beis-011",
+            "ejemplo:beis-016",
+            "ejemplo:beis-014",
+            "ejemplo:beis-012",
             "ejemplo:beis-009",
             "ejemplo:beis-005"
           ]
@@ -2660,12 +2660,12 @@
       "inicio": "2026-10-08T00:05:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:beisbol-navegantes-demo",
-        "nombre": "Navegantes Demo"
-      },
-      "visitante": {
         "id": "ejemplo:beisbol-caribes-ficticio",
         "nombre": "Caribes Ficticio"
+      },
+      "visitante": {
+        "id": "ejemplo:beisbol-navegantes-demo",
+        "nombre": "Navegantes Demo"
       },
       "estado": "finalizado",
       "ids_externos": {
@@ -2673,7 +2673,7 @@
       },
       "marcador": {
         "local": 2,
-        "visitante": 1
+        "visitante": 3
       },
       "previa": {
         "extraido_en": "2026-10-07T18:05:00Z",
@@ -2682,58 +2682,58 @@
         ],
         "tabla": {
           "local": {
+            "posicion": 3,
+            "partidos_jugados": 6,
+            "ganados": 4,
+            "perdidos": 2
+          },
+          "visitante": {
             "posicion": 6,
             "partidos_jugados": 6,
             "ganados": 1,
             "perdidos": 5
-          },
-          "visitante": {
-            "posicion": 5,
-            "partidos_jugados": 6,
-            "ganados": 2,
-            "perdidos": 4
           }
         },
         "abridores": {
           "local": {
-            "jugador": {
-              "id": "ejemplo:lanzador-navegantes-demo-1",
-              "nombre": "Tomás Huamán"
-            },
-            "mano": "zurda",
-            "estadisticas": {
-              "era": 3.51,
-              "whip": 1.19,
-              "ponches_por_9": 9.9
-            }
-          },
-          "visitante": {
             "jugador": {
               "id": "ejemplo:lanzador-caribes-ficticio-1",
               "nombre": "Emiliano Ramos"
             },
             "mano": "derecha",
             "estadisticas": {
-              "era": 3.99,
-              "whip": 1.27,
-              "ponches_por_9": 8.2
+              "era": 4.18,
+              "whip": 1.26,
+              "ponches_por_9": 9
+            }
+          },
+          "visitante": {
+            "jugador": {
+              "id": "ejemplo:lanzador-navegantes-demo-1",
+              "nombre": "Tomás Huamán"
+            },
+            "mano": "zurda",
+            "estadisticas": {
+              "era": 3.53,
+              "whip": 1.19,
+              "ponches_por_9": 9.7
             }
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:beis-016",
+            "ejemplo:beis-018",
             "ejemplo:beis-013",
             "ejemplo:beis-011",
             "ejemplo:beis-008",
-            "ejemplo:beis-004"
+            "ejemplo:beis-005"
           ],
           "visitante": [
-            "ejemplo:beis-018",
-            "ejemplo:beis-014",
+            "ejemplo:beis-017",
+            "ejemplo:beis-015",
             "ejemplo:beis-010",
-            "ejemplo:beis-007",
-            "ejemplo:beis-004"
+            "ejemplo:beis-009",
+            "ejemplo:beis-006"
           ]
         }
       },
@@ -2743,71 +2743,73 @@
         "carreras_por_entrada": {
           "local": [
             0,
+            0,
+            0,
             1,
-            0,
-            1,
-            0,
-            0,
-            0,
-            0,
-            null
-          ],
-          "visitante": [
-            0,
-            0,
-            0,
             0,
             0,
             1,
             0,
             0,
             0
+          ],
+          "visitante": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
           ]
         },
         "equipos": {
           "local": {
             "hits": 6,
-            "errores": 0,
-            "home_runs": 2,
-            "bases_por_bolas": 4,
+            "errores": 1,
+            "home_runs": 0,
+            "bases_por_bolas": 2,
             "ponches": 10
           },
           "visitante": {
-            "hits": 2,
-            "errores": 1,
-            "home_runs": 0,
-            "bases_por_bolas": 5,
-            "ponches": 9
+            "hits": 7,
+            "errores": 0,
+            "home_runs": 1,
+            "bases_por_bolas": 2,
+            "ponches": 6
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-navegantes-demo-1",
-              "nombre": "Tomás Huamán"
-            },
-            "equipo": "local",
-            "abridor": true,
-            "outs": 18,
-            "hits": 5,
-            "carreras": 0,
-            "carreras_limpias": 0,
-            "bases_por_bolas": 0,
-            "ponches": 5
-          },
-          {
-            "jugador": {
               "id": "ejemplo:lanzador-caribes-ficticio-1",
               "nombre": "Emiliano Ramos"
             },
+            "equipo": "local",
+            "abridor": true,
+            "outs": 19,
+            "hits": 6,
+            "carreras": 2,
+            "carreras_limpias": 2,
+            "bases_por_bolas": 3,
+            "ponches": 7
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:lanzador-navegantes-demo-1",
+              "nombre": "Tomás Huamán"
+            },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 13,
-            "hits": 4,
+            "outs": 19,
+            "hits": 3,
             "carreras": 1,
             "carreras_limpias": 1,
             "bases_por_bolas": 0,
-            "ponches": 6
+            "ponches": 8
           }
         ]
       }
@@ -2826,20 +2828,20 @@
       "inicio": "2026-10-08T18:05:00Z",
       "fecha_local": "2026-10-08",
       "local": {
-        "id": "ejemplo:beisbol-navegantes-demo",
-        "nombre": "Navegantes Demo"
-      },
-      "visitante": {
         "id": "ejemplo:beisbol-tigres-prueba",
         "nombre": "Tigres Prueba"
+      },
+      "visitante": {
+        "id": "ejemplo:beisbol-piratas-ejemplo",
+        "nombre": "Piratas Ejemplo"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900022"
       },
       "marcador": {
-        "local": 6,
-        "visitante": 3
+        "local": 7,
+        "visitante": 6
       },
       "previa": {
         "extraido_en": "2026-10-08T12:05:00Z",
@@ -2848,56 +2850,56 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 6,
-            "partidos_jugados": 7,
-            "ganados": 2,
-            "perdidos": 5
-          },
-          "visitante": {
             "posicion": 4,
             "partidos_jugados": 7,
             "ganados": 3,
             "perdidos": 4
+          },
+          "visitante": {
+            "posicion": 1,
+            "partidos_jugados": 7,
+            "ganados": 5,
+            "perdidos": 2
           }
         },
         "abridores": {
           "local": {
-            "jugador": {
-              "id": "ejemplo:lanzador-navegantes-demo-2",
-              "nombre": "Lucas Flores"
-            },
-            "mano": "derecha",
-            "estadisticas": {
-              "era": 4.03,
-              "whip": 1.33,
-              "ponches_por_9": 8.6
-            }
-          },
-          "visitante": {
             "jugador": {
               "id": "ejemplo:lanzador-tigres-prueba-2",
               "nombre": "Bruno Salazar"
             },
             "mano": "derecha",
             "estadisticas": {
-              "era": 4.39,
-              "whip": 1.31,
-              "ponches_por_9": 8.2
+              "era": 4.2,
+              "whip": 1.3,
+              "ponches_por_9": 8.1
+            }
+          },
+          "visitante": {
+            "jugador": {
+              "id": "ejemplo:lanzador-piratas-ejemplo-2",
+              "nombre": "Gabriel Castro"
+            },
+            "mano": "zurda",
+            "estadisticas": {
+              "era": 3.87,
+              "whip": 1.16,
+              "ponches_por_9": 10.1
             }
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:beis-021",
+            "ejemplo:beis-019",
             "ejemplo:beis-016",
-            "ejemplo:beis-013",
+            "ejemplo:beis-015",
             "ejemplo:beis-011",
-            "ejemplo:beis-008"
+            "ejemplo:beis-007"
           ],
           "visitante": [
             "ejemplo:beis-019",
             "ejemplo:beis-017",
-            "ejemplo:beis-015",
+            "ejemplo:beis-013",
             "ejemplo:beis-012",
             "ejemplo:beis-007"
           ]
@@ -2909,22 +2911,24 @@
         "carreras_por_entrada": {
           "local": [
             0,
+            2,
+            0,
             0,
             1,
-            1,
+            0,
             0,
             1,
             2,
-            1,
-            null
+            1
           ],
           "visitante": [
+            1,
+            1,
             0,
             1,
             1,
             1,
-            0,
-            0,
+            1,
             0,
             0,
             0
@@ -2932,14 +2936,14 @@
         },
         "equipos": {
           "local": {
-            "hits": 7,
+            "hits": 9,
             "errores": 0,
             "home_runs": 0,
             "bases_por_bolas": 3,
             "ponches": 10
           },
           "visitante": {
-            "hits": 7,
+            "hits": 10,
             "errores": 2,
             "home_runs": 0,
             "bases_por_bolas": 2,
@@ -2949,31 +2953,31 @@
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-navegantes-demo-2",
-              "nombre": "Lucas Flores"
+              "id": "ejemplo:lanzador-tigres-prueba-2",
+              "nombre": "Bruno Salazar"
             },
             "equipo": "local",
             "abridor": true,
             "outs": 20,
             "hits": 4,
-            "carreras": 2,
-            "carreras_limpias": 1,
-            "bases_por_bolas": 1,
-            "ponches": 10
+            "carreras": 5,
+            "carreras_limpias": 5,
+            "bases_por_bolas": 3,
+            "ponches": 7
           },
           {
             "jugador": {
-              "id": "ejemplo:lanzador-tigres-prueba-2",
-              "nombre": "Bruno Salazar"
+              "id": "ejemplo:lanzador-piratas-ejemplo-2",
+              "nombre": "Gabriel Castro"
             },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 16,
-            "hits": 2,
-            "carreras": 6,
-            "carreras_limpias": 6,
+            "outs": 17,
+            "hits": 6,
+            "carreras": 7,
+            "carreras_limpias": 7,
             "bases_por_bolas": 1,
-            "ponches": 5
+            "ponches": 6
           }
         ]
       }
@@ -2992,20 +2996,20 @@
       "inicio": "2026-10-08T23:10:00Z",
       "fecha_local": "2026-10-08",
       "local": {
-        "id": "ejemplo:beisbol-leones-muestra",
-        "nombre": "Leones Muestra"
+        "id": "ejemplo:beisbol-navegantes-demo",
+        "nombre": "Navegantes Demo"
       },
       "visitante": {
-        "id": "ejemplo:beisbol-caribes-ficticio",
-        "nombre": "Caribes Ficticio"
+        "id": "ejemplo:beisbol-cardenales-simulado",
+        "nombre": "Cardenales Simulado"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900023"
       },
       "marcador": {
-        "local": 4,
-        "visitante": 1
+        "local": 1,
+        "visitante": 5
       },
       "previa": {
         "extraido_en": "2026-10-08T17:10:00Z",
@@ -3014,58 +3018,58 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 1,
-            "partidos_jugados": 7,
-            "ganados": 5,
-            "perdidos": 2
-          },
-          "visitante": {
             "posicion": 6,
             "partidos_jugados": 7,
             "ganados": 2,
             "perdidos": 5
+          },
+          "visitante": {
+            "posicion": 1,
+            "partidos_jugados": 6,
+            "ganados": 4,
+            "perdidos": 2
           }
         },
         "abridores": {
           "local": {
             "jugador": {
-              "id": "ejemplo:lanzador-leones-muestra-2",
-              "nombre": "Joaquín Silva"
+              "id": "ejemplo:lanzador-navegantes-demo-2",
+              "nombre": "Lucas Flores"
             },
             "mano": "derecha",
             "estadisticas": {
-              "era": 3.87,
-              "whip": 1.27,
-              "ponches_por_9": 8.7
+              "era": 3.85,
+              "whip": 1.24,
+              "ponches_por_9": 8.3
             }
           },
           "visitante": {
             "jugador": {
-              "id": "ejemplo:lanzador-caribes-ficticio-2",
-              "nombre": "Santiago Castro"
+              "id": "ejemplo:lanzador-cardenales-simulado-2",
+              "nombre": "Diego Silva"
             },
             "mano": "derecha",
             "estadisticas": {
-              "era": 4.7,
-              "whip": 1.36,
-              "ponches_por_9": 7.7
+              "era": 3.45,
+              "whip": 1.17,
+              "ponches_por_9": 10.1
             }
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:beis-019",
+            "ejemplo:beis-021",
             "ejemplo:beis-017",
-            "ejemplo:beis-014",
-            "ejemplo:beis-012",
-            "ejemplo:beis-008"
+            "ejemplo:beis-015",
+            "ejemplo:beis-010",
+            "ejemplo:beis-009"
           ],
           "visitante": [
-            "ejemplo:beis-021",
-            "ejemplo:beis-018",
+            "ejemplo:beis-016",
             "ejemplo:beis-014",
-            "ejemplo:beis-010",
-            "ejemplo:beis-007"
+            "ejemplo:beis-012",
+            "ejemplo:beis-009",
+            "ejemplo:beis-005"
           ]
         }
       },
@@ -3077,69 +3081,69 @@
             0,
             0,
             0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "visitante": [
             2,
             1,
             0,
             1,
             0,
-            null
-          ],
-          "visitante": [
             0,
             0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            1
+            1,
+            0
           ]
         },
         "equipos": {
           "local": {
-            "hits": 6,
-            "errores": 0,
+            "hits": 7,
+            "errores": 2,
             "home_runs": 1,
-            "bases_por_bolas": 1,
-            "ponches": 10
+            "bases_por_bolas": 2,
+            "ponches": 8
           },
           "visitante": {
-            "hits": 3,
+            "hits": 9,
             "errores": 0,
             "home_runs": 0,
-            "bases_por_bolas": 4,
-            "ponches": 9
+            "bases_por_bolas": 1,
+            "ponches": 6
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-leones-muestra-2",
-              "nombre": "Joaquín Silva"
+              "id": "ejemplo:lanzador-navegantes-demo-2",
+              "nombre": "Lucas Flores"
             },
             "equipo": "local",
             "abridor": true,
-            "outs": 14,
+            "outs": 16,
             "hits": 3,
-            "carreras": 1,
-            "carreras_limpias": 1,
+            "carreras": 3,
+            "carreras_limpias": 3,
             "bases_por_bolas": 1,
-            "ponches": 3
+            "ponches": 6
           },
           {
             "jugador": {
-              "id": "ejemplo:lanzador-caribes-ficticio-2",
-              "nombre": "Santiago Castro"
+              "id": "ejemplo:lanzador-cardenales-simulado-2",
+              "nombre": "Diego Silva"
             },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 12,
-            "hits": 3,
-            "carreras": 3,
-            "carreras_limpias": 2,
-            "bases_por_bolas": 1,
-            "ponches": 4
+            "outs": 16,
+            "hits": 7,
+            "carreras": 1,
+            "carreras_limpias": 0,
+            "bases_por_bolas": 3,
+            "ponches": 7
           }
         ]
       }
@@ -3158,20 +3162,20 @@
       "inicio": "2026-10-09T00:05:00Z",
       "fecha_local": "2026-10-08",
       "local": {
-        "id": "ejemplo:beisbol-piratas-ejemplo",
-        "nombre": "Piratas Ejemplo"
+        "id": "ejemplo:beisbol-leones-muestra",
+        "nombre": "Leones Muestra"
       },
       "visitante": {
-        "id": "ejemplo:beisbol-cardenales-simulado",
-        "nombre": "Cardenales Simulado"
+        "id": "ejemplo:beisbol-caribes-ficticio",
+        "nombre": "Caribes Ficticio"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900024"
       },
       "marcador": {
-        "local": 4,
-        "visitante": 2
+        "local": 3,
+        "visitante": 1
       },
       "previa": {
         "extraido_en": "2026-10-08T18:05:00Z",
@@ -3180,58 +3184,58 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 3,
+            "posicion": 5,
             "partidos_jugados": 6,
-            "ganados": 4,
-            "perdidos": 2
+            "ganados": 2,
+            "perdidos": 4
           },
           "visitante": {
-            "posicion": 2,
-            "partidos_jugados": 6,
+            "posicion": 3,
+            "partidos_jugados": 7,
             "ganados": 4,
-            "perdidos": 2
+            "perdidos": 3
           }
         },
         "abridores": {
           "local": {
             "jugador": {
-              "id": "ejemplo:lanzador-piratas-ejemplo-2",
-              "nombre": "Gabriel Castro"
+              "id": "ejemplo:lanzador-leones-muestra-2",
+              "nombre": "Joaquín Silva"
             },
-            "mano": "zurda",
+            "mano": "derecha",
             "estadisticas": {
-              "era": 3.68,
-              "whip": 1.13,
-              "ponches_por_9": 9.3
+              "era": 4.17,
+              "whip": 1.2,
+              "ponches_por_9": 8.7
             }
           },
           "visitante": {
             "jugador": {
-              "id": "ejemplo:lanzador-cardenales-simulado-2",
-              "nombre": "Diego Silva"
+              "id": "ejemplo:lanzador-caribes-ficticio-2",
+              "nombre": "Santiago Castro"
             },
             "mano": "derecha",
             "estadisticas": {
-              "era": 3.56,
-              "whip": 1.14,
-              "ponches_por_9": 10.3
+              "era": 4.65,
+              "whip": 1.31,
+              "ponches_por_9": 7.8
             }
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:beis-016",
-            "ejemplo:beis-015",
+            "ejemplo:beis-018",
+            "ejemplo:beis-014",
             "ejemplo:beis-010",
-            "ejemplo:beis-009",
-            "ejemplo:beis-005"
+            "ejemplo:beis-008",
+            "ejemplo:beis-006"
           ],
           "visitante": [
+            "ejemplo:beis-021",
             "ejemplo:beis-018",
             "ejemplo:beis-013",
             "ejemplo:beis-011",
-            "ejemplo:beis-009",
-            "ejemplo:beis-005"
+            "ejemplo:beis-008"
           ]
         }
       },
@@ -3240,72 +3244,72 @@
         "extraido_en": "2026-10-09T02:35:00Z",
         "carreras_por_entrada": {
           "local": [
+            3,
             0,
             0,
-            1,
-            1,
-            1,
             0,
-            1,
+            0,
+            0,
+            0,
             0,
             null
           ],
           "visitante": [
             0,
-            0,
-            0,
-            0,
-            0,
-            0,
             1,
             0,
-            1
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
           ]
         },
         "equipos": {
           "local": {
             "hits": 10,
             "errores": 0,
-            "home_runs": 0,
-            "bases_por_bolas": 3,
-            "ponches": 5
+            "home_runs": 2,
+            "bases_por_bolas": 1,
+            "ponches": 12
           },
           "visitante": {
             "hits": 4,
-            "errores": 2,
-            "home_runs": 2,
-            "bases_por_bolas": 3,
-            "ponches": 7
+            "errores": 0,
+            "home_runs": 1,
+            "bases_por_bolas": 7,
+            "ponches": 10
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-piratas-ejemplo-2",
-              "nombre": "Gabriel Castro"
+              "id": "ejemplo:lanzador-leones-muestra-2",
+              "nombre": "Joaquín Silva"
             },
             "equipo": "local",
             "abridor": true,
             "outs": 14,
-            "hits": 4,
+            "hits": 2,
             "carreras": 0,
             "carreras_limpias": 0,
-            "bases_por_bolas": 2,
-            "ponches": 7
+            "bases_por_bolas": 3,
+            "ponches": 4
           },
           {
             "jugador": {
-              "id": "ejemplo:lanzador-cardenales-simulado-2",
-              "nombre": "Diego Silva"
+              "id": "ejemplo:lanzador-caribes-ficticio-2",
+              "nombre": "Santiago Castro"
             },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 21,
-            "hits": 8,
-            "carreras": 3,
-            "carreras_limpias": 3,
-            "bases_por_bolas": 3,
-            "ponches": 10
+            "outs": 15,
+            "hits": 3,
+            "carreras": 2,
+            "carreras_limpias": 2,
+            "bases_por_bolas": 1,
+            "ponches": 6
           }
         ]
       }
@@ -3324,20 +3328,20 @@
       "inicio": "2026-10-09T18:05:00Z",
       "fecha_local": "2026-10-09",
       "local": {
-        "id": "ejemplo:beisbol-tigres-prueba",
-        "nombre": "Tigres Prueba"
-      },
-      "visitante": {
         "id": "ejemplo:beisbol-leones-muestra",
         "nombre": "Leones Muestra"
+      },
+      "visitante": {
+        "id": "ejemplo:beisbol-caribes-ficticio",
+        "nombre": "Caribes Ficticio"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900025"
       },
       "marcador": {
-        "local": 5,
-        "visitante": 4
+        "local": 4,
+        "visitante": 3
       },
       "previa": {
         "extraido_en": "2026-10-09T12:05:00Z",
@@ -3347,57 +3351,57 @@
         "tabla": {
           "local": {
             "posicion": 5,
-            "partidos_jugados": 8,
+            "partidos_jugados": 7,
             "ganados": 3,
-            "perdidos": 5
+            "perdidos": 4
           },
           "visitante": {
-            "posicion": 1,
+            "posicion": 3,
             "partidos_jugados": 8,
-            "ganados": 6,
-            "perdidos": 2
+            "ganados": 4,
+            "perdidos": 4
           }
         },
         "abridores": {
           "local": {
-            "jugador": {
-              "id": "ejemplo:lanzador-tigres-prueba-3",
-              "nombre": "Sebastián Torres"
-            },
-            "mano": "zurda",
-            "estadisticas": {
-              "era": 4.17,
-              "whip": 1.29,
-              "ponches_por_9": 8.7
-            }
-          },
-          "visitante": {
             "jugador": {
               "id": "ejemplo:lanzador-leones-muestra-3",
               "nombre": "Mateo Quispe"
             },
             "mano": "derecha",
             "estadisticas": {
-              "era": 3.97,
-              "whip": 1.21,
-              "ponches_por_9": 8.1
+              "era": 4.17,
+              "whip": 1.25,
+              "ponches_por_9": 8.4
+            }
+          },
+          "visitante": {
+            "jugador": {
+              "id": "ejemplo:lanzador-caribes-ficticio-3",
+              "nombre": "Tomás Paredes"
+            },
+            "mano": "derecha",
+            "estadisticas": {
+              "era": 3.7,
+              "whip": 1.17,
+              "ponches_por_9": 8.6
             }
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:beis-022",
-            "ejemplo:beis-019",
-            "ejemplo:beis-017",
-            "ejemplo:beis-015",
-            "ejemplo:beis-012"
+            "ejemplo:beis-024",
+            "ejemplo:beis-018",
+            "ejemplo:beis-014",
+            "ejemplo:beis-010",
+            "ejemplo:beis-008"
           ],
           "visitante": [
-            "ejemplo:beis-023",
-            "ejemplo:beis-019",
-            "ejemplo:beis-017",
-            "ejemplo:beis-014",
-            "ejemplo:beis-012"
+            "ejemplo:beis-024",
+            "ejemplo:beis-021",
+            "ejemplo:beis-018",
+            "ejemplo:beis-013",
+            "ejemplo:beis-011"
           ]
         }
       },
@@ -3406,72 +3410,74 @@
         "extraido_en": "2026-10-09T20:35:00Z",
         "carreras_por_entrada": {
           "local": [
-            0,
-            1,
-            0,
-            0,
-            1,
             1,
             0,
             2,
-            null
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
           ],
           "visitante": [
+            1,
+            1,
             0,
             0,
             0,
             1,
-            1,
-            1,
-            1,
+            0,
+            0,
             0,
             0
           ]
         },
         "equipos": {
           "local": {
-            "hits": 7,
-            "errores": 1,
-            "home_runs": 0,
-            "bases_por_bolas": 1,
-            "ponches": 6
-          },
-          "visitante": {
             "hits": 9,
             "errores": 2,
             "home_runs": 2,
             "bases_por_bolas": 4,
             "ponches": 7
+          },
+          "visitante": {
+            "hits": 5,
+            "errores": 0,
+            "home_runs": 0,
+            "bases_por_bolas": 6,
+            "ponches": 8
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-tigres-prueba-3",
-              "nombre": "Sebastián Torres"
-            },
-            "equipo": "local",
-            "abridor": true,
-            "outs": 12,
-            "hits": 6,
-            "carreras": 4,
-            "carreras_limpias": 4,
-            "bases_por_bolas": 6,
-            "ponches": 0
-          },
-          {
-            "jugador": {
               "id": "ejemplo:lanzador-leones-muestra-3",
               "nombre": "Mateo Quispe"
             },
-            "equipo": "visitante",
+            "equipo": "local",
             "abridor": true,
             "outs": 15,
             "hits": 4,
-            "carreras": 1,
-            "carreras_limpias": 1,
-            "bases_por_bolas": 3,
-            "ponches": 5
+            "carreras": 0,
+            "carreras_limpias": 0,
+            "bases_por_bolas": 1,
+            "ponches": 6
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:lanzador-caribes-ficticio-3",
+              "nombre": "Tomás Paredes"
+            },
+            "equipo": "visitante",
+            "abridor": true,
+            "outs": 16,
+            "hits": 8,
+            "carreras": 3,
+            "carreras_limpias": 3,
+            "bases_por_bolas": 1,
+            "ponches": 4
           }
         ]
       }
@@ -3490,8 +3496,8 @@
       "inicio": "2026-10-09T23:10:00Z",
       "fecha_local": "2026-10-09",
       "local": {
-        "id": "ejemplo:beisbol-navegantes-demo",
-        "nombre": "Navegantes Demo"
+        "id": "ejemplo:beisbol-piratas-ejemplo",
+        "nombre": "Piratas Ejemplo"
       },
       "visitante": {
         "id": "ejemplo:beisbol-cardenales-simulado",
@@ -3502,8 +3508,8 @@
         "betano": "900026"
       },
       "marcador": {
-        "local": 7,
-        "visitante": 3
+        "local": 5,
+        "visitante": 4
       },
       "previa": {
         "extraido_en": "2026-10-09T17:10:00Z",
@@ -3512,29 +3518,29 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 5,
+            "posicion": 2,
             "partidos_jugados": 8,
-            "ganados": 3,
-            "perdidos": 5
+            "ganados": 5,
+            "perdidos": 3
           },
           "visitante": {
-            "posicion": 3,
+            "posicion": 1,
             "partidos_jugados": 7,
-            "ganados": 4,
-            "perdidos": 3
+            "ganados": 5,
+            "perdidos": 2
           }
         },
         "abridores": {
           "local": {
             "jugador": {
-              "id": "ejemplo:lanzador-navegantes-demo-3",
-              "nombre": "Nicolás Rojas"
+              "id": "ejemplo:lanzador-piratas-ejemplo-3",
+              "nombre": "Thiago Paredes"
             },
             "mano": "zurda",
             "estadisticas": {
-              "era": 4.68,
-              "whip": 1.28,
-              "ponches_por_9": 7.7
+              "era": 4.87,
+              "whip": 1.36,
+              "ponches_por_9": 7.6
             }
           },
           "visitante": {
@@ -3544,25 +3550,25 @@
             },
             "mano": "zurda",
             "estadisticas": {
-              "era": 4.47,
-              "whip": 1.27,
-              "ponches_por_9": 8.6
+              "era": 4.33,
+              "whip": 1.26,
+              "ponches_por_9": 8.9
             }
           }
         },
         "ultimos_partidos": {
           "local": [
             "ejemplo:beis-022",
-            "ejemplo:beis-021",
-            "ejemplo:beis-016",
+            "ejemplo:beis-019",
+            "ejemplo:beis-017",
             "ejemplo:beis-013",
-            "ejemplo:beis-011"
+            "ejemplo:beis-012"
           ],
           "visitante": [
-            "ejemplo:beis-024",
-            "ejemplo:beis-018",
-            "ejemplo:beis-013",
-            "ejemplo:beis-011",
+            "ejemplo:beis-023",
+            "ejemplo:beis-016",
+            "ejemplo:beis-014",
+            "ejemplo:beis-012",
             "ejemplo:beis-009"
           ]
         }
@@ -3572,23 +3578,23 @@
         "extraido_en": "2026-10-10T01:40:00Z",
         "carreras_por_entrada": {
           "local": [
+            1,
+            0,
+            0,
+            1,
+            1,
             2,
             0,
             0,
-            1,
-            0,
-            1,
-            2,
-            1,
             null
           ],
           "visitante": [
-            0,
-            0,
-            0,
+            2,
             1,
             0,
-            1,
+            0,
+            0,
+            0,
             0,
             1,
             0
@@ -3596,34 +3602,34 @@
         },
         "equipos": {
           "local": {
-            "hits": 9,
-            "errores": 1,
-            "home_runs": 0,
-            "bases_por_bolas": 6,
-            "ponches": 8
+            "hits": 8,
+            "errores": 0,
+            "home_runs": 2,
+            "bases_por_bolas": 4,
+            "ponches": 15
           },
           "visitante": {
-            "hits": 6,
+            "hits": 12,
             "errores": 0,
-            "home_runs": 1,
-            "bases_por_bolas": 2,
-            "ponches": 14
+            "home_runs": 0,
+            "bases_por_bolas": 3,
+            "ponches": 4
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-navegantes-demo-3",
-              "nombre": "Nicolás Rojas"
+              "id": "ejemplo:lanzador-piratas-ejemplo-3",
+              "nombre": "Thiago Paredes"
             },
             "equipo": "local",
             "abridor": true,
-            "outs": 13,
-            "hits": 5,
-            "carreras": 0,
-            "carreras_limpias": 0,
-            "bases_por_bolas": 0,
-            "ponches": 4
+            "outs": 18,
+            "hits": 6,
+            "carreras": 4,
+            "carreras_limpias": 4,
+            "bases_por_bolas": 2,
+            "ponches": 3
           },
           {
             "jugador": {
@@ -3632,12 +3638,12 @@
             },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 14,
-            "hits": 5,
-            "carreras": 3,
-            "carreras_limpias": 3,
-            "bases_por_bolas": 3,
-            "ponches": 3
+            "outs": 13,
+            "hits": 10,
+            "carreras": 2,
+            "carreras_limpias": 2,
+            "bases_por_bolas": 1,
+            "ponches": 4
           }
         ]
       }
@@ -3656,20 +3662,20 @@
       "inicio": "2026-10-10T00:05:00Z",
       "fecha_local": "2026-10-09",
       "local": {
-        "id": "ejemplo:beisbol-piratas-ejemplo",
-        "nombre": "Piratas Ejemplo"
+        "id": "ejemplo:beisbol-navegantes-demo",
+        "nombre": "Navegantes Demo"
       },
       "visitante": {
-        "id": "ejemplo:beisbol-caribes-ficticio",
-        "nombre": "Caribes Ficticio"
+        "id": "ejemplo:beisbol-tigres-prueba",
+        "nombre": "Tigres Prueba"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900027"
       },
       "marcador": {
-        "local": 3,
-        "visitante": 1
+        "local": 4,
+        "visitante": 5
       },
       "previa": {
         "extraido_en": "2026-10-09T18:05:00Z",
@@ -3678,58 +3684,58 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 1,
-            "partidos_jugados": 7,
-            "ganados": 5,
-            "perdidos": 2
-          },
-          "visitante": {
             "posicion": 6,
             "partidos_jugados": 8,
             "ganados": 2,
             "perdidos": 6
+          },
+          "visitante": {
+            "posicion": 4,
+            "partidos_jugados": 8,
+            "ganados": 4,
+            "perdidos": 4
           }
         },
         "abridores": {
           "local": {
             "jugador": {
-              "id": "ejemplo:lanzador-piratas-ejemplo-3",
-              "nombre": "Thiago Paredes"
+              "id": "ejemplo:lanzador-navegantes-demo-3",
+              "nombre": "Nicolás Rojas"
             },
             "mano": "zurda",
             "estadisticas": {
-              "era": 4.84,
-              "whip": 1.36,
-              "ponches_por_9": 7.7
+              "era": 4.45,
+              "whip": 1.3,
+              "ponches_por_9": 8.2
             }
           },
           "visitante": {
             "jugador": {
-              "id": "ejemplo:lanzador-caribes-ficticio-3",
-              "nombre": "Tomás Paredes"
+              "id": "ejemplo:lanzador-tigres-prueba-3",
+              "nombre": "Sebastián Torres"
             },
-            "mano": "derecha",
+            "mano": "zurda",
             "estadisticas": {
-              "era": 4.05,
-              "whip": 1.19,
-              "ponches_por_9": 9
+              "era": 4.12,
+              "whip": 1.24,
+              "ponches_por_9": 8.2
             }
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:beis-024",
-            "ejemplo:beis-016",
-            "ejemplo:beis-015",
-            "ejemplo:beis-010",
-            "ejemplo:beis-009"
-          ],
-          "visitante": [
             "ejemplo:beis-023",
             "ejemplo:beis-021",
-            "ejemplo:beis-018",
-            "ejemplo:beis-014",
+            "ejemplo:beis-017",
+            "ejemplo:beis-015",
             "ejemplo:beis-010"
+          ],
+          "visitante": [
+            "ejemplo:beis-022",
+            "ejemplo:beis-019",
+            "ejemplo:beis-016",
+            "ejemplo:beis-015",
+            "ejemplo:beis-011"
           ]
         }
       },
@@ -3738,72 +3744,74 @@
         "extraido_en": "2026-10-10T02:35:00Z",
         "carreras_por_entrada": {
           "local": [
-            0,
-            0,
+            1,
             0,
             0,
             1,
-            2,
+            1,
+            1,
             0,
             0,
-            null
+            0,
+            0
           ],
           "visitante": [
             0,
+            1,
+            1,
             0,
-            0,
-            0,
-            0,
+            1,
             0,
             0,
             1,
-            0
+            0,
+            1
           ]
         },
         "equipos": {
           "local": {
-            "hits": 7,
+            "hits": 9,
             "errores": 0,
-            "home_runs": 1,
+            "home_runs": 0,
             "bases_por_bolas": 3,
-            "ponches": 10
+            "ponches": 7
           },
           "visitante": {
-            "hits": 5,
-            "errores": 0,
-            "home_runs": 1,
-            "bases_por_bolas": 4,
-            "ponches": 7
+            "hits": 7,
+            "errores": 1,
+            "home_runs": 0,
+            "bases_por_bolas": 2,
+            "ponches": 2
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-piratas-ejemplo-3",
-              "nombre": "Thiago Paredes"
+              "id": "ejemplo:lanzador-navegantes-demo-3",
+              "nombre": "Nicolás Rojas"
             },
             "equipo": "local",
             "abridor": true,
-            "outs": 16,
+            "outs": 17,
             "hits": 5,
-            "carreras": 1,
-            "carreras_limpias": 1,
+            "carreras": 3,
+            "carreras_limpias": 3,
             "bases_por_bolas": 1,
-            "ponches": 2
+            "ponches": 4
           },
           {
             "jugador": {
-              "id": "ejemplo:lanzador-caribes-ficticio-3",
-              "nombre": "Tomás Paredes"
+              "id": "ejemplo:lanzador-tigres-prueba-3",
+              "nombre": "Sebastián Torres"
             },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 12,
-            "hits": 5,
-            "carreras": 2,
-            "carreras_limpias": 2,
+            "outs": 13,
+            "hits": 9,
+            "carreras": 4,
+            "carreras_limpias": 4,
             "bases_por_bolas": 1,
-            "ponches": 2
+            "ponches": 4
           }
         ]
       }
@@ -3822,12 +3830,12 @@
       "inicio": "2026-10-10T18:05:00Z",
       "fecha_local": "2026-10-10",
       "local": {
-        "id": "ejemplo:beisbol-piratas-ejemplo",
-        "nombre": "Piratas Ejemplo"
-      },
-      "visitante": {
         "id": "ejemplo:beisbol-leones-muestra",
         "nombre": "Leones Muestra"
+      },
+      "visitante": {
+        "id": "ejemplo:beisbol-piratas-ejemplo",
+        "nombre": "Piratas Ejemplo"
       },
       "estado": "finalizado",
       "ids_externos": {
@@ -3835,7 +3843,7 @@
       },
       "marcador": {
         "local": 4,
-        "visitante": 5
+        "visitante": 2
       },
       "previa": {
         "extraido_en": "2026-10-10T12:05:00Z",
@@ -3844,13 +3852,13 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 1,
+            "posicion": 4,
             "partidos_jugados": 8,
-            "ganados": 6,
-            "perdidos": 2
+            "ganados": 4,
+            "perdidos": 4
           },
           "visitante": {
-            "posicion": 2,
+            "posicion": 1,
             "partidos_jugados": 9,
             "ganados": 6,
             "perdidos": 3
@@ -3859,43 +3867,43 @@
         "abridores": {
           "local": {
             "jugador": {
-              "id": "ejemplo:lanzador-piratas-ejemplo-1",
-              "nombre": "Mateo Ramos"
-            },
-            "mano": "zurda",
-            "estadisticas": {
-              "era": 4.32,
-              "whip": 1.31,
-              "ponches_por_9": 8.3
-            }
-          },
-          "visitante": {
-            "jugador": {
               "id": "ejemplo:lanzador-leones-muestra-1",
               "nombre": "Sebastián Vargas"
             },
             "mano": "derecha",
             "estadisticas": {
-              "era": 4.4,
-              "whip": 1.33,
-              "ponches_por_9": 7.7
+              "era": 4.57,
+              "whip": 1.26,
+              "ponches_por_9": 8.1
+            }
+          },
+          "visitante": {
+            "jugador": {
+              "id": "ejemplo:lanzador-piratas-ejemplo-1",
+              "nombre": "Mateo Ramos"
+            },
+            "mano": "zurda",
+            "estadisticas": {
+              "era": 4.53,
+              "whip": 1.3,
+              "ponches_por_9": 8.3
             }
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:beis-027",
+            "ejemplo:beis-025",
             "ejemplo:beis-024",
-            "ejemplo:beis-016",
-            "ejemplo:beis-015",
+            "ejemplo:beis-018",
+            "ejemplo:beis-014",
             "ejemplo:beis-010"
           ],
           "visitante": [
-            "ejemplo:beis-025",
-            "ejemplo:beis-023",
+            "ejemplo:beis-026",
+            "ejemplo:beis-022",
             "ejemplo:beis-019",
             "ejemplo:beis-017",
-            "ejemplo:beis-014"
+            "ejemplo:beis-013"
           ]
         }
       },
@@ -3905,71 +3913,71 @@
         "carreras_por_entrada": {
           "local": [
             0,
+            1,
+            0,
             0,
             0,
             0,
             2,
-            0,
             1,
-            0,
-            1
+            null
           ],
           "visitante": [
             0,
-            2,
             1,
             1,
             0,
             0,
-            1,
+            0,
+            0,
             0,
             0
           ]
         },
         "equipos": {
           "local": {
-            "hits": 6,
+            "hits": 8,
             "errores": 0,
-            "home_runs": 2,
-            "bases_por_bolas": 3,
-            "ponches": 6
+            "home_runs": 1,
+            "bases_por_bolas": 6,
+            "ponches": 7
           },
           "visitante": {
-            "hits": 12,
-            "errores": 0,
-            "home_runs": 2,
-            "bases_por_bolas": 4,
-            "ponches": 11
+            "hits": 4,
+            "errores": 1,
+            "home_runs": 0,
+            "bases_por_bolas": 3,
+            "ponches": 6
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-piratas-ejemplo-1",
-              "nombre": "Mateo Ramos"
-            },
-            "equipo": "local",
-            "abridor": true,
-            "outs": 13,
-            "hits": 4,
-            "carreras": 4,
-            "carreras_limpias": 4,
-            "bases_por_bolas": 2,
-            "ponches": 2
-          },
-          {
-            "jugador": {
               "id": "ejemplo:lanzador-leones-muestra-1",
               "nombre": "Sebastián Vargas"
             },
-            "equipo": "visitante",
+            "equipo": "local",
             "abridor": true,
             "outs": 19,
-            "hits": 4,
+            "hits": 6,
             "carreras": 1,
             "carreras_limpias": 1,
             "bases_por_bolas": 2,
             "ponches": 4
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:lanzador-piratas-ejemplo-1",
+              "nombre": "Mateo Ramos"
+            },
+            "equipo": "visitante",
+            "abridor": true,
+            "outs": 20,
+            "hits": 5,
+            "carreras": 3,
+            "carreras_limpias": 3,
+            "bases_por_bolas": 0,
+            "ponches": 8
           }
         ]
       }
@@ -3992,16 +4000,16 @@
         "nombre": "Cardenales Simulado"
       },
       "visitante": {
-        "id": "ejemplo:beisbol-navegantes-demo",
-        "nombre": "Navegantes Demo"
+        "id": "ejemplo:beisbol-caribes-ficticio",
+        "nombre": "Caribes Ficticio"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900029"
       },
       "marcador": {
-        "local": 4,
-        "visitante": 3
+        "local": 1,
+        "visitante": 4
       },
       "previa": {
         "extraido_en": "2026-10-10T17:10:00Z",
@@ -4010,13 +4018,13 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 3,
+            "posicion": 1,
             "partidos_jugados": 8,
-            "ganados": 4,
-            "perdidos": 4
+            "ganados": 5,
+            "perdidos": 3
           },
           "visitante": {
-            "posicion": 4,
+            "posicion": 5,
             "partidos_jugados": 9,
             "ganados": 4,
             "perdidos": 5
@@ -4030,37 +4038,37 @@
             },
             "mano": "zurda",
             "estadisticas": {
-              "era": 4.51,
-              "whip": 1.33,
-              "ponches_por_9": 8.2
+              "era": 4.52,
+              "whip": 1.35,
+              "ponches_por_9": 7.5
             }
           },
           "visitante": {
             "jugador": {
-              "id": "ejemplo:lanzador-navegantes-demo-1",
-              "nombre": "Tomás Huamán"
+              "id": "ejemplo:lanzador-caribes-ficticio-1",
+              "nombre": "Emiliano Ramos"
             },
-            "mano": "zurda",
+            "mano": "derecha",
             "estadisticas": {
-              "era": 3.14,
-              "whip": 1.13,
-              "ponches_por_9": 9.7
+              "era": 4.16,
+              "whip": 1.23,
+              "ponches_por_9": 9
             }
           }
         },
         "ultimos_partidos": {
           "local": [
             "ejemplo:beis-026",
-            "ejemplo:beis-024",
-            "ejemplo:beis-018",
-            "ejemplo:beis-013",
-            "ejemplo:beis-011"
+            "ejemplo:beis-023",
+            "ejemplo:beis-016",
+            "ejemplo:beis-014",
+            "ejemplo:beis-012"
           ],
           "visitante": [
-            "ejemplo:beis-026",
-            "ejemplo:beis-022",
+            "ejemplo:beis-025",
+            "ejemplo:beis-024",
             "ejemplo:beis-021",
-            "ejemplo:beis-016",
+            "ejemplo:beis-018",
             "ejemplo:beis-013"
           ]
         }
@@ -4073,39 +4081,39 @@
             0,
             0,
             0,
-            2,
+            0,
             0,
             1,
             0,
             0,
-            1
+            0
           ],
           "visitante": [
             0,
             0,
             0,
-            1,
-            1,
             0,
             1,
-            0,
+            1,
+            1,
+            1,
             0
           ]
         },
         "equipos": {
           "local": {
-            "hits": 7,
-            "errores": 0,
-            "home_runs": 0,
-            "bases_por_bolas": 0,
-            "ponches": 12
-          },
-          "visitante": {
-            "hits": 7,
+            "hits": 5,
             "errores": 0,
             "home_runs": 1,
             "bases_por_bolas": 4,
-            "ponches": 9
+            "ponches": 8
+          },
+          "visitante": {
+            "hits": 6,
+            "errores": 1,
+            "home_runs": 2,
+            "bases_por_bolas": 6,
+            "ponches": 8
           }
         },
         "lanzadores": [
@@ -4116,26 +4124,26 @@
             },
             "equipo": "local",
             "abridor": true,
-            "outs": 17,
-            "hits": 7,
-            "carreras": 3,
-            "carreras_limpias": 3,
-            "bases_por_bolas": 3,
-            "ponches": 2
+            "outs": 16,
+            "hits": 4,
+            "carreras": 2,
+            "carreras_limpias": 2,
+            "bases_por_bolas": 2,
+            "ponches": 4
           },
           {
             "jugador": {
-              "id": "ejemplo:lanzador-navegantes-demo-1",
-              "nombre": "Tomás Huamán"
+              "id": "ejemplo:lanzador-caribes-ficticio-1",
+              "nombre": "Emiliano Ramos"
             },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 17,
-            "hits": 6,
-            "carreras": 3,
-            "carreras_limpias": 3,
-            "bases_por_bolas": 4,
-            "ponches": 6
+            "outs": 12,
+            "hits": 0,
+            "carreras": 0,
+            "carreras_limpias": 0,
+            "bases_por_bolas": 2,
+            "ponches": 4
           }
         ]
       }
@@ -4154,20 +4162,20 @@
       "inicio": "2026-10-11T00:05:00Z",
       "fecha_local": "2026-10-10",
       "local": {
-        "id": "ejemplo:beisbol-tigres-prueba",
-        "nombre": "Tigres Prueba"
+        "id": "ejemplo:beisbol-navegantes-demo",
+        "nombre": "Navegantes Demo"
       },
       "visitante": {
-        "id": "ejemplo:beisbol-caribes-ficticio",
-        "nombre": "Caribes Ficticio"
+        "id": "ejemplo:beisbol-tigres-prueba",
+        "nombre": "Tigres Prueba"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900030"
       },
       "marcador": {
-        "local": 2,
-        "visitante": 6
+        "local": 7,
+        "visitante": 4
       },
       "previa": {
         "extraido_en": "2026-10-10T18:05:00Z",
@@ -4176,58 +4184,58 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 4,
-            "partidos_jugados": 9,
-            "ganados": 4,
-            "perdidos": 5
-          },
-          "visitante": {
             "posicion": 6,
             "partidos_jugados": 9,
             "ganados": 2,
             "perdidos": 7
+          },
+          "visitante": {
+            "posicion": 4,
+            "partidos_jugados": 9,
+            "ganados": 5,
+            "perdidos": 4
           }
         },
         "abridores": {
           "local": {
+            "jugador": {
+              "id": "ejemplo:lanzador-navegantes-demo-1",
+              "nombre": "Tomás Huamán"
+            },
+            "mano": "zurda",
+            "estadisticas": {
+              "era": 3.63,
+              "whip": 1.14,
+              "ponches_por_9": 10.4
+            }
+          },
+          "visitante": {
             "jugador": {
               "id": "ejemplo:lanzador-tigres-prueba-1",
               "nombre": "Nicolás Mendoza"
             },
             "mano": "derecha",
             "estadisticas": {
-              "era": 4.56,
-              "whip": 1.35,
-              "ponches_por_9": 7
-            }
-          },
-          "visitante": {
-            "jugador": {
-              "id": "ejemplo:lanzador-caribes-ficticio-1",
-              "nombre": "Emiliano Ramos"
-            },
-            "mano": "derecha",
-            "estadisticas": {
-              "era": 4.06,
-              "whip": 1.25,
-              "ponches_por_9": 9
+              "era": 4.88,
+              "whip": 1.36,
+              "ponches_por_9": 7.7
             }
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:beis-025",
-            "ejemplo:beis-022",
-            "ejemplo:beis-019",
+            "ejemplo:beis-027",
+            "ejemplo:beis-023",
+            "ejemplo:beis-021",
             "ejemplo:beis-017",
             "ejemplo:beis-015"
           ],
           "visitante": [
             "ejemplo:beis-027",
-            "ejemplo:beis-023",
-            "ejemplo:beis-021",
-            "ejemplo:beis-018",
-            "ejemplo:beis-014"
+            "ejemplo:beis-022",
+            "ejemplo:beis-019",
+            "ejemplo:beis-016",
+            "ejemplo:beis-015"
           ]
         }
       },
@@ -4236,72 +4244,72 @@
         "extraido_en": "2026-10-11T02:35:00Z",
         "carreras_por_entrada": {
           "local": [
-            0,
-            0,
+            1,
             1,
             0,
-            0,
             1,
-            0,
-            0,
-            0
+            1,
+            1,
+            1,
+            1,
+            null
           ],
           "visitante": [
             0,
+            1,
+            0,
+            0,
+            0,
+            0,
             2,
-            0,
-            0,
-            1,
-            1,
-            1,
             0,
             1
           ]
         },
         "equipos": {
           "local": {
-            "hits": 9,
+            "hits": 11,
             "errores": 1,
             "home_runs": 0,
-            "bases_por_bolas": 4,
-            "ponches": 7
+            "bases_por_bolas": 3,
+            "ponches": 6
           },
           "visitante": {
-            "hits": 9,
+            "hits": 7,
             "errores": 0,
             "home_runs": 1,
             "bases_por_bolas": 2,
-            "ponches": 6
+            "ponches": 9
           }
         },
         "lanzadores": [
           {
             "jugador": {
-              "id": "ejemplo:lanzador-tigres-prueba-1",
-              "nombre": "Nicolás Mendoza"
+              "id": "ejemplo:lanzador-navegantes-demo-1",
+              "nombre": "Tomás Huamán"
             },
             "equipo": "local",
             "abridor": true,
-            "outs": 18,
-            "hits": 5,
-            "carreras": 3,
+            "outs": 16,
+            "hits": 3,
+            "carreras": 4,
             "carreras_limpias": 3,
             "bases_por_bolas": 1,
-            "ponches": 3
+            "ponches": 8
           },
           {
             "jugador": {
-              "id": "ejemplo:lanzador-caribes-ficticio-1",
-              "nombre": "Emiliano Ramos"
+              "id": "ejemplo:lanzador-tigres-prueba-1",
+              "nombre": "Nicolás Mendoza"
             },
             "equipo": "visitante",
             "abridor": true,
-            "outs": 18,
-            "hits": 2,
-            "carreras": 2,
-            "carreras_limpias": 2,
-            "bases_por_bolas": 5,
-            "ponches": 7
+            "outs": 17,
+            "hits": 8,
+            "carreras": 3,
+            "carreras_limpias": 3,
+            "bases_por_bolas": 2,
+            "ponches": 5
           }
         ]
       }

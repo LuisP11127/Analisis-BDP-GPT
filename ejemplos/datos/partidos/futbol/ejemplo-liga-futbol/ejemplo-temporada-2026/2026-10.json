@@ -463,9 +463,9 @@
           "local": {
             "goles": 0,
             "corners": 1,
-            "amarillas": 4,
+            "amarillas": 3,
             "rojas": 1,
-            "dobles_amarillas": 0,
+            "dobles_amarillas": 1,
             "tiros_al_arco": 3,
             "remates": 14,
             "faltas": 7,
@@ -491,20 +491,20 @@
           "local": {
             "goles": 0,
             "corners": 0,
-            "amarillas": 2,
+            "amarillas": 1,
             "rojas": 0,
             "tiros_al_arco": 2,
             "remates": 8,
             "faltas": 2
           },
           "visitante": {
-            "goles": 3,
-            "corners": 2,
-            "amarillas": 1,
+            "goles": 2,
+            "corners": 1,
+            "amarillas": 2,
             "rojas": 0,
             "tiros_al_arco": 3,
-            "remates": 4,
-            "faltas": 10
+            "remates": 5,
+            "faltas": 8
           }
         }
       }

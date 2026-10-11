@@ -710,8 +710,8 @@
           "lineas": [
             {
               "linea": null,
-              "cuota_a": 2.61,
-              "cuota_b": 1.49
+              "cuota_a": 2.49,
+              "cuota_b": 1.53
             }
           ]
         },
@@ -721,8 +721,8 @@
           "lineas": [
             {
               "linea": null,
-              "cuota_a": 2.85,
-              "cuota_b": 1.4
+              "cuota_a": 2.58,
+              "cuota_b": 1.48
             }
           ]
         }
@@ -730,29 +730,29 @@
       "candidata": {
         "casa": "betano",
         "linea": null,
-        "cuota_a": 2.61,
-        "cuota_b": 1.49,
-        "diferencia": 1.12,
-        "margen": 0.0543,
-        "prob_sin_margen_a": 0.3634,
-        "promedio_mercado_a": 0.3294
+        "cuota_a": 2.49,
+        "cuota_b": 1.53,
+        "diferencia": 0.96,
+        "margen": 0.0552,
+        "prob_sin_margen_a": 0.3806,
+        "promedio_mercado_a": 0.3645
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.381,
+        "prob_a": 0.239,
         "lado": "b",
         "explicacion": [
           {
-            "factor": "forma_reciente",
-            "impacto": -0.07
-          },
-          {
-            "factor": "localia",
-            "impacto": -0.04
+            "factor": "rival_concede",
+            "impacto": -0.06
           },
           {
             "factor": "promedio_liga",
-            "impacto": -0.01
+            "impacto": -0.08
+          },
+          {
+            "factor": "localia",
+            "impacto": -0.12
           }
         ]
       },
@@ -762,8 +762,8 @@
         "casa": "betano",
         "linea": null,
         "lado": "b",
-        "cuota": 1.49,
-        "monto": 25,
+        "cuota": 1.53,
+        "monto": 30,
         "moneda": "PEN",
         "registrada_en": "2026-10-05T14:50:00Z"
       },
@@ -802,18 +802,18 @@
           "lineas": [
             {
               "linea": 10.5,
-              "cuota_a": 1.75,
-              "cuota_b": 2.06
+              "cuota_a": 1.7,
+              "cuota_b": 2.15
             },
             {
               "linea": 11.5,
-              "cuota_a": 2.17,
-              "cuota_b": 1.68
+              "cuota_a": 2.25,
+              "cuota_b": 1.64
             },
             {
               "linea": 12.5,
-              "cuota_a": 2.52,
-              "cuota_b": 1.52
+              "cuota_a": 2.91,
+              "cuota_b": 1.41
             }
           ]
         },
@@ -823,8 +823,8 @@
           "lineas": [
             {
               "linea": 11.5,
-              "cuota_a": 2.1,
-              "cuota_b": 1.7
+              "cuota_a": 1.93,
+              "cuota_b": 1.83
             }
           ]
         }
@@ -832,54 +832,54 @@
       "candidata": {
         "casa": "betano",
         "linea": 10.5,
-        "cuota_a": 1.75,
-        "cuota_b": 2.06,
-        "diferencia": 0.31,
-        "margen": 0.0569,
-        "prob_sin_margen_a": 0.5407,
+        "cuota_a": 1.7,
+        "cuota_b": 2.15,
+        "diferencia": 0.45,
+        "margen": 0.0534,
+        "prob_sin_margen_a": 0.5584,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.584,
+        "prob_a": 0.578,
         "lado": "a",
         "explicacion": [
           {
-            "factor": "rival_concede",
-            "impacto": 0
-          },
-          {
-            "factor": "forma_reciente",
-            "impacto": 0.03
-          },
-          {
             "factor": "localia",
+            "impacto": 0.04
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": -0.02
+          },
+          {
+            "factor": "promedio_liga",
             "impacto": 0.04
           }
         ]
       },
       "red": {
         "version": "ejemplo-red-futbol_corners-1",
-        "prob_a": 0.642,
+        "prob_a": 0.594,
         "lado": "a"
       },
       "entrada_red": {
         "version": "ejemplo-variables-1",
         "valores": {
           "linea": 10.5,
-          "cuota_a": 1.75,
-          "cuota_b": 2.06,
+          "cuota_a": 1.7,
+          "cuota_b": 2.15,
           "esperado": 11.18,
-          "forma_local": -0.71,
-          "forma_visitante": 0.09
+          "forma_local": 0.73,
+          "forma_visitante": -0.74
         }
       },
       "apuesta": {
         "casa": "betano",
         "linea": 10.5,
         "lado": "a",
-        "cuota": 1.75,
-        "monto": 20,
+        "cuota": 1.7,
+        "monto": 15,
         "moneda": "PEN",
         "registrada_en": "2026-10-05T14:50:00Z"
       },
@@ -976,7 +976,7 @@
       },
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 2,
+        "valor_real": 1,
         "lado_ganador": "b",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-05T23:30:00Z"
@@ -1009,18 +1009,18 @@
           "lineas": [
             {
               "linea": 0.5,
-              "cuota_a": 1.14,
-              "cuota_b": 5.73
+              "cuota_a": 1.13,
+              "cuota_b": 5.79
             },
             {
               "linea": 1.5,
-              "cuota_a": 1.68,
-              "cuota_b": 2.17
+              "cuota_a": 1.71,
+              "cuota_b": 2.12
             },
             {
               "linea": 2.5,
-              "cuota_a": 3.13,
-              "cuota_b": 1.36
+              "cuota_a": 3.07,
+              "cuota_b": 1.37
             }
           ]
         },
@@ -1030,8 +1030,8 @@
           "lineas": [
             {
               "linea": 1.5,
-              "cuota_a": 1.63,
-              "cuota_b": 2.22
+              "cuota_a": 1.69,
+              "cuota_b": 2.11
             }
           ]
         },
@@ -1041,8 +1041,8 @@
           "lineas": [
             {
               "linea": 1.5,
-              "cuota_a": 1.72,
-              "cuota_b": 2.05
+              "cuota_a": 1.6,
+              "cuota_b": 2.25
             }
           ]
         }
@@ -1050,46 +1050,46 @@
       "candidata": {
         "casa": "betano",
         "linea": 1.5,
-        "cuota_a": 1.68,
-        "cuota_b": 2.17,
-        "diferencia": 0.49,
-        "margen": 0.0561,
-        "prob_sin_margen_a": 0.5636,
-        "promedio_mercado_a": 0.5602
+        "cuota_a": 1.71,
+        "cuota_b": 2.12,
+        "diferencia": 0.41,
+        "margen": 0.0565,
+        "prob_sin_margen_a": 0.5535,
+        "promedio_mercado_a": 0.5698
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.505,
+        "prob_a": 0.569,
         "lado": "a",
         "explicacion": [
           {
-            "factor": "rival_concede",
-            "impacto": 0.01
-          },
-          {
             "factor": "forma_reciente",
-            "impacto": 0
+            "impacto": 0.03
           },
           {
-            "factor": "localia",
-            "impacto": -0.02
+            "factor": "rival_concede",
+            "impacto": 0.03
+          },
+          {
+            "factor": "promedio_liga",
+            "impacto": 0.02
           }
         ]
       },
       "red": {
         "version": "ejemplo-red-futbol_goles-1",
-        "prob_a": 0.63,
+        "prob_a": 0.64,
         "lado": "a"
       },
       "entrada_red": {
         "version": "ejemplo-variables-1",
         "valores": {
           "linea": 1.5,
-          "cuota_a": 1.68,
-          "cuota_b": 2.17,
+          "cuota_a": 1.71,
+          "cuota_b": 2.12,
           "esperado": 1.89,
-          "forma_local": 0.79,
-          "forma_visitante": 0.63
+          "forma_local": -0.2,
+          "forma_visitante": -0.08
         }
       },
       "apuesta": null,
@@ -1211,18 +1211,18 @@
           "lineas": [
             {
               "linea": 3.5,
-              "cuota_a": 1.3,
-              "cuota_b": 3.5
+              "cuota_a": 1.37,
+              "cuota_b": 3.1
             },
             {
               "linea": 4.5,
-              "cuota_a": 1.83,
-              "cuota_b": 1.96
+              "cuota_a": 1.71,
+              "cuota_b": 2.12
             },
             {
               "linea": 5.5,
-              "cuota_a": 2.67,
-              "cuota_b": 1.47
+              "cuota_a": 2.75,
+              "cuota_b": 1.45
             }
           ]
         },
@@ -1232,8 +1232,8 @@
           "lineas": [
             {
               "linea": 4.5,
-              "cuota_a": 1.75,
-              "cuota_b": 2.03
+              "cuota_a": 1.78,
+              "cuota_b": 1.98
             }
           ]
         },
@@ -1243,8 +1243,8 @@
           "lineas": [
             {
               "linea": 4.5,
-              "cuota_a": 1.67,
-              "cuota_b": 2.13
+              "cuota_a": 1.74,
+              "cuota_b": 2.02
             }
           ]
         }
@@ -1252,39 +1252,47 @@
       "candidata": {
         "casa": "betano",
         "linea": 4.5,
-        "cuota_a": 1.83,
-        "cuota_b": 1.96,
-        "diferencia": 0.13,
-        "margen": 0.0567,
-        "prob_sin_margen_a": 0.5172,
-        "promedio_mercado_a": 0.5488
+        "cuota_a": 1.71,
+        "cuota_b": 2.12,
+        "diferencia": 0.41,
+        "margen": 0.0565,
+        "prob_sin_margen_a": 0.5535,
+        "promedio_mercado_a": 0.5319
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.556,
+        "prob_a": 0.609,
         "lado": "a",
         "explicacion": [
+          {
+            "factor": "rival_concede",
+            "impacto": 0.03
+          },
           {
             "factor": "forma_reciente",
             "impacto": 0.05
           },
           {
-            "factor": "rival_concede",
-            "impacto": 0.02
-          },
-          {
-            "factor": "arbitro",
-            "impacto": 0.01
+            "factor": "rivalidad",
+            "impacto": 0.06
           }
         ],
-        "prob_roja": 0.137
+        "prob_roja": 0.129
       },
       "red": null,
       "entrada_red": null,
-      "apuesta": null,
+      "apuesta": {
+        "casa": "betano",
+        "linea": 4.5,
+        "lado": "a",
+        "cuota": 1.71,
+        "monto": 25,
+        "moneda": "PEN",
+        "registrada_en": "2026-10-05T14:50:00Z"
+      },
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 8,
+        "valor_real": 5,
         "lado_ganador": "a",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-05T23:30:00Z"
@@ -1317,18 +1325,18 @@
           "lineas": [
             {
               "linea": 7.5,
-              "cuota_a": 1.57,
-              "cuota_b": 2.4
+              "cuota_a": 1.54,
+              "cuota_b": 2.47
             },
             {
               "linea": 8.5,
-              "cuota_a": 2.15,
-              "cuota_b": 1.7
+              "cuota_a": 2.05,
+              "cuota_b": 1.76
             },
             {
               "linea": 9.5,
-              "cuota_a": 2.91,
-              "cuota_b": 1.41
+              "cuota_a": 2.94,
+              "cuota_b": 1.4
             }
           ]
         }
@@ -1336,29 +1344,29 @@
       "candidata": {
         "casa": "betano",
         "linea": 8.5,
-        "cuota_a": 2.15,
-        "cuota_b": 1.7,
-        "diferencia": 0.45,
-        "margen": 0.0534,
-        "prob_sin_margen_a": 0.4416,
+        "cuota_a": 2.05,
+        "cuota_b": 1.76,
+        "diferencia": 0.29,
+        "margen": 0.056,
+        "prob_sin_margen_a": 0.4619,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.426,
+        "prob_a": 0.495,
         "lado": "b",
         "explicacion": [
           {
-            "factor": "localia",
-            "impacto": -0.04
-          },
-          {
-            "factor": "rival_concede",
+            "factor": "promedio_liga",
             "impacto": 0.01
           },
           {
-            "factor": "forma_reciente",
-            "impacto": -0.03
+            "factor": "rival_concede",
+            "impacto": -0.02
+          },
+          {
+            "factor": "localia",
+            "impacto": -0.01
           }
         ]
       },

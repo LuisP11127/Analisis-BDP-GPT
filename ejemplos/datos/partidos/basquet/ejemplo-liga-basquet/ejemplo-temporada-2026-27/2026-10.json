@@ -15,17 +15,17 @@
       "inicio": "2026-10-02T00:00:00Z",
       "fecha_local": "2026-10-01",
       "local": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
+        "id": "ejemplo:basquet-condores-demo",
+        "nombre": "Cóndores Demo"
       },
       "visitante": {
-        "id": "ejemplo:basquet-toros-muestra",
-        "nombre": "Toros Muestra"
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
       },
       "estado": "finalizado",
       "marcador": {
-        "local": 84,
-        "visitante": 111
+        "local": 118,
+        "visitante": 112
       },
       "estadisticas": {
         "fuente": "sofascore",
@@ -33,74 +33,57 @@
         "formato_periodos": "cuartos",
         "periodos": {
           "local": [
-            22,
-            20,
-            17,
-            25
+            25,
+            31,
+            30,
+            32
           ],
           "visitante": [
-            29,
-            28,
-            29,
-            25
+            30,
+            24,
+            26,
+            32
           ]
         },
         "equipos": {
           "local": {
-            "tiros_campo_anotados": 24,
-            "tiros_campo_intentados": 55,
-            "triples_anotados": 11,
-            "triples_intentados": 31,
-            "tiros_libres_anotados": 25,
-            "tiros_libres_intentados": 34,
-            "rebotes_ofensivos": 9,
-            "rebotes_defensivos": 40,
-            "rebotes": 49,
-            "asistencias": 30,
-            "robos": 8,
+            "tiros_campo_anotados": 47,
+            "tiros_campo_intentados": 108,
+            "triples_anotados": 10,
+            "triples_intentados": 26,
+            "tiros_libres_anotados": 14,
+            "tiros_libres_intentados": 17,
+            "rebotes_ofensivos": 3,
+            "rebotes_defensivos": 43,
+            "rebotes": 46,
+            "asistencias": 29,
+            "robos": 9,
             "tapones": 5,
-            "perdidas": 13,
-            "faltas": 22
+            "perdidas": 20,
+            "faltas": 18
           },
           "visitante": {
-            "tiros_campo_anotados": 38,
-            "tiros_campo_intentados": 85,
-            "triples_anotados": 13,
-            "triples_intentados": 34,
-            "tiros_libres_anotados": 22,
-            "tiros_libres_intentados": 26,
-            "rebotes_ofensivos": 14,
-            "rebotes_defensivos": 45,
-            "rebotes": 59,
-            "asistencias": 20,
-            "robos": 4,
-            "tapones": 9,
-            "perdidas": 15,
-            "faltas": 14
+            "tiros_campo_anotados": 40,
+            "tiros_campo_intentados": 91,
+            "triples_anotados": 14,
+            "triples_intentados": 38,
+            "tiros_libres_anotados": 18,
+            "tiros_libres_intentados": 22,
+            "rebotes_ofensivos": 9,
+            "rebotes_defensivos": 41,
+            "rebotes": 50,
+            "asistencias": 32,
+            "robos": 14,
+            "tapones": 3,
+            "perdidas": 14,
+            "faltas": 12
           }
         },
         "jugadores": [
           {
             "jugador": {
-              "id": "ejemplo:jb-1",
-              "nombre": "Santiago Castro"
-            },
-            "equipo": "local",
-            "titular": true,
-            "jugo": true,
-            "minutos": 29.2,
-            "puntos": 4,
-            "rebotes": 3,
-            "asistencias": 4,
-            "triples": 0,
-            "robos": 1,
-            "tapones": 4,
-            "perdidas": 1
-          },
-          {
-            "jugador": {
-              "id": "ejemplo:jb-2",
-              "nombre": "Sebastián Huamán"
+              "id": "ejemplo:jb-7",
+              "nombre": "Joaquín Salazar"
             },
             "equipo": "local",
             "titular": false,
@@ -109,37 +92,54 @@
           },
           {
             "jugador": {
-              "id": "ejemplo:jb-3",
-              "nombre": "Diego Torres"
+              "id": "ejemplo:jb-8",
+              "nombre": "Emiliano Vargas"
             },
-            "equipo": "visitante",
+            "equipo": "local",
             "titular": true,
             "jugo": true,
-            "minutos": 33.6,
-            "puntos": 11,
-            "rebotes": 3,
-            "asistencias": 3,
+            "minutos": 34.2,
+            "puntos": 20,
+            "rebotes": 13,
+            "asistencias": 11,
             "triples": 1,
             "robos": 1,
-            "tapones": 0,
-            "perdidas": 2
+            "tapones": 1,
+            "perdidas": 0
           },
           {
             "jugador": {
-              "id": "ejemplo:jb-4",
-              "nombre": "Nicolás Silva"
+              "id": "ejemplo:jb-5",
+              "nombre": "Gabriel Ramos"
             },
             "equipo": "visitante",
             "titular": true,
             "jugo": true,
-            "minutos": 31.4,
-            "puntos": 7,
+            "minutos": 25.5,
+            "puntos": 17,
             "rebotes": 11,
-            "asistencias": 3,
+            "asistencias": 7,
+            "triples": 4,
+            "robos": 1,
+            "tapones": 1,
+            "perdidas": 1
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-6",
+              "nombre": "Tomás Rojas"
+            },
+            "equipo": "visitante",
+            "titular": true,
+            "jugo": true,
+            "minutos": 32.3,
+            "puntos": 31,
+            "rebotes": 3,
+            "asistencias": 8,
             "triples": 0,
-            "robos": 0,
+            "robos": 2,
             "tapones": 0,
-            "perdidas": 0
+            "perdidas": 1
           }
         ]
       }
@@ -158,17 +158,17 @@
       "inicio": "2026-10-02T01:00:00Z",
       "fecha_local": "2026-10-01",
       "local": {
-        "id": "ejemplo:basquet-condores-demo",
-        "nombre": "Cóndores Demo"
-      },
-      "visitante": {
         "id": "ejemplo:basquet-osos-simulado",
         "nombre": "Osos Simulado"
       },
+      "visitante": {
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
+      },
       "estado": "finalizado",
       "marcador": {
-        "local": 118,
-        "visitante": 111
+        "local": 115,
+        "visitante": 105
       },
       "estadisticas": {
         "fuente": "sofascore",
@@ -177,119 +177,119 @@
         "periodos": {
           "local": [
             32,
-            23,
-            30,
-            33
+            37,
+            24,
+            22
           ],
           "visitante": [
-            28,
-            24,
-            27,
-            32
+            31,
+            25,
+            21,
+            28
           ]
         },
         "equipos": {
           "local": {
             "tiros_campo_anotados": 47,
-            "tiros_campo_intentados": 107,
-            "triples_anotados": 9,
-            "triples_intentados": 27,
+            "tiros_campo_intentados": 95,
+            "triples_anotados": 6,
+            "triples_intentados": 17,
             "tiros_libres_anotados": 15,
             "tiros_libres_intentados": 18,
-            "rebotes_ofensivos": 8,
-            "rebotes_defensivos": 34,
-            "rebotes": 42,
-            "asistencias": 27,
-            "robos": 8,
-            "tapones": 12,
-            "perdidas": 13,
-            "faltas": 15
+            "rebotes_ofensivos": 6,
+            "rebotes_defensivos": 28,
+            "rebotes": 34,
+            "asistencias": 21,
+            "robos": 7,
+            "tapones": 5,
+            "perdidas": 11,
+            "faltas": 19
           },
           "visitante": {
-            "tiros_campo_anotados": 38,
-            "tiros_campo_intentados": 83,
+            "tiros_campo_anotados": 33,
+            "tiros_campo_intentados": 66,
             "triples_anotados": 13,
-            "triples_intentados": 37,
-            "tiros_libres_anotados": 22,
-            "tiros_libres_intentados": 30,
-            "rebotes_ofensivos": 8,
-            "rebotes_defensivos": 29,
-            "rebotes": 37,
-            "asistencias": 26,
+            "triples_intentados": 38,
+            "tiros_libres_anotados": 26,
+            "tiros_libres_intentados": 32,
+            "rebotes_ofensivos": 10,
+            "rebotes_defensivos": 35,
+            "rebotes": 45,
+            "asistencias": 16,
             "robos": 4,
-            "tapones": 4,
-            "perdidas": 11,
+            "tapones": 3,
+            "perdidas": 17,
             "faltas": 21
           }
         },
         "jugadores": [
           {
             "jugador": {
-              "id": "ejemplo:jb-7",
-              "nombre": "Joaquín Salazar"
-            },
-            "equipo": "local",
-            "titular": true,
-            "jugo": true,
-            "minutos": 28,
-            "puntos": 20,
-            "rebotes": 5,
-            "asistencias": 2,
-            "triples": 3,
-            "robos": 0,
-            "tapones": 1,
-            "perdidas": 0
-          },
-          {
-            "jugador": {
-              "id": "ejemplo:jb-8",
-              "nombre": "Emiliano Vargas"
-            },
-            "equipo": "local",
-            "titular": true,
-            "jugo": true,
-            "minutos": 37.9,
-            "puntos": 13,
-            "rebotes": 4,
-            "asistencias": 4,
-            "triples": 0,
-            "robos": 0,
-            "tapones": 0,
-            "perdidas": 0
-          },
-          {
-            "jugador": {
               "id": "ejemplo:jb-11",
               "nombre": "Lucas Mendoza"
             },
-            "equipo": "visitante",
+            "equipo": "local",
             "titular": true,
             "jugo": true,
-            "minutos": 33.5,
-            "puntos": 21,
-            "rebotes": 3,
+            "minutos": 33.2,
+            "puntos": 14,
+            "rebotes": 4,
             "asistencias": 3,
-            "triples": 1,
+            "triples": 0,
             "robos": 2,
-            "tapones": 0,
-            "perdidas": 2
+            "tapones": 1,
+            "perdidas": 1
           },
           {
             "jugador": {
               "id": "ejemplo:jb-12",
               "nombre": "Mateo Quispe"
             },
+            "equipo": "local",
+            "titular": true,
+            "jugo": true,
+            "minutos": 33.9,
+            "puntos": 24,
+            "rebotes": 8,
+            "asistencias": 6,
+            "triples": 2,
+            "robos": 0,
+            "tapones": 0,
+            "perdidas": 2
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-9",
+              "nombre": "Bruno Paredes"
+            },
             "equipo": "visitante",
             "titular": true,
             "jugo": true,
-            "minutos": 29.3,
-            "puntos": 28,
-            "rebotes": 8,
-            "asistencias": 5,
-            "triples": 2,
-            "robos": 2,
+            "minutos": 33.4,
+            "puntos": 17,
+            "rebotes": 6,
+            "asistencias": 7,
+            "triples": 0,
+            "robos": 0,
             "tapones": 0,
-            "perdidas": 1
+            "perdidas": 2
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-10",
+              "nombre": "Thiago Flores"
+            },
+            "equipo": "visitante",
+            "titular": true,
+            "jugo": true,
+            "minutos": 34.2,
+            "puntos": 23,
+            "rebotes": 5,
+            "asistencias": 2,
+            "triples": 0,
+            "robos": 0,
+            "tapones": 1,
+            "perdidas": 4
           }
         ]
       }
@@ -308,17 +308,17 @@
       "inicio": "2026-10-02T02:30:00Z",
       "fecha_local": "2026-10-01",
       "local": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
       },
       "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
+        "id": "ejemplo:basquet-toros-muestra",
+        "nombre": "Toros Muestra"
       },
       "estado": "finalizado",
       "marcador": {
-        "local": 112,
-        "visitante": 111
+        "local": 113,
+        "visitante": 114
       },
       "estadisticas": {
         "fuente": "sofascore",
@@ -326,118 +326,118 @@
         "formato_periodos": "cuartos",
         "periodos": {
           "local": [
-            31,
             29,
-            28,
-            24
-          ],
-          "visitante": [
             29,
-            27,
             27,
             28
+          ],
+          "visitante": [
+            30,
+            30,
+            27,
+            27
           ]
         },
         "equipos": {
           "local": {
-            "tiros_campo_anotados": 43,
-            "tiros_campo_intentados": 89,
-            "triples_anotados": 12,
-            "triples_intentados": 32,
-            "tiros_libres_anotados": 14,
-            "tiros_libres_intentados": 18,
-            "rebotes_ofensivos": 13,
-            "rebotes_defensivos": 31,
-            "rebotes": 44,
-            "asistencias": 25,
-            "robos": 4,
-            "tapones": 2,
-            "perdidas": 11,
-            "faltas": 17
+            "tiros_campo_anotados": 44,
+            "tiros_campo_intentados": 90,
+            "triples_anotados": 14,
+            "triples_intentados": 43,
+            "tiros_libres_anotados": 11,
+            "tiros_libres_intentados": 14,
+            "rebotes_ofensivos": 12,
+            "rebotes_defensivos": 26,
+            "rebotes": 38,
+            "asistencias": 24,
+            "robos": 5,
+            "tapones": 3,
+            "perdidas": 10,
+            "faltas": 25
           },
           "visitante": {
-            "tiros_campo_anotados": 41,
-            "tiros_campo_intentados": 86,
-            "triples_anotados": 15,
-            "triples_intentados": 44,
-            "tiros_libres_anotados": 14,
-            "tiros_libres_intentados": 18,
-            "rebotes_ofensivos": 6,
-            "rebotes_defensivos": 38,
-            "rebotes": 44,
-            "asistencias": 29,
-            "robos": 6,
-            "tapones": 8,
-            "perdidas": 15,
-            "faltas": 23
+            "tiros_campo_anotados": 45,
+            "tiros_campo_intentados": 91,
+            "triples_anotados": 14,
+            "triples_intentados": 35,
+            "tiros_libres_anotados": 10,
+            "tiros_libres_intentados": 12,
+            "rebotes_ofensivos": 8,
+            "rebotes_defensivos": 29,
+            "rebotes": 37,
+            "asistencias": 23,
+            "robos": 5,
+            "tapones": 4,
+            "perdidas": 13,
+            "faltas": 24
           }
         },
         "jugadores": [
           {
             "jugador": {
-              "id": "ejemplo:jb-5",
-              "nombre": "Gabriel Ramos"
+              "id": "ejemplo:jb-1",
+              "nombre": "Santiago Castro"
             },
             "equipo": "local",
             "titular": true,
             "jugo": true,
-            "minutos": 28.6,
-            "puntos": 17,
-            "rebotes": 10,
-            "asistencias": 1,
-            "triples": 4,
-            "robos": 0,
-            "tapones": 2,
-            "perdidas": 1
-          },
-          {
-            "jugador": {
-              "id": "ejemplo:jb-6",
-              "nombre": "Tomás Rojas"
-            },
-            "equipo": "local",
-            "titular": true,
-            "jugo": true,
-            "minutos": 35.4,
-            "puntos": 29,
-            "rebotes": 4,
-            "asistencias": 10,
-            "triples": 0,
-            "robos": 0,
+            "minutos": 32.9,
+            "puntos": 11,
+            "rebotes": 2,
+            "asistencias": 7,
+            "triples": 2,
+            "robos": 1,
             "tapones": 0,
-            "perdidas": 1
+            "perdidas": 2
           },
           {
             "jugador": {
-              "id": "ejemplo:jb-9",
-              "nombre": "Bruno Paredes"
+              "id": "ejemplo:jb-2",
+              "nombre": "Sebastián Huamán"
+            },
+            "equipo": "local",
+            "titular": true,
+            "jugo": true,
+            "minutos": 29.3,
+            "puntos": 22,
+            "rebotes": 5,
+            "asistencias": 2,
+            "triples": 4,
+            "robos": 2,
+            "tapones": 0,
+            "perdidas": 0
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-3",
+              "nombre": "Diego Torres"
             },
             "equipo": "visitante",
             "titular": true,
             "jugo": true,
             "minutos": 34.3,
-            "puntos": 11,
-            "rebotes": 5,
-            "asistencias": 11,
-            "triples": 1,
-            "robos": 0,
+            "puntos": 22,
+            "rebotes": 4,
+            "asistencias": 6,
+            "triples": 0,
+            "robos": 2,
             "tapones": 1,
-            "perdidas": 0
+            "perdidas": 3
           },
           {
             "jugador": {
-              "id": "ejemplo:jb-10",
-              "nombre": "Thiago Flores"
+              "id": "ejemplo:jb-4",
+              "nombre": "Nicolás Silva"
             },
             "equipo": "visitante",
             "titular": true,
             "jugo": true,
-            "minutos": 32.4,
-            "puntos": 18,
+            "minutos": 33.6,
+            "puntos": 12,
             "rebotes": 9,
-            "asistencias": 4,
-            "triples": 3,
-            "robos": 0,
+            "asistencias": 7,
+            "triples": 0,
+            "robos": 1,
             "tapones": 1,
             "perdidas": 3
           }
@@ -458,17 +458,17 @@
       "inicio": "2026-10-04T00:00:00Z",
       "fecha_local": "2026-10-03",
       "local": {
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
+      },
+      "visitante": {
         "id": "ejemplo:basquet-toros-muestra",
         "nombre": "Toros Muestra"
       },
-      "visitante": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
-      },
       "estado": "finalizado",
       "marcador": {
-        "local": 120,
-        "visitante": 112
+        "local": 98,
+        "visitante": 101
       },
       "estadisticas": {
         "fuente": "sofascore",
@@ -476,119 +476,119 @@
         "formato_periodos": "cuartos",
         "periodos": {
           "local": [
-            25,
-            30,
-            31,
-            34
+            26,
+            24,
+            26,
+            22
           ],
           "visitante": [
-            23,
-            32,
-            27,
-            30
+            24,
+            24,
+            30,
+            23
           ]
         },
         "equipos": {
           "local": {
-            "tiros_campo_anotados": 49,
-            "tiros_campo_intentados": 110,
-            "triples_anotados": 9,
-            "triples_intentados": 28,
-            "tiros_libres_anotados": 13,
-            "tiros_libres_intentados": 16,
-            "rebotes_ofensivos": 15,
-            "rebotes_defensivos": 32,
-            "rebotes": 47,
-            "asistencias": 23,
-            "robos": 7,
-            "tapones": 4,
-            "perdidas": 12,
-            "faltas": 13
+            "tiros_campo_anotados": 39,
+            "tiros_campo_intentados": 80,
+            "triples_anotados": 5,
+            "triples_intentados": 13,
+            "tiros_libres_anotados": 15,
+            "tiros_libres_intentados": 19,
+            "rebotes_ofensivos": 9,
+            "rebotes_defensivos": 30,
+            "rebotes": 39,
+            "asistencias": 27,
+            "robos": 2,
+            "tapones": 7,
+            "perdidas": 13,
+            "faltas": 18
           },
           "visitante": {
-            "tiros_campo_anotados": 44,
-            "tiros_campo_intentados": 95,
-            "triples_anotados": 10,
-            "triples_intentados": 30,
-            "tiros_libres_anotados": 14,
-            "tiros_libres_intentados": 16,
-            "rebotes_ofensivos": 6,
-            "rebotes_defensivos": 28,
-            "rebotes": 34,
-            "asistencias": 26,
-            "robos": 10,
-            "tapones": 1,
-            "perdidas": 13,
-            "faltas": 20
+            "tiros_campo_anotados": 39,
+            "tiros_campo_intentados": 80,
+            "triples_anotados": 12,
+            "triples_intentados": 37,
+            "tiros_libres_anotados": 11,
+            "tiros_libres_intentados": 13,
+            "rebotes_ofensivos": 14,
+            "rebotes_defensivos": 33,
+            "rebotes": 47,
+            "asistencias": 19,
+            "robos": 2,
+            "tapones": 7,
+            "perdidas": 11,
+            "faltas": 15
           }
         },
         "jugadores": [
           {
             "jugador": {
-              "id": "ejemplo:jb-3",
-              "nombre": "Diego Torres"
+              "id": "ejemplo:jb-9",
+              "nombre": "Bruno Paredes"
             },
             "equipo": "local",
             "titular": true,
             "jugo": true,
-            "minutos": 33.6,
-            "puntos": 24,
-            "rebotes": 7,
-            "asistencias": 5,
+            "minutos": 34.9,
+            "puntos": 14,
+            "rebotes": 5,
+            "asistencias": 10,
             "triples": 2,
-            "robos": 4,
-            "tapones": 0,
-            "perdidas": 3
+            "robos": 1,
+            "tapones": 3,
+            "perdidas": 1
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-10",
+              "nombre": "Thiago Flores"
+            },
+            "equipo": "local",
+            "titular": true,
+            "jugo": true,
+            "minutos": 27.7,
+            "puntos": 17,
+            "rebotes": 8,
+            "asistencias": 6,
+            "triples": 0,
+            "robos": 2,
+            "tapones": 1,
+            "perdidas": 1
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-3",
+              "nombre": "Diego Torres"
+            },
+            "equipo": "visitante",
+            "titular": true,
+            "jugo": true,
+            "minutos": 31,
+            "puntos": 24,
+            "rebotes": 1,
+            "asistencias": 2,
+            "triples": 0,
+            "robos": 1,
+            "tapones": 2,
+            "perdidas": 2
           },
           {
             "jugador": {
               "id": "ejemplo:jb-4",
               "nombre": "Nicolás Silva"
             },
-            "equipo": "local",
+            "equipo": "visitante",
             "titular": true,
             "jugo": true,
             "minutos": 29.8,
-            "puntos": 20,
-            "rebotes": 4,
-            "asistencias": 6,
-            "triples": 2,
-            "robos": 2,
-            "tapones": 1,
-            "perdidas": 0
-          },
-          {
-            "jugador": {
-              "id": "ejemplo:jb-5",
-              "nombre": "Gabriel Ramos"
-            },
-            "equipo": "visitante",
-            "titular": true,
-            "jugo": true,
-            "minutos": 24.7,
-            "puntos": 17,
-            "rebotes": 7,
-            "asistencias": 4,
-            "triples": 4,
-            "robos": 0,
-            "tapones": 1,
-            "perdidas": 2
-          },
-          {
-            "jugador": {
-              "id": "ejemplo:jb-6",
-              "nombre": "Tomás Rojas"
-            },
-            "equipo": "visitante",
-            "titular": true,
-            "jugo": true,
-            "minutos": 31.7,
-            "puntos": 27,
-            "rebotes": 5,
-            "asistencias": 12,
+            "puntos": 16,
+            "rebotes": 13,
+            "asistencias": 7,
             "triples": 1,
-            "robos": 2,
-            "tapones": 2,
+            "robos": 3,
+            "tapones": 0,
             "perdidas": 0
           }
         ]
@@ -608,17 +608,17 @@
       "inicio": "2026-10-04T01:00:00Z",
       "fecha_local": "2026-10-03",
       "local": {
+        "id": "ejemplo:basquet-osos-simulado",
+        "nombre": "Osos Simulado"
+      },
+      "visitante": {
         "id": "ejemplo:basquet-condores-demo",
         "nombre": "Cóndores Demo"
       },
-      "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
-      },
       "estado": "finalizado",
       "marcador": {
-        "local": 111,
-        "visitante": 103
+        "local": 98,
+        "visitante": 114
       },
       "estadisticas": {
         "fuente": "sofascore",
@@ -626,66 +626,100 @@
         "formato_periodos": "cuartos",
         "periodos": {
           "local": [
-            32,
             26,
-            28,
-            25
+            23,
+            19,
+            30
           ],
           "visitante": [
-            25,
-            25,
-            32,
-            21
+            31,
+            31,
+            22,
+            30
           ]
         },
         "equipos": {
           "local": {
-            "tiros_campo_anotados": 43,
-            "tiros_campo_intentados": 90,
+            "tiros_campo_anotados": 35,
+            "tiros_campo_intentados": 72,
             "triples_anotados": 12,
-            "triples_intentados": 32,
-            "tiros_libres_anotados": 13,
-            "tiros_libres_intentados": 18,
-            "rebotes_ofensivos": 17,
-            "rebotes_defensivos": 30,
-            "rebotes": 47,
-            "asistencias": 16,
-            "robos": 9,
-            "tapones": 1,
-            "perdidas": 9,
-            "faltas": 14
+            "triples_intentados": 37,
+            "tiros_libres_anotados": 16,
+            "tiros_libres_intentados": 19,
+            "rebotes_ofensivos": 9,
+            "rebotes_defensivos": 37,
+            "rebotes": 46,
+            "asistencias": 23,
+            "robos": 5,
+            "tapones": 4,
+            "perdidas": 13,
+            "faltas": 22
           },
           "visitante": {
-            "tiros_campo_anotados": 42,
-            "tiros_campo_intentados": 97,
-            "triples_anotados": 8,
-            "triples_intentados": 21,
-            "tiros_libres_anotados": 11,
-            "tiros_libres_intentados": 14,
-            "rebotes_ofensivos": 9,
-            "rebotes_defensivos": 32,
-            "rebotes": 41,
-            "asistencias": 19,
-            "robos": 9,
-            "tapones": 7,
-            "perdidas": 18,
-            "faltas": 12
+            "tiros_campo_anotados": 44,
+            "tiros_campo_intentados": 96,
+            "triples_anotados": 11,
+            "triples_intentados": 28,
+            "tiros_libres_anotados": 15,
+            "tiros_libres_intentados": 18,
+            "rebotes_ofensivos": 5,
+            "rebotes_defensivos": 27,
+            "rebotes": 32,
+            "asistencias": 14,
+            "robos": 5,
+            "tapones": 6,
+            "perdidas": 13,
+            "faltas": 22
           }
         },
         "jugadores": [
           {
             "jugador": {
-              "id": "ejemplo:jb-7",
-              "nombre": "Joaquín Salazar"
+              "id": "ejemplo:jb-11",
+              "nombre": "Lucas Mendoza"
             },
             "equipo": "local",
             "titular": true,
             "jugo": true,
-            "minutos": 29.7,
-            "puntos": 15,
-            "rebotes": 8,
-            "asistencias": 2,
-            "triples": 5,
+            "minutos": 33.7,
+            "puntos": 18,
+            "rebotes": 4,
+            "asistencias": 5,
+            "triples": 1,
+            "robos": 1,
+            "tapones": 0,
+            "perdidas": 7
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-12",
+              "nombre": "Mateo Quispe"
+            },
+            "equipo": "local",
+            "titular": true,
+            "jugo": true,
+            "minutos": 32.3,
+            "puntos": 24,
+            "rebotes": 6,
+            "asistencias": 3,
+            "triples": 4,
+            "robos": 0,
+            "tapones": 2,
+            "perdidas": 5
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-7",
+              "nombre": "Joaquín Salazar"
+            },
+            "equipo": "visitante",
+            "titular": true,
+            "jugo": true,
+            "minutos": 26.3,
+            "puntos": 16,
+            "rebotes": 5,
+            "asistencias": 1,
+            "triples": 4,
             "robos": 1,
             "tapones": 0,
             "perdidas": 2
@@ -695,51 +729,17 @@
               "id": "ejemplo:jb-8",
               "nombre": "Emiliano Vargas"
             },
-            "equipo": "local",
-            "titular": true,
-            "jugo": true,
-            "minutos": 33.5,
-            "puntos": 16,
-            "rebotes": 2,
-            "asistencias": 10,
-            "triples": 0,
-            "robos": 1,
-            "tapones": 1,
-            "perdidas": 0
-          },
-          {
-            "jugador": {
-              "id": "ejemplo:jb-9",
-              "nombre": "Bruno Paredes"
-            },
             "equipo": "visitante",
             "titular": true,
             "jugo": true,
-            "minutos": 33.9,
-            "puntos": 20,
-            "rebotes": 7,
-            "asistencias": 16,
-            "triples": 2,
-            "robos": 1,
-            "tapones": 0,
-            "perdidas": 1
-          },
-          {
-            "jugador": {
-              "id": "ejemplo:jb-10",
-              "nombre": "Thiago Flores"
-            },
-            "equipo": "visitante",
-            "titular": true,
-            "jugo": true,
-            "minutos": 37,
-            "puntos": 27,
-            "rebotes": 8,
-            "asistencias": 4,
+            "minutos": 39.3,
+            "puntos": 12,
+            "rebotes": 4,
+            "asistencias": 9,
             "triples": 1,
             "robos": 1,
-            "tapones": 0,
-            "perdidas": 2
+            "tapones": 3,
+            "perdidas": 1
           }
         ]
       }
@@ -758,17 +758,17 @@
       "inicio": "2026-10-04T02:30:00Z",
       "fecha_local": "2026-10-03",
       "local": {
-        "id": "ejemplo:basquet-osos-simulado",
-        "nombre": "Osos Simulado"
-      },
-      "visitante": {
         "id": "ejemplo:basquet-halcones-ejemplo",
         "nombre": "Halcones Ejemplo"
       },
+      "visitante": {
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
+      },
       "estado": "finalizado",
       "marcador": {
-        "local": 114,
-        "visitante": 101
+        "local": 113,
+        "visitante": 118
       },
       "estadisticas": {
         "fuente": "sofascore",
@@ -776,112 +776,119 @@
         "formato_periodos": "cuartos",
         "periodos": {
           "local": [
-            28,
-            27,
-            31,
-            28
+            25,
+            24,
+            30,
+            34
           ],
           "visitante": [
-            24,
-            23,
-            29,
-            25
+            32,
+            28,
+            26,
+            32
           ]
         },
         "equipos": {
           "local": {
-            "tiros_campo_anotados": 43,
-            "tiros_campo_intentados": 87,
-            "triples_anotados": 11,
-            "triples_intentados": 29,
-            "tiros_libres_anotados": 17,
-            "tiros_libres_intentados": 23,
+            "tiros_campo_anotados": 38,
+            "tiros_campo_intentados": 83,
+            "triples_anotados": 16,
+            "triples_intentados": 44,
+            "tiros_libres_anotados": 21,
+            "tiros_libres_intentados": 27,
             "rebotes_ofensivos": 11,
-            "rebotes_defensivos": 33,
-            "rebotes": 44,
-            "asistencias": 19,
-            "robos": 8,
-            "tapones": 3,
-            "perdidas": 18,
-            "faltas": 21
+            "rebotes_defensivos": 26,
+            "rebotes": 37,
+            "asistencias": 26,
+            "robos": 6,
+            "tapones": 4,
+            "perdidas": 16,
+            "faltas": 17
           },
           "visitante": {
-            "tiros_campo_anotados": 36,
-            "tiros_campo_intentados": 74,
-            "triples_anotados": 15,
-            "triples_intentados": 39,
-            "tiros_libres_anotados": 14,
-            "tiros_libres_intentados": 17,
-            "rebotes_ofensivos": 7,
-            "rebotes_defensivos": 28,
-            "rebotes": 35,
-            "asistencias": 24,
-            "robos": 5,
-            "tapones": 6,
-            "perdidas": 12,
-            "faltas": 8
+            "tiros_campo_anotados": 44,
+            "tiros_campo_intentados": 98,
+            "triples_anotados": 12,
+            "triples_intentados": 34,
+            "tiros_libres_anotados": 18,
+            "tiros_libres_intentados": 23,
+            "rebotes_ofensivos": 10,
+            "rebotes_defensivos": 36,
+            "rebotes": 46,
+            "asistencias": 21,
+            "robos": 9,
+            "tapones": 3,
+            "perdidas": 16,
+            "faltas": 19
           }
         },
         "jugadores": [
           {
             "jugador": {
-              "id": "ejemplo:jb-11",
-              "nombre": "Lucas Mendoza"
-            },
-            "equipo": "local",
-            "titular": true,
-            "jugo": true,
-            "minutos": 32.7,
-            "puntos": 6,
-            "rebotes": 8,
-            "asistencias": 6,
-            "triples": 0,
-            "robos": 0,
-            "tapones": 1,
-            "perdidas": 3
-          },
-          {
-            "jugador": {
-              "id": "ejemplo:jb-12",
-              "nombre": "Mateo Quispe"
-            },
-            "equipo": "local",
-            "titular": false,
-            "jugo": false,
-            "minutos": null
-          },
-          {
-            "jugador": {
               "id": "ejemplo:jb-1",
               "nombre": "Santiago Castro"
             },
-            "equipo": "visitante",
+            "equipo": "local",
             "titular": true,
             "jugo": true,
-            "minutos": 31,
-            "puntos": 18,
-            "rebotes": 2,
-            "asistencias": 9,
-            "triples": 0,
-            "robos": 2,
-            "tapones": 1,
-            "perdidas": 7
+            "minutos": 38,
+            "puntos": 27,
+            "rebotes": 3,
+            "asistencias": 3,
+            "triples": 2,
+            "robos": 1,
+            "tapones": 2,
+            "perdidas": 4
           },
           {
             "jugador": {
               "id": "ejemplo:jb-2",
               "nombre": "Sebastián Huamán"
             },
+            "equipo": "local",
+            "titular": true,
+            "jugo": true,
+            "minutos": 22.2,
+            "puntos": 22,
+            "rebotes": 4,
+            "asistencias": 2,
+            "triples": 4,
+            "robos": 2,
+            "tapones": 3,
+            "perdidas": 2
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-5",
+              "nombre": "Gabriel Ramos"
+            },
             "equipo": "visitante",
             "titular": true,
             "jugo": true,
-            "minutos": 30,
-            "puntos": 28,
-            "rebotes": 6,
-            "asistencias": 3,
-            "triples": 3,
-            "robos": 1,
-            "tapones": 0,
+            "minutos": 29.5,
+            "puntos": 16,
+            "rebotes": 2,
+            "asistencias": 6,
+            "triples": 1,
+            "robos": 0,
+            "tapones": 1,
+            "perdidas": 3
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-6",
+              "nombre": "Tomás Rojas"
+            },
+            "equipo": "visitante",
+            "titular": true,
+            "jugo": true,
+            "minutos": 29.4,
+            "puntos": 27,
+            "rebotes": 8,
+            "asistencias": 11,
+            "triples": 0,
+            "robos": 2,
+            "tapones": 1,
             "perdidas": 1
           }
         ]
@@ -901,20 +908,20 @@
       "inicio": "2026-10-06T00:00:00Z",
       "fecha_local": "2026-10-05",
       "local": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
-      },
-      "visitante": {
         "id": "ejemplo:basquet-pumas-ficticio",
         "nombre": "Pumas Ficticio"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-toros-muestra",
+        "nombre": "Toros Muestra"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900016"
       },
       "marcador": {
-        "local": 127,
-        "visitante": 122
+        "local": 116,
+        "visitante": 118
       },
       "previa": {
         "extraido_en": "2026-10-05T18:00:00Z",
@@ -929,26 +936,26 @@
             "perdidos": 4
           },
           "visitante": {
-            "posicion": 4,
+            "posicion": 2,
             "partidos_jugados": 5,
-            "ganados": 2,
-            "perdidos": 3
+            "ganados": 4,
+            "perdidos": 1
           }
         },
         "ultimos_partidos": {
           "local": [
             "ejemplo:bas-013",
-            "ejemplo:bas-012",
+            "ejemplo:bas-011",
             "ejemplo:bas-009",
             "ejemplo:bas-006",
-            "ejemplo:bas-003"
+            "ejemplo:bas-002"
           ],
           "visitante": [
-            "ejemplo:bas-014",
+            "ejemplo:bas-013",
             "ejemplo:bas-012",
             "ejemplo:bas-007",
             "ejemplo:bas-005",
-            "ejemplo:bas-002"
+            "ejemplo:bas-003"
           ]
         }
       },
@@ -958,110 +965,68 @@
         "formato_periodos": "cuartos",
         "periodos": {
           "local": [
+            32,
+            29,
             28,
-            30,
-            34,
-            23
+            27
           ],
           "visitante": [
-            34,
-            28,
-            31,
-            22
-          ]
-        },
-        "prorrogas": {
-          "local": [
-            12
-          ],
-          "visitante": [
-            7
+            32,
+            29,
+            27,
+            30
           ]
         },
         "equipos": {
           "local": {
-            "tiros_campo_anotados": 46,
-            "tiros_campo_intentados": 97,
-            "triples_anotados": 11,
+            "tiros_campo_anotados": 49,
+            "tiros_campo_intentados": 100,
+            "triples_anotados": 10,
             "triples_intentados": 29,
-            "tiros_libres_anotados": 24,
-            "tiros_libres_intentados": 30,
-            "rebotes_ofensivos": 13,
-            "rebotes_defensivos": 41,
-            "rebotes": 54,
-            "asistencias": 21,
-            "robos": 8,
-            "tapones": 3,
+            "tiros_libres_anotados": 8,
+            "tiros_libres_intentados": 9,
+            "rebotes_ofensivos": 9,
+            "rebotes_defensivos": 29,
+            "rebotes": 38,
+            "asistencias": 26,
+            "robos": 12,
+            "tapones": 7,
             "perdidas": 14,
-            "faltas": 15
+            "faltas": 22
           },
           "visitante": {
-            "tiros_campo_anotados": 49,
-            "tiros_campo_intentados": 103,
-            "triples_anotados": 12,
-            "triples_intentados": 36,
-            "tiros_libres_anotados": 12,
-            "tiros_libres_intentados": 16,
-            "rebotes_ofensivos": 7,
-            "rebotes_defensivos": 37,
-            "rebotes": 44,
-            "asistencias": 15,
-            "robos": 9,
-            "tapones": 2,
-            "perdidas": 11,
-            "faltas": 20
+            "tiros_campo_anotados": 45,
+            "tiros_campo_intentados": 90,
+            "triples_anotados": 18,
+            "triples_intentados": 53,
+            "tiros_libres_anotados": 10,
+            "tiros_libres_intentados": 14,
+            "rebotes_ofensivos": 13,
+            "rebotes_defensivos": 33,
+            "rebotes": 46,
+            "asistencias": 19,
+            "robos": 8,
+            "tapones": 4,
+            "perdidas": 13,
+            "faltas": 22
           }
         },
         "jugadores": [
           {
             "jugador": {
-              "id": "ejemplo:jb-5",
-              "nombre": "Gabriel Ramos"
-            },
-            "equipo": "local",
-            "titular": true,
-            "jugo": true,
-            "minutos": 26.1,
-            "puntos": 13,
-            "rebotes": 4,
-            "asistencias": 3,
-            "triples": 2,
-            "robos": 2,
-            "tapones": 2,
-            "perdidas": 4
-          },
-          {
-            "jugador": {
-              "id": "ejemplo:jb-6",
-              "nombre": "Tomás Rojas"
-            },
-            "equipo": "local",
-            "titular": true,
-            "jugo": true,
-            "minutos": 30.9,
-            "puntos": 18,
-            "rebotes": 3,
-            "asistencias": 11,
-            "triples": 4,
-            "robos": 1,
-            "tapones": 1,
-            "perdidas": 1
-          },
-          {
-            "jugador": {
               "id": "ejemplo:jb-9",
               "nombre": "Bruno Paredes"
             },
-            "equipo": "visitante",
+            "equipo": "local",
             "titular": true,
             "jugo": true,
-            "minutos": 37.7,
-            "puntos": 5,
+            "minutos": 37.9,
+            "puntos": 15,
             "rebotes": 3,
-            "asistencias": 5,
-            "triples": 1,
+            "asistencias": 6,
+            "triples": 3,
             "robos": 1,
-            "tapones": 0,
+            "tapones": 2,
             "perdidas": 1
           },
           {
@@ -1069,17 +1034,44 @@
               "id": "ejemplo:jb-10",
               "nombre": "Thiago Flores"
             },
+            "equipo": "local",
+            "titular": false,
+            "jugo": false,
+            "minutos": null
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-3",
+              "nombre": "Diego Torres"
+            },
             "equipo": "visitante",
             "titular": true,
             "jugo": true,
-            "minutos": 38.3,
-            "puntos": 17,
-            "rebotes": 11,
-            "asistencias": 4,
+            "minutos": 39.5,
+            "puntos": 29,
+            "rebotes": 6,
+            "asistencias": 2,
             "triples": 1,
             "robos": 1,
-            "tapones": 1,
-            "perdidas": 3
+            "tapones": 0,
+            "perdidas": 5
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-4",
+              "nombre": "Nicolás Silva"
+            },
+            "equipo": "visitante",
+            "titular": true,
+            "jugo": true,
+            "minutos": 30.1,
+            "puntos": 17,
+            "rebotes": 6,
+            "asistencias": 5,
+            "triples": 1,
+            "robos": 4,
+            "tapones": 0,
+            "perdidas": 2
           }
         ]
       }
@@ -1098,20 +1090,20 @@
       "inicio": "2026-10-06T01:00:00Z",
       "fecha_local": "2026-10-05",
       "local": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
       },
       "visitante": {
-        "id": "ejemplo:basquet-toros-muestra",
-        "nombre": "Toros Muestra"
+        "id": "ejemplo:basquet-osos-simulado",
+        "nombre": "Osos Simulado"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900017"
       },
       "marcador": {
-        "local": 115,
-        "visitante": 118
+        "local": 107,
+        "visitante": 102
       },
       "previa": {
         "extraido_en": "2026-10-05T19:00:00Z",
@@ -1120,32 +1112,32 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 6,
+            "posicion": 5,
             "partidos_jugados": 5,
-            "ganados": 0,
-            "perdidos": 5
+            "ganados": 1,
+            "perdidos": 4
           },
           "visitante": {
-            "posicion": 2,
+            "posicion": 3,
             "partidos_jugados": 5,
-            "ganados": 4,
-            "perdidos": 1
+            "ganados": 3,
+            "perdidos": 2
           }
         },
         "ultimos_partidos": {
           "local": [
             "ejemplo:bas-015",
             "ejemplo:bas-010",
-            "ejemplo:bas-007",
-            "ejemplo:bas-004",
-            "ejemplo:bas-001"
-          ],
-          "visitante": [
-            "ejemplo:bas-013",
-            "ejemplo:bas-010",
-            "ejemplo:bas-008",
+            "ejemplo:bas-009",
             "ejemplo:bas-004",
             "ejemplo:bas-003"
+          ],
+          "visitante": [
+            "ejemplo:bas-014",
+            "ejemplo:bas-011",
+            "ejemplo:bas-008",
+            "ejemplo:bas-004",
+            "ejemplo:bas-001"
           ]
         }
       },
@@ -1155,113 +1147,120 @@
         "formato_periodos": "cuartos",
         "periodos": {
           "local": [
-            30,
-            28,
-            30,
-            27
+            26,
+            24,
+            32,
+            25
           ],
           "visitante": [
-            32,
             26,
-            28,
-            32
+            30,
+            24,
+            22
           ]
         },
         "equipos": {
           "local": {
-            "tiros_campo_anotados": 45,
-            "tiros_campo_intentados": 102,
-            "triples_anotados": 8,
-            "triples_intentados": 24,
-            "tiros_libres_anotados": 17,
-            "tiros_libres_intentados": 23,
-            "rebotes_ofensivos": 7,
-            "rebotes_defensivos": 32,
-            "rebotes": 39,
-            "asistencias": 15,
-            "robos": 3,
-            "tapones": 4,
-            "perdidas": 9,
-            "faltas": 20
+            "tiros_campo_anotados": 38,
+            "tiros_campo_intentados": 77,
+            "triples_anotados": 15,
+            "triples_intentados": 42,
+            "tiros_libres_anotados": 16,
+            "tiros_libres_intentados": 20,
+            "rebotes_ofensivos": 11,
+            "rebotes_defensivos": 30,
+            "rebotes": 41,
+            "asistencias": 19,
+            "robos": 6,
+            "tapones": 3,
+            "perdidas": 6,
+            "faltas": 17
           },
           "visitante": {
-            "tiros_campo_anotados": 47,
-            "tiros_campo_intentados": 100,
-            "triples_anotados": 11,
-            "triples_intentados": 29,
-            "tiros_libres_anotados": 13,
-            "tiros_libres_intentados": 17,
-            "rebotes_ofensivos": 16,
-            "rebotes_defensivos": 32,
-            "rebotes": 48,
-            "asistencias": 26,
-            "robos": 7,
+            "tiros_campo_anotados": 36,
+            "tiros_campo_intentados": 74,
+            "triples_anotados": 13,
+            "triples_intentados": 37,
+            "tiros_libres_anotados": 17,
+            "tiros_libres_intentados": 21,
+            "rebotes_ofensivos": 8,
+            "rebotes_defensivos": 36,
+            "rebotes": 44,
+            "asistencias": 28,
+            "robos": 6,
             "tapones": 5,
-            "perdidas": 15,
-            "faltas": 21
+            "perdidas": 14,
+            "faltas": 17
           }
         },
         "jugadores": [
           {
             "jugador": {
-              "id": "ejemplo:jb-1",
-              "nombre": "Santiago Castro"
+              "id": "ejemplo:jb-5",
+              "nombre": "Gabriel Ramos"
             },
             "equipo": "local",
             "titular": true,
             "jugo": true,
-            "minutos": 30.3,
-            "puntos": 15,
-            "rebotes": 4,
+            "minutos": 26.9,
+            "puntos": 12,
+            "rebotes": 3,
+            "asistencias": 12,
+            "triples": 2,
+            "robos": 0,
+            "tapones": 1,
+            "perdidas": 0
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-6",
+              "nombre": "Tomás Rojas"
+            },
+            "equipo": "local",
+            "titular": true,
+            "jugo": true,
+            "minutos": 38.2,
+            "puntos": 22,
+            "rebotes": 3,
+            "asistencias": 6,
+            "triples": 3,
+            "robos": 4,
+            "tapones": 1,
+            "perdidas": 2
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-11",
+              "nombre": "Lucas Mendoza"
+            },
+            "equipo": "visitante",
+            "titular": true,
+            "jugo": true,
+            "minutos": 39,
+            "puntos": 18,
+            "rebotes": 8,
             "asistencias": 5,
-            "triples": 0,
+            "triples": 1,
             "robos": 0,
             "tapones": 0,
             "perdidas": 2
           },
           {
             "jugador": {
-              "id": "ejemplo:jb-2",
-              "nombre": "Sebastián Huamán"
+              "id": "ejemplo:jb-12",
+              "nombre": "Mateo Quispe"
             },
-            "equipo": "local",
+            "equipo": "visitante",
             "titular": true,
             "jugo": true,
-            "minutos": 29.5,
-            "puntos": 18,
-            "rebotes": 8,
-            "asistencias": 0,
+            "minutos": 32,
+            "puntos": 26,
+            "rebotes": 12,
+            "asistencias": 3,
             "triples": 2,
             "robos": 1,
             "tapones": 0,
-            "perdidas": 0
-          },
-          {
-            "jugador": {
-              "id": "ejemplo:jb-3",
-              "nombre": "Diego Torres"
-            },
-            "equipo": "visitante",
-            "titular": true,
-            "jugo": true,
-            "minutos": 44.8,
-            "puntos": 30,
-            "rebotes": 6,
-            "asistencias": 2,
-            "triples": 4,
-            "robos": 3,
-            "tapones": 1,
-            "perdidas": 8
-          },
-          {
-            "jugador": {
-              "id": "ejemplo:jb-4",
-              "nombre": "Nicolás Silva"
-            },
-            "equipo": "visitante",
-            "titular": false,
-            "jugo": false,
-            "minutos": null
+            "perdidas": 4
           }
         ]
       }
@@ -1280,8 +1279,8 @@
       "inicio": "2026-10-06T02:30:00Z",
       "fecha_local": "2026-10-05",
       "local": {
-        "id": "ejemplo:basquet-osos-simulado",
-        "nombre": "Osos Simulado"
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
       },
       "visitante": {
         "id": "ejemplo:basquet-condores-demo",
@@ -1292,8 +1291,8 @@
         "betano": "900018"
       },
       "marcador": {
-        "local": 101,
-        "visitante": 116
+        "local": 113,
+        "visitante": 112
       },
       "previa": {
         "extraido_en": "2026-10-05T20:30:00Z",
@@ -1302,32 +1301,32 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 3,
+            "posicion": 4,
             "partidos_jugados": 5,
-            "ganados": 3,
-            "perdidos": 2
+            "ganados": 2,
+            "perdidos": 3
           },
           "visitante": {
-            "posicion": 1,
+            "posicion": 2,
             "partidos_jugados": 5,
-            "ganados": 5,
-            "perdidos": 0
+            "ganados": 4,
+            "perdidos": 1
           }
         },
         "ultimos_partidos": {
           "local": [
             "ejemplo:bas-015",
-            "ejemplo:bas-011",
+            "ejemplo:bas-012",
             "ejemplo:bas-008",
             "ejemplo:bas-005",
-            "ejemplo:bas-002"
+            "ejemplo:bas-001"
           ],
           "visitante": [
             "ejemplo:bas-014",
-            "ejemplo:bas-011",
-            "ejemplo:bas-009",
+            "ejemplo:bas-010",
+            "ejemplo:bas-007",
             "ejemplo:bas-006",
-            "ejemplo:bas-001"
+            "ejemplo:bas-002"
           ]
         }
       },
@@ -1337,85 +1336,85 @@
         "formato_periodos": "cuartos",
         "periodos": {
           "local": [
+            29,
             27,
-            25,
-            20,
+            28,
             29
           ],
           "visitante": [
-            30,
-            32,
-            27,
-            27
+            22,
+            33,
+            31,
+            26
           ]
         },
         "equipos": {
           "local": {
-            "tiros_campo_anotados": 42,
-            "tiros_campo_intentados": 88,
-            "triples_anotados": 6,
-            "triples_intentados": 16,
-            "tiros_libres_anotados": 11,
-            "tiros_libres_intentados": 14,
-            "rebotes_ofensivos": 10,
-            "rebotes_defensivos": 49,
-            "rebotes": 59,
-            "asistencias": 18,
-            "robos": 5,
-            "tapones": 3,
-            "perdidas": 12,
-            "faltas": 24
+            "tiros_campo_anotados": 45,
+            "tiros_campo_intentados": 93,
+            "triples_anotados": 14,
+            "triples_intentados": 38,
+            "tiros_libres_anotados": 9,
+            "tiros_libres_intentados": 12,
+            "rebotes_ofensivos": 7,
+            "rebotes_defensivos": 27,
+            "rebotes": 34,
+            "asistencias": 36,
+            "robos": 7,
+            "tapones": 4,
+            "perdidas": 10,
+            "faltas": 15
           },
           "visitante": {
-            "tiros_campo_anotados": 41,
-            "tiros_campo_intentados": 83,
-            "triples_anotados": 14,
-            "triples_intentados": 35,
-            "tiros_libres_anotados": 20,
-            "tiros_libres_intentados": 26,
-            "rebotes_ofensivos": 9,
-            "rebotes_defensivos": 26,
-            "rebotes": 35,
-            "asistencias": 24,
+            "tiros_campo_anotados": 43,
+            "tiros_campo_intentados": 95,
+            "triples_anotados": 11,
+            "triples_intentados": 29,
+            "tiros_libres_anotados": 15,
+            "tiros_libres_intentados": 20,
+            "rebotes_ofensivos": 16,
+            "rebotes_defensivos": 37,
+            "rebotes": 53,
+            "asistencias": 19,
             "robos": 5,
-            "tapones": 6,
-            "perdidas": 13,
-            "faltas": 17
+            "tapones": 7,
+            "perdidas": 9,
+            "faltas": 18
           }
         },
         "jugadores": [
           {
             "jugador": {
-              "id": "ejemplo:jb-11",
-              "nombre": "Lucas Mendoza"
+              "id": "ejemplo:jb-1",
+              "nombre": "Santiago Castro"
             },
             "equipo": "local",
             "titular": true,
             "jugo": true,
-            "minutos": 34.7,
-            "puntos": 22,
-            "rebotes": 6,
-            "asistencias": 5,
-            "triples": 1,
-            "robos": 2,
-            "tapones": 2,
-            "perdidas": 4
-          },
-          {
-            "jugador": {
-              "id": "ejemplo:jb-12",
-              "nombre": "Mateo Quispe"
-            },
-            "equipo": "local",
-            "titular": true,
-            "jugo": true,
-            "minutos": 32.5,
-            "puntos": 37,
-            "rebotes": 10,
-            "asistencias": 1,
+            "minutos": 31.8,
+            "puntos": 25,
+            "rebotes": 2,
+            "asistencias": 7,
             "triples": 0,
             "robos": 1,
             "tapones": 0,
+            "perdidas": 3
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-2",
+              "nombre": "Sebastián Huamán"
+            },
+            "equipo": "local",
+            "titular": true,
+            "jugo": true,
+            "minutos": 30.3,
+            "puntos": 21,
+            "rebotes": 7,
+            "asistencias": 1,
+            "triples": 3,
+            "robos": 2,
+            "tapones": 2,
             "perdidas": 0
           },
           {
@@ -1426,14 +1425,14 @@
             "equipo": "visitante",
             "titular": true,
             "jugo": true,
-            "minutos": 26.1,
-            "puntos": 22,
-            "rebotes": 9,
-            "asistencias": 1,
+            "minutos": 26.2,
+            "puntos": 12,
+            "rebotes": 4,
+            "asistencias": 5,
             "triples": 3,
-            "robos": 4,
+            "robos": 0,
             "tapones": 0,
-            "perdidas": 1
+            "perdidas": 0
           },
           {
             "jugador": {
@@ -1443,14 +1442,14 @@
             "equipo": "visitante",
             "titular": true,
             "jugo": true,
-            "minutos": 29.6,
-            "puntos": 4,
-            "rebotes": 2,
-            "asistencias": 4,
+            "minutos": 34.3,
+            "puntos": 17,
+            "rebotes": 5,
+            "asistencias": 7,
             "triples": 0,
-            "robos": 1,
+            "robos": 0,
             "tapones": 2,
-            "perdidas": 1
+            "perdidas": 0
           }
         ]
       }
@@ -1473,8 +1472,8 @@
         "nombre": "Osos Simulado"
       },
       "visitante": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
       },
       "estado": "finalizado",
       "ids_externos": {
@@ -1482,7 +1481,7 @@
       },
       "marcador": {
         "local": 124,
-        "visitante": 101
+        "visitante": 132
       },
       "previa": {
         "extraido_en": "2026-10-07T18:00:00Z",
@@ -1491,30 +1490,30 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 3,
+            "posicion": 4,
             "partidos_jugados": 6,
             "ganados": 3,
             "perdidos": 3
           },
           "visitante": {
-            "posicion": 5,
+            "posicion": 6,
             "partidos_jugados": 6,
-            "ganados": 2,
-            "perdidos": 4
+            "ganados": 1,
+            "perdidos": 5
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:bas-018",
-            "ejemplo:bas-015",
+            "ejemplo:bas-017",
+            "ejemplo:bas-014",
             "ejemplo:bas-011",
             "ejemplo:bas-008",
-            "ejemplo:bas-005"
+            "ejemplo:bas-004"
           ],
           "visitante": [
             "ejemplo:bas-016",
             "ejemplo:bas-013",
-            "ejemplo:bas-012",
+            "ejemplo:bas-011",
             "ejemplo:bas-009",
             "ejemplo:bas-006"
           ]
@@ -1526,50 +1525,58 @@
         "formato_periodos": "cuartos",
         "periodos": {
           "local": [
+            28,
+            34,
             26,
-            31,
-            32,
-            35
+            28
           ],
           "visitante": [
-            22,
-            28,
-            23,
-            28
+            29,
+            31,
+            29,
+            27
+          ]
+        },
+        "prorrogas": {
+          "local": [
+            8
+          ],
+          "visitante": [
+            16
           ]
         },
         "equipos": {
           "local": {
-            "tiros_campo_anotados": 44,
-            "tiros_campo_intentados": 101,
-            "triples_anotados": 17,
-            "triples_intentados": 46,
-            "tiros_libres_anotados": 19,
-            "tiros_libres_intentados": 24,
-            "rebotes_ofensivos": 7,
-            "rebotes_defensivos": 32,
+            "tiros_campo_anotados": 43,
+            "tiros_campo_intentados": 93,
+            "triples_anotados": 13,
+            "triples_intentados": 38,
+            "tiros_libres_anotados": 25,
+            "tiros_libres_intentados": 31,
+            "rebotes_ofensivos": 10,
+            "rebotes_defensivos": 29,
             "rebotes": 39,
             "asistencias": 20,
-            "robos": 6,
-            "tapones": 7,
-            "perdidas": 13,
-            "faltas": 14
+            "robos": 4,
+            "tapones": 5,
+            "perdidas": 16,
+            "faltas": 16
           },
           "visitante": {
-            "tiros_campo_anotados": 41,
-            "tiros_campo_intentados": 87,
-            "triples_anotados": 11,
-            "triples_intentados": 32,
-            "tiros_libres_anotados": 8,
-            "tiros_libres_intentados": 11,
-            "rebotes_ofensivos": 7,
-            "rebotes_defensivos": 28,
-            "rebotes": 35,
-            "asistencias": 25,
-            "robos": 3,
+            "tiros_campo_anotados": 55,
+            "tiros_campo_intentados": 127,
+            "triples_anotados": 10,
+            "triples_intentados": 29,
+            "tiros_libres_anotados": 12,
+            "tiros_libres_intentados": 14,
+            "rebotes_ofensivos": 5,
+            "rebotes_defensivos": 31,
+            "rebotes": 36,
+            "asistencias": 18,
+            "robos": 9,
             "tapones": 3,
-            "perdidas": 10,
-            "faltas": 16
+            "perdidas": 11,
+            "faltas": 14
           }
         },
         "jugadores": [
@@ -1581,14 +1588,14 @@
             "equipo": "local",
             "titular": true,
             "jugo": true,
-            "minutos": 32.9,
-            "puntos": 21,
-            "rebotes": 2,
-            "asistencias": 8,
-            "triples": 0,
+            "minutos": 35.7,
+            "puntos": 20,
+            "rebotes": 5,
+            "asistencias": 7,
+            "triples": 3,
             "robos": 0,
             "tapones": 1,
-            "perdidas": 0
+            "perdidas": 4
           },
           {
             "jugador": {
@@ -1598,48 +1605,48 @@
             "equipo": "local",
             "titular": true,
             "jugo": true,
-            "minutos": 24.1,
-            "puntos": 35,
-            "rebotes": 12,
-            "asistencias": 4,
+            "minutos": 32.3,
+            "puntos": 23,
+            "rebotes": 13,
+            "asistencias": 7,
             "triples": 1,
-            "robos": 1,
-            "tapones": 0,
-            "perdidas": 2
-          },
-          {
-            "jugador": {
-              "id": "ejemplo:jb-5",
-              "nombre": "Gabriel Ramos"
-            },
-            "equipo": "visitante",
-            "titular": true,
-            "jugo": true,
-            "minutos": 26.7,
-            "puntos": 15,
-            "rebotes": 12,
-            "asistencias": 6,
-            "triples": 0,
             "robos": 2,
-            "tapones": 1,
+            "tapones": 0,
             "perdidas": 3
           },
           {
             "jugador": {
-              "id": "ejemplo:jb-6",
-              "nombre": "Tomás Rojas"
+              "id": "ejemplo:jb-9",
+              "nombre": "Bruno Paredes"
             },
             "equipo": "visitante",
             "titular": true,
             "jugo": true,
-            "minutos": 32.1,
-            "puntos": 19,
-            "rebotes": 3,
-            "asistencias": 5,
-            "triples": 2,
-            "robos": 2,
+            "minutos": 29.9,
+            "puntos": 12,
+            "rebotes": 4,
+            "asistencias": 7,
+            "triples": 4,
+            "robos": 1,
             "tapones": 1,
-            "perdidas": 1
+            "perdidas": 4
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-10",
+              "nombre": "Thiago Flores"
+            },
+            "equipo": "visitante",
+            "titular": true,
+            "jugo": true,
+            "minutos": 34.2,
+            "puntos": 17,
+            "rebotes": 10,
+            "asistencias": 5,
+            "triples": 0,
+            "robos": 1,
+            "tapones": 1,
+            "perdidas": 0
           }
         ]
       }
@@ -1658,20 +1665,20 @@
       "inicio": "2026-10-08T01:00:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
       },
       "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
+        "id": "ejemplo:basquet-condores-demo",
+        "nombre": "Cóndores Demo"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900020"
       },
       "marcador": {
-        "local": 98,
-        "visitante": 115
+        "local": 113,
+        "visitante": 109
       },
       "previa": {
         "extraido_en": "2026-10-07T19:00:00Z",
@@ -1680,16 +1687,16 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 6,
-            "partidos_jugados": 6,
-            "ganados": 0,
-            "perdidos": 6
-          },
-          "visitante": {
-            "posicion": 4,
+            "posicion": 5,
             "partidos_jugados": 6,
             "ganados": 2,
             "perdidos": 4
+          },
+          "visitante": {
+            "posicion": 2,
+            "partidos_jugados": 6,
+            "ganados": 4,
+            "perdidos": 2
           }
         },
         "ultimos_partidos": {
@@ -1697,15 +1704,15 @@
             "ejemplo:bas-017",
             "ejemplo:bas-015",
             "ejemplo:bas-010",
-            "ejemplo:bas-007",
+            "ejemplo:bas-009",
             "ejemplo:bas-004"
           ],
           "visitante": [
-            "ejemplo:bas-016",
+            "ejemplo:bas-018",
             "ejemplo:bas-014",
-            "ejemplo:bas-012",
+            "ejemplo:bas-010",
             "ejemplo:bas-007",
-            "ejemplo:bas-005"
+            "ejemplo:bas-006"
           ]
         }
       },
@@ -1715,38 +1722,38 @@
         "formato_periodos": "cuartos",
         "periodos": {
           "local": [
-            20,
-            30,
-            26,
-            22
+            24,
+            28,
+            36,
+            25
           ],
           "visitante": [
+            28,
+            29,
             30,
-            29,
-            29,
-            27
+            22
           ]
         },
         "equipos": {
           "local": {
-            "tiros_campo_anotados": 38,
-            "tiros_campo_intentados": 77,
-            "triples_anotados": 11,
-            "triples_intentados": 31,
+            "tiros_campo_anotados": 46,
+            "tiros_campo_intentados": 101,
+            "triples_anotados": 10,
+            "triples_intentados": 27,
             "tiros_libres_anotados": 11,
-            "tiros_libres_intentados": 13,
-            "rebotes_ofensivos": 6,
-            "rebotes_defensivos": 25,
-            "rebotes": 31,
-            "asistencias": 22,
+            "tiros_libres_intentados": 14,
+            "rebotes_ofensivos": 9,
+            "rebotes_defensivos": 24,
+            "rebotes": 33,
+            "asistencias": 24,
             "robos": 4,
-            "tapones": 1,
+            "tapones": 2,
             "perdidas": 14,
             "faltas": 24
           },
           "visitante": {
-            "tiros_campo_anotados": 46,
-            "tiros_campo_intentados": 100,
+            "tiros_campo_anotados": 43,
+            "tiros_campo_intentados": 93,
             "triples_anotados": 7,
             "triples_intentados": 18,
             "tiros_libres_anotados": 16,
@@ -1764,70 +1771,70 @@
         "jugadores": [
           {
             "jugador": {
-              "id": "ejemplo:jb-1",
-              "nombre": "Santiago Castro"
+              "id": "ejemplo:jb-5",
+              "nombre": "Gabriel Ramos"
             },
             "equipo": "local",
             "titular": true,
             "jugo": true,
-            "minutos": 32.3,
-            "puntos": 11,
+            "minutos": 25.9,
+            "puntos": 20,
+            "rebotes": 6,
+            "asistencias": 5,
+            "triples": 3,
+            "robos": 0,
+            "tapones": 1,
+            "perdidas": 4
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-6",
+              "nombre": "Tomás Rojas"
+            },
+            "equipo": "local",
+            "titular": true,
+            "jugo": true,
+            "minutos": 33,
+            "puntos": 22,
             "rebotes": 3,
-            "asistencias": 7,
+            "asistencias": 9,
             "triples": 0,
             "robos": 1,
+            "tapones": 0,
+            "perdidas": 4
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-7",
+              "nombre": "Joaquín Salazar"
+            },
+            "equipo": "visitante",
+            "titular": true,
+            "jugo": true,
+            "minutos": 30.8,
+            "puntos": 19,
+            "rebotes": 5,
+            "asistencias": 1,
+            "triples": 2,
+            "robos": 0,
             "tapones": 0,
             "perdidas": 2
           },
           {
             "jugador": {
-              "id": "ejemplo:jb-2",
-              "nombre": "Sebastián Huamán"
-            },
-            "equipo": "local",
-            "titular": true,
-            "jugo": true,
-            "minutos": 24.9,
-            "puntos": 33,
-            "rebotes": 5,
-            "asistencias": 2,
-            "triples": 4,
-            "robos": 1,
-            "tapones": 0,
-            "perdidas": 0
-          },
-          {
-            "jugador": {
-              "id": "ejemplo:jb-9",
-              "nombre": "Bruno Paredes"
+              "id": "ejemplo:jb-8",
+              "nombre": "Emiliano Vargas"
             },
             "equipo": "visitante",
             "titular": true,
             "jugo": true,
-            "minutos": 31,
-            "puntos": 28,
-            "rebotes": 4,
+            "minutos": 37.8,
+            "puntos": 19,
+            "rebotes": 9,
             "asistencias": 4,
-            "triples": 2,
+            "triples": 5,
             "robos": 1,
             "tapones": 0,
-            "perdidas": 1
-          },
-          {
-            "jugador": {
-              "id": "ejemplo:jb-10",
-              "nombre": "Thiago Flores"
-            },
-            "equipo": "visitante",
-            "titular": true,
-            "jugo": true,
-            "minutos": 29,
-            "puntos": 23,
-            "rebotes": 8,
-            "asistencias": 8,
-            "triples": 0,
-            "robos": 1,
-            "tapones": 1,
             "perdidas": 2
           }
         ]
@@ -1847,8 +1854,8 @@
       "inicio": "2026-10-08T02:30:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-condores-demo",
-        "nombre": "Cóndores Demo"
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
       },
       "visitante": {
         "id": "ejemplo:basquet-toros-muestra",
@@ -1859,8 +1866,8 @@
         "betano": "900021"
       },
       "marcador": {
-        "local": 97,
-        "visitante": 113
+        "local": 103,
+        "visitante": 108
       },
       "previa": {
         "extraido_en": "2026-10-07T20:30:00Z",
@@ -1869,13 +1876,13 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 1,
+            "posicion": 3,
             "partidos_jugados": 6,
-            "ganados": 6,
-            "perdidos": 0
+            "ganados": 3,
+            "perdidos": 3
           },
           "visitante": {
-            "posicion": 2,
+            "posicion": 1,
             "partidos_jugados": 6,
             "ganados": 5,
             "perdidos": 1
@@ -1884,17 +1891,17 @@
         "ultimos_partidos": {
           "local": [
             "ejemplo:bas-018",
-            "ejemplo:bas-014",
-            "ejemplo:bas-011",
-            "ejemplo:bas-009",
-            "ejemplo:bas-006"
+            "ejemplo:bas-015",
+            "ejemplo:bas-012",
+            "ejemplo:bas-008",
+            "ejemplo:bas-005"
           ],
           "visitante": [
-            "ejemplo:bas-017",
+            "ejemplo:bas-016",
             "ejemplo:bas-013",
-            "ejemplo:bas-010",
-            "ejemplo:bas-008",
-            "ejemplo:bas-004"
+            "ejemplo:bas-012",
+            "ejemplo:bas-007",
+            "ejemplo:bas-005"
           ]
         }
       },
@@ -1904,83 +1911,76 @@
         "formato_periodos": "cuartos",
         "periodos": {
           "local": [
+            23,
+            30,
             24,
-            25,
-            24,
-            24
+            26
           ],
           "visitante": [
             28,
-            25,
-            29,
-            31
+            28,
+            27,
+            25
           ]
         },
         "equipos": {
           "local": {
-            "tiros_campo_anotados": 34,
-            "tiros_campo_intentados": 73,
-            "triples_anotados": 11,
-            "triples_intentados": 28,
-            "tiros_libres_anotados": 18,
-            "tiros_libres_intentados": 22,
-            "rebotes_ofensivos": 7,
-            "rebotes_defensivos": 38,
-            "rebotes": 45,
-            "asistencias": 15,
-            "robos": 6,
-            "tapones": 5,
-            "perdidas": 12,
-            "faltas": 15
+            "tiros_campo_anotados": 40,
+            "tiros_campo_intentados": 83,
+            "triples_anotados": 9,
+            "triples_intentados": 23,
+            "tiros_libres_anotados": 14,
+            "tiros_libres_intentados": 18,
+            "rebotes_ofensivos": 12,
+            "rebotes_defensivos": 31,
+            "rebotes": 43,
+            "asistencias": 31,
+            "robos": 1,
+            "tapones": 1,
+            "perdidas": 13,
+            "faltas": 17
           },
           "visitante": {
-            "tiros_campo_anotados": 39,
-            "tiros_campo_intentados": 89,
-            "triples_anotados": 13,
-            "triples_intentados": 38,
-            "tiros_libres_anotados": 22,
-            "tiros_libres_intentados": 27,
-            "rebotes_ofensivos": 15,
-            "rebotes_defensivos": 33,
-            "rebotes": 48,
-            "asistencias": 24,
-            "robos": 5,
-            "tapones": 6,
+            "tiros_campo_anotados": 42,
+            "tiros_campo_intentados": 88,
+            "triples_anotados": 10,
+            "triples_intentados": 31,
+            "tiros_libres_anotados": 14,
+            "tiros_libres_intentados": 18,
+            "rebotes_ofensivos": 17,
+            "rebotes_defensivos": 43,
+            "rebotes": 60,
+            "asistencias": 26,
+            "robos": 6,
+            "tapones": 4,
             "perdidas": 13,
-            "faltas": 21
+            "faltas": 24
           }
         },
         "jugadores": [
           {
             "jugador": {
-              "id": "ejemplo:jb-7",
-              "nombre": "Joaquín Salazar"
+              "id": "ejemplo:jb-1",
+              "nombre": "Santiago Castro"
             },
             "equipo": "local",
-            "titular": true,
-            "jugo": true,
-            "minutos": 26.8,
-            "puntos": 15,
-            "rebotes": 2,
-            "asistencias": 0,
-            "triples": 3,
-            "robos": 0,
-            "tapones": 1,
-            "perdidas": 1
+            "titular": false,
+            "jugo": false,
+            "minutos": null
           },
           {
             "jugador": {
-              "id": "ejemplo:jb-8",
-              "nombre": "Emiliano Vargas"
+              "id": "ejemplo:jb-2",
+              "nombre": "Sebastián Huamán"
             },
             "equipo": "local",
             "titular": true,
             "jugo": true,
-            "minutos": 28.1,
-            "puntos": 9,
-            "rebotes": 4,
-            "asistencias": 4,
-            "triples": 0,
+            "minutos": 30.7,
+            "puntos": 24,
+            "rebotes": 6,
+            "asistencias": 3,
+            "triples": 3,
             "robos": 1,
             "tapones": 1,
             "perdidas": 0
@@ -1993,14 +1993,14 @@
             "equipo": "visitante",
             "titular": true,
             "jugo": true,
-            "minutos": 33,
+            "minutos": 38.9,
             "puntos": 21,
-            "rebotes": 6,
+            "rebotes": 4,
             "asistencias": 4,
-            "triples": 4,
-            "robos": 1,
-            "tapones": 1,
-            "perdidas": 1
+            "triples": 1,
+            "robos": 3,
+            "tapones": 0,
+            "perdidas": 2
           },
           {
             "jugador": {
@@ -2029,20 +2029,20 @@
       "inicio": "2026-10-10T00:00:00Z",
       "fecha_local": "2026-10-09",
       "local": {
-        "id": "ejemplo:basquet-condores-demo",
-        "nombre": "Cóndores Demo"
+        "id": "ejemplo:basquet-osos-simulado",
+        "nombre": "Osos Simulado"
       },
       "visitante": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900022"
       },
       "marcador": {
-        "local": 124,
-        "visitante": 104
+        "local": 101,
+        "visitante": 94
       },
       "previa": {
         "extraido_en": "2026-10-09T18:00:00Z",
@@ -2051,32 +2051,32 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 2,
+            "posicion": 4,
             "partidos_jugados": 7,
-            "ganados": 6,
-            "perdidos": 1
+            "ganados": 3,
+            "perdidos": 4
           },
           "visitante": {
             "posicion": 6,
             "partidos_jugados": 7,
-            "ganados": 0,
-            "perdidos": 7
+            "ganados": 2,
+            "perdidos": 5
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:bas-021",
-            "ejemplo:bas-018",
+            "ejemplo:bas-019",
+            "ejemplo:bas-017",
             "ejemplo:bas-014",
             "ejemplo:bas-011",
-            "ejemplo:bas-009"
+            "ejemplo:bas-008"
           ],
           "visitante": [
-            "ejemplo:bas-020",
-            "ejemplo:bas-017",
-            "ejemplo:bas-015",
-            "ejemplo:bas-010",
-            "ejemplo:bas-007"
+            "ejemplo:bas-019",
+            "ejemplo:bas-016",
+            "ejemplo:bas-013",
+            "ejemplo:bas-011",
+            "ejemplo:bas-009"
           ]
         }
       },
@@ -2086,120 +2086,120 @@
         "formato_periodos": "cuartos",
         "periodos": {
           "local": [
-            31,
-            29,
-            35,
-            29
+            23,
+            28,
+            19,
+            31
           ],
           "visitante": [
-            35,
-            21,
-            26,
-            22
+            19,
+            33,
+            18,
+            24
           ]
         },
         "equipos": {
           "local": {
-            "tiros_campo_anotados": 43,
-            "tiros_campo_intentados": 91,
-            "triples_anotados": 14,
-            "triples_intentados": 40,
-            "tiros_libres_anotados": 24,
-            "tiros_libres_intentados": 31,
-            "rebotes_ofensivos": 5,
-            "rebotes_defensivos": 35,
-            "rebotes": 40,
-            "asistencias": 23,
-            "robos": 7,
-            "tapones": 5,
-            "perdidas": 10,
-            "faltas": 17
+            "tiros_campo_anotados": 38,
+            "tiros_campo_intentados": 87,
+            "triples_anotados": 16,
+            "triples_intentados": 47,
+            "tiros_libres_anotados": 9,
+            "tiros_libres_intentados": 12,
+            "rebotes_ofensivos": 13,
+            "rebotes_defensivos": 31,
+            "rebotes": 44,
+            "asistencias": 28,
+            "robos": 4,
+            "tapones": 3,
+            "perdidas": 12,
+            "faltas": 18
           },
           "visitante": {
-            "tiros_campo_anotados": 38,
-            "tiros_campo_intentados": 86,
+            "tiros_campo_anotados": 33,
+            "tiros_campo_intentados": 74,
             "triples_anotados": 10,
             "triples_intentados": 28,
             "tiros_libres_anotados": 18,
-            "tiros_libres_intentados": 22,
-            "rebotes_ofensivos": 11,
-            "rebotes_defensivos": 34,
-            "rebotes": 45,
-            "asistencias": 23,
-            "robos": 3,
-            "tapones": 7,
-            "perdidas": 19,
-            "faltas": 17
+            "tiros_libres_intentados": 24,
+            "rebotes_ofensivos": 10,
+            "rebotes_defensivos": 38,
+            "rebotes": 48,
+            "asistencias": 26,
+            "robos": 7,
+            "tapones": 5,
+            "perdidas": 11,
+            "faltas": 20
           }
         },
         "jugadores": [
           {
             "jugador": {
-              "id": "ejemplo:jb-7",
-              "nombre": "Joaquín Salazar"
+              "id": "ejemplo:jb-11",
+              "nombre": "Lucas Mendoza"
             },
             "equipo": "local",
             "titular": true,
             "jugo": true,
-            "minutos": 29.8,
+            "minutos": 33.1,
             "puntos": 12,
-            "rebotes": 9,
-            "asistencias": 3,
-            "triples": 3,
-            "robos": 2,
-            "tapones": 0,
-            "perdidas": 3
-          },
-          {
-            "jugador": {
-              "id": "ejemplo:jb-8",
-              "nombre": "Emiliano Vargas"
-            },
-            "equipo": "local",
-            "titular": true,
-            "jugo": true,
-            "minutos": 28.2,
-            "puntos": 20,
-            "rebotes": 5,
+            "rebotes": 6,
             "asistencias": 6,
-            "triples": 0,
+            "triples": 2,
             "robos": 1,
-            "tapones": 0,
-            "perdidas": 1
-          },
-          {
-            "jugador": {
-              "id": "ejemplo:jb-1",
-              "nombre": "Santiago Castro"
-            },
-            "equipo": "visitante",
-            "titular": true,
-            "jugo": true,
-            "minutos": 27.3,
-            "puntos": 14,
-            "rebotes": 4,
-            "asistencias": 1,
-            "triples": 0,
-            "robos": 2,
-            "tapones": 0,
+            "tapones": 1,
             "perdidas": 5
           },
           {
             "jugador": {
-              "id": "ejemplo:jb-2",
-              "nombre": "Sebastián Huamán"
+              "id": "ejemplo:jb-12",
+              "nombre": "Mateo Quispe"
+            },
+            "equipo": "local",
+            "titular": true,
+            "jugo": true,
+            "minutos": 34.3,
+            "puntos": 23,
+            "rebotes": 9,
+            "asistencias": 5,
+            "triples": 1,
+            "robos": 1,
+            "tapones": 0,
+            "perdidas": 1
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-9",
+              "nombre": "Bruno Paredes"
             },
             "equipo": "visitante",
             "titular": true,
             "jugo": true,
-            "minutos": 26.8,
-            "puntos": 16,
-            "rebotes": 3,
-            "asistencias": 1,
-            "triples": 1,
+            "minutos": 31.7,
+            "puntos": 11,
+            "rebotes": 4,
+            "asistencias": 7,
+            "triples": 3,
             "robos": 1,
-            "tapones": 3,
-            "perdidas": 1
+            "tapones": 1,
+            "perdidas": 2
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-10",
+              "nombre": "Thiago Flores"
+            },
+            "equipo": "visitante",
+            "titular": true,
+            "jugo": true,
+            "minutos": 32.4,
+            "puntos": 20,
+            "rebotes": 15,
+            "asistencias": 4,
+            "triples": 3,
+            "robos": 0,
+            "tapones": 2,
+            "perdidas": 3
           }
         ]
       }
@@ -2218,20 +2218,20 @@
       "inicio": "2026-10-10T01:00:00Z",
       "fecha_local": "2026-10-09",
       "local": {
-        "id": "ejemplo:basquet-toros-muestra",
-        "nombre": "Toros Muestra"
-      },
-      "visitante": {
         "id": "ejemplo:basquet-linces-prueba",
         "nombre": "Linces Prueba"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900023"
       },
       "marcador": {
-        "local": 128,
-        "visitante": 103
+        "local": 117,
+        "visitante": 110
       },
       "previa": {
         "extraido_en": "2026-10-09T19:00:00Z",
@@ -2240,32 +2240,32 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 2,
-            "partidos_jugados": 7,
-            "ganados": 6,
-            "perdidos": 1
-          },
-          "visitante": {
             "posicion": 5,
             "partidos_jugados": 7,
-            "ganados": 2,
-            "perdidos": 5
+            "ganados": 3,
+            "perdidos": 4
+          },
+          "visitante": {
+            "posicion": 4,
+            "partidos_jugados": 7,
+            "ganados": 3,
+            "perdidos": 4
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:bas-021",
+            "ejemplo:bas-020",
             "ejemplo:bas-017",
-            "ejemplo:bas-013",
+            "ejemplo:bas-015",
             "ejemplo:bas-010",
-            "ejemplo:bas-008"
+            "ejemplo:bas-009"
           ],
           "visitante": [
-            "ejemplo:bas-019",
-            "ejemplo:bas-016",
-            "ejemplo:bas-013",
+            "ejemplo:bas-021",
+            "ejemplo:bas-018",
+            "ejemplo:bas-015",
             "ejemplo:bas-012",
-            "ejemplo:bas-009"
+            "ejemplo:bas-008"
           ]
         }
       },
@@ -2275,101 +2275,67 @@
         "formato_periodos": "cuartos",
         "periodos": {
           "local": [
-            29,
-            33,
-            35,
+            28,
+            28,
+            30,
             31
           ],
           "visitante": [
             28,
-            19,
-            29,
+            28,
+            27,
             27
           ]
         },
         "equipos": {
           "local": {
-            "tiros_campo_anotados": 51,
-            "tiros_campo_intentados": 109,
-            "triples_anotados": 14,
-            "triples_intentados": 38,
-            "tiros_libres_anotados": 12,
-            "tiros_libres_intentados": 15,
-            "rebotes_ofensivos": 6,
-            "rebotes_defensivos": 42,
+            "tiros_campo_anotados": 43,
+            "tiros_campo_intentados": 90,
+            "triples_anotados": 16,
+            "triples_intentados": 40,
+            "tiros_libres_anotados": 15,
+            "tiros_libres_intentados": 21,
+            "rebotes_ofensivos": 8,
+            "rebotes_defensivos": 40,
             "rebotes": 48,
-            "asistencias": 28,
-            "robos": 6,
-            "tapones": 8,
-            "perdidas": 8,
+            "asistencias": 26,
+            "robos": 9,
+            "tapones": 3,
+            "perdidas": 11,
             "faltas": 15
           },
           "visitante": {
-            "tiros_campo_anotados": 37,
-            "tiros_campo_intentados": 80,
-            "triples_anotados": 14,
-            "triples_intentados": 41,
-            "tiros_libres_anotados": 15,
-            "tiros_libres_intentados": 18,
-            "rebotes_ofensivos": 11,
-            "rebotes_defensivos": 33,
-            "rebotes": 44,
-            "asistencias": 26,
-            "robos": 10,
-            "tapones": 2,
-            "perdidas": 15,
-            "faltas": 13
+            "tiros_campo_anotados": 41,
+            "tiros_campo_intentados": 94,
+            "triples_anotados": 15,
+            "triples_intentados": 38,
+            "tiros_libres_anotados": 13,
+            "tiros_libres_intentados": 16,
+            "rebotes_ofensivos": 8,
+            "rebotes_defensivos": 34,
+            "rebotes": 42,
+            "asistencias": 30,
+            "robos": 7,
+            "tapones": 4,
+            "perdidas": 14,
+            "faltas": 14
           }
         },
         "jugadores": [
           {
             "jugador": {
-              "id": "ejemplo:jb-3",
-              "nombre": "Diego Torres"
-            },
-            "equipo": "local",
-            "titular": true,
-            "jugo": true,
-            "minutos": 31.2,
-            "puntos": 23,
-            "rebotes": 5,
-            "asistencias": 4,
-            "triples": 0,
-            "robos": 0,
-            "tapones": 0,
-            "perdidas": 5
-          },
-          {
-            "jugador": {
-              "id": "ejemplo:jb-4",
-              "nombre": "Nicolás Silva"
-            },
-            "equipo": "local",
-            "titular": true,
-            "jugo": true,
-            "minutos": 28.5,
-            "puntos": 10,
-            "rebotes": 12,
-            "asistencias": 3,
-            "triples": 1,
-            "robos": 0,
-            "tapones": 0,
-            "perdidas": 3
-          },
-          {
-            "jugador": {
               "id": "ejemplo:jb-5",
               "nombre": "Gabriel Ramos"
             },
-            "equipo": "visitante",
+            "equipo": "local",
             "titular": true,
             "jugo": true,
-            "minutos": 29.4,
-            "puntos": 19,
-            "rebotes": 8,
-            "asistencias": 6,
-            "triples": 4,
-            "robos": 0,
+            "minutos": 25.6,
+            "puntos": 22,
+            "rebotes": 10,
+            "asistencias": 7,
+            "triples": 0,
+            "robos": 1,
             "tapones": 0,
             "perdidas": 1
           },
@@ -2378,17 +2344,44 @@
               "id": "ejemplo:jb-6",
               "nombre": "Tomás Rojas"
             },
+            "equipo": "local",
+            "titular": false,
+            "jugo": false,
+            "minutos": null
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-1",
+              "nombre": "Santiago Castro"
+            },
             "equipo": "visitante",
             "titular": true,
             "jugo": true,
-            "minutos": 30.9,
-            "puntos": 26,
-            "rebotes": 2,
-            "asistencias": 7,
-            "triples": 0,
-            "robos": 2,
-            "tapones": 2,
-            "perdidas": 5
+            "minutos": 31.4,
+            "puntos": 12,
+            "rebotes": 7,
+            "asistencias": 2,
+            "triples": 2,
+            "robos": 1,
+            "tapones": 0,
+            "perdidas": 7
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-2",
+              "nombre": "Sebastián Huamán"
+            },
+            "equipo": "visitante",
+            "titular": true,
+            "jugo": true,
+            "minutos": 29.8,
+            "puntos": 14,
+            "rebotes": 3,
+            "asistencias": 3,
+            "triples": 2,
+            "robos": 1,
+            "tapones": 0,
+            "perdidas": 2
           }
         ]
       }
@@ -2407,20 +2400,20 @@
       "inicio": "2026-10-10T02:30:00Z",
       "fecha_local": "2026-10-09",
       "local": {
-        "id": "ejemplo:basquet-osos-simulado",
-        "nombre": "Osos Simulado"
+        "id": "ejemplo:basquet-toros-muestra",
+        "nombre": "Toros Muestra"
       },
       "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
+        "id": "ejemplo:basquet-condores-demo",
+        "nombre": "Cóndores Demo"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900024"
       },
       "marcador": {
-        "local": 116,
-        "visitante": 126
+        "local": 102,
+        "visitante": 115
       },
       "previa": {
         "extraido_en": "2026-10-09T20:30:00Z",
@@ -2429,31 +2422,31 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 3,
+            "posicion": 1,
+            "partidos_jugados": 7,
+            "ganados": 6,
+            "perdidos": 1
+          },
+          "visitante": {
+            "posicion": 2,
             "partidos_jugados": 7,
             "ganados": 4,
             "perdidos": 3
-          },
-          "visitante": {
-            "posicion": 4,
-            "partidos_jugados": 7,
-            "ganados": 3,
-            "perdidos": 4
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:bas-019",
-            "ejemplo:bas-018",
-            "ejemplo:bas-015",
-            "ejemplo:bas-011",
-            "ejemplo:bas-008"
+            "ejemplo:bas-021",
+            "ejemplo:bas-016",
+            "ejemplo:bas-013",
+            "ejemplo:bas-012",
+            "ejemplo:bas-007"
           ],
           "visitante": [
             "ejemplo:bas-020",
-            "ejemplo:bas-016",
+            "ejemplo:bas-018",
             "ejemplo:bas-014",
-            "ejemplo:bas-012",
+            "ejemplo:bas-010",
             "ejemplo:bas-007"
           ]
         }
@@ -2464,119 +2457,119 @@
         "formato_periodos": "cuartos",
         "periodos": {
           "local": [
-            30,
-            27,
-            32,
-            27
+            24,
+            28,
+            24,
+            26
           ],
           "visitante": [
-            35,
+            33,
+            26,
             30,
-            30,
-            31
+            26
           ]
         },
         "equipos": {
           "local": {
-            "tiros_campo_anotados": 44,
-            "tiros_campo_intentados": 95,
-            "triples_anotados": 18,
-            "triples_intentados": 51,
-            "tiros_libres_anotados": 10,
-            "tiros_libres_intentados": 12,
-            "rebotes_ofensivos": 10,
-            "rebotes_defensivos": 46,
-            "rebotes": 56,
-            "asistencias": 21,
-            "robos": 9,
-            "tapones": 7,
-            "perdidas": 10,
-            "faltas": 24
+            "tiros_campo_anotados": 35,
+            "tiros_campo_intentados": 77,
+            "triples_anotados": 16,
+            "triples_intentados": 44,
+            "tiros_libres_anotados": 16,
+            "tiros_libres_intentados": 20,
+            "rebotes_ofensivos": 9,
+            "rebotes_defensivos": 45,
+            "rebotes": 54,
+            "asistencias": 22,
+            "robos": 4,
+            "tapones": 6,
+            "perdidas": 15,
+            "faltas": 22
           },
           "visitante": {
-            "tiros_campo_anotados": 49,
-            "tiros_campo_intentados": 99,
-            "triples_anotados": 14,
-            "triples_intentados": 42,
-            "tiros_libres_anotados": 14,
-            "tiros_libres_intentados": 18,
-            "rebotes_ofensivos": 6,
-            "rebotes_defensivos": 36,
-            "rebotes": 42,
-            "asistencias": 19,
-            "robos": 7,
+            "tiros_campo_anotados": 42,
+            "tiros_campo_intentados": 94,
+            "triples_anotados": 15,
+            "triples_intentados": 44,
+            "tiros_libres_anotados": 16,
+            "tiros_libres_intentados": 19,
+            "rebotes_ofensivos": 7,
+            "rebotes_defensivos": 34,
+            "rebotes": 41,
+            "asistencias": 22,
+            "robos": 3,
             "tapones": 3,
             "perdidas": 11,
-            "faltas": 25
+            "faltas": 26
           }
         },
         "jugadores": [
           {
             "jugador": {
-              "id": "ejemplo:jb-11",
-              "nombre": "Lucas Mendoza"
+              "id": "ejemplo:jb-3",
+              "nombre": "Diego Torres"
             },
             "equipo": "local",
             "titular": true,
             "jugo": true,
-            "minutos": 38.3,
-            "puntos": 15,
+            "minutos": 31,
+            "puntos": 26,
             "rebotes": 6,
-            "asistencias": 3,
-            "triples": 0,
-            "robos": 0,
-            "tapones": 1,
-            "perdidas": 1
-          },
-          {
-            "jugador": {
-              "id": "ejemplo:jb-12",
-              "nombre": "Mateo Quispe"
-            },
-            "equipo": "local",
-            "titular": true,
-            "jugo": true,
-            "minutos": 31.3,
-            "puntos": 23,
-            "rebotes": 10,
-            "asistencias": 3,
+            "asistencias": 1,
             "triples": 2,
-            "robos": 1,
+            "robos": 0,
             "tapones": 0,
             "perdidas": 2
           },
           {
             "jugador": {
-              "id": "ejemplo:jb-9",
-              "nombre": "Bruno Paredes"
+              "id": "ejemplo:jb-4",
+              "nombre": "Nicolás Silva"
             },
-            "equipo": "visitante",
+            "equipo": "local",
             "titular": true,
             "jugo": true,
-            "minutos": 32.6,
-            "puntos": 20,
-            "rebotes": 4,
-            "asistencias": 12,
-            "triples": 0,
+            "minutos": 29.7,
+            "puntos": 12,
+            "rebotes": 11,
+            "asistencias": 3,
+            "triples": 1,
             "robos": 1,
-            "tapones": 0,
-            "perdidas": 1
+            "tapones": 1,
+            "perdidas": 2
           },
           {
             "jugador": {
-              "id": "ejemplo:jb-10",
-              "nombre": "Thiago Flores"
+              "id": "ejemplo:jb-7",
+              "nombre": "Joaquín Salazar"
             },
             "equipo": "visitante",
             "titular": true,
             "jugo": true,
-            "minutos": 33.6,
-            "puntos": 19,
-            "rebotes": 5,
-            "asistencias": 5,
+            "minutos": 27.1,
+            "puntos": 22,
+            "rebotes": 4,
+            "asistencias": 2,
+            "triples": 5,
+            "robos": 3,
+            "tapones": 0,
+            "perdidas": 2
+          },
+          {
+            "jugador": {
+              "id": "ejemplo:jb-8",
+              "nombre": "Emiliano Vargas"
+            },
+            "equipo": "visitante",
+            "titular": true,
+            "jugo": true,
+            "minutos": 34.7,
+            "puntos": 11,
+            "rebotes": 3,
+            "asistencias": 3,
             "triples": 0,
             "robos": 0,
-            "tapones": 2,
+            "tapones": 0,
             "perdidas": 2
           }
         ]

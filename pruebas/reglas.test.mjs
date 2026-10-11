@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   calcularCandidata, elegirLinea, elegirOferta, idRegistro, ladoGanador, margen, probSinMargenA,
-  promedioMercadoA, redondear,
+  promedioMercadoA, redondear, totalTarjetas,
 } from '../comun/reglas.js';
 import { clasificarRuta, crearIndice, fechaLocal, rutaHistorial, rutaPartidos } from '../comun/rutas.js';
 
@@ -118,4 +118,19 @@ test('el índice lista las rutas en orden alfabético', () => {
     version_formato: 1,
     archivos: ['equivalencias/a.json', 'historial/b.json'],
   });
+});
+
+test('tarjetas como en Betano: roja directa y doble amarilla suman 2', () => {
+  assert.equal(totalTarjetas({ amarillas: 3, rojas: 0, dobles_amarillas: 0 }), 3);
+  // Roja directa: 2.
+  assert.equal(totalTarjetas({ amarillas: 0, rojas: 1, dobles_amarillas: 0 }), 2);
+  // Doble amarilla: las dos amarillas, la roja no suma aparte.
+  assert.equal(totalTarjetas({ amarillas: 2, rojas: 1, dobles_amarillas: 1 }), 2);
+  // Amarilla y después roja directa al mismo jugador: 1 + 2.
+  assert.equal(totalTarjetas({ amarillas: 1, rojas: 1, dobles_amarillas: 0 }), 3);
+  // Sin rojas no hace falta saber las dobles amarillas.
+  assert.equal(totalTarjetas({ amarillas: 4, rojas: 0 }), 4);
+  // Datos que faltan: no se inventa el total.
+  assert.equal(totalTarjetas({ amarillas: 2, rojas: 1 }), null);
+  assert.equal(totalTarjetas({ amarillas: null, rojas: 0, dobles_amarillas: 0 }), null);
 });

@@ -34,8 +34,7 @@ export function soles(monto, { conSigno = false } = {}) {
 /** Número con signo para handicaps y diferencias: 3.5 → "+3.5", -3.5 → "-3.5". */
 export const signo = (n) => (n > 0 ? `+${n}` : `${n}`);
 
-/** Probabilidad del lado que recomienda una predicción. */
-export const probLado = (prediccion) => (prediccion.lado === 'a' ? prediccion.prob_a : 1 - prediccion.prob_a);
+export { probabilidadDelLado as probLado } from '../../comun/reglas.js';
 
 /**
  * Nombre de un lado tal como se apuesta: "Más 2.5", "Sí", "Toros Muestra -3.5", "Leones Muestra".

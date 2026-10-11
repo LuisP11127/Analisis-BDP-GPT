@@ -203,7 +203,7 @@ Ejemplo con Betano (goles, Atlético Muestra vs Deportivo Ejemplo en los datos d
 - `explicacion` (opcional): lista de factores con su `impacto` en puntos de probabilidad hacia el lado A. `0.08` significa +8%.
 - `prob_roja` (solo en `futbol_tarjetas`): probabilidad de que haya al menos una roja en el partido. La página la muestra como "Tarjeta roja en el partido: Sí o No" con su probabilidad. Si hubo roja se sabe por las estadísticas del partido, así que no se guarda aparte en el resultado.
 
-El desacuerdo entre los modelos no se guarda porque se deduce de los dos lados.
+El desacuerdo entre los modelos no se guarda porque se deduce de los dos lados. Tampoco se guarda el nivel de confianza (alta, media o baja): se calcula al mostrar, con `nivelConfianza` de `comun/reglas.js`, a partir de la probabilidad del lado recomendado por el estadístico. Así, si se cambian los cortes, el historial completo se ve con los cortes nuevos.
 
 ### Entrada de la red
 

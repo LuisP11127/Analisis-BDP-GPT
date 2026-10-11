@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   calcularCandidata, elegirLinea, elegirOferta, idRegistro, ladoGanador, margen, probSinMargenA,
-  promedioMercadoA, redondear, totalTarjetas,
+  nivelConfianza, probabilidadDelLado, promedioMercadoA, redondear, totalTarjetas,
 } from '../comun/reglas.js';
 import { clasificarRuta, crearIndice, fechaLocal, rutaHistorial, rutaPartidos } from '../comun/rutas.js';
 
@@ -133,4 +133,17 @@ test('tarjetas como en Betano: roja directa y doble amarilla suman 2', () => {
   // Datos que faltan: no se inventa el total.
   assert.equal(totalTarjetas({ amarillas: 2, rojas: 1 }), null);
   assert.equal(totalTarjetas({ amarillas: null, rojas: 0, dobles_amarillas: 0 }), null);
+});
+
+test('nivel de confianza según el porcentaje que se muestra', () => {
+  assert.equal(probabilidadDelLado({ prob_a: 0.3, lado: 'b' }), 0.7);
+  assert.equal(nivelConfianza(0.61).nivel, 'alta');
+  assert.equal(nivelConfianza(0.6).nivel, 'alta');
+  // 59.96% se muestra como 60%: es alta, igual que lo que se ve.
+  assert.equal(nivelConfianza(0.5996).nivel, 'alta');
+  assert.equal(nivelConfianza(0.594).nivel, 'media');
+  assert.equal(nivelConfianza(0.55).nivel, 'media');
+  assert.equal(nivelConfianza(0.549).nivel, 'media');
+  assert.equal(nivelConfianza(0.544).nivel, 'baja');
+  assert.equal(nivelConfianza(0.5).nivel, 'baja');
 });

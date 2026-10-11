@@ -119,9 +119,10 @@ Esta sección describe el análisis estadístico. La red neuronal es un modelo a
 ## Resultado del análisis
 
 - Orden: deporte → partido → mercados en el orden de la lista de arriba.
-- Por cada mercado se muestra la línea candidata, el lado recomendado y la probabilidad de cada modelo, una al lado de la otra. Ejemplo: `Under 2.5 — Estadístico 58% · Red 61%`.
+- Por cada mercado se muestra la línea candidata, el lado recomendado y su nivel de confianza: ALTA, MEDIA o BAJA según la probabilidad del análisis estadístico, con ese porcentaje y el de la red. Ejemplo: `Más 2.5 · Confianza ALTA (estadístico 61%) · Red 58%`.
+- Niveles de confianza, sobre el porcentaje redondeado que se muestra: alta desde 60%, media de 55% a 59% y baja por debajo de 55%. Se pueden ajustar en `comun/reglas.js`.
 - Si la red no tiene un modelo aprobado para ese mercado, se muestra "Red: sin modelo todavía".
-- Si los dos modelos eligen lados distintos, no se oculta nada: se muestra el lado y la probabilidad de cada uno y se marca el mercado como en desacuerdo. Ejemplo: `Estadístico: Under 2.5 58% · Red: Over 2.5 55% ⚠️`.
+- Si los dos modelos eligen lados distintos, no se oculta nada: se muestra el lado y la probabilidad de cada uno y se marca el mercado como en desacuerdo. Ejemplo: `Más 2.5 · Confianza MEDIA (estadístico 56%) · Red: Menos 2.5 55% ⚠️ En desacuerdo`. El nivel de confianza sale solo del estadístico; el desacuerdo no lo cambia.
 - En el mercado de tarjetas se indica si habrá roja en el partido, con su probabilidad. Ejemplo: `Tarjeta roja en el partido: No — 84%`.
 - Los mercados sin cuotas aparecen como "Sin cuotas", en su lugar de la lista.
 
@@ -142,7 +143,7 @@ Por cada partido y mercado:
 
 Actualización de resultados: al abrir Sofascore después del partido, la extensión lee los resultados de los partidos pendientes y los marca automáticamente.
 
-Vista del historial: una lista general por deporte, con filtros por fecha, liga y mercado, y un resumen del porcentaje de acierto por mercado.
+Vista del historial: una lista general por deporte, con filtros por fecha, liga y mercado, el nivel de confianza de cada registro y un resumen del porcentaje de acierto por mercado y por nivel de confianza.
 
 ## Red neuronal
 

@@ -6,7 +6,7 @@ import { rutaHistorial, rutaPartidos } from '../comun/rutas.js';
 import { RAIZ, cargarValidador, leerCarpeta, leerConfig } from '../herramientas/cargar.mjs';
 import { agruparPartidos, analizar, modeloDeEjemplo } from '../web/js/analisis.js';
 import * as f from '../web/js/formato.js';
-import { acerto, filtrar, ordenar, resultadoApuesta, resumir } from '../web/js/historial.js';
+import { acerto, filtrar, ordenar, resultadoApuesta, resumir, resumirPorConfianza } from '../web/js/historial.js';
 
 let config;
 let extraccion;
@@ -164,6 +164,25 @@ test('historial: resumen por mercado', () => {
   assert.deepEqual(goles.red, { aciertos: 1, total: 2 });
   assert.deepEqual(goles.apuestas, { cantidad: 1, resueltas: 1, apostado: 10, ganancia: 10 });
   assert.deepEqual(total.estadistico, goles.estadistico);
+});
+
+test('historial: resumen por nivel de confianza del estadístico', () => {
+  const conProb = (prob, extra) => {
+    const r = registroDePrueba(extra);
+    r.estadistico = { prob_a: prob, lado: prob >= 0.5 ? 'a' : 'b' };
+    return r;
+  };
+  const filas = resumirPorConfianza([
+    conProb(0.62, { valor: 3, ganador: 'a' }),
+    conProb(0.65, { valor: 1, ganador: 'b' }),
+    conProb(0.43, { valor: 1, ganador: 'b' }),
+    conProb(0.52, { estado: 'pendiente' }),
+  ], [definicionGoles]);
+  assert.deepEqual(filas.map((f) => f.nivel.nivel), ['alta', 'media', 'baja']);
+  const [alta, media, baja] = filas;
+  assert.deepEqual(alta.estadistico, { aciertos: 1, total: 2 });
+  assert.deepEqual(media.estadistico, { aciertos: 1, total: 1 });
+  assert.equal(baja.pendientes, 1);
 });
 
 // ---------------------------------------------------------------- formato

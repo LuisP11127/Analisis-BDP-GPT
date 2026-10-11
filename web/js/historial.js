@@ -1,6 +1,6 @@
 // Cálculos de la vista del historial: filtros, acierto de cada modelo, resultado de las apuestas y resumen por mercado.
 
-import { ladoGanador, redondear } from '../../comun/reglas.js';
+import { NIVELES_CONFIANZA, ladoGanador, nivelConfianza, probabilidadDelLado, redondear } from '../../comun/reglas.js';
 
 /** true si la predicción acertó, false si falló y null si no hay predicción o el resultado no está resuelto. */
 export function acerto(prediccion, resultado) {
@@ -89,4 +89,16 @@ export function resumir(registros, definiciones) {
     sumarRegistro(total, { ...registro, tipo: fila.definicion.tipo });
   }
   return { filas: [...filas.values()].filter((f) => f.total > 0), total };
+}
+
+/** Resumen por nivel de confianza del estadístico (alta, media, baja), solo con los niveles que tienen registros. */
+export function resumirPorConfianza(registros, definiciones) {
+  const tipos = new Map(definiciones.map((d) => [d.codigo, d.tipo]));
+  const filas = new Map(NIVELES_CONFIANZA.map((n) => [n.nivel, { ...filaVacia(null), nivel: n }]));
+  for (const registro of registros) {
+    if (!tipos.has(registro.mercado)) continue;
+    const { nivel } = nivelConfianza(probabilidadDelLado(registro.estadistico));
+    sumarRegistro(filas.get(nivel), { ...registro, tipo: tipos.get(registro.mercado) });
+  }
+  return [...filas.values()].filter((f) => f.total > 0);
 }

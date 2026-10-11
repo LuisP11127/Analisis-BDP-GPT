@@ -1,10 +1,10 @@
 // Página principal: partidos del día, resultado del análisis e historial.
 
-import { tieneLinea } from '../../comun/reglas.js';
+import { NIVELES_CONFIANZA, nivelConfianza, tieneLinea } from '../../comun/reglas.js';
 import { agruparPartidos, analizar, modeloDeEjemplo } from './analisis.js';
 import { FUENTES, cargarConfig, cargarExtraccion, cargarHistorial, listarExtracciones } from './datos.js';
 import * as f from './formato.js';
-import { acerto, filtrar, ordenar, resultadoApuesta, resumir } from './historial.js';
+import { acerto, filtrar, ordenar, resultadoApuesta, resumir, resumirPorConfianza } from './historial.js';
 import { html, pintar } from './vista.js';
 
 const PESTANAS = ['partidos', 'resultado', 'historial'];
@@ -98,22 +98,25 @@ function lineaCandidata(definicion, partido, candidata) {
   </p>`;
 }
 
+function etiquetaNivel(estadistico, prefijo = '') {
+  const { nivel, nombre } = nivelConfianza(f.probLado(estadistico));
+  return html`<span class="nivel nivel-${nivel}">${prefijo}${prefijo ? nombre.toUpperCase() : nombre}</span>`;
+}
+
 function prediccion(definicion, partido, linea, estadistico, red) {
   const ladoEst = f.nombreLado(definicion, estadistico.lado, partido, linea);
-  const probEst = f.porcentaje(f.probLado(estadistico));
-  if (!red) {
-    return html`<p class="prediccion"><strong>${ladoEst}</strong> — Estadístico ${probEst} ·
-      <span class="apagado">Red: sin modelo todavía</span></p>`;
+  const desacuerdo = red && red.lado !== estadistico.lado;
+  let textoRed = html`<span class="apagado">Red: sin modelo todavía</span>`;
+  if (red && !desacuerdo) textoRed = html`Red ${f.porcentaje(f.probLado(red))}`;
+  if (desacuerdo) {
+    textoRed = html`Red: <strong>${f.nombreLado(definicion, red.lado, partido, linea)}</strong> ${f.porcentaje(f.probLado(red))}
+      <span class="marca-desacuerdo">⚠️ En desacuerdo</span>`;
   }
-  const probRed = f.porcentaje(f.probLado(red));
-  if (red.lado === estadistico.lado) {
-    return html`<p class="prediccion"><strong>${ladoEst}</strong> — Estadístico ${probEst} · Red ${probRed}</p>`;
-  }
-  const ladoRed = f.nombreLado(definicion, red.lado, partido, linea);
-  return html`<p class="prediccion desacuerdo">
-    <span>Estadístico: <strong>${ladoEst}</strong> ${probEst}</span> ·
-    <span>Red: <strong>${ladoRed}</strong> ${probRed}</span>
-    <span class="marca-desacuerdo">⚠️ En desacuerdo</span></p>`;
+  return html`<div class="prediccion${desacuerdo ? ' desacuerdo' : ''}">
+    <p class="prediccion-lado"><strong>${ladoEst}</strong></p>
+    <p class="prediccion-confianza">${etiquetaNivel(estadistico, 'Confianza ')}
+      <span>(estadístico ${f.porcentaje(f.probLado(estadistico))})</span> · ${textoRed}</p>
+  </div>`;
 }
 
 function probabilidadRoja(estadistico) {
@@ -495,6 +498,32 @@ function tablaResumen(resumen) {
     <p class="apagado chico">El acierto cuenta solo los resultados resueltos. La ganancia es la de las apuestas registradas.</p>`;
 }
 
+function tablaPorConfianza(filas) {
+  if (filas.length === 0) return '';
+  const cortes = NIVELES_CONFIANZA.map((n, i) => {
+    const hasta = i === 0 ? null : NIVELES_CONFIANZA[i - 1].desde - 1;
+    if (hasta === null) return `${n.nombre.toLowerCase()} desde ${n.desde}%`;
+    return n.desde === 0 ? `${n.nombre.toLowerCase()} por debajo de ${NIVELES_CONFIANZA[i - 1].desde}%` : `${n.nombre.toLowerCase()} de ${n.desde}% a ${hasta}%`;
+  });
+  return html`<h3 class="subtitulo">Acierto por nivel de confianza</h3>
+    <div class="tabla-envoltura"><table class="tabla tabla-resumen">
+      <thead><tr>
+        <th scope="col">Nivel</th><th scope="col">Registros</th><th scope="col">Resueltos</th>
+        <th scope="col">Acierto estadístico</th><th scope="col">Apuestas</th><th scope="col">Ganancia</th>
+      </tr></thead>
+      <tbody>${filas.map((x) => html`<tr>
+        <th scope="row"><span class="nivel nivel-${x.nivel.nivel}">${x.nivel.nombre}</span></th>
+        <td data-titulo="Registros"><div>${x.total}</div></td>
+        <td data-titulo="Resueltos"><div>${x.resueltos}${x.pendientes ? html` <span class="apagado">· ${x.pendientes} pend.</span>` : ''}</div></td>
+        <td data-titulo="Acierto estadístico"><div>${textoAcierto(x.estadistico)}</div></td>
+        <td data-titulo="Apuestas"><div>${x.apuestas.cantidad || '—'}</div></td>
+        <td data-titulo="Ganancia" class="${x.apuestas.ganancia > 0 ? 'positivo' : x.apuestas.ganancia < 0 ? 'negativo' : ''}"><div>
+          ${x.apuestas.resueltas ? f.soles(x.apuestas.ganancia, { conSigno: true }) : '—'}</div></td>
+      </tr>`)}</tbody>
+    </table></div>
+    <p class="apagado chico">El nivel sale de la probabilidad del estadístico: ${cortes.join(', ')}.</p>`;
+}
+
 function marcaAcierto(valor) {
   if (valor === null) return '';
   return valor
@@ -502,10 +531,10 @@ function marcaAcierto(valor) {
     : html` <span class="marca fallo" title="Falló">✗<span class="solo-lector"> falló</span></span>`;
 }
 
-function celdaModelo(definicion, registro, modelo) {
+function celdaModelo(definicion, registro, modelo, conNivel = false) {
   if (!modelo) return html`<span class="apagado">—</span>`;
   const lado = f.nombreLado(definicion, modelo.lado, registro, registro.candidata.linea);
-  return html`${lado} ${f.porcentaje(f.probLado(modelo))}${marcaAcierto(acerto(modelo, registro.resultado))}`;
+  return html`${lado} ${f.porcentaje(f.probLado(modelo))}${conNivel ? html` ${etiquetaNivel(modelo)}` : ''}${marcaAcierto(acerto(modelo, registro.resultado))}`;
 }
 
 function celdaResultado(definicion, registro) {
@@ -545,7 +574,7 @@ function filaHistorial(registro) {
     <td data-titulo="Mercado"><div>${definicion.nombre}${registro.jugador ? ` · ${registro.jugador.nombre} · ${f.nombreEstadisticaJugador(definicion, registro.estadistica_jugador)}` : ''}
       <span class="apagado chico bloque">${f.nombreLado(definicion, 'a', registro, candidata.linea)} ${f.cuota(candidata.cuota_a)} ·
         ${f.nombreLado(definicion, 'b', registro, candidata.linea)} ${f.cuota(candidata.cuota_b)} · ${nombreCasa(candidata.casa)}</span></div></td>
-    <td data-titulo="Estadístico"><div>${celdaModelo(definicion, registro, registro.estadistico)}</div></td>
+    <td data-titulo="Estadístico"><div>${celdaModelo(definicion, registro, registro.estadistico, true)}</div></td>
     <td data-titulo="Red"><div>${celdaModelo(definicion, registro, registro.red)}${desacuerdo ? html` <span class="marca-desacuerdo" title="En desacuerdo">⚠️</span>` : ''}</div></td>
     <td data-titulo="Resultado"><div>${celdaResultado(definicion, registro)}</div></td>
     <td data-titulo="Apuesta"><div>${celdaApuesta(definicion, registro)}</div></td>
@@ -571,13 +600,14 @@ function pintarContenidoHistorial() {
   }
   pintar(contenedor, html`
     ${tablaResumen(resumir(filtrados, deporte.mercados))}
+    ${tablaPorConfianza(resumirPorConfianza(filtrados, deporte.mercados))}
     <h3 class="subtitulo">Registros <span class="apagado">(${filtrados.length})</span></h3>
     ${filtrados.length === 0 ? html`<p class="nota">Ningún registro cumple los filtros.</p>` : ''}
     ${[...porFecha.entries()].map(([fecha, lista]) => html`<section class="dia">
       <h4 class="dia-titulo">${f.capitalizar(f.fechaLarga(fecha))}</h4>
       <div class="tabla-envoltura"><table class="tabla tabla-historial">
         <thead><tr>
-          <th scope="col">Hora</th><th scope="col">Partido</th><th scope="col">Mercado</th><th scope="col">Estadístico</th>
+          <th scope="col">Hora</th><th scope="col">Partido</th><th scope="col">Mercado</th><th scope="col">Estadístico y confianza</th>
           <th scope="col">Red</th><th scope="col">Resultado</th><th scope="col">Apuesta</th>
         </tr></thead>
         <tbody>${lista.map(filaHistorial)}</tbody>

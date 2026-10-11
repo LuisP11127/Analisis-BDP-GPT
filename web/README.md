@@ -5,8 +5,8 @@ Publicada en https://luisp11127.github.io/Analisis-BDP-GPT/web/ con GitHub Actio
 Tiene tres secciones:
 
 - **Partidos del día:** carga la extracción del día, muestra los partidos por deporte y liga, permite buscar y elegir partidos o ligas completas, y lanza el análisis. Recuerda en el navegador las ligas que analizaste la última vez.
-- **Resultado:** deporte → partido → mercados en el orden de `config/mercados.json`. Muestra la línea candidata, la predicción de cada modelo, el desacuerdo, la probabilidad de roja en tarjetas, el detalle de cuotas y factores, y permite registrar la apuesta.
-- **Historial:** lista por deporte con filtros por fecha, liga y mercado, y resumen de acierto y ganancia por mercado.
+- **Resultado:** deporte → partido → mercados en el orden de `config/mercados.json`. Muestra la línea candidata, el lado recomendado con su nivel de confianza (alta, media o baja y el porcentaje), la predicción de la red, el desacuerdo, la probabilidad de roja en tarjetas, el detalle de cuotas y factores, y permite registrar la apuesta.
+- **Historial:** lista por deporte con filtros por fecha, liga y mercado, nivel de confianza de cada registro y resumen de acierto y ganancia por mercado y por nivel de confianza.
 
 Mientras no estén la extensión (pasos 3 y 4) ni el análisis estadístico (paso 5), funciona con los datos de prueba de `ejemplos/`. Los análisis y apuestas hechos con datos de prueba duran solo mientras la página está abierta; el guardado en el repositorio es el paso 6.
 

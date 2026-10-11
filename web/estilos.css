@@ -559,10 +559,44 @@ fieldset {
 
 .prediccion { font-size: 1rem; }
 
+.prediccion-lado {
+  margin: 0.15rem 0 0.1rem;
+  font-size: 1.05rem;
+}
+
+.prediccion-confianza { margin-bottom: 0.4rem; }
+
 .prediccion.desacuerdo {
+  margin: 0.25rem 0 0.4rem;
   padding: 0.35rem 0.55rem;
   border-radius: 8px;
   background: var(--aviso-suave);
+}
+
+.prediccion.desacuerdo .prediccion-confianza { margin-bottom: 0; }
+
+.nivel {
+  display: inline-block;
+  padding: 0.05rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.nivel-alta {
+  background: color-mix(in srgb, var(--exito) 16%, transparent);
+  color: var(--exito);
+}
+
+.nivel-media {
+  background: color-mix(in srgb, var(--aviso) 18%, transparent);
+  color: var(--aviso);
+}
+
+.nivel-baja {
+  background: var(--superficie-2);
+  color: var(--texto-suave);
 }
 
 .marca-desacuerdo {

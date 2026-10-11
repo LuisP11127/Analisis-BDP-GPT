@@ -1,0 +1,1044 @@
+{
+  "version_formato": 1,
+  "partidos": [
+    {
+      "id": "ejemplo:fut-037",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol-b",
+        "nombre": "Liga Muestra"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026",
+        "nombre": "2026"
+      },
+      "inicio": "2026-10-03T17:00:00Z",
+      "fecha_local": "2026-10-03",
+      "local": {
+        "id": "ejemplo:juventud-prototipo",
+        "nombre": "Juventud Prototipo"
+      },
+      "visitante": {
+        "id": "ejemplo:central-ensayo",
+        "nombre": "Central Ensayo"
+      },
+      "estado": "finalizado",
+      "marcador": {
+        "local": 0,
+        "visitante": 0
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-10-03T19:30:00Z",
+        "completo": {
+          "local": {
+            "goles": 0,
+            "corners": 3,
+            "amarillas": 2,
+            "rojas": 0,
+            "dobles_amarillas": 0,
+            "tiros_al_arco": 2,
+            "remates": 11,
+            "faltas": 13,
+            "fueras_de_juego": 1,
+            "posesion": 52,
+            "xg": null
+          },
+          "visitante": {
+            "goles": 0,
+            "corners": 5,
+            "amarillas": 0,
+            "rojas": 0,
+            "dobles_amarillas": 0,
+            "tiros_al_arco": 8,
+            "remates": 17,
+            "faltas": 10,
+            "fueras_de_juego": 2,
+            "posesion": 48,
+            "xg": null
+          }
+        },
+        "primer_tiempo": {
+          "local": {
+            "goles": 0,
+            "corners": 2,
+            "amarillas": 0,
+            "rojas": 0,
+            "tiros_al_arco": 2,
+            "remates": 3,
+            "faltas": 5
+          },
+          "visitante": {
+            "goles": 0,
+            "corners": 2,
+            "amarillas": 0,
+            "rojas": 0,
+            "tiros_al_arco": 5,
+            "remates": 11,
+            "faltas": 6
+          }
+        }
+      }
+    },
+    {
+      "id": "ejemplo:fut-038",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol-b",
+        "nombre": "Liga Muestra"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026",
+        "nombre": "2026"
+      },
+      "inicio": "2026-10-03T21:00:00Z",
+      "fecha_local": "2026-10-03",
+      "local": {
+        "id": "ejemplo:racing-modelo",
+        "nombre": "Racing Modelo"
+      },
+      "visitante": {
+        "id": "ejemplo:estrella-borrador",
+        "nombre": "Estrella Borrador"
+      },
+      "estado": "finalizado",
+      "marcador": {
+        "local": 0,
+        "visitante": 1
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-10-03T23:30:00Z",
+        "completo": {
+          "local": {
+            "goles": 0,
+            "corners": 7,
+            "amarillas": 2,
+            "rojas": 0,
+            "dobles_amarillas": 0,
+            "tiros_al_arco": 3,
+            "remates": 8,
+            "faltas": 7,
+            "fueras_de_juego": 0,
+            "posesion": 54,
+            "xg": null
+          },
+          "visitante": {
+            "goles": 1,
+            "corners": 4,
+            "amarillas": 1,
+            "rojas": 0,
+            "dobles_amarillas": 0,
+            "tiros_al_arco": 5,
+            "remates": 9,
+            "faltas": 13,
+            "fueras_de_juego": 3,
+            "posesion": 46,
+            "xg": null
+          }
+        },
+        "primer_tiempo": {
+          "local": {
+            "goles": 0,
+            "corners": 3,
+            "amarillas": 1,
+            "rojas": 0,
+            "tiros_al_arco": 0,
+            "remates": 3,
+            "faltas": 1
+          },
+          "visitante": {
+            "goles": 1,
+            "corners": 2,
+            "amarillas": 0,
+            "rojas": 0,
+            "tiros_al_arco": 2,
+            "remates": 3,
+            "faltas": 7
+          }
+        }
+      }
+    },
+    {
+      "id": "ejemplo:fut-039",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol-b",
+        "nombre": "Liga Muestra"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026",
+        "nombre": "2026"
+      },
+      "inicio": "2026-10-04T01:00:00Z",
+      "fecha_local": "2026-10-03",
+      "local": {
+        "id": "ejemplo:social-boceto",
+        "nombre": "Social Boceto"
+      },
+      "visitante": {
+        "id": "ejemplo:defensor-maqueta",
+        "nombre": "Defensor Maqueta"
+      },
+      "estado": "finalizado",
+      "marcador": {
+        "local": 0,
+        "visitante": 1
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-10-04T03:30:00Z",
+        "completo": {
+          "local": {
+            "goles": 0,
+            "corners": 8,
+            "amarillas": 1,
+            "rojas": 0,
+            "dobles_amarillas": 0,
+            "tiros_al_arco": 4,
+            "remates": 17,
+            "faltas": 11,
+            "fueras_de_juego": 2,
+            "posesion": 59,
+            "xg": null
+          },
+          "visitante": {
+            "goles": 1,
+            "corners": 1,
+            "amarillas": 0,
+            "rojas": 0,
+            "dobles_amarillas": 0,
+            "tiros_al_arco": 2,
+            "remates": 6,
+            "faltas": 13,
+            "fueras_de_juego": 1,
+            "posesion": 41,
+            "xg": null
+          }
+        },
+        "primer_tiempo": {
+          "local": {
+            "goles": 0,
+            "corners": 4,
+            "amarillas": 1,
+            "rojas": 0,
+            "tiros_al_arco": 3,
+            "remates": 11,
+            "faltas": 3
+          },
+          "visitante": {
+            "goles": 0,
+            "corners": 0,
+            "amarillas": 0,
+            "rojas": 0,
+            "tiros_al_arco": 0,
+            "remates": 2,
+            "faltas": 7
+          }
+        }
+      }
+    },
+    {
+      "id": "ejemplo:fut-040",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol-b",
+        "nombre": "Liga Muestra"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026",
+        "nombre": "2026"
+      },
+      "inicio": "2026-10-06T17:00:00Z",
+      "fecha_local": "2026-10-06",
+      "local": {
+        "id": "ejemplo:social-boceto",
+        "nombre": "Social Boceto"
+      },
+      "visitante": {
+        "id": "ejemplo:defensor-maqueta",
+        "nombre": "Defensor Maqueta"
+      },
+      "estado": "finalizado",
+      "ids_externos": {
+        "betano": "900040"
+      },
+      "marcador": {
+        "local": 1,
+        "visitante": 0
+      },
+      "previa": {
+        "extraido_en": "2026-10-06T11:00:00Z",
+        "fuentes": [
+          "sofascore"
+        ],
+        "tabla": {
+          "local": {
+            "posicion": 2,
+            "partidos_jugados": 5,
+            "ganados": 3,
+            "perdidos": 1,
+            "puntos": 10,
+            "empatados": 1
+          },
+          "visitante": {
+            "posicion": 1,
+            "partidos_jugados": 5,
+            "ganados": 3,
+            "perdidos": 1,
+            "puntos": 10,
+            "empatados": 1
+          }
+        },
+        "arbitro": {
+          "nombre": "Sergio Banderín",
+          "estadisticas": {
+            "partidos": 10,
+            "amarillas_por_partido": 4.7,
+            "rojas_por_partido": 0.2
+          }
+        },
+        "ultimos_partidos": {
+          "local": [
+            "ejemplo:fut-039",
+            "ejemplo:fut-035",
+            "ejemplo:fut-032",
+            "ejemplo:fut-029",
+            "ejemplo:fut-025"
+          ],
+          "visitante": [
+            "ejemplo:fut-039",
+            "ejemplo:fut-034",
+            "ejemplo:fut-031",
+            "ejemplo:fut-029",
+            "ejemplo:fut-027"
+          ]
+        }
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-10-06T19:30:00Z",
+        "completo": {
+          "local": {
+            "goles": 1,
+            "corners": 1,
+            "amarillas": 0,
+            "rojas": 0,
+            "dobles_amarillas": 0,
+            "tiros_al_arco": 6,
+            "remates": 14,
+            "faltas": 13,
+            "fueras_de_juego": 2,
+            "posesion": 59,
+            "xg": null
+          },
+          "visitante": {
+            "goles": 0,
+            "corners": 4,
+            "amarillas": 3,
+            "rojas": 0,
+            "dobles_amarillas": 0,
+            "tiros_al_arco": 2,
+            "remates": 13,
+            "faltas": 11,
+            "fueras_de_juego": 2,
+            "posesion": 41,
+            "xg": null
+          }
+        },
+        "primer_tiempo": {
+          "local": {
+            "goles": 1,
+            "corners": 1,
+            "amarillas": 0,
+            "rojas": 0,
+            "tiros_al_arco": 2,
+            "remates": 6,
+            "faltas": 6
+          },
+          "visitante": {
+            "goles": 0,
+            "corners": 1,
+            "amarillas": 1,
+            "rojas": 0,
+            "tiros_al_arco": 0,
+            "remates": 4,
+            "faltas": 4
+          }
+        }
+      }
+    },
+    {
+      "id": "ejemplo:fut-041",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol-b",
+        "nombre": "Liga Muestra"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026",
+        "nombre": "2026"
+      },
+      "inicio": "2026-10-06T21:00:00Z",
+      "fecha_local": "2026-10-06",
+      "local": {
+        "id": "ejemplo:racing-modelo",
+        "nombre": "Racing Modelo"
+      },
+      "visitante": {
+        "id": "ejemplo:estrella-borrador",
+        "nombre": "Estrella Borrador"
+      },
+      "estado": "finalizado",
+      "ids_externos": {
+        "betano": "900041"
+      },
+      "marcador": {
+        "local": 1,
+        "visitante": 0
+      },
+      "previa": {
+        "extraido_en": "2026-10-06T15:00:00Z",
+        "fuentes": [
+          "sofascore"
+        ],
+        "tabla": {
+          "local": {
+            "posicion": 6,
+            "partidos_jugados": 5,
+            "ganados": 0,
+            "perdidos": 3,
+            "puntos": 2,
+            "empatados": 2
+          },
+          "visitante": {
+            "posicion": 4,
+            "partidos_jugados": 5,
+            "ganados": 2,
+            "perdidos": 2,
+            "puntos": 7,
+            "empatados": 1
+          }
+        },
+        "arbitro": {
+          "nombre": "Fabián Pito",
+          "estadisticas": {
+            "partidos": 12,
+            "amarillas_por_partido": 3.9,
+            "rojas_por_partido": 0.24
+          }
+        },
+        "ultimos_partidos": {
+          "local": [
+            "ejemplo:fut-038",
+            "ejemplo:fut-036",
+            "ejemplo:fut-033",
+            "ejemplo:fut-030",
+            "ejemplo:fut-026"
+          ],
+          "visitante": [
+            "ejemplo:fut-038",
+            "ejemplo:fut-036",
+            "ejemplo:fut-031",
+            "ejemplo:fut-030",
+            "ejemplo:fut-027"
+          ]
+        }
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-10-06T23:30:00Z",
+        "completo": {
+          "local": {
+            "goles": 1,
+            "corners": 3,
+            "amarillas": 2,
+            "rojas": 0,
+            "dobles_amarillas": 0,
+            "tiros_al_arco": 7,
+            "remates": 13,
+            "faltas": 4,
+            "fueras_de_juego": 1,
+            "posesion": 58,
+            "xg": null
+          },
+          "visitante": {
+            "goles": 0,
+            "corners": 2,
+            "amarillas": 2,
+            "rojas": 0,
+            "dobles_amarillas": 0,
+            "tiros_al_arco": 2,
+            "remates": 6,
+            "faltas": 5,
+            "fueras_de_juego": 0,
+            "posesion": 42,
+            "xg": null
+          }
+        },
+        "primer_tiempo": {
+          "local": {
+            "goles": 1,
+            "corners": 1,
+            "amarillas": 1,
+            "rojas": 0,
+            "tiros_al_arco": 2,
+            "remates": 7,
+            "faltas": 2
+          },
+          "visitante": {
+            "goles": 0,
+            "corners": 0,
+            "amarillas": 0,
+            "rojas": 0,
+            "tiros_al_arco": 2,
+            "remates": 4,
+            "faltas": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "ejemplo:fut-042",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol-b",
+        "nombre": "Liga Muestra"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026",
+        "nombre": "2026"
+      },
+      "inicio": "2026-10-07T01:00:00Z",
+      "fecha_local": "2026-10-06",
+      "local": {
+        "id": "ejemplo:central-ensayo",
+        "nombre": "Central Ensayo"
+      },
+      "visitante": {
+        "id": "ejemplo:juventud-prototipo",
+        "nombre": "Juventud Prototipo"
+      },
+      "estado": "finalizado",
+      "ids_externos": {
+        "betano": "900042"
+      },
+      "marcador": {
+        "local": 1,
+        "visitante": 2
+      },
+      "previa": {
+        "extraido_en": "2026-10-06T19:00:00Z",
+        "fuentes": [
+          "sofascore",
+          "flashscore"
+        ],
+        "bajas": [
+          {
+            "equipo": "visitante",
+            "jugador": {
+              "nombre": "Gabriel Mendoza"
+            },
+            "motivo": "sancion",
+            "fuente": "flashscore"
+          }
+        ],
+        "tabla": {
+          "local": {
+            "posicion": 3,
+            "partidos_jugados": 5,
+            "ganados": 2,
+            "perdidos": 1,
+            "puntos": 8,
+            "empatados": 2
+          },
+          "visitante": {
+            "posicion": 6,
+            "partidos_jugados": 5,
+            "ganados": 0,
+            "perdidos": 2,
+            "puntos": 3,
+            "empatados": 3
+          }
+        },
+        "arbitro": {
+          "nombre": "Fabián Pito",
+          "estadisticas": {
+            "partidos": 6,
+            "amarillas_por_partido": 4.4,
+            "rojas_por_partido": 0.16
+          }
+        },
+        "ultimos_partidos": {
+          "local": [
+            "ejemplo:fut-037",
+            "ejemplo:fut-035",
+            "ejemplo:fut-032",
+            "ejemplo:fut-028",
+            "ejemplo:fut-026"
+          ],
+          "visitante": [
+            "ejemplo:fut-037",
+            "ejemplo:fut-034",
+            "ejemplo:fut-033",
+            "ejemplo:fut-028",
+            "ejemplo:fut-025"
+          ]
+        }
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-10-07T03:30:00Z",
+        "completo": {
+          "local": {
+            "goles": 1,
+            "corners": 5,
+            "amarillas": 0,
+            "rojas": 0,
+            "dobles_amarillas": 0,
+            "tiros_al_arco": 4,
+            "remates": 15,
+            "faltas": 15,
+            "fueras_de_juego": 3,
+            "posesion": 57,
+            "xg": null
+          },
+          "visitante": {
+            "goles": 2,
+            "corners": 7,
+            "amarillas": 3,
+            "rojas": 0,
+            "dobles_amarillas": 0,
+            "tiros_al_arco": 7,
+            "remates": 18,
+            "faltas": 20,
+            "fueras_de_juego": 3,
+            "posesion": 43,
+            "xg": null
+          }
+        },
+        "primer_tiempo": {
+          "local": {
+            "goles": 0,
+            "corners": 3,
+            "amarillas": 0,
+            "rojas": 0,
+            "tiros_al_arco": 3,
+            "remates": 9,
+            "faltas": 8
+          },
+          "visitante": {
+            "goles": 1,
+            "corners": 2,
+            "amarillas": 1,
+            "rojas": 0,
+            "tiros_al_arco": 7,
+            "remates": 11,
+            "faltas": 8
+          }
+        }
+      }
+    },
+    {
+      "id": "ejemplo:fut-043",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol-b",
+        "nombre": "Liga Muestra"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026",
+        "nombre": "2026"
+      },
+      "inicio": "2026-10-09T17:00:00Z",
+      "fecha_local": "2026-10-09",
+      "local": {
+        "id": "ejemplo:juventud-prototipo",
+        "nombre": "Juventud Prototipo"
+      },
+      "visitante": {
+        "id": "ejemplo:central-ensayo",
+        "nombre": "Central Ensayo"
+      },
+      "estado": "finalizado",
+      "ids_externos": {
+        "betano": "900043"
+      },
+      "marcador": {
+        "local": 2,
+        "visitante": 1
+      },
+      "previa": {
+        "extraido_en": "2026-10-09T11:00:00Z",
+        "fuentes": [
+          "sofascore",
+          "flashscore"
+        ],
+        "bajas": [
+          {
+            "equipo": "visitante",
+            "jugador": {
+              "nombre": "Nicolás Silva"
+            },
+            "motivo": "duda",
+            "fuente": "flashscore"
+          }
+        ],
+        "tabla": {
+          "local": {
+            "posicion": 5,
+            "partidos_jugados": 6,
+            "ganados": 1,
+            "perdidos": 2,
+            "puntos": 6,
+            "empatados": 3
+          },
+          "visitante": {
+            "posicion": 3,
+            "partidos_jugados": 6,
+            "ganados": 2,
+            "perdidos": 2,
+            "puntos": 8,
+            "empatados": 2
+          }
+        },
+        "arbitro": {
+          "nombre": "Gustavo Línea",
+          "estadisticas": {
+            "partidos": 11,
+            "amarillas_por_partido": 3.9,
+            "rojas_por_partido": 0.1
+          }
+        },
+        "ultimos_partidos": {
+          "local": [
+            "ejemplo:fut-042",
+            "ejemplo:fut-037",
+            "ejemplo:fut-034",
+            "ejemplo:fut-033",
+            "ejemplo:fut-028"
+          ],
+          "visitante": [
+            "ejemplo:fut-042",
+            "ejemplo:fut-037",
+            "ejemplo:fut-035",
+            "ejemplo:fut-032",
+            "ejemplo:fut-028"
+          ]
+        }
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-10-09T19:30:00Z",
+        "completo": {
+          "local": {
+            "goles": 2,
+            "corners": 3,
+            "amarillas": 0,
+            "rojas": 0,
+            "dobles_amarillas": 0,
+            "tiros_al_arco": 4,
+            "remates": 8,
+            "faltas": 11,
+            "fueras_de_juego": 4,
+            "posesion": 51,
+            "xg": null
+          },
+          "visitante": {
+            "goles": 1,
+            "corners": 6,
+            "amarillas": 1,
+            "rojas": 0,
+            "dobles_amarillas": 0,
+            "tiros_al_arco": 7,
+            "remates": 17,
+            "faltas": 11,
+            "fueras_de_juego": 1,
+            "posesion": 49,
+            "xg": null
+          }
+        },
+        "primer_tiempo": {
+          "local": {
+            "goles": 2,
+            "corners": 1,
+            "amarillas": 0,
+            "rojas": 0,
+            "tiros_al_arco": 2,
+            "remates": 4,
+            "faltas": 2
+          },
+          "visitante": {
+            "goles": 0,
+            "corners": 1,
+            "amarillas": 0,
+            "rojas": 0,
+            "tiros_al_arco": 3,
+            "remates": 9,
+            "faltas": 6
+          }
+        }
+      }
+    },
+    {
+      "id": "ejemplo:fut-044",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol-b",
+        "nombre": "Liga Muestra"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026",
+        "nombre": "2026"
+      },
+      "inicio": "2026-10-09T21:00:00Z",
+      "fecha_local": "2026-10-09",
+      "local": {
+        "id": "ejemplo:racing-modelo",
+        "nombre": "Racing Modelo"
+      },
+      "visitante": {
+        "id": "ejemplo:social-boceto",
+        "nombre": "Social Boceto"
+      },
+      "estado": "finalizado",
+      "ids_externos": {
+        "betano": "900044"
+      },
+      "marcador": {
+        "local": 2,
+        "visitante": 3
+      },
+      "previa": {
+        "extraido_en": "2026-10-09T15:00:00Z",
+        "fuentes": [
+          "sofascore"
+        ],
+        "tabla": {
+          "local": {
+            "posicion": 6,
+            "partidos_jugados": 6,
+            "ganados": 1,
+            "perdidos": 3,
+            "puntos": 5,
+            "empatados": 2
+          },
+          "visitante": {
+            "posicion": 1,
+            "partidos_jugados": 6,
+            "ganados": 4,
+            "perdidos": 1,
+            "puntos": 13,
+            "empatados": 1
+          }
+        },
+        "arbitro": {
+          "nombre": "Gustavo Línea",
+          "estadisticas": {
+            "partidos": 12,
+            "amarillas_por_partido": 4,
+            "rojas_por_partido": 0.35
+          }
+        },
+        "ultimos_partidos": {
+          "local": [
+            "ejemplo:fut-041",
+            "ejemplo:fut-038",
+            "ejemplo:fut-036",
+            "ejemplo:fut-033",
+            "ejemplo:fut-030"
+          ],
+          "visitante": [
+            "ejemplo:fut-040",
+            "ejemplo:fut-039",
+            "ejemplo:fut-035",
+            "ejemplo:fut-032",
+            "ejemplo:fut-029"
+          ]
+        }
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-10-09T23:30:00Z",
+        "completo": {
+          "local": {
+            "goles": 2,
+            "corners": 10,
+            "amarillas": 0,
+            "rojas": 0,
+            "dobles_amarillas": 0,
+            "tiros_al_arco": 2,
+            "remates": 11,
+            "faltas": 10,
+            "fueras_de_juego": 1,
+            "posesion": 56,
+            "xg": null
+          },
+          "visitante": {
+            "goles": 3,
+            "corners": 6,
+            "amarillas": 2,
+            "rojas": 0,
+            "dobles_amarillas": 0,
+            "tiros_al_arco": 5,
+            "remates": 10,
+            "faltas": 19,
+            "fueras_de_juego": 1,
+            "posesion": 44,
+            "xg": null
+          }
+        },
+        "primer_tiempo": {
+          "local": {
+            "goles": 0,
+            "corners": 8,
+            "amarillas": 0,
+            "rojas": 0,
+            "tiros_al_arco": 1,
+            "remates": 4,
+            "faltas": 3
+          },
+          "visitante": {
+            "goles": 0,
+            "corners": 3,
+            "amarillas": 0,
+            "rojas": 0,
+            "tiros_al_arco": 1,
+            "remates": 4,
+            "faltas": 8
+          }
+        }
+      }
+    },
+    {
+      "id": "ejemplo:fut-045",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol-b",
+        "nombre": "Liga Muestra"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026",
+        "nombre": "2026"
+      },
+      "inicio": "2026-10-10T01:00:00Z",
+      "fecha_local": "2026-10-09",
+      "local": {
+        "id": "ejemplo:estrella-borrador",
+        "nombre": "Estrella Borrador"
+      },
+      "visitante": {
+        "id": "ejemplo:defensor-maqueta",
+        "nombre": "Defensor Maqueta"
+      },
+      "estado": "finalizado",
+      "ids_externos": {
+        "betano": "900045"
+      },
+      "marcador": {
+        "local": 0,
+        "visitante": 0
+      },
+      "previa": {
+        "extraido_en": "2026-10-09T19:00:00Z",
+        "fuentes": [
+          "sofascore"
+        ],
+        "tabla": {
+          "local": {
+            "posicion": 5,
+            "partidos_jugados": 6,
+            "ganados": 2,
+            "perdidos": 3,
+            "puntos": 7,
+            "empatados": 1
+          },
+          "visitante": {
+            "posicion": 2,
+            "partidos_jugados": 6,
+            "ganados": 3,
+            "perdidos": 2,
+            "puntos": 10,
+            "empatados": 1
+          }
+        },
+        "arbitro": {
+          "nombre": "Fabián Pito",
+          "estadisticas": {
+            "partidos": 8,
+            "amarillas_por_partido": 3.7,
+            "rojas_por_partido": 0.23
+          }
+        },
+        "ultimos_partidos": {
+          "local": [
+            "ejemplo:fut-041",
+            "ejemplo:fut-038",
+            "ejemplo:fut-036",
+            "ejemplo:fut-031",
+            "ejemplo:fut-030"
+          ],
+          "visitante": [
+            "ejemplo:fut-040",
+            "ejemplo:fut-039",
+            "ejemplo:fut-034",
+            "ejemplo:fut-031",
+            "ejemplo:fut-029"
+          ]
+        }
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-10-10T03:30:00Z",
+        "completo": {
+          "local": {
+            "goles": 0,
+            "corners": 7,
+            "amarillas": 2,
+            "rojas": 0,
+            "dobles_amarillas": 0,
+            "tiros_al_arco": 3,
+            "remates": 10,
+            "faltas": 18,
+            "fueras_de_juego": 1,
+            "posesion": 45,
+            "xg": null
+          },
+          "visitante": {
+            "goles": 0,
+            "corners": 5,
+            "amarillas": 2,
+            "rojas": 0,
+            "dobles_amarillas": 0,
+            "tiros_al_arco": 6,
+            "remates": 10,
+            "faltas": 15,
+            "fueras_de_juego": 3,
+            "posesion": 55,
+            "xg": null
+          }
+        },
+        "primer_tiempo": {
+          "local": {
+            "goles": 0,
+            "corners": 2,
+            "amarillas": 0,
+            "rojas": 0,
+            "tiros_al_arco": 0,
+            "remates": 3,
+            "faltas": 9
+          },
+          "visitante": {
+            "goles": 0,
+            "corners": 1,
+            "amarillas": 1,
+            "rojas": 0,
+            "tiros_al_arco": 3,
+            "remates": 5,
+            "faltas": 6
+          }
+        }
+      }
+    }
+  ]
+}

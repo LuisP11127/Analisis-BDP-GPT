@@ -1,0 +1,2035 @@
+{
+  "version_formato": 1,
+  "registros": [
+    {
+      "id": "ejemplo:fut-019|futbol_ambos_anotan",
+      "partido_id": "ejemplo:fut-019",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-08T18:00:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:atletico-muestra",
+        "nombre": "Atlético Muestra"
+      },
+      "visitante": {
+        "id": "ejemplo:real-ficticio",
+        "nombre": "Real Ficticio"
+      },
+      "mercado": "futbol_ambos_anotan",
+      "analizado_en": "2026-10-08T12:10:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T12:05:00Z",
+          "lineas": [
+            {
+              "linea": null,
+              "cuota_a": 2.09,
+              "cuota_b": 1.74
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-08T12:05:00Z",
+          "lineas": [
+            {
+              "linea": null,
+              "cuota_a": 2.02,
+              "cuota_b": 1.76
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": null,
+        "cuota_a": 2.09,
+        "cuota_b": 1.74,
+        "diferencia": 0.35,
+        "margen": 0.0532,
+        "prob_sin_margen_a": 0.4543,
+        "promedio_mercado_a": 0.4656
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.55,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "localia",
+            "impacto": 0.02
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": 0.03
+          },
+          {
+            "factor": "forma_reciente",
+            "impacto": 0.02
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 1,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T21:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:fut-019|futbol_corners",
+      "partido_id": "ejemplo:fut-019",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-08T18:00:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:atletico-muestra",
+        "nombre": "Atlético Muestra"
+      },
+      "visitante": {
+        "id": "ejemplo:real-ficticio",
+        "nombre": "Real Ficticio"
+      },
+      "mercado": "futbol_corners",
+      "analizado_en": "2026-10-08T12:10:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T12:05:00Z",
+          "lineas": [
+            {
+              "linea": 9.5,
+              "cuota_a": 1.66,
+              "cuota_b": 2.21
+            },
+            {
+              "linea": 10.5,
+              "cuota_a": 2.09,
+              "cuota_b": 1.74
+            },
+            {
+              "linea": 11.5,
+              "cuota_a": 3.02,
+              "cuota_b": 1.38
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-08T12:05:00Z",
+          "lineas": [
+            {
+              "linea": 10.5,
+              "cuota_a": 2.25,
+              "cuota_b": 1.61
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 10.5,
+        "cuota_a": 2.09,
+        "cuota_b": 1.74,
+        "diferencia": 0.35,
+        "margen": 0.0532,
+        "prob_sin_margen_a": 0.4543,
+        "promedio_mercado_a": 0.4171
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.435,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "promedio_liga",
+            "impacto": -0.02
+          },
+          {
+            "factor": "localia",
+            "impacto": -0.02
+          },
+          {
+            "factor": "forma_reciente",
+            "impacto": -0.04
+          }
+        ]
+      },
+      "red": {
+        "version": "ejemplo-red-futbol_corners-1",
+        "prob_a": 0.326,
+        "lado": "b"
+      },
+      "entrada_red": {
+        "version": "ejemplo-variables-1",
+        "valores": {
+          "linea": 10.5,
+          "cuota_a": 2.09,
+          "cuota_b": 1.74,
+          "esperado": 10.04,
+          "forma_local": -0.26,
+          "forma_visitante": -0.86
+        }
+      },
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 7,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T21:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:fut-019|futbol_corners_1t",
+      "partido_id": "ejemplo:fut-019",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-08T18:00:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:atletico-muestra",
+        "nombre": "Atlético Muestra"
+      },
+      "visitante": {
+        "id": "ejemplo:real-ficticio",
+        "nombre": "Real Ficticio"
+      },
+      "mercado": "futbol_corners_1t",
+      "analizado_en": "2026-10-08T12:10:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T12:05:00Z",
+          "lineas": [
+            {
+              "linea": 3.5,
+              "cuota_a": 1.46,
+              "cuota_b": 2.71
+            },
+            {
+              "linea": 4.5,
+              "cuota_a": 2.12,
+              "cuota_b": 1.72
+            },
+            {
+              "linea": 5.5,
+              "cuota_a": 3.21,
+              "cuota_b": 1.35
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 4.5,
+        "cuota_a": 2.12,
+        "cuota_b": 1.72,
+        "diferencia": 0.4,
+        "margen": 0.0531,
+        "prob_sin_margen_a": 0.4479,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.528,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "rival_concede",
+            "impacto": 0.01
+          },
+          {
+            "factor": "promedio_liga",
+            "impacto": 0.01
+          },
+          {
+            "factor": "forma_reciente",
+            "impacto": 0.01
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 5,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T21:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:fut-019|futbol_goles",
+      "partido_id": "ejemplo:fut-019",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-08T18:00:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:atletico-muestra",
+        "nombre": "Atlético Muestra"
+      },
+      "visitante": {
+        "id": "ejemplo:real-ficticio",
+        "nombre": "Real Ficticio"
+      },
+      "mercado": "futbol_goles",
+      "analizado_en": "2026-10-08T12:10:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T12:05:00Z",
+          "lineas": [
+            {
+              "linea": 1.5,
+              "cuota_a": 1.39,
+              "cuota_b": 2.99
+            },
+            {
+              "linea": 2.5,
+              "cuota_a": 2.29,
+              "cuota_b": 1.62
+            },
+            {
+              "linea": 3.5,
+              "cuota_a": 4.74,
+              "cuota_b": 1.18
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-08T12:05:00Z",
+          "lineas": [
+            {
+              "linea": 2.5,
+              "cuota_a": 2.32,
+              "cuota_b": 1.58
+            }
+          ]
+        },
+        {
+          "casa": "te_apuesto",
+          "extraido_en": "2026-10-08T12:05:00Z",
+          "lineas": [
+            {
+              "linea": 2.5,
+              "cuota_a": 2.27,
+              "cuota_b": 1.59
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 2.5,
+        "cuota_a": 2.29,
+        "cuota_b": 1.62,
+        "diferencia": 0.67,
+        "margen": 0.054,
+        "prob_sin_margen_a": 0.4143,
+        "promedio_mercado_a": 0.4085
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.312,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "promedio_liga",
+            "impacto": -0.02
+          },
+          {
+            "factor": "localia",
+            "impacto": -0.08
+          },
+          {
+            "factor": "forma_reciente",
+            "impacto": -0.08
+          }
+        ]
+      },
+      "red": {
+        "version": "ejemplo-red-futbol_goles-1",
+        "prob_a": 0.449,
+        "lado": "b"
+      },
+      "entrada_red": {
+        "version": "ejemplo-variables-1",
+        "valores": {
+          "linea": 2.5,
+          "cuota_a": 2.29,
+          "cuota_b": 1.62,
+          "esperado": 2.32,
+          "forma_local": -0.5,
+          "forma_visitante": -0.2
+        }
+      },
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 2,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T21:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:fut-019|futbol_remates",
+      "partido_id": "ejemplo:fut-019",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-08T18:00:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:atletico-muestra",
+        "nombre": "Atlético Muestra"
+      },
+      "visitante": {
+        "id": "ejemplo:real-ficticio",
+        "nombre": "Real Ficticio"
+      },
+      "mercado": "futbol_remates",
+      "analizado_en": "2026-10-08T12:10:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T12:05:00Z",
+          "lineas": [
+            {
+              "linea": 26.5,
+              "cuota_a": 1.77,
+              "cuota_b": 2.05
+            },
+            {
+              "linea": 27.5,
+              "cuota_a": 1.96,
+              "cuota_b": 1.84
+            },
+            {
+              "linea": 28.5,
+              "cuota_a": 2.56,
+              "cuota_b": 1.51
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 27.5,
+        "cuota_a": 1.96,
+        "cuota_b": 1.84,
+        "diferencia": 0.12,
+        "margen": 0.0537,
+        "prob_sin_margen_a": 0.4842,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.433,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "localia",
+            "impacto": -0.04
+          },
+          {
+            "factor": "promedio_liga",
+            "impacto": -0.03
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": 0
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": {
+        "casa": "betano",
+        "linea": 27.5,
+        "lado": "b",
+        "cuota": 1.84,
+        "monto": 30,
+        "moneda": "PEN",
+        "registrada_en": "2026-10-08T12:20:00Z"
+      },
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 30,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T21:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:fut-019|futbol_tarjetas",
+      "partido_id": "ejemplo:fut-019",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-08T18:00:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:atletico-muestra",
+        "nombre": "Atlético Muestra"
+      },
+      "visitante": {
+        "id": "ejemplo:real-ficticio",
+        "nombre": "Real Ficticio"
+      },
+      "mercado": "futbol_tarjetas",
+      "analizado_en": "2026-10-08T12:10:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T12:05:00Z",
+          "lineas": [
+            {
+              "linea": 3.5,
+              "cuota_a": 1.47,
+              "cuota_b": 2.68
+            },
+            {
+              "linea": 4.5,
+              "cuota_a": 2.06,
+              "cuota_b": 1.76
+            },
+            {
+              "linea": 5.5,
+              "cuota_a": 3.66,
+              "cuota_b": 1.28
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-08T12:05:00Z",
+          "lineas": [
+            {
+              "linea": 4.5,
+              "cuota_a": 2.2,
+              "cuota_b": 1.64
+            }
+          ]
+        },
+        {
+          "casa": "te_apuesto",
+          "extraido_en": "2026-10-08T12:05:00Z",
+          "lineas": [
+            {
+              "linea": 4.5,
+              "cuota_a": 2.09,
+              "cuota_b": 1.69
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 4.5,
+        "cuota_a": 2.06,
+        "cuota_b": 1.76,
+        "diferencia": 0.3,
+        "margen": 0.0536,
+        "prob_sin_margen_a": 0.4607,
+        "promedio_mercado_a": 0.4371
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.501,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "arbitro",
+            "impacto": 0.01
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": 0
+          },
+          {
+            "factor": "rivalidad",
+            "impacto": 0
+          }
+        ],
+        "prob_roja": 0.138
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 8,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T21:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:fut-019|futbol_tiros_arco",
+      "partido_id": "ejemplo:fut-019",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-08T18:00:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:atletico-muestra",
+        "nombre": "Atlético Muestra"
+      },
+      "visitante": {
+        "id": "ejemplo:real-ficticio",
+        "nombre": "Real Ficticio"
+      },
+      "mercado": "futbol_tiros_arco",
+      "analizado_en": "2026-10-08T12:10:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T12:05:00Z",
+          "lineas": [
+            {
+              "linea": 6.5,
+              "cuota_a": 1.56,
+              "cuota_b": 2.4
+            },
+            {
+              "linea": 7.5,
+              "cuota_a": 2.02,
+              "cuota_b": 1.79
+            },
+            {
+              "linea": 8.5,
+              "cuota_a": 2.86,
+              "cuota_b": 1.42
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 7.5,
+        "cuota_a": 2.02,
+        "cuota_b": 1.79,
+        "diferencia": 0.23,
+        "margen": 0.0537,
+        "prob_sin_margen_a": 0.4698,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.508,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "localia",
+            "impacto": 0.02
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": 0.01
+          },
+          {
+            "factor": "forma_reciente",
+            "impacto": 0
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 9,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T21:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:fut-020|futbol_ambos_anotan",
+      "partido_id": "ejemplo:fut-020",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-08T20:30:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:union-prueba",
+        "nombre": "Unión Prueba"
+      },
+      "visitante": {
+        "id": "ejemplo:deportivo-ejemplo",
+        "nombre": "Deportivo Ejemplo"
+      },
+      "mercado": "futbol_ambos_anotan",
+      "analizado_en": "2026-10-08T14:40:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T14:35:00Z",
+          "lineas": [
+            {
+              "linea": null,
+              "cuota_a": 1.81,
+              "cuota_b": 1.99
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-08T14:35:00Z",
+          "lineas": [
+            {
+              "linea": null,
+              "cuota_a": 1.81,
+              "cuota_b": 1.96
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": null,
+        "cuota_a": 1.81,
+        "cuota_b": 1.99,
+        "diferencia": 0.18,
+        "margen": 0.055,
+        "prob_sin_margen_a": 0.5237,
+        "promedio_mercado_a": 0.5199
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.511,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "promedio_liga",
+            "impacto": 0
+          },
+          {
+            "factor": "localia",
+            "impacto": -0.02
+          },
+          {
+            "factor": "forma_reciente",
+            "impacto": -0.01
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 1,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T23:30:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:fut-020|futbol_corners",
+      "partido_id": "ejemplo:fut-020",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-08T20:30:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:union-prueba",
+        "nombre": "Unión Prueba"
+      },
+      "visitante": {
+        "id": "ejemplo:deportivo-ejemplo",
+        "nombre": "Deportivo Ejemplo"
+      },
+      "mercado": "futbol_corners",
+      "analizado_en": "2026-10-08T14:40:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T14:35:00Z",
+          "lineas": [
+            {
+              "linea": 9.5,
+              "cuota_a": 1.52,
+              "cuota_b": 2.53
+            },
+            {
+              "linea": 10.5,
+              "cuota_a": 1.87,
+              "cuota_b": 1.92
+            },
+            {
+              "linea": 11.5,
+              "cuota_a": 2.5,
+              "cuota_b": 1.53
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-08T14:35:00Z",
+          "lineas": [
+            {
+              "linea": 10.5,
+              "cuota_a": 1.87,
+              "cuota_b": 1.89
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 10.5,
+        "cuota_a": 1.87,
+        "cuota_b": 1.92,
+        "diferencia": 0.05,
+        "margen": 0.0556,
+        "prob_sin_margen_a": 0.5066,
+        "promedio_mercado_a": 0.5027
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.488,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "localia",
+            "impacto": 0
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": 0.02
+          },
+          {
+            "factor": "forma_reciente",
+            "impacto": 0
+          }
+        ]
+      },
+      "red": {
+        "version": "ejemplo-red-futbol_corners-1",
+        "prob_a": 0.458,
+        "lado": "b"
+      },
+      "entrada_red": {
+        "version": "ejemplo-variables-1",
+        "valores": {
+          "linea": 10.5,
+          "cuota_a": 1.87,
+          "cuota_b": 1.92,
+          "esperado": 10.66,
+          "forma_local": -0.68,
+          "forma_visitante": -0.81
+        }
+      },
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 10,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T23:30:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:fut-020|futbol_corners_1t",
+      "partido_id": "ejemplo:fut-020",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-08T20:30:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:union-prueba",
+        "nombre": "Unión Prueba"
+      },
+      "visitante": {
+        "id": "ejemplo:deportivo-ejemplo",
+        "nombre": "Deportivo Ejemplo"
+      },
+      "mercado": "futbol_corners_1t",
+      "analizado_en": "2026-10-08T14:40:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T14:35:00Z",
+          "lineas": [
+            {
+              "linea": 3.5,
+              "cuota_a": 1.36,
+              "cuota_b": 3.12
+            },
+            {
+              "linea": 4.5,
+              "cuota_a": 1.84,
+              "cuota_b": 1.95
+            },
+            {
+              "linea": 5.5,
+              "cuota_a": 2.76,
+              "cuota_b": 1.44
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 4.5,
+        "cuota_a": 1.84,
+        "cuota_b": 1.95,
+        "diferencia": 0.11,
+        "margen": 0.0563,
+        "prob_sin_margen_a": 0.5145,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.491,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "rival_concede",
+            "impacto": -0.01
+          },
+          {
+            "factor": "forma_reciente",
+            "impacto": 0
+          },
+          {
+            "factor": "localia",
+            "impacto": -0.01
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 4,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T23:30:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:fut-020|futbol_goles",
+      "partido_id": "ejemplo:fut-020",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-08T20:30:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:union-prueba",
+        "nombre": "Unión Prueba"
+      },
+      "visitante": {
+        "id": "ejemplo:deportivo-ejemplo",
+        "nombre": "Deportivo Ejemplo"
+      },
+      "mercado": "futbol_goles",
+      "analizado_en": "2026-10-08T14:40:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T14:35:00Z",
+          "lineas": [
+            {
+              "linea": 1.5,
+              "cuota_a": 1.32,
+              "cuota_b": 3.39
+            },
+            {
+              "linea": 2.5,
+              "cuota_a": 1.92,
+              "cuota_b": 1.87
+            },
+            {
+              "linea": 3.5,
+              "cuota_a": 3.43,
+              "cuota_b": 1.31
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-08T14:35:00Z",
+          "lineas": [
+            {
+              "linea": 2.5,
+              "cuota_a": 1.88,
+              "cuota_b": 1.88
+            }
+          ]
+        },
+        {
+          "casa": "te_apuesto",
+          "extraido_en": "2026-10-08T14:35:00Z",
+          "lineas": [
+            {
+              "linea": 2.5,
+              "cuota_a": 1.96,
+              "cuota_b": 1.79
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 2.5,
+        "cuota_a": 1.92,
+        "cuota_b": 1.87,
+        "diferencia": 0.05,
+        "margen": 0.0556,
+        "prob_sin_margen_a": 0.4934,
+        "promedio_mercado_a": 0.4887
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.503,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "forma_reciente",
+            "impacto": 0.02
+          },
+          {
+            "factor": "localia",
+            "impacto": 0.01
+          },
+          {
+            "factor": "promedio_liga",
+            "impacto": -0.01
+          }
+        ]
+      },
+      "red": {
+        "version": "ejemplo-red-futbol_goles-1",
+        "prob_a": 0.541,
+        "lado": "a"
+      },
+      "entrada_red": {
+        "version": "ejemplo-variables-1",
+        "valores": {
+          "linea": 2.5,
+          "cuota_a": 1.92,
+          "cuota_b": 1.87,
+          "esperado": 2.63,
+          "forma_local": -0.42,
+          "forma_visitante": 0.83
+        }
+      },
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 6,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T23:30:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:fut-020|futbol_remates",
+      "partido_id": "ejemplo:fut-020",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-08T20:30:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:union-prueba",
+        "nombre": "Unión Prueba"
+      },
+      "visitante": {
+        "id": "ejemplo:deportivo-ejemplo",
+        "nombre": "Deportivo Ejemplo"
+      },
+      "mercado": "futbol_remates",
+      "analizado_en": "2026-10-08T14:40:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T14:35:00Z",
+          "lineas": [
+            {
+              "linea": 25.5,
+              "cuota_a": 1.59,
+              "cuota_b": 2.36
+            },
+            {
+              "linea": 26.5,
+              "cuota_a": 1.96,
+              "cuota_b": 1.83
+            },
+            {
+              "linea": 27.5,
+              "cuota_a": 2.32,
+              "cuota_b": 1.6
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 26.5,
+        "cuota_a": 1.96,
+        "cuota_b": 1.83,
+        "diferencia": 0.13,
+        "margen": 0.0567,
+        "prob_sin_margen_a": 0.4828,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.561,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "forma_reciente",
+            "impacto": 0.02
+          },
+          {
+            "factor": "localia",
+            "impacto": 0.04
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": 0.03
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": {
+        "casa": "betano",
+        "linea": 26.5,
+        "lado": "a",
+        "cuota": 1.96,
+        "monto": 10,
+        "moneda": "PEN",
+        "registrada_en": "2026-10-08T14:50:00Z"
+      },
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 23,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T23:30:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:fut-020|futbol_tarjetas",
+      "partido_id": "ejemplo:fut-020",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-08T20:30:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:union-prueba",
+        "nombre": "Unión Prueba"
+      },
+      "visitante": {
+        "id": "ejemplo:deportivo-ejemplo",
+        "nombre": "Deportivo Ejemplo"
+      },
+      "mercado": "futbol_tarjetas",
+      "analizado_en": "2026-10-08T14:40:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T14:35:00Z",
+          "lineas": [
+            {
+              "linea": 3.5,
+              "cuota_a": 1.59,
+              "cuota_b": 2.36
+            },
+            {
+              "linea": 4.5,
+              "cuota_a": 2.3,
+              "cuota_b": 1.61
+            },
+            {
+              "linea": 5.5,
+              "cuota_a": 3.56,
+              "cuota_b": 1.29
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-08T14:35:00Z",
+          "lineas": [
+            {
+              "linea": 4.5,
+              "cuota_a": 2.35,
+              "cuota_b": 1.56
+            }
+          ]
+        },
+        {
+          "casa": "te_apuesto",
+          "extraido_en": "2026-10-08T14:35:00Z",
+          "lineas": [
+            {
+              "linea": 4.5,
+              "cuota_a": 2.19,
+              "cuota_b": 1.63
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 4.5,
+        "cuota_a": 2.3,
+        "cuota_b": 1.61,
+        "diferencia": 0.69,
+        "margen": 0.0559,
+        "prob_sin_margen_a": 0.4118,
+        "promedio_mercado_a": 0.4128
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.485,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "rivalidad",
+            "impacto": -0.02
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": -0.02
+          },
+          {
+            "factor": "forma_reciente",
+            "impacto": -0.01
+          }
+        ],
+        "prob_roja": 0.119
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 2,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T23:30:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:fut-020|futbol_tiros_arco",
+      "partido_id": "ejemplo:fut-020",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-08T20:30:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:union-prueba",
+        "nombre": "Unión Prueba"
+      },
+      "visitante": {
+        "id": "ejemplo:deportivo-ejemplo",
+        "nombre": "Deportivo Ejemplo"
+      },
+      "mercado": "futbol_tiros_arco",
+      "analizado_en": "2026-10-08T14:40:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T14:35:00Z",
+          "lineas": [
+            {
+              "linea": 8.5,
+              "cuota_a": 1.62,
+              "cuota_b": 2.28
+            },
+            {
+              "linea": 9.5,
+              "cuota_a": 1.95,
+              "cuota_b": 1.84
+            },
+            {
+              "linea": 10.5,
+              "cuota_a": 2.71,
+              "cuota_b": 1.46
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 9.5,
+        "cuota_a": 1.95,
+        "cuota_b": 1.84,
+        "diferencia": 0.11,
+        "margen": 0.0563,
+        "prob_sin_margen_a": 0.4855,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.452,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "rival_concede",
+            "impacto": -0.01
+          },
+          {
+            "factor": "promedio_liga",
+            "impacto": 0
+          },
+          {
+            "factor": "forma_reciente",
+            "impacto": -0.03
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 13,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T23:30:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:fut-021|futbol_ambos_anotan",
+      "partido_id": "ejemplo:fut-021",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-09T00:30:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:club-simulado",
+        "nombre": "Club Simulado"
+      },
+      "visitante": {
+        "id": "ejemplo:sporting-demo",
+        "nombre": "Sporting Demo"
+      },
+      "mercado": "futbol_ambos_anotan",
+      "analizado_en": "2026-10-08T18:40:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T18:35:00Z",
+          "lineas": [
+            {
+              "linea": null,
+              "cuota_a": 2.52,
+              "cuota_b": 1.52
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-08T18:35:00Z",
+          "lineas": [
+            {
+              "linea": null,
+              "cuota_a": 2.46,
+              "cuota_b": 1.52
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": null,
+        "cuota_a": 2.52,
+        "cuota_b": 1.52,
+        "diferencia": 1,
+        "margen": 0.0547,
+        "prob_sin_margen_a": 0.3762,
+        "promedio_mercado_a": 0.3819
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.471,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "forma_reciente",
+            "impacto": -0.01
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": -0.02
+          },
+          {
+            "factor": "localia",
+            "impacto": -0.01
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 0,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-09T03:30:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:fut-021|futbol_corners",
+      "partido_id": "ejemplo:fut-021",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-09T00:30:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:club-simulado",
+        "nombre": "Club Simulado"
+      },
+      "visitante": {
+        "id": "ejemplo:sporting-demo",
+        "nombre": "Sporting Demo"
+      },
+      "mercado": "futbol_corners",
+      "analizado_en": "2026-10-08T18:40:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T18:35:00Z",
+          "lineas": [
+            {
+              "linea": 10.5,
+              "cuota_a": 1.58,
+              "cuota_b": 2.37
+            },
+            {
+              "linea": 11.5,
+              "cuota_a": 1.93,
+              "cuota_b": 1.87
+            },
+            {
+              "linea": 12.5,
+              "cuota_a": 2.43,
+              "cuota_b": 1.56
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-08T18:35:00Z",
+          "lineas": [
+            {
+              "linea": 11.5,
+              "cuota_a": 1.84,
+              "cuota_b": 1.91
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 11.5,
+        "cuota_a": 1.93,
+        "cuota_b": 1.87,
+        "diferencia": 0.06,
+        "margen": 0.0529,
+        "prob_sin_margen_a": 0.4921,
+        "promedio_mercado_a": 0.5093
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.488,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "promedio_liga",
+            "impacto": -0.02
+          },
+          {
+            "factor": "localia",
+            "impacto": -0.01
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": 0.01
+          }
+        ]
+      },
+      "red": {
+        "version": "ejemplo-red-futbol_corners-1",
+        "prob_a": 0.619,
+        "lado": "a"
+      },
+      "entrada_red": {
+        "version": "ejemplo-variables-1",
+        "valores": {
+          "linea": 11.5,
+          "cuota_a": 1.93,
+          "cuota_b": 1.87,
+          "esperado": 11.53,
+          "forma_local": 0.25,
+          "forma_visitante": 0.69
+        }
+      },
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 15,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-09T03:30:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:fut-021|futbol_corners_1t",
+      "partido_id": "ejemplo:fut-021",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-09T00:30:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:club-simulado",
+        "nombre": "Club Simulado"
+      },
+      "visitante": {
+        "id": "ejemplo:sporting-demo",
+        "nombre": "Sporting Demo"
+      },
+      "mercado": "futbol_corners_1t",
+      "analizado_en": "2026-10-08T18:40:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T18:35:00Z",
+          "lineas": [
+            {
+              "linea": 4.5,
+              "cuota_a": 1.56,
+              "cuota_b": 2.43
+            },
+            {
+              "linea": 5.5,
+              "cuota_a": 2.2,
+              "cuota_b": 1.66
+            },
+            {
+              "linea": 6.5,
+              "cuota_a": 3.72,
+              "cuota_b": 1.27
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 5.5,
+        "cuota_a": 2.2,
+        "cuota_b": 1.66,
+        "diferencia": 0.54,
+        "margen": 0.057,
+        "prob_sin_margen_a": 0.4301,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.375,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "rival_concede",
+            "impacto": -0.04
+          },
+          {
+            "factor": "forma_reciente",
+            "impacto": -0.01
+          },
+          {
+            "factor": "localia",
+            "impacto": -0.05
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 8,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-09T03:30:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:fut-021|futbol_goles",
+      "partido_id": "ejemplo:fut-021",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-09T00:30:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:club-simulado",
+        "nombre": "Club Simulado"
+      },
+      "visitante": {
+        "id": "ejemplo:sporting-demo",
+        "nombre": "Sporting Demo"
+      },
+      "mercado": "futbol_goles",
+      "analizado_en": "2026-10-08T18:40:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T18:35:00Z",
+          "lineas": [
+            {
+              "linea": 0.5,
+              "cuota_a": 1.12,
+              "cuota_b": 6.16
+            },
+            {
+              "linea": 1.5,
+              "cuota_a": 1.61,
+              "cuota_b": 2.31
+            },
+            {
+              "linea": 2.5,
+              "cuota_a": 3.08,
+              "cuota_b": 1.37
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-08T18:35:00Z",
+          "lineas": [
+            {
+              "linea": 1.5,
+              "cuota_a": 1.56,
+              "cuota_b": 2.35
+            }
+          ]
+        },
+        {
+          "casa": "te_apuesto",
+          "extraido_en": "2026-10-08T18:35:00Z",
+          "lineas": [
+            {
+              "linea": 1.5,
+              "cuota_a": 1.68,
+              "cuota_b": 2.1
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 1.5,
+        "cuota_a": 1.61,
+        "cuota_b": 2.31,
+        "diferencia": 0.7,
+        "margen": 0.054,
+        "prob_sin_margen_a": 0.5893,
+        "promedio_mercado_a": 0.5783
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.568,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "rival_concede",
+            "impacto": 0.03
+          },
+          {
+            "factor": "localia",
+            "impacto": 0.02
+          },
+          {
+            "factor": "promedio_liga",
+            "impacto": 0.05
+          }
+        ]
+      },
+      "red": {
+        "version": "ejemplo-red-futbol_goles-1",
+        "prob_a": 0.506,
+        "lado": "a"
+      },
+      "entrada_red": {
+        "version": "ejemplo-variables-1",
+        "valores": {
+          "linea": 1.5,
+          "cuota_a": 1.61,
+          "cuota_b": 2.31,
+          "esperado": 1.91,
+          "forma_local": -0.17,
+          "forma_visitante": -0.74
+        }
+      },
+      "apuesta": {
+        "casa": "betano",
+        "linea": 1.5,
+        "lado": "a",
+        "cuota": 1.61,
+        "monto": 15,
+        "moneda": "PEN",
+        "registrada_en": "2026-10-08T18:50:00Z"
+      },
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 0,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-09T03:30:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:fut-021|futbol_remates",
+      "partido_id": "ejemplo:fut-021",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-09T00:30:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:club-simulado",
+        "nombre": "Club Simulado"
+      },
+      "visitante": {
+        "id": "ejemplo:sporting-demo",
+        "nombre": "Sporting Demo"
+      },
+      "mercado": "futbol_remates",
+      "analizado_en": "2026-10-08T18:40:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T18:35:00Z",
+          "lineas": [
+            {
+              "linea": 20.5,
+              "cuota_a": 1.85,
+              "cuota_b": 1.94
+            },
+            {
+              "linea": 21.5,
+              "cuota_a": 2.15,
+              "cuota_b": 1.7
+            },
+            {
+              "linea": 22.5,
+              "cuota_a": 2.63,
+              "cuota_b": 1.48
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 20.5,
+        "cuota_a": 1.85,
+        "cuota_b": 1.94,
+        "diferencia": 0.09,
+        "margen": 0.056,
+        "prob_sin_margen_a": 0.5119,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.473,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "promedio_liga",
+            "impacto": -0.01
+          },
+          {
+            "factor": "forma_reciente",
+            "impacto": 0.01
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": -0.03
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 16,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-09T03:30:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:fut-021|futbol_tarjetas",
+      "partido_id": "ejemplo:fut-021",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-09T00:30:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:club-simulado",
+        "nombre": "Club Simulado"
+      },
+      "visitante": {
+        "id": "ejemplo:sporting-demo",
+        "nombre": "Sporting Demo"
+      },
+      "mercado": "futbol_tarjetas",
+      "analizado_en": "2026-10-08T18:40:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T18:35:00Z",
+          "lineas": [
+            {
+              "linea": 4.5,
+              "cuota_a": 1.66,
+              "cuota_b": 2.21
+            },
+            {
+              "linea": 5.5,
+              "cuota_a": 2.25,
+              "cuota_b": 1.64
+            },
+            {
+              "linea": 6.5,
+              "cuota_a": 3.66,
+              "cuota_b": 1.28
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-08T18:35:00Z",
+          "lineas": [
+            {
+              "linea": 5.5,
+              "cuota_a": 2.21,
+              "cuota_b": 1.63
+            }
+          ]
+        },
+        {
+          "casa": "te_apuesto",
+          "extraido_en": "2026-10-08T18:35:00Z",
+          "lineas": [
+            {
+              "linea": 5.5,
+              "cuota_a": 2.44,
+              "cuota_b": 1.51
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 4.5,
+        "cuota_a": 1.66,
+        "cuota_b": 2.21,
+        "diferencia": 0.55,
+        "margen": 0.0549,
+        "prob_sin_margen_a": 0.5711,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.565,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "arbitro",
+            "impacto": 0
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": 0.01
+          },
+          {
+            "factor": "rivalidad",
+            "impacto": 0.03
+          }
+        ],
+        "prob_roja": 0.125
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": {
+        "casa": "betano",
+        "linea": 4.5,
+        "lado": "a",
+        "cuota": 1.66,
+        "monto": 10,
+        "moneda": "PEN",
+        "registrada_en": "2026-10-08T18:50:00Z"
+      },
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 6,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-09T03:30:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:fut-021|futbol_tiros_arco",
+      "partido_id": "ejemplo:fut-021",
+      "deporte": "futbol",
+      "liga": {
+        "id": "ejemplo:liga-futbol",
+        "nombre": "Liga de Ejemplo"
+      },
+      "inicio": "2026-10-09T00:30:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:club-simulado",
+        "nombre": "Club Simulado"
+      },
+      "visitante": {
+        "id": "ejemplo:sporting-demo",
+        "nombre": "Sporting Demo"
+      },
+      "mercado": "futbol_tiros_arco",
+      "analizado_en": "2026-10-08T18:40:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T18:35:00Z",
+          "lineas": [
+            {
+              "linea": 8.5,
+              "cuota_a": 1.68,
+              "cuota_b": 2.17
+            },
+            {
+              "linea": 9.5,
+              "cuota_a": 2.01,
+              "cuota_b": 1.8
+            },
+            {
+              "linea": 10.5,
+              "cuota_a": 2.69,
+              "cuota_b": 1.46
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 9.5,
+        "cuota_a": 2.01,
+        "cuota_b": 1.8,
+        "diferencia": 0.21,
+        "margen": 0.0531,
+        "prob_sin_margen_a": 0.4724,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.507,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "rival_concede",
+            "impacto": -0.02
+          },
+          {
+            "factor": "forma_reciente",
+            "impacto": 0
+          },
+          {
+            "factor": "localia",
+            "impacto": 0
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 11,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-09T03:30:00Z"
+      }
+    }
+  ]
+}

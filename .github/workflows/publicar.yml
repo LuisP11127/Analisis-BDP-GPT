@@ -1,0 +1,58 @@
+# Prueba, valida y publica la página en GitHub Pages.
+# El trabajo "construir" corre en cada cambio. El trabajo "publicar" necesita que la rama tenga
+# permiso en el entorno github-pages (por defecto GitHub solo lo da a main).
+name: Publicar página
+
+on:
+  push:
+    branches:
+      - main
+      - claude/vigilant-feynman-97r0u8
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Pruebas
+        run: npm test
+
+      - name: Validar datos
+        run: npm run validar
+
+      - name: Armar el sitio
+        run: npm run sitio
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _sitio
+
+  publicar:
+    needs: construir
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - name: Publicar
+        id: despliegue
+        uses: actions/deploy-pages@v4

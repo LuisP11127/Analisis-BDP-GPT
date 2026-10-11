@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://luisp11127.github.io/Analisis-BDP-GPT/esquemas/archivo-historial.schema.json",
+  "title": "Archivo del historial",
+  "description": "datos/historial/{deporte}/{AAAA}/{AAAA-MM-DD}.json",
+  "type": "object",
+  "required": ["version_formato", "registros"],
+  "properties": {
+    "version_formato": { "$ref": "comun.schema.json#/$defs/version_formato" },
+    "registros": { "type": "array", "items": { "$ref": "registro.schema.json" } }
+  },
+  "additionalProperties": false
+}

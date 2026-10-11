@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://luisp11127.github.io/Analisis-BDP-GPT/esquemas/comun.schema.json",
+  "title": "Definiciones comunes",
+  "$defs": {
+    "version_formato": { "const": 1 },
+    "deporte": { "enum": ["futbol", "basquet", "beisbol"] },
+    "codigo": {
+      "description": "Código en minúsculas, sin tildes ni espacios. Ej.: betano, futbol_corners.",
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "id": {
+      "description": "Identificador con la forma fuente:id_en_la_fuente. Ej.: sofascore:17.",
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*:[A-Za-z0-9_.-]+$"
+    },
+    "texto": { "type": "string", "minLength": 1 },
+    "fecha_hora": {
+      "description": "Fecha y hora ISO 8601 con zona horaria. Se guarda en UTC (terminada en Z).",
+      "type": "string",
+      "format": "date-time"
+    },
+    "fecha": {
+      "description": "Fecha AAAA-MM-DD en hora de Lima.",
+      "type": "string",
+      "format": "date"
+    },
+    "lado": { "enum": ["a", "b"] },
+    "equipo_partido": { "enum": ["local", "visitante"] },
+    "cuota": { "type": "number", "exclusiveMinimum": 1 },
+    "linea_media": {
+      "description": "Línea terminada en .5 (2.5, 9.5, -4.5). No se aceptan líneas enteras ni asiáticas.",
+      "type": "number",
+      "multipleOf": 0.5,
+      "not": { "multipleOf": 1 }
+    },
+    "probabilidad": { "type": "number", "minimum": 0, "maximum": 1 },
+    "conteo": {
+      "description": "Número entero de eventos. null o ausente significa que el dato no está disponible, no que fue cero.",
+      "type": ["integer", "null"],
+      "minimum": 0
+    },
+    "numero_o_nulo": { "type": ["number", "null"] },
+    "valores_numericos": {
+      "description": "Mapa nombre → número. Para datos cuyo detalle depende de la fuente.",
+      "type": "object",
+      "propertyNames": { "$ref": "#/$defs/codigo" },
+      "additionalProperties": { "$ref": "#/$defs/numero_o_nulo" }
+    },
+    "ref": {
+      "description": "Referencia a una liga, equipo o jugador.",
+      "type": "object",
+      "required": ["id", "nombre"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "nombre": { "$ref": "#/$defs/texto" }
+      },
+      "additionalProperties": false
+    },
+    "persona": {
+      "description": "Jugador o árbitro. El id es opcional porque algunas fuentes solo dan el nombre.",
+      "type": "object",
+      "required": ["nombre"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "nombre": { "$ref": "#/$defs/texto" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

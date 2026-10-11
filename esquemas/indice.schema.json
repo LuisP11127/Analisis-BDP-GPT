@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://luisp11127.github.io/Analisis-BDP-GPT/esquemas/indice.schema.json",
+  "title": "Índice de archivos",
+  "description": "indice.json en la raíz de cada carpeta de datos: la lista de sus archivos, para que la página sepa qué leer sin recorrer carpetas.",
+  "type": "object",
+  "required": ["version_formato", "archivos"],
+  "properties": {
+    "version_formato": { "$ref": "comun.schema.json#/$defs/version_formato" },
+    "archivos": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[A-Za-z0-9_./-]+\\.json$" }
+    }
+  },
+  "additionalProperties": false
+}

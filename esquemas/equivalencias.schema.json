@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://luisp11127.github.io/Analisis-BDP-GPT/esquemas/equivalencias.schema.json",
+  "title": "Equivalencias de nombres",
+  "description": "datos/equivalencias/{deporte}.json. Cómo aparece cada liga, equipo y jugador en cada casa o fuente.",
+  "type": "object",
+  "required": ["version_formato", "ligas", "equipos", "jugadores"],
+  "properties": {
+    "version_formato": { "$ref": "comun.schema.json#/$defs/version_formato" },
+    "ligas": { "type": "array", "items": { "$ref": "#/$defs/entrada" } },
+    "equipos": { "type": "array", "items": { "$ref": "#/$defs/entrada" } },
+    "jugadores": { "type": "array", "items": { "$ref": "#/$defs/entrada" } }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "entrada": {
+      "type": "object",
+      "required": ["id", "nombre", "alias"],
+      "properties": {
+        "id": { "$ref": "comun.schema.json#/$defs/id" },
+        "nombre": { "$ref": "comun.schema.json#/$defs/texto" },
+        "alias": {
+          "description": "Nombres con que aparece en cada casa o fuente. Ej.: { \"betano\": [\"Man Utd\"] }.",
+          "type": "object",
+          "propertyNames": { "$ref": "comun.schema.json#/$defs/codigo" },
+          "additionalProperties": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "$ref": "comun.schema.json#/$defs/texto" }
+          }
+        },
+        "confirmado_en": { "$ref": "comun.schema.json#/$defs/fecha_hora" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

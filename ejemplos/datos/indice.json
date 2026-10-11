@@ -1,0 +1,31 @@
+{
+  "version_formato": 1,
+  "archivos": [
+    "equivalencias/basquet.json",
+    "equivalencias/futbol.json",
+    "historial/basquet/2026/2026-10-05.json",
+    "historial/basquet/2026/2026-10-07.json",
+    "historial/basquet/2026/2026-10-08.json",
+    "historial/basquet/2026/2026-10-09.json",
+    "historial/beisbol/2026/2026-10-04.json",
+    "historial/beisbol/2026/2026-10-05.json",
+    "historial/beisbol/2026/2026-10-06.json",
+    "historial/beisbol/2026/2026-10-07.json",
+    "historial/beisbol/2026/2026-10-08.json",
+    "historial/beisbol/2026/2026-10-09.json",
+    "historial/beisbol/2026/2026-10-10.json",
+    "historial/futbol/2026/2026-10-05.json",
+    "historial/futbol/2026/2026-10-06.json",
+    "historial/futbol/2026/2026-10-08.json",
+    "historial/futbol/2026/2026-10-09.json",
+    "partidos/basquet/ejemplo-liga-basquet-b/ejemplo-temporada-2026-27/2026-09.json",
+    "partidos/basquet/ejemplo-liga-basquet-b/ejemplo-temporada-2026-27/2026-10.json",
+    "partidos/basquet/ejemplo-liga-basquet/ejemplo-temporada-2026-27/2026-09.json",
+    "partidos/basquet/ejemplo-liga-basquet/ejemplo-temporada-2026-27/2026-10.json",
+    "partidos/beisbol/ejemplo-liga-beisbol/ejemplo-temporada-2026/2026-10.json",
+    "partidos/futbol/ejemplo-liga-futbol-b/ejemplo-temporada-2026/2026-09.json",
+    "partidos/futbol/ejemplo-liga-futbol-b/ejemplo-temporada-2026/2026-10.json",
+    "partidos/futbol/ejemplo-liga-futbol/ejemplo-temporada-2026/2026-09.json",
+    "partidos/futbol/ejemplo-liga-futbol/ejemplo-temporada-2026/2026-10.json"
+  ]
+}

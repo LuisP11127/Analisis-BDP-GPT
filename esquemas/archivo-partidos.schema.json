@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://luisp11127.github.io/Analisis-BDP-GPT/esquemas/archivo-partidos.schema.json",
+  "title": "Archivo de partidos",
+  "description": "datos/partidos/{deporte}/{liga}/{temporada}/{AAAA-MM}.json",
+  "type": "object",
+  "required": ["version_formato", "partidos"],
+  "properties": {
+    "version_formato": { "$ref": "comun.schema.json#/$defs/version_formato" },
+    "partidos": { "type": "array", "items": { "$ref": "partido.schema.json" } }
+  },
+  "additionalProperties": false
+}

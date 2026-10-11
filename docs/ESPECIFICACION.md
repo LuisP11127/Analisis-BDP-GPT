@@ -36,18 +36,21 @@ El orden de esta lista es el orden en que se muestran los mercados en el resulta
 ## Reglas de los mercados
 
 - Solo se usan líneas terminadas en .5. Se descartan las líneas enteras (pueden devolver el dinero) y los handicaps asiáticos (.25 / .75).
+- **Fútbol:** los mercados del partido se cuentan en el tiempo reglamentario (90 minutos más el descuento), sin prórroga ni penales. El primer tiempo es de 45 minutos más el descuento.
 - **Tarjetas:** se cuentan como en Betano: amarilla = 1, roja = 2, con líneas .5.
   - Pendiente de verificar en las reglas de Betano: cómo cuenta la doble amarilla que termina en roja (algunas casas suman 3 y otras 2).
 - **Básquet, primer tiempo:** 1.er y 2.º cuarto. No incluye prórroga.
 - **Básquet, tiempo completo:** incluye prórroga.
 - **Béisbol:** el ganador no tiene empate (hay entradas extra). El total incluye entradas extra.
-- **Props de jugador (básquet):** se analizan las que ofrece Betano y se complementan con las de Apuesta Total. Si el jugador no juega, la apuesta normalmente se anula.
+- **Props de jugador (básquet):** se analizan las que ofrece Betano y se complementan con las de Apuesta Total. Estadísticas: puntos, rebotes, asistencias, triples, robos, tapones y sus combinaciones (puntos + rebotes, puntos + asistencias, rebotes + asistencias, puntos + rebotes + asistencias, robos + tapones). Si una casa ofrece otra estadística, se agrega. Si el jugador no juega, la apuesta normalmente se anula.
 
 ## Regla para elegir la línea candidata
 
 - No hay un rango de cuotas mínimo o máximo.
 - En un mercado con varias líneas .5, la candidata es la línea cuyas dos cuotas están más cerca entre sí. No hay una diferencia máxima: aunque sea grande, la línea más pareja sigue siendo candidata.
 - Si hay empate en la diferencia, gana la línea con menos margen de la casa.
+- Si también empatan en margen, gana la línea más baja.
+- La línea se elige con las cuotas de Betano. Si Betano no ofrece el mercado, se usan las de Apuesta Total y, si tampoco, las de Te Apuesto. Vale para todos los mercados, no solo para las props.
 - En mercados con una sola línea (ganador en béisbol, ambos anotan y la mayoría de props de jugador) no se elige línea: el análisis decide directamente cuál de los dos resultados es más probable.
 
 Ejemplo (goles Más/Menos):

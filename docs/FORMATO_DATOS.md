@@ -77,17 +77,17 @@ Cada archivo tiene `version_formato: 1` y una lista: `partidos`, `registros` o, 
 
 Qué significa cada período:
 
-- **Fútbol, completo:** tiempo reglamentario (90 minutos más el descuento), sin prórroga ni penales. Ver "Supuestos por confirmar".
+- **Fútbol, completo:** tiempo reglamentario (90 minutos más el descuento), sin prórroga ni penales.
 - **Fútbol, primer tiempo:** 45 minutos más el descuento.
 - **Básquet, completo:** incluye la prórroga.
 - **Básquet, primer tiempo:** cuartos 1 y 2, sin prórroga. En ligas que juegan por mitades, la primera mitad.
 - **Béisbol, completo:** incluye las entradas extra.
 
-Las props de jugador tienen una lista inicial de estadísticas: puntos, rebotes, asistencias, triples, robos, tapones y sus combinaciones (puntos + rebotes, puntos + rebotes + asistencias, etc.). Cada una indica qué estadísticas suma. La lista se ajusta cuando lleguen las muestras de Betano y Apuesta Total.
+Las props de jugador de básquet usan estas estadísticas: puntos, rebotes, asistencias, triples, robos, tapones y sus combinaciones (puntos + rebotes, puntos + asistencias, rebotes + asistencias, puntos + rebotes + asistencias, robos + tapones). Cada una indica qué estadísticas suma. Si una casa ofrece otra, se agrega al catálogo.
 
 ## Casas y fuentes
 
-`config/casas.json` tiene las casas en orden de prioridad (Betano, Apuesta Total, Te Apuesto) y las fuentes de datos (Sofascore, Flashscore). La línea candidata se elige con la primera casa de la lista que ofrezca el mercado. Para agregar una casa basta con sumarla a ese archivo.
+`config/casas.json` tiene las casas en orden de prioridad (Betano, Apuesta Total, Te Apuesto) y las fuentes de datos (Sofascore, Flashscore). En todos los mercados, la línea candidata se elige con la primera casa de la lista que ofrezca el mercado. Para agregar una casa basta con sumarla a ese archivo.
 
 ## Partido
 
@@ -243,10 +243,6 @@ Además de los esquemas, el validador revisa:
 
 `ejemplos/datos/` tiene datos ficticios (equipos inventados e ids `ejemplo:...`) que cumplen todas estas reglas.
 
-## Supuestos por confirmar
+## Pendiente
 
-1. **Fútbol, partido completo = tiempo reglamentario.** Es la regla habitual de las casas para goles, corners y tarjetas, pero falta confirmarla en las reglas de Betano.
-2. **Doble amarilla.** Sigue pendiente. El formato guarda los datos de forma que sirve para cualquiera de las dos formas de contarla.
-3. **Casa de respaldo en todos los mercados.** Lo acordado era usar Apuesta Total en las props que Betano no tenga. En el formato se aplica a todos los mercados: si Betano no ofrece un mercado, se usa Apuesta Total y después Te Apuesto.
-4. **Empate total entre líneas.** Si dos líneas tienen la misma diferencia y el mismo margen, se toma la más baja.
-5. **Estadísticas de las props.** La lista es inicial hasta ver las muestras de las casas.
+**Doble amarilla.** Falta verificar en las reglas de Betano si una doble amarilla cuenta como 3 tarjetas o como 2. El formato guarda amarillas, rojas y dobles amarillas por separado, así que sirve para las dos formas.

@@ -122,7 +122,7 @@
             { "codigo": "puntos_rebotes_asistencias", "nombre": "Puntos + rebotes + asistencias", "componentes": ["puntos", "rebotes", "asistencias"] },
             { "codigo": "robos_tapones", "nombre": "Robos + tapones", "componentes": ["robos", "tapones"] }
           ],
-          "nota": "Lista inicial de estadísticas. Se ajusta cuando lleguen las muestras de Betano y Apuesta Total. Si el jugador no juega, la apuesta se anula."
+          "nota": "Si una casa ofrece otra estadística de jugador, se agrega a esta lista. Si el jugador no juega, la apuesta se anula."
         },
         {
           "codigo": "basquet_handicap_1t",

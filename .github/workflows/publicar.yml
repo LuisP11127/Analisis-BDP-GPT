@@ -1,6 +1,6 @@
 # Prueba, valida y publica la página en GitHub Pages.
-# El trabajo "construir" corre en cada cambio. El trabajo "publicar" necesita que la rama tenga
-# permiso en el entorno github-pages (por defecto GitHub solo lo da a main).
+# El trabajo "construir" corre en cada cambio de main y de la rama de trabajo.
+# El trabajo "publicar" corre solo en main, que es la rama con permiso en el entorno github-pages.
 name: Publicar página
 
 on:
@@ -42,6 +42,7 @@ jobs:
 
   publicar:
     needs: construir
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       pages: write

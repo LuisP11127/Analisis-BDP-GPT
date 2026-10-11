@@ -16,8 +16,8 @@
         "nombre": "Osos Simulado"
       },
       "visitante": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
       },
       "mercado": "basquet_handicap",
       "analizado_en": "2026-10-07T18:10:00Z",
@@ -27,19 +27,19 @@
           "extraido_en": "2026-10-07T18:05:00Z",
           "lineas": [
             {
-              "linea": -3.5,
-              "cuota_a": 2.21,
-              "cuota_b": 1.66
-            },
-            {
-              "linea": -2.5,
-              "cuota_a": 1.92,
-              "cuota_b": 1.87
-            },
-            {
               "linea": -1.5,
-              "cuota_a": 1.88,
-              "cuota_b": 1.91
+              "cuota_a": 2.18,
+              "cuota_b": 1.68
+            },
+            {
+              "linea": -0.5,
+              "cuota_a": 1.9,
+              "cuota_b": 1.89
+            },
+            {
+              "linea": 0.5,
+              "cuota_a": 1.84,
+              "cuota_b": 1.96
             }
           ]
         },
@@ -48,57 +48,49 @@
           "extraido_en": "2026-10-07T18:05:00Z",
           "lineas": [
             {
-              "linea": -2.5,
-              "cuota_a": 1.91,
-              "cuota_b": 1.84
+              "linea": -0.5,
+              "cuota_a": 1.82,
+              "cuota_b": 1.94
             }
           ]
         }
       ],
       "candidata": {
         "casa": "betano",
-        "linea": -1.5,
-        "cuota_a": 1.88,
-        "cuota_b": 1.91,
-        "diferencia": 0.03,
-        "margen": 0.0555,
-        "prob_sin_margen_a": 0.504,
-        "promedio_mercado_a": null
+        "linea": -0.5,
+        "cuota_a": 1.9,
+        "cuota_b": 1.89,
+        "diferencia": 0.01,
+        "margen": 0.0554,
+        "prob_sin_margen_a": 0.4987,
+        "promedio_mercado_a": 0.516
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.601,
+        "prob_a": 0.517,
         "lado": "a",
         "explicacion": [
           {
             "factor": "ritmo_juego",
-            "impacto": 0.03
+            "impacto": 0.01
           },
           {
             "factor": "descanso",
-            "impacto": 0.04
+            "impacto": 0
           },
           {
             "factor": "defensa_rival",
-            "impacto": 0.02
+            "impacto": -0.02
           }
         ]
       },
       "red": null,
       "entrada_red": null,
-      "apuesta": {
-        "casa": "betano",
-        "linea": -1.5,
-        "lado": "a",
-        "cuota": 1.88,
-        "monto": 20,
-        "moneda": "PEN",
-        "registrada_en": "2026-10-07T18:20:00Z"
-      },
+      "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 23,
-        "lado_ganador": "a",
+        "valor_real": -8,
+        "lado_ganador": "b",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T03:00:00Z"
       }
@@ -118,8 +110,8 @@
         "nombre": "Osos Simulado"
       },
       "visitante": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
       },
       "mercado": "basquet_handicap_1t",
       "analizado_en": "2026-10-07T18:10:00Z",
@@ -129,49 +121,49 @@
           "extraido_en": "2026-10-07T18:05:00Z",
           "lineas": [
             {
-              "linea": -2.5,
-              "cuota_a": 2.08,
-              "cuota_b": 1.74
-            },
-            {
               "linea": -1.5,
-              "cuota_a": 1.97,
-              "cuota_b": 1.82
+              "cuota_a": 2.24,
+              "cuota_b": 1.64
             },
             {
               "linea": -0.5,
-              "cuota_a": 1.73,
-              "cuota_b": 2.09
+              "cuota_a": 1.97,
+              "cuota_b": 1.83
+            },
+            {
+              "linea": 0.5,
+              "cuota_a": 1.78,
+              "cuota_b": 2.03
             }
           ]
         }
       ],
       "candidata": {
         "casa": "betano",
-        "linea": -1.5,
+        "linea": -0.5,
         "cuota_a": 1.97,
-        "cuota_b": 1.82,
-        "diferencia": 0.15,
-        "margen": 0.0571,
-        "prob_sin_margen_a": 0.4802,
+        "cuota_b": 1.83,
+        "diferencia": 0.14,
+        "margen": 0.0541,
+        "prob_sin_margen_a": 0.4816,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.446,
+        "prob_a": 0.45,
         "lado": "b",
         "explicacion": [
           {
-            "factor": "ataque_local",
-            "impacto": 0
-          },
-          {
-            "factor": "ritmo_juego",
-            "impacto": 0
-          },
-          {
             "factor": "defensa_rival",
-            "impacto": -0.04
+            "impacto": -0.02
+          },
+          {
+            "factor": "ataque_local",
+            "impacto": -0.01
+          },
+          {
+            "factor": "descanso",
+            "impacto": -0.01
           }
         ]
       },
@@ -180,8 +172,256 @@
       "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 7,
+        "valor_real": 2,
         "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T03:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-019|basquet_jugador|ejemplo:jb-10|asistencias",
+      "partido_id": "ejemplo:bas-019",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "inicio": "2026-10-08T00:00:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:basquet-osos-simulado",
+        "nombre": "Osos Simulado"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
+      },
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-10",
+        "nombre": "Thiago Flores",
+        "equipo": "visitante"
+      },
+      "estadistica_jugador": "asistencias",
+      "analizado_en": "2026-10-07T18:10:00Z",
+      "ofertas": [
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-07T18:05:00Z",
+          "lineas": [
+            {
+              "linea": 6.5,
+              "cuota_a": 2.16,
+              "cuota_b": 1.66
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "apuesta_total",
+        "linea": 6.5,
+        "cuota_a": 2.16,
+        "cuota_b": 1.66,
+        "diferencia": 0.5,
+        "margen": 0.0654,
+        "prob_sin_margen_a": 0.4346,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.43,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "promedio_jugador",
+            "impacto": -0.02
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": -0.04
+          },
+          {
+            "factor": "minutos",
+            "impacto": -0.02
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 5,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T03:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-019|basquet_jugador|ejemplo:jb-10|puntos",
+      "partido_id": "ejemplo:bas-019",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "inicio": "2026-10-08T00:00:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:basquet-osos-simulado",
+        "nombre": "Osos Simulado"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
+      },
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-10",
+        "nombre": "Thiago Flores",
+        "equipo": "visitante"
+      },
+      "estadistica_jugador": "puntos",
+      "analizado_en": "2026-10-07T18:10:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-07T18:05:00Z",
+          "lineas": [
+            {
+              "linea": 17.5,
+              "cuota_a": 1.81,
+              "cuota_b": 1.98
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-07T18:05:00Z",
+          "lineas": [
+            {
+              "linea": 17.5,
+              "cuota_a": 1.93,
+              "cuota_b": 1.83
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 17.5,
+        "cuota_a": 1.81,
+        "cuota_b": 1.98,
+        "diferencia": 0.17,
+        "margen": 0.0575,
+        "prob_sin_margen_a": 0.5224,
+        "promedio_mercado_a": 0.4867
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.511,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "minutos",
+            "impacto": 0
+          },
+          {
+            "factor": "promedio_jugador",
+            "impacto": 0.02
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": 0
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 17,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T03:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-019|basquet_jugador|ejemplo:jb-10|puntos_rebotes_asistencias",
+      "partido_id": "ejemplo:bas-019",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "inicio": "2026-10-08T00:00:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:basquet-osos-simulado",
+        "nombre": "Osos Simulado"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
+      },
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-10",
+        "nombre": "Thiago Flores",
+        "equipo": "visitante"
+      },
+      "estadistica_jugador": "puntos_rebotes_asistencias",
+      "analizado_en": "2026-10-07T18:10:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-07T18:05:00Z",
+          "lineas": [
+            {
+              "linea": 32.5,
+              "cuota_a": 1.94,
+              "cuota_b": 1.85
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 32.5,
+        "cuota_a": 1.94,
+        "cuota_b": 1.85,
+        "diferencia": 0.09,
+        "margen": 0.056,
+        "prob_sin_margen_a": 0.4881,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.467,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "minutos",
+            "impacto": -0.02
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": 0
+          },
+          {
+            "factor": "promedio_jugador",
+            "impacto": -0.01
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 32,
+        "lado_ganador": "b",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T03:00:00Z"
       }
@@ -201,8 +441,8 @@
         "nombre": "Osos Simulado"
       },
       "visitante": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
       },
       "mercado": "basquet_jugador",
       "jugador": {
@@ -219,8 +459,8 @@
           "lineas": [
             {
               "linea": 17.5,
-              "cuota_a": 2.04,
-              "cuota_b": 1.77
+              "cuota_a": 1.87,
+              "cuota_b": 1.92
             }
           ]
         },
@@ -230,8 +470,8 @@
           "lineas": [
             {
               "linea": 17.5,
-              "cuota_a": 1.96,
-              "cuota_b": 1.81
+              "cuota_a": 1.98,
+              "cuota_b": 1.78
             }
           ]
         }
@@ -239,29 +479,29 @@
       "candidata": {
         "casa": "betano",
         "linea": 17.5,
-        "cuota_a": 2.04,
-        "cuota_b": 1.77,
-        "diferencia": 0.27,
-        "margen": 0.0552,
-        "prob_sin_margen_a": 0.4646,
-        "promedio_mercado_a": 0.4801
+        "cuota_a": 1.87,
+        "cuota_b": 1.92,
+        "diferencia": 0.05,
+        "margen": 0.0556,
+        "prob_sin_margen_a": 0.5066,
+        "promedio_mercado_a": 0.4734
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.567,
-        "lado": "a",
+        "prob_a": 0.483,
+        "lado": "b",
         "explicacion": [
           {
             "factor": "minutos",
-            "impacto": 0.02
-          },
-          {
-            "factor": "rival_concede",
-            "impacto": 0.03
+            "impacto": -0.01
           },
           {
             "factor": "promedio_jugador",
-            "impacto": 0.01
+            "impacto": 0
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": 0
           }
         ]
       },
@@ -270,7 +510,7 @@
       "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 21,
+        "valor_real": 20,
         "lado_ganador": "a",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T03:00:00Z"
@@ -291,8 +531,8 @@
         "nombre": "Osos Simulado"
       },
       "visitante": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
       },
       "mercado": "basquet_jugador",
       "jugador": {
@@ -309,8 +549,8 @@
           "lineas": [
             {
               "linea": 26.5,
-              "cuota_a": 1.78,
-              "cuota_b": 2.03
+              "cuota_a": 1.82,
+              "cuota_b": 1.97
             }
           ]
         }
@@ -318,29 +558,29 @@
       "candidata": {
         "casa": "betano",
         "linea": 26.5,
-        "cuota_a": 1.78,
-        "cuota_b": 2.03,
-        "diferencia": 0.25,
-        "margen": 0.0544,
-        "prob_sin_margen_a": 0.5328,
+        "cuota_a": 1.82,
+        "cuota_b": 1.97,
+        "diferencia": 0.15,
+        "margen": 0.0571,
+        "prob_sin_margen_a": 0.5198,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.508,
+        "prob_a": 0.559,
         "lado": "a",
         "explicacion": [
           {
             "factor": "rival_concede",
-            "impacto": -0.02
-          },
-          {
-            "factor": "minutos",
             "impacto": 0.02
           },
           {
             "factor": "promedio_jugador",
-            "impacto": 0.02
+            "impacto": 0.04
+          },
+          {
+            "factor": "minutos",
+            "impacto": 0.03
           }
         ]
       },
@@ -349,7 +589,7 @@
       "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 31,
+        "valor_real": 32,
         "lado_ganador": "a",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T03:00:00Z"
@@ -370,8 +610,8 @@
         "nombre": "Osos Simulado"
       },
       "visitante": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
       },
       "mercado": "basquet_jugador",
       "jugador": {
@@ -388,8 +628,8 @@
           "lineas": [
             {
               "linea": 1.5,
-              "cuota_a": 2.64,
-              "cuota_b": 1.46
+              "cuota_a": 2.47,
+              "cuota_b": 1.51
             }
           ]
         }
@@ -397,25 +637,25 @@
       "candidata": {
         "casa": "apuesta_total",
         "linea": 1.5,
-        "cuota_a": 2.64,
-        "cuota_b": 1.46,
-        "diferencia": 1.18,
-        "margen": 0.0637,
-        "prob_sin_margen_a": 0.3561,
+        "cuota_a": 2.47,
+        "cuota_b": 1.51,
+        "diferencia": 0.96,
+        "margen": 0.0671,
+        "prob_sin_margen_a": 0.3794,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.333,
+        "prob_a": 0.406,
         "lado": "b",
         "explicacion": [
           {
-            "factor": "rival_concede",
-            "impacto": -0.06
+            "factor": "promedio_jugador",
+            "impacto": 0
           },
           {
-            "factor": "promedio_jugador",
-            "impacto": -0.06
+            "factor": "rival_concede",
+            "impacto": -0.03
           },
           {
             "factor": "minutos",
@@ -425,11 +665,19 @@
       },
       "red": null,
       "entrada_red": null,
-      "apuesta": null,
+      "apuesta": {
+        "casa": "apuesta_total",
+        "linea": 1.5,
+        "lado": "b",
+        "cuota": 1.51,
+        "monto": 20,
+        "moneda": "PEN",
+        "registrada_en": "2026-10-07T18:20:00Z"
+      },
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 0,
-        "lado_ganador": "b",
+        "valor_real": 3,
+        "lado_ganador": "a",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T03:00:00Z"
       }
@@ -449,8 +697,8 @@
         "nombre": "Osos Simulado"
       },
       "visitante": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
       },
       "mercado": "basquet_jugador",
       "jugador": {
@@ -478,8 +726,8 @@
           "lineas": [
             {
               "linea": 26.5,
-              "cuota_a": 1.77,
-              "cuota_b": 2
+              "cuota_a": 1.81,
+              "cuota_b": 1.95
             }
           ]
         }
@@ -492,24 +740,24 @@
         "diferencia": 0.32,
         "margen": 0.0545,
         "prob_sin_margen_a": 0.5419,
-        "promedio_mercado_a": 0.5305
+        "promedio_mercado_a": 0.5186
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.562,
+        "prob_a": 0.512,
         "lado": "a",
         "explicacion": [
           {
-            "factor": "minutos",
-            "impacto": 0.03
+            "factor": "rival_concede",
+            "impacto": -0.01
           },
           {
             "factor": "promedio_jugador",
-            "impacto": 0.03
+            "impacto": 0.01
           },
           {
-            "factor": "rival_concede",
-            "impacto": 0.02
+            "factor": "minutos",
+            "impacto": 0
           }
         ]
       },
@@ -518,8 +766,8 @@
       "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 35,
-        "lado_ganador": "a",
+        "valor_real": 23,
+        "lado_ganador": "b",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T03:00:00Z"
       }
@@ -539,8 +787,8 @@
         "nombre": "Osos Simulado"
       },
       "visitante": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
       },
       "mercado": "basquet_jugador",
       "jugador": {
@@ -557,8 +805,8 @@
           "lineas": [
             {
               "linea": 40.5,
-              "cuota_a": 1.82,
-              "cuota_b": 1.98
+              "cuota_a": 1.8,
+              "cuota_b": 2.01
             }
           ]
         }
@@ -566,28 +814,28 @@
       "candidata": {
         "casa": "betano",
         "linea": 40.5,
-        "cuota_a": 1.82,
-        "cuota_b": 1.98,
-        "diferencia": 0.16,
-        "margen": 0.0545,
-        "prob_sin_margen_a": 0.5211,
+        "cuota_a": 1.8,
+        "cuota_b": 2.01,
+        "diferencia": 0.21,
+        "margen": 0.0531,
+        "prob_sin_margen_a": 0.5276,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.525,
+        "prob_a": 0.501,
         "lado": "a",
         "explicacion": [
           {
             "factor": "promedio_jugador",
-            "impacto": 0
-          },
-          {
-            "factor": "minutos",
             "impacto": 0.02
           },
           {
             "factor": "rival_concede",
+            "impacto": 0
+          },
+          {
+            "factor": "minutos",
             "impacto": 0.01
           }
         ]
@@ -597,7 +845,7 @@
       "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 51,
+        "valor_real": 43,
         "lado_ganador": "a",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T03:00:00Z"
@@ -618,8 +866,8 @@
         "nombre": "Osos Simulado"
       },
       "visitante": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
       },
       "mercado": "basquet_jugador",
       "jugador": {
@@ -636,8 +884,8 @@
           "lineas": [
             {
               "linea": 8.5,
-              "cuota_a": 1.78,
-              "cuota_b": 1.99
+              "cuota_a": 1.73,
+              "cuota_b": 2.06
             }
           ]
         }
@@ -645,29 +893,119 @@
       "candidata": {
         "casa": "apuesta_total",
         "linea": 8.5,
-        "cuota_a": 1.78,
-        "cuota_b": 1.99,
-        "diferencia": 0.21,
-        "margen": 0.0643,
-        "prob_sin_margen_a": 0.5279,
+        "cuota_a": 1.73,
+        "cuota_b": 2.06,
+        "diferencia": 0.33,
+        "margen": 0.0635,
+        "prob_sin_margen_a": 0.5435,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.498,
-        "lado": "b",
+        "prob_a": 0.533,
+        "lado": "a",
         "explicacion": [
           {
-            "factor": "rival_concede",
-            "impacto": -0.01
+            "factor": "promedio_jugador",
+            "impacto": 0.03
           },
           {
             "factor": "minutos",
+            "impacto": 0.01
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": 0
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 13,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T03:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-019|basquet_jugador|ejemplo:jb-9|puntos",
+      "partido_id": "ejemplo:bas-019",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "inicio": "2026-10-08T00:00:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:basquet-osos-simulado",
+        "nombre": "Osos Simulado"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
+      },
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-9",
+        "nombre": "Bruno Paredes",
+        "equipo": "visitante"
+      },
+      "estadistica_jugador": "puntos",
+      "analizado_en": "2026-10-07T18:10:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-07T18:05:00Z",
+          "lineas": [
+            {
+              "linea": 16.5,
+              "cuota_a": 1.94,
+              "cuota_b": 1.86
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-07T18:05:00Z",
+          "lineas": [
+            {
+              "linea": 16.5,
+              "cuota_a": 1.91,
+              "cuota_b": 1.85
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 16.5,
+        "cuota_a": 1.94,
+        "cuota_b": 1.86,
+        "diferencia": 0.08,
+        "margen": 0.0531,
+        "prob_sin_margen_a": 0.4895,
+        "promedio_mercado_a": 0.492
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.524,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "minutos",
+            "impacto": 0.01
+          },
+          {
+            "factor": "rival_concede",
             "impacto": 0
           },
           {
             "factor": "promedio_jugador",
-            "impacto": 0
+            "impacto": 0.02
           }
         ]
       },
@@ -677,103 +1015,13 @@
       "resultado": {
         "estado": "resuelto",
         "valor_real": 12,
-        "lado_ganador": "a",
-        "fuente": "sofascore",
-        "actualizado_en": "2026-10-08T03:00:00Z"
-      }
-    },
-    {
-      "id": "ejemplo:bas-019|basquet_jugador|ejemplo:jb-5|puntos",
-      "partido_id": "ejemplo:bas-019",
-      "deporte": "basquet",
-      "liga": {
-        "id": "ejemplo:liga-basquet",
-        "nombre": "Liga de Básquet de Ejemplo"
-      },
-      "inicio": "2026-10-08T00:00:00Z",
-      "fecha_local": "2026-10-07",
-      "local": {
-        "id": "ejemplo:basquet-osos-simulado",
-        "nombre": "Osos Simulado"
-      },
-      "visitante": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
-      },
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-5",
-        "nombre": "Gabriel Ramos",
-        "equipo": "visitante"
-      },
-      "estadistica_jugador": "puntos",
-      "analizado_en": "2026-10-07T18:10:00Z",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-07T18:05:00Z",
-          "lineas": [
-            {
-              "linea": 17.5,
-              "cuota_a": 1.79,
-              "cuota_b": 2.01
-            }
-          ]
-        },
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-07T18:05:00Z",
-          "lineas": [
-            {
-              "linea": 17.5,
-              "cuota_a": 1.75,
-              "cuota_b": 2.03
-            }
-          ]
-        }
-      ],
-      "candidata": {
-        "casa": "betano",
-        "linea": 17.5,
-        "cuota_a": 1.79,
-        "cuota_b": 2.01,
-        "diferencia": 0.22,
-        "margen": 0.0562,
-        "prob_sin_margen_a": 0.5289,
-        "promedio_mercado_a": 0.537
-      },
-      "estadistico": {
-        "version": "ejemplo-estadistico-1",
-        "prob_a": 0.498,
-        "lado": "b",
-        "explicacion": [
-          {
-            "factor": "minutos",
-            "impacto": 0
-          },
-          {
-            "factor": "promedio_jugador",
-            "impacto": 0.01
-          },
-          {
-            "factor": "rival_concede",
-            "impacto": 0.01
-          }
-        ]
-      },
-      "red": null,
-      "entrada_red": null,
-      "apuesta": null,
-      "resultado": {
-        "estado": "resuelto",
-        "valor_real": 15,
         "lado_ganador": "b",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T03:00:00Z"
       }
     },
     {
-      "id": "ejemplo:bas-019|basquet_jugador|ejemplo:jb-5|puntos_rebotes_asistencias",
+      "id": "ejemplo:bas-019|basquet_jugador|ejemplo:jb-9|puntos_rebotes_asistencias",
       "partido_id": "ejemplo:bas-019",
       "deporte": "basquet",
       "liga": {
@@ -787,13 +1035,13 @@
         "nombre": "Osos Simulado"
       },
       "visitante": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
       },
       "mercado": "basquet_jugador",
       "jugador": {
-        "id": "ejemplo:jb-5",
-        "nombre": "Gabriel Ramos",
+        "id": "ejemplo:jb-9",
+        "nombre": "Bruno Paredes",
         "equipo": "visitante"
       },
       "estadistica_jugador": "puntos_rebotes_asistencias",
@@ -804,216 +1052,39 @@
           "extraido_en": "2026-10-07T18:05:00Z",
           "lineas": [
             {
-              "linea": 31.5,
-              "cuota_a": 1.88,
-              "cuota_b": 1.91
+              "linea": 30.5,
+              "cuota_a": 1.99,
+              "cuota_b": 1.81
             }
           ]
         }
       ],
       "candidata": {
         "casa": "betano",
-        "linea": 31.5,
-        "cuota_a": 1.88,
-        "cuota_b": 1.91,
-        "diferencia": 0.03,
-        "margen": 0.0555,
-        "prob_sin_margen_a": 0.504,
+        "linea": 30.5,
+        "cuota_a": 1.99,
+        "cuota_b": 1.81,
+        "diferencia": 0.18,
+        "margen": 0.055,
+        "prob_sin_margen_a": 0.4763,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.532,
+        "prob_a": 0.591,
         "lado": "a",
         "explicacion": [
           {
-            "factor": "minutos",
-            "impacto": 0
+            "factor": "promedio_jugador",
+            "impacto": 0.04
           },
           {
             "factor": "rival_concede",
             "impacto": 0.03
           },
           {
-            "factor": "promedio_jugador",
-            "impacto": 0.01
-          }
-        ]
-      },
-      "red": null,
-      "entrada_red": null,
-      "apuesta": null,
-      "resultado": {
-        "estado": "resuelto",
-        "valor_real": 33,
-        "lado_ganador": "a",
-        "fuente": "sofascore",
-        "actualizado_en": "2026-10-08T03:00:00Z"
-      }
-    },
-    {
-      "id": "ejemplo:bas-019|basquet_jugador|ejemplo:jb-5|triples",
-      "partido_id": "ejemplo:bas-019",
-      "deporte": "basquet",
-      "liga": {
-        "id": "ejemplo:liga-basquet",
-        "nombre": "Liga de Básquet de Ejemplo"
-      },
-      "inicio": "2026-10-08T00:00:00Z",
-      "fecha_local": "2026-10-07",
-      "local": {
-        "id": "ejemplo:basquet-osos-simulado",
-        "nombre": "Osos Simulado"
-      },
-      "visitante": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
-      },
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-5",
-        "nombre": "Gabriel Ramos",
-        "equipo": "visitante"
-      },
-      "estadistica_jugador": "triples",
-      "analizado_en": "2026-10-07T18:10:00Z",
-      "ofertas": [
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-07T18:05:00Z",
-          "lineas": [
-            {
-              "linea": 1.5,
-              "cuota_a": 1.92,
-              "cuota_b": 1.84
-            }
-          ]
-        }
-      ],
-      "candidata": {
-        "casa": "apuesta_total",
-        "linea": 1.5,
-        "cuota_a": 1.92,
-        "cuota_b": 1.84,
-        "diferencia": 0.08,
-        "margen": 0.0643,
-        "prob_sin_margen_a": 0.4894,
-        "promedio_mercado_a": null
-      },
-      "estadistico": {
-        "version": "ejemplo-estadistico-1",
-        "prob_a": 0.579,
-        "lado": "a",
-        "explicacion": [
-          {
             "factor": "minutos",
-            "impacto": 0.01
-          },
-          {
-            "factor": "promedio_jugador",
-            "impacto": 0.02
-          },
-          {
-            "factor": "rival_concede",
-            "impacto": 0.01
-          }
-        ]
-      },
-      "red": null,
-      "entrada_red": null,
-      "apuesta": {
-        "casa": "apuesta_total",
-        "linea": 1.5,
-        "lado": "a",
-        "cuota": 1.92,
-        "monto": 10,
-        "moneda": "PEN",
-        "registrada_en": "2026-10-07T18:20:00Z"
-      },
-      "resultado": {
-        "estado": "resuelto",
-        "valor_real": 0,
-        "lado_ganador": "b",
-        "fuente": "sofascore",
-        "actualizado_en": "2026-10-08T03:00:00Z"
-      }
-    },
-    {
-      "id": "ejemplo:bas-019|basquet_jugador|ejemplo:jb-6|puntos",
-      "partido_id": "ejemplo:bas-019",
-      "deporte": "basquet",
-      "liga": {
-        "id": "ejemplo:liga-basquet",
-        "nombre": "Liga de Básquet de Ejemplo"
-      },
-      "inicio": "2026-10-08T00:00:00Z",
-      "fecha_local": "2026-10-07",
-      "local": {
-        "id": "ejemplo:basquet-osos-simulado",
-        "nombre": "Osos Simulado"
-      },
-      "visitante": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
-      },
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-6",
-        "nombre": "Tomás Rojas",
-        "equipo": "visitante"
-      },
-      "estadistica_jugador": "puntos",
-      "analizado_en": "2026-10-07T18:10:00Z",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-07T18:05:00Z",
-          "lineas": [
-            {
-              "linea": 23.5,
-              "cuota_a": 1.81,
-              "cuota_b": 1.99
-            }
-          ]
-        },
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-07T18:05:00Z",
-          "lineas": [
-            {
-              "linea": 23.5,
-              "cuota_a": 1.86,
-              "cuota_b": 1.9
-            }
-          ]
-        }
-      ],
-      "candidata": {
-        "casa": "betano",
-        "linea": 23.5,
-        "cuota_a": 1.81,
-        "cuota_b": 1.99,
-        "diferencia": 0.18,
-        "margen": 0.055,
-        "prob_sin_margen_a": 0.5237,
-        "promedio_mercado_a": 0.5053
-      },
-      "estadistico": {
-        "version": "ejemplo-estadistico-1",
-        "prob_a": 0.424,
-        "lado": "b",
-        "explicacion": [
-          {
-            "factor": "minutos",
-            "impacto": -0.04
-          },
-          {
-            "factor": "rival_concede",
-            "impacto": -0.02
-          },
-          {
-            "factor": "promedio_jugador",
-            "impacto": -0.03
+            "impacto": 0.03
           }
         ]
       },
@@ -1021,23 +1092,23 @@
       "entrada_red": null,
       "apuesta": {
         "casa": "betano",
-        "linea": 23.5,
-        "lado": "b",
+        "linea": 30.5,
+        "lado": "a",
         "cuota": 1.99,
-        "monto": 10,
+        "monto": 15,
         "moneda": "PEN",
         "registrada_en": "2026-10-07T18:20:00Z"
       },
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 19,
+        "valor_real": 23,
         "lado_ganador": "b",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T03:00:00Z"
       }
     },
     {
-      "id": "ejemplo:bas-019|basquet_jugador|ejemplo:jb-6|puntos_rebotes_asistencias",
+      "id": "ejemplo:bas-019|basquet_jugador|ejemplo:jb-9|rebotes",
       "partido_id": "ejemplo:bas-019",
       "deporte": "basquet",
       "liga": {
@@ -1051,92 +1122,13 @@
         "nombre": "Osos Simulado"
       },
       "visitante": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
       },
       "mercado": "basquet_jugador",
       "jugador": {
-        "id": "ejemplo:jb-6",
-        "nombre": "Tomás Rojas",
-        "equipo": "visitante"
-      },
-      "estadistica_jugador": "puntos_rebotes_asistencias",
-      "analizado_en": "2026-10-07T18:10:00Z",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-07T18:05:00Z",
-          "lineas": [
-            {
-              "linea": 34.5,
-              "cuota_a": 1.89,
-              "cuota_b": 1.9
-            }
-          ]
-        }
-      ],
-      "candidata": {
-        "casa": "betano",
-        "linea": 34.5,
-        "cuota_a": 1.89,
-        "cuota_b": 1.9,
-        "diferencia": 0.01,
-        "margen": 0.0554,
-        "prob_sin_margen_a": 0.5013,
-        "promedio_mercado_a": null
-      },
-      "estadistico": {
-        "version": "ejemplo-estadistico-1",
-        "prob_a": 0.542,
-        "lado": "a",
-        "explicacion": [
-          {
-            "factor": "minutos",
-            "impacto": 0.01
-          },
-          {
-            "factor": "rival_concede",
-            "impacto": 0.02
-          },
-          {
-            "factor": "promedio_jugador",
-            "impacto": 0.02
-          }
-        ]
-      },
-      "red": null,
-      "entrada_red": null,
-      "apuesta": null,
-      "resultado": {
-        "estado": "resuelto",
-        "valor_real": 27,
-        "lado_ganador": "b",
-        "fuente": "sofascore",
-        "actualizado_en": "2026-10-08T03:00:00Z"
-      }
-    },
-    {
-      "id": "ejemplo:bas-019|basquet_jugador|ejemplo:jb-6|rebotes",
-      "partido_id": "ejemplo:bas-019",
-      "deporte": "basquet",
-      "liga": {
-        "id": "ejemplo:liga-basquet",
-        "nombre": "Liga de Básquet de Ejemplo"
-      },
-      "inicio": "2026-10-08T00:00:00Z",
-      "fecha_local": "2026-10-07",
-      "local": {
-        "id": "ejemplo:basquet-osos-simulado",
-        "nombre": "Osos Simulado"
-      },
-      "visitante": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
-      },
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-6",
-        "nombre": "Tomás Rojas",
+        "id": "ejemplo:jb-9",
+        "nombre": "Bruno Paredes",
         "equipo": "visitante"
       },
       "estadistica_jugador": "rebotes",
@@ -1147,39 +1139,39 @@
           "extraido_en": "2026-10-07T18:05:00Z",
           "lineas": [
             {
-              "linea": 3.5,
-              "cuota_a": 1.95,
-              "cuota_b": 1.81
+              "linea": 6.5,
+              "cuota_a": 2.13,
+              "cuota_b": 1.68
             }
           ]
         }
       ],
       "candidata": {
         "casa": "apuesta_total",
-        "linea": 3.5,
-        "cuota_a": 1.95,
-        "cuota_b": 1.81,
-        "diferencia": 0.14,
-        "margen": 0.0653,
-        "prob_sin_margen_a": 0.4814,
+        "linea": 6.5,
+        "cuota_a": 2.13,
+        "cuota_b": 1.68,
+        "diferencia": 0.45,
+        "margen": 0.0647,
+        "prob_sin_margen_a": 0.4409,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.42,
+        "prob_a": 0.377,
         "lado": "b",
         "explicacion": [
           {
-            "factor": "minutos",
+            "factor": "promedio_jugador",
             "impacto": -0.04
           },
           {
             "factor": "rival_concede",
-            "impacto": 0
+            "impacto": -0.07
           },
           {
-            "factor": "promedio_jugador",
-            "impacto": -0.02
+            "factor": "minutos",
+            "impacto": 0
           }
         ]
       },
@@ -1188,7 +1180,7 @@
       "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 3,
+        "valor_real": 4,
         "lado_ganador": "b",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T03:00:00Z"
@@ -1209,8 +1201,8 @@
         "nombre": "Osos Simulado"
       },
       "visitante": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
       },
       "mercado": "basquet_puntos",
       "analizado_en": "2026-10-07T18:10:00Z",
@@ -1220,29 +1212,29 @@
           "extraido_en": "2026-10-07T18:05:00Z",
           "lineas": [
             {
-              "linea": 223.5,
-              "cuota_a": 1.72,
-              "cuota_b": 2.11
+              "linea": 218.5,
+              "cuota_a": 1.61,
+              "cuota_b": 2.31
             },
             {
-              "linea": 224.5,
-              "cuota_a": 1.89,
-              "cuota_b": 1.9
+              "linea": 219.5,
+              "cuota_a": 1.74,
+              "cuota_b": 2.09
             },
             {
-              "linea": 225.5,
+              "linea": 220.5,
               "cuota_a": 1.87,
-              "cuota_b": 1.92
+              "cuota_b": 1.93
             },
             {
-              "linea": 226.5,
-              "cuota_a": 2,
-              "cuota_b": 1.81
+              "linea": 221.5,
+              "cuota_a": 1.97,
+              "cuota_b": 1.83
             },
             {
-              "linea": 227.5,
-              "cuota_a": 2.3,
-              "cuota_b": 1.61
+              "linea": 222.5,
+              "cuota_a": 2.19,
+              "cuota_b": 1.67
             }
           ]
         },
@@ -1251,62 +1243,62 @@
           "extraido_en": "2026-10-07T18:05:00Z",
           "lineas": [
             {
-              "linea": 225.5,
-              "cuota_a": 1.83,
-              "cuota_b": 1.92
+              "linea": 220.5,
+              "cuota_a": 1.98,
+              "cuota_b": 1.79
             }
           ]
         }
       ],
       "candidata": {
         "casa": "betano",
-        "linea": 224.5,
-        "cuota_a": 1.89,
-        "cuota_b": 1.9,
-        "diferencia": 0.01,
-        "margen": 0.0554,
-        "prob_sin_margen_a": 0.5013,
-        "promedio_mercado_a": null
+        "linea": 220.5,
+        "cuota_a": 1.87,
+        "cuota_b": 1.93,
+        "diferencia": 0.06,
+        "margen": 0.0529,
+        "prob_sin_margen_a": 0.5079,
+        "promedio_mercado_a": 0.4748
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.562,
+        "prob_a": 0.531,
         "lado": "a",
         "explicacion": [
+          {
+            "factor": "ritmo_juego",
+            "impacto": 0.02
+          },
           {
             "factor": "descanso",
             "impacto": 0.02
           },
           {
-            "factor": "ritmo_juego",
-            "impacto": 0
-          },
-          {
             "factor": "defensa_rival",
-            "impacto": 0.04
+            "impacto": 0.01
           }
         ]
       },
       "red": {
         "version": "ejemplo-red-basquet_puntos-1",
-        "prob_a": 0.495,
-        "lado": "b"
+        "prob_a": 0.555,
+        "lado": "a"
       },
       "entrada_red": {
         "version": "ejemplo-variables-1",
         "valores": {
-          "linea": 224.5,
-          "cuota_a": 1.89,
-          "cuota_b": 1.9,
-          "esperado": 225.4,
-          "forma_local": 0.59,
-          "forma_visitante": -0.9
+          "linea": 220.5,
+          "cuota_a": 1.87,
+          "cuota_b": 1.93,
+          "esperado": 220.52,
+          "forma_local": 0.03,
+          "forma_visitante": 0.73
         }
       },
       "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 225,
+        "valor_real": 256,
         "lado_ganador": "a",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T03:00:00Z"
@@ -1327,8 +1319,8 @@
         "nombre": "Osos Simulado"
       },
       "visitante": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
       },
       "mercado": "basquet_puntos_1t",
       "analizado_en": "2026-10-07T18:10:00Z",
@@ -1338,49 +1330,49 @@
           "extraido_en": "2026-10-07T18:05:00Z",
           "lineas": [
             {
+              "linea": 109.5,
+              "cuota_a": 1.66,
+              "cuota_b": 2.21
+            },
+            {
+              "linea": 110.5,
+              "cuota_a": 1.94,
+              "cuota_b": 1.86
+            },
+            {
               "linea": 111.5,
-              "cuota_a": 1.75,
-              "cuota_b": 2.07
-            },
-            {
-              "linea": 112.5,
-              "cuota_a": 1.84,
-              "cuota_b": 1.96
-            },
-            {
-              "linea": 113.5,
-              "cuota_a": 2.07,
-              "cuota_b": 1.75
+              "cuota_a": 2.15,
+              "cuota_b": 1.7
             }
           ]
         }
       ],
       "candidata": {
         "casa": "betano",
-        "linea": 112.5,
-        "cuota_a": 1.84,
-        "cuota_b": 1.96,
-        "diferencia": 0.12,
-        "margen": 0.0537,
-        "prob_sin_margen_a": 0.5158,
+        "linea": 110.5,
+        "cuota_a": 1.94,
+        "cuota_b": 1.86,
+        "diferencia": 0.08,
+        "margen": 0.0531,
+        "prob_sin_margen_a": 0.4895,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.479,
-        "lado": "b",
+        "prob_a": 0.549,
+        "lado": "a",
         "explicacion": [
+          {
+            "factor": "ritmo_juego",
+            "impacto": 0.02
+          },
           {
             "factor": "ataque_local",
             "impacto": 0.01
           },
           {
-            "factor": "descanso",
-            "impacto": 0.02
-          },
-          {
-            "factor": "ritmo_juego",
-            "impacto": 0
+            "factor": "defensa_rival",
+            "impacto": 0.01
           }
         ]
       },
@@ -1389,8 +1381,8 @@
       "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 107,
-        "lado_ganador": "b",
+        "valor_real": 122,
+        "lado_ganador": "a",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T03:00:00Z"
       }
@@ -1406,12 +1398,12 @@
       "inicio": "2026-10-08T01:00:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
       },
       "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
+        "id": "ejemplo:basquet-condores-demo",
+        "nombre": "Cóndores Demo"
       },
       "mercado": "basquet_handicap",
       "analizado_en": "2026-10-07T19:10:00Z",
@@ -1421,19 +1413,19 @@
           "extraido_en": "2026-10-07T19:05:00Z",
           "lineas": [
             {
-              "linea": -1.5,
-              "cuota_a": 2.12,
-              "cuota_b": 1.71
+              "linea": 3.5,
+              "cuota_a": 2,
+              "cuota_b": 1.8
             },
             {
-              "linea": -0.5,
-              "cuota_a": 1.9,
-              "cuota_b": 1.89
+              "linea": 4.5,
+              "cuota_a": 1.8,
+              "cuota_b": 2
             },
             {
-              "linea": 0.5,
-              "cuota_a": 1.75,
-              "cuota_b": 2.06
+              "linea": 5.5,
+              "cuota_a": 1.67,
+              "cuota_b": 2.19
             }
           ]
         },
@@ -1442,26 +1434,26 @@
           "extraido_en": "2026-10-07T19:05:00Z",
           "lineas": [
             {
-              "linea": -0.5,
-              "cuota_a": 1.87,
-              "cuota_b": 1.88
+              "linea": 4.5,
+              "cuota_a": 1.78,
+              "cuota_b": 1.99
             }
           ]
         }
       ],
       "candidata": {
         "casa": "betano",
-        "linea": -0.5,
-        "cuota_a": 1.9,
-        "cuota_b": 1.89,
-        "diferencia": 0.01,
-        "margen": 0.0554,
-        "prob_sin_margen_a": 0.4987,
-        "promedio_mercado_a": 0.5013
+        "linea": 3.5,
+        "cuota_a": 2,
+        "cuota_b": 1.8,
+        "diferencia": 0.2,
+        "margen": 0.0556,
+        "prob_sin_margen_a": 0.4737,
+        "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.596,
+        "prob_a": 0.59,
         "lado": "a",
         "explicacion": [
           {
@@ -1482,17 +1474,17 @@
       "entrada_red": null,
       "apuesta": {
         "casa": "betano",
-        "linea": -0.5,
+        "linea": 3.5,
         "lado": "a",
-        "cuota": 1.9,
+        "cuota": 2,
         "monto": 10,
         "moneda": "PEN",
         "registrada_en": "2026-10-07T19:20:00Z"
       },
       "resultado": {
         "estado": "resuelto",
-        "valor_real": -17,
-        "lado_ganador": "b",
+        "valor_real": 4,
+        "lado_ganador": "a",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T04:00:00Z"
       }
@@ -1508,12 +1500,12 @@
       "inicio": "2026-10-08T01:00:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
       },
       "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
+        "id": "ejemplo:basquet-condores-demo",
+        "nombre": "Cóndores Demo"
       },
       "mercado": "basquet_handicap_1t",
       "analizado_en": "2026-10-07T19:10:00Z",
@@ -1523,36 +1515,36 @@
           "extraido_en": "2026-10-07T19:05:00Z",
           "lineas": [
             {
-              "linea": -1.5,
-              "cuota_a": 2.15,
-              "cuota_b": 1.69
+              "linea": 1.5,
+              "cuota_a": 1.96,
+              "cuota_b": 1.84
             },
             {
-              "linea": -0.5,
-              "cuota_a": 1.98,
-              "cuota_b": 1.82
+              "linea": 2.5,
+              "cuota_a": 1.81,
+              "cuota_b": 1.99
             },
             {
-              "linea": 0.5,
-              "cuota_a": 1.8,
-              "cuota_b": 2
+              "linea": 3.5,
+              "cuota_a": 1.66,
+              "cuota_b": 2.21
             }
           ]
         }
       ],
       "candidata": {
         "casa": "betano",
-        "linea": -0.5,
-        "cuota_a": 1.98,
-        "cuota_b": 1.82,
-        "diferencia": 0.16,
-        "margen": 0.0545,
-        "prob_sin_margen_a": 0.4789,
+        "linea": 1.5,
+        "cuota_a": 1.96,
+        "cuota_b": 1.84,
+        "diferencia": 0.12,
+        "margen": 0.0537,
+        "prob_sin_margen_a": 0.4842,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.44,
+        "prob_a": 0.436,
         "lado": "b",
         "explicacion": [
           {
@@ -1574,14 +1566,14 @@
       "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": -9,
+        "valor_real": -5,
         "lado_ganador": "b",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T04:00:00Z"
       }
     },
     {
-      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-1|asistencias",
+      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-5|puntos",
       "partido_id": "ejemplo:bas-020",
       "deporte": "basquet",
       "liga": {
@@ -1591,345 +1583,18 @@
       "inicio": "2026-10-08T01:00:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
       },
       "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
+        "id": "ejemplo:basquet-condores-demo",
+        "nombre": "Cóndores Demo"
       },
       "mercado": "basquet_jugador",
       "jugador": {
-        "id": "ejemplo:jb-1",
-        "nombre": "Santiago Castro",
+        "id": "ejemplo:jb-5",
+        "nombre": "Gabriel Ramos",
         "equipo": "local"
-      },
-      "estadistica_jugador": "asistencias",
-      "analizado_en": "2026-10-07T19:10:00Z",
-      "ofertas": [
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-07T19:05:00Z",
-          "lineas": [
-            {
-              "linea": 5.5,
-              "cuota_a": 2.27,
-              "cuota_b": 1.6
-            }
-          ]
-        }
-      ],
-      "candidata": {
-        "casa": "apuesta_total",
-        "linea": 5.5,
-        "cuota_a": 2.27,
-        "cuota_b": 1.6,
-        "diferencia": 0.67,
-        "margen": 0.0655,
-        "prob_sin_margen_a": 0.4134,
-        "promedio_mercado_a": null
-      },
-      "estadistico": {
-        "version": "ejemplo-estadistico-1",
-        "prob_a": 0.391,
-        "lado": "b",
-        "explicacion": [
-          {
-            "factor": "minutos",
-            "impacto": -0.03
-          },
-          {
-            "factor": "promedio_jugador",
-            "impacto": -0.04
-          },
-          {
-            "factor": "rival_concede",
-            "impacto": -0.05
-          }
-        ]
-      },
-      "red": null,
-      "entrada_red": null,
-      "apuesta": null,
-      "resultado": {
-        "estado": "resuelto",
-        "valor_real": 7,
-        "lado_ganador": "a",
-        "fuente": "sofascore",
-        "actualizado_en": "2026-10-08T04:00:00Z"
-      }
-    },
-    {
-      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-1|puntos",
-      "partido_id": "ejemplo:bas-020",
-      "deporte": "basquet",
-      "liga": {
-        "id": "ejemplo:liga-basquet",
-        "nombre": "Liga de Básquet de Ejemplo"
-      },
-      "inicio": "2026-10-08T01:00:00Z",
-      "fecha_local": "2026-10-07",
-      "local": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
-      },
-      "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
-      },
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-1",
-        "nombre": "Santiago Castro",
-        "equipo": "local"
-      },
-      "estadistica_jugador": "puntos",
-      "analizado_en": "2026-10-07T19:10:00Z",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-07T19:05:00Z",
-          "lineas": [
-            {
-              "linea": 14.5,
-              "cuota_a": 1.86,
-              "cuota_b": 1.93
-            }
-          ]
-        },
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-07T19:05:00Z",
-          "lineas": [
-            {
-              "linea": 14.5,
-              "cuota_a": 1.85,
-              "cuota_b": 1.9
-            }
-          ]
-        }
-      ],
-      "candidata": {
-        "casa": "betano",
-        "linea": 14.5,
-        "cuota_a": 1.86,
-        "cuota_b": 1.93,
-        "diferencia": 0.07,
-        "margen": 0.0558,
-        "prob_sin_margen_a": 0.5092,
-        "promedio_mercado_a": 0.5067
-      },
-      "estadistico": {
-        "version": "ejemplo-estadistico-1",
-        "prob_a": 0.444,
-        "lado": "b",
-        "explicacion": [
-          {
-            "factor": "minutos",
-            "impacto": -0.02
-          },
-          {
-            "factor": "promedio_jugador",
-            "impacto": -0.01
-          },
-          {
-            "factor": "rival_concede",
-            "impacto": -0.02
-          }
-        ]
-      },
-      "red": null,
-      "entrada_red": null,
-      "apuesta": null,
-      "resultado": {
-        "estado": "resuelto",
-        "valor_real": 11,
-        "lado_ganador": "b",
-        "fuente": "sofascore",
-        "actualizado_en": "2026-10-08T04:00:00Z"
-      }
-    },
-    {
-      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-1|puntos_rebotes_asistencias",
-      "partido_id": "ejemplo:bas-020",
-      "deporte": "basquet",
-      "liga": {
-        "id": "ejemplo:liga-basquet",
-        "nombre": "Liga de Básquet de Ejemplo"
-      },
-      "inicio": "2026-10-08T01:00:00Z",
-      "fecha_local": "2026-10-07",
-      "local": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
-      },
-      "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
-      },
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-1",
-        "nombre": "Santiago Castro",
-        "equipo": "local"
-      },
-      "estadistica_jugador": "puntos_rebotes_asistencias",
-      "analizado_en": "2026-10-07T19:10:00Z",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-07T19:05:00Z",
-          "lineas": [
-            {
-              "linea": 23.5,
-              "cuota_a": 1.89,
-              "cuota_b": 1.9
-            }
-          ]
-        }
-      ],
-      "candidata": {
-        "casa": "betano",
-        "linea": 23.5,
-        "cuota_a": 1.89,
-        "cuota_b": 1.9,
-        "diferencia": 0.01,
-        "margen": 0.0554,
-        "prob_sin_margen_a": 0.5013,
-        "promedio_mercado_a": null
-      },
-      "estadistico": {
-        "version": "ejemplo-estadistico-1",
-        "prob_a": 0.499,
-        "lado": "b",
-        "explicacion": [
-          {
-            "factor": "minutos",
-            "impacto": 0
-          },
-          {
-            "factor": "rival_concede",
-            "impacto": 0
-          },
-          {
-            "factor": "promedio_jugador",
-            "impacto": 0
-          }
-        ]
-      },
-      "red": null,
-      "entrada_red": null,
-      "apuesta": null,
-      "resultado": {
-        "estado": "resuelto",
-        "valor_real": 21,
-        "lado_ganador": "b",
-        "fuente": "sofascore",
-        "actualizado_en": "2026-10-08T04:00:00Z"
-      }
-    },
-    {
-      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-10|asistencias",
-      "partido_id": "ejemplo:bas-020",
-      "deporte": "basquet",
-      "liga": {
-        "id": "ejemplo:liga-basquet",
-        "nombre": "Liga de Básquet de Ejemplo"
-      },
-      "inicio": "2026-10-08T01:00:00Z",
-      "fecha_local": "2026-10-07",
-      "local": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
-      },
-      "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
-      },
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-10",
-        "nombre": "Thiago Flores",
-        "equipo": "visitante"
-      },
-      "estadistica_jugador": "asistencias",
-      "analizado_en": "2026-10-07T19:10:00Z",
-      "ofertas": [
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-07T19:05:00Z",
-          "lineas": [
-            {
-              "linea": 6.5,
-              "cuota_a": 2.22,
-              "cuota_b": 1.63
-            }
-          ]
-        }
-      ],
-      "candidata": {
-        "casa": "apuesta_total",
-        "linea": 6.5,
-        "cuota_a": 2.22,
-        "cuota_b": 1.63,
-        "diferencia": 0.59,
-        "margen": 0.0639,
-        "prob_sin_margen_a": 0.4234,
-        "promedio_mercado_a": null
-      },
-      "estadistico": {
-        "version": "ejemplo-estadistico-1",
-        "prob_a": 0.463,
-        "lado": "b",
-        "explicacion": [
-          {
-            "factor": "minutos",
-            "impacto": -0.02
-          },
-          {
-            "factor": "rival_concede",
-            "impacto": -0.01
-          },
-          {
-            "factor": "promedio_jugador",
-            "impacto": -0.02
-          }
-        ]
-      },
-      "red": null,
-      "entrada_red": null,
-      "apuesta": null,
-      "resultado": {
-        "estado": "resuelto",
-        "valor_real": 8,
-        "lado_ganador": "a",
-        "fuente": "sofascore",
-        "actualizado_en": "2026-10-08T04:00:00Z"
-      }
-    },
-    {
-      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-10|puntos",
-      "partido_id": "ejemplo:bas-020",
-      "deporte": "basquet",
-      "liga": {
-        "id": "ejemplo:liga-basquet",
-        "nombre": "Liga de Básquet de Ejemplo"
-      },
-      "inicio": "2026-10-08T01:00:00Z",
-      "fecha_local": "2026-10-07",
-      "local": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
-      },
-      "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
-      },
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-10",
-        "nombre": "Thiago Flores",
-        "equipo": "visitante"
       },
       "estadistica_jugador": "puntos",
       "analizado_en": "2026-10-07T19:10:00Z",
@@ -1940,226 +1605,49 @@
           "lineas": [
             {
               "linea": 17.5,
-              "cuota_a": 1.83,
+              "cuota_a": 1.76,
+              "cuota_b": 2.05
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-07T19:05:00Z",
+          "lineas": [
+            {
+              "linea": 17.5,
+              "cuota_a": 1.8,
               "cuota_b": 1.96
             }
           ]
-        },
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-07T19:05:00Z",
-          "lineas": [
-            {
-              "linea": 17.5,
-              "cuota_a": 1.77,
-              "cuota_b": 2
-            }
-          ]
         }
       ],
       "candidata": {
         "casa": "betano",
         "linea": 17.5,
-        "cuota_a": 1.83,
-        "cuota_b": 1.96,
-        "diferencia": 0.13,
-        "margen": 0.0567,
-        "prob_sin_margen_a": 0.5172,
-        "promedio_mercado_a": 0.5305
+        "cuota_a": 1.76,
+        "cuota_b": 2.05,
+        "diferencia": 0.29,
+        "margen": 0.056,
+        "prob_sin_margen_a": 0.5381,
+        "promedio_mercado_a": 0.5213
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.418,
-        "lado": "b",
-        "explicacion": [
-          {
-            "factor": "promedio_jugador",
-            "impacto": 0
-          },
-          {
-            "factor": "minutos",
-            "impacto": -0.05
-          },
-          {
-            "factor": "rival_concede",
-            "impacto": -0.03
-          }
-        ]
-      },
-      "red": null,
-      "entrada_red": null,
-      "apuesta": {
-        "casa": "betano",
-        "linea": 17.5,
-        "lado": "b",
-        "cuota": 1.96,
-        "monto": 20,
-        "moneda": "PEN",
-        "registrada_en": "2026-10-07T19:20:00Z"
-      },
-      "resultado": {
-        "estado": "resuelto",
-        "valor_real": 23,
-        "lado_ganador": "a",
-        "fuente": "sofascore",
-        "actualizado_en": "2026-10-08T04:00:00Z"
-      }
-    },
-    {
-      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-10|puntos_rebotes_asistencias",
-      "partido_id": "ejemplo:bas-020",
-      "deporte": "basquet",
-      "liga": {
-        "id": "ejemplo:liga-basquet",
-        "nombre": "Liga de Básquet de Ejemplo"
-      },
-      "inicio": "2026-10-08T01:00:00Z",
-      "fecha_local": "2026-10-07",
-      "local": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
-      },
-      "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
-      },
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-10",
-        "nombre": "Thiago Flores",
-        "equipo": "visitante"
-      },
-      "estadistica_jugador": "puntos_rebotes_asistencias",
-      "analizado_en": "2026-10-07T19:10:00Z",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-07T19:05:00Z",
-          "lineas": [
-            {
-              "linea": 32.5,
-              "cuota_a": 2.04,
-              "cuota_b": 1.77
-            }
-          ]
-        }
-      ],
-      "candidata": {
-        "casa": "betano",
-        "linea": 32.5,
-        "cuota_a": 2.04,
-        "cuota_b": 1.77,
-        "diferencia": 0.27,
-        "margen": 0.0552,
-        "prob_sin_margen_a": 0.4646,
-        "promedio_mercado_a": null
-      },
-      "estadistico": {
-        "version": "ejemplo-estadistico-1",
-        "prob_a": 0.445,
-        "lado": "b",
-        "explicacion": [
-          {
-            "factor": "rival_concede",
-            "impacto": -0.03
-          },
-          {
-            "factor": "promedio_jugador",
-            "impacto": -0.03
-          },
-          {
-            "factor": "minutos",
-            "impacto": -0.01
-          }
-        ]
-      },
-      "red": null,
-      "entrada_red": null,
-      "apuesta": null,
-      "resultado": {
-        "estado": "resuelto",
-        "valor_real": 39,
-        "lado_ganador": "a",
-        "fuente": "sofascore",
-        "actualizado_en": "2026-10-08T04:00:00Z"
-      }
-    },
-    {
-      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-2|puntos",
-      "partido_id": "ejemplo:bas-020",
-      "deporte": "basquet",
-      "liga": {
-        "id": "ejemplo:liga-basquet",
-        "nombre": "Liga de Básquet de Ejemplo"
-      },
-      "inicio": "2026-10-08T01:00:00Z",
-      "fecha_local": "2026-10-07",
-      "local": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
-      },
-      "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
-      },
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-2",
-        "nombre": "Sebastián Huamán",
-        "equipo": "local"
-      },
-      "estadistica_jugador": "puntos",
-      "analizado_en": "2026-10-07T19:10:00Z",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-07T19:05:00Z",
-          "lineas": [
-            {
-              "linea": 19.5,
-              "cuota_a": 2.07,
-              "cuota_b": 1.75
-            }
-          ]
-        },
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-07T19:05:00Z",
-          "lineas": [
-            {
-              "linea": 19.5,
-              "cuota_a": 1.98,
-              "cuota_b": 1.78
-            }
-          ]
-        }
-      ],
-      "candidata": {
-        "casa": "betano",
-        "linea": 19.5,
-        "cuota_a": 2.07,
-        "cuota_b": 1.75,
-        "diferencia": 0.32,
-        "margen": 0.0545,
-        "prob_sin_margen_a": 0.4581,
-        "promedio_mercado_a": 0.4734
-      },
-      "estadistico": {
-        "version": "ejemplo-estadistico-1",
-        "prob_a": 0.559,
+        "prob_a": 0.507,
         "lado": "a",
         "explicacion": [
           {
-            "factor": "promedio_jugador",
-            "impacto": 0.02
+            "factor": "rival_concede",
+            "impacto": -0.01
           },
           {
-            "factor": "rival_concede",
-            "impacto": 0.01
+            "factor": "promedio_jugador",
+            "impacto": 0
           },
           {
             "factor": "minutos",
-            "impacto": 0.02
+            "impacto": -0.01
           }
         ]
       },
@@ -2168,14 +1656,14 @@
       "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 33,
+        "valor_real": 20,
         "lado_ganador": "a",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T04:00:00Z"
       }
     },
     {
-      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-2|puntos_rebotes_asistencias",
+      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-5|puntos_rebotes_asistencias",
       "partido_id": "ejemplo:bas-020",
       "deporte": "basquet",
       "liga": {
@@ -2185,17 +1673,17 @@
       "inicio": "2026-10-08T01:00:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
       },
       "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
+        "id": "ejemplo:basquet-condores-demo",
+        "nombre": "Cóndores Demo"
       },
       "mercado": "basquet_jugador",
       "jugador": {
-        "id": "ejemplo:jb-2",
-        "nombre": "Sebastián Huamán",
+        "id": "ejemplo:jb-5",
+        "nombre": "Gabriel Ramos",
         "equipo": "local"
       },
       "estadistica_jugador": "puntos_rebotes_asistencias",
@@ -2206,39 +1694,39 @@
           "extraido_en": "2026-10-07T19:05:00Z",
           "lineas": [
             {
-              "linea": 25.5,
-              "cuota_a": 1.87,
-              "cuota_b": 1.92
+              "linea": 31.5,
+              "cuota_a": 1.71,
+              "cuota_b": 2.12
             }
           ]
         }
       ],
       "candidata": {
         "casa": "betano",
-        "linea": 25.5,
-        "cuota_a": 1.87,
-        "cuota_b": 1.92,
-        "diferencia": 0.05,
-        "margen": 0.0556,
-        "prob_sin_margen_a": 0.5066,
+        "linea": 31.5,
+        "cuota_a": 1.71,
+        "cuota_b": 2.12,
+        "diferencia": 0.41,
+        "margen": 0.0565,
+        "prob_sin_margen_a": 0.5535,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.493,
-        "lado": "b",
+        "prob_a": 0.554,
+        "lado": "a",
         "explicacion": [
           {
             "factor": "minutos",
-            "impacto": -0.01
+            "impacto": 0.03
           },
           {
             "factor": "rival_concede",
-            "impacto": -0.02
+            "impacto": 0
           },
           {
             "factor": "promedio_jugador",
-            "impacto": 0
+            "impacto": 0.03
           }
         ]
       },
@@ -2247,14 +1735,14 @@
       "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 40,
-        "lado_ganador": "a",
+        "valor_real": 31,
+        "lado_ganador": "b",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T04:00:00Z"
       }
     },
     {
-      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-2|triples",
+      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-5|triples",
       "partido_id": "ejemplo:bas-020",
       "deporte": "basquet",
       "liga": {
@@ -2264,17 +1752,17 @@
       "inicio": "2026-10-08T01:00:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
       },
       "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
+        "id": "ejemplo:basquet-condores-demo",
+        "nombre": "Cóndores Demo"
       },
       "mercado": "basquet_jugador",
       "jugador": {
-        "id": "ejemplo:jb-2",
-        "nombre": "Sebastián Huamán",
+        "id": "ejemplo:jb-5",
+        "nombre": "Gabriel Ramos",
         "equipo": "local"
       },
       "estadistica_jugador": "triples",
@@ -2285,55 +1773,63 @@
           "extraido_en": "2026-10-07T19:05:00Z",
           "lineas": [
             {
-              "linea": 2.5,
-              "cuota_a": 1.83,
-              "cuota_b": 1.92
+              "linea": 1.5,
+              "cuota_a": 1.91,
+              "cuota_b": 1.84
             }
           ]
         }
       ],
       "candidata": {
         "casa": "apuesta_total",
-        "linea": 2.5,
-        "cuota_a": 1.83,
-        "cuota_b": 1.92,
-        "diferencia": 0.09,
-        "margen": 0.0673,
-        "prob_sin_margen_a": 0.512,
+        "linea": 1.5,
+        "cuota_a": 1.91,
+        "cuota_b": 1.84,
+        "diferencia": 0.07,
+        "margen": 0.067,
+        "prob_sin_margen_a": 0.4907,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.41,
-        "lado": "b",
+        "prob_a": 0.566,
+        "lado": "a",
         "explicacion": [
           {
             "factor": "rival_concede",
-            "impacto": -0.05
-          },
-          {
-            "factor": "minutos",
-            "impacto": -0.03
+            "impacto": 0.02
           },
           {
             "factor": "promedio_jugador",
-            "impacto": -0.03
+            "impacto": 0.03
+          },
+          {
+            "factor": "minutos",
+            "impacto": 0
           }
         ]
       },
       "red": null,
       "entrada_red": null,
-      "apuesta": null,
+      "apuesta": {
+        "casa": "apuesta_total",
+        "linea": 1.5,
+        "lado": "a",
+        "cuota": 1.91,
+        "monto": 20,
+        "moneda": "PEN",
+        "registrada_en": "2026-10-07T19:20:00Z"
+      },
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 4,
+        "valor_real": 3,
         "lado_ganador": "a",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T04:00:00Z"
       }
     },
     {
-      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-9|puntos",
+      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-6|puntos",
       "partido_id": "ejemplo:bas-020",
       "deporte": "basquet",
       "liga": {
@@ -2343,17 +1839,344 @@
       "inicio": "2026-10-08T01:00:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
       },
       "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
+        "id": "ejemplo:basquet-condores-demo",
+        "nombre": "Cóndores Demo"
       },
       "mercado": "basquet_jugador",
       "jugador": {
-        "id": "ejemplo:jb-9",
-        "nombre": "Bruno Paredes",
+        "id": "ejemplo:jb-6",
+        "nombre": "Tomás Rojas",
+        "equipo": "local"
+      },
+      "estadistica_jugador": "puntos",
+      "analizado_en": "2026-10-07T19:10:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-07T19:05:00Z",
+          "lineas": [
+            {
+              "linea": 23.5,
+              "cuota_a": 1.86,
+              "cuota_b": 1.93
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-07T19:05:00Z",
+          "lineas": [
+            {
+              "linea": 23.5,
+              "cuota_a": 1.77,
+              "cuota_b": 2
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 23.5,
+        "cuota_a": 1.86,
+        "cuota_b": 1.93,
+        "diferencia": 0.07,
+        "margen": 0.0558,
+        "prob_sin_margen_a": 0.5092,
+        "promedio_mercado_a": 0.5305
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.538,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "rival_concede",
+            "impacto": 0.01
+          },
+          {
+            "factor": "promedio_jugador",
+            "impacto": 0.01
+          },
+          {
+            "factor": "minutos",
+            "impacto": 0
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 22,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T04:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-6|puntos_rebotes_asistencias",
+      "partido_id": "ejemplo:bas-020",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "inicio": "2026-10-08T01:00:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-condores-demo",
+        "nombre": "Cóndores Demo"
+      },
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-6",
+        "nombre": "Tomás Rojas",
+        "equipo": "local"
+      },
+      "estadistica_jugador": "puntos_rebotes_asistencias",
+      "analizado_en": "2026-10-07T19:10:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-07T19:05:00Z",
+          "lineas": [
+            {
+              "linea": 34.5,
+              "cuota_a": 1.85,
+              "cuota_b": 1.94
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 34.5,
+        "cuota_a": 1.85,
+        "cuota_b": 1.94,
+        "diferencia": 0.09,
+        "margen": 0.056,
+        "prob_sin_margen_a": 0.5119,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.486,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "rival_concede",
+            "impacto": -0.02
+          },
+          {
+            "factor": "promedio_jugador",
+            "impacto": 0
+          },
+          {
+            "factor": "minutos",
+            "impacto": 0
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 34,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T04:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-6|rebotes",
+      "partido_id": "ejemplo:bas-020",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "inicio": "2026-10-08T01:00:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-condores-demo",
+        "nombre": "Cóndores Demo"
+      },
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-6",
+        "nombre": "Tomás Rojas",
+        "equipo": "local"
+      },
+      "estadistica_jugador": "rebotes",
+      "analizado_en": "2026-10-07T19:10:00Z",
+      "ofertas": [
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-07T19:05:00Z",
+          "lineas": [
+            {
+              "linea": 3.5,
+              "cuota_a": 2.14,
+              "cuota_b": 1.68
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "apuesta_total",
+        "linea": 3.5,
+        "cuota_a": 2.14,
+        "cuota_b": 1.68,
+        "diferencia": 0.46,
+        "margen": 0.0625,
+        "prob_sin_margen_a": 0.4398,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.439,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "promedio_jugador",
+            "impacto": -0.03
+          },
+          {
+            "factor": "minutos",
+            "impacto": -0.02
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": -0.02
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 3,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T04:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-7|asistencias",
+      "partido_id": "ejemplo:bas-020",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "inicio": "2026-10-08T01:00:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-condores-demo",
+        "nombre": "Cóndores Demo"
+      },
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-7",
+        "nombre": "Joaquín Salazar",
+        "equipo": "visitante"
+      },
+      "estadistica_jugador": "asistencias",
+      "analizado_en": "2026-10-07T19:10:00Z",
+      "ofertas": [
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-07T19:05:00Z",
+          "lineas": [
+            {
+              "linea": 2.5,
+              "cuota_a": 2.59,
+              "cuota_b": 1.47
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "apuesta_total",
+        "linea": 2.5,
+        "cuota_a": 2.59,
+        "cuota_b": 1.47,
+        "diferencia": 1.12,
+        "margen": 0.0664,
+        "prob_sin_margen_a": 0.3621,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.427,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "rival_concede",
+            "impacto": -0.05
+          },
+          {
+            "factor": "promedio_jugador",
+            "impacto": -0.01
+          },
+          {
+            "factor": "minutos",
+            "impacto": -0.02
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 1,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T04:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-7|puntos",
+      "partido_id": "ejemplo:bas-020",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "inicio": "2026-10-08T01:00:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-condores-demo",
+        "nombre": "Cóndores Demo"
+      },
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-7",
+        "nombre": "Joaquín Salazar",
         "equipo": "visitante"
       },
       "estadistica_jugador": "puntos",
@@ -2364,9 +2187,9 @@
           "extraido_en": "2026-10-07T19:05:00Z",
           "lineas": [
             {
-              "linea": 16.5,
-              "cuota_a": 1.93,
-              "cuota_b": 1.87
+              "linea": 18.5,
+              "cuota_a": 1.75,
+              "cuota_b": 2.06
             }
           ]
         },
@@ -2375,39 +2198,39 @@
           "extraido_en": "2026-10-07T19:05:00Z",
           "lineas": [
             {
-              "linea": 16.5,
-              "cuota_a": 1.84,
-              "cuota_b": 1.92
+              "linea": 18.5,
+              "cuota_a": 1.75,
+              "cuota_b": 2.03
             }
           ]
         }
       ],
       "candidata": {
         "casa": "betano",
-        "linea": 16.5,
-        "cuota_a": 1.93,
-        "cuota_b": 1.87,
-        "diferencia": 0.06,
-        "margen": 0.0529,
-        "prob_sin_margen_a": 0.4921,
-        "promedio_mercado_a": 0.5106
+        "linea": 18.5,
+        "cuota_a": 1.75,
+        "cuota_b": 2.06,
+        "diferencia": 0.31,
+        "margen": 0.0569,
+        "prob_sin_margen_a": 0.5407,
+        "promedio_mercado_a": 0.537
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.519,
+        "prob_a": 0.517,
         "lado": "a",
         "explicacion": [
           {
+            "factor": "promedio_jugador",
+            "impacto": 0
+          },
+          {
             "factor": "rival_concede",
-            "impacto": 0.01
+            "impacto": 0
           },
           {
             "factor": "minutos",
-            "impacto": 0
-          },
-          {
-            "factor": "promedio_jugador",
-            "impacto": 0
+            "impacto": 0.01
           }
         ]
       },
@@ -2416,14 +2239,14 @@
       "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 28,
+        "valor_real": 19,
         "lado_ganador": "a",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T04:00:00Z"
       }
     },
     {
-      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-9|puntos_rebotes_asistencias",
+      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-7|puntos_rebotes_asistencias",
       "partido_id": "ejemplo:bas-020",
       "deporte": "basquet",
       "liga": {
@@ -2433,17 +2256,17 @@
       "inicio": "2026-10-08T01:00:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
       },
       "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
+        "id": "ejemplo:basquet-condores-demo",
+        "nombre": "Cóndores Demo"
       },
       "mercado": "basquet_jugador",
       "jugador": {
-        "id": "ejemplo:jb-9",
-        "nombre": "Bruno Paredes",
+        "id": "ejemplo:jb-7",
+        "nombre": "Joaquín Salazar",
         "equipo": "visitante"
       },
       "estadistica_jugador": "puntos_rebotes_asistencias",
@@ -2454,55 +2277,63 @@
           "extraido_en": "2026-10-07T19:05:00Z",
           "lineas": [
             {
-              "linea": 30.5,
-              "cuota_a": 1.92,
-              "cuota_b": 1.87
+              "linea": 27.5,
+              "cuota_a": 1.77,
+              "cuota_b": 2.04
             }
           ]
         }
       ],
       "candidata": {
         "casa": "betano",
-        "linea": 30.5,
-        "cuota_a": 1.92,
-        "cuota_b": 1.87,
-        "diferencia": 0.05,
-        "margen": 0.0556,
-        "prob_sin_margen_a": 0.4934,
+        "linea": 27.5,
+        "cuota_a": 1.77,
+        "cuota_b": 2.04,
+        "diferencia": 0.27,
+        "margen": 0.0552,
+        "prob_sin_margen_a": 0.5354,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.557,
+        "prob_a": 0.567,
         "lado": "a",
         "explicacion": [
           {
-            "factor": "promedio_jugador",
-            "impacto": 0.01
-          },
-          {
             "factor": "rival_concede",
-            "impacto": 0.02
+            "impacto": 0
           },
           {
             "factor": "minutos",
-            "impacto": 0.01
+            "impacto": 0.02
+          },
+          {
+            "factor": "promedio_jugador",
+            "impacto": 0.02
           }
         ]
       },
       "red": null,
       "entrada_red": null,
-      "apuesta": null,
+      "apuesta": {
+        "casa": "betano",
+        "linea": 27.5,
+        "lado": "a",
+        "cuota": 1.77,
+        "monto": 25,
+        "moneda": "PEN",
+        "registrada_en": "2026-10-07T19:20:00Z"
+      },
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 36,
-        "lado_ganador": "a",
+        "valor_real": 25,
+        "lado_ganador": "b",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T04:00:00Z"
       }
     },
     {
-      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-9|rebotes",
+      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-8|puntos",
       "partido_id": "ejemplo:bas-020",
       "deporte": "basquet",
       "liga": {
@@ -2512,20 +2343,197 @@
       "inicio": "2026-10-08T01:00:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
       },
       "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
+        "id": "ejemplo:basquet-condores-demo",
+        "nombre": "Cóndores Demo"
       },
       "mercado": "basquet_jugador",
       "jugador": {
-        "id": "ejemplo:jb-9",
-        "nombre": "Bruno Paredes",
+        "id": "ejemplo:jb-8",
+        "nombre": "Emiliano Vargas",
         "equipo": "visitante"
       },
-      "estadistica_jugador": "rebotes",
+      "estadistica_jugador": "puntos",
+      "analizado_en": "2026-10-07T19:10:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-07T19:05:00Z",
+          "lineas": [
+            {
+              "linea": 14.5,
+              "cuota_a": 2.01,
+              "cuota_b": 1.79
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-07T19:05:00Z",
+          "lineas": [
+            {
+              "linea": 14.5,
+              "cuota_a": 1.95,
+              "cuota_b": 1.81
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 14.5,
+        "cuota_a": 2.01,
+        "cuota_b": 1.79,
+        "diferencia": 0.22,
+        "margen": 0.0562,
+        "prob_sin_margen_a": 0.4711,
+        "promedio_mercado_a": 0.4814
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.526,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "rival_concede",
+            "impacto": 0.02
+          },
+          {
+            "factor": "promedio_jugador",
+            "impacto": 0
+          },
+          {
+            "factor": "minutos",
+            "impacto": 0.02
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 19,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T04:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-8|puntos_rebotes_asistencias",
+      "partido_id": "ejemplo:bas-020",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "inicio": "2026-10-08T01:00:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-condores-demo",
+        "nombre": "Cóndores Demo"
+      },
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-8",
+        "nombre": "Emiliano Vargas",
+        "equipo": "visitante"
+      },
+      "estadistica_jugador": "puntos_rebotes_asistencias",
+      "analizado_en": "2026-10-07T19:10:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-07T19:05:00Z",
+          "lineas": [
+            {
+              "linea": 25.5,
+              "cuota_a": 1.86,
+              "cuota_b": 1.93
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 25.5,
+        "cuota_a": 1.86,
+        "cuota_b": 1.93,
+        "diferencia": 0.07,
+        "margen": 0.0558,
+        "prob_sin_margen_a": 0.5092,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.44,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "rival_concede",
+            "impacto": -0.03
+          },
+          {
+            "factor": "minutos",
+            "impacto": -0.03
+          },
+          {
+            "factor": "promedio_jugador",
+            "impacto": -0.04
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": {
+        "casa": "betano",
+        "linea": 25.5,
+        "lado": "b",
+        "cuota": 1.93,
+        "monto": 30,
+        "moneda": "PEN",
+        "registrada_en": "2026-10-07T19:20:00Z"
+      },
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 32,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T04:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-020|basquet_jugador|ejemplo:jb-8|triples",
+      "partido_id": "ejemplo:bas-020",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "inicio": "2026-10-08T01:00:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-condores-demo",
+        "nombre": "Cóndores Demo"
+      },
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-8",
+        "nombre": "Emiliano Vargas",
+        "equipo": "visitante"
+      },
+      "estadistica_jugador": "triples",
       "analizado_en": "2026-10-07T19:10:00Z",
       "ofertas": [
         {
@@ -2533,57 +2541,49 @@
           "extraido_en": "2026-10-07T19:05:00Z",
           "lineas": [
             {
-              "linea": 6.5,
-              "cuota_a": 2.18,
-              "cuota_b": 1.65
+              "linea": 0.5,
+              "cuota_a": 1.66,
+              "cuota_b": 2.17
             }
           ]
         }
       ],
       "candidata": {
         "casa": "apuesta_total",
-        "linea": 6.5,
-        "cuota_a": 2.18,
-        "cuota_b": 1.65,
-        "diferencia": 0.53,
-        "margen": 0.0648,
-        "prob_sin_margen_a": 0.4308,
+        "linea": 0.5,
+        "cuota_a": 1.66,
+        "cuota_b": 2.17,
+        "diferencia": 0.51,
+        "margen": 0.0632,
+        "prob_sin_margen_a": 0.5666,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.424,
-        "lado": "b",
+        "prob_a": 0.523,
+        "lado": "a",
         "explicacion": [
           {
             "factor": "minutos",
-            "impacto": -0.02
-          },
-          {
-            "factor": "promedio_jugador",
-            "impacto": -0.03
+            "impacto": 0.03
           },
           {
             "factor": "rival_concede",
-            "impacto": -0.03
+            "impacto": 0.01
+          },
+          {
+            "factor": "promedio_jugador",
+            "impacto": 0.01
           }
         ]
       },
       "red": null,
       "entrada_red": null,
-      "apuesta": {
-        "casa": "apuesta_total",
-        "linea": 6.5,
-        "lado": "b",
-        "cuota": 1.65,
-        "monto": 10,
-        "moneda": "PEN",
-        "registrada_en": "2026-10-07T19:20:00Z"
-      },
+      "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 4,
-        "lado_ganador": "b",
+        "valor_real": 5,
+        "lado_ganador": "a",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T04:00:00Z"
       }
@@ -2599,12 +2599,12 @@
       "inicio": "2026-10-08T01:00:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
       },
       "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
+        "id": "ejemplo:basquet-condores-demo",
+        "nombre": "Cóndores Demo"
       },
       "mercado": "basquet_puntos",
       "analizado_en": "2026-10-07T19:10:00Z",
@@ -2614,29 +2614,29 @@
           "extraido_en": "2026-10-07T19:05:00Z",
           "lineas": [
             {
-              "linea": 213.5,
-              "cuota_a": 1.63,
-              "cuota_b": 2.26
+              "linea": 219.5,
+              "cuota_a": 1.59,
+              "cuota_b": 2.34
             },
             {
-              "linea": 214.5,
-              "cuota_a": 1.76,
-              "cuota_b": 2.05
+              "linea": 220.5,
+              "cuota_a": 1.71,
+              "cuota_b": 2.12
             },
             {
-              "linea": 215.5,
-              "cuota_a": 1.89,
-              "cuota_b": 1.9
+              "linea": 221.5,
+              "cuota_a": 1.84,
+              "cuota_b": 1.96
             },
             {
-              "linea": 216.5,
-              "cuota_a": 2.07,
-              "cuota_b": 1.75
+              "linea": 222.5,
+              "cuota_a": 2.01,
+              "cuota_b": 1.8
             },
             {
-              "linea": 217.5,
-              "cuota_a": 2.04,
-              "cuota_b": 1.77
+              "linea": 223.5,
+              "cuota_a": 1.98,
+              "cuota_b": 1.82
             }
           ]
         },
@@ -2645,35 +2645,35 @@
           "extraido_en": "2026-10-07T19:05:00Z",
           "lineas": [
             {
-              "linea": 215.5,
-              "cuota_a": 1.91,
-              "cuota_b": 1.85
+              "linea": 221.5,
+              "cuota_a": 1.85,
+              "cuota_b": 1.91
             }
           ]
         }
       ],
       "candidata": {
         "casa": "betano",
-        "linea": 215.5,
-        "cuota_a": 1.89,
-        "cuota_b": 1.9,
-        "diferencia": 0.01,
-        "margen": 0.0554,
-        "prob_sin_margen_a": 0.5013,
-        "promedio_mercado_a": 0.492
+        "linea": 221.5,
+        "cuota_a": 1.84,
+        "cuota_b": 1.96,
+        "diferencia": 0.12,
+        "margen": 0.0537,
+        "prob_sin_margen_a": 0.5158,
+        "promedio_mercado_a": 0.508
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.513,
+        "prob_a": 0.528,
         "lado": "a",
         "explicacion": [
           {
             "factor": "ritmo_juego",
-            "impacto": 0.01
+            "impacto": 0.02
           },
           {
             "factor": "descanso",
-            "impacto": 0.02
+            "impacto": 0.03
           },
           {
             "factor": "defensa_rival",
@@ -2683,16 +2683,16 @@
       },
       "red": {
         "version": "ejemplo-red-basquet_puntos-1",
-        "prob_a": 0.523,
+        "prob_a": 0.538,
         "lado": "a"
       },
       "entrada_red": {
         "version": "ejemplo-variables-1",
         "valores": {
-          "linea": 215.5,
-          "cuota_a": 1.89,
-          "cuota_b": 1.9,
-          "esperado": 215.37,
+          "linea": 221.5,
+          "cuota_a": 1.84,
+          "cuota_b": 1.96,
+          "esperado": 221.86,
           "forma_local": -0.22,
           "forma_visitante": 0.98
         }
@@ -2700,8 +2700,8 @@
       "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 213,
-        "lado_ganador": "b",
+        "valor_real": 222,
+        "lado_ganador": "a",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T04:00:00Z"
       }
@@ -2717,12 +2717,12 @@
       "inicio": "2026-10-08T01:00:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
       },
       "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
+        "id": "ejemplo:basquet-condores-demo",
+        "nombre": "Cóndores Demo"
       },
       "mercado": "basquet_puntos_1t",
       "analizado_en": "2026-10-07T19:10:00Z",
@@ -2732,36 +2732,36 @@
           "extraido_en": "2026-10-07T19:05:00Z",
           "lineas": [
             {
-              "linea": 106.5,
-              "cuota_a": 1.71,
-              "cuota_b": 2.12
+              "linea": 109.5,
+              "cuota_a": 1.68,
+              "cuota_b": 2.17
             },
             {
-              "linea": 107.5,
-              "cuota_a": 1.79,
-              "cuota_b": 2.01
+              "linea": 110.5,
+              "cuota_a": 1.76,
+              "cuota_b": 2.06
             },
             {
-              "linea": 108.5,
-              "cuota_a": 2.15,
-              "cuota_b": 1.69
+              "linea": 111.5,
+              "cuota_a": 2.1,
+              "cuota_b": 1.73
             }
           ]
         }
       ],
       "candidata": {
         "casa": "betano",
-        "linea": 107.5,
-        "cuota_a": 1.79,
-        "cuota_b": 2.01,
-        "diferencia": 0.22,
-        "margen": 0.0562,
-        "prob_sin_margen_a": 0.5289,
+        "linea": 110.5,
+        "cuota_a": 1.76,
+        "cuota_b": 2.06,
+        "diferencia": 0.3,
+        "margen": 0.0536,
+        "prob_sin_margen_a": 0.5393,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.554,
+        "prob_a": 0.565,
         "lado": "a",
         "explicacion": [
           {
@@ -2784,7 +2784,7 @@
       "resultado": {
         "estado": "resuelto",
         "valor_real": 109,
-        "lado_ganador": "a",
+        "lado_ganador": "b",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T04:00:00Z"
       }
@@ -2800,8 +2800,8 @@
       "inicio": "2026-10-08T02:30:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-condores-demo",
-        "nombre": "Cóndores Demo"
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
       },
       "visitante": {
         "id": "ejemplo:basquet-toros-muestra",
@@ -2815,19 +2815,19 @@
           "extraido_en": "2026-10-07T20:35:00Z",
           "lineas": [
             {
-              "linea": -7.5,
-              "cuota_a": 2.11,
-              "cuota_b": 1.72
+              "linea": 0.5,
+              "cuota_a": 2.13,
+              "cuota_b": 1.71
             },
             {
-              "linea": -6.5,
-              "cuota_a": 2.05,
-              "cuota_b": 1.76
+              "linea": 1.5,
+              "cuota_a": 2.03,
+              "cuota_b": 1.78
             },
             {
-              "linea": -5.5,
-              "cuota_a": 1.79,
-              "cuota_b": 2.01
+              "linea": 2.5,
+              "cuota_a": 1.84,
+              "cuota_b": 1.96
             }
           ]
         },
@@ -2836,39 +2836,39 @@
           "extraido_en": "2026-10-07T20:35:00Z",
           "lineas": [
             {
-              "linea": -6.5,
-              "cuota_a": 1.91,
-              "cuota_b": 1.85
+              "linea": 1.5,
+              "cuota_a": 2.03,
+              "cuota_b": 1.75
             }
           ]
         }
       ],
       "candidata": {
         "casa": "betano",
-        "linea": -5.5,
-        "cuota_a": 1.79,
-        "cuota_b": 2.01,
-        "diferencia": 0.22,
-        "margen": 0.0562,
-        "prob_sin_margen_a": 0.5289,
+        "linea": 2.5,
+        "cuota_a": 1.84,
+        "cuota_b": 1.96,
+        "diferencia": 0.12,
+        "margen": 0.0537,
+        "prob_sin_margen_a": 0.5158,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.486,
-        "lado": "b",
+        "prob_a": 0.556,
+        "lado": "a",
         "explicacion": [
           {
             "factor": "descanso",
-            "impacto": -0.02
-          },
-          {
-            "factor": "ataque_local",
-            "impacto": 0
+            "impacto": 0.01
           },
           {
             "factor": "ritmo_juego",
-            "impacto": 0
+            "impacto": 0.01
+          },
+          {
+            "factor": "defensa_rival",
+            "impacto": -0.01
           }
         ]
       },
@@ -2877,7 +2877,7 @@
       "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": -16,
+        "valor_real": -5,
         "lado_ganador": "b",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T05:30:00Z"
@@ -2894,8 +2894,8 @@
       "inicio": "2026-10-08T02:30:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-condores-demo",
-        "nombre": "Cóndores Demo"
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
       },
       "visitante": {
         "id": "ejemplo:basquet-toros-muestra",
@@ -2909,41 +2909,41 @@
           "extraido_en": "2026-10-07T20:35:00Z",
           "lineas": [
             {
-              "linea": -4.5,
-              "cuota_a": 2.2,
-              "cuota_b": 1.66
+              "linea": -0.5,
+              "cuota_a": 2.17,
+              "cuota_b": 1.69
             },
             {
-              "linea": -3.5,
-              "cuota_a": 1.89,
-              "cuota_b": 1.91
+              "linea": 0.5,
+              "cuota_a": 1.94,
+              "cuota_b": 1.85
             },
             {
-              "linea": -2.5,
-              "cuota_a": 1.82,
-              "cuota_b": 1.97
+              "linea": 1.5,
+              "cuota_a": 1.79,
+              "cuota_b": 2.01
             }
           ]
         }
       ],
       "candidata": {
         "casa": "betano",
-        "linea": -3.5,
-        "cuota_a": 1.89,
-        "cuota_b": 1.91,
-        "diferencia": 0.02,
-        "margen": 0.0527,
-        "prob_sin_margen_a": 0.5026,
+        "linea": 0.5,
+        "cuota_a": 1.94,
+        "cuota_b": 1.85,
+        "diferencia": 0.09,
+        "margen": 0.056,
+        "prob_sin_margen_a": 0.4881,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.496,
-        "lado": "b",
+        "prob_a": 0.565,
+        "lado": "a",
         "explicacion": [
           {
             "factor": "descanso",
-            "impacto": 0
+            "impacto": 0.04
           },
           {
             "factor": "defensa_rival",
@@ -2951,7 +2951,7 @@
           },
           {
             "factor": "ataque_local",
-            "impacto": -0.01
+            "impacto": 0.03
           }
         ]
       },
@@ -2960,8 +2960,512 @@
       "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": -4,
+        "valor_real": -3,
         "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T05:30:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-021|basquet_jugador|ejemplo:jb-1|asistencias",
+      "partido_id": "ejemplo:bas-021",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "inicio": "2026-10-08T02:30:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-toros-muestra",
+        "nombre": "Toros Muestra"
+      },
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-1",
+        "nombre": "Santiago Castro",
+        "equipo": "local"
+      },
+      "estadistica_jugador": "asistencias",
+      "analizado_en": "2026-10-07T20:40:00Z",
+      "ofertas": [
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-07T20:35:00Z",
+          "lineas": [
+            {
+              "linea": 5.5,
+              "cuota_a": 2.41,
+              "cuota_b": 1.54
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "apuesta_total",
+        "linea": 5.5,
+        "cuota_a": 2.41,
+        "cuota_b": 1.54,
+        "diferencia": 0.87,
+        "margen": 0.0643,
+        "prob_sin_margen_a": 0.3899,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.411,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "promedio_jugador",
+            "impacto": -0.05
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": -0.02
+          },
+          {
+            "factor": "minutos",
+            "impacto": -0.04
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": {
+        "casa": "apuesta_total",
+        "linea": 5.5,
+        "lado": "b",
+        "cuota": 1.54,
+        "monto": 25,
+        "moneda": "PEN",
+        "registrada_en": "2026-10-07T20:50:00Z"
+      },
+      "resultado": {
+        "estado": "anulado",
+        "valor_real": null,
+        "lado_ganador": null,
+        "motivo": "El jugador no jugó",
+        "actualizado_en": "2026-10-08T05:30:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-021|basquet_jugador|ejemplo:jb-1|puntos",
+      "partido_id": "ejemplo:bas-021",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "inicio": "2026-10-08T02:30:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-toros-muestra",
+        "nombre": "Toros Muestra"
+      },
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-1",
+        "nombre": "Santiago Castro",
+        "equipo": "local"
+      },
+      "estadistica_jugador": "puntos",
+      "analizado_en": "2026-10-07T20:40:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-07T20:35:00Z",
+          "lineas": [
+            {
+              "linea": 14.5,
+              "cuota_a": 1.86,
+              "cuota_b": 1.93
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-07T20:35:00Z",
+          "lineas": [
+            {
+              "linea": 14.5,
+              "cuota_a": 1.81,
+              "cuota_b": 1.95
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 14.5,
+        "cuota_a": 1.86,
+        "cuota_b": 1.93,
+        "diferencia": 0.07,
+        "margen": 0.0558,
+        "prob_sin_margen_a": 0.5092,
+        "promedio_mercado_a": 0.5186
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.483,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "rival_concede",
+            "impacto": 0
+          },
+          {
+            "factor": "promedio_jugador",
+            "impacto": 0.01
+          },
+          {
+            "factor": "minutos",
+            "impacto": -0.02
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "anulado",
+        "valor_real": null,
+        "lado_ganador": null,
+        "motivo": "El jugador no jugó",
+        "actualizado_en": "2026-10-08T05:30:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-021|basquet_jugador|ejemplo:jb-1|puntos_rebotes_asistencias",
+      "partido_id": "ejemplo:bas-021",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "inicio": "2026-10-08T02:30:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-toros-muestra",
+        "nombre": "Toros Muestra"
+      },
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-1",
+        "nombre": "Santiago Castro",
+        "equipo": "local"
+      },
+      "estadistica_jugador": "puntos_rebotes_asistencias",
+      "analizado_en": "2026-10-07T20:40:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-07T20:35:00Z",
+          "lineas": [
+            {
+              "linea": 23.5,
+              "cuota_a": 1.93,
+              "cuota_b": 1.86
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 23.5,
+        "cuota_a": 1.93,
+        "cuota_b": 1.86,
+        "diferencia": 0.07,
+        "margen": 0.0558,
+        "prob_sin_margen_a": 0.4908,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.434,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "rival_concede",
+            "impacto": -0.04
+          },
+          {
+            "factor": "promedio_jugador",
+            "impacto": -0.02
+          },
+          {
+            "factor": "minutos",
+            "impacto": -0.02
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "anulado",
+        "valor_real": null,
+        "lado_ganador": null,
+        "motivo": "El jugador no jugó",
+        "actualizado_en": "2026-10-08T05:30:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-021|basquet_jugador|ejemplo:jb-2|puntos",
+      "partido_id": "ejemplo:bas-021",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "inicio": "2026-10-08T02:30:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-toros-muestra",
+        "nombre": "Toros Muestra"
+      },
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-2",
+        "nombre": "Sebastián Huamán",
+        "equipo": "local"
+      },
+      "estadistica_jugador": "puntos",
+      "analizado_en": "2026-10-07T20:40:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-07T20:35:00Z",
+          "lineas": [
+            {
+              "linea": 19.5,
+              "cuota_a": 2.16,
+              "cuota_b": 1.69
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-07T20:35:00Z",
+          "lineas": [
+            {
+              "linea": 19.5,
+              "cuota_a": 2.03,
+              "cuota_b": 1.75
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 19.5,
+        "cuota_a": 2.16,
+        "cuota_b": 1.69,
+        "diferencia": 0.47,
+        "margen": 0.0547,
+        "prob_sin_margen_a": 0.439,
+        "promedio_mercado_a": 0.463
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.578,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "promedio_jugador",
+            "impacto": 0.01
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": 0.01
+          },
+          {
+            "factor": "minutos",
+            "impacto": 0.03
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 24,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T05:30:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-021|basquet_jugador|ejemplo:jb-2|puntos_rebotes_asistencias",
+      "partido_id": "ejemplo:bas-021",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "inicio": "2026-10-08T02:30:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-toros-muestra",
+        "nombre": "Toros Muestra"
+      },
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-2",
+        "nombre": "Sebastián Huamán",
+        "equipo": "local"
+      },
+      "estadistica_jugador": "puntos_rebotes_asistencias",
+      "analizado_en": "2026-10-07T20:40:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-07T20:35:00Z",
+          "lineas": [
+            {
+              "linea": 25.5,
+              "cuota_a": 1.84,
+              "cuota_b": 1.96
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 25.5,
+        "cuota_a": 1.84,
+        "cuota_b": 1.96,
+        "diferencia": 0.12,
+        "margen": 0.0537,
+        "prob_sin_margen_a": 0.5158,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.54,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "minutos",
+            "impacto": 0.02
+          },
+          {
+            "factor": "rival_concede",
+            "impacto": 0.02
+          },
+          {
+            "factor": "promedio_jugador",
+            "impacto": 0.01
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 33,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T05:30:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-021|basquet_jugador|ejemplo:jb-2|triples",
+      "partido_id": "ejemplo:bas-021",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet",
+        "nombre": "Liga de Básquet de Ejemplo"
+      },
+      "inicio": "2026-10-08T02:30:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-toros-muestra",
+        "nombre": "Toros Muestra"
+      },
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-2",
+        "nombre": "Sebastián Huamán",
+        "equipo": "local"
+      },
+      "estadistica_jugador": "triples",
+      "analizado_en": "2026-10-07T20:40:00Z",
+      "ofertas": [
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-07T20:35:00Z",
+          "lineas": [
+            {
+              "linea": 2.5,
+              "cuota_a": 1.83,
+              "cuota_b": 1.93
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "apuesta_total",
+        "linea": 2.5,
+        "cuota_a": 1.83,
+        "cuota_b": 1.93,
+        "diferencia": 0.1,
+        "margen": 0.0646,
+        "prob_sin_margen_a": 0.5133,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.546,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "rival_concede",
+            "impacto": 0.01
+          },
+          {
+            "factor": "promedio_jugador",
+            "impacto": 0.03
+          },
+          {
+            "factor": "minutos",
+            "impacto": 0.02
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 3,
+        "lado_ganador": "a",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T05:30:00Z"
       }
@@ -2977,8 +3481,8 @@
       "inicio": "2026-10-08T02:30:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-condores-demo",
-        "nombre": "Cóndores Demo"
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
       },
       "visitante": {
         "id": "ejemplo:basquet-toros-muestra",
@@ -2999,8 +3503,8 @@
           "lineas": [
             {
               "linea": 22.5,
-              "cuota_a": 1.88,
-              "cuota_b": 1.91
+              "cuota_a": 1.95,
+              "cuota_b": 1.84
             }
           ]
         },
@@ -3010,8 +3514,8 @@
           "lineas": [
             {
               "linea": 22.5,
-              "cuota_a": 1.87,
-              "cuota_b": 1.88
+              "cuota_a": 1.83,
+              "cuota_b": 1.93
             }
           ]
         }
@@ -3019,29 +3523,29 @@
       "candidata": {
         "casa": "betano",
         "linea": 22.5,
-        "cuota_a": 1.88,
-        "cuota_b": 1.91,
-        "diferencia": 0.03,
-        "margen": 0.0555,
-        "prob_sin_margen_a": 0.504,
-        "promedio_mercado_a": 0.5013
+        "cuota_a": 1.95,
+        "cuota_b": 1.84,
+        "diferencia": 0.11,
+        "margen": 0.0563,
+        "prob_sin_margen_a": 0.4855,
+        "promedio_mercado_a": 0.5133
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.449,
+        "prob_a": 0.45,
         "lado": "b",
         "explicacion": [
-          {
-            "factor": "promedio_jugador",
-            "impacto": -0.01
-          },
           {
             "factor": "minutos",
             "impacto": 0
           },
           {
             "factor": "rival_concede",
-            "impacto": 0.01
+            "impacto": -0.02
+          },
+          {
+            "factor": "promedio_jugador",
+            "impacto": -0.03
           }
         ]
       },
@@ -3067,8 +3571,8 @@
       "inicio": "2026-10-08T02:30:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-condores-demo",
-        "nombre": "Cóndores Demo"
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
       },
       "visitante": {
         "id": "ejemplo:basquet-toros-muestra",
@@ -3089,8 +3593,8 @@
           "lineas": [
             {
               "linea": 30.5,
-              "cuota_a": 1.93,
-              "cuota_b": 1.86
+              "cuota_a": 1.74,
+              "cuota_b": 2.08
             }
           ]
         }
@@ -3098,29 +3602,29 @@
       "candidata": {
         "casa": "betano",
         "linea": 30.5,
-        "cuota_a": 1.93,
-        "cuota_b": 1.86,
-        "diferencia": 0.07,
-        "margen": 0.0558,
-        "prob_sin_margen_a": 0.4908,
+        "cuota_a": 1.74,
+        "cuota_b": 2.08,
+        "diferencia": 0.34,
+        "margen": 0.0555,
+        "prob_sin_margen_a": 0.5445,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.469,
+        "prob_a": 0.465,
         "lado": "b",
         "explicacion": [
           {
-            "factor": "minutos",
-            "impacto": -0.01
-          },
-          {
             "factor": "rival_concede",
-            "impacto": 0
+            "impacto": -0.03
           },
           {
             "factor": "promedio_jugador",
-            "impacto": 0.01
+            "impacto": -0.01
+          },
+          {
+            "factor": "minutos",
+            "impacto": -0.01
           }
         ]
       },
@@ -3129,8 +3633,8 @@
       "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 31,
-        "lado_ganador": "a",
+        "valor_real": 29,
+        "lado_ganador": "b",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T05:30:00Z"
       }
@@ -3146,8 +3650,8 @@
       "inicio": "2026-10-08T02:30:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-condores-demo",
-        "nombre": "Cóndores Demo"
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
       },
       "visitante": {
         "id": "ejemplo:basquet-toros-muestra",
@@ -3168,8 +3672,8 @@
           "lineas": [
             {
               "linea": 4.5,
-              "cuota_a": 1.84,
-              "cuota_b": 1.92
+              "cuota_a": 1.68,
+              "cuota_b": 2.13
             }
           ]
         }
@@ -3177,28 +3681,28 @@
       "candidata": {
         "casa": "apuesta_total",
         "linea": 4.5,
-        "cuota_a": 1.84,
-        "cuota_b": 1.92,
-        "diferencia": 0.08,
-        "margen": 0.0643,
-        "prob_sin_margen_a": 0.5106,
+        "cuota_a": 1.68,
+        "cuota_b": 2.13,
+        "diferencia": 0.45,
+        "margen": 0.0647,
+        "prob_sin_margen_a": 0.5591,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.516,
+        "prob_a": 0.533,
         "lado": "a",
         "explicacion": [
           {
             "factor": "promedio_jugador",
-            "impacto": 0
-          },
-          {
-            "factor": "minutos",
-            "impacto": 0.02
+            "impacto": 0.03
           },
           {
             "factor": "rival_concede",
+            "impacto": 0.03
+          },
+          {
+            "factor": "minutos",
             "impacto": 0
           }
         ]
@@ -3208,8 +3712,8 @@
       "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 6,
-        "lado_ganador": "a",
+        "valor_real": 4,
+        "lado_ganador": "b",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T05:30:00Z"
       }
@@ -3225,8 +3729,8 @@
       "inicio": "2026-10-08T02:30:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-condores-demo",
-        "nombre": "Cóndores Demo"
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
       },
       "visitante": {
         "id": "ejemplo:basquet-toros-muestra",
@@ -3247,8 +3751,8 @@
           "lineas": [
             {
               "linea": 4.5,
-              "cuota_a": 2.09,
-              "cuota_b": 1.71
+              "cuota_a": 2.07,
+              "cuota_b": 1.72
             }
           ]
         }
@@ -3256,21 +3760,21 @@
       "candidata": {
         "casa": "apuesta_total",
         "linea": 4.5,
-        "cuota_a": 2.09,
-        "cuota_b": 1.71,
-        "diferencia": 0.38,
-        "margen": 0.0633,
-        "prob_sin_margen_a": 0.45,
+        "cuota_a": 2.07,
+        "cuota_b": 1.72,
+        "diferencia": 0.35,
+        "margen": 0.0645,
+        "prob_sin_margen_a": 0.4538,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.39,
+        "prob_a": 0.468,
         "lado": "b",
         "explicacion": [
           {
             "factor": "rival_concede",
-            "impacto": -0.04
+            "impacto": -0.02
           },
           {
             "factor": "promedio_jugador",
@@ -3278,21 +3782,13 @@
           },
           {
             "factor": "minutos",
-            "impacto": -0.06
+            "impacto": -0.01
           }
         ]
       },
       "red": null,
       "entrada_red": null,
-      "apuesta": {
-        "casa": "apuesta_total",
-        "linea": 4.5,
-        "lado": "b",
-        "cuota": 1.71,
-        "monto": 15,
-        "moneda": "PEN",
-        "registrada_en": "2026-10-07T20:50:00Z"
-      },
+      "apuesta": null,
       "resultado": {
         "estado": "anulado",
         "valor_real": null,
@@ -3312,8 +3808,8 @@
       "inicio": "2026-10-08T02:30:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-condores-demo",
-        "nombre": "Cóndores Demo"
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
       },
       "visitante": {
         "id": "ejemplo:basquet-toros-muestra",
@@ -3334,8 +3830,8 @@
           "lineas": [
             {
               "linea": 14.5,
-              "cuota_a": 1.81,
-              "cuota_b": 1.99
+              "cuota_a": 1.96,
+              "cuota_b": 1.84
             }
           ]
         },
@@ -3345,8 +3841,8 @@
           "lineas": [
             {
               "linea": 14.5,
-              "cuota_a": 1.96,
-              "cuota_b": 1.81
+              "cuota_a": 1.92,
+              "cuota_b": 1.83
             }
           ]
         }
@@ -3354,16 +3850,16 @@
       "candidata": {
         "casa": "betano",
         "linea": 14.5,
-        "cuota_a": 1.81,
-        "cuota_b": 1.99,
-        "diferencia": 0.18,
-        "margen": 0.055,
-        "prob_sin_margen_a": 0.5237,
-        "promedio_mercado_a": 0.4801
+        "cuota_a": 1.96,
+        "cuota_b": 1.84,
+        "diferencia": 0.12,
+        "margen": 0.0537,
+        "prob_sin_margen_a": 0.4842,
+        "promedio_mercado_a": 0.488
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.506,
+        "prob_a": 0.505,
         "lado": "a",
         "explicacion": [
           {
@@ -3371,12 +3867,12 @@
             "impacto": 0
           },
           {
-            "factor": "minutos",
-            "impacto": 0.01
+            "factor": "promedio_jugador",
+            "impacto": -0.01
           },
           {
-            "factor": "promedio_jugador",
-            "impacto": 0
+            "factor": "minutos",
+            "impacto": -0.01
           }
         ]
       },
@@ -3402,8 +3898,8 @@
       "inicio": "2026-10-08T02:30:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-condores-demo",
-        "nombre": "Cóndores Demo"
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
       },
       "visitante": {
         "id": "ejemplo:basquet-toros-muestra",
@@ -3424,8 +3920,8 @@
           "lineas": [
             {
               "linea": 28.5,
-              "cuota_a": 1.91,
-              "cuota_b": 1.88
+              "cuota_a": 1.71,
+              "cuota_b": 2.13
             }
           ]
         }
@@ -3433,512 +3929,16 @@
       "candidata": {
         "casa": "betano",
         "linea": 28.5,
-        "cuota_a": 1.91,
-        "cuota_b": 1.88,
-        "diferencia": 0.03,
-        "margen": 0.0555,
-        "prob_sin_margen_a": 0.496,
+        "cuota_a": 1.71,
+        "cuota_b": 2.13,
+        "diferencia": 0.42,
+        "margen": 0.0543,
+        "prob_sin_margen_a": 0.5547,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.495,
-        "lado": "b",
-        "explicacion": [
-          {
-            "factor": "rival_concede",
-            "impacto": -0.01
-          },
-          {
-            "factor": "minutos",
-            "impacto": 0
-          },
-          {
-            "factor": "promedio_jugador",
-            "impacto": 0
-          }
-        ]
-      },
-      "red": null,
-      "entrada_red": null,
-      "apuesta": null,
-      "resultado": {
-        "estado": "anulado",
-        "valor_real": null,
-        "lado_ganador": null,
-        "motivo": "El jugador no jugó",
-        "actualizado_en": "2026-10-08T05:30:00Z"
-      }
-    },
-    {
-      "id": "ejemplo:bas-021|basquet_jugador|ejemplo:jb-7|asistencias",
-      "partido_id": "ejemplo:bas-021",
-      "deporte": "basquet",
-      "liga": {
-        "id": "ejemplo:liga-basquet",
-        "nombre": "Liga de Básquet de Ejemplo"
-      },
-      "inicio": "2026-10-08T02:30:00Z",
-      "fecha_local": "2026-10-07",
-      "local": {
-        "id": "ejemplo:basquet-condores-demo",
-        "nombre": "Cóndores Demo"
-      },
-      "visitante": {
-        "id": "ejemplo:basquet-toros-muestra",
-        "nombre": "Toros Muestra"
-      },
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-7",
-        "nombre": "Joaquín Salazar",
-        "equipo": "local"
-      },
-      "estadistica_jugador": "asistencias",
-      "analizado_en": "2026-10-07T20:40:00Z",
-      "ofertas": [
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-07T20:35:00Z",
-          "lineas": [
-            {
-              "linea": 2.5,
-              "cuota_a": 2.99,
-              "cuota_b": 1.37
-            }
-          ]
-        }
-      ],
-      "candidata": {
-        "casa": "apuesta_total",
-        "linea": 2.5,
-        "cuota_a": 2.99,
-        "cuota_b": 1.37,
-        "diferencia": 1.62,
-        "margen": 0.0644,
-        "prob_sin_margen_a": 0.3142,
-        "promedio_mercado_a": null
-      },
-      "estadistico": {
-        "version": "ejemplo-estadistico-1",
-        "prob_a": 0.381,
-        "lado": "b",
-        "explicacion": [
-          {
-            "factor": "minutos",
-            "impacto": -0.05
-          },
-          {
-            "factor": "rival_concede",
-            "impacto": -0.03
-          },
-          {
-            "factor": "promedio_jugador",
-            "impacto": -0.01
-          }
-        ]
-      },
-      "red": null,
-      "entrada_red": null,
-      "apuesta": null,
-      "resultado": {
-        "estado": "resuelto",
-        "valor_real": 0,
-        "lado_ganador": "b",
-        "fuente": "sofascore",
-        "actualizado_en": "2026-10-08T05:30:00Z"
-      }
-    },
-    {
-      "id": "ejemplo:bas-021|basquet_jugador|ejemplo:jb-7|puntos",
-      "partido_id": "ejemplo:bas-021",
-      "deporte": "basquet",
-      "liga": {
-        "id": "ejemplo:liga-basquet",
-        "nombre": "Liga de Básquet de Ejemplo"
-      },
-      "inicio": "2026-10-08T02:30:00Z",
-      "fecha_local": "2026-10-07",
-      "local": {
-        "id": "ejemplo:basquet-condores-demo",
-        "nombre": "Cóndores Demo"
-      },
-      "visitante": {
-        "id": "ejemplo:basquet-toros-muestra",
-        "nombre": "Toros Muestra"
-      },
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-7",
-        "nombre": "Joaquín Salazar",
-        "equipo": "local"
-      },
-      "estadistica_jugador": "puntos",
-      "analizado_en": "2026-10-07T20:40:00Z",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-07T20:35:00Z",
-          "lineas": [
-            {
-              "linea": 18.5,
-              "cuota_a": 1.82,
-              "cuota_b": 1.98
-            }
-          ]
-        },
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-07T20:35:00Z",
-          "lineas": [
-            {
-              "linea": 18.5,
-              "cuota_a": 1.72,
-              "cuota_b": 2.07
-            }
-          ]
-        }
-      ],
-      "candidata": {
-        "casa": "betano",
-        "linea": 18.5,
-        "cuota_a": 1.82,
-        "cuota_b": 1.98,
-        "diferencia": 0.16,
-        "margen": 0.0545,
-        "prob_sin_margen_a": 0.5211,
-        "promedio_mercado_a": 0.5462
-      },
-      "estadistico": {
-        "version": "ejemplo-estadistico-1",
-        "prob_a": 0.538,
-        "lado": "a",
-        "explicacion": [
-          {
-            "factor": "promedio_jugador",
-            "impacto": 0
-          },
-          {
-            "factor": "rival_concede",
-            "impacto": 0.02
-          },
-          {
-            "factor": "minutos",
-            "impacto": 0
-          }
-        ]
-      },
-      "red": null,
-      "entrada_red": null,
-      "apuesta": null,
-      "resultado": {
-        "estado": "resuelto",
-        "valor_real": 15,
-        "lado_ganador": "b",
-        "fuente": "sofascore",
-        "actualizado_en": "2026-10-08T05:30:00Z"
-      }
-    },
-    {
-      "id": "ejemplo:bas-021|basquet_jugador|ejemplo:jb-7|puntos_rebotes_asistencias",
-      "partido_id": "ejemplo:bas-021",
-      "deporte": "basquet",
-      "liga": {
-        "id": "ejemplo:liga-basquet",
-        "nombre": "Liga de Básquet de Ejemplo"
-      },
-      "inicio": "2026-10-08T02:30:00Z",
-      "fecha_local": "2026-10-07",
-      "local": {
-        "id": "ejemplo:basquet-condores-demo",
-        "nombre": "Cóndores Demo"
-      },
-      "visitante": {
-        "id": "ejemplo:basquet-toros-muestra",
-        "nombre": "Toros Muestra"
-      },
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-7",
-        "nombre": "Joaquín Salazar",
-        "equipo": "local"
-      },
-      "estadistica_jugador": "puntos_rebotes_asistencias",
-      "analizado_en": "2026-10-07T20:40:00Z",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-07T20:35:00Z",
-          "lineas": [
-            {
-              "linea": 27.5,
-              "cuota_a": 1.81,
-              "cuota_b": 2
-            }
-          ]
-        }
-      ],
-      "candidata": {
-        "casa": "betano",
-        "linea": 27.5,
-        "cuota_a": 1.81,
-        "cuota_b": 2,
-        "diferencia": 0.19,
-        "margen": 0.0525,
-        "prob_sin_margen_a": 0.5249,
-        "promedio_mercado_a": null
-      },
-      "estadistico": {
-        "version": "ejemplo-estadistico-1",
-        "prob_a": 0.505,
-        "lado": "a",
-        "explicacion": [
-          {
-            "factor": "rival_concede",
-            "impacto": -0.01
-          },
-          {
-            "factor": "minutos",
-            "impacto": 0.01
-          },
-          {
-            "factor": "promedio_jugador",
-            "impacto": 0.01
-          }
-        ]
-      },
-      "red": null,
-      "entrada_red": null,
-      "apuesta": null,
-      "resultado": {
-        "estado": "resuelto",
-        "valor_real": 17,
-        "lado_ganador": "b",
-        "fuente": "sofascore",
-        "actualizado_en": "2026-10-08T05:30:00Z"
-      }
-    },
-    {
-      "id": "ejemplo:bas-021|basquet_jugador|ejemplo:jb-8|puntos",
-      "partido_id": "ejemplo:bas-021",
-      "deporte": "basquet",
-      "liga": {
-        "id": "ejemplo:liga-basquet",
-        "nombre": "Liga de Básquet de Ejemplo"
-      },
-      "inicio": "2026-10-08T02:30:00Z",
-      "fecha_local": "2026-10-07",
-      "local": {
-        "id": "ejemplo:basquet-condores-demo",
-        "nombre": "Cóndores Demo"
-      },
-      "visitante": {
-        "id": "ejemplo:basquet-toros-muestra",
-        "nombre": "Toros Muestra"
-      },
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-8",
-        "nombre": "Emiliano Vargas",
-        "equipo": "local"
-      },
-      "estadistica_jugador": "puntos",
-      "analizado_en": "2026-10-07T20:40:00Z",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-07T20:35:00Z",
-          "lineas": [
-            {
-              "linea": 14.5,
-              "cuota_a": 2.05,
-              "cuota_b": 1.76
-            }
-          ]
-        },
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-07T20:35:00Z",
-          "lineas": [
-            {
-              "linea": 14.5,
-              "cuota_a": 1.88,
-              "cuota_b": 1.87
-            }
-          ]
-        }
-      ],
-      "candidata": {
-        "casa": "betano",
-        "linea": 14.5,
-        "cuota_a": 2.05,
-        "cuota_b": 1.76,
-        "diferencia": 0.29,
-        "margen": 0.056,
-        "prob_sin_margen_a": 0.4619,
-        "promedio_mercado_a": 0.4987
-      },
-      "estadistico": {
-        "version": "ejemplo-estadistico-1",
-        "prob_a": 0.393,
-        "lado": "b",
-        "explicacion": [
-          {
-            "factor": "rival_concede",
-            "impacto": -0.06
-          },
-          {
-            "factor": "minutos",
-            "impacto": -0.03
-          },
-          {
-            "factor": "promedio_jugador",
-            "impacto": -0.04
-          }
-        ]
-      },
-      "red": null,
-      "entrada_red": null,
-      "apuesta": null,
-      "resultado": {
-        "estado": "resuelto",
-        "valor_real": 9,
-        "lado_ganador": "b",
-        "fuente": "sofascore",
-        "actualizado_en": "2026-10-08T05:30:00Z"
-      }
-    },
-    {
-      "id": "ejemplo:bas-021|basquet_jugador|ejemplo:jb-8|puntos_rebotes_asistencias",
-      "partido_id": "ejemplo:bas-021",
-      "deporte": "basquet",
-      "liga": {
-        "id": "ejemplo:liga-basquet",
-        "nombre": "Liga de Básquet de Ejemplo"
-      },
-      "inicio": "2026-10-08T02:30:00Z",
-      "fecha_local": "2026-10-07",
-      "local": {
-        "id": "ejemplo:basquet-condores-demo",
-        "nombre": "Cóndores Demo"
-      },
-      "visitante": {
-        "id": "ejemplo:basquet-toros-muestra",
-        "nombre": "Toros Muestra"
-      },
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-8",
-        "nombre": "Emiliano Vargas",
-        "equipo": "local"
-      },
-      "estadistica_jugador": "puntos_rebotes_asistencias",
-      "analizado_en": "2026-10-07T20:40:00Z",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-07T20:35:00Z",
-          "lineas": [
-            {
-              "linea": 25.5,
-              "cuota_a": 1.85,
-              "cuota_b": 1.94
-            }
-          ]
-        }
-      ],
-      "candidata": {
-        "casa": "betano",
-        "linea": 25.5,
-        "cuota_a": 1.85,
-        "cuota_b": 1.94,
-        "diferencia": 0.09,
-        "margen": 0.056,
-        "prob_sin_margen_a": 0.5119,
-        "promedio_mercado_a": null
-      },
-      "estadistico": {
-        "version": "ejemplo-estadistico-1",
-        "prob_a": 0.501,
-        "lado": "a",
-        "explicacion": [
-          {
-            "factor": "promedio_jugador",
-            "impacto": 0
-          },
-          {
-            "factor": "minutos",
-            "impacto": 0
-          },
-          {
-            "factor": "rival_concede",
-            "impacto": 0.01
-          }
-        ]
-      },
-      "red": null,
-      "entrada_red": null,
-      "apuesta": null,
-      "resultado": {
-        "estado": "resuelto",
-        "valor_real": 17,
-        "lado_ganador": "b",
-        "fuente": "sofascore",
-        "actualizado_en": "2026-10-08T05:30:00Z"
-      }
-    },
-    {
-      "id": "ejemplo:bas-021|basquet_jugador|ejemplo:jb-8|triples",
-      "partido_id": "ejemplo:bas-021",
-      "deporte": "basquet",
-      "liga": {
-        "id": "ejemplo:liga-basquet",
-        "nombre": "Liga de Básquet de Ejemplo"
-      },
-      "inicio": "2026-10-08T02:30:00Z",
-      "fecha_local": "2026-10-07",
-      "local": {
-        "id": "ejemplo:basquet-condores-demo",
-        "nombre": "Cóndores Demo"
-      },
-      "visitante": {
-        "id": "ejemplo:basquet-toros-muestra",
-        "nombre": "Toros Muestra"
-      },
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-8",
-        "nombre": "Emiliano Vargas",
-        "equipo": "local"
-      },
-      "estadistica_jugador": "triples",
-      "analizado_en": "2026-10-07T20:40:00Z",
-      "ofertas": [
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-07T20:35:00Z",
-          "lineas": [
-            {
-              "linea": 0.5,
-              "cuota_a": 1.62,
-              "cuota_b": 2.22
-            }
-          ]
-        }
-      ],
-      "candidata": {
-        "casa": "apuesta_total",
-        "linea": 0.5,
-        "cuota_a": 1.62,
-        "cuota_b": 2.22,
-        "diferencia": 0.6,
-        "margen": 0.0677,
-        "prob_sin_margen_a": 0.5781,
-        "promedio_mercado_a": null
-      },
-      "estadistico": {
-        "version": "ejemplo-estadistico-1",
-        "prob_a": 0.616,
+        "prob_a": 0.568,
         "lado": "a",
         "explicacion": [
           {
@@ -3946,23 +3946,31 @@
             "impacto": 0.04
           },
           {
-            "factor": "minutos",
-            "impacto": 0.05
+            "factor": "promedio_jugador",
+            "impacto": 0.01
           },
           {
-            "factor": "promedio_jugador",
-            "impacto": 0.03
+            "factor": "minutos",
+            "impacto": 0.01
           }
         ]
       },
       "red": null,
       "entrada_red": null,
-      "apuesta": null,
+      "apuesta": {
+        "casa": "betano",
+        "linea": 28.5,
+        "lado": "a",
+        "cuota": 1.71,
+        "monto": 15,
+        "moneda": "PEN",
+        "registrada_en": "2026-10-07T20:50:00Z"
+      },
       "resultado": {
-        "estado": "resuelto",
-        "valor_real": 0,
-        "lado_ganador": "b",
-        "fuente": "sofascore",
+        "estado": "anulado",
+        "valor_real": null,
+        "lado_ganador": null,
+        "motivo": "El jugador no jugó",
         "actualizado_en": "2026-10-08T05:30:00Z"
       }
     },
@@ -3977,8 +3985,8 @@
       "inicio": "2026-10-08T02:30:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-condores-demo",
-        "nombre": "Cóndores Demo"
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
       },
       "visitante": {
         "id": "ejemplo:basquet-toros-muestra",
@@ -3992,29 +4000,29 @@
           "extraido_en": "2026-10-07T20:35:00Z",
           "lineas": [
             {
+              "linea": 214.5,
+              "cuota_a": 1.69,
+              "cuota_b": 2.15
+            },
+            {
+              "linea": 215.5,
+              "cuota_a": 1.7,
+              "cuota_b": 2.14
+            },
+            {
               "linea": 216.5,
-              "cuota_a": 1.77,
-              "cuota_b": 2.04
+              "cuota_a": 1.95,
+              "cuota_b": 1.84
             },
             {
               "linea": 217.5,
-              "cuota_a": 1.8,
-              "cuota_b": 2
+              "cuota_a": 1.99,
+              "cuota_b": 1.81
             },
             {
               "linea": 218.5,
-              "cuota_a": 2,
-              "cuota_b": 1.8
-            },
-            {
-              "linea": 219.5,
-              "cuota_a": 2.06,
-              "cuota_b": 1.75
-            },
-            {
-              "linea": 220.5,
-              "cuota_a": 2.27,
-              "cuota_b": 1.63
+              "cuota_a": 2.23,
+              "cuota_b": 1.65
             }
           ]
         },
@@ -4023,62 +4031,62 @@
           "extraido_en": "2026-10-07T20:35:00Z",
           "lineas": [
             {
-              "linea": 218.5,
-              "cuota_a": 1.85,
-              "cuota_b": 1.9
+              "linea": 216.5,
+              "cuota_a": 1.87,
+              "cuota_b": 1.89
             }
           ]
         }
       ],
       "candidata": {
         "casa": "betano",
-        "linea": 217.5,
-        "cuota_a": 1.8,
-        "cuota_b": 2,
-        "diferencia": 0.2,
-        "margen": 0.0556,
-        "prob_sin_margen_a": 0.5263,
-        "promedio_mercado_a": null
+        "linea": 216.5,
+        "cuota_a": 1.95,
+        "cuota_b": 1.84,
+        "diferencia": 0.11,
+        "margen": 0.0563,
+        "prob_sin_margen_a": 0.4855,
+        "promedio_mercado_a": 0.5027
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.538,
-        "lado": "a",
+        "prob_a": 0.456,
+        "lado": "b",
         "explicacion": [
           {
-            "factor": "defensa_rival",
-            "impacto": 0
-          },
-          {
-            "factor": "ataque_local",
-            "impacto": 0.02
-          },
-          {
             "factor": "descanso",
+            "impacto": -0.01
+          },
+          {
+            "factor": "ritmo_juego",
             "impacto": 0
+          },
+          {
+            "factor": "defensa_rival",
+            "impacto": -0.02
           }
         ]
       },
       "red": {
         "version": "ejemplo-red-basquet_puntos-1",
-        "prob_a": 0.499,
+        "prob_a": 0.472,
         "lado": "b"
       },
       "entrada_red": {
         "version": "ejemplo-variables-1",
         "valores": {
-          "linea": 217.5,
-          "cuota_a": 1.8,
-          "cuota_b": 2,
-          "esperado": 218.28,
-          "forma_local": 0.24,
-          "forma_visitante": 0.16
+          "linea": 216.5,
+          "cuota_a": 1.95,
+          "cuota_b": 1.84,
+          "esperado": 216.67,
+          "forma_local": -0.26,
+          "forma_visitante": 0.28
         }
       },
       "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 210,
+        "valor_real": 211,
         "lado_ganador": "b",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T05:30:00Z"
@@ -4095,8 +4103,8 @@
       "inicio": "2026-10-08T02:30:00Z",
       "fecha_local": "2026-10-07",
       "local": {
-        "id": "ejemplo:basquet-condores-demo",
-        "nombre": "Cóndores Demo"
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
       },
       "visitante": {
         "id": "ejemplo:basquet-toros-muestra",
@@ -4110,19 +4118,19 @@
           "extraido_en": "2026-10-07T20:35:00Z",
           "lineas": [
             {
+              "linea": 107.5,
+              "cuota_a": 1.78,
+              "cuota_b": 2.03
+            },
+            {
               "linea": 108.5,
-              "cuota_a": 1.77,
-              "cuota_b": 2.05
+              "cuota_a": 1.9,
+              "cuota_b": 1.89
             },
             {
               "linea": 109.5,
               "cuota_a": 2.09,
               "cuota_b": 1.73
-            },
-            {
-              "linea": 110.5,
-              "cuota_a": 2.17,
-              "cuota_b": 1.68
             }
           ]
         }
@@ -4130,29 +4138,29 @@
       "candidata": {
         "casa": "betano",
         "linea": 108.5,
-        "cuota_a": 1.77,
-        "cuota_b": 2.05,
-        "diferencia": 0.28,
-        "margen": 0.0528,
-        "prob_sin_margen_a": 0.5366,
+        "cuota_a": 1.9,
+        "cuota_b": 1.89,
+        "diferencia": 0.01,
+        "margen": 0.0554,
+        "prob_sin_margen_a": 0.4987,
         "promedio_mercado_a": null
       },
       "estadistico": {
         "version": "ejemplo-estadistico-1",
-        "prob_a": 0.616,
+        "prob_a": 0.531,
         "lado": "a",
         "explicacion": [
           {
-            "factor": "descanso",
-            "impacto": 0.04
-          },
-          {
-            "factor": "defensa_rival",
-            "impacto": 0.05
-          },
-          {
             "factor": "ataque_local",
-            "impacto": 0.03
+            "impacto": 0
+          },
+          {
+            "factor": "ritmo_juego",
+            "impacto": 0
+          },
+          {
+            "factor": "descanso",
+            "impacto": 0.02
           }
         ]
       },
@@ -4161,8 +4169,8 @@
       "apuesta": null,
       "resultado": {
         "estado": "resuelto",
-        "valor_real": 102,
-        "lado_ganador": "b",
+        "valor_real": 109,
+        "lado_ganador": "a",
         "fuente": "sofascore",
         "actualizado_en": "2026-10-08T05:30:00Z"
       }

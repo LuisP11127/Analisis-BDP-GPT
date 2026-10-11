@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Análisis BDP: diagnóstico</title>
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="diagnostico.css">
+  <script type="module" src="diagnostico.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Diagnóstico de la extensión</h1>
+    <p id="version" class="apagado">Leyendo el estado de la extensión…</p>
+    <p>Prueba si la extensión puede leer cada sitio. Si no hay una pestaña del sitio abierta, se abre una en
+      segundo plano y se cierra sola después de un minuto sin uso.</p>
+    <p class="acciones">
+      <button id="probar" type="button" class="principal">Probar</button>
+      <button id="copiar" type="button" disabled>Copiar reporte</button>
+    </p>
+    <ul id="resultados" class="resultados"></ul>
+    <p id="copiado" class="apagado" role="status"></p>
+  </main>
+</body>
+</html>

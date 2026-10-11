@@ -199,12 +199,12 @@
       "inicio": "2026-10-11T18:05:00Z",
       "fecha_local": "2026-10-11",
       "local": {
-        "id": "ejemplo:beisbol-piratas-ejemplo",
-        "nombre": "Piratas Ejemplo"
+        "id": "ejemplo:beisbol-caribes-ficticio",
+        "nombre": "Caribes Ficticio"
       },
       "visitante": {
-        "id": "ejemplo:beisbol-leones-muestra",
-        "nombre": "Leones Muestra"
+        "id": "ejemplo:beisbol-cardenales-simulado",
+        "nombre": "Cardenales Simulado"
       },
       "estado": "programado",
       "ids_externos": {
@@ -218,58 +218,58 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 2,
-            "partidos_jugados": 9,
-            "ganados": 6,
-            "perdidos": 3
+            "posicion": 4,
+            "partidos_jugados": 10,
+            "ganados": 5,
+            "perdidos": 5
           },
           "visitante": {
-            "posicion": 1,
-            "partidos_jugados": 10,
-            "ganados": 7,
-            "perdidos": 3
+            "posicion": 2,
+            "partidos_jugados": 9,
+            "ganados": 5,
+            "perdidos": 4
           }
         },
         "abridores": {
           "local": {
             "jugador": {
-              "id": "ejemplo:lanzador-piratas-ejemplo-2",
-              "nombre": "Gabriel Castro"
+              "id": "ejemplo:lanzador-caribes-ficticio-2",
+              "nombre": "Santiago Castro"
             },
-            "mano": "zurda",
+            "mano": "derecha",
             "estadisticas": {
-              "era": 3.81,
-              "whip": 1.1,
-              "ponches_por_9": 9.2
+              "era": 4.85,
+              "whip": 1.32,
+              "ponches_por_9": 7.7
             }
           },
           "visitante": {
             "jugador": {
-              "id": "ejemplo:lanzador-leones-muestra-2",
-              "nombre": "Joaquín Silva"
+              "id": "ejemplo:lanzador-cardenales-simulado-2",
+              "nombre": "Diego Silva"
             },
             "mano": "derecha",
             "estadisticas": {
-              "era": 4.2,
-              "whip": 1.2,
-              "ponches_por_9": 9
+              "era": 3.24,
+              "whip": 1.16,
+              "ponches_por_9": 9.8
             }
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:beis-028",
-            "ejemplo:beis-027",
+            "ejemplo:beis-029",
+            "ejemplo:beis-025",
             "ejemplo:beis-024",
-            "ejemplo:beis-016",
-            "ejemplo:beis-015"
+            "ejemplo:beis-021",
+            "ejemplo:beis-018"
           ],
           "visitante": [
-            "ejemplo:beis-028",
-            "ejemplo:beis-025",
+            "ejemplo:beis-029",
+            "ejemplo:beis-026",
             "ejemplo:beis-023",
-            "ejemplo:beis-019",
-            "ejemplo:beis-017"
+            "ejemplo:beis-016",
+            "ejemplo:beis-014"
           ]
         }
       }
@@ -288,8 +288,8 @@
       "inicio": "2026-10-11T19:00:00Z",
       "fecha_local": "2026-10-11",
       "local": {
-        "id": "ejemplo:club-moneda",
-        "nombre": "Club Moneda"
+        "id": "ejemplo:union-dado",
+        "nombre": "Unión Dado"
       },
       "visitante": {
         "id": "ejemplo:atletico-sorteo",
@@ -504,12 +504,12 @@
       "inicio": "2026-10-11T22:00:00Z",
       "fecha_local": "2026-10-11",
       "local": {
-        "id": "ejemplo:basquet-zorros-maqueta",
-        "nombre": "Zorros Maqueta"
-      },
-      "visitante": {
         "id": "ejemplo:basquet-aguilas-modelo",
         "nombre": "Águilas Modelo"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-delfines-borrador",
+        "nombre": "Delfines Borrador"
       },
       "estado": "programado",
       "ids_externos": {
@@ -523,31 +523,31 @@
         ],
         "tabla": {
           "local": {
+            "posicion": 1,
+            "partidos_jugados": 5,
+            "ganados": 4,
+            "perdidos": 1
+          },
+          "visitante": {
             "posicion": 4,
             "partidos_jugados": 5,
             "ganados": 1,
             "perdidos": 4
-          },
-          "visitante": {
-            "posicion": 3,
-            "partidos_jugados": 5,
-            "ganados": 2,
-            "perdidos": 3
           }
         },
         "ultimos_partidos": {
           "local": [
             "ejemplo:bas-037",
             "ejemplo:bas-034",
-            "ejemplo:bas-033",
-            "ejemplo:bas-030",
+            "ejemplo:bas-032",
+            "ejemplo:bas-031",
             "ejemplo:bas-029"
           ],
           "visitante": [
             "ejemplo:bas-036",
             "ejemplo:bas-035",
             "ejemplo:bas-032",
-            "ejemplo:bas-031",
+            "ejemplo:bas-030",
             "ejemplo:bas-029"
           ]
         }
@@ -567,12 +567,12 @@
       "inicio": "2026-10-11T23:10:00Z",
       "fecha_local": "2026-10-11",
       "local": {
-        "id": "ejemplo:beisbol-navegantes-demo",
-        "nombre": "Navegantes Demo"
+        "id": "ejemplo:beisbol-tigres-prueba",
+        "nombre": "Tigres Prueba"
       },
       "visitante": {
-        "id": "ejemplo:beisbol-cardenales-simulado",
-        "nombre": "Cardenales Simulado"
+        "id": "ejemplo:beisbol-navegantes-demo",
+        "nombre": "Navegantes Demo"
       },
       "estado": "programado",
       "ids_externos": {
@@ -586,58 +586,58 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 4,
+            "posicion": 5,
             "partidos_jugados": 10,
-            "ganados": 4,
-            "perdidos": 6
+            "ganados": 5,
+            "perdidos": 5
           },
           "visitante": {
-            "posicion": 3,
-            "partidos_jugados": 9,
-            "ganados": 5,
-            "perdidos": 4
+            "posicion": 6,
+            "partidos_jugados": 10,
+            "ganados": 3,
+            "perdidos": 7
           }
         },
         "abridores": {
           "local": {
+            "jugador": {
+              "id": "ejemplo:lanzador-tigres-prueba-2",
+              "nombre": "Bruno Salazar"
+            },
+            "mano": "derecha",
+            "estadisticas": {
+              "era": 4.47,
+              "whip": 1.25,
+              "ponches_por_9": 8.2
+            }
+          },
+          "visitante": {
             "jugador": {
               "id": "ejemplo:lanzador-navegantes-demo-2",
               "nombre": "Lucas Flores"
             },
             "mano": "derecha",
             "estadisticas": {
-              "era": 4.31,
-              "whip": 1.17,
-              "ponches_por_9": 8.2
-            }
-          },
-          "visitante": {
-            "jugador": {
-              "id": "ejemplo:lanzador-cardenales-simulado-2",
-              "nombre": "Diego Silva"
-            },
-            "mano": "derecha",
-            "estadisticas": {
-              "era": 3.44,
-              "whip": 1.11,
-              "ponches_por_9": 10
+              "era": 3.96,
+              "whip": 1.25,
+              "ponches_por_9": 8.5
             }
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:beis-029",
-            "ejemplo:beis-026",
+            "ejemplo:beis-030",
+            "ejemplo:beis-027",
             "ejemplo:beis-022",
-            "ejemplo:beis-021",
+            "ejemplo:beis-019",
             "ejemplo:beis-016"
           ],
           "visitante": [
-            "ejemplo:beis-029",
-            "ejemplo:beis-026",
-            "ejemplo:beis-024",
-            "ejemplo:beis-018",
-            "ejemplo:beis-013"
+            "ejemplo:beis-030",
+            "ejemplo:beis-027",
+            "ejemplo:beis-023",
+            "ejemplo:beis-021",
+            "ejemplo:beis-017"
           ]
         }
       }
@@ -656,12 +656,12 @@
       "inicio": "2026-10-11T23:30:00Z",
       "fecha_local": "2026-10-11",
       "local": {
-        "id": "ejemplo:union-dado",
-        "nombre": "Unión Dado"
-      },
-      "visitante": {
         "id": "ejemplo:deportivo-azar",
         "nombre": "Deportivo Azar"
+      },
+      "visitante": {
+        "id": "ejemplo:club-moneda",
+        "nombre": "Club Moneda"
       },
       "estado": "programado"
     },
@@ -679,12 +679,12 @@
       "inicio": "2026-10-12T00:00:00Z",
       "fecha_local": "2026-10-11",
       "local": {
-        "id": "ejemplo:basquet-halcones-ejemplo",
-        "nombre": "Halcones Ejemplo"
+        "id": "ejemplo:basquet-condores-demo",
+        "nombre": "Cóndores Demo"
       },
       "visitante": {
-        "id": "ejemplo:basquet-pumas-ficticio",
-        "nombre": "Pumas Ficticio"
+        "id": "ejemplo:basquet-linces-prueba",
+        "nombre": "Linces Prueba"
       },
       "estado": "programado",
       "ids_externos": {
@@ -698,13 +698,13 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 6,
+            "posicion": 2,
             "partidos_jugados": 8,
-            "ganados": 0,
-            "perdidos": 8
+            "ganados": 5,
+            "perdidos": 3
           },
           "visitante": {
-            "posicion": 3,
+            "posicion": 4,
             "partidos_jugados": 8,
             "ganados": 4,
             "perdidos": 4
@@ -712,18 +712,18 @@
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:bas-022",
+            "ejemplo:bas-024",
+            "ejemplo:bas-020",
+            "ejemplo:bas-018",
+            "ejemplo:bas-014",
+            "ejemplo:bas-010"
+          ],
+          "visitante": [
+            "ejemplo:bas-023",
             "ejemplo:bas-020",
             "ejemplo:bas-017",
             "ejemplo:bas-015",
             "ejemplo:bas-010"
-          ],
-          "visitante": [
-            "ejemplo:bas-024",
-            "ejemplo:bas-020",
-            "ejemplo:bas-016",
-            "ejemplo:bas-014",
-            "ejemplo:bas-012"
           ]
         }
       }
@@ -742,12 +742,12 @@
       "inicio": "2026-10-12T00:00:00Z",
       "fecha_local": "2026-10-11",
       "local": {
-        "id": "ejemplo:basquet-delfines-borrador",
-        "nombre": "Delfines Borrador"
-      },
-      "visitante": {
         "id": "ejemplo:basquet-lobos-prototipo",
         "nombre": "Lobos Prototipo"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-zorros-maqueta",
+        "nombre": "Zorros Maqueta"
       },
       "estado": "programado",
       "ids_externos": {
@@ -767,25 +767,25 @@
             "perdidos": 2
           },
           "visitante": {
-            "posicion": 1,
+            "posicion": 3,
             "partidos_jugados": 5,
-            "ganados": 4,
-            "perdidos": 1
+            "ganados": 2,
+            "perdidos": 3
           }
         },
         "ultimos_partidos": {
           "local": [
             "ejemplo:bas-037",
             "ejemplo:bas-035",
-            "ejemplo:bas-032",
-            "ejemplo:bas-030",
+            "ejemplo:bas-033",
+            "ejemplo:bas-031",
             "ejemplo:bas-028"
           ],
           "visitante": [
             "ejemplo:bas-036",
             "ejemplo:bas-034",
             "ejemplo:bas-033",
-            "ejemplo:bas-031",
+            "ejemplo:bas-030",
             "ejemplo:bas-028"
           ]
         }
@@ -805,12 +805,12 @@
       "inicio": "2026-10-12T00:05:00Z",
       "fecha_local": "2026-10-11",
       "local": {
-        "id": "ejemplo:beisbol-tigres-prueba",
-        "nombre": "Tigres Prueba"
+        "id": "ejemplo:beisbol-leones-muestra",
+        "nombre": "Leones Muestra"
       },
       "visitante": {
-        "id": "ejemplo:beisbol-caribes-ficticio",
-        "nombre": "Caribes Ficticio"
+        "id": "ejemplo:beisbol-piratas-ejemplo",
+        "nombre": "Piratas Ejemplo"
       },
       "estado": "programado",
       "ids_externos": {
@@ -824,58 +824,58 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 5,
-            "partidos_jugados": 10,
-            "ganados": 4,
-            "perdidos": 6
+            "posicion": 3,
+            "partidos_jugados": 9,
+            "ganados": 5,
+            "perdidos": 4
           },
           "visitante": {
-            "posicion": 6,
+            "posicion": 1,
             "partidos_jugados": 10,
-            "ganados": 3,
-            "perdidos": 7
+            "ganados": 6,
+            "perdidos": 4
           }
         },
         "abridores": {
           "local": {
             "jugador": {
-              "id": "ejemplo:lanzador-tigres-prueba-2",
-              "nombre": "Bruno Salazar"
+              "id": "ejemplo:lanzador-leones-muestra-2",
+              "nombre": "Joaquín Silva"
             },
             "mano": "derecha",
             "estadisticas": {
-              "era": 4.36,
-              "whip": 1.33,
-              "ponches_por_9": 8.4
+              "era": 3.99,
+              "whip": 1.3,
+              "ponches_por_9": 8.2
             }
           },
           "visitante": {
             "jugador": {
-              "id": "ejemplo:lanzador-caribes-ficticio-2",
-              "nombre": "Santiago Castro"
+              "id": "ejemplo:lanzador-piratas-ejemplo-2",
+              "nombre": "Gabriel Castro"
             },
-            "mano": "derecha",
+            "mano": "zurda",
             "estadisticas": {
-              "era": 4.73,
-              "whip": 1.32,
-              "ponches_por_9": 7.9
+              "era": 3.75,
+              "whip": 1.19,
+              "ponches_por_9": 9.5
             }
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:beis-030",
+            "ejemplo:beis-028",
             "ejemplo:beis-025",
+            "ejemplo:beis-024",
+            "ejemplo:beis-018",
+            "ejemplo:beis-014"
+          ],
+          "visitante": [
+            "ejemplo:beis-028",
+            "ejemplo:beis-026",
             "ejemplo:beis-022",
             "ejemplo:beis-019",
             "ejemplo:beis-017"
-          ],
-          "visitante": [
-            "ejemplo:beis-030",
-            "ejemplo:beis-027",
-            "ejemplo:beis-023",
-            "ejemplo:beis-021",
-            "ejemplo:beis-018"
           ]
         }
       }
@@ -1012,8 +1012,8 @@
       "inicio": "2026-10-12T01:00:00Z",
       "fecha_local": "2026-10-11",
       "local": {
-        "id": "ejemplo:basquet-linces-prueba",
-        "nombre": "Linces Prueba"
+        "id": "ejemplo:basquet-halcones-ejemplo",
+        "nombre": "Halcones Ejemplo"
       },
       "visitante": {
         "id": "ejemplo:basquet-osos-simulado",
@@ -1033,11 +1033,11 @@
           "local": {
             "posicion": 5,
             "partidos_jugados": 8,
-            "ganados": 2,
-            "perdidos": 6
+            "ganados": 3,
+            "perdidos": 5
           },
           "visitante": {
-            "posicion": 4,
+            "posicion": 3,
             "partidos_jugados": 8,
             "ganados": 4,
             "perdidos": 4
@@ -1046,16 +1046,16 @@
         "ultimos_partidos": {
           "local": [
             "ejemplo:bas-023",
-            "ejemplo:bas-019",
-            "ejemplo:bas-016",
-            "ejemplo:bas-013",
+            "ejemplo:bas-021",
+            "ejemplo:bas-018",
+            "ejemplo:bas-015",
             "ejemplo:bas-012"
           ],
           "visitante": [
-            "ejemplo:bas-024",
+            "ejemplo:bas-022",
             "ejemplo:bas-019",
-            "ejemplo:bas-018",
-            "ejemplo:bas-015",
+            "ejemplo:bas-017",
+            "ejemplo:bas-014",
             "ejemplo:bas-011"
           ]
         }
@@ -1090,18 +1090,7 @@
       "previa": {
         "extraido_en": "2026-10-11T13:00:00Z",
         "fuentes": [
-          "sofascore",
-          "flashscore"
-        ],
-        "bajas": [
-          {
-            "equipo": "local",
-            "jugador": {
-              "nombre": "Thiago Huamán"
-            },
-            "motivo": "lesion",
-            "fuente": "flashscore"
-          }
+          "sofascore"
         ],
         "tabla": {
           "local": {
@@ -1122,11 +1111,11 @@
           }
         },
         "arbitro": {
-          "nombre": "Sergio Banderín",
+          "nombre": "Fabián Pito",
           "estadisticas": {
-            "partidos": 9,
+            "partidos": 13,
             "amarillas_por_partido": 4.4,
-            "rojas_por_partido": 0.13
+            "rojas_por_partido": 0.2
           }
         },
         "ultimos_partidos": {
@@ -1165,8 +1154,8 @@
         "nombre": "Toros Muestra"
       },
       "visitante": {
-        "id": "ejemplo:basquet-condores-demo",
-        "nombre": "Cóndores Demo"
+        "id": "ejemplo:basquet-pumas-ficticio",
+        "nombre": "Pumas Ficticio"
       },
       "estado": "programado",
       "ids_externos": {
@@ -1182,29 +1171,29 @@
           "local": {
             "posicion": 1,
             "partidos_jugados": 8,
-            "ganados": 7,
-            "perdidos": 1
+            "ganados": 6,
+            "perdidos": 2
           },
           "visitante": {
-            "posicion": 2,
+            "posicion": 6,
             "partidos_jugados": 8,
-            "ganados": 7,
-            "perdidos": 1
+            "ganados": 2,
+            "perdidos": 6
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:bas-023",
+            "ejemplo:bas-024",
             "ejemplo:bas-021",
-            "ejemplo:bas-017",
+            "ejemplo:bas-016",
             "ejemplo:bas-013",
-            "ejemplo:bas-010"
+            "ejemplo:bas-012"
           ],
           "visitante": [
             "ejemplo:bas-022",
-            "ejemplo:bas-021",
-            "ejemplo:bas-018",
-            "ejemplo:bas-014",
+            "ejemplo:bas-019",
+            "ejemplo:bas-016",
+            "ejemplo:bas-013",
             "ejemplo:bas-011"
           ]
         }
@@ -2801,17 +2790,17 @@
             {
               "linea": 0.5,
               "cuota_a": 1.09,
-              "cuota_b": 7.09
+              "cuota_b": 7.32
             },
             {
               "linea": 1.5,
-              "cuota_a": 1.6,
-              "cuota_b": 2.32
+              "cuota_a": 1.57,
+              "cuota_b": 2.39
             },
             {
               "linea": 2.5,
-              "cuota_a": 2.85,
-              "cuota_b": 1.42
+              "cuota_a": 3.05,
+              "cuota_b": 1.38
             }
           ]
         },
@@ -2821,8 +2810,8 @@
           "lineas": [
             {
               "linea": 1.5,
-              "cuota_a": 1.62,
-              "cuota_b": 2.24
+              "cuota_a": 1.54,
+              "cuota_b": 2.4
             }
           ]
         }
@@ -2830,37 +2819,37 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.687,
+          "prob_a": 0.522,
           "lado": "a",
           "explicacion": [
             {
               "factor": "promedio_liga",
-              "impacto": 0.08
-            },
-            {
-              "factor": "forma_reciente",
-              "impacto": 0.06
+              "impacto": -0.02
             },
             {
               "factor": "rival_concede",
-              "impacto": 0.03
+              "impacto": 0.01
+            },
+            {
+              "factor": "localia",
+              "impacto": 0.01
             }
           ]
         },
         "red": {
           "version": "ejemplo-red-futbol_goles-1",
-          "prob_a": 0.603,
+          "prob_a": 0.578,
           "lado": "a"
         },
         "entrada_red": {
           "version": "ejemplo-variables-1",
           "valores": {
             "linea": 1.5,
-            "cuota_a": 1.6,
-            "cuota_b": 2.32,
+            "cuota_a": 1.57,
+            "cuota_b": 2.39,
             "esperado": 1.94,
-            "forma_local": 0.86,
-            "forma_visitante": 0.5
+            "forma_local": -0.68,
+            "forma_visitante": 0.77
           }
         }
       }
@@ -2875,8 +2864,8 @@
           "lineas": [
             {
               "linea": null,
-              "cuota_a": 2.42,
-              "cuota_b": 1.56
+              "cuota_a": 2.54,
+              "cuota_b": 1.51
             }
           ]
         }
@@ -2884,20 +2873,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.346,
+          "prob_a": 0.377,
           "lado": "b",
           "explicacion": [
             {
-              "factor": "promedio_liga",
-              "impacto": -0.05
-            },
-            {
               "factor": "rival_concede",
-              "impacto": -0.03
+              "impacto": -0.04
             },
             {
-              "factor": "localia",
-              "impacto": -0.06
+              "factor": "forma_reciente",
+              "impacto": -0.07
+            },
+            {
+              "factor": "promedio_liga",
+              "impacto": -0.02
             }
           ]
         },
@@ -2915,18 +2904,18 @@
           "lineas": [
             {
               "linea": 8.5,
-              "cuota_a": 1.58,
-              "cuota_b": 2.37
+              "cuota_a": 1.57,
+              "cuota_b": 2.39
             },
             {
               "linea": 9.5,
-              "cuota_a": 2,
-              "cuota_b": 1.8
+              "cuota_a": 2.01,
+              "cuota_b": 1.79
             },
             {
               "linea": 10.5,
-              "cuota_a": 2.73,
-              "cuota_b": 1.45
+              "cuota_a": 2.61,
+              "cuota_b": 1.49
             }
           ]
         },
@@ -2936,8 +2925,8 @@
           "lineas": [
             {
               "linea": 9.5,
-              "cuota_a": 1.93,
-              "cuota_b": 1.83
+              "cuota_a": 1.96,
+              "cuota_b": 1.8
             }
           ]
         }
@@ -2945,37 +2934,37 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.471,
-          "lado": "b",
+          "prob_a": 0.554,
+          "lado": "a",
           "explicacion": [
             {
-              "factor": "forma_reciente",
-              "impacto": -0.03
-            },
-            {
               "factor": "rival_concede",
-              "impacto": -0.01
+              "impacto": 0.01
             },
             {
               "factor": "localia",
-              "impacto": -0.01
+              "impacto": 0.03
+            },
+            {
+              "factor": "forma_reciente",
+              "impacto": 0.03
             }
           ]
         },
         "red": {
           "version": "ejemplo-red-futbol_corners-1",
-          "prob_a": 0.532,
+          "prob_a": 0.515,
           "lado": "a"
         },
         "entrada_red": {
           "version": "ejemplo-variables-1",
           "valores": {
             "linea": 9.5,
-            "cuota_a": 2,
-            "cuota_b": 1.8,
+            "cuota_a": 2.01,
+            "cuota_b": 1.79,
             "esperado": 9.52,
-            "forma_local": -0.62,
-            "forma_visitante": -0.84
+            "forma_local": 0.18,
+            "forma_visitante": -0.11
           }
         }
       }
@@ -2990,18 +2979,18 @@
           "lineas": [
             {
               "linea": 3.5,
-              "cuota_a": 1.54,
-              "cuota_b": 2.46
+              "cuota_a": 1.47,
+              "cuota_b": 2.67
             },
             {
               "linea": 4.5,
-              "cuota_a": 2.06,
-              "cuota_b": 1.75
+              "cuota_a": 2.15,
+              "cuota_b": 1.69
             },
             {
               "linea": 5.5,
-              "cuota_a": 3.42,
-              "cuota_b": 1.31
+              "cuota_a": 3.24,
+              "cuota_b": 1.34
             }
           ]
         }
@@ -3009,9 +2998,13 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.474,
+          "prob_a": 0.451,
           "lado": "b",
           "explicacion": [
+            {
+              "factor": "arbitro",
+              "impacto": -0.03
+            },
             {
               "factor": "rivalidad",
               "impacto": -0.01
@@ -3019,13 +3012,9 @@
             {
               "factor": "forma_reciente",
               "impacto": -0.02
-            },
-            {
-              "factor": "rival_concede",
-              "impacto": -0.01
             }
           ],
-          "prob_roja": 0.137
+          "prob_roja": 0.158
         },
         "red": null,
         "entrada_red": null
@@ -3041,18 +3030,18 @@
           "lineas": [
             {
               "linea": 3.5,
-              "cuota_a": 1.52,
-              "cuota_b": 2.51
+              "cuota_a": 1.57,
+              "cuota_b": 2.39
             },
             {
               "linea": 4.5,
-              "cuota_a": 2.31,
-              "cuota_b": 1.61
+              "cuota_a": 2.23,
+              "cuota_b": 1.65
             },
             {
               "linea": 5.5,
-              "cuota_a": 3.66,
-              "cuota_b": 1.28
+              "cuota_a": 3.94,
+              "cuota_b": 1.25
             }
           ]
         }
@@ -3060,20 +3049,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.359,
+          "prob_a": 0.335,
           "lado": "b",
           "explicacion": [
             {
               "factor": "localia",
-              "impacto": -0.04
-            },
-            {
-              "factor": "forma_reciente",
-              "impacto": -0.06
+              "impacto": -0.02
             },
             {
               "factor": "rival_concede",
-              "impacto": -0.02
+              "impacto": -0.07
+            },
+            {
+              "factor": "promedio_liga",
+              "impacto": -0.05
             }
           ]
         },
@@ -3091,17 +3080,17 @@
           "lineas": [
             {
               "linea": 1.5,
-              "cuota_a": 1.34,
-              "cuota_b": 3.21
+              "cuota_a": 1.32,
+              "cuota_b": 3.33
             },
             {
               "linea": 2.5,
-              "cuota_a": 2.09,
-              "cuota_b": 1.73
+              "cuota_a": 2.12,
+              "cuota_b": 1.72
             },
             {
               "linea": 3.5,
-              "cuota_a": 4.16,
+              "cuota_a": 4.14,
               "cuota_b": 1.23
             }
           ]
@@ -3112,8 +3101,8 @@
           "lineas": [
             {
               "linea": 2.5,
-              "cuota_a": 2.21,
-              "cuota_b": 1.63
+              "cuota_a": 2.05,
+              "cuota_b": 1.73
             }
           ]
         }
@@ -3121,37 +3110,37 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.447,
-          "lado": "b",
+          "prob_a": 0.521,
+          "lado": "a",
           "explicacion": [
             {
+              "factor": "localia",
+              "impacto": 0.02
+            },
+            {
               "factor": "rival_concede",
-              "impacto": -0.01
+              "impacto": 0.01
             },
             {
               "factor": "forma_reciente",
-              "impacto": -0.02
-            },
-            {
-              "factor": "localia",
-              "impacto": -0.02
+              "impacto": 0.02
             }
           ]
         },
         "red": {
           "version": "ejemplo-red-futbol_goles-1",
-          "prob_a": 0.444,
+          "prob_a": 0.435,
           "lado": "b"
         },
         "entrada_red": {
           "version": "ejemplo-variables-1",
           "valores": {
             "linea": 2.5,
-            "cuota_a": 2.09,
-            "cuota_b": 1.73,
+            "cuota_a": 2.12,
+            "cuota_b": 1.72,
             "esperado": 2.46,
-            "forma_local": 0.43,
-            "forma_visitante": 0.32
+            "forma_local": 0.32,
+            "forma_visitante": -0.69
           }
         }
       }
@@ -3175,20 +3164,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.545,
-          "lado": "a",
+          "prob_a": 0.482,
+          "lado": "b",
           "explicacion": [
             {
+              "factor": "rival_concede",
+              "impacto": -0.01
+            },
+            {
               "factor": "promedio_liga",
-              "impacto": 0.01
+              "impacto": 0
             },
             {
               "factor": "forma_reciente",
-              "impacto": 0.03
-            },
-            {
-              "factor": "rival_concede",
-              "impacto": 0.01
+              "impacto": -0.02
             }
           ]
         },
@@ -3206,17 +3195,17 @@
           "lineas": [
             {
               "linea": 9.5,
-              "cuota_a": 1.66,
-              "cuota_b": 2.21
+              "cuota_a": 1.65,
+              "cuota_b": 2.22
             },
             {
               "linea": 10.5,
-              "cuota_a": 2.04,
-              "cuota_b": 1.77
+              "cuota_a": 2.22,
+              "cuota_b": 1.65
             },
             {
               "linea": 11.5,
-              "cuota_a": 3.01,
+              "cuota_a": 3.04,
               "cuota_b": 1.38
             }
           ]
@@ -3227,8 +3216,8 @@
           "lineas": [
             {
               "linea": 10.5,
-              "cuota_a": 2.21,
-              "cuota_b": 1.63
+              "cuota_a": 2.05,
+              "cuota_b": 1.73
             }
           ]
         }
@@ -3236,37 +3225,37 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.467,
-          "lado": "b",
+          "prob_a": 0.701,
+          "lado": "a",
           "explicacion": [
             {
-              "factor": "localia",
-              "impacto": -0.01
-            },
-            {
               "factor": "rival_concede",
-              "impacto": -0.02
+              "impacto": 0.1
             },
             {
               "factor": "promedio_liga",
-              "impacto": -0.01
+              "impacto": 0.08
+            },
+            {
+              "factor": "localia",
+              "impacto": 0.05
             }
           ]
         },
         "red": {
           "version": "ejemplo-red-futbol_corners-1",
-          "prob_a": 0.482,
-          "lado": "b"
+          "prob_a": 0.623,
+          "lado": "a"
         },
         "entrada_red": {
           "version": "ejemplo-variables-1",
           "valores": {
-            "linea": 10.5,
-            "cuota_a": 2.04,
-            "cuota_b": 1.77,
+            "linea": 9.5,
+            "cuota_a": 1.65,
+            "cuota_b": 2.22,
             "esperado": 10.22,
-            "forma_local": -0.61,
-            "forma_visitante": -0.78
+            "forma_local": -0.78,
+            "forma_visitante": -0.61
           }
         }
       }
@@ -3281,18 +3270,18 @@
           "lineas": [
             {
               "linea": 3.5,
-              "cuota_a": 1.68,
-              "cuota_b": 2.18
+              "cuota_a": 1.64,
+              "cuota_b": 2.25
             },
             {
               "linea": 4.5,
-              "cuota_a": 2.33,
-              "cuota_b": 1.6
+              "cuota_a": 2.46,
+              "cuota_b": 1.54
             },
             {
               "linea": 5.5,
-              "cuota_a": 3.99,
-              "cuota_b": 1.24
+              "cuota_a": 4.16,
+              "cuota_b": 1.23
             }
           ]
         }
@@ -3300,23 +3289,23 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.539,
+          "prob_a": 0.522,
           "lado": "a",
           "explicacion": [
             {
-              "factor": "rivalidad",
-              "impacto": 0.03
-            },
-            {
               "factor": "arbitro",
-              "impacto": 0.03
+              "impacto": -0.01
             },
             {
-              "factor": "forma_reciente",
-              "impacto": 0.03
+              "factor": "rival_concede",
+              "impacto": 0.01
+            },
+            {
+              "factor": "rivalidad",
+              "impacto": 0.01
             }
           ],
-          "prob_roja": 0.124
+          "prob_roja": 0.166
         },
         "red": null,
         "entrada_red": null
@@ -3332,18 +3321,18 @@
           "lineas": [
             {
               "linea": 3.5,
-              "cuota_a": 1.35,
-              "cuota_b": 3.19
+              "cuota_a": 1.42,
+              "cuota_b": 2.85
             },
             {
               "linea": 4.5,
               "cuota_a": 2.01,
-              "cuota_b": 1.79
+              "cuota_b": 1.8
             },
             {
               "linea": 5.5,
-              "cuota_a": 2.89,
-              "cuota_b": 1.41
+              "cuota_a": 3.08,
+              "cuota_b": 1.37
             }
           ]
         }
@@ -3351,20 +3340,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.54,
-          "lado": "a",
+          "prob_a": 0.471,
+          "lado": "b",
           "explicacion": [
             {
               "factor": "forma_reciente",
-              "impacto": 0
+              "impacto": -0.02
+            },
+            {
+              "factor": "rival_concede",
+              "impacto": -0.01
             },
             {
               "factor": "promedio_liga",
-              "impacto": 0.01
-            },
-            {
-              "factor": "localia",
-              "impacto": 0.01
+              "impacto": -0.01
             }
           ]
         },
@@ -3381,29 +3370,29 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 213.5,
-              "cuota_a": 1.62,
-              "cuota_b": 2.28
+              "linea": 219.5,
+              "cuota_a": 1.69,
+              "cuota_b": 2.17
             },
             {
-              "linea": 214.5,
-              "cuota_a": 1.89,
-              "cuota_b": 1.9
+              "linea": 220.5,
+              "cuota_a": 1.73,
+              "cuota_b": 2.09
             },
             {
-              "linea": 215.5,
-              "cuota_a": 1.98,
+              "linea": 221.5,
+              "cuota_a": 1.8,
+              "cuota_b": 2.01
+            },
+            {
+              "linea": 222.5,
+              "cuota_a": 1.97,
               "cuota_b": 1.82
             },
             {
-              "linea": 216.5,
-              "cuota_a": 2.03,
-              "cuota_b": 1.78
-            },
-            {
-              "linea": 217.5,
-              "cuota_a": 2.22,
-              "cuota_b": 1.66
+              "linea": 223.5,
+              "cuota_a": 2.2,
+              "cuota_b": 1.67
             }
           ]
         },
@@ -3412,9 +3401,9 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 215.5,
-              "cuota_a": 1.86,
-              "cuota_b": 1.89
+              "linea": 221.5,
+              "cuota_a": 1.83,
+              "cuota_b": 1.93
             }
           ]
         }
@@ -3422,37 +3411,37 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.493,
-          "lado": "b",
+          "prob_a": 0.543,
+          "lado": "a",
           "explicacion": [
-            {
-              "factor": "ritmo_juego",
-              "impacto": 0.01
-            },
             {
               "factor": "descanso",
               "impacto": -0.01
             },
             {
-              "factor": "defensa_rival",
-              "impacto": -0.01
+              "factor": "ritmo_juego",
+              "impacto": 0.03
+            },
+            {
+              "factor": "ataque_local",
+              "impacto": 0.01
             }
           ]
         },
         "red": {
           "version": "ejemplo-red-basquet_puntos-1",
-          "prob_a": 0.584,
+          "prob_a": 0.576,
           "lado": "a"
         },
         "entrada_red": {
           "version": "ejemplo-variables-1",
           "valores": {
-            "linea": 214.5,
-            "cuota_a": 1.89,
-            "cuota_b": 1.9,
-            "esperado": 215.37,
-            "forma_local": -0.91,
-            "forma_visitante": -0.22
+            "linea": 222.5,
+            "cuota_a": 1.97,
+            "cuota_b": 1.82,
+            "esperado": 221.86,
+            "forma_local": 0.15,
+            "forma_visitante": -0.87
           }
         }
       }
@@ -3466,19 +3455,19 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": -1.5,
-              "cuota_a": 2.21,
-              "cuota_b": 1.66
+              "linea": -11.5,
+              "cuota_a": 2.01,
+              "cuota_b": 1.8
             },
             {
-              "linea": -0.5,
-              "cuota_a": 1.9,
-              "cuota_b": 1.89
+              "linea": -10.5,
+              "cuota_a": 1.91,
+              "cuota_b": 1.88
             },
             {
-              "linea": 0.5,
-              "cuota_a": 1.77,
-              "cuota_b": 2.04
+              "linea": -9.5,
+              "cuota_a": 1.82,
+              "cuota_b": 1.98
             }
           ]
         },
@@ -3487,9 +3476,9 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": -0.5,
-              "cuota_a": 1.94,
-              "cuota_b": 1.82
+              "linea": -10.5,
+              "cuota_a": 1.97,
+              "cuota_b": 1.79
             }
           ]
         }
@@ -3497,20 +3486,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.552,
-          "lado": "a",
+          "prob_a": 0.393,
+          "lado": "b",
           "explicacion": [
             {
-              "factor": "descanso",
-              "impacto": 0.02
-            },
-            {
               "factor": "defensa_rival",
-              "impacto": 0.03
+              "impacto": -0.03
             },
             {
               "factor": "ataque_local",
-              "impacto": 0.01
+              "impacto": -0.06
+            },
+            {
+              "factor": "descanso",
+              "impacto": -0.01
             }
           ]
         },
@@ -3527,19 +3516,19 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": -1.5,
-              "cuota_a": 2.25,
-              "cuota_b": 1.64
+              "linea": -6.5,
+              "cuota_a": 2.23,
+              "cuota_b": 1.65
             },
             {
-              "linea": -0.5,
-              "cuota_a": 1.96,
-              "cuota_b": 1.83
+              "linea": -5.5,
+              "cuota_a": 2.12,
+              "cuota_b": 1.72
             },
             {
-              "linea": 0.5,
-              "cuota_a": 1.77,
-              "cuota_b": 2.05
+              "linea": -4.5,
+              "cuota_a": 1.75,
+              "cuota_b": 2.07
             }
           ]
         }
@@ -3547,20 +3536,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.56,
-          "lado": "a",
+          "prob_a": 0.485,
+          "lado": "b",
           "explicacion": [
             {
-              "factor": "ritmo_juego",
-              "impacto": 0.04
+              "factor": "descanso",
+              "impacto": 0
+            },
+            {
+              "factor": "ataque_local",
+              "impacto": -0.01
             },
             {
               "factor": "defensa_rival",
-              "impacto": 0.02
-            },
-            {
-              "factor": "descanso",
-              "impacto": 0.02
+              "impacto": -0.02
             }
           ]
         },
@@ -3577,19 +3566,19 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 106.5,
-              "cuota_a": 1.62,
-              "cuota_b": 2.29
+              "linea": 109.5,
+              "cuota_a": 1.67,
+              "cuota_b": 2.19
             },
             {
-              "linea": 107.5,
-              "cuota_a": 1.83,
-              "cuota_b": 1.97
+              "linea": 110.5,
+              "cuota_a": 1.81,
+              "cuota_b": 1.99
             },
             {
-              "linea": 108.5,
-              "cuota_a": 1.91,
-              "cuota_b": 1.88
+              "linea": 111.5,
+              "cuota_a": 1.89,
+              "cuota_b": 1.9
             }
           ]
         }
@@ -3597,19 +3586,19 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.516,
-          "lado": "a",
+          "prob_a": 0.463,
+          "lado": "b",
           "explicacion": [
             {
-              "factor": "descanso",
-              "impacto": 0
+              "factor": "ritmo_juego",
+              "impacto": -0.01
+            },
+            {
+              "factor": "ataque_local",
+              "impacto": -0.02
             },
             {
               "factor": "defensa_rival",
-              "impacto": 0.01
-            },
-            {
-              "factor": "ritmo_juego",
               "impacto": 0
             }
           ]
@@ -3622,8 +3611,8 @@
       "partido_id": "ejemplo:bas-025",
       "mercado": "basquet_jugador",
       "jugador": {
-        "id": "ejemplo:jb-1",
-        "nombre": "Santiago Castro",
+        "id": "ejemplo:jb-7",
+        "nombre": "Joaquín Salazar",
         "equipo": "local"
       },
       "estadistica_jugador": "puntos",
@@ -3633,9 +3622,9 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 14.5,
-              "cuota_a": 1.77,
-              "cuota_b": 2.04
+              "linea": 18.5,
+              "cuota_a": 1.79,
+              "cuota_b": 2.02
             }
           ]
         },
@@ -3644,9 +3633,9 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 14.5,
-              "cuota_a": 1.93,
-              "cuota_b": 1.83
+              "linea": 18.5,
+              "cuota_a": 1.79,
+              "cuota_b": 1.97
             }
           ]
         }
@@ -3654,20 +3643,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.622,
-          "lado": "a",
+          "prob_a": 0.498,
+          "lado": "b",
           "explicacion": [
             {
+              "factor": "rival_concede",
+              "impacto": -0.02
+            },
+            {
               "factor": "minutos",
-              "impacto": 0.03
+              "impacto": 0
             },
             {
               "factor": "promedio_jugador",
-              "impacto": 0.03
-            },
-            {
-              "factor": "rival_concede",
-              "impacto": 0.06
+              "impacto": 0.01
             }
           ]
         },
@@ -3679,8 +3668,8 @@
       "partido_id": "ejemplo:bas-025",
       "mercado": "basquet_jugador",
       "jugador": {
-        "id": "ejemplo:jb-1",
-        "nombre": "Santiago Castro",
+        "id": "ejemplo:jb-7",
+        "nombre": "Joaquín Salazar",
         "equipo": "local"
       },
       "estadistica_jugador": "puntos_rebotes_asistencias",
@@ -3690,9 +3679,9 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 23.5,
-              "cuota_a": 2.11,
-              "cuota_b": 1.72
+              "linea": 27.5,
+              "cuota_a": 1.85,
+              "cuota_b": 1.94
             }
           ]
         }
@@ -3700,62 +3689,16 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.535,
-          "lado": "a",
-          "explicacion": [
-            {
-              "factor": "rival_concede",
-              "impacto": 0.01
-            },
-            {
-              "factor": "promedio_jugador",
-              "impacto": 0.01
-            },
-            {
-              "factor": "minutos",
-              "impacto": 0.03
-            }
-          ]
-        },
-        "red": null,
-        "entrada_red": null
-      }
-    },
-    {
-      "partido_id": "ejemplo:bas-025",
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-1",
-        "nombre": "Santiago Castro",
-        "equipo": "local"
-      },
-      "estadistica_jugador": "asistencias",
-      "ofertas": [
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 5.5,
-              "cuota_a": 2.47,
-              "cuota_b": 1.51
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.362,
+          "prob_a": 0.45,
           "lado": "b",
           "explicacion": [
             {
-              "factor": "minutos",
-              "impacto": -0.06
+              "factor": "rival_concede",
+              "impacto": -0.01
             },
             {
-              "factor": "rival_concede",
-              "impacto": -0.07
+              "factor": "minutos",
+              "impacto": 0
             },
             {
               "factor": "promedio_jugador",
@@ -3771,8 +3714,54 @@
       "partido_id": "ejemplo:bas-025",
       "mercado": "basquet_jugador",
       "jugador": {
-        "id": "ejemplo:jb-2",
-        "nombre": "Sebastián Huamán",
+        "id": "ejemplo:jb-7",
+        "nombre": "Joaquín Salazar",
+        "equipo": "local"
+      },
+      "estadistica_jugador": "asistencias",
+      "ofertas": [
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 2.5,
+              "cuota_a": 2.73,
+              "cuota_b": 1.43
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.394,
+          "lado": "b",
+          "explicacion": [
+            {
+              "factor": "minutos",
+              "impacto": -0.04
+            },
+            {
+              "factor": "promedio_jugador",
+              "impacto": -0.06
+            },
+            {
+              "factor": "rival_concede",
+              "impacto": -0.03
+            }
+          ]
+        },
+        "red": null,
+        "entrada_red": null
+      }
+    },
+    {
+      "partido_id": "ejemplo:bas-025",
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-8",
+        "nombre": "Emiliano Vargas",
         "equipo": "local"
       },
       "estadistica_jugador": "puntos",
@@ -3782,7 +3771,7 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 19.5,
+              "linea": 14.5,
               "cuota_a": 2.11,
               "cuota_b": 1.72
             }
@@ -3793,9 +3782,204 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 19.5,
-              "cuota_a": 1.92,
-              "cuota_b": 1.83
+              "linea": 14.5,
+              "cuota_a": 2.07,
+              "cuota_b": 1.72
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.373,
+          "lado": "b",
+          "explicacion": [
+            {
+              "factor": "promedio_jugador",
+              "impacto": -0.07
+            },
+            {
+              "factor": "rival_concede",
+              "impacto": -0.05
+            },
+            {
+              "factor": "minutos",
+              "impacto": -0.02
+            }
+          ]
+        },
+        "red": null,
+        "entrada_red": null
+      }
+    },
+    {
+      "partido_id": "ejemplo:bas-025",
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-8",
+        "nombre": "Emiliano Vargas",
+        "equipo": "local"
+      },
+      "estadistica_jugador": "puntos_rebotes_asistencias",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 25.5,
+              "cuota_a": 1.85,
+              "cuota_b": 1.95
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.517,
+          "lado": "a",
+          "explicacion": [
+            {
+              "factor": "minutos",
+              "impacto": 0.01
+            },
+            {
+              "factor": "promedio_jugador",
+              "impacto": 0.01
+            },
+            {
+              "factor": "rival_concede",
+              "impacto": 0.02
+            }
+          ]
+        },
+        "red": null,
+        "entrada_red": null
+      }
+    },
+    {
+      "partido_id": "ejemplo:bas-025",
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-8",
+        "nombre": "Emiliano Vargas",
+        "equipo": "local"
+      },
+      "estadistica_jugador": "triples",
+      "ofertas": [
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 0.5,
+              "cuota_a": 1.59,
+              "cuota_b": 2.28
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.559,
+          "lado": "a",
+          "explicacion": [
+            {
+              "factor": "rival_concede",
+              "impacto": 0.02
+            },
+            {
+              "factor": "promedio_jugador",
+              "impacto": 0
+            },
+            {
+              "factor": "minutos",
+              "impacto": 0.01
+            }
+          ]
+        },
+        "red": null,
+        "entrada_red": null
+      }
+    },
+    {
+      "partido_id": "ejemplo:bas-025",
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-5",
+        "nombre": "Gabriel Ramos",
+        "equipo": "visitante"
+      },
+      "estadistica_jugador": "puntos",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 17.5,
+              "cuota_a": 1.8,
+              "cuota_b": 2
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 17.5,
+              "cuota_a": 1.77,
+              "cuota_b": 2
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.552,
+          "lado": "a",
+          "explicacion": [
+            {
+              "factor": "promedio_jugador",
+              "impacto": 0.06
+            },
+            {
+              "factor": "minutos",
+              "impacto": -0.01
+            },
+            {
+              "factor": "rival_concede",
+              "impacto": 0.01
+            }
+          ]
+        },
+        "red": null,
+        "entrada_red": null
+      }
+    },
+    {
+      "partido_id": "ejemplo:bas-025",
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-5",
+        "nombre": "Gabriel Ramos",
+        "equipo": "visitante"
+      },
+      "estadistica_jugador": "puntos_rebotes_asistencias",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 31.5,
+              "cuota_a": 1.86,
+              "cuota_b": 1.93
             }
           ]
         }
@@ -3808,550 +3992,14 @@
           "explicacion": [
             {
               "factor": "promedio_jugador",
-              "impacto": 0.02
-            },
-            {
-              "factor": "minutos",
-              "impacto": 0
-            },
-            {
-              "factor": "rival_concede",
               "impacto": 0.01
-            }
-          ]
-        },
-        "red": null,
-        "entrada_red": null
-      }
-    },
-    {
-      "partido_id": "ejemplo:bas-025",
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-2",
-        "nombre": "Sebastián Huamán",
-        "equipo": "local"
-      },
-      "estadistica_jugador": "puntos_rebotes_asistencias",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 25.5,
-              "cuota_a": 1.82,
-              "cuota_b": 1.97
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.553,
-          "lado": "a",
-          "explicacion": [
+            },
             {
               "factor": "rival_concede",
               "impacto": 0.02
             },
             {
-              "factor": "promedio_jugador",
-              "impacto": 0.01
-            },
-            {
               "factor": "minutos",
-              "impacto": 0
-            }
-          ]
-        },
-        "red": null,
-        "entrada_red": null
-      }
-    },
-    {
-      "partido_id": "ejemplo:bas-025",
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-2",
-        "nombre": "Sebastián Huamán",
-        "equipo": "local"
-      },
-      "estadistica_jugador": "triples",
-      "ofertas": [
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 2.5,
-              "cuota_a": 1.83,
-              "cuota_b": 1.93
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.473,
-          "lado": "b",
-          "explicacion": [
-            {
-              "factor": "rival_concede",
-              "impacto": -0.01
-            },
-            {
-              "factor": "promedio_jugador",
-              "impacto": 0
-            },
-            {
-              "factor": "minutos",
-              "impacto": 0
-            }
-          ]
-        },
-        "red": null,
-        "entrada_red": null
-      }
-    },
-    {
-      "partido_id": "ejemplo:bas-025",
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-9",
-        "nombre": "Bruno Paredes",
-        "equipo": "visitante"
-      },
-      "estadistica_jugador": "puntos",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 16.5,
-              "cuota_a": 1.89,
-              "cuota_b": 1.91
-            }
-          ]
-        },
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 16.5,
-              "cuota_a": 2.02,
-              "cuota_b": 1.75
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.536,
-          "lado": "a",
-          "explicacion": [
-            {
-              "factor": "promedio_jugador",
-              "impacto": 0.01
-            },
-            {
-              "factor": "minutos",
-              "impacto": 0
-            },
-            {
-              "factor": "rival_concede",
-              "impacto": 0
-            }
-          ]
-        },
-        "red": null,
-        "entrada_red": null
-      }
-    },
-    {
-      "partido_id": "ejemplo:bas-025",
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-9",
-        "nombre": "Bruno Paredes",
-        "equipo": "visitante"
-      },
-      "estadistica_jugador": "puntos_rebotes_asistencias",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 30.5,
-              "cuota_a": 1.87,
-              "cuota_b": 1.92
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.513,
-          "lado": "a",
-          "explicacion": [
-            {
-              "factor": "rival_concede",
-              "impacto": 0
-            },
-            {
-              "factor": "promedio_jugador",
-              "impacto": 0
-            },
-            {
-              "factor": "minutos",
-              "impacto": 0
-            }
-          ]
-        },
-        "red": null,
-        "entrada_red": null
-      }
-    },
-    {
-      "partido_id": "ejemplo:bas-025",
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-9",
-        "nombre": "Bruno Paredes",
-        "equipo": "visitante"
-      },
-      "estadistica_jugador": "rebotes",
-      "ofertas": [
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 6.5,
-              "cuota_a": 2,
-              "cuota_b": 1.77
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.411,
-          "lado": "b",
-          "explicacion": [
-            {
-              "factor": "rival_concede",
-              "impacto": -0.03
-            },
-            {
-              "factor": "promedio_jugador",
-              "impacto": -0.04
-            },
-            {
-              "factor": "minutos",
-              "impacto": -0.02
-            }
-          ]
-        },
-        "red": null,
-        "entrada_red": null
-      }
-    },
-    {
-      "partido_id": "ejemplo:bas-025",
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-10",
-        "nombre": "Thiago Flores",
-        "equipo": "visitante"
-      },
-      "estadistica_jugador": "puntos",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 17.5,
-              "cuota_a": 1.81,
-              "cuota_b": 2
-            }
-          ]
-        },
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 17.5,
-              "cuota_a": 1.76,
-              "cuota_b": 2.01
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.376,
-          "lado": "b",
-          "explicacion": [
-            {
-              "factor": "rival_concede",
-              "impacto": -0.07
-            },
-            {
-              "factor": "promedio_jugador",
-              "impacto": -0.02
-            },
-            {
-              "factor": "minutos",
-              "impacto": -0.03
-            }
-          ]
-        },
-        "red": null,
-        "entrada_red": null
-      }
-    },
-    {
-      "partido_id": "ejemplo:bas-025",
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-10",
-        "nombre": "Thiago Flores",
-        "equipo": "visitante"
-      },
-      "estadistica_jugador": "puntos_rebotes_asistencias",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 32.5,
-              "cuota_a": 2.11,
-              "cuota_b": 1.72
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.542,
-          "lado": "a",
-          "explicacion": [
-            {
-              "factor": "rival_concede",
-              "impacto": 0.03
-            },
-            {
-              "factor": "promedio_jugador",
-              "impacto": 0.01
-            },
-            {
-              "factor": "minutos",
-              "impacto": 0
-            }
-          ]
-        },
-        "red": null,
-        "entrada_red": null
-      }
-    },
-    {
-      "partido_id": "ejemplo:bas-025",
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-10",
-        "nombre": "Thiago Flores",
-        "equipo": "visitante"
-      },
-      "estadistica_jugador": "asistencias",
-      "ofertas": [
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 6.5,
-              "cuota_a": 2.11,
-              "cuota_b": 1.69
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.331,
-          "lado": "b",
-          "explicacion": [
-            {
-              "factor": "minutos",
-              "impacto": -0.05
-            },
-            {
-              "factor": "rival_concede",
-              "impacto": -0.07
-            },
-            {
-              "factor": "promedio_jugador",
-              "impacto": -0.05
-            }
-          ]
-        },
-        "red": null,
-        "entrada_red": null
-      }
-    },
-    {
-      "partido_id": "ejemplo:bas-026",
-      "mercado": "basquet_puntos",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 223.5,
-              "cuota_a": 1.62,
-              "cuota_b": 2.29
-            },
-            {
-              "linea": 224.5,
-              "cuota_a": 1.75,
-              "cuota_b": 2.07
-            },
-            {
-              "linea": 225.5,
-              "cuota_a": 1.9,
-              "cuota_b": 1.9
-            },
-            {
-              "linea": 226.5,
-              "cuota_a": 2.08,
-              "cuota_b": 1.74
-            },
-            {
-              "linea": 227.5,
-              "cuota_a": 2.25,
-              "cuota_b": 1.64
-            }
-          ]
-        },
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 225.5,
-              "cuota_a": 1.9,
-              "cuota_b": 1.86
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.476,
-          "lado": "b",
-          "explicacion": [
-            {
-              "factor": "defensa_rival",
-              "impacto": 0.01
-            },
-            {
-              "factor": "descanso",
-              "impacto": -0.01
-            },
-            {
-              "factor": "ataque_local",
-              "impacto": -0.01
-            }
-          ]
-        },
-        "red": {
-          "version": "ejemplo-red-basquet_puntos-1",
-          "prob_a": 0.413,
-          "lado": "b"
-        },
-        "entrada_red": {
-          "version": "ejemplo-variables-1",
-          "valores": {
-            "linea": 225.5,
-            "cuota_a": 1.9,
-            "cuota_b": 1.9,
-            "esperado": 225.4,
-            "forma_local": 0.69,
-            "forma_visitante": -0.3
-          }
-        }
-      }
-    },
-    {
-      "partido_id": "ejemplo:bas-026",
-      "mercado": "basquet_handicap",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": -4.5,
-              "cuota_a": 1.98,
-              "cuota_b": 1.82
-            },
-            {
-              "linea": -3.5,
-              "cuota_a": 1.89,
-              "cuota_b": 1.91
-            },
-            {
-              "linea": -2.5,
-              "cuota_a": 1.71,
-              "cuota_b": 2.13
-            }
-          ]
-        },
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": -3.5,
-              "cuota_a": 1.83,
-              "cuota_b": 1.93
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.607,
-          "lado": "a",
-          "explicacion": [
-            {
-              "factor": "ataque_local",
-              "impacto": 0.01
-            },
-            {
-              "factor": "defensa_rival",
-              "impacto": 0.06
-            },
-            {
-              "factor": "descanso",
               "impacto": 0.02
             }
           ]
@@ -4361,215 +4009,12 @@
       }
     },
     {
-      "partido_id": "ejemplo:bas-026",
-      "mercado": "basquet_handicap_1t",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": -2.5,
-              "cuota_a": 2.05,
-              "cuota_b": 1.77
-            },
-            {
-              "linea": -1.5,
-              "cuota_a": 1.86,
-              "cuota_b": 1.94
-            },
-            {
-              "linea": -0.5,
-              "cuota_a": 1.63,
-              "cuota_b": 2.27
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.548,
-          "lado": "a",
-          "explicacion": [
-            {
-              "factor": "descanso",
-              "impacto": 0
-            },
-            {
-              "factor": "ataque_local",
-              "impacto": 0.03
-            },
-            {
-              "factor": "defensa_rival",
-              "impacto": 0.02
-            }
-          ]
-        },
-        "red": null,
-        "entrada_red": null
-      }
-    },
-    {
-      "partido_id": "ejemplo:bas-026",
-      "mercado": "basquet_puntos_1t",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 111.5,
-              "cuota_a": 1.72,
-              "cuota_b": 2.11
-            },
-            {
-              "linea": 112.5,
-              "cuota_a": 1.95,
-              "cuota_b": 1.85
-            },
-            {
-              "linea": 113.5,
-              "cuota_a": 2.01,
-              "cuota_b": 1.79
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.539,
-          "lado": "a",
-          "explicacion": [
-            {
-              "factor": "defensa_rival",
-              "impacto": 0.02
-            },
-            {
-              "factor": "ataque_local",
-              "impacto": 0.02
-            },
-            {
-              "factor": "descanso",
-              "impacto": 0.01
-            }
-          ]
-        },
-        "red": null,
-        "entrada_red": null
-      }
-    },
-    {
-      "partido_id": "ejemplo:bas-026",
+      "partido_id": "ejemplo:bas-025",
       "mercado": "basquet_jugador",
       "jugador": {
         "id": "ejemplo:jb-5",
         "nombre": "Gabriel Ramos",
-        "equipo": "local"
-      },
-      "estadistica_jugador": "puntos",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 17.5,
-              "cuota_a": 1.79,
-              "cuota_b": 2.01
-            }
-          ]
-        },
-        {
-          "casa": "apuesta_total",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 17.5,
-              "cuota_a": 1.8,
-              "cuota_b": 1.97
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.471,
-          "lado": "b",
-          "explicacion": [
-            {
-              "factor": "rival_concede",
-              "impacto": 0
-            },
-            {
-              "factor": "promedio_jugador",
-              "impacto": -0.02
-            },
-            {
-              "factor": "minutos",
-              "impacto": 0
-            }
-          ]
-        },
-        "red": null,
-        "entrada_red": null
-      }
-    },
-    {
-      "partido_id": "ejemplo:bas-026",
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-5",
-        "nombre": "Gabriel Ramos",
-        "equipo": "local"
-      },
-      "estadistica_jugador": "puntos_rebotes_asistencias",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 31.5,
-              "cuota_a": 1.99,
-              "cuota_b": 1.81
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.481,
-          "lado": "b",
-          "explicacion": [
-            {
-              "factor": "minutos",
-              "impacto": -0.01
-            },
-            {
-              "factor": "promedio_jugador",
-              "impacto": -0.01
-            },
-            {
-              "factor": "rival_concede",
-              "impacto": -0.01
-            }
-          ]
-        },
-        "red": null,
-        "entrada_red": null
-      }
-    },
-    {
-      "partido_id": "ejemplo:bas-026",
-      "mercado": "basquet_jugador",
-      "jugador": {
-        "id": "ejemplo:jb-5",
-        "nombre": "Gabriel Ramos",
-        "equipo": "local"
+        "equipo": "visitante"
       },
       "estadistica_jugador": "triples",
       "ofertas": [
@@ -4588,20 +4033,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.488,
-          "lado": "b",
+          "prob_a": 0.507,
+          "lado": "a",
           "explicacion": [
             {
-              "factor": "minutos",
-              "impacto": 0
-            },
-            {
               "factor": "promedio_jugador",
-              "impacto": 0.01
+              "impacto": 0.02
             },
             {
               "factor": "rival_concede",
-              "impacto": -0.01
+              "impacto": 0
+            },
+            {
+              "factor": "minutos",
+              "impacto": 0
             }
           ]
         },
@@ -4610,12 +4055,12 @@
       }
     },
     {
-      "partido_id": "ejemplo:bas-026",
+      "partido_id": "ejemplo:bas-025",
       "mercado": "basquet_jugador",
       "jugador": {
         "id": "ejemplo:jb-6",
         "nombre": "Tomás Rojas",
-        "equipo": "local"
+        "equipo": "visitante"
       },
       "estadistica_jugador": "puntos",
       "ofertas": [
@@ -4625,8 +4070,8 @@
           "lineas": [
             {
               "linea": 23.5,
-              "cuota_a": 1.87,
-              "cuota_b": 1.92
+              "cuota_a": 1.81,
+              "cuota_b": 1.99
             }
           ]
         },
@@ -4636,8 +4081,8 @@
           "lineas": [
             {
               "linea": 23.5,
-              "cuota_a": 1.9,
-              "cuota_b": 1.86
+              "cuota_a": 1.78,
+              "cuota_b": 1.99
             }
           ]
         }
@@ -4645,20 +4090,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.498,
+          "prob_a": 0.419,
           "lado": "b",
           "explicacion": [
             {
+              "factor": "rival_concede",
+              "impacto": -0.01
+            },
+            {
               "factor": "minutos",
-              "impacto": -0.02
+              "impacto": -0.05
             },
             {
               "factor": "promedio_jugador",
-              "impacto": 0.01
-            },
-            {
-              "factor": "rival_concede",
-              "impacto": 0
+              "impacto": -0.04
             }
           ]
         },
@@ -4667,12 +4112,12 @@
       }
     },
     {
-      "partido_id": "ejemplo:bas-026",
+      "partido_id": "ejemplo:bas-025",
       "mercado": "basquet_jugador",
       "jugador": {
         "id": "ejemplo:jb-6",
         "nombre": "Tomás Rojas",
-        "equipo": "local"
+        "equipo": "visitante"
       },
       "estadistica_jugador": "puntos_rebotes_asistencias",
       "ofertas": [
@@ -4682,8 +4127,8 @@
           "lineas": [
             {
               "linea": 34.5,
-              "cuota_a": 1.78,
-              "cuota_b": 2.03
+              "cuota_a": 1.88,
+              "cuota_b": 1.91
             }
           ]
         }
@@ -4691,19 +4136,311 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.518,
+          "prob_a": 0.525,
           "lado": "a",
           "explicacion": [
-            {
-              "factor": "rival_concede",
-              "impacto": 0.01
-            },
             {
               "factor": "promedio_jugador",
               "impacto": 0
             },
             {
               "factor": "minutos",
+              "impacto": 0.01
+            },
+            {
+              "factor": "rival_concede",
+              "impacto": 0.01
+            }
+          ]
+        },
+        "red": null,
+        "entrada_red": null
+      }
+    },
+    {
+      "partido_id": "ejemplo:bas-025",
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-6",
+        "nombre": "Tomás Rojas",
+        "equipo": "visitante"
+      },
+      "estadistica_jugador": "rebotes",
+      "ofertas": [
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 3.5,
+              "cuota_a": 2.14,
+              "cuota_b": 1.67
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.499,
+          "lado": "b",
+          "explicacion": [
+            {
+              "factor": "minutos",
+              "impacto": 0
+            },
+            {
+              "factor": "rival_concede",
+              "impacto": 0
+            },
+            {
+              "factor": "promedio_jugador",
+              "impacto": -0.01
+            }
+          ]
+        },
+        "red": null,
+        "entrada_red": null
+      }
+    },
+    {
+      "partido_id": "ejemplo:bas-026",
+      "mercado": "basquet_puntos",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 214.5,
+              "cuota_a": 1.62,
+              "cuota_b": 2.28
+            },
+            {
+              "linea": 215.5,
+              "cuota_a": 1.85,
+              "cuota_b": 1.95
+            },
+            {
+              "linea": 216.5,
+              "cuota_a": 1.82,
+              "cuota_b": 1.98
+            },
+            {
+              "linea": 217.5,
+              "cuota_a": 1.94,
+              "cuota_b": 1.85
+            },
+            {
+              "linea": 218.5,
+              "cuota_a": 2.23,
+              "cuota_b": 1.65
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 216.5,
+              "cuota_a": 1.76,
+              "cuota_b": 2.02
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.442,
+          "lado": "b",
+          "explicacion": [
+            {
+              "factor": "ritmo_juego",
+              "impacto": -0.01
+            },
+            {
+              "factor": "defensa_rival",
+              "impacto": -0.04
+            },
+            {
+              "factor": "descanso",
+              "impacto": -0.02
+            }
+          ]
+        },
+        "red": {
+          "version": "ejemplo-red-basquet_puntos-1",
+          "prob_a": 0.507,
+          "lado": "a"
+        },
+        "entrada_red": {
+          "version": "ejemplo-variables-1",
+          "valores": {
+            "linea": 217.5,
+            "cuota_a": 1.94,
+            "cuota_b": 1.85,
+            "esperado": 216.97,
+            "forma_local": -0.5,
+            "forma_visitante": 0.25
+          }
+        }
+      }
+    },
+    {
+      "partido_id": "ejemplo:bas-026",
+      "mercado": "basquet_handicap",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": -3.5,
+              "cuota_a": 1.88,
+              "cuota_b": 1.91
+            },
+            {
+              "linea": -2.5,
+              "cuota_a": 1.82,
+              "cuota_b": 1.98
+            },
+            {
+              "linea": -1.5,
+              "cuota_a": 1.69,
+              "cuota_b": 2.15
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": -2.5,
+              "cuota_a": 1.89,
+              "cuota_b": 1.86
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.455,
+          "lado": "b",
+          "explicacion": [
+            {
+              "factor": "ataque_local",
+              "impacto": -0.03
+            },
+            {
+              "factor": "defensa_rival",
+              "impacto": -0.01
+            },
+            {
+              "factor": "ritmo_juego",
+              "impacto": 0
+            }
+          ]
+        },
+        "red": null,
+        "entrada_red": null
+      }
+    },
+    {
+      "partido_id": "ejemplo:bas-026",
+      "mercado": "basquet_handicap_1t",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": -2.5,
+              "cuota_a": 2.07,
+              "cuota_b": 1.75
+            },
+            {
+              "linea": -1.5,
+              "cuota_a": 1.96,
+              "cuota_b": 1.83
+            },
+            {
+              "linea": -0.5,
+              "cuota_a": 1.69,
+              "cuota_b": 2.16
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.449,
+          "lado": "b",
+          "explicacion": [
+            {
+              "factor": "descanso",
+              "impacto": -0.02
+            },
+            {
+              "factor": "ataque_local",
+              "impacto": 0
+            },
+            {
+              "factor": "ritmo_juego",
+              "impacto": -0.03
+            }
+          ]
+        },
+        "red": null,
+        "entrada_red": null
+      }
+    },
+    {
+      "partido_id": "ejemplo:bas-026",
+      "mercado": "basquet_puntos_1t",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 107.5,
+              "cuota_a": 1.79,
+              "cuota_b": 2.01
+            },
+            {
+              "linea": 108.5,
+              "cuota_a": 1.91,
+              "cuota_b": 1.88
+            },
+            {
+              "linea": 109.5,
+              "cuota_a": 2.06,
+              "cuota_b": 1.76
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.475,
+          "lado": "b",
+          "explicacion": [
+            {
+              "factor": "defensa_rival",
+              "impacto": -0.01
+            },
+            {
+              "factor": "descanso",
+              "impacto": -0.01
+            },
+            {
+              "factor": "ritmo_juego",
               "impacto": 0
             }
           ]
@@ -4716,20 +4453,31 @@
       "partido_id": "ejemplo:bas-026",
       "mercado": "basquet_jugador",
       "jugador": {
-        "id": "ejemplo:jb-6",
-        "nombre": "Tomás Rojas",
+        "id": "ejemplo:jb-1",
+        "nombre": "Santiago Castro",
         "equipo": "local"
       },
-      "estadistica_jugador": "rebotes",
+      "estadistica_jugador": "puntos",
       "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 14.5,
+              "cuota_a": 2.01,
+              "cuota_b": 1.79
+            }
+          ]
+        },
         {
           "casa": "apuesta_total",
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 3.5,
-              "cuota_a": 1.89,
-              "cuota_b": 1.87
+              "linea": 14.5,
+              "cuota_a": 1.8,
+              "cuota_b": 1.97
             }
           ]
         }
@@ -4737,20 +4485,261 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.487,
+          "prob_a": 0.382,
+          "lado": "b",
+          "explicacion": [
+            {
+              "factor": "rival_concede",
+              "impacto": -0.04
+            },
+            {
+              "factor": "minutos",
+              "impacto": -0.05
+            },
+            {
+              "factor": "promedio_jugador",
+              "impacto": -0.04
+            }
+          ]
+        },
+        "red": null,
+        "entrada_red": null
+      }
+    },
+    {
+      "partido_id": "ejemplo:bas-026",
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-1",
+        "nombre": "Santiago Castro",
+        "equipo": "local"
+      },
+      "estadistica_jugador": "puntos_rebotes_asistencias",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 23.5,
+              "cuota_a": 2.09,
+              "cuota_b": 1.73
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.525,
+          "lado": "a",
+          "explicacion": [
+            {
+              "factor": "promedio_jugador",
+              "impacto": 0.03
+            },
+            {
+              "factor": "minutos",
+              "impacto": 0.01
+            },
+            {
+              "factor": "rival_concede",
+              "impacto": 0.01
+            }
+          ]
+        },
+        "red": null,
+        "entrada_red": null
+      }
+    },
+    {
+      "partido_id": "ejemplo:bas-026",
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-1",
+        "nombre": "Santiago Castro",
+        "equipo": "local"
+      },
+      "estadistica_jugador": "asistencias",
+      "ofertas": [
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 5.5,
+              "cuota_a": 2.32,
+              "cuota_b": 1.58
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.463,
           "lado": "b",
           "explicacion": [
             {
               "factor": "minutos",
-              "impacto": -0.02
+              "impacto": -0.01
             },
             {
               "factor": "promedio_jugador",
-              "impacto": -0.01
+              "impacto": 0
             },
             {
               "factor": "rival_concede",
               "impacto": 0
+            }
+          ]
+        },
+        "red": null,
+        "entrada_red": null
+      }
+    },
+    {
+      "partido_id": "ejemplo:bas-026",
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-2",
+        "nombre": "Sebastián Huamán",
+        "equipo": "local"
+      },
+      "estadistica_jugador": "puntos",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 19.5,
+              "cuota_a": 1.98,
+              "cuota_b": 1.82
+            }
+          ]
+        },
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 19.5,
+              "cuota_a": 2.04,
+              "cuota_b": 1.74
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.485,
+          "lado": "b",
+          "explicacion": [
+            {
+              "factor": "minutos",
+              "impacto": 0.01
+            },
+            {
+              "factor": "promedio_jugador",
+              "impacto": 0
+            },
+            {
+              "factor": "rival_concede",
+              "impacto": -0.01
+            }
+          ]
+        },
+        "red": null,
+        "entrada_red": null
+      }
+    },
+    {
+      "partido_id": "ejemplo:bas-026",
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-2",
+        "nombre": "Sebastián Huamán",
+        "equipo": "local"
+      },
+      "estadistica_jugador": "puntos_rebotes_asistencias",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 25.5,
+              "cuota_a": 1.8,
+              "cuota_b": 2.01
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.517,
+          "lado": "a",
+          "explicacion": [
+            {
+              "factor": "promedio_jugador",
+              "impacto": 0.02
+            },
+            {
+              "factor": "minutos",
+              "impacto": 0
+            },
+            {
+              "factor": "rival_concede",
+              "impacto": 0
+            }
+          ]
+        },
+        "red": null,
+        "entrada_red": null
+      }
+    },
+    {
+      "partido_id": "ejemplo:bas-026",
+      "mercado": "basquet_jugador",
+      "jugador": {
+        "id": "ejemplo:jb-2",
+        "nombre": "Sebastián Huamán",
+        "equipo": "local"
+      },
+      "estadistica_jugador": "triples",
+      "ofertas": [
+        {
+          "casa": "apuesta_total",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 2.5,
+              "cuota_a": 1.97,
+              "cuota_b": 1.79
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.462,
+          "lado": "b",
+          "explicacion": [
+            {
+              "factor": "promedio_jugador",
+              "impacto": -0.02
+            },
+            {
+              "factor": "rival_concede",
+              "impacto": 0.01
+            },
+            {
+              "factor": "minutos",
+              "impacto": -0.01
             }
           ]
         },
@@ -4774,8 +4763,8 @@
           "lineas": [
             {
               "linea": 17.5,
-              "cuota_a": 1.87,
-              "cuota_b": 1.93
+              "cuota_a": 1.88,
+              "cuota_b": 1.91
             }
           ]
         },
@@ -4785,7 +4774,7 @@
           "lineas": [
             {
               "linea": 17.5,
-              "cuota_a": 1.9,
+              "cuota_a": 1.89,
               "cuota_b": 1.86
             }
           ]
@@ -4794,16 +4783,16 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.477,
+          "prob_a": 0.42,
           "lado": "b",
           "explicacion": [
             {
               "factor": "minutos",
-              "impacto": -0.02
+              "impacto": -0.03
             },
             {
               "factor": "rival_concede",
-              "impacto": 0
+              "impacto": -0.02
             },
             {
               "factor": "promedio_jugador",
@@ -4831,8 +4820,8 @@
           "lineas": [
             {
               "linea": 26.5,
-              "cuota_a": 1.81,
-              "cuota_b": 1.99
+              "cuota_a": 1.86,
+              "cuota_b": 1.93
             }
           ]
         }
@@ -4840,20 +4829,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.488,
-          "lado": "b",
+          "prob_a": 0.638,
+          "lado": "a",
           "explicacion": [
             {
+              "factor": "promedio_jugador",
+              "impacto": 0.06
+            },
+            {
               "factor": "rival_concede",
-              "impacto": 0.01
+              "impacto": 0.03
             },
             {
               "factor": "minutos",
-              "impacto": -0.01
-            },
-            {
-              "factor": "promedio_jugador",
-              "impacto": 0.01
+              "impacto": 0.05
             }
           ]
         },
@@ -4877,8 +4866,8 @@
           "lineas": [
             {
               "linea": 1.5,
-              "cuota_a": 2.48,
-              "cuota_b": 1.51
+              "cuota_a": 2.46,
+              "cuota_b": 1.52
             }
           ]
         }
@@ -4886,20 +4875,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.311,
+          "prob_a": 0.421,
           "lado": "b",
           "explicacion": [
             {
               "factor": "minutos",
-              "impacto": -0.05
-            },
-            {
-              "factor": "rival_concede",
-              "impacto": -0.08
+              "impacto": -0.02
             },
             {
               "factor": "promedio_jugador",
-              "impacto": -0.07
+              "impacto": -0.03
+            },
+            {
+              "factor": "rival_concede",
+              "impacto": -0.04
             }
           ]
         },
@@ -4923,8 +4912,8 @@
           "lineas": [
             {
               "linea": 26.5,
-              "cuota_a": 1.75,
-              "cuota_b": 2.06
+              "cuota_a": 1.87,
+              "cuota_b": 1.93
             }
           ]
         },
@@ -4934,8 +4923,8 @@
           "lineas": [
             {
               "linea": 26.5,
-              "cuota_a": 1.81,
-              "cuota_b": 1.96
+              "cuota_a": 1.73,
+              "cuota_b": 2.05
             }
           ]
         }
@@ -4943,20 +4932,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.433,
+          "prob_a": 0.496,
           "lado": "b",
           "explicacion": [
             {
-              "factor": "promedio_jugador",
-              "impacto": -0.02
-            },
-            {
               "factor": "minutos",
-              "impacto": -0.01
+              "impacto": 0.02
             },
             {
               "factor": "rival_concede",
-              "impacto": -0.05
+              "impacto": -0.01
+            },
+            {
+              "factor": "promedio_jugador",
+              "impacto": 0.01
             }
           ]
         },
@@ -4980,8 +4969,8 @@
           "lineas": [
             {
               "linea": 40.5,
-              "cuota_a": 1.95,
-              "cuota_b": 1.85
+              "cuota_a": 1.8,
+              "cuota_b": 2
             }
           ]
         }
@@ -4989,16 +4978,16 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.455,
+          "prob_a": 0.494,
           "lado": "b",
           "explicacion": [
             {
               "factor": "promedio_jugador",
-              "impacto": -0.03
+              "impacto": 0
             },
             {
               "factor": "rival_concede",
-              "impacto": 0.01
+              "impacto": -0.01
             },
             {
               "factor": "minutos",
@@ -5026,8 +5015,8 @@
           "lineas": [
             {
               "linea": 8.5,
-              "cuota_a": 1.84,
-              "cuota_b": 1.92
+              "cuota_a": 1.7,
+              "cuota_b": 2.09
             }
           ]
         }
@@ -5035,20 +5024,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.602,
+          "prob_a": 0.528,
           "lado": "a",
           "explicacion": [
             {
-              "factor": "minutos",
-              "impacto": 0.02
+              "factor": "rival_concede",
+              "impacto": 0.01
             },
             {
-              "factor": "rival_concede",
-              "impacto": 0.02
+              "factor": "minutos",
+              "impacto": 0
             },
             {
               "factor": "promedio_jugador",
-              "impacto": 0.05
+              "impacto": 0.02
             }
           ]
         },
@@ -5065,29 +5054,29 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 216.5,
-              "cuota_a": 1.58,
-              "cuota_b": 2.36
-            },
-            {
-              "linea": 217.5,
-              "cuota_a": 1.83,
-              "cuota_b": 1.97
-            },
-            {
               "linea": 218.5,
-              "cuota_a": 1.93,
-              "cuota_b": 1.86
+              "cuota_a": 1.67,
+              "cuota_b": 2.19
             },
             {
               "linea": 219.5,
-              "cuota_a": 2.01,
-              "cuota_b": 1.79
+              "cuota_a": 1.82,
+              "cuota_b": 1.98
             },
             {
               "linea": 220.5,
-              "cuota_a": 2.18,
-              "cuota_b": 1.68
+              "cuota_a": 1.82,
+              "cuota_b": 1.98
+            },
+            {
+              "linea": 221.5,
+              "cuota_a": 2.07,
+              "cuota_b": 1.75
+            },
+            {
+              "linea": 222.5,
+              "cuota_a": 2.09,
+              "cuota_b": 1.73
             }
           ]
         },
@@ -5096,9 +5085,9 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 218.5,
-              "cuota_a": 1.94,
-              "cuota_b": 1.82
+              "linea": 220.5,
+              "cuota_a": 1.87,
+              "cuota_b": 1.89
             }
           ]
         }
@@ -5106,37 +5095,37 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.503,
+          "prob_a": 0.508,
           "lado": "a",
           "explicacion": [
+            {
+              "factor": "defensa_rival",
+              "impacto": 0
+            },
             {
               "factor": "descanso",
               "impacto": 0.02
             },
             {
-              "factor": "ritmo_juego",
-              "impacto": -0.01
-            },
-            {
               "factor": "ataque_local",
-              "impacto": 0.01
+              "impacto": 0.02
             }
           ]
         },
         "red": {
           "version": "ejemplo-red-basquet_puntos-1",
-          "prob_a": 0.489,
-          "lado": "b"
+          "prob_a": 0.519,
+          "lado": "a"
         },
         "entrada_red": {
           "version": "ejemplo-variables-1",
           "valores": {
-            "linea": 218.5,
-            "cuota_a": 1.93,
-            "cuota_b": 1.86,
-            "esperado": 218.28,
-            "forma_local": 0.62,
-            "forma_visitante": 0.89
+            "linea": 219.5,
+            "cuota_a": 1.82,
+            "cuota_b": 1.98,
+            "esperado": 220.21,
+            "forma_local": 0.18,
+            "forma_visitante": -0.14
           }
         }
       }
@@ -5150,19 +5139,19 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": -0.5,
-              "cuota_a": 1.94,
-              "cuota_b": 1.85
+              "linea": -6.5,
+              "cuota_a": 1.92,
+              "cuota_b": 1.88
             },
             {
-              "linea": 0.5,
-              "cuota_a": 1.81,
-              "cuota_b": 1.99
+              "linea": -5.5,
+              "cuota_a": 1.93,
+              "cuota_b": 1.86
             },
             {
-              "linea": 1.5,
-              "cuota_a": 1.73,
-              "cuota_b": 2.1
+              "linea": -4.5,
+              "cuota_a": 1.93,
+              "cuota_b": 1.86
             }
           ]
         },
@@ -5171,9 +5160,9 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 0.5,
-              "cuota_a": 1.79,
-              "cuota_b": 1.98
+              "linea": -5.5,
+              "cuota_a": 1.92,
+              "cuota_b": 1.84
             }
           ]
         }
@@ -5181,20 +5170,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.515,
-          "lado": "a",
+          "prob_a": 0.444,
+          "lado": "b",
           "explicacion": [
             {
               "factor": "descanso",
-              "impacto": 0
+              "impacto": -0.02
+            },
+            {
+              "factor": "defensa_rival",
+              "impacto": -0.01
             },
             {
               "factor": "ritmo_juego",
-              "impacto": 0.01
-            },
-            {
-              "factor": "ataque_local",
-              "impacto": 0.01
+              "impacto": -0.04
             }
           ]
         },
@@ -5211,19 +5200,19 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": -0.5,
-              "cuota_a": 1.94,
-              "cuota_b": 1.85
+              "linea": -3.5,
+              "cuota_a": 2.03,
+              "cuota_b": 1.77
             },
             {
-              "linea": 0.5,
-              "cuota_a": 1.77,
-              "cuota_b": 2.04
+              "linea": -2.5,
+              "cuota_a": 1.98,
+              "cuota_b": 1.82
             },
             {
-              "linea": 1.5,
-              "cuota_a": 1.69,
-              "cuota_b": 2.16
+              "linea": -1.5,
+              "cuota_a": 1.76,
+              "cuota_b": 2.06
             }
           ]
         }
@@ -5231,20 +5220,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.441,
-          "lado": "b",
+          "prob_a": 0.51,
+          "lado": "a",
           "explicacion": [
             {
-              "factor": "descanso",
-              "impacto": -0.03
-            },
-            {
-              "factor": "ritmo_juego",
+              "factor": "defensa_rival",
               "impacto": -0.01
             },
             {
+              "factor": "ritmo_juego",
+              "impacto": 0.01
+            },
+            {
               "factor": "ataque_local",
-              "impacto": -0.03
+              "impacto": 0
             }
           ]
         },
@@ -5261,19 +5250,19 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 108.5,
-              "cuota_a": 1.81,
-              "cuota_b": 1.99
-            },
-            {
               "linea": 109.5,
-              "cuota_a": 1.97,
-              "cuota_b": 1.82
+              "cuota_a": 1.76,
+              "cuota_b": 2.05
             },
             {
               "linea": 110.5,
-              "cuota_a": 2.02,
-              "cuota_b": 1.79
+              "cuota_a": 1.87,
+              "cuota_b": 1.92
+            },
+            {
+              "linea": 111.5,
+              "cuota_a": 2.2,
+              "cuota_b": 1.66
             }
           ]
         }
@@ -5281,20 +5270,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.462,
+          "prob_a": 0.472,
           "lado": "b",
           "explicacion": [
             {
-              "factor": "defensa_rival",
-              "impacto": 0
-            },
-            {
               "factor": "ritmo_juego",
-              "impacto": -0.02
+              "impacto": 0
             },
             {
               "factor": "ataque_local",
               "impacto": -0.02
+            },
+            {
+              "factor": "descanso",
+              "impacto": -0.01
             }
           ]
         },
@@ -5318,8 +5307,8 @@
           "lineas": [
             {
               "linea": 22.5,
-              "cuota_a": 1.9,
-              "cuota_b": 1.89
+              "cuota_a": 2.03,
+              "cuota_b": 1.78
             }
           ]
         },
@@ -5329,8 +5318,8 @@
           "lineas": [
             {
               "linea": 22.5,
-              "cuota_a": 1.86,
-              "cuota_b": 1.9
+              "cuota_a": 1.82,
+              "cuota_b": 1.95
             }
           ]
         }
@@ -5338,20 +5327,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.483,
+          "prob_a": 0.459,
           "lado": "b",
           "explicacion": [
             {
               "factor": "minutos",
-              "impacto": -0.01
+              "impacto": -0.04
             },
             {
               "factor": "promedio_jugador",
-              "impacto": -0.01
+              "impacto": -0.02
             },
             {
               "factor": "rival_concede",
-              "impacto": 0
+              "impacto": -0.01
             }
           ]
         },
@@ -5375,8 +5364,8 @@
           "lineas": [
             {
               "linea": 30.5,
-              "cuota_a": 1.89,
-              "cuota_b": 1.9
+              "cuota_a": 1.87,
+              "cuota_b": 1.92
             }
           ]
         }
@@ -5384,20 +5373,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.628,
-          "lado": "a",
+          "prob_a": 0.469,
+          "lado": "b",
           "explicacion": [
             {
               "factor": "minutos",
-              "impacto": 0.04
+              "impacto": -0.01
             },
             {
               "factor": "rival_concede",
-              "impacto": 0.05
+              "impacto": -0.01
             },
             {
               "factor": "promedio_jugador",
-              "impacto": 0.04
+              "impacto": 0.01
             }
           ]
         },
@@ -5421,8 +5410,8 @@
           "lineas": [
             {
               "linea": 4.5,
-              "cuota_a": 1.8,
-              "cuota_b": 1.97
+              "cuota_a": 1.79,
+              "cuota_b": 1.98
             }
           ]
         }
@@ -5430,20 +5419,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.562,
-          "lado": "a",
+          "prob_a": 0.483,
+          "lado": "b",
           "explicacion": [
             {
-              "factor": "minutos",
-              "impacto": 0.03
-            },
-            {
               "factor": "rival_concede",
-              "impacto": 0.03
+              "impacto": 0
             },
             {
               "factor": "promedio_jugador",
-              "impacto": 0.02
+              "impacto": -0.01
+            },
+            {
+              "factor": "minutos",
+              "impacto": -0.02
             }
           ]
         },
@@ -5467,8 +5456,8 @@
           "lineas": [
             {
               "linea": 14.5,
-              "cuota_a": 1.93,
-              "cuota_b": 1.86
+              "cuota_a": 1.94,
+              "cuota_b": 1.85
             }
           ]
         },
@@ -5478,8 +5467,8 @@
           "lineas": [
             {
               "linea": 14.5,
-              "cuota_a": 1.92,
-              "cuota_b": 1.84
+              "cuota_a": 1.77,
+              "cuota_b": 2
             }
           ]
         }
@@ -5487,20 +5476,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.542,
-          "lado": "a",
+          "prob_a": 0.485,
+          "lado": "b",
           "explicacion": [
             {
-              "factor": "rival_concede",
-              "impacto": 0.02
+              "factor": "promedio_jugador",
+              "impacto": -0.01
             },
             {
-              "factor": "promedio_jugador",
-              "impacto": 0.01
+              "factor": "rival_concede",
+              "impacto": -0.01
             },
             {
               "factor": "minutos",
-              "impacto": 0.01
+              "impacto": -0.01
             }
           ]
         },
@@ -5524,8 +5513,8 @@
           "lineas": [
             {
               "linea": 28.5,
-              "cuota_a": 1.9,
-              "cuota_b": 1.89
+              "cuota_a": 1.74,
+              "cuota_b": 2.09
             }
           ]
         }
@@ -5533,16 +5522,16 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.567,
-          "lado": "a",
+          "prob_a": 0.466,
+          "lado": "b",
           "explicacion": [
             {
               "factor": "rival_concede",
-              "impacto": 0.02
+              "impacto": -0.02
             },
             {
               "factor": "minutos",
-              "impacto": 0.04
+              "impacto": -0.02
             },
             {
               "factor": "promedio_jugador",
@@ -5570,8 +5559,8 @@
           "lineas": [
             {
               "linea": 4.5,
-              "cuota_a": 2.03,
-              "cuota_b": 1.75
+              "cuota_a": 2.01,
+              "cuota_b": 1.76
             }
           ]
         }
@@ -5579,20 +5568,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.452,
+          "prob_a": 0.332,
           "lado": "b",
           "explicacion": [
+            {
+              "factor": "promedio_jugador",
+              "impacto": -0.08
+            },
             {
               "factor": "rival_concede",
               "impacto": -0.01
             },
             {
               "factor": "minutos",
-              "impacto": -0.03
-            },
-            {
-              "factor": "promedio_jugador",
-              "impacto": 0.01
+              "impacto": -0.08
             }
           ]
         },
@@ -5604,8 +5593,8 @@
       "partido_id": "ejemplo:bas-027",
       "mercado": "basquet_jugador",
       "jugador": {
-        "id": "ejemplo:jb-7",
-        "nombre": "Joaquín Salazar",
+        "id": "ejemplo:jb-9",
+        "nombre": "Bruno Paredes",
         "equipo": "visitante"
       },
       "estadistica_jugador": "puntos",
@@ -5615,9 +5604,9 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 18.5,
-              "cuota_a": 1.84,
-              "cuota_b": 1.96
+              "linea": 16.5,
+              "cuota_a": 1.88,
+              "cuota_b": 1.91
             }
           ]
         },
@@ -5626,9 +5615,9 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 18.5,
-              "cuota_a": 1.77,
-              "cuota_b": 2
+              "linea": 16.5,
+              "cuota_a": 1.8,
+              "cuota_b": 1.96
             }
           ]
         }
@@ -5636,19 +5625,19 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.485,
+          "prob_a": 0.486,
           "lado": "b",
           "explicacion": [
             {
-              "factor": "minutos",
-              "impacto": -0.01
-            },
-            {
-              "factor": "rival_concede",
+              "factor": "promedio_jugador",
               "impacto": 0
             },
             {
-              "factor": "promedio_jugador",
+              "factor": "rival_concede",
+              "impacto": -0.02
+            },
+            {
+              "factor": "minutos",
               "impacto": -0.02
             }
           ]
@@ -5661,8 +5650,8 @@
       "partido_id": "ejemplo:bas-027",
       "mercado": "basquet_jugador",
       "jugador": {
-        "id": "ejemplo:jb-7",
-        "nombre": "Joaquín Salazar",
+        "id": "ejemplo:jb-9",
+        "nombre": "Bruno Paredes",
         "equipo": "visitante"
       },
       "estadistica_jugador": "puntos_rebotes_asistencias",
@@ -5672,9 +5661,9 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 27.5,
-              "cuota_a": 1.9,
-              "cuota_b": 1.89
+              "linea": 30.5,
+              "cuota_a": 1.87,
+              "cuota_b": 1.92
             }
           ]
         }
@@ -5682,20 +5671,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.54,
-          "lado": "a",
+          "prob_a": 0.464,
+          "lado": "b",
           "explicacion": [
             {
-              "factor": "promedio_jugador",
-              "impacto": 0.02
+              "factor": "rival_concede",
+              "impacto": 0
             },
             {
-              "factor": "rival_concede",
-              "impacto": 0.01
+              "factor": "promedio_jugador",
+              "impacto": -0.01
             },
             {
               "factor": "minutos",
-              "impacto": 0.02
+              "impacto": -0.02
             }
           ]
         },
@@ -5707,20 +5696,20 @@
       "partido_id": "ejemplo:bas-027",
       "mercado": "basquet_jugador",
       "jugador": {
-        "id": "ejemplo:jb-7",
-        "nombre": "Joaquín Salazar",
+        "id": "ejemplo:jb-9",
+        "nombre": "Bruno Paredes",
         "equipo": "visitante"
       },
-      "estadistica_jugador": "asistencias",
+      "estadistica_jugador": "rebotes",
       "ofertas": [
         {
           "casa": "apuesta_total",
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 2.5,
-              "cuota_a": 2.72,
-              "cuota_b": 1.44
+              "linea": 6.5,
+              "cuota_a": 2.02,
+              "cuota_b": 1.75
             }
           ]
         }
@@ -5728,20 +5717,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.336,
+          "prob_a": 0.459,
           "lado": "b",
           "explicacion": [
             {
-              "factor": "rival_concede",
-              "impacto": -0.05
+              "factor": "minutos",
+              "impacto": -0.01
             },
             {
-              "factor": "minutos",
-              "impacto": -0.05
+              "factor": "rival_concede",
+              "impacto": -0.03
             },
             {
               "factor": "promedio_jugador",
-              "impacto": -0.05
+              "impacto": 0
             }
           ]
         },
@@ -5753,8 +5742,8 @@
       "partido_id": "ejemplo:bas-027",
       "mercado": "basquet_jugador",
       "jugador": {
-        "id": "ejemplo:jb-8",
-        "nombre": "Emiliano Vargas",
+        "id": "ejemplo:jb-10",
+        "nombre": "Thiago Flores",
         "equipo": "visitante"
       },
       "estadistica_jugador": "puntos",
@@ -5764,9 +5753,9 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 14.5,
-              "cuota_a": 2.09,
-              "cuota_b": 1.73
+              "linea": 17.5,
+              "cuota_a": 1.85,
+              "cuota_b": 1.94
             }
           ]
         },
@@ -5775,9 +5764,9 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 14.5,
-              "cuota_a": 2.1,
-              "cuota_b": 1.7
+              "linea": 17.5,
+              "cuota_a": 1.78,
+              "cuota_b": 1.98
             }
           ]
         }
@@ -5785,20 +5774,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.479,
+          "prob_a": 0.423,
           "lado": "b",
           "explicacion": [
             {
               "factor": "promedio_jugador",
-              "impacto": 0
+              "impacto": -0.03
             },
             {
               "factor": "rival_concede",
-              "impacto": -0.01
+              "impacto": -0.02
             },
             {
               "factor": "minutos",
-              "impacto": 0
+              "impacto": -0.02
             }
           ]
         },
@@ -5810,8 +5799,8 @@
       "partido_id": "ejemplo:bas-027",
       "mercado": "basquet_jugador",
       "jugador": {
-        "id": "ejemplo:jb-8",
-        "nombre": "Emiliano Vargas",
+        "id": "ejemplo:jb-10",
+        "nombre": "Thiago Flores",
         "equipo": "visitante"
       },
       "estadistica_jugador": "puntos_rebotes_asistencias",
@@ -5821,9 +5810,9 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 25.5,
-              "cuota_a": 1.8,
-              "cuota_b": 2
+              "linea": 32.5,
+              "cuota_a": 1.97,
+              "cuota_b": 1.83
             }
           ]
         }
@@ -5831,20 +5820,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.586,
-          "lado": "a",
+          "prob_a": 0.388,
+          "lado": "b",
           "explicacion": [
             {
+              "factor": "promedio_jugador",
+              "impacto": -0.04
+            },
+            {
               "factor": "minutos",
-              "impacto": 0.05
+              "impacto": -0.04
             },
             {
               "factor": "rival_concede",
-              "impacto": 0.01
-            },
-            {
-              "factor": "promedio_jugador",
-              "impacto": 0.02
+              "impacto": -0.02
             }
           ]
         },
@@ -5856,20 +5845,20 @@
       "partido_id": "ejemplo:bas-027",
       "mercado": "basquet_jugador",
       "jugador": {
-        "id": "ejemplo:jb-8",
-        "nombre": "Emiliano Vargas",
+        "id": "ejemplo:jb-10",
+        "nombre": "Thiago Flores",
         "equipo": "visitante"
       },
-      "estadistica_jugador": "triples",
+      "estadistica_jugador": "asistencias",
       "ofertas": [
         {
           "casa": "apuesta_total",
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 0.5,
-              "cuota_a": 1.7,
-              "cuota_b": 2.09
+              "linea": 6.5,
+              "cuota_a": 2.31,
+              "cuota_b": 1.58
             }
           ]
         }
@@ -5877,20 +5866,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.524,
-          "lado": "a",
+          "prob_a": 0.388,
+          "lado": "b",
           "explicacion": [
             {
               "factor": "rival_concede",
-              "impacto": 0.01
+              "impacto": -0.04
             },
             {
               "factor": "promedio_jugador",
-              "impacto": 0.03
+              "impacto": -0.04
             },
             {
               "factor": "minutos",
-              "impacto": 0.02
+              "impacto": -0.03
             }
           ]
         },
@@ -5907,29 +5896,29 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 135.5,
-              "cuota_a": 1.6,
-              "cuota_b": 2.32
-            },
-            {
               "linea": 136.5,
-              "cuota_a": 1.74,
-              "cuota_b": 2.09
+              "cuota_a": 1.58,
+              "cuota_b": 2.38
             },
             {
               "linea": 137.5,
-              "cuota_a": 1.93,
-              "cuota_b": 1.87
+              "cuota_a": 1.73,
+              "cuota_b": 2.09
             },
             {
               "linea": 138.5,
-              "cuota_a": 1.96,
-              "cuota_b": 1.83
+              "cuota_a": 1.93,
+              "cuota_b": 1.86
             },
             {
               "linea": 139.5,
-              "cuota_a": 1.95,
-              "cuota_b": 1.84
+              "cuota_a": 2.03,
+              "cuota_b": 1.78
+            },
+            {
+              "linea": 140.5,
+              "cuota_a": 1.94,
+              "cuota_b": 1.86
             }
           ]
         }
@@ -5937,37 +5926,37 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.513,
+          "prob_a": 0.585,
           "lado": "a",
           "explicacion": [
             {
-              "factor": "descanso",
-              "impacto": 0.01
-            },
-            {
               "factor": "ataque_local",
-              "impacto": 0
+              "impacto": 0.07
             },
             {
               "factor": "ritmo_juego",
               "impacto": 0.02
+            },
+            {
+              "factor": "defensa_rival",
+              "impacto": 0.03
             }
           ]
         },
         "red": {
           "version": "ejemplo-red-basquet_puntos-1",
-          "prob_a": 0.378,
+          "prob_a": 0.399,
           "lado": "b"
         },
         "entrada_red": {
           "version": "ejemplo-variables-1",
           "valores": {
-            "linea": 137.5,
+            "linea": 138.5,
             "cuota_a": 1.93,
-            "cuota_b": 1.87,
-            "esperado": 137.75,
-            "forma_local": -0.1,
-            "forma_visitante": 0.91
+            "cuota_b": 1.86,
+            "esperado": 138.76,
+            "forma_local": 0.15,
+            "forma_visitante": -0.16
           }
         }
       }
@@ -5982,18 +5971,18 @@
           "lineas": [
             {
               "linea": -8.5,
-              "cuota_a": 2.12,
-              "cuota_b": 1.72
+              "cuota_a": 2.02,
+              "cuota_b": 1.79
             },
             {
               "linea": -7.5,
-              "cuota_a": 1.95,
-              "cuota_b": 1.84
+              "cuota_a": 1.9,
+              "cuota_b": 1.89
             },
             {
               "linea": -6.5,
-              "cuota_a": 1.91,
-              "cuota_b": 1.88
+              "cuota_a": 1.72,
+              "cuota_b": 2.12
             }
           ]
         }
@@ -6001,20 +5990,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.566,
-          "lado": "a",
+          "prob_a": 0.391,
+          "lado": "b",
           "explicacion": [
             {
               "factor": "descanso",
-              "impacto": 0.02
-            },
-            {
-              "factor": "defensa_rival",
-              "impacto": 0.02
+              "impacto": -0.05
             },
             {
               "factor": "ritmo_juego",
-              "impacto": 0.01
+              "impacto": -0.01
+            },
+            {
+              "factor": "defensa_rival",
+              "impacto": -0.05
             }
           ]
         },
@@ -6031,19 +6020,19 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 67.5,
-              "cuota_a": 1.64,
-              "cuota_b": 2.25
-            },
-            {
               "linea": 68.5,
               "cuota_a": 1.8,
               "cuota_b": 2
             },
             {
               "linea": 69.5,
-              "cuota_a": 1.92,
-              "cuota_b": 1.87
+              "cuota_a": 1.87,
+              "cuota_b": 1.92
+            },
+            {
+              "linea": 70.5,
+              "cuota_a": 2.15,
+              "cuota_b": 1.69
             }
           ]
         }
@@ -6051,20 +6040,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.492,
+          "prob_a": 0.463,
           "lado": "b",
           "explicacion": [
             {
               "factor": "ritmo_juego",
-              "impacto": -0.01
-            },
-            {
-              "factor": "descanso",
-              "impacto": 0.01
+              "impacto": 0
             },
             {
               "factor": "ataque_local",
-              "impacto": 0.01
+              "impacto": -0.01
+            },
+            {
+              "factor": "defensa_rival",
+              "impacto": -0.01
             }
           ]
         },
@@ -6081,29 +6070,29 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
+              "linea": 136.5,
+              "cuota_a": 1.7,
+              "cuota_b": 2.14
+            },
+            {
               "linea": 137.5,
-              "cuota_a": 1.65,
-              "cuota_b": 2.23
+              "cuota_a": 1.71,
+              "cuota_b": 2.13
             },
             {
               "linea": 138.5,
-              "cuota_a": 1.73,
-              "cuota_b": 2.1
+              "cuota_a": 1.89,
+              "cuota_b": 1.9
             },
             {
               "linea": 139.5,
-              "cuota_a": 1.92,
-              "cuota_b": 1.87
+              "cuota_a": 1.87,
+              "cuota_b": 1.92
             },
             {
               "linea": 140.5,
-              "cuota_a": 1.93,
-              "cuota_b": 1.86
-            },
-            {
-              "linea": 141.5,
-              "cuota_a": 2.15,
-              "cuota_b": 1.7
+              "cuota_a": 2,
+              "cuota_b": 1.8
             }
           ]
         }
@@ -6111,37 +6100,37 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.431,
-          "lado": "b",
+          "prob_a": 0.514,
+          "lado": "a",
           "explicacion": [
             {
-              "factor": "ritmo_juego",
-              "impacto": -0.03
+              "factor": "descanso",
+              "impacto": 0
             },
             {
               "factor": "ataque_local",
-              "impacto": -0.02
+              "impacto": -0.01
             },
             {
               "factor": "defensa_rival",
-              "impacto": -0.05
+              "impacto": 0.03
             }
           ]
         },
         "red": {
           "version": "ejemplo-red-basquet_puntos-1",
-          "prob_a": 0.456,
+          "prob_a": 0.414,
           "lado": "b"
         },
         "entrada_red": {
           "version": "ejemplo-variables-1",
           "valores": {
-            "linea": 139.5,
-            "cuota_a": 1.92,
-            "cuota_b": 1.87,
-            "esperado": 139.99,
-            "forma_local": 0.75,
-            "forma_visitante": -0.61
+            "linea": 138.5,
+            "cuota_a": 1.89,
+            "cuota_b": 1.9,
+            "esperado": 138.99,
+            "forma_local": -0.22,
+            "forma_visitante": 0.19
           }
         }
       }
@@ -6155,19 +6144,19 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 3.5,
-              "cuota_a": 1.99,
-              "cuota_b": 1.81
+              "linea": -2.5,
+              "cuota_a": 2.09,
+              "cuota_b": 1.73
             },
             {
-              "linea": 4.5,
-              "cuota_a": 1.82,
-              "cuota_b": 1.98
+              "linea": -1.5,
+              "cuota_a": 1.88,
+              "cuota_b": 1.91
             },
             {
-              "linea": 5.5,
-              "cuota_a": 1.79,
-              "cuota_b": 2.01
+              "linea": -0.5,
+              "cuota_a": 1.9,
+              "cuota_b": 1.89
             }
           ]
         }
@@ -6175,20 +6164,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.508,
-          "lado": "a",
+          "prob_a": 0.485,
+          "lado": "b",
           "explicacion": [
             {
-              "factor": "defensa_rival",
-              "impacto": 0
+              "factor": "ataque_local",
+              "impacto": -0.02
             },
             {
-              "factor": "descanso",
-              "impacto": 0.02
+              "factor": "defensa_rival",
+              "impacto": -0.01
             },
             {
               "factor": "ritmo_juego",
-              "impacto": 0.02
+              "impacto": -0.01
             }
           ]
         },
@@ -6206,374 +6195,18 @@
           "lineas": [
             {
               "linea": 68.5,
-              "cuota_a": 1.78,
-              "cuota_b": 2.02
+              "cuota_a": 1.75,
+              "cuota_b": 2.06
             },
             {
               "linea": 69.5,
-              "cuota_a": 1.73,
-              "cuota_b": 2.09
-            },
-            {
-              "linea": 70.5,
-              "cuota_a": 1.87,
-              "cuota_b": 1.93
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.475,
-          "lado": "b",
-          "explicacion": [
-            {
-              "factor": "descanso",
-              "impacto": -0.01
-            },
-            {
-              "factor": "defensa_rival",
-              "impacto": -0.03
-            },
-            {
-              "factor": "ataque_local",
-              "impacto": -0.01
-            }
-          ]
-        },
-        "red": null,
-        "entrada_red": null
-      }
-    },
-    {
-      "partido_id": "ejemplo:beis-031",
-      "mercado": "beisbol_ganador",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": null,
-              "cuota_a": 1.54,
-              "cuota_b": 2.45
-            }
-          ]
-        },
-        {
-          "casa": "te_apuesto",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": null,
-              "cuota_a": 1.48,
-              "cuota_b": 2.52
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.674,
-          "lado": "a",
-          "explicacion": [
-            {
-              "factor": "ofensiva",
-              "impacto": 0.08
-            },
-            {
-              "factor": "bullpen",
-              "impacto": 0.06
-            },
-            {
-              "factor": "abridor_rival",
-              "impacto": 0.04
-            }
-          ]
-        },
-        "red": {
-          "version": "ejemplo-red-beisbol_ganador-1",
-          "prob_a": 0.532,
-          "lado": "a"
-        },
-        "entrada_red": {
-          "version": "ejemplo-variables-1",
-          "valores": {
-            "linea": null,
-            "cuota_a": 1.54,
-            "cuota_b": 2.45,
-            "esperado": 0.61,
-            "forma_local": -0.24,
-            "forma_visitante": 0.49
-          }
-        }
-      }
-    },
-    {
-      "partido_id": "ejemplo:beis-031",
-      "mercado": "beisbol_handicap",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": -1.5,
-              "cuota_a": 2.35,
-              "cuota_b": 1.59
-            },
-            {
-              "linea": 1.5,
-              "cuota_a": 1.22,
-              "cuota_b": 4.24
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.418,
-          "lado": "b",
-          "explicacion": [
-            {
-              "factor": "abridor_rival",
-              "impacto": -0.05
-            },
-            {
-              "factor": "ofensiva",
-              "impacto": -0.02
-            },
-            {
-              "factor": "localia",
-              "impacto": -0.03
-            }
-          ]
-        },
-        "red": null,
-        "entrada_red": null
-      }
-    },
-    {
-      "partido_id": "ejemplo:beis-031",
-      "mercado": "beisbol_total",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 7.5,
-              "cuota_a": 1.44,
-              "cuota_b": 2.79
-            },
-            {
-              "linea": 8.5,
-              "cuota_a": 1.91,
-              "cuota_b": 1.89
-            },
-            {
-              "linea": 9.5,
-              "cuota_a": 2.52,
-              "cuota_b": 1.52
-            }
-          ]
-        },
-        {
-          "casa": "te_apuesto",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 8.5,
-              "cuota_a": 1.81,
-              "cuota_b": 1.93
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.539,
-          "lado": "a",
-          "explicacion": [
-            {
-              "factor": "abridor_rival",
-              "impacto": 0
-            },
-            {
-              "factor": "bullpen",
-              "impacto": 0.02
-            },
-            {
-              "factor": "localia",
-              "impacto": 0.01
-            }
-          ]
-        },
-        "red": {
-          "version": "ejemplo-red-beisbol_total-1",
-          "prob_a": 0.525,
-          "lado": "a"
-        },
-        "entrada_red": {
-          "version": "ejemplo-variables-1",
-          "valores": {
-            "linea": 8.5,
-            "cuota_a": 1.91,
-            "cuota_b": 1.89,
-            "esperado": 8.73,
-            "forma_local": -0.91,
-            "forma_visitante": -0.87
-          }
-        }
-      }
-    },
-    {
-      "partido_id": "ejemplo:beis-032",
-      "mercado": "beisbol_ganador",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": null,
-              "cuota_a": 2.03,
-              "cuota_b": 1.77
-            }
-          ]
-        },
-        {
-          "casa": "te_apuesto",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": null,
-              "cuota_a": 1.99,
-              "cuota_b": 1.76
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.545,
-          "lado": "a",
-          "explicacion": [
-            {
-              "factor": "bullpen",
-              "impacto": 0.02
-            },
-            {
-              "factor": "abridor_rival",
-              "impacto": 0
-            },
-            {
-              "factor": "localia",
-              "impacto": 0.02
-            }
-          ]
-        },
-        "red": {
-          "version": "ejemplo-red-beisbol_ganador-1",
-          "prob_a": 0.402,
-          "lado": "b"
-        },
-        "entrada_red": {
-          "version": "ejemplo-variables-1",
-          "valores": {
-            "linea": null,
-            "cuota_a": 2.03,
-            "cuota_b": 1.77,
-            "esperado": 0.46,
-            "forma_local": 0.01,
-            "forma_visitante": -0.45
-          }
-        }
-      }
-    },
-    {
-      "partido_id": "ejemplo:beis-032",
-      "mercado": "beisbol_handicap",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": -1.5,
-              "cuota_a": 3.43,
-              "cuota_b": 1.31
-            },
-            {
-              "linea": 1.5,
-              "cuota_a": 1.46,
-              "cuota_b": 2.72
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.65,
-          "lado": "a",
-          "explicacion": [
-            {
-              "factor": "localia",
-              "impacto": 0.04
-            },
-            {
-              "factor": "bullpen",
-              "impacto": 0.08
-            },
-            {
-              "factor": "ofensiva",
-              "impacto": 0.05
-            }
-          ]
-        },
-        "red": null,
-        "entrada_red": null
-      }
-    },
-    {
-      "partido_id": "ejemplo:beis-032",
-      "mercado": "beisbol_total",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 7.5,
-              "cuota_a": 1.41,
-              "cuota_b": 2.89
-            },
-            {
-              "linea": 8.5,
               "cuota_a": 1.9,
               "cuota_b": 1.89
             },
             {
-              "linea": 9.5,
-              "cuota_a": 2.47,
-              "cuota_b": 1.54
-            }
-          ]
-        },
-        {
-          "casa": "te_apuesto",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": 8.5,
-              "cuota_a": 1.8,
-              "cuota_b": 1.95
+              "linea": 70.5,
+              "cuota_a": 2.08,
+              "cuota_b": 1.74
             }
           ]
         }
@@ -6581,144 +6214,20 @@
       "prediccion_ejemplo": {
         "estadistico": {
           "version": "ejemplo-estadistico-1",
-          "prob_a": 0.453,
-          "lado": "b",
-          "explicacion": [
-            {
-              "factor": "bullpen",
-              "impacto": -0.03
-            },
-            {
-              "factor": "abridor_rival",
-              "impacto": -0.01
-            },
-            {
-              "factor": "localia",
-              "impacto": -0.01
-            }
-          ]
-        },
-        "red": {
-          "version": "ejemplo-red-beisbol_total-1",
-          "prob_a": 0.493,
-          "lado": "b"
-        },
-        "entrada_red": {
-          "version": "ejemplo-variables-1",
-          "valores": {
-            "linea": 8.5,
-            "cuota_a": 1.9,
-            "cuota_b": 1.89,
-            "esperado": 8.76,
-            "forma_local": 0.74,
-            "forma_visitante": -0.41
-          }
-        }
-      }
-    },
-    {
-      "partido_id": "ejemplo:beis-033",
-      "mercado": "beisbol_ganador",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": null,
-              "cuota_a": 1.66,
-              "cuota_b": 2.2
-            }
-          ]
-        },
-        {
-          "casa": "te_apuesto",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": null,
-              "cuota_a": 1.69,
-              "cuota_b": 2.09
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.593,
+          "prob_a": 0.601,
           "lado": "a",
           "explicacion": [
             {
-              "factor": "abridor_rival",
-              "impacto": 0.02
+              "factor": "defensa_rival",
+              "impacto": 0.05
             },
             {
-              "factor": "ofensiva",
-              "impacto": 0.04
+              "factor": "ataque_local",
+              "impacto": 0.05
             },
             {
-              "factor": "bullpen",
-              "impacto": 0.03
-            }
-          ]
-        },
-        "red": {
-          "version": "ejemplo-red-beisbol_ganador-1",
-          "prob_a": 0.562,
-          "lado": "a"
-        },
-        "entrada_red": {
-          "version": "ejemplo-variables-1",
-          "valores": {
-            "linea": null,
-            "cuota_a": 1.66,
-            "cuota_b": 2.2,
-            "esperado": 0.55,
-            "forma_local": -0.94,
-            "forma_visitante": -0.49
-          }
-        }
-      }
-    },
-    {
-      "partido_id": "ejemplo:beis-033",
-      "mercado": "beisbol_handicap",
-      "ofertas": [
-        {
-          "casa": "betano",
-          "extraido_en": "2026-10-11T13:05:00Z",
-          "lineas": [
-            {
-              "linea": -1.5,
-              "cuota_a": 2.66,
-              "cuota_b": 1.47
-            },
-            {
-              "linea": 1.5,
-              "cuota_a": 1.31,
-              "cuota_b": 3.4
-            }
-          ]
-        }
-      ],
-      "prediccion_ejemplo": {
-        "estadistico": {
-          "version": "ejemplo-estadistico-1",
-          "prob_a": 0.368,
-          "lado": "b",
-          "explicacion": [
-            {
-              "factor": "localia",
-              "impacto": -0.07
-            },
-            {
-              "factor": "abridor_rival",
-              "impacto": -0.03
-            },
-            {
-              "factor": "bullpen",
-              "impacto": -0.04
+              "factor": "ritmo_juego",
+              "impacto": 0.01
             }
           ]
         },
@@ -6727,27 +6236,17 @@
       }
     },
     {
-      "partido_id": "ejemplo:beis-033",
-      "mercado": "beisbol_total",
+      "partido_id": "ejemplo:beis-031",
+      "mercado": "beisbol_ganador",
       "ofertas": [
         {
           "casa": "betano",
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 8.5,
-              "cuota_a": 1.53,
-              "cuota_b": 2.5
-            },
-            {
-              "linea": 9.5,
-              "cuota_a": 1.94,
-              "cuota_b": 1.85
-            },
-            {
-              "linea": 10.5,
-              "cuota_a": 2.46,
-              "cuota_b": 1.54
+              "linea": null,
+              "cuota_a": 2.33,
+              "cuota_b": 1.6
             }
           ]
         },
@@ -6756,9 +6255,68 @@
           "extraido_en": "2026-10-11T13:05:00Z",
           "lineas": [
             {
-              "linea": 9.5,
-              "cuota_a": 1.88,
-              "cuota_b": 1.86
+              "linea": null,
+              "cuota_a": 2.23,
+              "cuota_b": 1.61
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.47,
+          "lado": "b",
+          "explicacion": [
+            {
+              "factor": "ofensiva",
+              "impacto": -0.01
+            },
+            {
+              "factor": "abridor_rival",
+              "impacto": -0.02
+            },
+            {
+              "factor": "localia",
+              "impacto": 0
+            }
+          ]
+        },
+        "red": {
+          "version": "ejemplo-red-beisbol_ganador-1",
+          "prob_a": 0.375,
+          "lado": "b"
+        },
+        "entrada_red": {
+          "version": "ejemplo-variables-1",
+          "valores": {
+            "linea": null,
+            "cuota_a": 2.33,
+            "cuota_b": 1.6,
+            "esperado": 0.42,
+            "forma_local": 0.24,
+            "forma_visitante": 0.48
+          }
+        }
+      }
+    },
+    {
+      "partido_id": "ejemplo:beis-031",
+      "mercado": "beisbol_handicap",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": -1.5,
+              "cuota_a": 3.98,
+              "cuota_b": 1.24
+            },
+            {
+              "linea": 1.5,
+              "cuota_a": 1.5,
+              "cuota_b": 2.59
             }
           ]
         }
@@ -6770,33 +6328,464 @@
           "lado": "a",
           "explicacion": [
             {
+              "factor": "localia",
+              "impacto": 0.04
+            },
+            {
+              "factor": "ofensiva",
+              "impacto": 0.01
+            },
+            {
               "factor": "abridor_rival",
               "impacto": 0.03
+            }
+          ]
+        },
+        "red": null,
+        "entrada_red": null
+      }
+    },
+    {
+      "partido_id": "ejemplo:beis-031",
+      "mercado": "beisbol_total",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 7.5,
+              "cuota_a": 1.71,
+              "cuota_b": 2.13
             },
             {
-              "factor": "bullpen",
-              "impacto": 0.03
+              "linea": 8.5,
+              "cuota_a": 2.24,
+              "cuota_b": 1.64
             },
+            {
+              "linea": 9.5,
+              "cuota_a": 3.71,
+              "cuota_b": 1.27
+            }
+          ]
+        },
+        {
+          "casa": "te_apuesto",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 8.5,
+              "cuota_a": 2.35,
+              "cuota_b": 1.55
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.533,
+          "lado": "a",
+          "explicacion": [
             {
               "factor": "localia",
-              "impacto": 0.03
+              "impacto": 0.01
+            },
+            {
+              "factor": "abridor_rival",
+              "impacto": 0.02
+            },
+            {
+              "factor": "ofensiva",
+              "impacto": 0.01
             }
           ]
         },
         "red": {
           "version": "ejemplo-red-beisbol_total-1",
-          "prob_a": 0.514,
+          "prob_a": 0.504,
           "lado": "a"
         },
         "entrada_red": {
           "version": "ejemplo-variables-1",
           "valores": {
-            "linea": 9.5,
-            "cuota_a": 1.94,
-            "cuota_b": 1.85,
-            "esperado": 9.7,
-            "forma_local": 0.04,
-            "forma_visitante": 0.23
+            "linea": 7.5,
+            "cuota_a": 1.71,
+            "cuota_b": 2.13,
+            "esperado": 8.03,
+            "forma_local": 0.33,
+            "forma_visitante": 0.9
+          }
+        }
+      }
+    },
+    {
+      "partido_id": "ejemplo:beis-032",
+      "mercado": "beisbol_ganador",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": null,
+              "cuota_a": 1.88,
+              "cuota_b": 1.91
+            }
+          ]
+        },
+        {
+          "casa": "te_apuesto",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": null,
+              "cuota_a": 1.83,
+              "cuota_b": 1.91
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.5,
+          "lado": "a",
+          "explicacion": [
+            {
+              "factor": "bullpen",
+              "impacto": 0.01
+            },
+            {
+              "factor": "ofensiva",
+              "impacto": 0.02
+            },
+            {
+              "factor": "abridor_rival",
+              "impacto": 0.02
+            }
+          ]
+        },
+        "red": {
+          "version": "ejemplo-red-beisbol_ganador-1",
+          "prob_a": 0.458,
+          "lado": "b"
+        },
+        "entrada_red": {
+          "version": "ejemplo-variables-1",
+          "valores": {
+            "linea": null,
+            "cuota_a": 1.88,
+            "cuota_b": 1.91,
+            "esperado": 0.51,
+            "forma_local": -0.06,
+            "forma_visitante": -0.54
+          }
+        }
+      }
+    },
+    {
+      "partido_id": "ejemplo:beis-032",
+      "mercado": "beisbol_handicap",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": -1.5,
+              "cuota_a": 2.79,
+              "cuota_b": 1.44
+            },
+            {
+              "linea": 1.5,
+              "cuota_a": 1.41,
+              "cuota_b": 2.89
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.276,
+          "lado": "b",
+          "explicacion": [
+            {
+              "factor": "ofensiva",
+              "impacto": -0.07
+            },
+            {
+              "factor": "localia",
+              "impacto": -0.07
+            },
+            {
+              "factor": "bullpen",
+              "impacto": -0.08
+            }
+          ]
+        },
+        "red": null,
+        "entrada_red": null
+      }
+    },
+    {
+      "partido_id": "ejemplo:beis-032",
+      "mercado": "beisbol_total",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 9.5,
+              "cuota_a": 1.63,
+              "cuota_b": 2.27
+            },
+            {
+              "linea": 10.5,
+              "cuota_a": 2.03,
+              "cuota_b": 1.78
+            },
+            {
+              "linea": 11.5,
+              "cuota_a": 2.6,
+              "cuota_b": 1.49
+            }
+          ]
+        },
+        {
+          "casa": "te_apuesto",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 10.5,
+              "cuota_a": 1.92,
+              "cuota_b": 1.82
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.494,
+          "lado": "b",
+          "explicacion": [
+            {
+              "factor": "bullpen",
+              "impacto": 0
+            },
+            {
+              "factor": "localia",
+              "impacto": 0.01
+            },
+            {
+              "factor": "ofensiva",
+              "impacto": 0.02
+            }
+          ]
+        },
+        "red": {
+          "version": "ejemplo-red-beisbol_total-1",
+          "prob_a": 0.41,
+          "lado": "b"
+        },
+        "entrada_red": {
+          "version": "ejemplo-variables-1",
+          "valores": {
+            "linea": 10.5,
+            "cuota_a": 2.03,
+            "cuota_b": 1.78,
+            "esperado": 10.41,
+            "forma_local": 0.15,
+            "forma_visitante": 0.97
+          }
+        }
+      }
+    },
+    {
+      "partido_id": "ejemplo:beis-033",
+      "mercado": "beisbol_ganador",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": null,
+              "cuota_a": 2.1,
+              "cuota_b": 1.73
+            }
+          ]
+        },
+        {
+          "casa": "te_apuesto",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": null,
+              "cuota_a": 2.04,
+              "cuota_b": 1.72
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.435,
+          "lado": "b",
+          "explicacion": [
+            {
+              "factor": "bullpen",
+              "impacto": -0.01
+            },
+            {
+              "factor": "abridor_rival",
+              "impacto": -0.02
+            },
+            {
+              "factor": "localia",
+              "impacto": -0.03
+            }
+          ]
+        },
+        "red": {
+          "version": "ejemplo-red-beisbol_ganador-1",
+          "prob_a": 0.391,
+          "lado": "b"
+        },
+        "entrada_red": {
+          "version": "ejemplo-variables-1",
+          "valores": {
+            "linea": null,
+            "cuota_a": 2.1,
+            "cuota_b": 1.73,
+            "esperado": 0.46,
+            "forma_local": -0.86,
+            "forma_visitante": 0.93
+          }
+        }
+      }
+    },
+    {
+      "partido_id": "ejemplo:beis-033",
+      "mercado": "beisbol_handicap",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": -1.5,
+              "cuota_a": 3.66,
+              "cuota_b": 1.28
+            },
+            {
+              "linea": 1.5,
+              "cuota_a": 1.4,
+              "cuota_b": 2.93
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.614,
+          "lado": "a",
+          "explicacion": [
+            {
+              "factor": "localia",
+              "impacto": 0.06
+            },
+            {
+              "factor": "abridor_rival",
+              "impacto": 0.03
+            },
+            {
+              "factor": "ofensiva",
+              "impacto": 0.04
+            }
+          ]
+        },
+        "red": null,
+        "entrada_red": null
+      }
+    },
+    {
+      "partido_id": "ejemplo:beis-033",
+      "mercado": "beisbol_total",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 7.5,
+              "cuota_a": 1.52,
+              "cuota_b": 2.53
+            },
+            {
+              "linea": 8.5,
+              "cuota_a": 1.84,
+              "cuota_b": 1.95
+            },
+            {
+              "linea": 9.5,
+              "cuota_a": 2.67,
+              "cuota_b": 1.47
+            }
+          ]
+        },
+        {
+          "casa": "te_apuesto",
+          "extraido_en": "2026-10-11T13:05:00Z",
+          "lineas": [
+            {
+              "linea": 8.5,
+              "cuota_a": 1.79,
+              "cuota_b": 1.96
+            }
+          ]
+        }
+      ],
+      "prediccion_ejemplo": {
+        "estadistico": {
+          "version": "ejemplo-estadistico-1",
+          "prob_a": 0.48,
+          "lado": "b",
+          "explicacion": [
+            {
+              "factor": "ofensiva",
+              "impacto": -0.02
+            },
+            {
+              "factor": "bullpen",
+              "impacto": -0.01
+            },
+            {
+              "factor": "abridor_rival",
+              "impacto": 0
+            }
+          ]
+        },
+        "red": {
+          "version": "ejemplo-red-beisbol_total-1",
+          "prob_a": 0.502,
+          "lado": "a"
+        },
+        "entrada_red": {
+          "version": "ejemplo-variables-1",
+          "valores": {
+            "linea": 8.5,
+            "cuota_a": 1.84,
+            "cuota_b": 1.95,
+            "esperado": 8.69,
+            "forma_local": -0.5,
+            "forma_visitante": 0.35
           }
         }
       }

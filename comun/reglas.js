@@ -115,6 +115,40 @@ export function ladoGanador(tipo, linea, valor) {
   }
 }
 
+/** Probabilidad del lado que recomienda una predicción. */
+export function probabilidadDelLado(prediccion) {
+  return prediccion.lado === 'a' ? prediccion.prob_a : 1 - prediccion.prob_a;
+}
+
+/**
+ * Niveles de confianza, sobre el porcentaje redondeado que muestra la página:
+ * alta desde 60%, media de 55% a 59% y baja por debajo de 55%.
+ */
+export const NIVELES_CONFIANZA = [
+  { nivel: 'alta', nombre: 'Alta', desde: 60 },
+  { nivel: 'media', nombre: 'Media', desde: 55 },
+  { nivel: 'baja', nombre: 'Baja', desde: 0 },
+];
+
+/** Nivel de confianza de la probabilidad del lado recomendado. */
+export function nivelConfianza(probabilidad) {
+  const porcentaje = Math.round(probabilidad * 100 + 1e-9);
+  return NIVELES_CONFIANZA.find((n) => porcentaje >= n.desde);
+}
+
+/**
+ * Tarjetas de un equipo como las cuenta Betano: amarilla = 1, roja directa = 2 y doble amarilla = 2
+ * (las dos amarillas; la roja que resulta no suma aparte). En el formato, `amarillas` incluye la segunda
+ * amarilla y `rojas` incluye las que vienen de doble amarilla. Devuelve null si falta un dato necesario.
+ */
+export function totalTarjetas({ amarillas, rojas, dobles_amarillas: dobles }) {
+  const falta = (valor) => valor === null || valor === undefined;
+  if (falta(amarillas) || falta(rojas)) return null;
+  // Sin saber cuántas rojas fueron por doble amarilla, el total con rojas es incierto.
+  if (rojas > 0 && falta(dobles)) return null;
+  return amarillas + 2 * (rojas - (dobles ?? 0));
+}
+
 /** Id de un registro: partido_id|mercado, y en props de jugador se agregan jugador y estadística. */
 export function idRegistro({ partido_id, mercado, jugador, estadistica_jugador }) {
   const partes = [partido_id, mercado];

@@ -7,7 +7,7 @@
 
 import { mkdir, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { calcularCandidata, idRegistro, ladoGanador, redondear } from '../comun/reglas.js';
+import { calcularCandidata, idRegistro, ladoGanador, redondear, totalTarjetas } from '../comun/reglas.js';
 import { fechaLocal, rutaHistorial, rutaPartidos } from '../comun/rutas.js';
 import { RAIZ } from './cargar.mjs';
 
@@ -239,7 +239,7 @@ for (const liga of LIGAS) {
 
 // ---------------------------------------------------------------- simulación de partidos
 
-function simularFutbol(liga, local, visitante, analizado) {
+function simularFutbol(liga, local, visitante) {
   const L = local.param;
   const V = visitante.param;
   const esperado = {
@@ -253,8 +253,7 @@ function simularFutbol(liga, local, visitante, analizado) {
   const equipo = (i) => {
     const goles = azar.poisson(esperado.goles[i]);
     const rojas = azar.probabilidad(esperado.rojas[i]) ? 1 : 0;
-    // En los partidos analizados no hay dobles amarillas, para que el total de tarjetas no dependa de esa regla.
-    const dobles = !analizado && rojas === 1 && azar.probabilidad(0.4) ? 1 : 0;
+    const dobles = rojas === 1 && azar.probabilidad(0.4) ? 1 : 0;
     const amarillas = dobles ? Math.max(2, azar.poisson(esperado.amarillas[i])) : azar.poisson(esperado.amarillas[i]);
     const tiros = Math.max(goles, azar.poisson(esperado.arco[i]));
     return {
@@ -795,7 +794,7 @@ function valoresReales(liga, sim) {
       ambos: l.goles > 0 && v.goles > 0 ? 1 : 0,
       corners: l.corners + v.corners,
       corners1t: t.local.corners + t.visitante.corners,
-      tarjetas: l.amarillas + v.amarillas + 2 * (l.rojas + v.rojas),
+      tarjetas: totalTarjetas(l) + totalTarjetas(v),
       tiros: l.tiros_al_arco + v.tiros_al_arco,
       remates: l.remates + v.remates,
     };
@@ -847,14 +846,14 @@ function abridoresDe(local, visitante) {
   return abridores;
 }
 
-function simular(liga, local, visitante, analizado, abridores) {
-  if (liga.deporte === 'futbol') return simularFutbol(liga, local, visitante, analizado);
+function simular(liga, local, visitante, abridores) {
+  if (liga.deporte === 'futbol') return simularFutbol(liga, local, visitante);
   if (liga.deporte === 'basquet') return simularBasquet(liga, local, visitante);
   return simularBeisbol(local, visitante, ...abridores);
 }
 
 function esperadoSinJugar(liga, local, visitante, abridores) {
-  if (liga.deporte === 'futbol') return { esperado: simularFutbol(liga, local, visitante, true).esperado };
+  if (liga.deporte === 'futbol') return { esperado: simularFutbol(liga, local, visitante).esperado };
   if (liga.deporte === 'basquet') return { media: esperadoBasquet(liga, local, visitante) };
   return { media: esperadoBeisbol(local, visitante, ...abridores) };
 }
@@ -907,7 +906,7 @@ for (const liga of LIGAS) {
         partido.ids_externos = { betano: String(900000 + numero) };
         partido.previa = crearPrevia(liga, jugados, local, visitante, inicio, sumarMinutos(inicio, -360), { abridores });
       }
-      const sim = { ...simular(liga, local, visitante, analizado, abridores), partido, localEquipo: local, visitanteEquipo: visitante };
+      const sim = { ...simular(liga, local, visitante, abridores), partido, localEquipo: local, visitanteEquipo: visitante };
       if (!suspendido) {
         partido.marcador = sim.marcador;
         partido.estadisticas = estadisticasDe(liga, sim);

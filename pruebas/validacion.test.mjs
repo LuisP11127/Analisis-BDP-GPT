@@ -199,6 +199,32 @@ test('extracción: los partidos previos tienen que estar guardados', () => {
   }), /ejemplo:no-guardado no existe en los datos/);
 });
 
+/** Extracción de prueba con sus partidos previos dentro, en partidos_anteriores, y sin la carpeta de datos. */
+function extraccionConAnteriores(modificar = () => {}) {
+  const copia = structuredClone(extracciones);
+  const contenido = copia[0].contenido;
+  const ids = new Set(contenido.partidos.flatMap((p) => (p.previa ? [...p.previa.ultimos_partidos.local, ...p.previa.ultimos_partidos.visitante] : [])));
+  contenido.partidos_anteriores = structuredClone(partidosDe(ejemplos).filter((p) => ids.has(p.id)));
+  modificar(contenido);
+  return validador.validarExtracciones(copia, []);
+}
+
+test('extracción: los partidos previos pueden venir dentro de la extracción', () => {
+  assert.deepEqual(extraccionConAnteriores(), []);
+  contiene(extraccionConAnteriores((c) => { c.partidos_anteriores.pop(); }), /no existe en los datos/);
+});
+
+test('extracción: los partidos anteriores tienen que estar terminados y no repetir partidos del día', () => {
+  contiene(extraccionConAnteriores((c) => {
+    const anterior = c.partidos_anteriores[0];
+    anterior.estado = 'programado';
+    delete anterior.estadisticas;
+  }), /partidos_anteriores\[0\]: un partido anterior debe estar finalizado/);
+  contiene(extraccionConAnteriores((c) => { delete c.partidos_anteriores[0].marcador; }), /partidos_anteriores\[0\]: un partido finalizado necesita marcador/);
+  contiene(extraccionConAnteriores((c) => { c.partidos_anteriores.push(structuredClone(c.partidos[0])); }), /también está en partidos/);
+  contiene(extraccionConAnteriores((c) => { c.partidos_anteriores.push(structuredClone(c.partidos_anteriores[0])); }), /partidos_anteriores\[\d+\]: id repetido/);
+});
+
 test('el índice tiene que coincidir con los archivos de la carpeta', () => {
   const errores = validador.validarIndice({ version_formato: 1, archivos: ['b.json', 'a.json'] }, ['a.json', 'c.json']);
   contiene(errores, /falta c\.json/);

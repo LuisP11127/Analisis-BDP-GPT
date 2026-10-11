@@ -15,7 +15,7 @@ pruebas/       pruebas automáticas
 web/           página
 extension/     extensión de Brave (pasos 3 y 4)
 entrenamiento/ red neuronal (paso 9)
-docs/          especificación y este documento
+docs/          especificación, este documento y de dónde sale cada dato (FUENTES.md)
 ```
 
 Los archivos de `comun/` no usan nada propio de Node, para que la página y la extensión puedan usar las mismas reglas.
@@ -135,7 +135,15 @@ Todas tienen `fuente` y `extraido_en`.
 
 **Fútbol.** `completo` y `primer_tiempo`, cada uno con `local` y `visitante`: goles, corners, amarillas, rojas, dobles_amarillas, tiros_al_arco, remates, faltas, fueras_de_juego, posesion y xg. Opcionalmente `eventos` con minuto, tipo (gol, corner, amarilla, roja, doble_amarilla) y equipo, para la fase del estilo según el marcador.
 
-Las tarjetas se guardan sin calcular el total: `amarillas` incluye la segunda amarilla de una doble amarilla, `rojas` incluye las que vienen de doble amarilla y `dobles_amarillas` dice cuántas fueron. Con eso se puede aplicar la regla de Betano cuando se confirme, sin volver a extraer nada.
+Las tarjetas se guardan sin calcular el total: `amarillas` incluye la segunda amarilla de una doble amarilla, `rojas` incluye las que vienen de doble amarilla y `dobles_amarillas` dice cuántas fueron. El total del mercado de tarjetas se calcula como en Betano (`totalTarjetas` en `comun/reglas.js`):
+
+```
+total = amarillas + 2 × (rojas − dobles_amarillas)
+```
+
+Así, una roja directa suma 2 y una doble amarilla suma 2 (las dos amarillas, sin contar aparte la roja que resulta). Si hubo rojas y no se sabe cuántas fueron por doble amarilla, el total queda como no disponible.
+
+Solo se guardan las tarjetas a jugadores en la cancha: no se cuentan las de entrenadores, cuerpo técnico ni jugadores en el banco.
 
 **Básquet.** `formato_periodos` (`cuartos` o `mitades`), `periodos` con los puntos de cada período, `prorrogas`, estadísticas de `equipos` (tiros, triples, libres, rebotes, asistencias, robos, tapones, pérdidas, faltas) y `jugadores` (minutos, si jugó, puntos, rebotes, asistencias, triples, robos, tapones, pérdidas).
 
@@ -197,7 +205,7 @@ Ejemplo con Betano (goles, Atlético Muestra vs Deportivo Ejemplo en los datos d
 - `explicacion` (opcional): lista de factores con su `impacto` en puntos de probabilidad hacia el lado A. `0.08` significa +8%.
 - `prob_roja` (solo en `futbol_tarjetas`): probabilidad de que haya al menos una roja en el partido. La página la muestra como "Tarjeta roja en el partido: Sí o No" con su probabilidad. Si hubo roja se sabe por las estadísticas del partido, así que no se guarda aparte en el resultado.
 
-El desacuerdo entre los modelos no se guarda porque se deduce de los dos lados.
+El desacuerdo entre los modelos no se guarda porque se deduce de los dos lados. Tampoco se guarda el nivel de confianza (alta, media o baja): se calcula al mostrar, con `nivelConfianza` de `comun/reglas.js`, a partir de la probabilidad del lado recomendado por el estadístico. Así, si se cambian los cortes, el historial completo se ve con los cortes nuevos.
 
 ### Entrada de la red
 
@@ -243,9 +251,12 @@ Es lo que la extensión le entregará a la página: los partidos del día de tod
 | `fecha_local` | Día de la extracción; el archivo se llama `AAAA-MM-DD.json` |
 | `generado_en` | Hora en que se armó la extracción |
 | `partidos` | Partidos del día con el formato de partido; los que se pueden analizar traen `previa` |
+| `partidos_anteriores` | Opcional. Partidos ya terminados, con sus estadísticas, que usa la `previa` de los partidos del día y que todavía no están guardados en `datos/` |
 | `mercados` | Por partido y mercado (y jugador y estadística en las props): `partido_id`, `mercado` y `ofertas` |
 
-Las ofertas tienen el mismo formato que en el historial. Las cuotas y la previa tienen que extraerse antes del inicio del partido, y los partidos de `previa.ultimos_partidos` tienen que estar guardados en `datos/`.
+Las ofertas tienen el mismo formato que en el historial. Las cuotas y la previa tienen que extraerse antes del inicio del partido. Los partidos de `previa.ultimos_partidos` tienen que estar guardados en `datos/` o venir en `partidos_anteriores`. Al guardar el historial (paso 6), los `partidos_anteriores` pasan a `datos/partidos/`.
+
+Con datos reales, la página arma la extracción a partir de Sofascore y la puede descargar desde **Resultado**. De dónde sale cada dato está en `docs/FUENTES.md`.
 
 En `ejemplos/extraccion/` hay una extracción de prueba. Sus mercados traen además `prediccion_ejemplo`, con predicciones ficticias que la página muestra mientras no exista el análisis estadístico (paso 5). La extensión nunca envía ese campo. Si `prediccion_ejemplo.estadistico` es `null`, el mercado se muestra como "sin datos suficientes" y no genera registro.
 
@@ -258,8 +269,6 @@ Los datos se simulan con equipos inventados y una semilla fija, así que cada ej
 - Seis ligas: dos de fútbol, una copa de fútbol solo con partidos del día y sin cuotas, dos de básquet (una por cuartos y otra por mitades) y una de béisbol.
 - Partidos guardados desde el 20 de setiembre de 2026, con estadísticas, y registros del historial del 4 al 10 de octubre con resultados, apuestas, props anuladas porque el jugador no jugó y un partido de béisbol suspendido.
 - La extracción del 11 de octubre de 2026, con mercados que no ofrece ninguna casa y uno sin datos suficientes.
-
-En los partidos analizados de ejemplo no hay dobles amarillas, para que el total de tarjetas no dependa de esa regla pendiente.
 
 ## Validación
 
@@ -279,11 +288,7 @@ Además de los esquemas, el validador revisa:
 - Que el marcador coincida con los goles, los períodos o las entradas; que haya prórroga solo después de un empate, y que un partido de béisbol finalizado no termine empatado.
 - Que cada registro apunte a un partido guardado, con los mismos equipos, liga y hora.
 - Que `prob_roja` aparezca solo en el mercado de tarjetas.
-- En las extracciones: que los partidos sean del día del archivo, que cada mercado sea de un partido de la extracción y que las cuotas sean anteriores al inicio.
+- En las extracciones: que los partidos sean del día del archivo, que cada mercado sea de un partido de la extracción y que las cuotas sean anteriores al inicio. Los `partidos_anteriores` tienen que estar finalizados, con marcador, cumplir las reglas de un partido guardado y no repetir partidos del día.
 - Que cada `indice.json` liste exactamente los archivos de su carpeta.
 
 Los datos de ejemplo cumplen todas estas reglas.
-
-## Pendiente
-
-**Doble amarilla.** Está confirmado que en Betano la roja vale como 2 amarillas. Falta confirmar con un ejemplo cuánto suma una doble amarilla (amarilla, segunda amarilla y roja): 3 (la primera amarilla más la roja) o 2. El formato guarda amarillas, rojas y dobles amarillas por separado, así que sirve para las dos formas.

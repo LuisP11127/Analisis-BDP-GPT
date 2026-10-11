@@ -24,8 +24,8 @@
       },
       "estado": "finalizado",
       "marcador": {
-        "local": 69,
-        "visitante": 57
+        "local": 72,
+        "visitante": 67
       },
       "estadisticas": {
         "fuente": "sofascore",
@@ -33,11 +33,11 @@
         "formato_periodos": "mitades",
         "periodos": {
           "local": [
-            31,
-            38
+            36,
+            36
           ],
           "visitante": [
-            28,
+            38,
             29
           ]
         }
@@ -66,8 +66,8 @@
       },
       "estado": "finalizado",
       "marcador": {
-        "local": 83,
-        "visitante": 77
+        "local": 74,
+        "visitante": 70
       },
       "estadisticas": {
         "fuente": "sofascore",
@@ -76,20 +76,18 @@
         "periodos": {
           "local": [
             34,
-            30
+            31
           ],
           "visitante": [
-            22,
-            42
+            35,
+            30
           ]
         },
         "prorrogas": {
           "local": [
-            8,
-            11
+            9
           ],
           "visitante": [
-            8,
             5
           ]
         }
@@ -109,8 +107,8 @@
       "inicio": "2026-10-05T22:00:00Z",
       "fecha_local": "2026-10-05",
       "local": {
-        "id": "ejemplo:basquet-lobos-prototipo",
-        "nombre": "Lobos Prototipo"
+        "id": "ejemplo:basquet-aguilas-modelo",
+        "nombre": "Águilas Modelo"
       },
       "visitante": {
         "id": "ejemplo:basquet-zorros-maqueta",
@@ -121,8 +119,8 @@
         "betano": "900034"
       },
       "marcador": {
-        "local": 56,
-        "visitante": 62
+        "local": 75,
+        "visitante": 72
       },
       "previa": {
         "extraido_en": "2026-10-05T16:00:00Z",
@@ -131,28 +129,28 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 1,
+            "posicion": 2,
             "partidos_jugados": 3,
-            "ganados": 3,
-            "perdidos": 0
+            "ganados": 2,
+            "perdidos": 1
           },
           "visitante": {
             "posicion": 4,
             "partidos_jugados": 3,
-            "ganados": 0,
-            "perdidos": 3
+            "ganados": 1,
+            "perdidos": 2
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:bas-033",
+            "ejemplo:bas-032",
             "ejemplo:bas-031",
-            "ejemplo:bas-028"
+            "ejemplo:bas-029"
           ],
           "visitante": [
             "ejemplo:bas-033",
             "ejemplo:bas-030",
-            "ejemplo:bas-029"
+            "ejemplo:bas-028"
           ]
         }
       },
@@ -162,12 +160,12 @@
         "formato_periodos": "mitades",
         "periodos": {
           "local": [
-            29,
-            27
+            42,
+            33
           ],
           "visitante": [
-            28,
-            34
+            33,
+            39
           ]
         }
       }
@@ -186,20 +184,20 @@
       "inicio": "2026-10-06T00:00:00Z",
       "fecha_local": "2026-10-05",
       "local": {
-        "id": "ejemplo:basquet-aguilas-modelo",
-        "nombre": "Águilas Modelo"
-      },
-      "visitante": {
         "id": "ejemplo:basquet-delfines-borrador",
         "nombre": "Delfines Borrador"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-lobos-prototipo",
+        "nombre": "Lobos Prototipo"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900035"
       },
       "marcador": {
-        "local": 74,
-        "visitante": 65
+        "local": 69,
+        "visitante": 71
       },
       "previa": {
         "extraido_en": "2026-10-05T18:00:00Z",
@@ -223,12 +221,12 @@
         "ultimos_partidos": {
           "local": [
             "ejemplo:bas-032",
-            "ejemplo:bas-031",
+            "ejemplo:bas-030",
             "ejemplo:bas-029"
           ],
           "visitante": [
-            "ejemplo:bas-032",
-            "ejemplo:bas-030",
+            "ejemplo:bas-033",
+            "ejemplo:bas-031",
             "ejemplo:bas-028"
           ]
         }
@@ -239,12 +237,12 @@
         "formato_periodos": "mitades",
         "periodos": {
           "local": [
-            28,
-            46
+            35,
+            34
           ],
           "visitante": [
-            29,
-            36
+            32,
+            39
           ]
         }
       }
@@ -263,20 +261,20 @@
       "inicio": "2026-10-08T22:00:00Z",
       "fecha_local": "2026-10-08",
       "local": {
-        "id": "ejemplo:basquet-lobos-prototipo",
-        "nombre": "Lobos Prototipo"
+        "id": "ejemplo:basquet-delfines-borrador",
+        "nombre": "Delfines Borrador"
       },
       "visitante": {
-        "id": "ejemplo:basquet-aguilas-modelo",
-        "nombre": "Águilas Modelo"
+        "id": "ejemplo:basquet-zorros-maqueta",
+        "nombre": "Zorros Maqueta"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900036"
       },
       "marcador": {
-        "local": 75,
-        "visitante": 62
+        "local": 61,
+        "visitante": 76
       },
       "previa": {
         "extraido_en": "2026-10-08T16:00:00Z",
@@ -285,30 +283,30 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 1,
+            "posicion": 3,
             "partidos_jugados": 4,
-            "ganados": 3,
-            "perdidos": 1
+            "ganados": 1,
+            "perdidos": 3
           },
           "visitante": {
-            "posicion": 2,
+            "posicion": 4,
             "partidos_jugados": 4,
-            "ganados": 2,
-            "perdidos": 2
+            "ganados": 1,
+            "perdidos": 3
           }
         },
         "ultimos_partidos": {
           "local": [
-            "ejemplo:bas-034",
-            "ejemplo:bas-033",
-            "ejemplo:bas-031",
-            "ejemplo:bas-028"
-          ],
-          "visitante": [
             "ejemplo:bas-035",
             "ejemplo:bas-032",
-            "ejemplo:bas-031",
+            "ejemplo:bas-030",
             "ejemplo:bas-029"
+          ],
+          "visitante": [
+            "ejemplo:bas-034",
+            "ejemplo:bas-033",
+            "ejemplo:bas-030",
+            "ejemplo:bas-028"
           ]
         }
       },
@@ -318,12 +316,12 @@
         "formato_periodos": "mitades",
         "periodos": {
           "local": [
-            32,
-            43
+            24,
+            37
           ],
           "visitante": [
-            35,
-            27
+            41,
+            35
           ]
         }
       }
@@ -342,20 +340,20 @@
       "inicio": "2026-10-09T00:00:00Z",
       "fecha_local": "2026-10-08",
       "local": {
-        "id": "ejemplo:basquet-zorros-maqueta",
-        "nombre": "Zorros Maqueta"
+        "id": "ejemplo:basquet-aguilas-modelo",
+        "nombre": "Águilas Modelo"
       },
       "visitante": {
-        "id": "ejemplo:basquet-delfines-borrador",
-        "nombre": "Delfines Borrador"
+        "id": "ejemplo:basquet-lobos-prototipo",
+        "nombre": "Lobos Prototipo"
       },
       "estado": "finalizado",
       "ids_externos": {
         "betano": "900037"
       },
       "marcador": {
-        "local": 60,
-        "visitante": 67
+        "local": 70,
+        "visitante": 69
       },
       "previa": {
         "extraido_en": "2026-10-08T18:00:00Z",
@@ -364,29 +362,29 @@
         ],
         "tabla": {
           "local": {
-            "posicion": 4,
-            "partidos_jugados": 4,
-            "ganados": 1,
-            "perdidos": 3
-          },
-          "visitante": {
             "posicion": 2,
             "partidos_jugados": 4,
-            "ganados": 2,
-            "perdidos": 2
+            "ganados": 3,
+            "perdidos": 1
+          },
+          "visitante": {
+            "posicion": 1,
+            "partidos_jugados": 4,
+            "ganados": 3,
+            "perdidos": 1
           }
         },
         "ultimos_partidos": {
           "local": [
             "ejemplo:bas-034",
-            "ejemplo:bas-033",
-            "ejemplo:bas-030",
+            "ejemplo:bas-032",
+            "ejemplo:bas-031",
             "ejemplo:bas-029"
           ],
           "visitante": [
             "ejemplo:bas-035",
-            "ejemplo:bas-032",
-            "ejemplo:bas-030",
+            "ejemplo:bas-033",
+            "ejemplo:bas-031",
             "ejemplo:bas-028"
           ]
         }
@@ -397,12 +395,12 @@
         "formato_periodos": "mitades",
         "periodos": {
           "local": [
-            32,
-            28
+            39,
+            31
           ],
           "visitante": [
-            34,
-            33
+            39,
+            30
           ]
         }
       }

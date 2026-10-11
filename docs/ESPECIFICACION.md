@@ -38,8 +38,10 @@ El orden de esta lista es el orden en que se muestran los mercados en el resulta
 - Solo se usan líneas terminadas en .5. Se descartan las líneas enteras (pueden devolver el dinero) y los handicaps asiáticos (.25 / .75).
 - **Fútbol:** los mercados del partido se cuentan en el tiempo reglamentario (90 minutos más el descuento), sin prórroga ni penales. El primer tiempo es de 45 minutos más el descuento.
 - **Tarjetas:** se cuentan como en Betano: amarilla = 1, roja = 2, con líneas .5. El usuario confirmó en Betano que la roja vale como 2 amarillas.
-  - Pendiente: confirmar con un ejemplo cuánto suma una doble amarilla (amarilla, segunda amarilla y roja): 3 (la primera amarilla más la roja) o 2.
+  - Doble amarilla: suma 2, las dos amarillas. La roja que resulta no suma aparte (confirmado por el usuario).
+  - Una amarilla y después una roja directa al mismo jugador suman 3 (1 + 2).
   - Como cada roja suma 2, el análisis de tarjetas indica también si habrá roja en el partido.
+  - No se cuentan las tarjetas anuladas por el VAR, las mostradas a entrenadores o al cuerpo técnico, ni las de jugadores en el banco: suplentes que todavía no habían entrado o que ya habían salido (confirmado por el usuario). En el partido completo tampoco cuentan las de la prórroga.
 - **Básquet, primer tiempo:** 1.er y 2.º cuarto. No incluye prórroga.
 - **Básquet, tiempo completo:** incluye prórroga.
 - **Béisbol:** el ganador no tiene empate (hay entradas extra). El total incluye entradas extra.
@@ -73,19 +75,37 @@ Margen de la casa de una línea: `1/cuota_A + 1/cuota_B - 1`.
 
 ## Arquitectura
 
-- **Extensión de navegador** (Brave, Manifest V3, instalada en modo desarrollador con "Cargar descomprimida"). Lee los datos de Betano, Sofascore, Flashscore y las casas de referencia mientras el usuario tiene abiertas esas páginas, y se los pasa a la página web. Si un sitio cambia su diseño, hay que ajustar su extractor. Si la extensión no consigue un dato, se ingresa a mano.
+- **Extensión de navegador** (Brave, Manifest V3, instalada en modo desarrollador con "Cargar descomprimida"). Lee los datos de Betano, Sofascore, Flashscore y las casas de referencia y se los pasa a la página web. Hace los pedidos desde una pestaña del sitio, como la propia página del sitio; si no hay una abierta, la abre en segundo plano y la cierra después de un minuto sin uso. Los pedidos a un sitio van de a uno, con una pausa de 300 ms, para no cargarlo. La extensión devuelve las respuestas tal cual: la conversión al formato del proyecto está en la página (`web/js/fuentes/`). Si un sitio cambia su formato, hay que ajustar su convertidor. Si la extensión no consigue un dato, se ingresa a mano. Instalación y uso: `extension/README.md`.
 - **Página web** publicada en GitHub Pages: https://luisp11127.github.io/Analisis-BDP-GPT/web/. Carga los partidos del día, permite filtrar por deporte y liga, seleccionar partidos y lanzar el análisis. El análisis se ejecuta en el navegador. Tiene una sección separada para el historial. Mientras no estén la extensión ni el análisis real, funciona con datos de prueba ficticios.
 - **Repositorio** (público): guarda el historial en archivos de datos. La página escribe en el repositorio con un token de GitHub de alcance limitado a este repositorio. El token se guarda solo en el navegador, nunca en el repositorio.
-- **GitHub Actions:** ejecuta las pruebas, valida los datos y publica la página cuando hay cambios. Más adelante entrenará la red neuronal con el historial. No se usa para extraer datos, porque no tiene acceso al navegador y los sitios suelen bloquear conexiones desde servidores.
+- **GitHub Actions:** ejecuta las pruebas y valida los datos en cada cambio, y publica la página cuando los cambios llegan a `main`. El trabajo se hace en una rama aparte y se une a `main` con un pull request cuando el usuario lo aprueba. Más adelante entrenará la red neuronal con el historial. No se usa para extraer datos, porque no tiene acceso al navegador y los sitios suelen bloquear conexiones desde servidores.
 - La extracción solo funciona en la computadora (las extensiones no funcionan en el navegador del celular). Desde el celular se pueden ver los resultados y el historial.
 
 ### Emparejamiento de partidos
 
 Cada sitio escribe los nombres de los equipos de forma distinta (por ejemplo "Manchester United" y "Man Utd"). La página relaciona los partidos por fecha, hora y parecido de los nombres. Cuando no esté segura, pide confirmación y guarda la equivalencia para usarla después.
 
+- Primero se busca la liga: por país y parecido del nombre, y solo se acepta si en ella aparece alguno de los partidos a la misma hora.
+- Después el partido: misma hora, con 15 minutos de margen, y nombres parecidos. Si hay dudas o no aparece, la página muestra los partidos de esa liga en la casa para elegir el que corresponde.
+- Las equivalencias confirmadas se recuerdan en el navegador hasta que exista el guardado en el repositorio (paso 6). Detalle en `docs/FUENTES.md`.
+
 ### Muestras para construir los extractores
 
-Desde el entorno de desarrollo no se puede abrir Betano ni Sofascore. Para construir cada extractor, el usuario abre las herramientas de desarrollador de Brave (F12), pestaña "Red", carga un partido y guarda las respuestas. No se programan extractores adivinando el formato de los datos.
+Desde el entorno de desarrollo no se puede abrir Betano ni Sofascore. Para construir cada extractor, el usuario abre las herramientas de desarrollador de Brave (F12), pestaña "Red", carga un partido y guarda las respuestas (HAR). No se programan extractores adivinando el formato de los datos. La muestra se necesita una sola vez por sitio, o de nuevo si el sitio cambia su formato.
+
+Las muestras no se suben al repositorio (es público): las pruebas usan datos inventados con la misma estructura. Qué muestras hay y cómo se convierte cada dato: `docs/FUENTES.md`.
+
+### Partidos reales del día
+
+Flujo en la página con datos reales:
+
+1. Se cargan todas las ligas que tienen partidos en la fecha elegida, en hora de Lima, con la cantidad de partidos de cada una. Primero las que Sofascore destaca; después todas, por país. Quedan marcadas las ligas que se analizaron la última vez.
+2. El usuario elige ligas y se cargan sus partidos.
+3. El usuario elige partidos y pulsa **Analizar**. En ese momento se leen los datos previos de cada partido: detalle (árbitro), alineaciones y bajas, tabla y los últimos partidos de cada equipo con sus estadísticas.
+
+- Solo se pueden analizar partidos que todavía no empiezan, porque los datos previos y las cuotas tienen que ser anteriores al inicio.
+- **Últimos partidos:** los últimos 10 partidos terminados de cada equipo en la misma condición: el local, de local; el visitante, de visita. Incluye todas las competiciones; cada partido guarda su liga, así el análisis puede filtrar después.
+- Los datos leídos se pueden descargar en el formato de la extracción del día.
 
 ## Método de análisis
 
@@ -118,9 +138,10 @@ Esta sección describe el análisis estadístico. La red neuronal es un modelo a
 ## Resultado del análisis
 
 - Orden: deporte → partido → mercados en el orden de la lista de arriba.
-- Por cada mercado se muestra la línea candidata, el lado recomendado y la probabilidad de cada modelo, una al lado de la otra. Ejemplo: `Under 2.5 — Estadístico 58% · Red 61%`.
+- Por cada mercado se muestra la línea candidata, el lado recomendado y su nivel de confianza: ALTA, MEDIA o BAJA según la probabilidad del análisis estadístico, con ese porcentaje y el de la red. Ejemplo: `Más 2.5 · Confianza ALTA (estadístico 61%) · Red 58%`.
+- Niveles de confianza, sobre el porcentaje redondeado que se muestra: alta desde 60%, media de 55% a 59% y baja por debajo de 55%. Se pueden ajustar en `comun/reglas.js`.
 - Si la red no tiene un modelo aprobado para ese mercado, se muestra "Red: sin modelo todavía".
-- Si los dos modelos eligen lados distintos, no se oculta nada: se muestra el lado y la probabilidad de cada uno y se marca el mercado como en desacuerdo. Ejemplo: `Estadístico: Under 2.5 58% · Red: Over 2.5 55% ⚠️`.
+- Si los dos modelos eligen lados distintos, no se oculta nada: se muestra el lado y la probabilidad de cada uno y se marca el mercado como en desacuerdo. Ejemplo: `Más 2.5 · Confianza MEDIA (estadístico 56%) · Red: Menos 2.5 55% ⚠️ En desacuerdo`. El nivel de confianza sale solo del estadístico; el desacuerdo no lo cambia.
 - En el mercado de tarjetas se indica si habrá roja en el partido, con su probabilidad. Ejemplo: `Tarjeta roja en el partido: No — 84%`.
 - Los mercados sin cuotas aparecen como "Sin cuotas", en su lugar de la lista.
 
@@ -141,7 +162,7 @@ Por cada partido y mercado:
 
 Actualización de resultados: al abrir Sofascore después del partido, la extensión lee los resultados de los partidos pendientes y los marca automáticamente.
 
-Vista del historial: una lista general por deporte, con filtros por fecha, liga y mercado, y un resumen del porcentaje de acierto por mercado.
+Vista del historial: una lista general por deporte, con filtros por fecha, liga y mercado, el nivel de confianza de cada registro y un resumen del porcentaje de acierto por mercado y por nivel de confianza.
 
 ## Red neuronal
 
@@ -233,8 +254,8 @@ Se hacen después de que la red base funcione:
 
 1. Estructura del repositorio y formato de los datos (partido, mercado, análisis, registro del historial). Hecho: ver `docs/FORMATO_DATOS.md`.
 2. Página con datos de prueba: carga, filtros, análisis y sección de historial. Incluye la publicación en GitHub Pages con GitHub Actions. Hecho: ver `web/`.
-3. Extractor de Sofascore: partidos del día, ligas, estadísticas y resultados. Después, extractor de Flashscore para completar datos.
-4. Extractor de Betano: mercados y cuotas, y emparejamiento de partidos.
+3. Extractor de Sofascore: partidos del día, ligas, estadísticas y resultados. Después, extractor de Flashscore para completar datos. En curso: la extensión y el extractor de Sofascore para fútbol están hechos (`extension/`, `web/js/fuentes/sofascore.js`). Faltan Flashscore y el básquet y el béisbol de Sofascore, que necesitan su muestra.
+4. Extractor de Betano: mercados y cuotas, y emparejamiento de partidos. En curso: las cuotas de fútbol y el emparejamiento están hechos (`web/js/fuentes/betano.js`); faltan básquet y béisbol.
 5. Motor de análisis real por deporte.
 6. Guardado del historial en el repositorio (la publicación con GitHub Actions ya quedó lista en el paso 2).
 7. Casas de referencia (Apuesta Total y Te Apuesto primero).

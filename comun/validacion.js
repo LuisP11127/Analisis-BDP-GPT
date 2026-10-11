@@ -249,6 +249,27 @@ function revisarBeisbol(partido) {
 
 const REVISAR_ESTADISTICAS = { futbol: revisarFutbol, basquet: revisarBasquet, beisbol: revisarBeisbol };
 
+/** Reglas de un partido guardado, salvo la ruta del archivo. */
+function revisarPartido(partido, catalogo, agregar) {
+  if (fechaLocal(partido.inicio) !== partido.fecha_local) {
+    agregar(`fecha_local debería ser ${fechaLocal(partido.inicio)} (hora de Lima)`);
+  }
+  for (const codigo of Object.keys(partido.ids_externos ?? {})) {
+    if (!catalogo.casas.has(codigo) && !catalogo.fuentes.has(codigo)) agregar(`ids_externos: código desconocido ${codigo}`);
+  }
+  if (partido.estado === 'finalizado' && !partido.marcador) agregar('un partido finalizado necesita marcador');
+  if (partido.deporte === 'beisbol' && partido.estado === 'finalizado' && partido.marcador
+    && partido.marcador.local === partido.marcador.visitante) {
+    agregar('en béisbol un partido finalizado no puede terminar empatado');
+  }
+  if (partido.previa) revisarPrevia(partido, catalogo).forEach((m) => agregar(`previa: ${m}`));
+  if (partido.estadisticas) {
+    if (partido.estado !== 'finalizado') agregar('solo un partido finalizado puede tener estadísticas');
+    if (!catalogo.fuentes.has(partido.estadisticas.fuente)) agregar(`fuente desconocida ${partido.estadisticas.fuente}`);
+    REVISAR_ESTADISTICAS[partido.deporte](partido).forEach((m) => agregar(`estadisticas: ${m}`));
+  }
+}
+
 function revisarPartidos(ruta, { partidos }, catalogo) {
   const errores = [];
   const ids = new Set();
@@ -257,23 +278,7 @@ function revisarPartidos(ruta, { partidos }, catalogo) {
     if (ids.has(partido.id)) agregar(`id repetido ${partido.id}`);
     ids.add(partido.id);
     if (rutaPartidos(partido) !== ruta) agregar(`debería estar en ${rutaPartidos(partido)}`);
-    if (fechaLocal(partido.inicio) !== partido.fecha_local) {
-      agregar(`fecha_local debería ser ${fechaLocal(partido.inicio)} (hora de Lima)`);
-    }
-    for (const codigo of Object.keys(partido.ids_externos ?? {})) {
-      if (!catalogo.casas.has(codigo) && !catalogo.fuentes.has(codigo)) agregar(`ids_externos: código desconocido ${codigo}`);
-    }
-    if (partido.estado === 'finalizado' && !partido.marcador) agregar('un partido finalizado necesita marcador');
-    if (partido.deporte === 'beisbol' && partido.estado === 'finalizado' && partido.marcador
-      && partido.marcador.local === partido.marcador.visitante) {
-      agregar('en béisbol un partido finalizado no puede terminar empatado');
-    }
-    if (partido.previa) revisarPrevia(partido, catalogo).forEach((m) => agregar(`previa: ${m}`));
-    if (partido.estadisticas) {
-      if (partido.estado !== 'finalizado') agregar('solo un partido finalizado puede tener estadísticas');
-      if (!catalogo.fuentes.has(partido.estadisticas.fuente)) agregar(`fuente desconocida ${partido.estadisticas.fuente}`);
-      REVISAR_ESTADISTICAS[partido.deporte](partido).forEach((m) => agregar(`estadisticas: ${m}`));
-    }
+    revisarPartido(partido, catalogo, agregar);
   });
   return errores;
 }
@@ -505,9 +510,32 @@ function revisarReferencias(archivos, partidos, existe) {
 
 // ---------------------------------------------------------------- extracciones del día
 
-function revisarExtraccion(ruta, contenido, catalogo, partidosGuardados, existe) {
+/**
+ * Partidos anteriores que trae la extracción para su previa: deben estar terminados y no repetir partidos
+ * del día. Devuelve un índice con la misma forma que el de los partidos guardados.
+ */
+function revisarAnteriores(contenido, catalogo, errores) {
+  const anteriores = new Map();
+  const delDia = new Set(contenido.partidos.map((p) => p.id));
+  (contenido.partidos_anteriores ?? []).forEach((partido, i) => {
+    const agregar = (mensaje) => errores.push(`partidos_anteriores[${i}]: ${mensaje}`);
+    if (anteriores.has(partido.id)) agregar(`id repetido ${partido.id}`);
+    if (delDia.has(partido.id)) agregar(`${partido.id} también está en partidos`);
+    if (partido.estado !== 'finalizado') agregar('un partido anterior debe estar finalizado');
+    revisarPartido(partido, catalogo, agregar);
+    if (!anteriores.has(partido.id)) anteriores.set(partido.id, { ruta: 'partidos_anteriores', partido });
+  });
+  return anteriores;
+}
+
+function revisarExtraccion(ruta, contenido, catalogo, partidosGuardados, existeGuardado) {
   const errores = [];
   if (ruta !== `${contenido.fecha_local}.json`) errores.push(`debería llamarse ${contenido.fecha_local}.json`);
+
+  // La previa puede apuntar a partidos guardados en datos/ o a los que trae la propia extracción.
+  const anteriores = revisarAnteriores(contenido, catalogo, errores);
+  const conocidos = { get: (id) => anteriores.get(id) ?? partidosGuardados.get(id) };
+  const existe = (id) => anteriores.has(id) || existeGuardado(id);
 
   const delDia = new Map();
   contenido.partidos.forEach((partido, i) => {
@@ -527,7 +555,7 @@ function revisarExtraccion(ruta, contenido, catalogo, partidosGuardados, existe)
       if (antes(contenido.generado_en, partido.previa.extraido_en)) {
         agregar('previa: no puede extraerse después de generar la extracción');
       }
-      revisarUltimosPartidos(partido, partidosGuardados, existe, agregar);
+      revisarUltimosPartidos(partido, conocidos, existe, agregar);
     }
   });
 

@@ -1,0 +1,559 @@
+{
+  "version_formato": 1,
+  "registros": [
+    {
+      "id": "ejemplo:bas-036|basquet_handicap",
+      "partido_id": "ejemplo:bas-036",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet-b",
+        "nombre": "Liga Universitaria de Ejemplo"
+      },
+      "inicio": "2026-10-08T22:00:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:basquet-lobos-prototipo",
+        "nombre": "Lobos Prototipo"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-aguilas-modelo",
+        "nombre": "Águilas Modelo"
+      },
+      "mercado": "basquet_handicap",
+      "analizado_en": "2026-10-08T16:10:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T16:05:00Z",
+          "lineas": [
+            {
+              "linea": -6.5,
+              "cuota_a": 2.06,
+              "cuota_b": 1.75
+            },
+            {
+              "linea": -5.5,
+              "cuota_a": 1.97,
+              "cuota_b": 1.83
+            },
+            {
+              "linea": -4.5,
+              "cuota_a": 1.77,
+              "cuota_b": 2.04
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": -5.5,
+        "cuota_a": 1.97,
+        "cuota_b": 1.83,
+        "diferencia": 0.14,
+        "margen": 0.0541,
+        "prob_sin_margen_a": 0.4816,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.427,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "descanso",
+            "impacto": -0.03
+          },
+          {
+            "factor": "defensa_rival",
+            "impacto": -0.04
+          },
+          {
+            "factor": "ataque_local",
+            "impacto": -0.01
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 13,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-09T01:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-036|basquet_puntos",
+      "partido_id": "ejemplo:bas-036",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet-b",
+        "nombre": "Liga Universitaria de Ejemplo"
+      },
+      "inicio": "2026-10-08T22:00:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:basquet-lobos-prototipo",
+        "nombre": "Lobos Prototipo"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-aguilas-modelo",
+        "nombre": "Águilas Modelo"
+      },
+      "mercado": "basquet_puntos",
+      "analizado_en": "2026-10-08T16:10:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T16:05:00Z",
+          "lineas": [
+            {
+              "linea": 133.5,
+              "cuota_a": 1.73,
+              "cuota_b": 2.09
+            },
+            {
+              "linea": 134.5,
+              "cuota_a": 1.72,
+              "cuota_b": 2.11
+            },
+            {
+              "linea": 135.5,
+              "cuota_a": 1.97,
+              "cuota_b": 1.83
+            },
+            {
+              "linea": 136.5,
+              "cuota_a": 1.96,
+              "cuota_b": 1.84
+            },
+            {
+              "linea": 137.5,
+              "cuota_a": 2.24,
+              "cuota_b": 1.64
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 136.5,
+        "cuota_a": 1.96,
+        "cuota_b": 1.84,
+        "diferencia": 0.12,
+        "margen": 0.0537,
+        "prob_sin_margen_a": 0.4842,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.402,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "ritmo_juego",
+            "impacto": -0.02
+          },
+          {
+            "factor": "descanso",
+            "impacto": -0.05
+          },
+          {
+            "factor": "ataque_local",
+            "impacto": -0.02
+          }
+        ]
+      },
+      "red": {
+        "version": "ejemplo-red-basquet_puntos-1",
+        "prob_a": 0.532,
+        "lado": "a"
+      },
+      "entrada_red": {
+        "version": "ejemplo-variables-1",
+        "valores": {
+          "linea": 136.5,
+          "cuota_a": 1.96,
+          "cuota_b": 1.84,
+          "esperado": 135.38,
+          "forma_local": -0.63,
+          "forma_visitante": 0.44
+        }
+      },
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 137,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-09T01:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-036|basquet_puntos_1t",
+      "partido_id": "ejemplo:bas-036",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet-b",
+        "nombre": "Liga Universitaria de Ejemplo"
+      },
+      "inicio": "2026-10-08T22:00:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:basquet-lobos-prototipo",
+        "nombre": "Lobos Prototipo"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-aguilas-modelo",
+        "nombre": "Águilas Modelo"
+      },
+      "mercado": "basquet_puntos_1t",
+      "analizado_en": "2026-10-08T16:10:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T16:05:00Z",
+          "lineas": [
+            {
+              "linea": 66.5,
+              "cuota_a": 1.7,
+              "cuota_b": 2.15
+            },
+            {
+              "linea": 67.5,
+              "cuota_a": 1.85,
+              "cuota_b": 1.94
+            },
+            {
+              "linea": 68.5,
+              "cuota_a": 2.05,
+              "cuota_b": 1.76
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 67.5,
+        "cuota_a": 1.85,
+        "cuota_b": 1.94,
+        "diferencia": 0.09,
+        "margen": 0.056,
+        "prob_sin_margen_a": 0.5119,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.381,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "ritmo_juego",
+            "impacto": -0.03
+          },
+          {
+            "factor": "descanso",
+            "impacto": -0.03
+          },
+          {
+            "factor": "ataque_local",
+            "impacto": -0.06
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": {
+        "casa": "betano",
+        "linea": 67.5,
+        "lado": "b",
+        "cuota": 1.94,
+        "monto": 20,
+        "moneda": "PEN",
+        "registrada_en": "2026-10-08T16:20:00Z"
+      },
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 67,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-09T01:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-037|basquet_handicap",
+      "partido_id": "ejemplo:bas-037",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet-b",
+        "nombre": "Liga Universitaria de Ejemplo"
+      },
+      "inicio": "2026-10-09T00:00:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:basquet-zorros-maqueta",
+        "nombre": "Zorros Maqueta"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-delfines-borrador",
+        "nombre": "Delfines Borrador"
+      },
+      "mercado": "basquet_handicap",
+      "analizado_en": "2026-10-08T18:10:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T18:05:00Z",
+          "lineas": [
+            {
+              "linea": -12.5,
+              "cuota_a": 1.99,
+              "cuota_b": 1.81
+            },
+            {
+              "linea": -11.5,
+              "cuota_a": 1.87,
+              "cuota_b": 1.92
+            },
+            {
+              "linea": -10.5,
+              "cuota_a": 1.81,
+              "cuota_b": 1.99
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": -11.5,
+        "cuota_a": 1.87,
+        "cuota_b": 1.92,
+        "diferencia": 0.05,
+        "margen": 0.0556,
+        "prob_sin_margen_a": 0.5066,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.539,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "ataque_local",
+            "impacto": 0.01
+          },
+          {
+            "factor": "defensa_rival",
+            "impacto": 0.01
+          },
+          {
+            "factor": "descanso",
+            "impacto": 0.03
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": -7,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-09T03:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-037|basquet_puntos",
+      "partido_id": "ejemplo:bas-037",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet-b",
+        "nombre": "Liga Universitaria de Ejemplo"
+      },
+      "inicio": "2026-10-09T00:00:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:basquet-zorros-maqueta",
+        "nombre": "Zorros Maqueta"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-delfines-borrador",
+        "nombre": "Delfines Borrador"
+      },
+      "mercado": "basquet_puntos",
+      "analizado_en": "2026-10-08T18:10:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T18:05:00Z",
+          "lineas": [
+            {
+              "linea": 140.5,
+              "cuota_a": 1.77,
+              "cuota_b": 2.04
+            },
+            {
+              "linea": 141.5,
+              "cuota_a": 1.85,
+              "cuota_b": 1.95
+            },
+            {
+              "linea": 142.5,
+              "cuota_a": 2,
+              "cuota_b": 1.8
+            },
+            {
+              "linea": 143.5,
+              "cuota_a": 2.05,
+              "cuota_b": 1.77
+            },
+            {
+              "linea": 144.5,
+              "cuota_a": 2.09,
+              "cuota_b": 1.73
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 141.5,
+        "cuota_a": 1.85,
+        "cuota_b": 1.95,
+        "diferencia": 0.1,
+        "margen": 0.0534,
+        "prob_sin_margen_a": 0.5132,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.504,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "ritmo_juego",
+            "impacto": 0.01
+          },
+          {
+            "factor": "ataque_local",
+            "impacto": 0.02
+          },
+          {
+            "factor": "defensa_rival",
+            "impacto": 0.01
+          }
+        ]
+      },
+      "red": {
+        "version": "ejemplo-red-basquet_puntos-1",
+        "prob_a": 0.605,
+        "lado": "a"
+      },
+      "entrada_red": {
+        "version": "ejemplo-variables-1",
+        "valores": {
+          "linea": 141.5,
+          "cuota_a": 1.85,
+          "cuota_b": 1.95,
+          "esperado": 142.36,
+          "forma_local": 0.88,
+          "forma_visitante": -0.34
+        }
+      },
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 127,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-09T03:00:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:bas-037|basquet_puntos_1t",
+      "partido_id": "ejemplo:bas-037",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet-b",
+        "nombre": "Liga Universitaria de Ejemplo"
+      },
+      "inicio": "2026-10-09T00:00:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:basquet-zorros-maqueta",
+        "nombre": "Zorros Maqueta"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-delfines-borrador",
+        "nombre": "Delfines Borrador"
+      },
+      "mercado": "basquet_puntos_1t",
+      "analizado_en": "2026-10-08T18:10:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-08T18:05:00Z",
+          "lineas": [
+            {
+              "linea": 70.5,
+              "cuota_a": 1.86,
+              "cuota_b": 1.93
+            },
+            {
+              "linea": 71.5,
+              "cuota_a": 1.96,
+              "cuota_b": 1.83
+            },
+            {
+              "linea": 72.5,
+              "cuota_a": 2,
+              "cuota_b": 1.8
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 70.5,
+        "cuota_a": 1.86,
+        "cuota_b": 1.93,
+        "diferencia": 0.07,
+        "margen": 0.0558,
+        "prob_sin_margen_a": 0.5092,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.533,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "descanso",
+            "impacto": 0.01
+          },
+          {
+            "factor": "defensa_rival",
+            "impacto": -0.02
+          },
+          {
+            "factor": "ataque_local",
+            "impacto": 0
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 66,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-09T03:00:00Z"
+      }
+    }
+  ]
+}

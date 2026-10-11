@@ -16,6 +16,8 @@ export const NOMBRES_ESQUEMAS = [
   'equivalencias',
   'config-mercados',
   'config-casas',
+  'indice',
+  'extraccion',
 ];
 
 const ESQUEMA_POR_TIPO = {
@@ -276,16 +278,35 @@ function revisarPartidos(ruta, { partidos }, catalogo) {
   return errores;
 }
 
-// ---------------------------------------------------------------- historial
+// ---------------------------------------------------------------- mercados de registros y extracciones
 
-function revisarOfertas(registro, mercado, catalogo, agregar) {
+/** Jugador y estadística de un mercado. Devuelve false si falta algo y no tiene sentido seguir revisando. */
+function revisarMercado(entrada, mercado, agregar) {
+  if (mercado.por_jugador) {
+    if (!entrada.jugador || !entrada.estadistica_jugador) {
+      agregar('un mercado de jugador necesita jugador y estadistica_jugador');
+      return false;
+    }
+    if (!mercado.estadisticas_jugador.some((e) => e.codigo === entrada.estadistica_jugador)) {
+      agregar(`estadística de jugador desconocida ${entrada.estadistica_jugador}`);
+    }
+  } else if (entrada.jugador || entrada.estadistica_jugador) {
+    agregar('jugador y estadistica_jugador solo van en mercados de jugador');
+  }
+  return true;
+}
+
+/** `limites`: [{ hora, mensaje }]. Las cuotas no pueden haberse extraído después de esas horas. */
+function revisarOfertas(ofertas, mercado, catalogo, agregar, limites) {
   const casas = new Set();
-  registro.ofertas.forEach((oferta, i) => {
+  ofertas.forEach((oferta, i) => {
     const lugar = `ofertas[${i}]`;
     if (!catalogo.casas.has(oferta.casa)) agregar(`${lugar}: casa desconocida ${oferta.casa}`);
     if (casas.has(oferta.casa)) agregar(`${lugar}: la casa ${oferta.casa} aparece dos veces`);
     casas.add(oferta.casa);
-    if (antes(registro.analizado_en, oferta.extraido_en)) agregar(`${lugar}: las cuotas no pueden extraerse después del análisis`);
+    for (const { hora, mensaje } of limites) {
+      if (antes(hora, oferta.extraido_en)) agregar(`${lugar}: ${mensaje}`);
+    }
     const lineas = oferta.lineas.map((l) => l.linea);
     if (new Set(lineas).size !== lineas.length) agregar(`${lugar}: hay líneas repetidas`);
     if (tieneLinea(mercado.tipo)) {
@@ -295,6 +316,28 @@ function revisarOfertas(registro, mercado, catalogo, agregar) {
     }
   });
 }
+
+function revisarPrediccion(nombre, prediccion, codigoMercado, agregar) {
+  if (prediccion === null || prediccion === undefined) return;
+  const { lado, prob_a: probA } = prediccion;
+  if ((lado === 'a' && probA < 0.5) || (lado === 'b' && probA > 0.5)) {
+    agregar(`${nombre}: el lado ${lado} no coincide con prob_a ${probA}`);
+  }
+  if (prediccion.prob_roja !== undefined && codigoMercado !== 'futbol_tarjetas') {
+    agregar(`${nombre}: prob_roja solo va en futbol_tarjetas`);
+  }
+}
+
+/** Revisa estadistico, red y entrada_red de un registro o de una predicción de ejemplo. */
+function revisarPredicciones(contenedor, codigoMercado, agregar, prefijo = '') {
+  revisarPrediccion(`${prefijo}estadistico`, contenedor.estadistico, codigoMercado, agregar);
+  revisarPrediccion(`${prefijo}red`, contenedor.red, codigoMercado, agregar);
+  if (contenedor.red && !contenedor.entrada_red) {
+    agregar(`${prefijo}si hay predicción de la red, debe guardarse entrada_red`);
+  }
+}
+
+// ---------------------------------------------------------------- historial
 
 function revisarCandidata(registro, catalogo, agregar) {
   const esperada = calcularCandidata(registro.ofertas, catalogo.prioridadCasas);
@@ -308,14 +351,6 @@ function revisarCandidata(registro, catalogo, agregar) {
       ? Math.abs(valor - guardado) <= TOLERANCIA
       : valor === guardado;
     if (!igual) agregar(`candidata.${campo} debería ser ${valor} y es ${guardado}`);
-  }
-}
-
-function revisarPrediccion(nombre, prediccion, agregar) {
-  if (prediccion === null) return;
-  const { lado, prob_a: probA } = prediccion;
-  if ((lado === 'a' && probA < 0.5) || (lado === 'b' && probA > 0.5)) {
-    agregar(`${nombre}: el lado ${lado} no coincide con prob_a ${probA}`);
   }
 }
 
@@ -355,28 +390,18 @@ function revisarHistorial(ruta, { registros }, catalogo) {
       agregar(`el mercado ${registro.mercado} no existe en ${registro.deporte}`);
       return;
     }
-    if (mercado.por_jugador) {
-      if (!registro.jugador || !registro.estadistica_jugador) {
-        agregar('un mercado de jugador necesita jugador y estadistica_jugador');
-        return;
-      }
-      if (!mercado.estadisticas_jugador.some((e) => e.codigo === registro.estadistica_jugador)) {
-        agregar(`estadística de jugador desconocida ${registro.estadistica_jugador}`);
-      }
-    } else if (registro.jugador || registro.estadistica_jugador) {
-      agregar('jugador y estadistica_jugador solo van en mercados de jugador');
-    }
+    if (!revisarMercado(registro, mercado, agregar)) return;
     const id = idRegistro(registro);
     if (registro.id !== id) agregar(`id debería ser ${id}`);
     if (ids.has(registro.id)) agregar(`id repetido ${registro.id}`);
     ids.add(registro.id);
     if (antes(registro.inicio, registro.analizado_en)) agregar('el análisis debe hacerse antes del inicio del partido');
 
-    revisarOfertas(registro, mercado, catalogo, agregar);
+    revisarOfertas(registro.ofertas, mercado, catalogo, agregar, [
+      { hora: registro.analizado_en, mensaje: 'las cuotas no pueden extraerse después del análisis' },
+    ]);
     revisarCandidata(registro, catalogo, agregar);
-    revisarPrediccion('estadistico', registro.estadistico, agregar);
-    revisarPrediccion('red', registro.red, agregar);
-    if (registro.red !== null && !registro.entrada_red) agregar('si hay predicción de la red, debe guardarse entrada_red');
+    revisarPredicciones(registro, registro.mercado, agregar);
 
     if (registro.apuesta) {
       if (!catalogo.casas.has(registro.apuesta.casa)) agregar(`apuesta: casa desconocida ${registro.apuesta.casa}`);
@@ -410,12 +435,9 @@ function revisarEquivalencias(ruta, contenido, catalogo) {
 
 // ---------------------------------------------------------------- referencias entre archivos
 
-function revisarReferencias(archivos, idsEnArchivosInvalidos) {
+function indexarPartidos(archivos) {
   const errores = [];
   const partidos = new Map();
-  // Si el partido está en un archivo con errores de esquema, ese archivo ya tiene su error:
-  // no se repite como "no existe" en cada archivo que lo menciona.
-  const existe = (id) => partidos.has(id) || idsEnArchivosInvalidos.has(id);
   for (const { ruta, tipo, contenido } of archivos) {
     if (tipo !== 'partidos') continue;
     contenido.partidos.forEach((partido, i) => {
@@ -428,21 +450,29 @@ function revisarReferencias(archivos, idsEnArchivosInvalidos) {
       }
     });
   }
+  return { partidos, errores };
+}
 
-  for (const { ruta, partido } of partidos.values()) {
-    if (!partido.previa) continue;
-    for (const lado of LADOS) {
-      for (const id of partido.previa.ultimos_partidos[lado]) {
-        const agregar = (mensaje) => errores.push(`${ruta}: ${partido.id}: previa.ultimos_partidos.${lado}: ${id} ${mensaje}`);
-        const anterior = partidos.get(id)?.partido;
-        if (!existe(id)) agregar('no existe en los datos');
-        else if (!anterior) continue;
-        else if (anterior.deporte !== partido.deporte) agregar('es de otro deporte');
-        else if (!antes(anterior.inicio, partido.inicio)) agregar('no es anterior al partido');
-        else if (anterior.estado !== 'finalizado') agregar('no está finalizado');
-        else if (![anterior.local.id, anterior.visitante.id].includes(partido[lado].id)) agregar(`no lo jugó ${partido[lado].nombre}`);
-      }
+/** Los partidos usados para las estadísticas previas deben estar guardados, finalizados y ser anteriores. */
+function revisarUltimosPartidos(partido, partidos, existe, agregar) {
+  for (const lado of LADOS) {
+    for (const id of partido.previa.ultimos_partidos[lado]) {
+      const decir = (mensaje) => agregar(`previa.ultimos_partidos.${lado}: ${id} ${mensaje}`);
+      const anterior = partidos.get(id)?.partido;
+      if (!existe(id)) decir('no existe en los datos');
+      else if (!anterior) continue;
+      else if (anterior.deporte !== partido.deporte) decir('es de otro deporte');
+      else if (!antes(anterior.inicio, partido.inicio)) decir('no es anterior al partido');
+      else if (anterior.estado !== 'finalizado') decir('no está finalizado');
+      else if (![anterior.local.id, anterior.visitante.id].includes(partido[lado].id)) decir(`no lo jugó ${partido[lado].nombre}`);
     }
+  }
+}
+
+function revisarReferencias(archivos, partidos, existe) {
+  const errores = [];
+  for (const { ruta, partido } of partidos.values()) {
+    if (partido.previa) revisarUltimosPartidos(partido, partidos, existe, (m) => errores.push(`${ruta}: ${partido.id}: ${m}`));
   }
 
   for (const { ruta, tipo, contenido } of archivos) {
@@ -470,6 +500,77 @@ function revisarReferencias(archivos, idsEnArchivosInvalidos) {
       }
     });
   }
+  return errores;
+}
+
+// ---------------------------------------------------------------- extracciones del día
+
+function revisarExtraccion(ruta, contenido, catalogo, partidosGuardados, existe) {
+  const errores = [];
+  if (ruta !== `${contenido.fecha_local}.json`) errores.push(`debería llamarse ${contenido.fecha_local}.json`);
+
+  const delDia = new Map();
+  contenido.partidos.forEach((partido, i) => {
+    const agregar = (mensaje) => errores.push(`partidos[${i}]: ${mensaje}`);
+    if (delDia.has(partido.id)) agregar(`id repetido ${partido.id}`);
+    delDia.set(partido.id, partido);
+    if (partido.fecha_local !== contenido.fecha_local) agregar(`es del ${partido.fecha_local}, no del ${contenido.fecha_local}`);
+    if (fechaLocal(partido.inicio) !== partido.fecha_local) {
+      agregar(`fecha_local debería ser ${fechaLocal(partido.inicio)} (hora de Lima)`);
+    }
+    for (const codigo of Object.keys(partido.ids_externos ?? {})) {
+      if (!catalogo.casas.has(codigo) && !catalogo.fuentes.has(codigo)) agregar(`ids_externos: código desconocido ${codigo}`);
+    }
+    if (partido.estadisticas) agregar('una extracción del día no trae estadísticas finales');
+    if (partido.previa) {
+      revisarPrevia(partido, catalogo).forEach((m) => agregar(`previa: ${m}`));
+      if (antes(contenido.generado_en, partido.previa.extraido_en)) {
+        agregar('previa: no puede extraerse después de generar la extracción');
+      }
+      revisarUltimosPartidos(partido, partidosGuardados, existe, agregar);
+    }
+  });
+
+  const claves = new Set();
+  contenido.mercados.forEach((entrada, i) => {
+    const agregar = (mensaje) => errores.push(`mercados[${i}]: ${mensaje}`);
+    const partido = delDia.get(entrada.partido_id);
+    if (!partido) {
+      agregar(`el partido ${entrada.partido_id} no está en la extracción`);
+      return;
+    }
+    const mercado = catalogo.mercados.get(partido.deporte)?.get(entrada.mercado);
+    if (!mercado) {
+      agregar(`el mercado ${entrada.mercado} no existe en ${partido.deporte}`);
+      return;
+    }
+    if (!revisarMercado(entrada, mercado, agregar)) return;
+    const clave = idRegistro(entrada);
+    if (claves.has(clave)) agregar(`mercado repetido ${clave}`);
+    claves.add(clave);
+    revisarOfertas(entrada.ofertas, mercado, catalogo, agregar, [
+      { hora: contenido.generado_en, mensaje: 'las cuotas no pueden extraerse después de generar la extracción' },
+      { hora: partido.inicio, mensaje: 'las cuotas deben extraerse antes del inicio del partido' },
+    ]);
+    if (calcularCandidata(entrada.ofertas, catalogo.prioridadCasas) === null) {
+      agregar('ninguna casa conocida ofrece este mercado');
+    }
+    if (entrada.prediccion_ejemplo) revisarPredicciones(entrada.prediccion_ejemplo, entrada.mercado, agregar, 'prediccion_ejemplo.');
+  });
+  return errores;
+}
+
+// ---------------------------------------------------------------- índices
+
+/** Diferencias entre un indice.json y los archivos que hay de verdad en su carpeta. */
+export function revisarIndice(indice, rutas) {
+  const errores = [];
+  const listadas = new Set(indice.archivos);
+  const existentes = new Set(rutas);
+  for (const ruta of rutas) if (!listadas.has(ruta)) errores.push(`falta ${ruta}`);
+  for (const ruta of indice.archivos) if (!existentes.has(ruta)) errores.push(`lista ${ruta}, que no existe`);
+  const ordenadas = [...indice.archivos].sort();
+  if (ordenadas.some((ruta, i) => ruta !== indice.archivos[i])) errores.push('los archivos deben estar en orden alfabético');
   return errores;
 }
 
@@ -511,8 +612,8 @@ export function crearValidador({ ajv, esquemas, config }) {
     return revisarArchivo(ruta, contenido).errores.map((e) => `${ruta}: ${e}`);
   }
 
-  /** Errores de un conjunto de archivos [{ ruta, contenido }], incluidas las referencias entre ellos. */
-  function validarDatos(archivos) {
+  // Revisa cada archivo y arma el índice de partidos con los archivos que cumplen el esquema.
+  function analizarDatos(archivos) {
     const errores = [];
     const conEsquemaValido = [];
     const idsEnArchivosInvalidos = new Set();
@@ -527,9 +628,42 @@ export function crearValidador({ ajv, esquemas, config }) {
         }
       }
     }
-    errores.push(...revisarReferencias(conEsquemaValido, idsEnArchivosInvalidos));
+    const { partidos, errores: repetidos } = indexarPartidos(conEsquemaValido);
+    errores.push(...repetidos);
+    // Si el partido está en un archivo con errores de esquema, ese archivo ya tiene su error:
+    // no se repite como "no existe" en cada archivo que lo menciona.
+    const existe = (id) => partidos.has(id) || idsEnArchivosInvalidos.has(id);
+    return { errores, conEsquemaValido, partidos, existe };
+  }
+
+  /** Errores de un conjunto de archivos [{ ruta, contenido }], incluidas las referencias entre ellos. */
+  function validarDatos(archivos) {
+    const { errores, conEsquemaValido, partidos, existe } = analizarDatos(archivos);
+    errores.push(...revisarReferencias(conEsquemaValido, partidos, existe));
     return errores;
   }
 
-  return { validarArchivo, validarDatos, catalogo };
+  /**
+   * Errores de extracciones del día [{ ruta, contenido }] (ruta: AAAA-MM-DD.json).
+   * `archivosDatos` es la carpeta de datos contra la que se revisan los partidos previos.
+   */
+  function validarExtracciones(extracciones, archivosDatos) {
+    const { partidos, existe } = analizarDatos(archivosDatos);
+    const errores = [];
+    for (const { ruta, contenido } of extracciones) {
+      const propios = erroresDeEsquema(esquema('extraccion'), contenido);
+      if (propios.length === 0) propios.push(...revisarExtraccion(ruta, contenido, catalogo, partidos, existe));
+      errores.push(...propios.map((e) => `${ruta}: ${e}`));
+    }
+    return errores;
+  }
+
+  /** Errores de un indice.json comparado con las rutas de los archivos de su carpeta. */
+  function validarIndice(contenido, rutas) {
+    const errores = erroresDeEsquema(esquema('indice'), contenido);
+    if (errores.length === 0) errores.push(...revisarIndice(contenido, rutas));
+    return errores.map((e) => `indice.json: ${e}`);
+  }
+
+  return { validarArchivo, validarDatos, validarExtracciones, validarIndice, catalogo };
 }

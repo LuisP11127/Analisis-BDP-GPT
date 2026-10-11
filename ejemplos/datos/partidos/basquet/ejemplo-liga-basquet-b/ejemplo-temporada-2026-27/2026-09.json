@@ -1,0 +1,181 @@
+{
+  "version_formato": 1,
+  "partidos": [
+    {
+      "id": "ejemplo:bas-028",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet-b",
+        "nombre": "Liga Universitaria de Ejemplo"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026-27",
+        "nombre": "2026/27"
+      },
+      "inicio": "2026-09-26T22:00:00Z",
+      "fecha_local": "2026-09-26",
+      "local": {
+        "id": "ejemplo:basquet-lobos-prototipo",
+        "nombre": "Lobos Prototipo"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-delfines-borrador",
+        "nombre": "Delfines Borrador"
+      },
+      "estado": "finalizado",
+      "marcador": {
+        "local": 66,
+        "visitante": 50
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-09-27T00:30:00Z",
+        "formato_periodos": "mitades",
+        "periodos": {
+          "local": [
+            32,
+            34
+          ],
+          "visitante": [
+            26,
+            24
+          ]
+        }
+      }
+    },
+    {
+      "id": "ejemplo:bas-029",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet-b",
+        "nombre": "Liga Universitaria de Ejemplo"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026-27",
+        "nombre": "2026/27"
+      },
+      "inicio": "2026-09-27T00:00:00Z",
+      "fecha_local": "2026-09-26",
+      "local": {
+        "id": "ejemplo:basquet-aguilas-modelo",
+        "nombre": "Águilas Modelo"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-zorros-maqueta",
+        "nombre": "Zorros Maqueta"
+      },
+      "estado": "finalizado",
+      "marcador": {
+        "local": 74,
+        "visitante": 73
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-09-27T02:30:00Z",
+        "formato_periodos": "mitades",
+        "periodos": {
+          "local": [
+            26,
+            38
+          ],
+          "visitante": [
+            32,
+            32
+          ]
+        },
+        "prorrogas": {
+          "local": [
+            10
+          ],
+          "visitante": [
+            9
+          ]
+        }
+      }
+    },
+    {
+      "id": "ejemplo:bas-030",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet-b",
+        "nombre": "Liga Universitaria de Ejemplo"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026-27",
+        "nombre": "2026/27"
+      },
+      "inicio": "2026-09-29T22:00:00Z",
+      "fecha_local": "2026-09-29",
+      "local": {
+        "id": "ejemplo:basquet-zorros-maqueta",
+        "nombre": "Zorros Maqueta"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-delfines-borrador",
+        "nombre": "Delfines Borrador"
+      },
+      "estado": "finalizado",
+      "marcador": {
+        "local": 66,
+        "visitante": 67
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-09-30T00:30:00Z",
+        "formato_periodos": "mitades",
+        "periodos": {
+          "local": [
+            36,
+            30
+          ],
+          "visitante": [
+            33,
+            34
+          ]
+        }
+      }
+    },
+    {
+      "id": "ejemplo:bas-031",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet-b",
+        "nombre": "Liga Universitaria de Ejemplo"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026-27",
+        "nombre": "2026/27"
+      },
+      "inicio": "2026-09-30T00:00:00Z",
+      "fecha_local": "2026-09-29",
+      "local": {
+        "id": "ejemplo:basquet-aguilas-modelo",
+        "nombre": "Águilas Modelo"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-lobos-prototipo",
+        "nombre": "Lobos Prototipo"
+      },
+      "estado": "finalizado",
+      "marcador": {
+        "local": 64,
+        "visitante": 72
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-09-30T02:30:00Z",
+        "formato_periodos": "mitades",
+        "periodos": {
+          "local": [
+            28,
+            36
+          ],
+          "visitante": [
+            35,
+            37
+          ]
+        }
+      }
+    }
+  ]
+}

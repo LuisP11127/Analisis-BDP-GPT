@@ -7,6 +7,9 @@
       "alias": {
         "betano": [
           "Ejemplo - Liga"
+        ],
+        "flashscore": [
+          "LIGA DE EJEMPLO"
         ]
       }
     }
@@ -18,12 +21,9 @@
       "alias": {
         "betano": [
           "Dep. Ejemplo"
-        ],
-        "flashscore": [
-          "Deportivo Ejemplo"
         ]
       },
-      "confirmado_en": "2026-10-10T15:02:00Z"
+      "confirmado_en": "2026-10-05T12:00:00Z"
     },
     {
       "id": "ejemplo:atletico-muestra",
@@ -33,7 +33,47 @@
           "Atl. Muestra"
         ]
       },
-      "confirmado_en": "2026-10-11T14:05:00Z"
+      "confirmado_en": "2026-10-05T12:00:00Z"
+    },
+    {
+      "id": "ejemplo:union-prueba",
+      "nombre": "Unión Prueba",
+      "alias": {
+        "betano": [
+          "Uni. Prueba"
+        ]
+      },
+      "confirmado_en": "2026-10-05T12:00:00Z"
+    },
+    {
+      "id": "ejemplo:sporting-demo",
+      "nombre": "Sporting Demo",
+      "alias": {
+        "betano": [
+          "Spo. Demo"
+        ]
+      },
+      "confirmado_en": "2026-10-05T12:00:00Z"
+    },
+    {
+      "id": "ejemplo:real-ficticio",
+      "nombre": "Real Ficticio",
+      "alias": {
+        "betano": [
+          "Rea. Ficticio"
+        ]
+      },
+      "confirmado_en": "2026-10-05T12:00:00Z"
+    },
+    {
+      "id": "ejemplo:club-simulado",
+      "nombre": "Club Simulado",
+      "alias": {
+        "betano": [
+          "Clu. Simulado"
+        ]
+      },
+      "confirmado_en": "2026-10-05T12:00:00Z"
     }
   ],
   "jugadores": []

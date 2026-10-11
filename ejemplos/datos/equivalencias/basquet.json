@@ -14,14 +14,124 @@
   "equipos": [],
   "jugadores": [
     {
-      "id": "ejemplo:juan-ejemplar",
-      "nombre": "Juan Ejemplar",
+      "id": "ejemplo:jb-1",
+      "nombre": "Santiago Castro",
       "alias": {
         "apuesta_total": [
-          "J. Ejemplar"
+          "S. Castro"
         ]
       },
-      "confirmado_en": "2026-10-11T15:03:00Z"
+      "confirmado_en": "2026-10-05T12:00:00Z"
+    },
+    {
+      "id": "ejemplo:jb-2",
+      "nombre": "Sebastián Huamán",
+      "alias": {
+        "apuesta_total": [
+          "S. Huamán"
+        ]
+      },
+      "confirmado_en": "2026-10-05T12:00:00Z"
+    },
+    {
+      "id": "ejemplo:jb-3",
+      "nombre": "Diego Torres",
+      "alias": {
+        "apuesta_total": [
+          "D. Torres"
+        ]
+      },
+      "confirmado_en": "2026-10-05T12:00:00Z"
+    },
+    {
+      "id": "ejemplo:jb-4",
+      "nombre": "Nicolás Silva",
+      "alias": {
+        "apuesta_total": [
+          "N. Silva"
+        ]
+      },
+      "confirmado_en": "2026-10-05T12:00:00Z"
+    },
+    {
+      "id": "ejemplo:jb-5",
+      "nombre": "Gabriel Ramos",
+      "alias": {
+        "apuesta_total": [
+          "G. Ramos"
+        ]
+      },
+      "confirmado_en": "2026-10-05T12:00:00Z"
+    },
+    {
+      "id": "ejemplo:jb-6",
+      "nombre": "Tomás Rojas",
+      "alias": {
+        "apuesta_total": [
+          "T. Rojas"
+        ]
+      },
+      "confirmado_en": "2026-10-05T12:00:00Z"
+    },
+    {
+      "id": "ejemplo:jb-7",
+      "nombre": "Joaquín Salazar",
+      "alias": {
+        "apuesta_total": [
+          "J. Salazar"
+        ]
+      },
+      "confirmado_en": "2026-10-05T12:00:00Z"
+    },
+    {
+      "id": "ejemplo:jb-8",
+      "nombre": "Emiliano Vargas",
+      "alias": {
+        "apuesta_total": [
+          "E. Vargas"
+        ]
+      },
+      "confirmado_en": "2026-10-05T12:00:00Z"
+    },
+    {
+      "id": "ejemplo:jb-9",
+      "nombre": "Bruno Paredes",
+      "alias": {
+        "apuesta_total": [
+          "B. Paredes"
+        ]
+      },
+      "confirmado_en": "2026-10-05T12:00:00Z"
+    },
+    {
+      "id": "ejemplo:jb-10",
+      "nombre": "Thiago Flores",
+      "alias": {
+        "apuesta_total": [
+          "T. Flores"
+        ]
+      },
+      "confirmado_en": "2026-10-05T12:00:00Z"
+    },
+    {
+      "id": "ejemplo:jb-11",
+      "nombre": "Lucas Mendoza",
+      "alias": {
+        "apuesta_total": [
+          "L. Mendoza"
+        ]
+      },
+      "confirmado_en": "2026-10-05T12:00:00Z"
+    },
+    {
+      "id": "ejemplo:jb-12",
+      "nombre": "Mateo Quispe",
+      "alias": {
+        "apuesta_total": [
+          "M. Quispe"
+        ]
+      },
+      "confirmado_en": "2026-10-05T12:00:00Z"
     }
   ]
 }

@@ -1,0 +1,411 @@
+{
+  "version_formato": 1,
+  "partidos": [
+    {
+      "id": "ejemplo:bas-032",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet-b",
+        "nombre": "Liga Universitaria de Ejemplo"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026-27",
+        "nombre": "2026/27"
+      },
+      "inicio": "2026-10-02T22:00:00Z",
+      "fecha_local": "2026-10-02",
+      "local": {
+        "id": "ejemplo:basquet-delfines-borrador",
+        "nombre": "Delfines Borrador"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-aguilas-modelo",
+        "nombre": "Águilas Modelo"
+      },
+      "estado": "finalizado",
+      "marcador": {
+        "local": 69,
+        "visitante": 57
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-10-03T00:30:00Z",
+        "formato_periodos": "mitades",
+        "periodos": {
+          "local": [
+            31,
+            38
+          ],
+          "visitante": [
+            28,
+            29
+          ]
+        }
+      }
+    },
+    {
+      "id": "ejemplo:bas-033",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet-b",
+        "nombre": "Liga Universitaria de Ejemplo"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026-27",
+        "nombre": "2026/27"
+      },
+      "inicio": "2026-10-03T00:00:00Z",
+      "fecha_local": "2026-10-02",
+      "local": {
+        "id": "ejemplo:basquet-lobos-prototipo",
+        "nombre": "Lobos Prototipo"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-zorros-maqueta",
+        "nombre": "Zorros Maqueta"
+      },
+      "estado": "finalizado",
+      "marcador": {
+        "local": 83,
+        "visitante": 77
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-10-03T02:30:00Z",
+        "formato_periodos": "mitades",
+        "periodos": {
+          "local": [
+            34,
+            30
+          ],
+          "visitante": [
+            22,
+            42
+          ]
+        },
+        "prorrogas": {
+          "local": [
+            8,
+            11
+          ],
+          "visitante": [
+            8,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "id": "ejemplo:bas-034",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet-b",
+        "nombre": "Liga Universitaria de Ejemplo"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026-27",
+        "nombre": "2026/27"
+      },
+      "inicio": "2026-10-05T22:00:00Z",
+      "fecha_local": "2026-10-05",
+      "local": {
+        "id": "ejemplo:basquet-lobos-prototipo",
+        "nombre": "Lobos Prototipo"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-zorros-maqueta",
+        "nombre": "Zorros Maqueta"
+      },
+      "estado": "finalizado",
+      "ids_externos": {
+        "betano": "900034"
+      },
+      "marcador": {
+        "local": 56,
+        "visitante": 62
+      },
+      "previa": {
+        "extraido_en": "2026-10-05T16:00:00Z",
+        "fuentes": [
+          "sofascore"
+        ],
+        "tabla": {
+          "local": {
+            "posicion": 1,
+            "partidos_jugados": 3,
+            "ganados": 3,
+            "perdidos": 0
+          },
+          "visitante": {
+            "posicion": 4,
+            "partidos_jugados": 3,
+            "ganados": 0,
+            "perdidos": 3
+          }
+        },
+        "ultimos_partidos": {
+          "local": [
+            "ejemplo:bas-033",
+            "ejemplo:bas-031",
+            "ejemplo:bas-028"
+          ],
+          "visitante": [
+            "ejemplo:bas-033",
+            "ejemplo:bas-030",
+            "ejemplo:bas-029"
+          ]
+        }
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-10-06T00:30:00Z",
+        "formato_periodos": "mitades",
+        "periodos": {
+          "local": [
+            29,
+            27
+          ],
+          "visitante": [
+            28,
+            34
+          ]
+        }
+      }
+    },
+    {
+      "id": "ejemplo:bas-035",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet-b",
+        "nombre": "Liga Universitaria de Ejemplo"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026-27",
+        "nombre": "2026/27"
+      },
+      "inicio": "2026-10-06T00:00:00Z",
+      "fecha_local": "2026-10-05",
+      "local": {
+        "id": "ejemplo:basquet-aguilas-modelo",
+        "nombre": "Águilas Modelo"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-delfines-borrador",
+        "nombre": "Delfines Borrador"
+      },
+      "estado": "finalizado",
+      "ids_externos": {
+        "betano": "900035"
+      },
+      "marcador": {
+        "local": 74,
+        "visitante": 65
+      },
+      "previa": {
+        "extraido_en": "2026-10-05T18:00:00Z",
+        "fuentes": [
+          "sofascore"
+        ],
+        "tabla": {
+          "local": {
+            "posicion": 3,
+            "partidos_jugados": 3,
+            "ganados": 1,
+            "perdidos": 2
+          },
+          "visitante": {
+            "posicion": 2,
+            "partidos_jugados": 3,
+            "ganados": 2,
+            "perdidos": 1
+          }
+        },
+        "ultimos_partidos": {
+          "local": [
+            "ejemplo:bas-032",
+            "ejemplo:bas-031",
+            "ejemplo:bas-029"
+          ],
+          "visitante": [
+            "ejemplo:bas-032",
+            "ejemplo:bas-030",
+            "ejemplo:bas-028"
+          ]
+        }
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-10-06T02:30:00Z",
+        "formato_periodos": "mitades",
+        "periodos": {
+          "local": [
+            28,
+            46
+          ],
+          "visitante": [
+            29,
+            36
+          ]
+        }
+      }
+    },
+    {
+      "id": "ejemplo:bas-036",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet-b",
+        "nombre": "Liga Universitaria de Ejemplo"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026-27",
+        "nombre": "2026/27"
+      },
+      "inicio": "2026-10-08T22:00:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:basquet-lobos-prototipo",
+        "nombre": "Lobos Prototipo"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-aguilas-modelo",
+        "nombre": "Águilas Modelo"
+      },
+      "estado": "finalizado",
+      "ids_externos": {
+        "betano": "900036"
+      },
+      "marcador": {
+        "local": 75,
+        "visitante": 62
+      },
+      "previa": {
+        "extraido_en": "2026-10-08T16:00:00Z",
+        "fuentes": [
+          "sofascore"
+        ],
+        "tabla": {
+          "local": {
+            "posicion": 1,
+            "partidos_jugados": 4,
+            "ganados": 3,
+            "perdidos": 1
+          },
+          "visitante": {
+            "posicion": 2,
+            "partidos_jugados": 4,
+            "ganados": 2,
+            "perdidos": 2
+          }
+        },
+        "ultimos_partidos": {
+          "local": [
+            "ejemplo:bas-034",
+            "ejemplo:bas-033",
+            "ejemplo:bas-031",
+            "ejemplo:bas-028"
+          ],
+          "visitante": [
+            "ejemplo:bas-035",
+            "ejemplo:bas-032",
+            "ejemplo:bas-031",
+            "ejemplo:bas-029"
+          ]
+        }
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-10-09T00:30:00Z",
+        "formato_periodos": "mitades",
+        "periodos": {
+          "local": [
+            32,
+            43
+          ],
+          "visitante": [
+            35,
+            27
+          ]
+        }
+      }
+    },
+    {
+      "id": "ejemplo:bas-037",
+      "deporte": "basquet",
+      "liga": {
+        "id": "ejemplo:liga-basquet-b",
+        "nombre": "Liga Universitaria de Ejemplo"
+      },
+      "temporada": {
+        "id": "ejemplo:temporada-2026-27",
+        "nombre": "2026/27"
+      },
+      "inicio": "2026-10-09T00:00:00Z",
+      "fecha_local": "2026-10-08",
+      "local": {
+        "id": "ejemplo:basquet-zorros-maqueta",
+        "nombre": "Zorros Maqueta"
+      },
+      "visitante": {
+        "id": "ejemplo:basquet-delfines-borrador",
+        "nombre": "Delfines Borrador"
+      },
+      "estado": "finalizado",
+      "ids_externos": {
+        "betano": "900037"
+      },
+      "marcador": {
+        "local": 60,
+        "visitante": 67
+      },
+      "previa": {
+        "extraido_en": "2026-10-08T18:00:00Z",
+        "fuentes": [
+          "sofascore"
+        ],
+        "tabla": {
+          "local": {
+            "posicion": 4,
+            "partidos_jugados": 4,
+            "ganados": 1,
+            "perdidos": 3
+          },
+          "visitante": {
+            "posicion": 2,
+            "partidos_jugados": 4,
+            "ganados": 2,
+            "perdidos": 2
+          }
+        },
+        "ultimos_partidos": {
+          "local": [
+            "ejemplo:bas-034",
+            "ejemplo:bas-033",
+            "ejemplo:bas-030",
+            "ejemplo:bas-029"
+          ],
+          "visitante": [
+            "ejemplo:bas-035",
+            "ejemplo:bas-032",
+            "ejemplo:bas-030",
+            "ejemplo:bas-028"
+          ]
+        }
+      },
+      "estadisticas": {
+        "fuente": "sofascore",
+        "extraido_en": "2026-10-09T02:30:00Z",
+        "formato_periodos": "mitades",
+        "periodos": {
+          "local": [
+            32,
+            28
+          ],
+          "visitante": [
+            34,
+            33
+          ]
+        }
+      }
+    }
+  ]
+}

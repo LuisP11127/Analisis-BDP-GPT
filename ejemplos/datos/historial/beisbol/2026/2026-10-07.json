@@ -1,0 +1,865 @@
+{
+  "version_formato": 1,
+  "registros": [
+    {
+      "id": "ejemplo:beis-019|beisbol_ganador",
+      "partido_id": "ejemplo:beis-019",
+      "deporte": "beisbol",
+      "liga": {
+        "id": "ejemplo:liga-beisbol",
+        "nombre": "Liga de Béisbol de Ejemplo"
+      },
+      "inicio": "2026-10-07T18:05:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:beisbol-leones-muestra",
+        "nombre": "Leones Muestra"
+      },
+      "visitante": {
+        "id": "ejemplo:beisbol-tigres-prueba",
+        "nombre": "Tigres Prueba"
+      },
+      "mercado": "beisbol_ganador",
+      "analizado_en": "2026-10-07T12:15:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-07T12:10:00Z",
+          "lineas": [
+            {
+              "linea": null,
+              "cuota_a": 1.77,
+              "cuota_b": 2.04
+            }
+          ]
+        },
+        {
+          "casa": "te_apuesto",
+          "extraido_en": "2026-10-07T12:10:00Z",
+          "lineas": [
+            {
+              "linea": null,
+              "cuota_a": 1.79,
+              "cuota_b": 1.95
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": null,
+        "cuota_a": 1.77,
+        "cuota_b": 2.04,
+        "diferencia": 0.27,
+        "margen": 0.0552,
+        "prob_sin_margen_a": 0.5354,
+        "promedio_mercado_a": 0.5214
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.542,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "localia",
+            "impacto": 0.02
+          },
+          {
+            "factor": "abridor_rival",
+            "impacto": 0.04
+          },
+          {
+            "factor": "bullpen",
+            "impacto": 0.02
+          }
+        ]
+      },
+      "red": {
+        "version": "ejemplo-red-beisbol_ganador-1",
+        "prob_a": 0.526,
+        "lado": "a"
+      },
+      "entrada_red": {
+        "version": "ejemplo-variables-1",
+        "valores": {
+          "linea": null,
+          "cuota_a": 1.77,
+          "cuota_b": 2.04,
+          "esperado": 0.53,
+          "forma_local": 0.53,
+          "forma_visitante": 0.74
+        }
+      },
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 1,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-07T21:05:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:beis-019|beisbol_handicap",
+      "partido_id": "ejemplo:beis-019",
+      "deporte": "beisbol",
+      "liga": {
+        "id": "ejemplo:liga-beisbol",
+        "nombre": "Liga de Béisbol de Ejemplo"
+      },
+      "inicio": "2026-10-07T18:05:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:beisbol-leones-muestra",
+        "nombre": "Leones Muestra"
+      },
+      "visitante": {
+        "id": "ejemplo:beisbol-tigres-prueba",
+        "nombre": "Tigres Prueba"
+      },
+      "mercado": "beisbol_handicap",
+      "analizado_en": "2026-10-07T12:15:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-07T12:10:00Z",
+          "lineas": [
+            {
+              "linea": -1.5,
+              "cuota_a": 2.86,
+              "cuota_b": 1.42
+            },
+            {
+              "linea": 1.5,
+              "cuota_a": 1.31,
+              "cuota_b": 3.43
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": -1.5,
+        "cuota_a": 2.86,
+        "cuota_b": 1.42,
+        "diferencia": 1.44,
+        "margen": 0.0539,
+        "prob_sin_margen_a": 0.3318,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.327,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "abridor_rival",
+            "impacto": -0.05
+          },
+          {
+            "factor": "bullpen",
+            "impacto": -0.06
+          },
+          {
+            "factor": "localia",
+            "impacto": -0.04
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 1,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-07T21:05:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:beis-019|beisbol_total",
+      "partido_id": "ejemplo:beis-019",
+      "deporte": "beisbol",
+      "liga": {
+        "id": "ejemplo:liga-beisbol",
+        "nombre": "Liga de Béisbol de Ejemplo"
+      },
+      "inicio": "2026-10-07T18:05:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:beisbol-leones-muestra",
+        "nombre": "Leones Muestra"
+      },
+      "visitante": {
+        "id": "ejemplo:beisbol-tigres-prueba",
+        "nombre": "Tigres Prueba"
+      },
+      "mercado": "beisbol_total",
+      "analizado_en": "2026-10-07T12:15:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-07T12:10:00Z",
+          "lineas": [
+            {
+              "linea": 9.5,
+              "cuota_a": 1.64,
+              "cuota_b": 2.25
+            },
+            {
+              "linea": 10.5,
+              "cuota_a": 2.16,
+              "cuota_b": 1.69
+            },
+            {
+              "linea": 11.5,
+              "cuota_a": 2.76,
+              "cuota_b": 1.44
+            }
+          ]
+        },
+        {
+          "casa": "te_apuesto",
+          "extraido_en": "2026-10-07T12:10:00Z",
+          "lineas": [
+            {
+              "linea": 10.5,
+              "cuota_a": 2.04,
+              "cuota_b": 1.73
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 10.5,
+        "cuota_a": 2.16,
+        "cuota_b": 1.69,
+        "diferencia": 0.47,
+        "margen": 0.0547,
+        "prob_sin_margen_a": 0.439,
+        "promedio_mercado_a": 0.4589
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.503,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "bullpen",
+            "impacto": 0
+          },
+          {
+            "factor": "abridor_rival",
+            "impacto": 0.01
+          },
+          {
+            "factor": "localia",
+            "impacto": 0
+          }
+        ]
+      },
+      "red": {
+        "version": "ejemplo-red-beisbol_total-1",
+        "prob_a": 0.328,
+        "lado": "b"
+      },
+      "entrada_red": {
+        "version": "ejemplo-variables-1",
+        "valores": {
+          "linea": 10.5,
+          "cuota_a": 2.16,
+          "cuota_b": 1.69,
+          "esperado": 10.39,
+          "forma_local": -0.32,
+          "forma_visitante": 0.1
+        }
+      },
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 11,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-07T21:05:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:beis-020|beisbol_ganador",
+      "partido_id": "ejemplo:beis-020",
+      "deporte": "beisbol",
+      "liga": {
+        "id": "ejemplo:liga-beisbol",
+        "nombre": "Liga de Béisbol de Ejemplo"
+      },
+      "inicio": "2026-10-07T23:10:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:beisbol-piratas-ejemplo",
+        "nombre": "Piratas Ejemplo"
+      },
+      "visitante": {
+        "id": "ejemplo:beisbol-cardenales-simulado",
+        "nombre": "Cardenales Simulado"
+      },
+      "mercado": "beisbol_ganador",
+      "analizado_en": "2026-10-07T17:20:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-07T17:15:00Z",
+          "lineas": [
+            {
+              "linea": null,
+              "cuota_a": 1.8,
+              "cuota_b": 2
+            }
+          ]
+        },
+        {
+          "casa": "te_apuesto",
+          "extraido_en": "2026-10-07T17:15:00Z",
+          "lineas": [
+            {
+              "linea": null,
+              "cuota_a": 1.73,
+              "cuota_b": 2.03
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": null,
+        "cuota_a": 1.8,
+        "cuota_b": 2,
+        "diferencia": 0.2,
+        "margen": 0.0556,
+        "prob_sin_margen_a": 0.5263,
+        "promedio_mercado_a": 0.5399
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.471,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "ofensiva",
+            "impacto": -0.02
+          },
+          {
+            "factor": "abridor_rival",
+            "impacto": 0
+          },
+          {
+            "factor": "bullpen",
+            "impacto": 0.01
+          }
+        ]
+      },
+      "red": {
+        "version": "ejemplo-red-beisbol_ganador-1",
+        "prob_a": 0.614,
+        "lado": "a"
+      },
+      "entrada_red": {
+        "version": "ejemplo-variables-1",
+        "valores": {
+          "linea": null,
+          "cuota_a": 1.8,
+          "cuota_b": 2,
+          "esperado": 0.54,
+          "forma_local": -0.21,
+          "forma_visitante": -0.75
+        }
+      },
+      "apuesta": null,
+      "resultado": {
+        "estado": "anulado",
+        "valor_real": null,
+        "lado_ganador": null,
+        "motivo": "Partido suspendido",
+        "actualizado_en": "2026-10-08T01:10:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:beis-020|beisbol_handicap",
+      "partido_id": "ejemplo:beis-020",
+      "deporte": "beisbol",
+      "liga": {
+        "id": "ejemplo:liga-beisbol",
+        "nombre": "Liga de Béisbol de Ejemplo"
+      },
+      "inicio": "2026-10-07T23:10:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:beisbol-piratas-ejemplo",
+        "nombre": "Piratas Ejemplo"
+      },
+      "visitante": {
+        "id": "ejemplo:beisbol-cardenales-simulado",
+        "nombre": "Cardenales Simulado"
+      },
+      "mercado": "beisbol_handicap",
+      "analizado_en": "2026-10-07T17:20:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-07T17:15:00Z",
+          "lineas": [
+            {
+              "linea": -1.5,
+              "cuota_a": 2.95,
+              "cuota_b": 1.4
+            },
+            {
+              "linea": 1.5,
+              "cuota_a": 1.35,
+              "cuota_b": 3.16
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": -1.5,
+        "cuota_a": 2.95,
+        "cuota_b": 1.4,
+        "diferencia": 1.55,
+        "margen": 0.0533,
+        "prob_sin_margen_a": 0.3218,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.348,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "localia",
+            "impacto": -0.04
+          },
+          {
+            "factor": "bullpen",
+            "impacto": -0.06
+          },
+          {
+            "factor": "abridor_rival",
+            "impacto": -0.05
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": {
+        "casa": "betano",
+        "linea": 1.5,
+        "lado": "b",
+        "cuota": 3.16,
+        "monto": 20,
+        "moneda": "PEN",
+        "registrada_en": "2026-10-07T17:30:00Z"
+      },
+      "resultado": {
+        "estado": "anulado",
+        "valor_real": null,
+        "lado_ganador": null,
+        "motivo": "Partido suspendido",
+        "actualizado_en": "2026-10-08T01:10:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:beis-020|beisbol_total",
+      "partido_id": "ejemplo:beis-020",
+      "deporte": "beisbol",
+      "liga": {
+        "id": "ejemplo:liga-beisbol",
+        "nombre": "Liga de Béisbol de Ejemplo"
+      },
+      "inicio": "2026-10-07T23:10:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:beisbol-piratas-ejemplo",
+        "nombre": "Piratas Ejemplo"
+      },
+      "visitante": {
+        "id": "ejemplo:beisbol-cardenales-simulado",
+        "nombre": "Cardenales Simulado"
+      },
+      "mercado": "beisbol_total",
+      "analizado_en": "2026-10-07T17:20:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-07T17:15:00Z",
+          "lineas": [
+            {
+              "linea": 7.5,
+              "cuota_a": 1.64,
+              "cuota_b": 2.24
+            },
+            {
+              "linea": 8.5,
+              "cuota_a": 2.16,
+              "cuota_b": 1.69
+            },
+            {
+              "linea": 9.5,
+              "cuota_a": 3.43,
+              "cuota_b": 1.31
+            }
+          ]
+        },
+        {
+          "casa": "te_apuesto",
+          "extraido_en": "2026-10-07T17:15:00Z",
+          "lineas": [
+            {
+              "linea": 8.5,
+              "cuota_a": 2.06,
+              "cuota_b": 1.71
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 8.5,
+        "cuota_a": 2.16,
+        "cuota_b": 1.69,
+        "diferencia": 0.47,
+        "margen": 0.0547,
+        "prob_sin_margen_a": 0.439,
+        "promedio_mercado_a": 0.4536
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.48,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "ofensiva",
+            "impacto": 0
+          },
+          {
+            "factor": "bullpen",
+            "impacto": -0.02
+          },
+          {
+            "factor": "localia",
+            "impacto": -0.02
+          }
+        ]
+      },
+      "red": {
+        "version": "ejemplo-red-beisbol_total-1",
+        "prob_a": 0.433,
+        "lado": "b"
+      },
+      "entrada_red": {
+        "version": "ejemplo-variables-1",
+        "valores": {
+          "linea": 8.5,
+          "cuota_a": 2.16,
+          "cuota_b": 1.69,
+          "esperado": 8.19,
+          "forma_local": -0.08,
+          "forma_visitante": 0.09
+        }
+      },
+      "apuesta": null,
+      "resultado": {
+        "estado": "anulado",
+        "valor_real": null,
+        "lado_ganador": null,
+        "motivo": "Partido suspendido",
+        "actualizado_en": "2026-10-08T01:10:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:beis-021|beisbol_ganador",
+      "partido_id": "ejemplo:beis-021",
+      "deporte": "beisbol",
+      "liga": {
+        "id": "ejemplo:liga-beisbol",
+        "nombre": "Liga de Béisbol de Ejemplo"
+      },
+      "inicio": "2026-10-08T00:05:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:beisbol-navegantes-demo",
+        "nombre": "Navegantes Demo"
+      },
+      "visitante": {
+        "id": "ejemplo:beisbol-caribes-ficticio",
+        "nombre": "Caribes Ficticio"
+      },
+      "mercado": "beisbol_ganador",
+      "analizado_en": "2026-10-07T18:15:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-07T18:10:00Z",
+          "lineas": [
+            {
+              "linea": null,
+              "cuota_a": 1.63,
+              "cuota_b": 2.26
+            }
+          ]
+        },
+        {
+          "casa": "te_apuesto",
+          "extraido_en": "2026-10-07T18:10:00Z",
+          "lineas": [
+            {
+              "linea": null,
+              "cuota_a": 1.71,
+              "cuota_b": 2.06
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": null,
+        "cuota_a": 1.63,
+        "cuota_b": 2.26,
+        "diferencia": 0.63,
+        "margen": 0.056,
+        "prob_sin_margen_a": 0.581,
+        "promedio_mercado_a": 0.5464
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.507,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "abridor_rival",
+            "impacto": -0.01
+          },
+          {
+            "factor": "localia",
+            "impacto": 0
+          },
+          {
+            "factor": "ofensiva",
+            "impacto": 0.01
+          }
+        ]
+      },
+      "red": {
+        "version": "ejemplo-red-beisbol_ganador-1",
+        "prob_a": 0.536,
+        "lado": "a"
+      },
+      "entrada_red": {
+        "version": "ejemplo-variables-1",
+        "valores": {
+          "linea": null,
+          "cuota_a": 1.63,
+          "cuota_b": 2.26,
+          "esperado": 0.58,
+          "forma_local": 0.31,
+          "forma_visitante": -0.07
+        }
+      },
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 1,
+        "lado_ganador": "a",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T03:05:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:beis-021|beisbol_handicap",
+      "partido_id": "ejemplo:beis-021",
+      "deporte": "beisbol",
+      "liga": {
+        "id": "ejemplo:liga-beisbol",
+        "nombre": "Liga de Béisbol de Ejemplo"
+      },
+      "inicio": "2026-10-08T00:05:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:beisbol-navegantes-demo",
+        "nombre": "Navegantes Demo"
+      },
+      "visitante": {
+        "id": "ejemplo:beisbol-caribes-ficticio",
+        "nombre": "Caribes Ficticio"
+      },
+      "mercado": "beisbol_handicap",
+      "analizado_en": "2026-10-07T18:15:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-07T18:10:00Z",
+          "lineas": [
+            {
+              "linea": -1.5,
+              "cuota_a": 2.54,
+              "cuota_b": 1.51
+            },
+            {
+              "linea": 1.5,
+              "cuota_a": 1.2,
+              "cuota_b": 4.54
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": -1.5,
+        "cuota_a": 2.54,
+        "cuota_b": 1.51,
+        "diferencia": 1.03,
+        "margen": 0.056,
+        "prob_sin_margen_a": 0.3728,
+        "promedio_mercado_a": null
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.427,
+        "lado": "b",
+        "explicacion": [
+          {
+            "factor": "bullpen",
+            "impacto": -0.02
+          },
+          {
+            "factor": "localia",
+            "impacto": -0.04
+          },
+          {
+            "factor": "abridor_rival",
+            "impacto": -0.02
+          }
+        ]
+      },
+      "red": null,
+      "entrada_red": null,
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 1,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T03:05:00Z"
+      }
+    },
+    {
+      "id": "ejemplo:beis-021|beisbol_total",
+      "partido_id": "ejemplo:beis-021",
+      "deporte": "beisbol",
+      "liga": {
+        "id": "ejemplo:liga-beisbol",
+        "nombre": "Liga de Béisbol de Ejemplo"
+      },
+      "inicio": "2026-10-08T00:05:00Z",
+      "fecha_local": "2026-10-07",
+      "local": {
+        "id": "ejemplo:beisbol-navegantes-demo",
+        "nombre": "Navegantes Demo"
+      },
+      "visitante": {
+        "id": "ejemplo:beisbol-caribes-ficticio",
+        "nombre": "Caribes Ficticio"
+      },
+      "mercado": "beisbol_total",
+      "analizado_en": "2026-10-07T18:15:00Z",
+      "ofertas": [
+        {
+          "casa": "betano",
+          "extraido_en": "2026-10-07T18:10:00Z",
+          "lineas": [
+            {
+              "linea": 7.5,
+              "cuota_a": 1.41,
+              "cuota_b": 2.91
+            },
+            {
+              "linea": 8.5,
+              "cuota_a": 1.75,
+              "cuota_b": 2.07
+            },
+            {
+              "linea": 9.5,
+              "cuota_a": 2.36,
+              "cuota_b": 1.59
+            }
+          ]
+        },
+        {
+          "casa": "te_apuesto",
+          "extraido_en": "2026-10-07T18:10:00Z",
+          "lineas": [
+            {
+              "linea": 8.5,
+              "cuota_a": 1.7,
+              "cuota_b": 2.08
+            }
+          ]
+        }
+      ],
+      "candidata": {
+        "casa": "betano",
+        "linea": 8.5,
+        "cuota_a": 1.75,
+        "cuota_b": 2.07,
+        "diferencia": 0.32,
+        "margen": 0.0545,
+        "prob_sin_margen_a": 0.5419,
+        "promedio_mercado_a": 0.5503
+      },
+      "estadistico": {
+        "version": "ejemplo-estadistico-1",
+        "prob_a": 0.523,
+        "lado": "a",
+        "explicacion": [
+          {
+            "factor": "abridor_rival",
+            "impacto": 0.01
+          },
+          {
+            "factor": "bullpen",
+            "impacto": 0
+          },
+          {
+            "factor": "ofensiva",
+            "impacto": 0
+          }
+        ]
+      },
+      "red": {
+        "version": "ejemplo-red-beisbol_total-1",
+        "prob_a": 0.567,
+        "lado": "a"
+      },
+      "entrada_red": {
+        "version": "ejemplo-variables-1",
+        "valores": {
+          "linea": 8.5,
+          "cuota_a": 1.75,
+          "cuota_b": 2.07,
+          "esperado": 8.99,
+          "forma_local": -0.36,
+          "forma_visitante": -0.75
+        }
+      },
+      "apuesta": null,
+      "resultado": {
+        "estado": "resuelto",
+        "valor_real": 3,
+        "lado_ganador": "b",
+        "fuente": "sofascore",
+        "actualizado_en": "2026-10-08T03:05:00Z"
+      }
+    }
+  ]
+}

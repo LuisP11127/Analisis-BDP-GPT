@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Análisis BDP</title>
+  <meta name="description" content="Análisis de mercados de apuestas de dos resultados en fútbol, básquet y béisbol.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b6bcb'/%3E%3Cpath d='M9 22V10h6.5a3.5 3.5 0 0 1 0 7H9m6.5 0H17a2.5 2.5 0 0 1 0 5H9' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="estilos.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <header class="cabecera">
+    <div class="cabecera-fila contenedor">
+      <p class="marca">Análisis BDP</p>
+      <label class="fuente">Datos
+        <select id="fuente">
+          <option value="prueba">De prueba</option>
+          <option value="real">Reales</option>
+        </select>
+      </label>
+    </div>
+    <nav class="pestanas contenedor" aria-label="Secciones">
+      <a href="#partidos" data-pestana="partidos">Partidos del día</a>
+      <a href="#resultado" data-pestana="resultado">Resultado</a>
+      <a href="#historial" data-pestana="historial">Historial</a>
+    </nav>
+  </header>
+
+  <main class="contenedor">
+    <div id="aviso" class="aviso" role="status" aria-live="polite"></div>
+    <section id="vista-partidos" class="vista" aria-label="Partidos del día"></section>
+    <section id="vista-resultado" class="vista" aria-label="Resultado" hidden></section>
+    <section id="vista-historial" class="vista" aria-label="Historial" hidden></section>
+  </main>
+
+  <dialog id="dialogo-apuesta" class="dialogo" aria-label="Registrar apuesta"></dialog>
+  <noscript><p class="contenedor">La página necesita JavaScript.</p></noscript>
+</body>
+</html>

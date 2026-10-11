@@ -7,8 +7,12 @@
     "node": ">=22"
   },
   "scripts": {
-    "validar": "node herramientas/validar.mjs datos ejemplos/datos",
-    "test": "node --test \"pruebas/**/*.test.mjs\""
+    "validar": "node herramientas/validar.mjs",
+    "indice": "node herramientas/indice.mjs",
+    "ejemplos": "node herramientas/generar-ejemplos.mjs && node herramientas/indice.mjs",
+    "test": "node --test \"pruebas/**/*.test.mjs\"",
+    "pagina": "node herramientas/servidor.mjs",
+    "sitio": "node herramientas/armar-sitio.mjs"
   },
   "devDependencies": {
     "ajv": "8.20.0",

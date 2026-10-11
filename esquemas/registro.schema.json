@@ -137,6 +137,10 @@
             },
             "additionalProperties": false
           }
+        },
+        "prob_roja": {
+          "description": "Solo en futbol_tarjetas: probabilidad de que haya al menos una tarjeta roja en el partido.",
+          "$ref": "comun.schema.json#/$defs/probabilidad"
         }
       },
       "additionalProperties": false

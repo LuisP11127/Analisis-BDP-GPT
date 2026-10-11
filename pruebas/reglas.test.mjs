@@ -4,7 +4,7 @@ import {
   calcularCandidata, elegirLinea, elegirOferta, idRegistro, ladoGanador, margen, probSinMargenA,
   promedioMercadoA, redondear,
 } from '../comun/reglas.js';
-import { clasificarRuta, fechaLocal, rutaHistorial, rutaPartidos } from '../comun/rutas.js';
+import { clasificarRuta, crearIndice, fechaLocal, rutaHistorial, rutaPartidos } from '../comun/rutas.js';
 
 const lineas = (...filas) => filas.map(([linea, cuota_a, cuota_b]) => ({ linea, cuota_a, cuota_b }));
 const oferta = (casa, ...filas) => ({ casa, extraido_en: '2026-10-11T14:00:00Z', lineas: lineas(...filas) });
@@ -111,4 +111,11 @@ test('rutas de los archivos', () => {
   assert.equal(rutaHistorial({ deporte: 'basquet', fecha_local: '2026-10-11' }), 'historial/basquet/2026/2026-10-11.json');
   assert.deepEqual(clasificarRuta('historial/beisbol/2026/2026-10-11.json'), { tipo: 'historial', deporte: 'beisbol' });
   assert.equal(clasificarRuta('historial/tenis/2026/2026-10-11.json'), null);
+});
+
+test('el índice lista las rutas en orden alfabético', () => {
+  assert.deepEqual(crearIndice(['historial/b.json', 'equivalencias/a.json']), {
+    version_formato: 1,
+    archivos: ['equivalencias/a.json', 'historial/b.json'],
+  });
 });

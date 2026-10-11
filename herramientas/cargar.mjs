@@ -39,13 +39,15 @@ export async function cargarValidador() {
 }
 
 const IGNORADOS = new Set(['README.md', '.gitkeep']);
+export const INDICE = 'indice.json';
 
-/** Todos los archivos de una carpeta de datos, con su ruta relativa en formato a/b/c.json. */
+/** Archivos de una carpeta de datos (sin su indice.json), con su ruta relativa en formato a/b/c.json. */
 export async function listarArchivos(carpeta) {
   const entradas = await readdir(carpeta, { recursive: true, withFileTypes: true });
   return entradas
     .filter((e) => e.isFile() && !IGNORADOS.has(e.name))
     .map((e) => path.relative(carpeta, path.join(e.parentPath, e.name)).split(path.sep).join('/'))
+    .filter((ruta) => ruta !== INDICE)
     .sort();
 }
 

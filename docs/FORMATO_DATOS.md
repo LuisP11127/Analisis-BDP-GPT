@@ -10,9 +10,9 @@ esquemas/      definición de cada tipo de archivo (JSON Schema)
 comun/         reglas y validación en JavaScript, sin dependencias de Node
 datos/         datos reales: partidos, historial y equivalencias de nombres
 ejemplos/      datos ficticios con el mismo formato, para pruebas y para la página
-herramientas/  validador de línea de comandos
+herramientas/  validador, generador de ejemplos, índices, servidor local y armado del sitio
 pruebas/       pruebas automáticas
-web/           página (paso 2)
+web/           página
 extension/     extensión de Brave (pasos 3 y 4)
 entrenamiento/ red neuronal (paso 9)
 docs/          especificación y este documento
@@ -52,6 +52,16 @@ Ejemplo: `datos/partidos/futbol/sofascore-17/sofascore-61627/2026-10.json`.
 Los partidos se agrupan por liga y temporada porque así se hace la carga de temporadas pasadas, y porque el rating Elo y los partidos jugados en la temporada se calculan por liga. Dividirlos por mes mantiene los archivos pequeños. El historial va por día porque la página guarda un día de análisis a la vez, y la vista del historial carga solo las fechas filtradas.
 
 Cada archivo tiene `version_formato: 1` y una lista: `partidos`, `registros` o, en equivalencias, `ligas`, `equipos` y `jugadores`.
+
+### Índice de cada carpeta
+
+GitHub Pages no permite listar carpetas, así que cada carpeta de datos tiene un `indice.json` con la lista de sus archivos en orden alfabético:
+
+```json
+{ "version_formato": 1, "archivos": ["equivalencias/futbol.json", "historial/futbol/2026/2026-10-10.json"] }
+```
+
+`npm run indice` lo vuelve a escribir. El validador rechaza un índice que no coincida con los archivos que hay. Cuando la página guarde datos (paso 6), actualizará el índice en el mismo cambio.
 
 ## Catálogo de mercados
 
@@ -185,6 +195,7 @@ Ejemplo con Betano (goles, Atlético Muestra vs Deportivo Ejemplo en los datos d
 - `prob_a`: probabilidad del lado A.
 - `lado`: lado recomendado (`a` o `b`), que tiene que coincidir con `prob_a`.
 - `explicacion` (opcional): lista de factores con su `impacto` en puntos de probabilidad hacia el lado A. `0.08` significa +8%.
+- `prob_roja` (solo en `futbol_tarjetas`): probabilidad de que haya al menos una roja en el partido. La página la muestra como "Tarjeta roja en el partido: Sí o No" con su probabilidad. Si hubo roja se sabe por las estadísticas del partido, así que no se guarda aparte en el resultado.
 
 El desacuerdo entre los modelos no se guarda porque se deduce de los dos lados.
 
@@ -223,11 +234,38 @@ Cada entrada tiene el `id` y el `nombre` de la fuente principal, y en `alias` lo
 
 `confirmado_en` indica cuándo se confirmó la equivalencia.
 
+## Extracción del día
+
+Es lo que la extensión le entregará a la página: los partidos del día de todas las ligas y las cuotas de sus mercados (`esquemas/extraccion.schema.json`). No se guarda en `datos/`: con ella la página arma los registros del historial de los partidos elegidos.
+
+| Campo | Contenido |
+|---|---|
+| `fecha_local` | Día de la extracción; el archivo se llama `AAAA-MM-DD.json` |
+| `generado_en` | Hora en que se armó la extracción |
+| `partidos` | Partidos del día con el formato de partido; los que se pueden analizar traen `previa` |
+| `mercados` | Por partido y mercado (y jugador y estadística en las props): `partido_id`, `mercado` y `ofertas` |
+
+Las ofertas tienen el mismo formato que en el historial. Las cuotas y la previa tienen que extraerse antes del inicio del partido, y los partidos de `previa.ultimos_partidos` tienen que estar guardados en `datos/`.
+
+En `ejemplos/extraccion/` hay una extracción de prueba. Sus mercados traen además `prediccion_ejemplo`, con predicciones ficticias que la página muestra mientras no exista el análisis estadístico (paso 5). La extensión nunca envía ese campo. Si `prediccion_ejemplo.estadistico` es `null`, el mercado se muestra como "sin datos suficientes" y no genera registro.
+
+## Datos de ejemplo
+
+`npm run ejemplos` genera `ejemplos/datos/` y `ejemplos/extraccion/` con `herramientas/generar-ejemplos.mjs` y vuelve a escribir los índices. Los ejemplos no se editan a mano: si cambia el formato, se cambia el generador.
+
+Los datos se simulan con equipos inventados y una semilla fija, así que cada ejecución produce los mismos archivos. Incluyen:
+
+- Seis ligas: dos de fútbol, una copa de fútbol solo con partidos del día y sin cuotas, dos de básquet (una por cuartos y otra por mitades) y una de béisbol.
+- Partidos guardados desde el 20 de setiembre de 2026, con estadísticas, y registros del historial del 4 al 10 de octubre con resultados, apuestas, props anuladas porque el jugador no jugó y un partido de béisbol suspendido.
+- La extracción del 11 de octubre de 2026, con mercados que no ofrece ninguna casa y uno sin datos suficientes.
+
+En los partidos analizados de ejemplo no hay dobles amarillas, para que el total de tarjetas no dependa de esa regla pendiente.
+
 ## Validación
 
 ```
 npm install          # una sola vez
-npm run validar      # revisa datos/ y ejemplos/datos/
+npm run validar      # revisa datos/, ejemplos/datos/, ejemplos/extraccion/ y sus índices
 npm test             # pruebas automáticas
 ```
 
@@ -240,9 +278,12 @@ Además de los esquemas, el validador revisa:
 - Que el lado recomendado coincida con la probabilidad y que el lado ganador coincida con `valor_real` y la línea.
 - Que el marcador coincida con los goles, los períodos o las entradas; que haya prórroga solo después de un empate, y que un partido de béisbol finalizado no termine empatado.
 - Que cada registro apunte a un partido guardado, con los mismos equipos, liga y hora.
+- Que `prob_roja` aparezca solo en el mercado de tarjetas.
+- En las extracciones: que los partidos sean del día del archivo, que cada mercado sea de un partido de la extracción y que las cuotas sean anteriores al inicio.
+- Que cada `indice.json` liste exactamente los archivos de su carpeta.
 
-`ejemplos/datos/` tiene datos ficticios (equipos inventados e ids `ejemplo:...`) que cumplen todas estas reglas.
+Los datos de ejemplo cumplen todas estas reglas.
 
 ## Pendiente
 
-**Doble amarilla.** Falta verificar en las reglas de Betano si una doble amarilla cuenta como 3 tarjetas o como 2. El formato guarda amarillas, rojas y dobles amarillas por separado, así que sirve para las dos formas.
+**Doble amarilla.** Está confirmado que en Betano la roja vale como 2 amarillas. Falta confirmar con un ejemplo cuánto suma una doble amarilla (amarilla, segunda amarilla y roja): 3 (la primera amarilla más la roja) o 2. El formato guarda amarillas, rojas y dobles amarillas por separado, así que sirve para las dos formas.

@@ -37,8 +37,9 @@ El orden de esta lista es el orden en que se muestran los mercados en el resulta
 
 - Solo se usan líneas terminadas en .5. Se descartan las líneas enteras (pueden devolver el dinero) y los handicaps asiáticos (.25 / .75).
 - **Fútbol:** los mercados del partido se cuentan en el tiempo reglamentario (90 minutos más el descuento), sin prórroga ni penales. El primer tiempo es de 45 minutos más el descuento.
-- **Tarjetas:** se cuentan como en Betano: amarilla = 1, roja = 2, con líneas .5.
-  - Pendiente de verificar en las reglas de Betano: cómo cuenta la doble amarilla que termina en roja (algunas casas suman 3 y otras 2).
+- **Tarjetas:** se cuentan como en Betano: amarilla = 1, roja = 2, con líneas .5. El usuario confirmó en Betano que la roja vale como 2 amarillas.
+  - Pendiente: confirmar con un ejemplo cuánto suma una doble amarilla (amarilla, segunda amarilla y roja): 3 (la primera amarilla más la roja) o 2.
+  - Como cada roja suma 2, el análisis de tarjetas indica también si habrá roja en el partido.
 - **Básquet, primer tiempo:** 1.er y 2.º cuarto. No incluye prórroga.
 - **Básquet, tiempo completo:** incluye prórroga.
 - **Béisbol:** el ganador no tiene empate (hay entradas extra). El total incluye entradas extra.
@@ -73,9 +74,9 @@ Margen de la casa de una línea: `1/cuota_A + 1/cuota_B - 1`.
 ## Arquitectura
 
 - **Extensión de navegador** (Brave, Manifest V3, instalada en modo desarrollador con "Cargar descomprimida"). Lee los datos de Betano, Sofascore, Flashscore y las casas de referencia mientras el usuario tiene abiertas esas páginas, y se los pasa a la página web. Si un sitio cambia su diseño, hay que ajustar su extractor. Si la extensión no consigue un dato, se ingresa a mano.
-- **Página web** publicada en GitHub Pages. Carga los partidos del día, permite filtrar por deporte y liga, seleccionar partidos y lanzar el análisis. El análisis se ejecuta en el navegador. Tiene una sección separada para el historial.
+- **Página web** publicada en GitHub Pages: https://luisp11127.github.io/Analisis-BDP-GPT/web/. Carga los partidos del día, permite filtrar por deporte y liga, seleccionar partidos y lanzar el análisis. El análisis se ejecuta en el navegador. Tiene una sección separada para el historial. Mientras no estén la extensión ni el análisis real, funciona con datos de prueba ficticios.
 - **Repositorio** (público): guarda el historial en archivos de datos. La página escribe en el repositorio con un token de GitHub de alcance limitado a este repositorio. El token se guarda solo en el navegador, nunca en el repositorio.
-- **GitHub Actions:** publica la página cuando hay cambios y, más adelante, entrena la red neuronal con el historial. No se usa para extraer datos, porque no tiene acceso al navegador y los sitios suelen bloquear conexiones desde servidores.
+- **GitHub Actions:** ejecuta las pruebas, valida los datos y publica la página cuando hay cambios. Más adelante entrenará la red neuronal con el historial. No se usa para extraer datos, porque no tiene acceso al navegador y los sitios suelen bloquear conexiones desde servidores.
 - La extracción solo funciona en la computadora (las extensiones no funcionan en el navegador del celular). Desde el celular se pueden ver los resultados y el historial.
 
 ### Emparejamiento de partidos
@@ -96,7 +97,7 @@ Esta sección describe el análisis estadístico. La red neuronal es un modelo a
 3. Se suma lo esperado de ambos equipos y se calcula la probabilidad de Más y de Menos sobre la línea:
    - Goles y corners: distribución de Poisson.
    - Tarjetas y remates: binomial negativa (varían más entre partidos).
-4. Tarjetas: se incluye el promedio del árbitro si Sofascore lo muestra.
+4. Tarjetas: amarillas y rojas se estiman por separado, porque cada roja suma 2. Con eso se calcula también la probabilidad de que haya al menos una roja en el partido. Se incluye el promedio del árbitro si Sofascore lo muestra.
 5. Ambos anotan: P(anota local) × P(anota visitante), con P(anota) = 1 − e^(−goles esperados).
 
 ### Básquet
@@ -120,6 +121,8 @@ Esta sección describe el análisis estadístico. La red neuronal es un modelo a
 - Por cada mercado se muestra la línea candidata, el lado recomendado y la probabilidad de cada modelo, una al lado de la otra. Ejemplo: `Under 2.5 — Estadístico 58% · Red 61%`.
 - Si la red no tiene un modelo aprobado para ese mercado, se muestra "Red: sin modelo todavía".
 - Si los dos modelos eligen lados distintos, no se oculta nada: se muestra el lado y la probabilidad de cada uno y se marca el mercado como en desacuerdo. Ejemplo: `Estadístico: Under 2.5 58% · Red: Over 2.5 55% ⚠️`.
+- En el mercado de tarjetas se indica si habrá roja en el partido, con su probabilidad. Ejemplo: `Tarjeta roja en el partido: No — 84%`.
+- Los mercados sin cuotas aparecen como "Sin cuotas", en su lugar de la lista.
 
 ## Historial
 
@@ -229,11 +232,11 @@ Se hacen después de que la red base funcione:
 ## Orden de construcción
 
 1. Estructura del repositorio y formato de los datos (partido, mercado, análisis, registro del historial). Hecho: ver `docs/FORMATO_DATOS.md`.
-2. Página con datos de prueba: carga, filtros, análisis y sección de historial.
+2. Página con datos de prueba: carga, filtros, análisis y sección de historial. Incluye la publicación en GitHub Pages con GitHub Actions. Hecho: ver `web/`.
 3. Extractor de Sofascore: partidos del día, ligas, estadísticas y resultados. Después, extractor de Flashscore para completar datos.
 4. Extractor de Betano: mercados y cuotas, y emparejamiento de partidos.
 5. Motor de análisis real por deporte.
-6. Guardado del historial en el repositorio y publicación con GitHub Actions.
+6. Guardado del historial en el repositorio (la publicación con GitHub Actions ya quedó lista en el paso 2).
 7. Casas de referencia (Apuesta Total y Te Apuesto primero).
 8. Carga de temporadas pasadas desde Sofascore.
 9. Red neuronal: script de entrenamiento, comparación con el modelo publicado, uso en la página y explicabilidad.

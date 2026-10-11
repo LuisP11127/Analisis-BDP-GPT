@@ -48,3 +48,8 @@ export function clasificarRuta(ruta) {
   }
   return null;
 }
+
+/** Contenido de un indice.json para las rutas dadas. */
+export function crearIndice(rutas) {
+  return { version_formato: 1, archivos: [...rutas].sort() };
+}

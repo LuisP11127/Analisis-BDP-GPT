@@ -133,8 +133,26 @@ Las ligas y equipos emparejados se guardan como equivalencias (`esquemas/equival
 
 La muestra trae sus mercados, pero no se leen todavía porque falta la muestra de Sofascore de esos deportes. En básquet, el hándicap (`FHOT`) y el total de puntos (`FTPO`) vienen en una tabla (`tableLayout`) en lugar de la lista de selecciones del fútbol.
 
+## Flashscore (muestra recibida, extractor por construir)
+
+Muestra: HAR de www.flashscore.pe del 11 de octubre de 2026, con la portada y el partido Augsburgo 2-2 Bayern Múnich (id `nyUApYI6`). Lo que trae:
+
+| Dato | Pedido | Formato |
+|---|---|---|
+| Partidos del día, todas las ligas, en hora de Lima | `global.flashscore.ninja/203/x/feed/f_1_0_-5_es-pe_1` (`f_1_-1_…` es el día anterior) | Texto propio: registros separados por `~`, campos por `¬` y clave÷valor |
+| Resumen: goles y tarjetas con minuto | `…/feed/df_sui_1_{id}` | Texto propio |
+| Comentarios del partido | `…/feed/df_lc_1_{id}` | Texto propio. Cada córner tiene `MC÷corner`, el minuto (`MB÷62'`) y la hora exacta (`MK÷61:21`); el equipo solo aparece en el texto del comentario |
+| Últimos partidos de cada equipo y enfrentamientos | `…/feed/df_hh_1_{id}` | Texto propio |
+| Estadísticas del partido | `global.ds.lsapp.eu/pq_graphql?_hash=dts&eventId={id}&providerId=101` | JSON. Cada dato (`corner_kicks`, `yellow_cards`, `shots_on_goal`…) viene por equipo y por etapa: 12 primer tiempo, 13 segundo tiempo, 74 partido |
+| Alineaciones | `global.ds.lsapp.eu/pq_graphql?_hash=dlie2&eventId={id}&projectId=203` | JSON |
+| Cuotas de varias casas de Perú | `global.ds.lsapp.eu/odds/pq_graphql?_hash=oce&eventId={id}&projectId=203&geoIpCode=PE…` | JSON |
+
+Los pedidos a `flashscore.ninja` llevan la cabecera `x-fsign: SW9D1eZo`, que la página de Flashscore manda siempre con el mismo valor.
+
+En la muestra, los comentarios tienen 12 entradas marcadas como córner, pero las estadísticas dan 14 córners (5 y 9). Los comentarios no traen todos los córners, así que para el minuto de cada córner habrá que usarlos con cuidado (por ejemplo, solo en partidos donde coincidan con el total).
+
 ## Pendientes
 
 - **Sofascore, básquet y béisbol:** falta una muestra de cada deporte (un partido terminado y uno por jugar).
-- **Flashscore:** muestra recibida, extractor por construir.
+- **Flashscore:** construir el extractor con la muestra de arriba.
 - **Apuesta Total y Te Apuesto:** falta su muestra.

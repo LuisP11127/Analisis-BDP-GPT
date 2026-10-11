@@ -5,6 +5,7 @@ import path from 'node:path';
 import { RAIZ } from '../herramientas/cargar.mjs';
 import { SITIOS, urlDelPedido } from '../extension/sitios.js';
 import { crearLector } from '../web/js/extension.js';
+import { RUTAS as APUESTA_TOTAL } from '../web/js/fuentes/apuestatotal.js';
 import { RUTAS as BETANO } from '../web/js/fuentes/betano.js';
 import { rutaFija, RUTAS } from '../web/js/fuentes/sofascore.js';
 
@@ -15,7 +16,7 @@ test('extensión: solo acepta pedidos a la API de los sitios conocidos', () => {
   for (const ruta of ['/api/v1/event/1?x=1', '/api/v1/../user', '/api/v1/event//1', '/usuario', 'https://otro.com/api/v1/x', '/api/v1/', 42, undefined]) {
     assert.throws(() => urlDelPedido('sofascore', ruta), /Ruta no permitida/, String(ruta));
   }
-  assert.throws(() => urlDelPedido('apuesta_total', '/api/v1/x'), /Sitio desconocido/);
+  assert.throws(() => urlDelPedido('te_apuesto', '/api/v1/x'), /Sitio desconocido/);
   assert.throws(() => urlDelPedido('toString', '/api/v1/x'), /Sitio desconocido/);
 });
 
@@ -29,11 +30,32 @@ test('extensión: en Betano acepta páginas de liga y de partido con los paráme
   }
 });
 
+test('extensión: en Apuesta Total acepta la lista de partidos y los mercados de varios partidos', () => {
+  assert.equal(urlDelPedido('apuesta_total', APUESTA_TOTAL.eventos), 'https://prod20392.kmianko.com/api/pulse/snapshot/events?lang=ES-PE&t=hPNl');
+  const mercados = APUESTA_TOTAL.mercados(['888089270525636608', '886663999788429312']);
+  assert.equal(urlDelPedido('apuesta_total', mercados), `https://prod20392.kmianko.com${mercados}`);
+  const muchos = Array.from({ length: 10 }, (_, i) => String(900000000000000000 + i));
+  assert.ok(urlDelPedido('apuesta_total', APUESTA_TOTAL.mercados(muchos)));
+  for (const ruta of [
+    '/api/master/auth/signToken',
+    '/api/eventlist/eu/markets/all?markets=1:OU200',
+    '/api/pulse/snapshot/events?lang=ES-PE&t=hPNl&otro=1',
+    '/api/eventpage/events/888089270525636608?hideX25X75Selections=false',
+    '/api/eventlist/eu/markets/all?markets=1%3AOU200%26x%3D1',
+  ]) {
+    assert.throws(() => urlDelPedido('apuesta_total', ruta), /Ruta no permitida/, ruta);
+  }
+});
+
 test('extensión: cada origen de sitios.js tiene permiso en el manifiesto', async () => {
   const manifiesto = JSON.parse(await readFile(path.join(RAIZ, 'extension', 'manifest.json'), 'utf8'));
   for (const sitio of Object.values(SITIOS)) {
     assert.ok(manifiesto.host_permissions.includes(`${sitio.origen}/*`), sitio.nombre);
-    assert.ok(sitio.inicio.startsWith(sitio.origen));
+    // Si la API está en un marco, la página que lo contiene es de otro origen y también necesita permiso.
+    const pagina = new URL(sitio.inicio).origin;
+    if (sitio.marco) assert.ok(manifiesto.host_permissions.includes(`${pagina}/*`), sitio.nombre);
+    else assert.equal(pagina, sitio.origen);
+    assert.ok(sitio.pestanas.startsWith(pagina), sitio.nombre);
   }
   const paginas = manifiesto.content_scripts[0].matches;
   assert.ok(paginas.includes('https://luisp11127.github.io/Analisis-BDP-GPT/*'));

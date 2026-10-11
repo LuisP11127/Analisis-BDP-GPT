@@ -32,10 +32,11 @@ const ESTADOS = {
 };
 
 /** Evento como viene en las listas de Sofascore. `marcador`: [local, visitante, local 1T, visitante 1T]. */
-export function evento({ id, inicio, local, visitante, estado = 'notstarted', marcador, extra, torneoDe = LIGA, temporada = TEMPORADA }) {
+// En los partidos, la categoría del torneo trae el código de dos letras del país; en la lista de torneos del día, no.
+export function evento({ id, inicio, local, visitante, estado = 'notstarted', marcador, extra, torneoDe = LIGA, temporada = TEMPORADA, codigoPais = 'IV' }) {
   const e = {
     id,
-    tournament: torneoDe,
+    tournament: { ...torneoDe, category: { ...torneoDe.category, alpha2: codigoPais } },
     season: temporada,
     status: ESTADOS[estado],
     homeTeam: local,

@@ -20,6 +20,17 @@
     </p>
     <ul id="resultados" class="resultados"></ul>
     <p id="copiado" class="apagado" role="status"></p>
+
+    <h2>Guardar una muestra</h2>
+    <p>Pide una ruta de la API de un sitio y guarda la respuesta en un archivo, para mandarla cuando haga falta
+      una muestra. Solo acepta las rutas que la extensión puede leer.</p>
+    <form id="muestra" class="muestra">
+      <label>Sitio <select name="sitio"></select></label>
+      <label class="ruta">Ruta <input name="ruta" type="text" required spellcheck="false" autocomplete="off"
+        placeholder="/api/v1/sport/football/scheduled-events/2026-10-12"></label>
+      <button type="submit">Pedir y guardar</button>
+    </form>
+    <p id="estado-muestra" class="apagado" role="status"></p>
   </main>
 </body>
 </html>

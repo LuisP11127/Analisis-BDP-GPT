@@ -36,6 +36,7 @@ main {
 }
 
 h1 { font-size: 1.4rem; margin: 0 0 0.5rem; }
+h2 { font-size: 1.1rem; margin: 2rem 0 0.25rem; }
 
 .apagado { color: var(--apagado); }
 
@@ -65,3 +66,17 @@ button:disabled { opacity: 0.55; cursor: default; }
 
 .bien { color: var(--bien); font-weight: 600; }
 .mal { color: var(--mal); font-weight: 600; }
+
+.muestra { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: flex-end; }
+.muestra label { display: grid; gap: 0.2rem; font-size: 0.9rem; color: var(--apagado); }
+.muestra .ruta { flex: 1 1 18rem; }
+
+select, input {
+  font: inherit;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  background: var(--tarjeta);
+  color: var(--texto);
+  min-width: 0;
+}

@@ -90,6 +90,9 @@ test('sofascore: partido del día con ids, hora de Lima y estado', () => {
   });
   const abandonado = d.evento({ id: 502, inicio: '2026-10-11T15:00:00Z', local: pumas, visitante: toros, estado: 'abandoned' });
   assert.equal(s.partidoDesdeEvento(abandonado, AHORA).estado, 'cancelado');
+  // El código del país sirve para buscar la liga en Apuesta Total; las competiciones internacionales no lo tienen.
+  assert.equal(s.codigoPaisDe(evento), 'IV');
+  assert.equal(s.codigoPaisDe(d.evento({ id: 503, inicio: '2026-10-11T15:00:00Z', local: pumas, visitante: toros, codigoPais: null })), null);
 });
 
 test('sofascore: un estado que no estaba en la muestra queda programado o en juego según la hora', () => {

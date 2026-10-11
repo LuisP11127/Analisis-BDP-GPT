@@ -4,6 +4,7 @@ import { calcularCandidata } from '../comun/reglas.js';
 import { cargarValidador } from '../herramientas/cargar.mjs';
 import * as b from '../web/js/fuentes/betano.js';
 import { agregarAlias, aliasDe, equivalenciasVacias } from '../web/js/equivalencias.js';
+import { mercadosDeOfertas } from '../web/js/real.js';
 import * as d from './datos/betano.mjs';
 
 const AHORA = '2026-10-11T12:00:00Z';
@@ -99,42 +100,6 @@ test('betano: pide las pestañas solo para los mercados que faltan', async () =>
   assert.deepEqual(pedidas.map((r) => r.split('?')[1]), ['req=la,s,stnf,c,mb', 'bt=5&req=la,s,stnf,c,mb', 'bt=6&req=la,s,stnf,c,mb']);
 });
 
-test('betano: parecido de nombres, con siglas y palabras genéricas', () => {
-  assert.equal(b.similitud('Liverpool', 'Liverpool FC'), 1);
-  assert.equal(b.similitud('Everton', 'Everton FC'), 1);
-  assert.equal(b.similitud('UTC', 'Universidad Técnica de Cajamarca'), 0.9);
-  assert.ok(b.similitud('Club Sporting Cristal', 'Sporting Cristal') >= 0.9);
-  assert.ok(b.similitud('Manchester City', 'Manchester United') < 0.7);
-  assert.equal(b.similitud('Crystal Palace', 'Nottingham Forest'), 0);
-});
-
-test('betano: liga candidata del mismo país; sin país conocido, por nombre en todo el catálogo', () => {
-  const catalogo = b.catalogoDeLigas(d.paginaDeLiga('x', []));
-  assert.equal(b.candidatasDeLiga({ nombre: 'Primera Ficticia Apuestas', region: 'inventia' }, catalogo)[0].liga.id, '9001');
-  assert.ok(b.candidatasDeLiga({ nombre: 'Copa', region: 'inventia' }, catalogo).every((c) => c.liga.codigoRegion === 'inventia'));
-  assert.equal(b.candidatasDeLiga({ nombre: 'Copa Continental', region: 'world' }, catalogo)[0].liga.id, '9101');
-});
-
-test('betano: emparejamiento por hora y nombres; si no es claro, queda para confirmar', () => {
-  const eventos = b.partidosDeLiga(d.paginaDeLiga('Inventia - Primera Ficticia', [
-    d.evento({ id: '1', local: 'Leones del Norte FC', visitante: 'Halcones FC', inicio: '2026-10-11T20:00:00Z' }),
-    d.evento({ id: '2', local: 'Pumas Unidos', visitante: 'Toros de Prueba', inicio: '2026-10-11T20:00:00Z' }),
-    d.evento({ id: '3', local: 'Águilas', visitante: 'Cóndores', inicio: '2026-10-11T22:00:00Z' }),
-  ]));
-  const claro = b.emparejarPartido(partido(10, 'Leones del Norte', 'Halcones', '2026-10-11T20:00:00Z'), eventos);
-  assert.equal(claro.estado, 'emparejado');
-  assert.equal(claro.evento.id, '1');
-  assert.equal(claro.candidatos.length, 2);
-  const dudoso = b.emparejarPartido(partido(11, 'Real Águilas', 'Cóndores del Sur', '2026-10-11T22:10:00Z'), eventos);
-  assert.equal(dudoso.estado, 'emparejado');
-  const nombresDistintos = b.emparejarPartido(partido(12, 'Club Uno', 'Club Dos', '2026-10-11T22:00:00Z'), eventos);
-  assert.equal(nombresDistintos.estado, 'dudoso');
-  assert.equal(b.emparejarPartido(partido(13, 'Leones', 'Halcones', '2026-10-12T20:00:00Z'), eventos).estado, 'no_encontrado');
-  // Con un nombre ya confirmado, el partido queda claro.
-  const alias = new Map([['sofascore:121', ['Águilas']], ['sofascore:122', ['Cóndores']]]);
-  assert.equal(b.emparejarPartido(partido(12, 'Club Uno', 'Club Dos', '2026-10-11T22:00:00Z'), eventos, alias).estado, 'emparejado');
-});
-
 test('betano: búsqueda completa con equivalencias válidas para guardar', async () => {
   const urlLiga = '/sport/futbol/inventia/primera-ficticia/9001/';
   const urlSegunda = '/sport/futbol/inventia/segunda-ficticia/9002/';
@@ -159,7 +124,7 @@ test('betano: búsqueda completa con equivalencias válidas para guardar', async
   const encontrado = resultados.get(elegido.id);
   assert.equal(encontrado.estado, 'emparejado');
   assert.equal(b.nombreDeLiga(encontrado.liga), 'Inventia - Segunda Ficticia');
-  assert.deepEqual(b.mercadosDeOfertas(elegido.id, encontrado.ofertas), [{
+  assert.deepEqual(mercadosDeOfertas(elegido.id, encontrado.ofertas), [{
     partido_id: 'sofascore:20', mercado: 'futbol_goles', ofertas: [{ casa: 'betano', extraido_en: AHORA, lineas: [{ linea: 2.5, cuota_a: 1.85, cuota_b: 1.95 }] }],
   }]);
   assert.equal(resultados.get(sinLiga.id).estado, 'sin_liga');

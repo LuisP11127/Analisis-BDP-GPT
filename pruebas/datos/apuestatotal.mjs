@@ -1,6 +1,27 @@
-// Respuestas de Apuesta Total inventadas para las pruebas. Copian la estructura de una muestra real (HAR de
-// la sección de apuestas deportivas, prod20392.kmianko.com), con ids y cuotas ficticios. Solo tienen los
-// campos que se usan y unos pocos más.
+// Respuestas de Apuesta Total inventadas para las pruebas. Copian la estructura de dos muestras reales (HAR
+// de la sección de apuestas deportivas y la lista de partidos de prod20392.kmianko.com), con ligas, equipos,
+// ids y cuotas ficticios. Solo tienen los campos que se usan y unos pocos más.
+
+/** Partido de la lista de todos los partidos (pulse/snapshot/events). */
+export const evento = ({ id, local, visitante, inicio, liga = '7001', nombreLiga = 'Primera Ficticia', region = 'Inventia', codigo = 'IV', deporte = '1', tipo = 'Fixture' }) => ({
+  _id: id,
+  Type: tipo,
+  EventName: `${local} vs ${visitante}`,
+  StartEventDate: Date.parse(inicio),
+  SportId: deporte,
+  SportName: deporte === '1' ? 'Fútbol' : 'Otro',
+  LeagueId: liga,
+  LeagueName: nombreLiga,
+  RegionName: region,
+  RegionCode: codigo,
+  IsLive: false,
+  IsSuspended: false,
+  Participants: [
+    { _id: `${id}1`, Name: local, Country: region, VenueRole: 'Home', MetaData: {} },
+    { _id: `${id}2`, Name: visitante, Country: region, VenueRole: 'Away', MetaData: {} },
+  ],
+  MarketsAvailability: { TotalBookings: false, TotalCorners: true },
+});
 
 const seleccion = (idMercado, side, nombre, linea, cuota) => ({
   _id: `${idMercado}-${side}-${linea ?? 'x'}`,

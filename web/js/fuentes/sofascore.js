@@ -96,6 +96,13 @@ function ligaDe(torneo) {
 }
 
 /**
+ * Código de dos letras del país de un partido ("EN", "PE"), que sirve para buscar su liga en Apuesta Total.
+ * Viene en los partidos de una liga, no en la lista de torneos del día. Las competiciones internacionales
+ * no lo tienen.
+ */
+export const codigoPaisDe = (evento) => evento?.tournament?.category?.alpha2 ?? null;
+
+/**
  * Ligas con partidos en la fecha de Lima, a partir de las páginas de scheduled-tournaments, en el orden de
  * Sofascore (primero las que Sofascore destaca). `principal` marca las que Sofascore destaca y `region` es
  * el código del país en Sofascore ("england"), que sirve para buscar la liga en las casas de apuestas.

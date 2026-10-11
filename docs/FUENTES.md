@@ -124,15 +124,69 @@ Cada línea trae dos selecciones con el mismo `handicap`: "Más de X" (lado A) y
 
 ### Emparejamiento con Sofascore
 
+El emparejamiento es el mismo para Betano y Apuesta Total (`web/js/emparejamiento.js`); cada casa da su lista de ligas, cómo leer los partidos de una liga y cómo se compara el país.
+
 1. **Liga.** Se prueba primero la liga de Betano ya confirmada para esa liga de Sofascore. Si no hay, las ligas de Betano del mismo país, de la más a la menos parecida por nombre. El país se compara por código: Betano usa en `regionCode` el mismo código en inglés que Sofascore en sus categorías ("england", "peru"); en las dos muestras solo cambiaban `czechia` (Sofascore: `czech-republic`) y `turkiye` (`turkey`). Las competiciones internacionales no tienen país en común y se buscan por nombre en toda la lista. Se acepta la primera liga, de hasta 6, en la que aparece alguno de los partidos.
-2. **Partido.** En los partidos de esa liga se buscan los que empiezan a la misma hora, con 15 minutos de margen (en la muestra coincidían al segundo), y se elige el de nombres más parecidos. El parecido cuenta las palabras en común sin tildes ni palabras como "FC" o "Club", y reconoce siglas ("UTC" y "Universidad Técnica de Cajamarca"). El emparejamiento es seguro si el parecido llega a 0.5 y supera en 0.25 al segundo candidato.
-3. **Si no es seguro** o no hay partido a esa hora, la página muestra los partidos de esa liga en Betano para elegir el que corresponde.
+2. **Partido.** En los partidos de esa liga se buscan los que empiezan a la misma hora, con 15 minutos de margen (en la muestra coincidían al segundo), y se elige el de nombres más parecidos. El parecido cuenta las palabras en común sin tildes ni palabras como "FC" o "Club", y reconoce siglas ("UTC" y "Universidad Técnica de Cajamarca"). El emparejamiento es seguro si supera en 0.25 al segundo candidato y, además, el parecido de los dos equipos llega a 0.5 o el de uno de ellos llega a 0.8. Lo segundo cubre las casas que escriben un equipo de forma muy distinta ("Friburgo" y "SC Freiburg"): en una liga, dos partidos a la misma hora no comparten equipo.
+3. **Si no es seguro** o no hay partido a esa hora, la página muestra los partidos de esa liga en la casa para elegir el que corresponde, sin los que ya quedaron emparejados con otro partido.
 
 Las ligas y equipos emparejados se guardan como equivalencias (`esquemas/equivalencias.schema.json`): la liga con el nombre "Región - Liga" de Betano y cada equipo con su nombre en Betano. Por ahora quedan en el navegador; en el paso 6 se guardarán en `datos/equivalencias/futbol.json`. El partido de Betano queda en `ids_externos.betano` del partido.
 
 ### Básquet y béisbol
 
 La muestra trae sus mercados, pero no se leen todavía porque falta la muestra de Sofascore de esos deportes. En básquet, el hándicap (`FHOT`) y el total de puntos (`FTPO`) vienen en una tabla (`tableLayout`) en lugar de la lista de selecciones del fútbol.
+
+## Apuesta Total (fútbol)
+
+Muestras del 11 de octubre de 2026: un HAR de www.apuestatotal.com (la lista de fútbol, Como vs AS Roma, un partido de básquet y uno de béisbol) y la lista de todos los partidos, guardada desde el navegador. Código: `web/js/fuentes/apuestatotal.js`.
+
+Las apuestas deportivas de Apuesta Total están en un marco (iframe) de un proveedor externo, `prod20392.kmianko.com`, dentro de `www.apuestatotal.com/apuestas-deportivas/`. Los pedidos van a la API del proveedor y la extensión los hace dentro de ese marco, como la propia página.
+
+### Pedidos
+
+| Dato | Ruta de la API | Formato |
+|---|---|---|
+| Todos los partidos | `/api/pulse/snapshot/events?lang=ES-PE&t=hPNl` | JSON: una lista con los eventos de todos los deportes, de hoy y de las semanas siguientes. En la muestra, 2834 eventos (1309 partidos de fútbol) y 3,8 MB |
+| Mercados de varios partidos | `/api/eventlist/eu/markets/all?markets={id}\|{id}:{tipo}\|{tipo}` (con `\|` y `:` codificados) | JSON con nombres de campos |
+| Todos los mercados de un partido | `/api/eventpage/events/{id}?hideX25X75Selections=false` | JSON por posiciones (listas sin nombres de campos), de 130 KB a 2,4 MB por partido. No se usa |
+| Cambios de los partidos | `/api/pulse/stream/events/RVMtUEUuaFBObA/poll?cursor=…` | Texto con eventos `insert`, `update` y `delete`. No se usa |
+
+El análisis de un día hace un pedido para la lista y uno de mercados por cada 10 partidos emparejados, con solo los tipos de mercado del proyecto. La lista es la misma que usa el proyecto Analisis-BDP (`RVMtUEUuaFBObA` es `ES-PE.hPNl` en base64).
+
+Los pedidos de la página del proveedor a su API llevan la cabecera `session` (su sesión, con cuenta o sin ella; en la muestra, sin cuenta) y `time-area` vacía. La extensión copia `session` de esos pedidos y manda las dos. La lista de partidos se pudo guardar abriendo su dirección en el navegador, sin esa cabecera; falta saber si los mercados la necesitan.
+
+### Partidos
+
+De cada evento de la lista se usan `_id`, `EventName` ("Como vs AS Roma"), `StartEventDate` (milisegundos UTC), `LeagueId`, `LeagueName`, `RegionName` (en español: "Inglaterra"), `RegionCode` ("EN") y `Participants`, con `Name` y `VenueRole` (`Home` o `Away`). Se dejan solo los de `SportId` `"1"` (fútbol; E-Fútbol y FIFA son otros deportes) y `Type` `"Fixture"` (`"Outright"` son apuestas a largo plazo, como el campeón). En la muestra, todos los partidos de fútbol tenían los dos equipos y el nombre del evento era "local vs visitante".
+
+### Emparejamiento con Sofascore
+
+Igual que en Betano (ver su sección), con la lista completa en memoria: no hace falta un pedido por liga. El país se compara con el código de dos letras: `RegionCode` en Apuesta Total y `category.alpha2` en Sofascore, que viene en los partidos de una liga (la lista de torneos del día no lo trae). En las muestras coinciden 96 de los 104 códigos de Apuesta Total. Cambian Escocia (`KK` en Apuesta Total, `SX` en Sofascore) e Irlanda del Norte (`NIE` y `NX`). Europa (`EU`), Sudamérica (`SAM`) e Internacional (`ZZ`) no tienen código en Sofascore y sus ligas se buscan por nombre. Bermudas, Liberia y Níger no aparecían en la muestra de Sofascore.
+
+Con las muestras, de los 26 partidos de Sofascore del 11 de octubre que caen dentro de la lista, 23 se emparejaron solos y bien. Los otros 3 no están en Apuesta Total: uno de Copa del Rey, Santos vs Binacional de la Liga 2 y Real Sociedad vs Deportivo, que ya había terminado cuando se guardó la lista. Apuesta Total escribe algunos equipos en español ("Friburgo", "Marsella") o con siglas ("Club Ada Jaen" es la Asociación Deportiva Agropecuaria); esos partidos se emparejan porque un equipo coincide claramente y no hay otro partido de la liga a esa hora.
+
+### Mercados de fútbol
+
+| Mercado | Tipo | Nombre en Apuesta Total |
+|---|---|---|
+| `futbol_goles` | `OU200` | Total de goles |
+| `futbol_ambos_anotan` | `QA158` | Ambos equipos anotan |
+| `futbol_corners` | `OU615` | Total tiros de esquina |
+| `futbol_tarjetas` | `OU6010` | Total de tarjetas |
+| `futbol_tiros_arco` | `OU121` | Disparos a puerta totales |
+| `futbol_remates` | `OU2083` | Disparos totales |
+| `futbol_corners_1t` | `OU14` | 1ra mitad: Total de tiros de esquina |
+
+- En cada selección, `Side` 1 es "Más de" o "Sí" (lado A) y `Side` 3 es "Menos de" o "No" (lado B). La línea viene en `Points` y la cuota en `DisplayOdds.Decimal` (igual a `TrueOdds` en las 965 selecciones de la muestra). Se saltan las selecciones desactivadas (`IsDisabled`) y los mercados suspendidos, y se guardan solo las líneas .5 con las dos cuotas.
+- No se usan `OU0` (total de goles asiático, con líneas .25 y .75), `OU619` (córners asiático) ni `OU621` (córners con tres opciones: más, exactamente y menos).
+- **Tarjetas:** hay dos mercados llamados "Total de tarjetas" con cuotas distintas. `OU10` tiene líneas enteras (3.5, 4 y 4.5 en la muestra): según el usuario es el asiático y no se usa. Se usa `OU6010`, con líneas .5 (de 2.5 a 5.5 en la muestra). No está confirmado si cuenta la roja como 2, igual que Betano.
+- En la lista de mercados de la muestra solo aparecen `OU200`, `QA158` y `OU615`. Los demás se revisaron en la página de Como vs AS Roma, que trae los mismos mercados (con los mismos ids) en el formato por posiciones.
+
+Con la muestra, Como vs AS Roma da goles 2.5 a 1.61 y 2.32, córners 8.5 a 1.68 y 2.06, tarjetas 4.5 a 2.17 y 1.60, tiros al arco 9.5 a 1.81 y 1.87 y remates 29.5 a 1.87 y 1.81. Los córners del primer tiempo solo tenían la línea 4, así que no hay oferta.
+
+### Básquet y béisbol
+
+La muestra trae sus mercados, que se usarán cuando estén esos deportes en Sofascore. Básquet: `OU0` total de puntos con prórroga, `HC0` hándicap y, para el primer tiempo, `OU623` (en la muestra, con una línea entera) y `HC623`; no había props de jugador. Béisbol: `ML0` ganador, `HC0` hándicap y `OU0` total de carreras con entradas extra.
 
 ## Flashscore (muestra recibida, extractor por construir)
 
@@ -156,4 +210,5 @@ En la muestra, los comentarios tienen 12 entradas marcadas como córner, pero la
 
 - **Sofascore, básquet y béisbol:** falta una muestra de cada deporte (un partido terminado y uno por jugar).
 - **Flashscore:** construir el extractor con la muestra de arriba.
-- **Apuesta Total y Te Apuesto:** falta su muestra.
+- **Apuesta Total:** confirmar en el navegador si sus mercados necesitan la cabecera `session` y si `OU6010` cuenta la roja como 2.
+- **Te Apuesto:** falta su muestra.

@@ -56,6 +56,22 @@ export function armarExtraccion({ fecha, generadoEn, partidos, anteriores, merca
   return extraccion;
 }
 
+/**
+ * Entradas de mercados de la extracción del día para un partido, a partir de las ofertas de cada casa
+ * (Map código de mercado → oferta, en el orden de prioridad de las casas). Cada mercado va una sola vez,
+ * con las ofertas de todas las casas que lo tienen.
+ */
+export function mercadosDeOfertas(partidoId, ...ofertasPorCasa) {
+  const porMercado = new Map();
+  for (const ofertas of ofertasPorCasa) {
+    for (const [mercado, oferta] of ofertas ?? []) {
+      if (!porMercado.has(mercado)) porMercado.set(mercado, []);
+      porMercado.get(mercado).push(oferta);
+    }
+  }
+  return [...porMercado.entries()].map(([mercado, ofertas]) => ({ partido_id: partidoId, mercado, ofertas }));
+}
+
 const PROPIAS = { goles: 'goles', corners: 'corners', tiros: 'tiros_al_arco', remates: 'remates' };
 
 function valorDelEquipo(periodo, lado, campo) {

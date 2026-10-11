@@ -6,7 +6,7 @@
 // Las funciones de conversión no hacen pedidos. Las de carga reciben `obtener(ruta)`, que devuelve
 // { estado, datos } con datos null cuando Betano responde 404.
 
-import { agregarAlias, aliasDe } from '../equivalencias.js';
+import { emparejarPorLiga, recordarEquipos as recordarEquiposEn } from '../emparejamiento.js';
 
 export const CASA = 'betano';
 
@@ -38,9 +38,6 @@ export const RUTAS = {
 
 // Códigos de país de Betano que no coinciden con el de Sofascore (comparando las dos muestras).
 const CODIGOS_DISTINTOS = { czechia: 'czech-republic', turkiye: 'turkey' };
-
-// Diferencia máxima entre la hora de inicio de Sofascore y la de Betano. En la muestra coincidían al segundo.
-const MARGEN_HORA_MS = 15 * 60 * 1000;
 
 const isoDesdeMs = (ms) => new Date(ms).toISOString().replace(/\.\d{3}Z$/, 'Z');
 const esCuota = (valor) => typeof valor === 'number' && Number.isFinite(valor) && valor > 1;
@@ -129,89 +126,9 @@ export function ofertasFutbol(respuestas, extraidoEn) {
   return ofertas;
 }
 
-// ---------------------------------------------------------------- emparejamiento
-
-// Palabras que no ayudan a distinguir equipos o ligas.
-const GENERICAS = new Set(['fc', 'cf', 'sc', 'ac', 'cd', 'ca', 'afc', 'fk', 'sk', 'bk', 'sv', 'club', 'de', 'del', 'la', 'el', 'los', 'las', 'the', 'and', 'y']);
-
-const sinTildes = (texto) => texto.normalize('NFD').replace(/[̀-ͯ]/g, '');
-
-/** Palabras de un nombre, sin tildes ni mayúsculas. */
-export function palabras(nombre, { todas = false } = {}) {
-  return sinTildes(nombre ?? '').toLowerCase().split(/[^a-z0-9]+/).filter((p) => p && (todas || !GENERICAS.has(p)));
-}
-
-const coinciden = (a, b) => a === b || (Math.min(a.length, b.length) >= 4 && (a.startsWith(b) || b.startsWith(a)));
-
-/**
- * Parecido entre dos nombres, de 0 a 1. Cuenta las palabras en común (o que una empieza con la otra) y
- * reconoce las siglas: "UTC" frente a "Universidad Técnica de Cajamarca".
- */
-export function similitud(a, b) {
-  const pa = palabras(a);
-  const pb = palabras(b);
-  if (pa.length === 0 || pb.length === 0) return 0;
-  if (pa.join(' ') === pb.join(' ')) return 1;
-  const comunes = pa.filter((x) => pb.some((y) => coinciden(x, y))).length;
-  const contencion = comunes / Math.min(pa.length, pb.length);
-  const union = new Set([...pa, ...pb]).size;
-  let puntaje = 0.7 * contencion + 0.3 * (comunes / union);
-  const siglas = (lista) => lista.map((p) => p[0]).join('');
-  for (const [corta, larga] of [[pa, palabras(b, { todas: true })], [pb, palabras(a, { todas: true })]]) {
-    if (corta.length === 1 && corta[0].length >= 2 && larga.length >= 2
-      && (corta[0] === siglas(larga) || corta[0] === siglas(larga.filter((p) => !GENERICAS.has(p))))) {
-      puntaje = Math.max(puntaje, 0.9);
-    }
-  }
-  return Math.min(1, puntaje);
-}
-
-/**
- * Ligas de Betano candidatas para una liga de Sofascore, de la más a la menos parecida.
- * - liga: { nombre, region } con region = slug de la categoría de Sofascore ("england").
- * Primero se buscan las del mismo país; si no hay, todas (competiciones internacionales).
- */
-export function candidatasDeLiga(liga, catalogo) {
-  const mismoPais = catalogo.filter((l) => l.codigoRegion && l.codigoRegion === liga.region);
-  const lista = mismoPais.length > 0 ? mismoPais : catalogo;
-  return lista
-    .map((l) => ({ liga: l, puntaje: similitud(liga.nombre, l.nombre) }))
-    .sort((a, b) => b.puntaje - a.puntaje);
-}
-
-/**
- * Busca en los partidos de una liga de Betano el partido de Sofascore: misma hora (con 15 minutos de margen)
- * y equipos parecidos. `alias` es un Map id de equipo de Sofascore → nombres conocidos en Betano.
- * Devuelve { estado, evento, candidatos }: estado "emparejado" si es claro, "dudoso" si hay que confirmarlo
- * y "no_encontrado" si no hay partidos a esa hora.
- */
-export function emparejarPartido(partido, eventos, alias = new Map()) {
-  const inicio = Date.parse(partido.inicio);
-  const parecido = (equipo, nombre) => (alias.get(equipo.id)?.includes(nombre) ? 1 : similitud(equipo.nombre, nombre));
-  const puntuados = eventos
-    .filter((evento) => Math.abs(Date.parse(evento.inicio) - inicio) <= MARGEN_HORA_MS)
-    .map((evento) => ({
-      evento,
-      puntaje: (parecido(partido.local, evento.local) + parecido(partido.visitante, evento.visitante)) / 2,
-    }))
-    .sort((a, b) => b.puntaje - a.puntaje);
-  const [mejor, segundo] = puntuados;
-  if (!mejor) return { estado: 'no_encontrado', evento: null, candidatos: [] };
-  const claro = mejor.puntaje >= 0.5 && (!segundo || mejor.puntaje - segundo.puntaje >= 0.25);
-  return { estado: claro ? 'emparejado' : 'dudoso', evento: mejor.evento, candidatos: puntuados.map((p) => p.evento) };
-}
-
-/** Entradas de mercados de la extracción del día a partir de las ofertas de un partido. */
-export function mercadosDeOfertas(partidoId, ofertas) {
-  return [...ofertas.entries()].map(([mercado, oferta]) => ({ partido_id: partidoId, mercado, ofertas: [oferta] }));
-}
-
 // ---------------------------------------------------------------- carga con la extensión
 
 const ahoraIso = () => new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
-
-/** Cuántas ligas de Betano se revisan, como máximo, para encontrar una liga de Sofascore. */
-const LIGAS_A_REVISAR = 6;
 
 /** Catálogo de ligas de fútbol de Betano. */
 export async function cargarCatalogo(obtener) {
@@ -248,71 +165,37 @@ export async function cargarCuotas(obtener, evento, { ahora = ahoraIso } = {}) {
  * - partidos: partidos del día (formato del proyecto).
  * - ligas: Map id de liga de Sofascore → { nombre, region } (de ligasDelDia de Sofascore).
  * - equivalencias: nombres conocidos (equivalencias.js); se agregan los que se confirman al emparejar.
- * Para cada liga se prueba primero la liga de Betano ya conocida y después las candidatas por país y
- * nombre: se acepta la primera en la que aparece alguno de los partidos a la misma hora y con equipos
- * parecidos. Devuelve un Map id de partido → { estado, evento, candidatos, liga, ofertas, eventosLiga }, con
- * estado "emparejado", "dudoso", "no_encontrado" o "sin_liga". Los que no quedan emparejados traen en
- * eventosLiga los partidos de su liga en Betano, para confirmarlos a mano.
+ * El emparejamiento está en emparejamiento.js: la liga se busca por país (Betano usa el mismo código que
+ * las categorías de Sofascore, "england") y nombre, y cada página de liga se pide una sola vez. Devuelve el
+ * Map de emparejarPorLiga; los partidos emparejados traen además sus ofertas.
  */
 export async function buscarCuotas(obtener, partidos, ligas, equivalencias, { ahora = ahoraIso, progreso = () => {} } = {}) {
-  const resultados = new Map();
-  if (partidos.length === 0) return resultados;
+  if (partidos.length === 0) return new Map();
   progreso('lista de ligas de Betano');
   const catalogo = await cargarCatalogo(obtener);
   const paginas = new Map();
-  const leerLiga = async (liga) => {
-    if (!paginas.has(liga.url)) paginas.set(liga.url, await cargarLiga(obtener, liga));
-    return paginas.get(liga.url);
-  };
-  const aliasLigas = aliasDe(equivalencias, 'ligas', CASA);
-  const aliasEquipos = aliasDe(equivalencias, 'equipos', CASA);
-
-  const porLiga = new Map();
+  const resultados = await emparejarPorLiga({
+    casa: CASA,
+    partidos,
+    regionDe: (partido) => ligas.get(partido.liga.id)?.region,
+    catalogo,
+    nombreDeLiga,
+    leerLiga: async (liga) => {
+      if (!paginas.has(liga.url)) paginas.set(liga.url, await cargarLiga(obtener, liga));
+      return paginas.get(liga.url);
+    },
+    equivalencias,
+    ahora,
+    progreso,
+  });
   for (const partido of partidos) {
-    if (!porLiga.has(partido.liga.id)) porLiga.set(partido.liga.id, []);
-    porLiga.get(partido.liga.id).push(partido);
-  }
-
-  for (const [idLiga, lista] of porLiga) {
-    const ligaSofascore = { nombre: lista[0].liga.nombre, region: null, ...(ligas.get(idLiga) ?? {}) };
-    const conocidas = catalogo.filter((l) => aliasLigas.get(idLiga)?.includes(nombreDeLiga(l)));
-    const candidatas = [...new Set([...conocidas, ...candidatasDeLiga(ligaSofascore, catalogo).map((c) => c.liga)])]
-      .slice(0, LIGAS_A_REVISAR + conocidas.length);
-    let elegida = null;
-    let eventosLiga = [];
-    let intentos = [];
-    for (const candidata of candidatas) {
-      progreso(`buscando ${ligaSofascore.nombre} en Betano (${nombreDeLiga(candidata)})`);
-      eventosLiga = await leerLiga(candidata);
-      intentos = lista.map((partido) => [partido, emparejarPartido(partido, eventosLiga, aliasEquipos)]);
-      if (intentos.some(([, r]) => r.estado === 'emparejado')) {
-        elegida = candidata;
-        break;
-      }
-    }
-    if (!elegida) {
-      for (const partido of lista) resultados.set(partido.id, { estado: 'sin_liga', evento: null, candidatos: [] });
-      continue;
-    }
-    const momento = ahora();
-    agregarAlias(equivalencias, 'ligas', lista[0].liga, CASA, nombreDeLiga(elegida), momento);
-    for (const [partido, resultado] of intentos) {
-      if (resultado.estado !== 'emparejado') {
-        // Los partidos de la liga quedan a mano para que el usuario elija el que corresponde.
-        resultados.set(partido.id, { ...resultado, liga: elegida, eventosLiga });
-        continue;
-      }
-      progreso(`cuotas de ${partido.local.nombre} vs ${partido.visitante.nombre} en Betano`);
-      const ofertas = await cargarCuotas(obtener, resultado.evento, { ahora });
-      resultados.set(partido.id, { ...resultado, liga: elegida, ofertas });
-      recordarEquipos(equivalencias, partido, resultado.evento, momento);
-    }
+    const resultado = resultados.get(partido.id);
+    if (resultado?.estado !== 'emparejado') continue;
+    progreso(`cuotas de ${partido.local.nombre} vs ${partido.visitante.nombre}`);
+    resultado.ofertas = await cargarCuotas(obtener, resultado.evento, { ahora });
   }
   return resultados;
 }
 
-/** Guarda con qué nombres aparecen en Betano los equipos de un partido emparejado o confirmado. */
-export function recordarEquipos(equivalencias, partido, evento, confirmadoEn) {
-  agregarAlias(equivalencias, 'equipos', partido.local, CASA, evento.local, confirmadoEn);
-  agregarAlias(equivalencias, 'equipos', partido.visitante, CASA, evento.visitante, confirmadoEn);
-}
+/** Guarda con qué nombres aparecen en Betano los equipos de un partido confirmado a mano. */
+export const recordarEquipos = (equivalencias, partido, evento, confirmadoEn) => recordarEquiposEn(equivalencias, CASA, partido, evento, confirmadoEn);

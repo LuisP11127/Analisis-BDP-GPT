@@ -1,6 +1,7 @@
 // Sitios que la extensión puede leer y qué pedidos acepta de cada uno.
 // Un sitio se agrega cuando hay una muestra real (HAR) de sus respuestas (ver docs/FUENTES.md).
-// Cada origen nuevo también tiene que agregarse en host_permissions de manifest.json.
+// Cada origen nuevo también tiene que agregarse en host_permissions de manifest.json y, si los pedidos van
+// dentro de un marco, también el origen de la página que lo contiene.
 
 export const SITIOS = {
   sofascore: {
@@ -30,6 +31,27 @@ export const SITIOS = {
     api: 'https://www.betano.pe/api/*',
     // La página de Betano no manda cabeceras propias a su API.
     cabeceras: [],
+    esperaMs: 400,
+  },
+  apuesta_total: {
+    nombre: 'Apuesta Total',
+    // Las apuestas deportivas de Apuesta Total son de un proveedor externo que se muestra en un marco
+    // (iframe) dentro de www.apuestatotal.com. La API es la del proveedor y los pedidos se hacen dentro de
+    // ese marco, con su origen y sus cookies, como los hace la propia página.
+    origen: 'https://prod20392.kmianko.com',
+    marco: true,
+    inicio: 'https://www.apuestatotal.com/apuestas-deportivas/',
+    pestanas: 'https://www.apuestatotal.com/apuestas-deportivas*',
+    // La lista de todos los partidos y los mercados de varios partidos:
+    // /api/pulse/snapshot/events?lang=ES-PE&t=hPNl
+    // /api/eventlist/eu/markets/all?markets=888089270525636608%7C886663999788429312%3AOU200%7CQA158
+    rutas: /^\/api\/(pulse\/snapshot\/events\?lang=ES-PE&t=[A-Za-z0-9]{1,12}|eventlist\/eu\/markets\/all\?markets=\d{1,20}(%7C\d{1,20}){0,19}%3A[A-Z]{2}\d{1,5}(%7C[A-Z]{2}\d{1,5}){0,19})$/,
+    api: 'https://prod20392.kmianko.com/api/*',
+    // La página del proveedor manda la cabecera session (su sesión, con cuenta o sin ella) y time-area vacía.
+    cabeceras: ['session'],
+    cabecerasFijas: { 'time-area': '' },
+    // El marco carga después de la página: se espera más a ver la cabecera.
+    esperaCabecerasMs: 15000,
     esperaMs: 400,
   },
 };

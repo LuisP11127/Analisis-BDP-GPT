@@ -1,6 +1,7 @@
 // Service worker de la extensión. Recibe los pedidos de la página del proyecto (a través de puente.js)
 // y de la página de diagnóstico, y los hace desde una pestaña del sitio, igual que los haría la propia
-// página del sitio: mismo origen, mismas cookies y la misma cabecera que usa su API.
+// página del sitio: mismo origen, mismas cookies y la misma cabecera que usa su API. Si la API del sitio
+// está en un marco (Apuesta Total), el pedido se hace dentro de ese marco.
 // Los pedidos a un sitio van de a uno, con una pausa entre ellos. Si no hay una pestaña del sitio
 // abierta, abre una en segundo plano y la cierra cuando lleva un minuto sin usarse.
 
@@ -9,6 +10,7 @@ import { SITIOS, urlDelPedido } from './sitios.js';
 const VERSION = chrome.runtime.getManifest().version;
 const ESPERA_CARGA_MS = 30000;
 const ESPERA_CABECERA_MS = 5000;
+const ESPERA_MARCO_MS = 20000;
 const CIERRE_MS = 60000;
 const ALARMA_CIERRE = 'cerrar-pestanas';
 
@@ -18,6 +20,8 @@ const dormir = (ms) => new Promise((resolver) => { setTimeout(resolver, ms); });
 
 // Copia en memoria de storage.session: código del sitio → { cabecera: valor }.
 const cabeceras = {};
+// Sitios en los que ya se esperó la cabecera sin verla: no se vuelve a esperar en cada pedido.
+const sinCabecera = new Set();
 
 async function cabecerasDe(codigo) {
   if (!cabeceras[codigo]) {
@@ -37,17 +41,20 @@ for (const [codigo, sitio] of Object.entries(SITIOS)) {
     const actuales = cabeceras[codigo] ?? {};
     if (Object.entries(vistas).every(([nombre, valor]) => actuales[nombre] === valor)) return;
     cabeceras[codigo] = { ...actuales, ...vistas };
+    sinCabecera.delete(codigo);
     chrome.storage.session.set({ [`cabeceras.${codigo}`]: cabeceras[codigo] });
   }, { urls: [sitio.api] }, ['requestHeaders']);
 }
 
 async function esperarCabeceras(codigo, sitio) {
-  const limite = Date.now() + ESPERA_CABECERA_MS;
+  if (sinCabecera.has(codigo)) return;
+  const limite = Date.now() + (sitio.esperaCabecerasMs ?? ESPERA_CABECERA_MS);
   while (Date.now() < limite) {
     const actuales = await cabecerasDe(codigo);
     if (sitio.cabeceras.every((nombre) => actuales[nombre])) return;
     await dormir(250);
   }
+  sinCabecera.add(codigo);
 }
 
 // ---------------------------------------------------------------- pestañas
@@ -134,8 +141,10 @@ async function pestanaDe(codigo, sitio) {
 
 // ---------------------------------------------------------------- pedidos
 
-// Se ejecuta dentro de la pestaña del sitio, así que no puede usar nada de este archivo.
-async function pedirDesdeLaPagina(url, cabecerasDelSitio) {
+// Se ejecuta dentro de la pestaña del sitio, así que no puede usar nada de este archivo. Si se pasa
+// `origenDelMarco`, corre en todos los marcos de la pestaña y solo pide en el que tiene ese origen.
+async function pedirDesdeLaPagina(url, cabecerasDelSitio, origenDelMarco) {
+  if (origenDelMarco && location.origin !== origenDelMarco) return null;
   try {
     const respuesta = await fetch(url, { headers: cabecerasDelSitio, credentials: 'include' });
     const texto = await respuesta.text();
@@ -181,6 +190,24 @@ function enCola(codigo, esperaMs, tarea) {
   return resultado;
 }
 
+/**
+ * Hace el pedido dentro de la pestaña. Si la API está en un marco, lo busca en todos los marcos de la
+ * pestaña y, mientras no aparezca (carga después de la página), vuelve a probar cada segundo.
+ */
+async function ejecutarEnPestana(idPestana, sitio, url, cabecerasDelPedido) {
+  const limite = Date.now() + (sitio.marco ? ESPERA_MARCO_MS : 0);
+  for (;;) {
+    const ejecuciones = await chrome.scripting.executeScript({
+      target: sitio.marco ? { tabId: idPestana, allFrames: true } : { tabId: idPestana },
+      func: pedirDesdeLaPagina,
+      args: [url, cabecerasDelPedido, sitio.marco ? sitio.origen : null],
+    });
+    const respuesta = ejecuciones.map((ejecucion) => ejecucion?.result).find(Boolean) ?? null;
+    if (respuesta || Date.now() >= limite) return respuesta;
+    await dormir(1000);
+  }
+}
+
 async function pedir(codigo, ruta) {
   const url = urlDelPedido(codigo, ruta);
   const sitio = SITIOS[codigo];
@@ -191,16 +218,18 @@ async function pedir(codigo, ruta) {
     for (let intento = 0; intento < 2 && !respuesta; intento += 1) {
       const idPestana = await pestanaDe(codigo, sitio);
       try {
-        const [ejecucion] = await chrome.scripting.executeScript({
-          target: { tabId: idPestana },
-          func: pedirDesdeLaPagina,
-          args: [url, await cabecerasDe(codigo)],
-        });
-        respuesta = ejecucion?.result ?? null;
+        // En una pestaña que ya estaba abierta, la cabecera puede no conocerse todavía: se espera a que la
+        // página del sitio haga otro pedido a su API.
+        if (sitio.cabeceras?.length) await esperarCabeceras(codigo, sitio);
+        respuesta = await ejecutarEnPestana(idPestana, sitio, url, { ...sitio.cabecerasFijas, ...(await cabecerasDe(codigo)) });
         await marcarUso(idPestana, codigo);
       } catch (error) {
         fallo = error;
       }
+    }
+    if (!respuesta && sitio.marco && !fallo) {
+      throw new Error(`No apareció la sección de apuestas de ${sitio.nombre} en la pestaña. Abre ${sitio.inicio}, `
+        + 'espera a que carguen los partidos y vuelve a intentar.');
     }
     if (!respuesta) throw new Error(`No se pudo usar la pestaña de ${sitio.nombre}: ${fallo?.message ?? 'no hubo respuesta'}.`);
     return interpretar(sitio, respuesta);

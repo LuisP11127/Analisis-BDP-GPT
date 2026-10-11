@@ -75,7 +75,7 @@ Margen de la casa de una línea: `1/cuota_A + 1/cuota_B - 1`.
 
 ## Arquitectura
 
-- **Extensión de navegador** (Brave, Manifest V3, instalada en modo desarrollador con "Cargar descomprimida"). Lee los datos de Betano, Sofascore, Flashscore y las casas de referencia y se los pasa a la página web. Hace los pedidos desde una pestaña del sitio, como la propia página del sitio; si no hay una abierta, la abre en segundo plano y la cierra después de un minuto sin uso. Los pedidos a un sitio van de a uno, con una pausa de 300 ms, para no cargarlo. La extensión devuelve las respuestas tal cual: la conversión al formato del proyecto está en la página (`web/js/fuentes/`). Si un sitio cambia su formato, hay que ajustar su convertidor. Si la extensión no consigue un dato, se ingresa a mano. Instalación y uso: `extension/README.md`.
+- **Extensión de navegador** (Brave, Manifest V3, instalada en modo desarrollador con "Cargar descomprimida"). Lee los datos de Betano, Sofascore, Flashscore y las casas de referencia y se los pasa a la página web. Hace los pedidos desde una pestaña del sitio, como la propia página del sitio (en Apuesta Total, dentro del marco de su proveedor de apuestas); si no hay una abierta, la abre en segundo plano y la cierra después de un minuto sin uso. Los pedidos a un sitio van de a uno, con una pausa de 300 a 400 ms, para no cargarlo. La extensión devuelve las respuestas tal cual: la conversión al formato del proyecto está en la página (`web/js/fuentes/`). Si un sitio cambia su formato, hay que ajustar su convertidor. Si la extensión no consigue un dato, se ingresa a mano. Instalación y uso: `extension/README.md`.
 - **Página web** publicada en GitHub Pages: https://luisp11127.github.io/Analisis-BDP-GPT/web/. Carga los partidos del día, permite filtrar por deporte y liga, seleccionar partidos y lanzar el análisis. El análisis se ejecuta en el navegador. Tiene una sección separada para el historial. Mientras no estén la extensión ni el análisis real, funciona con datos de prueba ficticios.
 - **Repositorio** (público): guarda el historial en archivos de datos. La página escribe en el repositorio con un token de GitHub de alcance limitado a este repositorio. El token se guarda solo en el navegador, nunca en el repositorio.
 - **GitHub Actions:** ejecuta las pruebas y valida los datos en cada cambio, y publica la página cuando los cambios llegan a `main`. El trabajo se hace en una rama aparte y se une a `main` con un pull request cuando el usuario lo aprueba. Más adelante entrenará la red neuronal con el historial. No se usa para extraer datos, porque no tiene acceso al navegador y los sitios suelen bloquear conexiones desde servidores.
@@ -86,12 +86,12 @@ Margen de la casa de una línea: `1/cuota_A + 1/cuota_B - 1`.
 Cada sitio escribe los nombres de los equipos de forma distinta (por ejemplo "Manchester United" y "Man Utd"). La página relaciona los partidos por fecha, hora y parecido de los nombres. Cuando no esté segura, pide confirmación y guarda la equivalencia para usarla después.
 
 - Primero se busca la liga: por país y parecido del nombre, y solo se acepta si en ella aparece alguno de los partidos a la misma hora.
-- Después el partido: misma hora, con 15 minutos de margen, y nombres parecidos. Si hay dudas o no aparece, la página muestra los partidos de esa liga en la casa para elegir el que corresponde.
+- Después el partido: misma hora, con 15 minutos de margen, y nombres parecidos. Basta con que un equipo sea claro si ningún otro partido de esa liga a esa hora se le acerca, porque las casas a veces escriben un equipo en español o con siglas ("Friburgo", "Club Ada Jaen"). Si hay dudas o no aparece, la página muestra los partidos de esa liga en la casa para elegir el que corresponde.
 - Las equivalencias confirmadas se recuerdan en el navegador hasta que exista el guardado en el repositorio (paso 6). Detalle en `docs/FUENTES.md`.
 
 ### Muestras para construir los extractores
 
-Desde el entorno de desarrollo no se puede abrir Betano ni Sofascore. Para construir cada extractor, el usuario abre las herramientas de desarrollador de Brave (F12), pestaña "Red", carga un partido y guarda las respuestas (HAR). No se programan extractores adivinando el formato de los datos. La muestra se necesita una sola vez por sitio, o de nuevo si el sitio cambia su formato.
+Desde el entorno de desarrollo no se puede abrir Betano ni Sofascore. Para construir cada extractor, el usuario abre las herramientas de desarrollador de Brave (F12), pestaña "Red", carga un partido y guarda las respuestas (HAR). No se programan extractores adivinando el formato de los datos. La muestra se necesita una sola vez por sitio, o de nuevo si el sitio cambia su formato. Cuando ya se conoce la ruta que falta, la página de diagnóstico de la extensión también puede pedirla y guardar la respuesta en un archivo ("Guardar una muestra").
 
 Las muestras no se suben al repositorio (es público): las pruebas usan datos inventados con la misma estructura. Qué muestras hay y cómo se convierte cada dato: `docs/FUENTES.md`.
 
@@ -258,7 +258,7 @@ Se hacen después de que la red base funcione:
 4. Extractor de Betano: mercados y cuotas, y emparejamiento de partidos. En curso: las cuotas de fútbol y el emparejamiento están hechos (`web/js/fuentes/betano.js`); faltan básquet y béisbol.
 5. Motor de análisis real por deporte.
 6. Guardado del historial en el repositorio (la publicación con GitHub Actions ya quedó lista en el paso 2).
-7. Casas de referencia (Apuesta Total y Te Apuesto primero).
+7. Casas de referencia (Apuesta Total y Te Apuesto primero). En curso: Apuesta Total para fútbol está hecho (`web/js/fuentes/apuestatotal.js`): lista de partidos, emparejamiento con Sofascore y cuotas de los 7 mercados. Falta Te Apuesto, que necesita su muestra.
 8. Carga de temporadas pasadas desde Sofascore.
 9. Red neuronal: script de entrenamiento, comparación con el modelo publicado, uso en la página y explicabilidad.
 10. Fases posteriores, en el orden que se decida.

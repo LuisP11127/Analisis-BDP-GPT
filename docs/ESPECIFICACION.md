@@ -258,7 +258,7 @@ Se hacen después de que la red base funcione:
 4. Extractor de Betano: mercados y cuotas, y emparejamiento de partidos. En curso: las cuotas de fútbol y el emparejamiento están hechos (`web/js/fuentes/betano.js`); faltan básquet y béisbol.
 5. Motor de análisis real por deporte.
 6. Guardado del historial en el repositorio (la publicación con GitHub Actions ya quedó lista en el paso 2).
-7. Casas de referencia (Apuesta Total y Te Apuesto primero).
+7. Casas de referencia (Apuesta Total y Te Apuesto primero). En curso: la conversión de las cuotas de fútbol de Apuesta Total está hecha (`web/js/fuentes/apuestatotal.js`). Falta la lista de partidos, que necesita su muestra, para buscar en Apuesta Total los partidos de Sofascore.
 8. Carga de temporadas pasadas desde Sofascore.
 9. Red neuronal: script de entrenamiento, comparación con el modelo publicado, uso en la página y explicabilidad.
 10. Fases posteriores, en el orden que se decida.

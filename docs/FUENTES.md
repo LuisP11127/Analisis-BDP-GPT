@@ -134,6 +134,51 @@ Las ligas y equipos emparejados se guardan como equivalencias (`esquemas/equival
 
 La muestra trae sus mercados, pero no se leen todavía porque falta la muestra de Sofascore de esos deportes. En básquet, el hándicap (`FHOT`) y el total de puntos (`FTPO`) vienen en una tabla (`tableLayout`) en lugar de la lista de selecciones del fútbol.
 
+## Apuesta Total (cuotas de fútbol; falta la lista de partidos)
+
+Muestra: HAR de www.apuestatotal.com del 11 de octubre de 2026, con la lista de fútbol, Como vs AS Roma, un partido de básquet (Houston Rockets vs Dallas Mavericks) y uno de béisbol (Milwaukee Brewers vs Los Angeles Dodgers). Código: `web/js/fuentes/apuestatotal.js`, por ahora solo la conversión de las cuotas de fútbol.
+
+Las apuestas deportivas de Apuesta Total están en un marco (iframe) de un proveedor externo, `prod20392.kmianko.com`, y los pedidos van a la API de ese dominio.
+
+### Pedidos
+
+| Dato | Ruta de la API | Formato |
+|---|---|---|
+| Mercados de varios partidos | `/api/eventlist/eu/markets/all?markets={id}\|{id}:{tipo}\|{tipo}` (con `\|` y `:` codificados) | JSON con nombres de campos |
+| Todos los mercados de un partido | `/api/eventpage/events/{id}?hideX25X75Selections=false` | JSON por posiciones (listas sin nombres de campos), de 130 KB a 2,4 MB por partido |
+| Cambios de los partidos | `/api/pulse/stream/events/RVMtUEUuaFBObA/poll?cursor=…` | Texto con eventos `insert`, `update` y `delete` |
+
+El proyecto usa el primero: pide solo los tipos de mercado que necesita y admite varios partidos en un pedido.
+
+Los pedidos a la API llevan la cabecera `session`, que pone la página del proveedor. En la muestra es una sesión sin cuenta (las páginas tienen `operatorToken=logout`). Falta saber si la API responde sin esa cabecera.
+
+**Falta la lista de partidos.** La muestra no trae ningún pedido con todos los partidos de fútbol: la página ya los tenía cuando empezó la grabación. Solo aparecen unos 50 partidos destacados y los que se agregan durante la grabación. Sin esa lista no se puede buscar en Apuesta Total un partido de Sofascore. El proyecto Analisis-BDP la lee de `/api/pulse/snapshot/events?lang=ES-PE&t=hPNl` (el flujo `RVMtUEUuaFBObA` es `ES-PE.hPNl` en base64); hace falta una muestra de esa respuesta.
+
+Cada partido, en los destacados y en los que se agregan: `_id`, `EventName` ("Como vs AS Roma"), `StartEventDate` (milisegundos en los cambios, texto ISO en los destacados), `SportId` (`"1"` es fútbol), `LeagueName`, `RegionName` (en español: "Inglaterra"), `RegionCode` ("EN"), `IsLive` y `Participants`, con `Name` y `VenueRole` (`Home` o `Away`).
+
+### Mercados de fútbol
+
+| Mercado | Tipo | Nombre en Apuesta Total |
+|---|---|---|
+| `futbol_goles` | `OU200` | Total de goles |
+| `futbol_ambos_anotan` | `QA158` | Ambos equipos anotan |
+| `futbol_corners` | `OU615` | Total tiros de esquina |
+| `futbol_tarjetas` | `OU10` u `OU6010`, por definir | Total de tarjetas |
+| `futbol_tiros_arco` | `OU121` | Disparos a puerta totales |
+| `futbol_remates` | `OU2083` | Disparos totales |
+| `futbol_corners_1t` | `OU14` | 1ra mitad: Total de tiros de esquina |
+
+- En cada selección, `Side` 1 es "Más de" o "Sí" (lado A) y `Side` 3 es "Menos de" o "No" (lado B). La línea viene en `Points` y la cuota en `DisplayOdds.Decimal` (igual a `TrueOdds` en las 965 selecciones de la muestra). Se saltan las selecciones desactivadas (`IsDisabled`) y los mercados suspendidos, y se guardan solo las líneas .5 con las dos cuotas.
+- No se usan `OU0` (total de goles asiático, con líneas .25 y .75), `OU619` (córners asiático) ni `OU621` (córners con tres opciones: más, exactamente y menos).
+- **Tarjetas:** hay dos mercados llamados "Total de tarjetas" con cuotas distintas: `OU10` (líneas 3.5, 4 y 4.5 en la muestra) y `OU6010` (de 2.5 a 5.5). Falta saber cuál cuenta la roja como 2, igual que Betano. Mientras tanto no se leen.
+- En la lista de mercados de la muestra solo aparecen `OU200`, `QA158` y `OU615`. `OU121`, `OU2083` y `OU14` se revisaron en la página de Como vs AS Roma, que trae los mismos mercados (con los mismos ids) en el formato por posiciones.
+
+Con la muestra, Como vs AS Roma da goles 2.5 a 1.61 y 2.32, córners 8.5 a 1.68 y 2.06, tiros al arco 9.5 a 1.81 y 1.87 y remates 29.5 a 1.87 y 1.81. Los córners del primer tiempo solo tenían la línea 4, así que no hay oferta.
+
+### Básquet y béisbol
+
+La muestra trae sus mercados, que se usarán cuando estén esos deportes en Sofascore. Básquet: `OU0` total de puntos con prórroga, `HC0` hándicap y, para el primer tiempo, `OU623` (en la muestra, con una línea entera) y `HC623`; no había props de jugador. Béisbol: `ML0` ganador, `HC0` hándicap y `OU0` total de carreras con entradas extra.
+
 ## Flashscore (muestra recibida, extractor por construir)
 
 Muestra: HAR de www.flashscore.pe del 11 de octubre de 2026, con la portada y el partido Augsburgo 2-2 Bayern Múnich (id `nyUApYI6`). Lo que trae:
@@ -156,4 +201,5 @@ En la muestra, los comentarios tienen 12 entradas marcadas como córner, pero la
 
 - **Sofascore, básquet y béisbol:** falta una muestra de cada deporte (un partido terminado y uno por jugar).
 - **Flashscore:** construir el extractor con la muestra de arriba.
-- **Apuesta Total y Te Apuesto:** falta su muestra.
+- **Apuesta Total:** falta una muestra de la lista de partidos y saber cuál de sus dos mercados de tarjetas cuenta como Betano.
+- **Te Apuesto:** falta su muestra.

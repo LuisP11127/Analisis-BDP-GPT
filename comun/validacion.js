@@ -333,12 +333,12 @@ function revisarPrediccion(nombre, prediccion, codigoMercado, agregar) {
   }
 }
 
-/** Revisa estadistico, red y entrada_red de un registro o de una predicción de ejemplo. */
-function revisarPredicciones(contenedor, codigoMercado, agregar, prefijo = '') {
-  revisarPrediccion(`${prefijo}estadistico`, contenedor.estadistico, codigoMercado, agregar);
-  revisarPrediccion(`${prefijo}red`, contenedor.red, codigoMercado, agregar);
-  if (contenedor.red && !contenedor.entrada_red) {
-    agregar(`${prefijo}si hay predicción de la red, debe guardarse entrada_red`);
+/** Revisa estadistico, red y entrada_red de un registro. */
+function revisarPredicciones(registro, codigoMercado, agregar) {
+  revisarPrediccion('estadistico', registro.estadistico, codigoMercado, agregar);
+  revisarPrediccion('red', registro.red, codigoMercado, agregar);
+  if (registro.red && !registro.entrada_red) {
+    agregar('si hay predicción de la red, debe guardarse entrada_red');
   }
 }
 
@@ -583,7 +583,6 @@ function revisarExtraccion(ruta, contenido, catalogo, partidosGuardados, existeG
     if (calcularCandidata(entrada.ofertas, catalogo.prioridadCasas) === null) {
       agregar('ninguna casa conocida ofrece este mercado');
     }
-    if (entrada.prediccion_ejemplo) revisarPredicciones(entrada.prediccion_ejemplo, entrada.mercado, agregar, 'prediccion_ejemplo.');
   });
   return errores;
 }

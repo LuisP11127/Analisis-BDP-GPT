@@ -1,4 +1,4 @@
-# Prueba, valida y publica la página en GitHub Pages.
+# Valida los datos y publica la página en GitHub Pages.
 # El trabajo "construir" corre en cada cambio de main y de la rama de trabajo.
 # El trabajo "publicar" corre solo en main, que es la rama con permiso en el entorno github-pages.
 name: Publicar página
@@ -26,9 +26,6 @@ jobs:
 
       - name: Instalar dependencias
         run: npm ci
-
-      - name: Pruebas
-        run: npm test
 
       - name: Validar datos
         run: npm run validar

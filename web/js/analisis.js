@@ -3,16 +3,7 @@
 
 import { calcularCandidata, idRegistro } from '../../comun/reglas.js';
 
-/**
- * Modelo de prueba: usa las predicciones ficticias que trae la extracción de ejemplo.
- * El análisis estadístico real (paso 5) tendrá la misma forma: predecir(entrada, partido).
- */
-export const modeloDeEjemplo = {
-  nombre: 'Predicciones de ejemplo',
-  predecir: (entrada) => entrada.prediccion_ejemplo ?? { estadistico: null, red: null, entrada_red: null },
-};
-
-/** Modelo para los datos reales mientras no exista el análisis estadístico (paso 5): no predice nada. */
+/** Modelo mientras no existan el análisis estadístico (paso 5) ni la red neuronal (paso 9): no predice nada. */
 export const modeloSinAnalisis = {
   nombre: 'Sin análisis todavía',
   predecir: () => ({ estadistico: null, red: null, entrada_red: null }),
@@ -98,24 +89,4 @@ export function analizar({ extraccion, seleccion, config, modelo, ahora }) {
     });
   }
   return { deportes, registros };
-}
-
-/** Partidos de la extracción agrupados por deporte y liga, para la lista de selección. */
-export function agruparPartidos(extraccion, config) {
-  const conCuotas = new Map();
-  for (const entrada of extraccion.mercados) {
-    if (!conCuotas.has(entrada.partido_id)) conCuotas.set(entrada.partido_id, new Set());
-    conCuotas.get(entrada.partido_id).add(entrada.mercado);
-  }
-  return config.mercados.deportes.map((deporte) => {
-    const ligas = new Map();
-    for (const partido of extraccion.partidos.filter((p) => p.deporte === deporte.codigo)) {
-      if (!ligas.has(partido.liga.id)) ligas.set(partido.liga.id, { liga: partido.liga, partidos: [] });
-      ligas.get(partido.liga.id).partidos.push({ partido, mercadosConCuotas: conCuotas.get(partido.id)?.size ?? 0 });
-    }
-    const lista = [...ligas.values()]
-      .map((l) => ({ ...l, partidos: l.partidos.sort((a, b) => new Date(a.partido.inicio) - new Date(b.partido.inicio)) }))
-      .sort((a, b) => (a.liga.pais ?? '').localeCompare(b.liga.pais ?? '') || a.liga.nombre.localeCompare(b.liga.nombre));
-    return { deporte, ligas: lista };
-  });
 }

@@ -19,8 +19,6 @@ const PRUEBAS = {
   sofascore: [
     // Lista de torneos de fútbol del día en Lima: es lo primero que pide la página del proyecto.
     { ruta: (hoy) => `/api/v1/sport/football/scheduled-tournaments/${hoy}/page/1`, contar: (d) => `${d?.scheduled?.length ?? 0} torneos en la primera página` },
-    // Todos los partidos del día en una sola lista: es la que usa el proyecto Analisis-BDP.
-    { ruta: (hoy) => `/api/v1/sport/football/scheduled-events/${hoy}`, contar: (d) => `${d?.events?.length ?? 0} partidos en la lista del día` },
   ],
   betano: [
     // Página de liga con la que se lee el catálogo de ligas.

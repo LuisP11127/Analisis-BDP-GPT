@@ -1,5 +1,5 @@
-// Partes del modo con datos reales que no dependen de la pantalla: qué partidos se pueden analizar,
-// cómo se ordenan las ligas, cómo se arma la extracción del día y el resumen de los últimos partidos.
+// Partes de la página que no dependen de la pantalla: qué partidos se pueden analizar, cómo se arma la
+// extracción del día y el resumen de los últimos partidos.
 
 import { totalTarjetas } from '../../comun/reglas.js';
 import { fechaLocal } from '../../comun/rutas.js';
@@ -11,34 +11,11 @@ export const hoyEnLima = (ahora = new Date()) => fechaLocal(ahora);
 export const SEGUNDOS_POR_PARTIDO = 25;
 
 /**
- * Un partido real solo se puede analizar si todavía no empezó: los datos previos y las cuotas tienen que
- * ser anteriores al inicio. Con datos de prueba todos se pueden elegir.
+ * Un partido solo se puede analizar si todavía no empezó: los datos previos y las cuotas tienen que ser
+ * anteriores al inicio.
  */
-export function seleccionable(partido, { prueba, ahora = new Date() }) {
-  if (prueba) return true;
+export function seleccionable(partido, ahora = new Date()) {
   return partido.estado === 'programado' && new Date(partido.inicio).getTime() > new Date(ahora).getTime();
-}
-
-const normalizar = (texto) => texto.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
-
-/** Ligas que coinciden con la búsqueda por país o nombre. */
-export function filtrarLigas(ligas, texto) {
-  const buscado = normalizar(texto ?? '');
-  if (!buscado) return ligas;
-  return ligas.filter((liga) => normalizar(`${liga.pais ?? ''} ${liga.nombre}`).includes(buscado));
-}
-
-/** Ligas agrupadas por país, en orden alfabético de país; dentro de cada país, en el orden de Sofascore. */
-export function agruparLigasPorPais(ligas) {
-  const paises = new Map();
-  for (const liga of ligas) {
-    const pais = liga.pais ?? 'Otras';
-    if (!paises.has(pais)) paises.set(pais, []);
-    paises.get(pais).push(liga);
-  }
-  return [...paises.entries()]
-    .map(([pais, lista]) => ({ pais, ligas: lista, partidos: lista.reduce((n, l) => n + l.partidos, 0) }))
-    .sort((a, b) => a.pais.localeCompare(b.pais, 'es'));
 }
 
 /**

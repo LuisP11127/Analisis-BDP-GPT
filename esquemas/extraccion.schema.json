@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://luisp11127.github.io/Analisis-BDP-GPT/esquemas/extraccion.schema.json",
   "title": "Extracción del día",
-  "description": "Lo que la extensión le entrega a la página: los partidos del día de todas las ligas y las cuotas de sus mercados. No se guarda en datos/. En ejemplos/extraccion/ hay extracciones de prueba.",
+  "description": "Lo que la extensión le entrega a la página: los partidos del día de todas las ligas y las cuotas de sus mercados. No se guarda en datos/.",
   "type": "object",
   "required": ["version_formato", "fecha_local", "generado_en", "partidos", "mercados"],
   "properties": {
@@ -32,17 +32,6 @@
           "type": "array",
           "minItems": 1,
           "items": { "$ref": "registro.schema.json#/$defs/oferta" }
-        },
-        "prediccion_ejemplo": {
-          "description": "Solo en extracciones de prueba: predicciones ficticias que la página muestra mientras no exista el análisis estadístico (paso 5). La extensión nunca lo envía. estadistico null significa que no hay datos suficientes.",
-          "type": "object",
-          "required": ["estadistico", "red"],
-          "properties": {
-            "estadistico": { "anyOf": [{ "type": "null" }, { "$ref": "registro.schema.json#/$defs/prediccion" }] },
-            "red": { "anyOf": [{ "type": "null" }, { "$ref": "registro.schema.json#/$defs/prediccion" }] },
-            "entrada_red": { "$ref": "registro.schema.json#/properties/entrada_red" }
-          },
-          "additionalProperties": false
         }
       },
       "additionalProperties": false

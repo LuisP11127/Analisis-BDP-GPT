@@ -6,7 +6,7 @@ import path from 'node:path';
 import { RAIZ } from './cargar.mjs';
 
 const SITIO = path.join(RAIZ, '_sitio');
-const CARPETAS = ['web', 'comun', 'config', 'esquemas', 'ejemplos', 'datos'];
+const CARPETAS = ['web', 'comun', 'config', 'esquemas', 'datos'];
 
 await rm(SITIO, { recursive: true, force: true });
 await mkdir(SITIO);

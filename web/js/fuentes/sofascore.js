@@ -22,6 +22,7 @@ const ZONA_LIMA = '-18000';
 const LADOS = ['local', 'visitante'];
 
 export const RUTAS = {
+  ligasFijas: (pais, deporte) => `/api/v1/config/default-unique-tournaments/${pais}/${DEPORTES[deporte]}`,
   torneosDelDia: (deporte, fecha, pagina) => `/api/v1/sport/${DEPORTES[deporte]}/scheduled-tournaments/${fecha}/page/${pagina}`,
   partidosDeLiga: (liga, fecha) => `/api/v1/unique-tournament/${liga}/scheduled-events/${fecha}`,
   partido: (id) => `/api/v1/event/${id}`,
@@ -467,7 +468,22 @@ export function elegirUltimos(eventos, idEquipo, condicion, inicio, cantidad = C
 
 // ---------------------------------------------------------------- carga con la extensión
 
+/**
+ * Ids de las ligas que Sofascore tiene fijas para los usuarios de un país, en su orden. En la muestra, para
+ * Perú fueron 22: Liga 1, Liga 2, Premier League, LaLiga, Libertadores, Champions League y otras. Al abrir
+ * una fecha, la página de Sofascore pidió los partidos de casi todas las que jugaban ese día.
+ */
+export function ligasFijas(respuesta) {
+  return (respuesta?.uniqueTournaments ?? []).filter((t) => Number.isInteger(t?.id)).map((t) => conId(t.id));
+}
+
 const ahoraIso = () => new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
+
+/** Ligas fijas de Sofascore para un país ("PE"). Si Sofascore no tiene la lista, devuelve una lista vacía. */
+export async function cargarLigasFijas(obtener, { pais = 'PE', deporte = 'futbol' } = {}) {
+  const { datos } = await obtener(RUTAS.ligasFijas(pais, deporte));
+  return ligasFijas(datos);
+}
 
 /** Ligas de un deporte con partidos en la fecha de Lima. Recorre todas las páginas de Sofascore. */
 export async function cargarLigas(obtener, fecha, { deporte = 'futbol', progreso = () => {} } = {}) {

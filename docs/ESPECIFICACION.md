@@ -70,15 +70,15 @@ Margen de la casa de una línea: `1/cuota_A + 1/cuota_B - 1`.
 - **Casa principal:** Betano Perú (betano.pe).
 - **Casas de referencia:** Apuesta Total y Te Apuesto para empezar. Las demás se agregan cuando esas dos funcionen bien.
 - **Partidos, ligas, estadísticas y resultados:** Sofascore. En la página se cargan todas las ligas que aparecen en Sofascore para cada deporte, y el usuario elige cuáles analizar.
-- **Fuente complementaria de estadísticas:** Flashscore. Completa los datos que falten en Sofascore (bajas, alineaciones probables, estadísticas) y su sección de comentarios tiene el minuto de cada corner.
+- **Fuente complementaria de estadísticas:** Flashscore. Completa los datos que falten en Sofascore (bajas, alineaciones probables, estadísticas) y su sección de comentarios tiene el minuto de cada corner. Sus datos sirven para los dos análisis, el estadístico y la red neuronal, igual que los de Sofascore.
 - Muchas ligas pequeñas no tienen en Sofascore datos de corners, tiros, tarjetas o estadísticas por jugador. En esos casos se busca en Flashscore; si tampoco hay, el análisis de esos mercados queda incompleto o no se hace.
 
 ## Arquitectura
 
 - **Extensión de navegador** (Brave, Manifest V3, instalada en modo desarrollador con "Cargar descomprimida"). Lee los datos de Betano, Sofascore, Flashscore y las casas de referencia y se los pasa a la página web. Hace los pedidos desde una pestaña del sitio, como la propia página del sitio (en Apuesta Total, dentro del marco de su proveedor de apuestas); si no hay una abierta, la abre en segundo plano y la cierra después de un minuto sin uso. Los pedidos a un sitio van de a uno, con una pausa de 300 a 400 ms, para no cargarlo. La extensión devuelve las respuestas tal cual: la conversión al formato del proyecto está en la página (`web/js/fuentes/`). Si un sitio cambia su formato, hay que ajustar su convertidor. Si la extensión no consigue un dato, se ingresa a mano. Instalación y uso: `extension/README.md`.
-- **Página web** publicada en GitHub Pages: https://luisp11127.github.io/Analisis-BDP-GPT/web/. Carga los partidos del día, permite filtrar por deporte y liga, seleccionar partidos y lanzar el análisis. El análisis se ejecuta en el navegador. Tiene una sección separada para el historial. Mientras no estén la extensión ni el análisis real, funciona con datos de prueba ficticios.
+- **Página web** publicada en GitHub Pages: https://luisp11127.github.io/Analisis-BDP-GPT/web/. Carga los partidos del día, permite filtrar por deporte y liga, seleccionar partidos y lanzar el análisis. El análisis se ejecuta en el navegador. Tiene una sección separada para el historial. Funciona solo con datos reales leídos con la extensión: los datos de prueba ficticios se quitaron a pedido del usuario.
 - **Repositorio** (público): guarda el historial en archivos de datos. La página escribe en el repositorio con un token de GitHub de alcance limitado a este repositorio. El token se guarda solo en el navegador, nunca en el repositorio.
-- **GitHub Actions:** ejecuta las pruebas y valida los datos en cada cambio, y publica la página cuando los cambios llegan a `main`. El trabajo se hace en una rama aparte y se une a `main` con un pull request cuando el usuario lo aprueba. Más adelante entrenará la red neuronal con el historial. No se usa para extraer datos, porque no tiene acceso al navegador y los sitios suelen bloquear conexiones desde servidores.
+- **GitHub Actions:** valida los datos en cada cambio y publica la página cuando los cambios llegan a `main`. No hay pruebas automáticas: el usuario prefirió quitarlas y avisar los errores que encuentre. El trabajo se hace en una rama aparte y se une a `main` con un pull request cuando el usuario lo aprueba. Más adelante entrenará la red neuronal con el historial. No se usa para extraer datos, porque no tiene acceso al navegador y los sitios suelen bloquear conexiones desde servidores.
 - La extracción solo funciona en la computadora (las extensiones no funcionan en el navegador del celular). Desde el celular se pueden ver los resultados y el historial.
 
 ### Emparejamiento de partidos
@@ -93,19 +93,23 @@ Cada sitio escribe los nombres de los equipos de forma distinta (por ejemplo "Ma
 
 Desde el entorno de desarrollo no se puede abrir Betano ni Sofascore. Para construir cada extractor, el usuario abre las herramientas de desarrollador de Brave (F12), pestaña "Red", carga un partido y guarda las respuestas (HAR). No se programan extractores adivinando el formato de los datos. La muestra se necesita una sola vez por sitio, o de nuevo si el sitio cambia su formato. Cuando ya se conoce la ruta que falta, la página de diagnóstico de la extensión también puede pedirla y guardar la respuesta en un archivo ("Guardar una muestra").
 
-Las muestras no se suben al repositorio (es público): las pruebas usan datos inventados con la misma estructura. Qué muestras hay y cómo se convierte cada dato: `docs/FUENTES.md`.
+Las muestras no se suben al repositorio (es público). Qué muestras hay y cómo se convierte cada dato: `docs/FUENTES.md`.
 
-### Partidos reales del día
+### Partidos del día
 
-Flujo en la página con datos reales:
+La vista sigue el modelo de la página del proyecto Analisis-BDP (https://luisp11127.github.io/Analisis-BDP/), que el usuario dio de referencia:
 
-1. Se cargan todas las ligas que tienen partidos en la fecha elegida, en hora de Lima, con la cantidad de partidos de cada una. Primero las que Sofascore destaca; después todas, por país. Quedan marcadas las ligas que se analizaron la última vez.
-2. El usuario elige ligas y se cargan sus partidos.
-3. El usuario elige partidos y pulsa **Analizar**. En ese momento se leen los datos previos de cada partido: detalle (árbitro), alineaciones y bajas, tabla y los últimos partidos de cada equipo con sus estadísticas.
+1. Al abrir la página con la extensión, o al cambiar la fecha (‹ ›, **Hoy** o el calendario), se cargan solas todas las ligas que tienen partidos en la fecha elegida, en hora de Lima, con la cantidad de partidos de cada una, y los partidos de las ligas que Sofascore tiene fijas para Perú (Liga 1, Liga 2, Premier League, LaLiga, Libertadores y otras). Esas ligas van primero, abiertas y en el orden de Sofascore; después todas las demás, por país.
+2. Las ligas de los partidos analizados la última vez se cargan solas, quedan abiertas y con sus partidos marcados. Los partidos de cualquier otra liga se leen al abrirla o al marcarla.
+3. El usuario marca ligas completas o partidos sueltos y pulsa **Análisis estadístico**, **Análisis red neuronal** o **Ambos análisis**. En ese momento se leen los datos previos de cada partido (detalle con el árbitro, alineaciones y bajas, tabla y los últimos partidos de cada equipo con sus estadísticas) y las cuotas de las casas. Una ventana muestra el avance y permite cancelar. Al terminar se muestra el resultado del método elegido.
+
+- Arriba de la lista: buscar por liga, país o equipo (los equipos, solo en las ligas ya leídas), **Solo por jugar**, **Abrir todo** (las ligas ya leídas), **Cerrar todo**, **Quitar marcas** y ↻, que vuelve a leer las ligas y los partidos sin perder las marcas.
+- Mientras no existan el análisis estadístico (paso 5) y la red neuronal (paso 9), los tres botones leen los mismos datos y el resultado muestra la línea candidata de cada mercado.
 
 - Solo se pueden analizar partidos que todavía no empiezan, porque los datos previos y las cuotas tienen que ser anteriores al inicio.
 - **Últimos partidos:** los últimos 10 partidos terminados de cada equipo en la misma condición: el local, de local; el visitante, de visita. Incluye todas las competiciones; cada partido guarda su liga, así el análisis puede filtrar después.
 - Los datos leídos se pueden descargar en el formato de la extracción del día.
+- La extensión no recorre la página de Sofascore bajando por ella, como hace el proyecto Analisis-BDP: pide a la API lo mismo que pide esa página (la lista de torneos y los partidos de cada liga), con la conexión, las cookies y la cabecera del usuario. En la muestra, la página de Sofascore pidió los partidos de solo 10 ligas al abrir cada fecha: recorrerla trae únicamente lo que la página llega a pedir. Sofascore no tiene una lista con todos los partidos del día en un solo pedido (`/api/v1/sport/football/scheduled-events/{fecha}` respondió 404 desde el navegador del usuario el 11 de octubre de 2026).
 
 ## Método de análisis
 
@@ -253,7 +257,7 @@ Se hacen después de que la red base funcione:
 ## Orden de construcción
 
 1. Estructura del repositorio y formato de los datos (partido, mercado, análisis, registro del historial). Hecho: ver `docs/FORMATO_DATOS.md`.
-2. Página con datos de prueba: carga, filtros, análisis y sección de historial. Incluye la publicación en GitHub Pages con GitHub Actions. Hecho: ver `web/`.
+2. Página con datos de prueba: carga, filtros, análisis y sección de historial. Incluye la publicación en GitHub Pages con GitHub Actions. Hecho: ver `web/`. Después, a pedido del usuario, se quitaron los datos de prueba y las pruebas automáticas, y la página pasó a funcionar solo con datos reales.
 3. Extractor de Sofascore: partidos del día, ligas, estadísticas y resultados. Después, extractor de Flashscore para completar datos. En curso: la extensión y el extractor de Sofascore para fútbol están hechos (`extension/`, `web/js/fuentes/sofascore.js`). Faltan Flashscore y el básquet y el béisbol de Sofascore, que necesitan su muestra.
 4. Extractor de Betano: mercados y cuotas, y emparejamiento de partidos. En curso: las cuotas de fútbol y el emparejamiento están hechos (`web/js/fuentes/betano.js`); faltan básquet y béisbol.
 5. Motor de análisis real por deporte.

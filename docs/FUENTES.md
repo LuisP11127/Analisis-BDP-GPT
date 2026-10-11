@@ -1,6 +1,6 @@
 # De dónde sale cada dato
 
-Cómo se leen los datos de cada sitio y cómo se convierten al formato de `docs/FORMATO_DATOS.md`. Cada extractor se construyó con una muestra real (HAR) de las respuestas del sitio. Las muestras no se suben al repositorio: las pruebas usan datos inventados con la misma estructura (`pruebas/datos/`).
+Cómo se leen los datos de cada sitio y cómo se convierten al formato de `docs/FORMATO_DATOS.md`. Cada extractor se construyó con una muestra real (HAR) de las respuestas del sitio. Las muestras no se suben al repositorio.
 
 ## Sofascore (fútbol)
 
@@ -10,6 +10,7 @@ Muestra: HAR de www.sofascore.com del 10 y 11 de octubre de 2026, con la lista d
 
 | Dato | Ruta de la API |
 |---|---|
+| Ligas fijas para Perú | `/api/v1/config/default-unique-tournaments/PE/football` |
 | Ligas del día | `/api/v1/sport/football/scheduled-tournaments/{fecha}/page/{n}`, página por página |
 | Partidos de una liga | `/api/v1/unique-tournament/{liga}/scheduled-events/{fecha}` |
 | Detalle del partido (árbitro) | `/api/v1/event/{id}` |
@@ -24,9 +25,11 @@ Una respuesta 404 significa que el dato no existe (por ejemplo, una liga sin tab
 ### Ligas y partidos del día
 
 - La lista de torneos trae, por cada torneo, cuántos partidos tiene en cada zona horaria. Se usa la de Lima (`-18000`, UTC−5). Se dejan fuera los torneos sin partidos ese día en Lima.
-- La liga es el `uniqueTournament` de Sofascore; varios torneos (grupos, fases) de la misma liga se suman en una. El país es la categoría (`category.name`, en inglés, como lo da Sofascore). Las ligas que Sofascore destaca (prioridad mayor que 0) se muestran primero.
+- La liga es el `uniqueTournament` de Sofascore; varios torneos (grupos, fases) de la misma liga se suman en una. El país es la categoría (`category.name`, en inglés, como lo da Sofascore).
+- Las ligas fijas para Perú (`uniqueTournaments`, 22 en la muestra: Liga 1, Liga 2, Premier League, LaLiga, Libertadores, Champions League y otras) se muestran primero, en ese orden, y sus partidos se leen solos. La prioridad de cada torneo en la lista del día no sirve para elegir ligas destacadas: en la muestra, 56 de los 100 torneos de la primera página tenían prioridad mayor que 0.
 - Los torneos sin `uniqueTournament` se dejan fuera, porque la muestra no muestra cómo pedir sus partidos.
 - Los partidos de una liga para una fecha incluyen también partidos de los días vecinos: se dejan solo los de la fecha de Lima. En la muestra, un solo pedido por liga trajo todos los partidos del día en Lima.
+- La propia página de Sofascore usa los mismos pedidos. En la muestra, al abrir cada fecha pidió la lista de torneos y los partidos de 10 ligas, casi todas de las que tiene fijas para Perú (`/api/v1/config/default-unique-tournaments/PE/football`: Liga 1, Premier League, LaLiga, etc.). No hay una lista con todos los partidos del día en un pedido: `/api/v1/sport/football/scheduled-events/{fecha}` respondió 404 desde el navegador del usuario.
 
 ### Partido
 

@@ -9,11 +9,9 @@ config/        catálogo de mercados y lista de casas y fuentes
 esquemas/      definición de cada tipo de archivo (JSON Schema)
 comun/         reglas y validación en JavaScript, sin dependencias de Node
 datos/         datos reales: partidos, historial y equivalencias de nombres
-ejemplos/      datos ficticios con el mismo formato, para pruebas y para la página
-herramientas/  validador, generador de ejemplos, índices, servidor local y armado del sitio
-pruebas/       pruebas automáticas
+herramientas/  validador, índices, servidor local y armado del sitio
 web/           página
-extension/     extensión de Brave (pasos 3 y 4)
+extension/     extensión de Brave (pasos 3, 4 y 7)
 entrenamiento/ red neuronal (paso 9)
 docs/          especificación, este documento y de dónde sale cada dato (FUENTES.md)
 ```
@@ -187,7 +185,7 @@ Campos de `candidata`:
 - `prob_sin_margen_a`: probabilidad del lado A sin el margen de la casa. La del lado B es 1 menos ese valor.
 - `promedio_mercado_a`: promedio de esa misma probabilidad en las otras casas que ofrecen la misma línea, o `null` si ninguna la ofrece.
 
-Ejemplo con Betano (goles, Atlético Muestra vs Deportivo Ejemplo en los datos de ejemplo):
+Ejemplo con Betano (goles, cuotas inventadas):
 
 | Línea | Más | Menos | Diferencia | Margen | |
 |---|---|---|---|---|---|
@@ -256,26 +254,13 @@ Es lo que la extensión le entregará a la página: los partidos del día de tod
 
 Las ofertas tienen el mismo formato que en el historial. Las cuotas y la previa tienen que extraerse antes del inicio del partido. Los partidos de `previa.ultimos_partidos` tienen que estar guardados en `datos/` o venir en `partidos_anteriores`. Al guardar el historial (paso 6), los `partidos_anteriores` pasan a `datos/partidos/`.
 
-Con datos reales, la página arma la extracción a partir de Sofascore y la puede descargar desde **Resultado**. De dónde sale cada dato está en `docs/FUENTES.md`.
-
-En `ejemplos/extraccion/` hay una extracción de prueba. Sus mercados traen además `prediccion_ejemplo`, con predicciones ficticias que la página muestra mientras no exista el análisis estadístico (paso 5). La extensión nunca envía ese campo. Si `prediccion_ejemplo.estadistico` es `null`, el mercado se muestra como "sin datos suficientes" y no genera registro.
-
-## Datos de ejemplo
-
-`npm run ejemplos` genera `ejemplos/datos/` y `ejemplos/extraccion/` con `herramientas/generar-ejemplos.mjs` y vuelve a escribir los índices. Los ejemplos no se editan a mano: si cambia el formato, se cambia el generador.
-
-Los datos se simulan con equipos inventados y una semilla fija, así que cada ejecución produce los mismos archivos. Incluyen:
-
-- Seis ligas: dos de fútbol, una copa de fútbol solo con partidos del día y sin cuotas, dos de básquet (una por cuartos y otra por mitades) y una de béisbol.
-- Partidos guardados desde el 20 de setiembre de 2026, con estadísticas, y registros del historial del 4 al 10 de octubre con resultados, apuestas, props anuladas porque el jugador no jugó y un partido de béisbol suspendido.
-- La extracción del 11 de octubre de 2026, con mercados que no ofrece ninguna casa y uno sin datos suficientes.
+La página arma la extracción con lo que lee de Sofascore y de las casas, y la puede descargar desde **Resultado**. De dónde sale cada dato está en `docs/FUENTES.md`.
 
 ## Validación
 
 ```
 npm install          # una sola vez
-npm run validar      # revisa datos/, ejemplos/datos/, ejemplos/extraccion/ y sus índices
-npm test             # pruebas automáticas
+npm run validar      # revisa datos/ y sus índices
 ```
 
 Además de los esquemas, el validador revisa:
@@ -288,7 +273,6 @@ Además de los esquemas, el validador revisa:
 - Que el marcador coincida con los goles, los períodos o las entradas; que haya prórroga solo después de un empate, y que un partido de béisbol finalizado no termine empatado.
 - Que cada registro apunte a un partido guardado, con los mismos equipos, liga y hora.
 - Que `prob_roja` aparezca solo en el mercado de tarjetas.
-- En las extracciones: que los partidos sean del día del archivo, que cada mercado sea de un partido de la extracción y que las cuotas sean anteriores al inicio. Los `partidos_anteriores` tienen que estar finalizados, con marcador, cumplir las reglas de un partido guardado y no repetir partidos del día.
+- En las extracciones (`validarExtracciones` de `comun/validacion.js`; `npm run validar` no las revisa porque no se guardan en el repositorio): que los partidos sean del día del archivo, que cada mercado sea de un partido de la extracción y que las cuotas sean anteriores al inicio. Los `partidos_anteriores` tienen que estar finalizados, con marcador, cumplir las reglas de un partido guardado y no repetir partidos del día.
 - Que cada `indice.json` liste exactamente los archivos de su carpeta.
 
-Los datos de ejemplo cumplen todas estas reglas.

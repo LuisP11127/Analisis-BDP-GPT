@@ -23,10 +23,8 @@ Para actualizarla cuando cambie el repositorio: reemplaza la carpeta por la nuev
 ## Uso
 
 1. Abre la página: https://luisp11127.github.io/Analisis-BDP-GPT/web/
-2. Arriba a la derecha, en **Datos**, elige **Reales**.
-3. Elige la fecha y pulsa **Cargar ligas**. Salen todas las ligas de fútbol que tienen partidos ese día en hora de Lima.
-4. Marca las ligas que te interesan y pulsa **Cargar partidos**. La página recuerda las ligas que analizaste la última vez.
-5. Elige los partidos y pulsa **Analizar**. Por cada partido se leen hasta unos 65 datos de Sofascore (unos 20 a 30 segundos por partido) y después sus cuotas en Betano y en Apuesta Total.
+2. Las ligas de fútbol del día (hora de Lima) y los partidos de las principales se cargan solos. Los partidos de las ligas que analizaste la última vez quedan marcados. Para ver otra liga, ábrela o márcala. Si cambias la fecha, todo se vuelve a cargar solo.
+3. Marca ligas completas o partidos sueltos y pulsa **Análisis estadístico**, **Análisis red neuronal** o **Ambos análisis**. Por cada partido se leen hasta unos 65 datos de Sofascore (unos 20 a 30 segundos por partido) y después sus cuotas en Betano y en Apuesta Total. Una ventana muestra el avance; puedes cancelar.
 
 Solo se pueden analizar partidos que todavía no empiezan. En **Resultado**, cada partido tiene una sección **Datos de Sofascore** con lo leído, una línea por casa con el partido que se encontró y la línea candidata de cada mercado: sale de Betano y, si Betano no tiene ese mercado, de Apuesta Total. Si la página no está segura de cuál es el partido en una casa, te muestra los partidos de esa liga para que elijas; la elección se recuerda para la próxima vez. El botón **Descargar los datos leídos** guarda todo en un archivo JSON.
 

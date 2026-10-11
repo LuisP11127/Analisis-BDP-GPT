@@ -14,18 +14,12 @@
   <header class="cabecera">
     <div class="cabecera-fila contenedor">
       <p class="marca">Análisis BDP</p>
-      <label class="fuente">Datos
-        <select id="fuente">
-          <option value="prueba">De prueba</option>
-          <option value="real">Reales</option>
-        </select>
-      </label>
+      <nav class="pestanas" aria-label="Secciones">
+        <a href="#partidos" data-pestana="partidos">Partidos del día</a>
+        <a href="#resultado" data-pestana="resultado">Resultado</a>
+        <a href="#historial" data-pestana="historial">Historial</a>
+      </nav>
     </div>
-    <nav class="pestanas contenedor" aria-label="Secciones">
-      <a href="#partidos" data-pestana="partidos">Partidos del día</a>
-      <a href="#resultado" data-pestana="resultado">Resultado</a>
-      <a href="#historial" data-pestana="historial">Historial</a>
-    </nav>
   </header>
 
   <main class="contenedor">
@@ -36,6 +30,7 @@
   </main>
 
   <dialog id="dialogo-apuesta" class="dialogo" aria-label="Registrar apuesta"></dialog>
+  <dialog id="dialogo-avance" class="dialogo" aria-label="Análisis en curso"></dialog>
   <noscript><p class="contenedor">La página necesita JavaScript.</p></noscript>
 </body>
 </html>

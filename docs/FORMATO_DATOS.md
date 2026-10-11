@@ -15,7 +15,7 @@ pruebas/       pruebas automáticas
 web/           página
 extension/     extensión de Brave (pasos 3 y 4)
 entrenamiento/ red neuronal (paso 9)
-docs/          especificación y este documento
+docs/          especificación, este documento y de dónde sale cada dato (FUENTES.md)
 ```
 
 Los archivos de `comun/` no usan nada propio de Node, para que la página y la extensión puedan usar las mismas reglas.
@@ -249,9 +249,12 @@ Es lo que la extensión le entregará a la página: los partidos del día de tod
 | `fecha_local` | Día de la extracción; el archivo se llama `AAAA-MM-DD.json` |
 | `generado_en` | Hora en que se armó la extracción |
 | `partidos` | Partidos del día con el formato de partido; los que se pueden analizar traen `previa` |
+| `partidos_anteriores` | Opcional. Partidos ya terminados, con sus estadísticas, que usa la `previa` de los partidos del día y que todavía no están guardados en `datos/` |
 | `mercados` | Por partido y mercado (y jugador y estadística en las props): `partido_id`, `mercado` y `ofertas` |
 
-Las ofertas tienen el mismo formato que en el historial. Las cuotas y la previa tienen que extraerse antes del inicio del partido, y los partidos de `previa.ultimos_partidos` tienen que estar guardados en `datos/`.
+Las ofertas tienen el mismo formato que en el historial. Las cuotas y la previa tienen que extraerse antes del inicio del partido. Los partidos de `previa.ultimos_partidos` tienen que estar guardados en `datos/` o venir en `partidos_anteriores`. Al guardar el historial (paso 6), los `partidos_anteriores` pasan a `datos/partidos/`.
+
+Con datos reales, la página arma la extracción a partir de Sofascore y la puede descargar desde **Resultado**. De dónde sale cada dato está en `docs/FUENTES.md`.
 
 En `ejemplos/extraccion/` hay una extracción de prueba. Sus mercados traen además `prediccion_ejemplo`, con predicciones ficticias que la página muestra mientras no exista el análisis estadístico (paso 5). La extensión nunca envía ese campo. Si `prediccion_ejemplo.estadistico` es `null`, el mercado se muestra como "sin datos suficientes" y no genera registro.
 
@@ -283,7 +286,7 @@ Además de los esquemas, el validador revisa:
 - Que el marcador coincida con los goles, los períodos o las entradas; que haya prórroga solo después de un empate, y que un partido de béisbol finalizado no termine empatado.
 - Que cada registro apunte a un partido guardado, con los mismos equipos, liga y hora.
 - Que `prob_roja` aparezca solo en el mercado de tarjetas.
-- En las extracciones: que los partidos sean del día del archivo, que cada mercado sea de un partido de la extracción y que las cuotas sean anteriores al inicio.
+- En las extracciones: que los partidos sean del día del archivo, que cada mercado sea de un partido de la extracción y que las cuotas sean anteriores al inicio. Los `partidos_anteriores` tienen que estar finalizados, con marcador, cumplir las reglas de un partido guardado y no repetir partidos del día.
 - Que cada `indice.json` liste exactamente los archivos de su carpeta.
 
 Los datos de ejemplo cumplen todas estas reglas.

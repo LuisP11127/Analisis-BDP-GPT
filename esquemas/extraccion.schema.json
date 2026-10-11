@@ -10,6 +10,11 @@
     "fecha_local": { "$ref": "comun.schema.json#/$defs/fecha" },
     "generado_en": { "$ref": "comun.schema.json#/$defs/fecha_hora" },
     "partidos": { "type": "array", "items": { "$ref": "partido.schema.json" } },
+    "partidos_anteriores": {
+      "description": "Partidos ya terminados que usa la previa de los partidos del día (previa.ultimos_partidos) y que todavía no están guardados en datos/. Al guardar el historial (paso 6) pasan a datos/partidos/.",
+      "type": "array",
+      "items": { "$ref": "partido.schema.json" }
+    },
     "mercados": { "type": "array", "items": { "$ref": "#/$defs/mercado" } }
   },
   "additionalProperties": false,

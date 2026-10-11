@@ -463,6 +463,42 @@ fieldset {
   font-weight: 500;
 }
 
+/* Datos reales: progreso de la lectura, errores y ligas por país. */
+.progreso {
+  margin: 0 0 0.75rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--radio);
+  background: var(--acento-suave);
+}
+
+.errores {
+  margin: 0.35rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.pais > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.pais > summary::-webkit-details-marker { display: none; }
+
+.pais > summary .liga-nombre::before {
+  content: "▸ ";
+  color: var(--texto-suave);
+}
+
+.pais[open] > summary .liga-nombre::before { content: "▾ "; }
+
+.datos-fuente {
+  margin: 0;
+  padding: 0.6rem 1rem;
+}
+
+.partido > p.apagado { margin: 0; padding: 0.6rem 1rem; }
+
+.datos-fuente p { margin: 0.35rem 0; }
+
 /* ---------------------------------------------------------------- resultado */
 
 .deporte { margin-bottom: 1.5rem; }
@@ -697,6 +733,18 @@ fieldset {
 
 .tabla-resumen td { white-space: nowrap; }
 
+.tabla-ultimos td:nth-child(n+3) {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.tabla-ultimos tfoot th,
+.tabla-ultimos tfoot td {
+  font-weight: 600;
+  border-top: 2px solid var(--borde);
+  border-bottom: 0;
+}
+
 .tabla-resumen tfoot th,
 .tabla-resumen tfoot td {
   font-weight: 600;
@@ -726,7 +774,8 @@ fieldset {
 /* En pantallas angostas el historial y su resumen se muestran como tarjetas. */
 @media (max-width: 760px) {
   .tabla-historial thead,
-  .tabla-resumen thead { display: none; }
+  .tabla-resumen thead,
+  .tabla-ultimos thead { display: none; }
 
   .tabla-historial,
   .tabla-historial tbody,
@@ -737,27 +786,40 @@ fieldset {
   .tabla-resumen tfoot,
   .tabla-resumen tr,
   .tabla-resumen th,
-  .tabla-resumen td {
+  .tabla-resumen td,
+  .tabla-ultimos,
+  .tabla-ultimos tbody,
+  .tabla-ultimos tfoot,
+  .tabla-ultimos tr,
+  .tabla-ultimos th,
+  .tabla-ultimos td,
+  .tabla-ultimos caption {
     display: block;
     width: 100%;
   }
 
   .tabla-historial tr,
-  .tabla-resumen tr {
+  .tabla-resumen tr,
+  .tabla-ultimos tr {
     padding: 0.6rem 0.75rem;
     border-bottom: 1px solid var(--borde);
   }
 
   .tabla-historial tbody tr:last-child,
-  .tabla-resumen tfoot tr { border-bottom: 0; }
+  .tabla-resumen tfoot tr,
+  .tabla-ultimos tfoot tr { border-bottom: 0; }
 
-  .tabla-resumen th { padding: 0 0 0.25rem; border: 0; }
+  .tabla-resumen th,
+  .tabla-ultimos th { padding: 0 0 0.25rem; border: 0; }
 
   .tabla-resumen tfoot th,
-  .tabla-resumen tfoot td { border-top: 0; }
+  .tabla-resumen tfoot td,
+  .tabla-ultimos tfoot th,
+  .tabla-ultimos tfoot td { border-top: 0; }
 
   .tabla-historial td,
-  .tabla-resumen td {
+  .tabla-resumen td,
+  .tabla-ultimos td {
     display: grid;
     grid-template-columns: 7.5rem 1fr;
     gap: 0.5rem;
@@ -767,7 +829,8 @@ fieldset {
   }
 
   .tabla-historial td::before,
-  .tabla-resumen td::before {
+  .tabla-resumen td::before,
+  .tabla-ultimos td::before {
     content: attr(data-titulo);
     color: var(--texto-suave);
     font-size: 0.8rem;
@@ -804,6 +867,8 @@ fieldset {
   justify-content: flex-end;
   gap: 0.5rem;
 }
+
+.acciones.inicio { justify-content: flex-start; }
 
 @media (max-width: 480px) {
   .barra .boton,

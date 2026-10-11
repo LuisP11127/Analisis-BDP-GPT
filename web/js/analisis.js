@@ -12,6 +12,12 @@ export const modeloDeEjemplo = {
   predecir: (entrada) => entrada.prediccion_ejemplo ?? { estadistico: null, red: null, entrada_red: null },
 };
 
+/** Modelo para los datos reales mientras no exista el análisis estadístico (paso 5): no predice nada. */
+export const modeloSinAnalisis = {
+  nombre: 'Sin análisis todavía',
+  predecir: () => ({ estadistico: null, red: null, entrada_red: null }),
+};
+
 function crearRegistro(entrada, partido, candidata, prediccion, ahora) {
   const registro = {
     id: null,

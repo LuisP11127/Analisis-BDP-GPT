@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Análisis BDP",
+  "version": "0.1.0",
+  "description": "Lee partidos y estadísticas de Sofascore para la página Análisis BDP.",
+  "minimum_chrome_version": "120",
+  "permissions": ["scripting", "storage", "alarms", "webRequest"],
+  "host_permissions": ["https://www.sofascore.com/*"],
+  "background": {
+    "service_worker": "fondo.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Análisis BDP: diagnóstico"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://luisp11127.github.io/Analisis-BDP-GPT/*",
+        "http://localhost/*",
+        "http://127.0.0.1/*"
+      ],
+      "js": ["puente.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

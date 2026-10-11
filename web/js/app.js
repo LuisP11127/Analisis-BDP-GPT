@@ -1,17 +1,39 @@
 // Página principal: partidos del día, resultado del análisis e historial.
 
 import { NIVELES_CONFIANZA, nivelConfianza, tieneLinea } from '../../comun/reglas.js';
-import { agruparPartidos, analizar, modeloDeEjemplo } from './analisis.js';
+import { agruparPartidos, analizar, modeloDeEjemplo, modeloSinAnalisis } from './analisis.js';
 import { FUENTES, cargarConfig, cargarExtraccion, cargarHistorial, listarExtracciones } from './datos.js';
+import { crearConexion, crearLector } from './extension.js';
 import * as f from './formato.js';
+import { FUENTE as SOFASCORE, cargarLigas, cargarPartidos as cargarPartidosSofascore, cargarPrevia, rutaFija } from './fuentes/sofascore.js';
 import { acerto, filtrar, ordenar, resultadoApuesta, resumir, resumirPorConfianza } from './historial.js';
+import {
+  SEGUNDOS_POR_PARTIDO, agruparLigasPorPais, armarExtraccion, filtrarLigas, hoyEnLima, resumenUltimos, seleccionable,
+} from './real.js';
 import { html, pintar } from './vista.js';
 
 const PESTANAS = ['partidos', 'resultado', 'historial'];
 const CLAVE_FUENTE = 'bdp.fuente';
-const CLAVE_LIGAS = 'bdp.ligas';
 const POR_PAGINA = 100;
 const FILTROS_VACIOS = { desde: '', hasta: '', liga: '', mercado: '' };
+const URL_EXTENSION = 'https://github.com/luisp11127/Analisis-BDP-GPT/tree/main/extension#readme';
+
+/** Estado del modo con datos reales: extensión, ligas del día y lo leído de Sofascore. */
+const estadoReal = () => ({
+  // undefined: todavía no se buscó; null: no está instalada; si no, { version, sitios }.
+  extension: undefined,
+  fecha: hoyEnLima(),
+  ligas: null,
+  elegidas: new Set(),
+  busquedaLigas: '',
+  eligiendoLigas: false,
+  // Eventos originales de Sofascore por id de partido, para pedir su previa.
+  eventos: new Map(),
+  // Partidos anteriores leídos para las previas, por id.
+  anteriores: new Map(),
+  progreso: null,
+  errores: [],
+});
 
 const estado = {
   config: null,
@@ -31,10 +53,17 @@ const estado = {
   historialDeporte: 'futbol',
   filtros: { ...FILTROS_VACIOS },
   mostrados: POR_PAGINA,
+  real: estadoReal(),
 };
+
+let conexion = null;
+let leerSofascore = null;
 
 const $ = (selector) => document.querySelector(selector);
 const esPrueba = () => estado.fuente.codigo === 'prueba';
+// Las ligas recordadas de los datos de prueba y de los reales se guardan por separado.
+const claveLigas = () => (esPrueba() ? 'bdp.ligas' : 'bdp.ligas.real');
+const puedeElegir = (partido) => seleccionable(partido, { prueba: esPrueba() });
 const sumarMinutos = (iso, minutos) => new Date(new Date(iso).getTime() + minutos * 60000).toISOString().replace(/\.\d{3}Z$/, 'Z');
 const ahoraIso = () => new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
 
@@ -189,16 +218,11 @@ function apuestaRegistrada(definicion, registro) {
 // ---------------------------------------------------------------- partidos del día
 
 function vistaPartidos() {
-  const contenedor = $('#vista-partidos');
-  if (!estado.fuente.extracciones) {
-    pintar(contenedor, html`<div class="vacio">
-      <h2>Partidos del día</h2>
-      <p>Los partidos reales llegarán desde la extensión de Brave, que se construye en los pasos 3 y 4.
-        Mientras tanto puedes probar la página con los datos de prueba.</p>
-      <button class="boton principal" type="button" data-accion="usar-prueba">Usar datos de prueba</button>
-    </div>`);
+  if (!esPrueba()) {
+    vistaPartidosReales();
     return;
   }
+  const contenedor = $('#vista-partidos');
   pintar(contenedor, html`
     <div class="barra">
       <label class="campo">Fecha
@@ -215,15 +239,21 @@ function pintarContenidoPartidos() {
   const contenedor = $('#partidos-contenido');
   if (!contenedor) return;
   if (!estado.extraccion) {
-    pintar(contenedor, html`<p class="nota">Elige la fecha y pulsa <strong>Cargar partidos</strong>.
-      En datos de prueba hay una extracción ficticia con partidos de varias ligas.</p>`);
+    pintar(contenedor, esPrueba()
+      ? html`<p class="nota">Elige la fecha y pulsa <strong>Cargar partidos</strong>.
+        En datos de prueba hay una extracción ficticia con partidos de varias ligas.</p>`
+      : html`<p class="nota">Elige la fecha y pulsa <strong>Cargar ligas</strong> para ver las ligas de fútbol que
+        tienen partidos ese día en Sofascore.</p>`);
     return;
   }
   const ligas = estado.grupos.reduce((n, g) => n + g.ligas.length, 0);
+  const hora = f.hora(estado.extraccion.generado_en);
   pintar(contenedor, html`
     <p class="resumen">${estado.extraccion.partidos.length} partidos en ${ligas} ligas ·
-      extracción de las ${f.hora(estado.extraccion.generado_en)}</p>
+      ${esPrueba() ? `extracción de las ${hora}` : `leídos de Sofascore a las ${hora}`}
+      ${esPrueba() ? '' : html` · <button class="boton enlace" type="button" data-accion="cambiar-ligas">Cambiar ligas</button>`}</p>
     ${estado.preseleccion ? html`<p class="nota">Se marcaron los partidos de las ligas que analizaste la última vez.</p>` : ''}
+    ${esPrueba() ? '' : html`<p class="nota chico">Solo se pueden analizar los partidos que todavía no empiezan.</p>`}
     <div class="selector-deporte" id="deportes" role="group" aria-label="Deporte"></div>
     <label class="campo buscador">Buscar liga o equipo
       <input id="buscar" type="search" autocomplete="off" value="${estado.busqueda}">
@@ -273,19 +303,32 @@ function pintarLigas() {
       </header>
       <ul class="lista-partidos">${partidos.map(({ partido, mercadosConCuotas }) => html`<li class="partido-fila">
         <label class="check">
-          <input type="checkbox" data-accion="partido" data-partido="${partido.id}">
+          <input type="checkbox" data-accion="partido" data-partido="${partido.id}"${puedeElegir(partido) ? '' : html` disabled`}>
           <span class="hora">${f.hora(partido.inicio)}</span>
           <span class="equipos">${partido.local.nombre} <span class="vs">vs</span> ${partido.visitante.nombre}</span>
         </label>
-        <span class="etiqueta${mercadosConCuotas ? '' : ' apagada'}">${mercadosConCuotas ? `${mercadosConCuotas} mercados con cuotas` : 'Sin cuotas'}</span>
+        ${puedeElegir(partido)
+          ? html`<span class="etiqueta${mercadosConCuotas ? '' : ' apagada'}">${mercadosConCuotas ? `${mercadosConCuotas} mercados con cuotas` : 'Sin cuotas'}</span>`
+          : html`<span class="etiqueta apagada">${ESTADOS_PARTIDO[partido.estado] ?? 'Ya empezó'}</span>`}
       </li>`)}</ul>
     </section>`));
   }
   actualizarSeleccion();
 }
 
+const ESTADOS_PARTIDO = {
+  programado: 'Ya empezó',
+  en_juego: 'En juego',
+  finalizado: 'Terminado',
+  aplazado: 'Aplazado',
+  suspendido: 'Suspendido',
+  cancelado: 'Cancelado',
+};
+
+/** Partidos de una liga que se pueden elegir. */
 function partidosDeLiga(idLiga) {
-  return estado.grupos.flatMap((g) => g.ligas).find((l) => l.liga.id === idLiga)?.partidos.map((p) => p.partido.id) ?? [];
+  const liga = estado.grupos.flatMap((g) => g.ligas).find((l) => l.liga.id === idLiga);
+  return liga?.partidos.filter((p) => puedeElegir(p.partido)).map((p) => p.partido.id) ?? [];
 }
 
 function actualizarSeleccion() {
@@ -294,33 +337,32 @@ function actualizarSeleccion() {
   }
   for (const casilla of document.querySelectorAll('[data-accion="liga"]')) {
     const ids = partidosDeLiga(casilla.dataset.liga);
+    const total = estado.grupos.flatMap((g) => g.ligas).find((l) => l.liga.id === casilla.dataset.liga)?.partidos.length ?? 0;
     const elegidos = ids.filter((id) => estado.seleccion.has(id)).length;
-    casilla.checked = elegidos === ids.length;
+    casilla.checked = ids.length > 0 && elegidos === ids.length;
     casilla.indeterminate = elegidos > 0 && elegidos < ids.length;
+    casilla.disabled = ids.length === 0;
     const cuenta = document.querySelector(`[data-cuenta-liga="${CSS.escape(casilla.dataset.liga)}"]`);
-    if (cuenta) cuenta.textContent = `${ids.length} ${ids.length === 1 ? 'partido' : 'partidos'}${elegidos ? ` · ${elegidos} elegidos` : ''}`;
+    if (cuenta) cuenta.textContent = `${total} ${total === 1 ? 'partido' : 'partidos'}${elegidos ? ` · ${elegidos} elegidos` : ''}`;
   }
   pintarDeportes();
   const barra = $('#barra-analisis');
   if (!barra) return;
   const n = estado.seleccion.size;
-  pintar(barra, html`<span class="barra-texto">${n === 0 ? 'Elige los partidos que quieres analizar' : `${n} ${n === 1 ? 'partido elegido' : 'partidos elegidos'}`}</span>
-    <button class="boton" type="button" data-accion="limpiar"${n ? '' : html` disabled`}>Quitar selección</button>
-    <button class="boton principal" type="button" data-accion="analizar"${n ? '' : html` disabled`}>Analizar</button>`);
+  const ocupado = Boolean(estado.real.progreso);
+  let texto = n === 0 ? 'Elige los partidos que quieres analizar' : `${n} ${n === 1 ? 'partido elegido' : 'partidos elegidos'}`;
+  // Con datos reales, leer la previa de cada partido toma su tiempo: se avisa cuánto, más o menos.
+  if (n > 0 && !esPrueba()) texto += ` · leer sus datos toma unos ${Math.max(1, Math.round((n * SEGUNDOS_POR_PARTIDO) / 60))} min`;
+  pintar(barra, html`<span class="barra-texto">${texto}</span>
+    <button class="boton" type="button" data-accion="limpiar"${n && !ocupado ? '' : html` disabled`}>Quitar selección</button>
+    <button class="boton principal" type="button" data-accion="analizar"${n && !ocupado ? '' : html` disabled`}>Analizar</button>`);
 }
 
 async function cargarPartidos() {
   estado.cargando = true;
   vistaPartidos();
   try {
-    const extraccion = await cargarExtraccion(estado.fuente, estado.fecha);
-    estado.extraccion = extraccion;
-    estado.grupos = agruparPartidos(extraccion, estado.config).filter((g) => g.ligas.length > 0);
-    const recordadas = new Set(leerPreferencia(CLAVE_LIGAS, []));
-    estado.seleccion = new Set(extraccion.partidos.filter((p) => recordadas.has(p.liga.id)).map((p) => p.id));
-    estado.preseleccion = estado.seleccion.size > 0;
-    estado.deporte = estado.grupos[0]?.deporte.codigo ?? 'futbol';
-    estado.busqueda = '';
+    mostrarExtraccion(await cargarExtraccion(estado.fuente, estado.fecha));
     mostrarAviso();
   } catch (error) {
     mostrarError(error);
@@ -330,15 +372,33 @@ async function cargarPartidos() {
   }
 }
 
+/** Deja lista la extracción para elegir partidos, con los de las ligas analizadas la última vez marcados. */
+function mostrarExtraccion(extraccion) {
+  estado.extraccion = extraccion;
+  estado.grupos = agruparPartidos(extraccion, estado.config).filter((g) => g.ligas.length > 0);
+  const recordadas = new Set(leerPreferencia(claveLigas(), []));
+  estado.seleccion = new Set(extraccion.partidos.filter((p) => recordadas.has(p.liga.id) && puedeElegir(p)).map((p) => p.id));
+  estado.preseleccion = estado.seleccion.size > 0;
+  estado.deporte = estado.grupos[0]?.deporte.codigo ?? 'futbol';
+  estado.busqueda = '';
+}
+
 function ejecutarAnalisis() {
+  if (!esPrueba()) {
+    analizarReales();
+    return;
+  }
   // En datos de prueba la hora del análisis es la de la extracción ficticia, para que los registros
   // queden antes del inicio de los partidos sin importar el día en que se abra la página.
-  const ahora = esPrueba() ? sumarMinutos(estado.extraccion.generado_en, 5) : ahoraIso();
+  terminarAnalisis(sumarMinutos(estado.extraccion.generado_en, 5), modeloDeEjemplo);
+}
+
+function terminarAnalisis(ahora, modelo) {
   const resultado = analizar({
     extraccion: estado.extraccion,
     seleccion: estado.seleccion,
     config: estado.config,
-    modelo: modeloDeEjemplo,
+    modelo,
     ahora,
   });
   const anteriores = new Map(estado.historialSesion.map((r) => [r.id, r]));
@@ -350,9 +410,315 @@ function ejecutarAnalisis() {
   estado.historialSesion = [...estado.historialSesion.filter((r) => !nuevos.has(r.id)), ...resultado.registros];
   estado.analisis = { ...resultado, ahora, fecha: estado.extraccion.fecha_local };
   const ligas = new Set(estado.extraccion.partidos.filter((p) => estado.seleccion.has(p.id)).map((p) => p.liga.id));
-  guardarPreferencia(CLAVE_LIGAS, [...ligas]);
+  guardarPreferencia(claveLigas(), [...ligas]);
   if (location.hash === '#resultado') vistaResultado();
   else location.hash = '#resultado';
+}
+
+// ---------------------------------------------------------------- partidos reales (extensión y Sofascore)
+
+async function buscarExtension() {
+  conexion ??= crearConexion(window);
+  estado.real.extension = undefined;
+  if (pestanaActual() === 'partidos') vistaPartidos();
+  const encontrada = await conexion.detectar();
+  if (esPrueba()) return;
+  estado.real.extension = encontrada;
+  if (encontrada) leerSofascore ??= crearLector(conexion, SOFASCORE, { guardar: rutaFija });
+  if (pestanaActual() === 'partidos') vistaPartidos();
+}
+
+/** Muestra qué se está leyendo sin volver a pintar toda la vista. */
+function mostrarProgreso(texto) {
+  estado.real.progreso = texto;
+  const elemento = $('#progreso-real');
+  if (elemento) elemento.textContent = texto;
+  else if (pestanaActual() === 'partidos') vistaPartidos();
+}
+
+function erroresReales() {
+  const { errores } = estado.real;
+  if (errores.length === 0) return '';
+  return html`<div class="aviso error" role="alert"><p><strong>Hubo problemas al leer Sofascore.</strong></p>
+    <ul class="errores">${errores.map((e) => html`<li>${e}</li>`)}</ul></div>`;
+}
+
+function vistaPartidosReales() {
+  const contenedor = $('#vista-partidos');
+  const { real } = estado;
+  if (real.extension === undefined) {
+    pintar(contenedor, html`<p class="nota">Buscando la extensión de Brave…</p>`);
+    return;
+  }
+  if (real.extension === null) {
+    pintar(contenedor, html`<div class="vacio">
+      <h2>Falta la extensión</h2>
+      <p>Los partidos reales se leen de Sofascore con la extensión de Brave. Se instala una sola vez:
+        sigue <a href="${URL_EXTENSION}" target="_blank" rel="noopener">estas instrucciones</a> y vuelve a esta página.</p>
+      <p class="nota">La extensión solo funciona en la computadora. En el celular puedes ver el historial y los datos de prueba.</p>
+      <div class="acciones inicio">
+        <button class="boton principal" type="button" data-accion="buscar-extension">Buscar de nuevo</button>
+        <button class="boton" type="button" data-accion="usar-prueba">Usar datos de prueba</button>
+      </div>
+    </div>`);
+    return;
+  }
+  const ocupado = Boolean(real.progreso);
+  pintar(contenedor, html`
+    <div class="barra">
+      <label class="campo">Fecha <input id="fecha-real" type="date" value="${real.fecha}"${ocupado ? html` disabled` : ''}></label>
+      <button class="boton principal" type="button" data-accion="cargar-ligas"${ocupado ? html` disabled` : ''}>
+        ${real.ligas ? 'Volver a cargar las ligas' : 'Cargar ligas'}</button>
+      <span class="apagado chico">Extensión ${real.extension.version} conectada · por ahora solo fútbol</span>
+    </div>
+    ${ocupado ? html`<p class="progreso" id="progreso-real" role="status">${real.progreso}</p>` : ''}
+    ${erroresReales()}
+    <div id="partidos-contenido"></div>`);
+  if (real.eligiendoLigas && real.ligas) pintarSelectorLigas();
+  else pintarContenidoPartidos();
+}
+
+function pintarSelectorLigas() {
+  const contenedor = $('#partidos-contenido');
+  if (!contenedor) return;
+  const { real } = estado;
+  const partidos = real.ligas.reduce((n, l) => n + l.partidos, 0);
+  pintar(contenedor, html`
+    <p class="resumen">${real.ligas.length} ligas de fútbol con ${partidos} partidos el ${f.fechaLarga(real.fecha)} (hora de Lima)
+      ${estado.extraccion ? html` · <button class="boton enlace" type="button" data-accion="volver-partidos">Volver a los partidos</button>` : ''}</p>
+    ${real.ligas.length ? html`<label class="campo buscador">Buscar país o liga
+      <input id="buscar-ligas" type="search" autocomplete="off" value="${real.busquedaLigas}"></label>` : ''}
+    <div id="ligas-elegidas"></div>
+    <div id="lista-ligas-reales"></div>
+    <div class="barra-analisis" id="barra-ligas"></div>`);
+  pintarListaLigasReales();
+}
+
+function filaLiga(liga) {
+  return html`<li class="partido-fila">
+    <label class="check">
+      <input type="checkbox" data-accion="elegir-liga" data-liga="${liga.id}"${estado.real.elegidas.has(liga.id) ? html` checked` : ''}>
+      <span class="equipos">${liga.pais ? `${liga.pais} · ` : ''}${liga.nombre}</span>
+    </label>
+    <span class="etiqueta apagada">${liga.partidos} ${liga.partidos === 1 ? 'partido' : 'partidos'}</span>
+  </li>`;
+}
+
+function pintarElegidas() {
+  const contenedor = $('#ligas-elegidas');
+  if (!contenedor) return;
+  const elegidas = estado.real.ligas.filter((l) => estado.real.elegidas.has(l.id));
+  pintar(contenedor, elegidas.length && !estado.real.busquedaLigas.trim()
+    ? html`<section class="liga"><header class="liga-cabecera"><span class="liga-nombre">Elegidas</span></header>
+      <ul class="lista-partidos">${elegidas.map(filaLiga)}</ul></section>`
+    : '');
+}
+
+function pintarListaLigasReales() {
+  const contenedor = $('#lista-ligas-reales');
+  if (!contenedor) return;
+  const { real } = estado;
+  if (real.ligas.length === 0) {
+    pintar(contenedor, html`<p class="nota">Sofascore no tiene partidos de fútbol para esta fecha.</p>`);
+  } else if (real.busquedaLigas.trim()) {
+    const visibles = filtrarLigas(real.ligas, real.busquedaLigas);
+    pintar(contenedor, visibles.length
+      ? html`<section class="liga"><ul class="lista-partidos">${visibles.map(filaLiga)}</ul></section>`
+      : html`<p class="nota">Ninguna liga coincide con la búsqueda.</p>`);
+  } else {
+    const destacadas = real.ligas.filter((l) => l.principal);
+    pintar(contenedor, html`
+      ${destacadas.length ? html`<section class="liga"><header class="liga-cabecera"><span class="liga-nombre">Destacadas en Sofascore</span></header>
+        <ul class="lista-partidos">${destacadas.map(filaLiga)}</ul></section>` : ''}
+      <h3 class="subtitulo">Todas, por país</h3>
+      ${agruparLigasPorPais(real.ligas).map((grupo) => html`<details class="liga pais">
+        <summary class="liga-cabecera"><span class="liga-nombre">${grupo.pais}</span>
+          <span class="liga-cuenta">${grupo.ligas.length} ${grupo.ligas.length === 1 ? 'liga' : 'ligas'} ·
+            ${grupo.partidos} ${grupo.partidos === 1 ? 'partido' : 'partidos'}</span></summary>
+        <ul class="lista-partidos">${grupo.ligas.map(filaLiga)}</ul>
+      </details>`)}`);
+  }
+  pintarElegidas();
+  actualizarBarraLigas();
+}
+
+function actualizarBarraLigas() {
+  const { real } = estado;
+  for (const casilla of document.querySelectorAll('[data-accion="elegir-liga"]')) casilla.checked = real.elegidas.has(casilla.dataset.liga);
+  const barra = $('#barra-ligas');
+  if (!barra) return;
+  const n = real.elegidas.size;
+  const partidos = real.ligas.filter((l) => real.elegidas.has(l.id)).reduce((s, l) => s + l.partidos, 0);
+  const ocupado = Boolean(real.progreso);
+  pintar(barra, html`<span class="barra-texto">${n === 0
+    ? 'Elige las ligas que quieres ver'
+    : `${n} ${n === 1 ? 'liga elegida' : 'ligas elegidas'} · ${partidos} ${partidos === 1 ? 'partido' : 'partidos'}`}</span>
+    <button class="boton" type="button" data-accion="limpiar-ligas"${n && !ocupado ? '' : html` disabled`}>Quitar selección</button>
+    <button class="boton principal" type="button" data-accion="cargar-partidos-reales"${n && !ocupado ? '' : html` disabled`}>Cargar partidos</button>`);
+}
+
+async function cargarLigasReales() {
+  const { real } = estado;
+  real.errores = [];
+  mostrarProgreso('Leyendo las ligas del día en Sofascore…');
+  try {
+    real.ligas = await cargarLigas(leerSofascore, real.fecha, {
+      progreso: (pagina) => mostrarProgreso(`Leyendo las ligas del día en Sofascore (página ${pagina})…`),
+    });
+    const recordadas = new Set(leerPreferencia(claveLigas(), []));
+    real.elegidas = new Set(real.ligas.filter((l) => recordadas.has(l.id)).map((l) => l.id));
+    real.busquedaLigas = '';
+    real.eligiendoLigas = true;
+    Object.assign(estado, { extraccion: null, grupos: [], seleccion: new Set(), preseleccion: false });
+  } catch (error) {
+    real.errores = [error.message];
+  } finally {
+    real.progreso = null;
+    if (pestanaActual() === 'partidos') vistaPartidos();
+  }
+}
+
+async function cargarPartidosReales() {
+  const { real } = estado;
+  const ligas = real.ligas.filter((l) => real.elegidas.has(l.id));
+  if (ligas.length === 0) return;
+  real.errores = [];
+  mostrarProgreso(`Leyendo los partidos de ${ligas.length} ${ligas.length === 1 ? 'liga' : 'ligas'}…`);
+  try {
+    const { partidos, eventos } = await cargarPartidosSofascore(leerSofascore, real.fecha, ligas, {
+      progreso: (n, total) => mostrarProgreso(`Leyendo los partidos: liga ${n} de ${total}…`),
+    });
+    real.eventos = eventos;
+    real.anteriores = new Map();
+    mostrarExtraccion(armarExtraccion({ fecha: real.fecha, generadoEn: ahoraIso(), partidos, anteriores: real.anteriores }));
+    real.eligiendoLigas = false;
+  } catch (error) {
+    real.errores = [error.message];
+  } finally {
+    real.progreso = null;
+    if (pestanaActual() === 'partidos') vistaPartidos();
+  }
+}
+
+/** Lee la previa de cada partido elegido (con sus últimos partidos) y arma el resultado. */
+async function analizarReales() {
+  const { real } = estado;
+  const elegidos = estado.extraccion.partidos.filter((p) => estado.seleccion.has(p.id) && puedeElegir(p));
+  if (elegidos.length === 0) return;
+  real.errores = [];
+  for (const [i, partido] of elegidos.entries()) {
+    const nombre = `${partido.local.nombre} vs ${partido.visitante.nombre}`;
+    const prefijo = `Partido ${i + 1} de ${elegidos.length} (${nombre})`;
+    mostrarProgreso(`${prefijo}…`);
+    try {
+      const { previa, anteriores } = await cargarPrevia(leerSofascore, partido, real.eventos.get(partido.id), {
+        progreso: (texto) => mostrarProgreso(`${prefijo}: ${texto}…`),
+      });
+      partido.previa = previa;
+      for (const anterior of anteriores) real.anteriores.set(anterior.id, anterior);
+    } catch (error) {
+      real.errores.push(`${nombre}: ${error.message}`);
+      // Si Sofascore está rechazando los pedidos, no tiene sentido seguir con los demás partidos.
+      if (/rechazó/.test(error.message)) break;
+    }
+  }
+  real.progreso = null;
+  const ahora = ahoraIso();
+  estado.extraccion = armarExtraccion({ fecha: real.fecha, generadoEn: ahora, partidos: estado.extraccion.partidos, anteriores: real.anteriores });
+  terminarAnalisis(ahora, modeloSinAnalisis);
+}
+
+/** Descarga lo leído en el formato de la extracción del día, para revisarlo o compartirlo. */
+function descargarExtraccion() {
+  const enlace = document.createElement('a');
+  enlace.href = URL.createObjectURL(new Blob([JSON.stringify(estado.extraccion, null, 2)], { type: 'application/json' }));
+  enlace.download = `${estado.extraccion.fecha_local}.json`;
+  document.body.append(enlace);
+  enlace.click();
+  enlace.remove();
+  setTimeout(() => URL.revokeObjectURL(enlace.href), 10000);
+}
+
+// ---------------------------------------------------------------- datos de Sofascore en el resultado
+
+const MOTIVOS_BAJA = { lesion: 'lesión', sancion: 'sanción', duda: 'duda', otro: 'otro motivo', desconocido: 'motivo no indicado' };
+const LADOS_PARTIDO = ['local', 'visitante'];
+
+function textoTabla(partido) {
+  const { tabla } = partido.previa;
+  if (!tabla) return 'Sofascore no tiene tabla de esta competición.';
+  const linea = (lado) => {
+    const fila = tabla[lado];
+    return `${partido[lado].nombre}: ${fila.posicion ? `${fila.posicion}.º` : 'sin posición'}, ${fila.partidos_jugados ?? '—'} PJ, ${fila.puntos ?? '—'} pts`;
+  };
+  return `${linea('local')} · ${linea('visitante')}`;
+}
+
+function textoArbitro(arbitro) {
+  if (!arbitro) return 'Sofascore todavía no lo tiene designado.';
+  const { partidos, amarillas, rojas } = arbitro.estadisticas ?? {};
+  if (!partidos) return arbitro.nombre;
+  const promedios = [
+    amarillas === undefined ? null : `${(amarillas / partidos).toFixed(1)} amarillas`,
+    rojas === undefined ? null : `${(rojas / partidos).toFixed(2)} rojas`,
+  ].filter(Boolean);
+  return `${arbitro.nombre} · ${promedios.join(' y ')} por partido en ${partidos} partidos`;
+}
+
+function textoBajas(partido) {
+  const { bajas } = partido.previa;
+  if (!bajas) return 'Sofascore todavía no tiene la alineación de este partido.';
+  if (bajas.length === 0) return 'Sofascore no informa bajas.';
+  return LADOS_PARTIDO.map((lado) => {
+    const delEquipo = bajas.filter((b) => b.equipo === lado);
+    if (delEquipo.length === 0) return null;
+    const nombres = delEquipo.map((b) => `${b.jugador.nombre} (${MOTIVOS_BAJA[b.motivo]}${b.detalle ? `: ${b.detalle}` : ''})`);
+    return `${partido[lado].nombre}: ${nombres.join(', ')}`;
+  }).filter(Boolean).join(' · ');
+}
+
+function alineacion(partido) {
+  const probables = partido.previa.alineaciones_probables;
+  if (!probables) return '';
+  return html`<p><strong>Alineación ${probables.confirmadas ? 'confirmada' : 'probable'}:</strong></p>
+    <ul class="factores">${LADOS_PARTIDO.map((lado) => html`<li>${partido[lado].nombre}: ${probables[lado].map((j) => j.nombre).join(', ') || '—'}</li>`)}</ul>`;
+}
+
+const COLUMNAS_ULTIMOS = [['goles', 'Goles'], ['corners', 'Corners'], ['tarjetas', 'Tarjetas'], ['tiros', 'Tiros al arco'], ['remates', 'Remates']];
+
+function tablaUltimos(partido, lado) {
+  const { filas, promedios } = resumenUltimos(partido, lado, estado.real.anteriores);
+  const equipo = partido[lado].nombre;
+  const titulo = `Últimos ${filas.length} de ${equipo} ${lado === 'local' ? 'de local' : 'de visita'}`;
+  if (filas.length === 0) return html`<p class="detalle-titulo">${titulo}</p><p class="apagado chico">Sofascore no tiene partidos anteriores.</p>`;
+  const par = ([propio, rival]) => (propio === null && rival === null ? '—' : `${propio ?? '—'}-${rival ?? '—'}`);
+  const promedio = ([propio, rival]) => (propio || rival ? `${propio ? propio.valor.toFixed(1) : '—'}-${rival ? rival.valor.toFixed(1) : '—'}` : '—');
+  return html`<p class="detalle-titulo">${titulo}</p>
+    <div class="tabla-envoltura"><table class="tabla tabla-ultimos">
+      <caption>Cada dato es a favor-en contra de ${equipo}, en el tiempo reglamentario. Las tarjetas se cuentan como en Betano.</caption>
+      <thead><tr><th scope="col">Fecha</th><th scope="col">Rival</th>${COLUMNAS_ULTIMOS.map(([, nombre]) => html`<th scope="col">${nombre}</th>`)}</tr></thead>
+      <tbody>${filas.map((fila) => html`<tr>
+        <td data-titulo="Fecha"><div>${f.fechaCorta(fila.fecha)}</div></td>
+        <td data-titulo="Rival"><div>${fila.rival} <span class="apagado chico bloque">${fila.liga}</span></div></td>
+        ${COLUMNAS_ULTIMOS.map(([campo, nombre]) => html`<td data-titulo="${nombre}"><div>${par(fila[campo])}</div></td>`)}
+      </tr>`)}</tbody>
+      <tfoot><tr><th scope="row" colspan="2">Promedio</th>
+        ${COLUMNAS_ULTIMOS.map(([campo, nombre]) => html`<td data-titulo="${nombre}"><div>${promedio(promedios[campo])}</div></td>`)}</tr></tfoot>
+    </table></div>`;
+}
+
+function datosSofascore(partido) {
+  if (!partido.previa) return html`<p class="apagado chico">No se pudieron leer los datos previos de este partido.</p>`;
+  return html`<details class="detalle datos-fuente">
+    <summary>Datos de Sofascore</summary>
+    <p><strong>Tabla:</strong> ${textoTabla(partido)}</p>
+    <p><strong>Árbitro:</strong> ${textoArbitro(partido.previa.arbitro)}</p>
+    <p><strong>Bajas:</strong> ${textoBajas(partido)}</p>
+    ${alineacion(partido)}
+    ${tablaUltimos(partido, 'local')}
+    ${tablaUltimos(partido, 'visitante')}
+    <p class="apagado chico">Leído a las ${f.hora(partido.previa.extraido_en)}.</p>
+  </details>`;
 }
 
 // ---------------------------------------------------------------- resultado
@@ -408,7 +774,11 @@ function vistaResultado() {
       <h2>Análisis del ${f.fechaLarga(fecha)}</h2>
       <p class="resumen">${partidos} ${partidos === 1 ? 'partido' : 'partidos'} · ${registros.length} mercados analizados · hecho a las ${f.hora(ahora)}</p>
       ${esPrueba() ? html`<p class="nota">Las probabilidades son de ejemplo: el análisis estadístico real se construye en el paso 5.
-        Con datos de prueba, estos mercados se agregan al historial solo mientras la página esté abierta.</p>` : ''}
+        Con datos de prueba, estos mercados se agregan al historial solo mientras la página esté abierta.</p>` : html`
+        <p class="nota">Los datos vienen de Sofascore. Todavía faltan las cuotas (paso 4) y el análisis estadístico (paso 5),
+          por eso los mercados aparecen sin cuotas.</p>
+        ${erroresReales()}
+        <p><button class="boton" type="button" data-accion="descargar">Descargar los datos leídos (JSON)</button></p>`}
     </div>
     ${deportes.map(({ deporte, partidos: lista }) => html`<section class="deporte">
       <h2 class="deporte-titulo">${deporte.nombre}</h2>
@@ -417,6 +787,7 @@ function vistaResultado() {
           <p class="partido-liga">${partido.liga.nombre} · ${f.fechaHora(partido.inicio)}</p>
           <h3 class="partido-equipos">${partido.local.nombre} <span class="vs">vs</span> ${partido.visitante.nombre}</h3>
         </header>
+        ${esPrueba() ? '' : datosSofascore(partido)}
         <ol class="mercados">${mercados.map((m) => mercadoDelPartido(partido, m))}</ol>
       </article>`)}
     </section>`)}`);
@@ -746,6 +1117,10 @@ async function prepararFuente(codigo) {
     filtros: { ...FILTROS_VACIOS },
     mostrados: POR_PAGINA,
   });
+  if (!esPrueba()) {
+    estado.real = estadoReal();
+    buscarExtension();
+  }
   mostrarAviso();
   try {
     estado.fechas = await listarExtracciones(estado.fuente);
@@ -802,6 +1177,32 @@ document.addEventListener('click', (evento) => {
     case 'usar-prueba':
       cambiarFuente('prueba');
       break;
+    case 'buscar-extension':
+      buscarExtension();
+      break;
+    case 'cargar-ligas':
+      cargarLigasReales();
+      break;
+    case 'cambiar-ligas':
+      if (estado.real.progreso) break;
+      estado.real.eligiendoLigas = true;
+      vistaPartidos();
+      break;
+    case 'volver-partidos':
+      estado.real.eligiendoLigas = false;
+      vistaPartidos();
+      break;
+    case 'limpiar-ligas':
+      estado.real.elegidas.clear();
+      pintarElegidas();
+      actualizarBarraLigas();
+      break;
+    case 'cargar-partidos-reales':
+      cargarPartidosReales();
+      break;
+    case 'descargar':
+      descargarExtraccion();
+      break;
     default:
   }
 });
@@ -822,8 +1223,15 @@ document.addEventListener('change', (evento) => {
     }
     estado.preseleccion = false;
     actualizarSeleccion();
+  } else if (elemento.dataset.accion === 'elegir-liga') {
+    if (elemento.checked) estado.real.elegidas.add(elemento.dataset.liga);
+    else estado.real.elegidas.delete(elemento.dataset.liga);
+    pintarElegidas();
+    actualizarBarraLigas();
   } else if (elemento.id === 'fecha') {
     estado.fecha = elemento.value;
+  } else if (elemento.id === 'fecha-real') {
+    if (/^\d{4}-\d{2}-\d{2}$/.test(elemento.value)) estado.real.fecha = elemento.value;
   } else if (elemento.id === 'fuente') {
     cambiarFuente(elemento.value);
   } else if (elemento.closest('#historial-filtros')) {
@@ -835,6 +1243,9 @@ document.addEventListener('input', (evento) => {
   if (evento.target.id === 'buscar') {
     estado.busqueda = evento.target.value;
     pintarLigas();
+  } else if (evento.target.id === 'buscar-ligas') {
+    estado.real.busquedaLigas = evento.target.value;
+    pintarListaLigasReales();
   }
 });
 

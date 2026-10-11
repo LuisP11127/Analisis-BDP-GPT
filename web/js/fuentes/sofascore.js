@@ -186,14 +186,49 @@ function valorDe(items, clave, lado) {
 const porcentaje = (valor) => (typeof valor === 'number' && valor >= 0 && valor <= 100 ? valor : null);
 const noNegativo = (valor) => (typeof valor === 'number' && valor >= 0 ? valor : null);
 
-/** Tarjetas a jugadores hasta el minuto `hasta` (45 o 90, con su descuento), sin las anuladas. */
-function tarjetasHasta(incidencias, hasta) {
+// Momento de una incidencia para ordenarla: el 45+2 va antes del 46.
+const momento = (incidencia) => incidencia.time * 100
+  + (Number.isInteger(incidencia.addedTime) && incidencia.addedTime > 0 && incidencia.addedTime < 999 ? incidencia.addedTime : 0);
+
+/**
+ * Función que dice si un jugador estaba en la cancha al momento de una incidencia: los titulares desde el
+ * inicio y los suplentes desde que entraron, hasta que salieron. Con un cambio y una tarjeta en el mismo
+ * minuto se toma que estaba en la cancha. Devuelve null si no hay alineación del partido.
+ */
+function enCanchaSegun(alineaciones, incidencias) {
+  const jugadores = ['home', 'away'].flatMap((clave) => alineaciones?.[clave]?.players ?? []);
+  if (jugadores.length === 0) return null;
+  const titulares = new Set(jugadores.filter((j) => !j.substitute).map((j) => j.player?.id));
+  const entradas = new Map();
+  const salidas = new Map();
+  for (const incidencia of incidencias) {
+    if (incidencia.incidentType !== 'substitution') continue;
+    if (incidencia.playerIn?.id) entradas.set(incidencia.playerIn.id, momento(incidencia));
+    if (incidencia.playerOut?.id) salidas.set(incidencia.playerOut.id, momento(incidencia));
+  }
+  return (incidencia) => {
+    const id = incidencia.player?.id;
+    const cuando = momento(incidencia);
+    const entro = titulares.has(id) || entradas.get(id) <= cuando;
+    const salio = salidas.get(id) < cuando;
+    return entro && !salio;
+  };
+}
+
+/**
+ * Tarjetas a jugadores en la cancha hasta el minuto `hasta` (45 o 90, con su descuento), sin las anuladas.
+ * `enCancha` dice si el jugador estaba en la cancha; si es null (sin alineación), se cuentan todas las de
+ * jugadores.
+ */
+function tarjetasHasta(incidencias, hasta, enCancha) {
   const cuenta = Object.fromEntries(LADOS.map((lado) => [lado, { amarillas: 0, rojas: 0, dobles_amarillas: 0 }]));
   const eventos = [];
   for (const incidencia of incidencias) {
     if (incidencia.incidentType !== 'card' || incidencia.rescinded) continue;
     // Las tarjetas a entrenadores o al cuerpo técnico no tienen jugador y no se cuentan.
     if (!incidencia.player || !(incidencia.time <= hasta)) continue;
+    // Tampoco las de jugadores en el banco: suplentes que no habían entrado o que ya habían salido.
+    if (enCancha && !enCancha(incidencia)) continue;
     const clase = TARJETAS[incidencia.incidentClass];
     if (!clase) return null;
     const lado = incidencia.isHome ? 'local' : 'visitante';
@@ -241,10 +276,12 @@ function golesConMinuto(incidencias, marcador) {
  * - evento: el partido tal como viene en las listas de Sofascore (con homeScore y awayScore).
  * - estadisticas: respuesta de event/{id}/statistics, o null.
  * - incidencias: respuesta de event/{id}/incidents, o null.
+ * - alineaciones: respuesta de event/{id}/lineups, o null. Sirve para no contar las tarjetas a jugadores
+ *   en el banco; sin ella se cuentan todas las tarjetas a jugadores.
  * Si hubo prórroga, los conteos del partido salen de sumar el primer y el segundo tiempo, y la posesión
  * y el xG quedan sin dato. Devuelve null si no se conoce el marcador del tiempo reglamentario.
  */
-export function estadisticasFutbol({ evento, estadisticas, incidencias, extraidoEn }) {
+export function estadisticasFutbol({ evento, estadisticas, incidencias, alineaciones = null, extraidoEn }) {
   const marcador = marcadorReglamentario(evento);
   if (!marcador) return null;
   const extra = huboTiempoExtra(evento);
@@ -253,8 +290,9 @@ export function estadisticasFutbol({ evento, estadisticas, incidencias, extraido
   const segundo = itemsDelPeriodo(estadisticas, '2ND');
   // Una lista vacía en un partido terminado significa que Sofascore no cubre sus incidencias.
   const lista = Array.isArray(incidencias?.incidents) && incidencias.incidents.length > 0 ? incidencias.incidents : null;
-  const tarjetas90 = lista ? tarjetasHasta(lista, 90) : null;
-  const tarjetas45 = lista ? tarjetasHasta(lista, 45) : null;
+  const enCancha = lista ? enCanchaSegun(alineaciones, lista) : null;
+  const tarjetas90 = lista ? tarjetasHasta(lista, 90, enCancha) : null;
+  const tarjetas45 = lista ? tarjetasHasta(lista, 45, enCancha) : null;
 
   const completo = {};
   const primerTiempo = {};
@@ -306,10 +344,10 @@ export function estadisticasFutbol({ evento, estadisticas, incidencias, extraido
 }
 
 /** Partido terminado con sus estadísticas. Si no terminó o no se conoce el marcador, va sin estadísticas. */
-export function partidoTerminado({ evento, estadisticas, incidencias, ahora }) {
+export function partidoTerminado({ evento, estadisticas, incidencias, alineaciones = null, ahora }) {
   const partido = partidoDesdeEvento(evento, ahora);
   if (partido.estado !== 'finalizado' || !partido.marcador) return partido;
-  const resultado = estadisticasFutbol({ evento, estadisticas, incidencias, extraidoEn: ahora });
+  const resultado = estadisticasFutbol({ evento, estadisticas, incidencias, alineaciones, extraidoEn: ahora });
   if (resultado) partido.estadisticas = resultado;
   return partido;
 }
@@ -461,12 +499,15 @@ export async function cargarPartidos(obtener, fecha, ligas, { ahora = ahoraIso, 
 
 /** Partido terminado con estadísticas e incidencias, a partir del evento de una lista de Sofascore. */
 export async function cargarPartidoTerminado(obtener, evento, { ahora = ahoraIso } = {}) {
-  const momento = ahora();
-  const base = partidoDesdeEvento(evento, momento);
+  const hora = ahora();
+  const base = partidoDesdeEvento(evento, hora);
   if (base.estado !== 'finalizado' || !base.marcador) return base;
   const { datos: estadisticas } = await obtener(RUTAS.estadisticas(evento.id));
   const { datos: incidencias } = await obtener(RUTAS.incidencias(evento.id));
-  return partidoTerminado({ evento, estadisticas, incidencias, ahora: momento });
+  // La alineación solo hace falta si hubo tarjetas a jugadores: dice quién estaba en el banco.
+  const conTarjetas = (incidencias?.incidents ?? []).some((i) => i.incidentType === 'card' && i.player && !i.rescinded);
+  const alineaciones = conTarjetas ? (await obtener(RUTAS.alineaciones(evento.id))).datos : null;
+  return partidoTerminado({ evento, estadisticas, incidencias, alineaciones, ahora: hora });
 }
 
 /** Estado actual de un partido por su id (sofascore:123), con estadísticas si ya terminó. Para resolver resultados. */

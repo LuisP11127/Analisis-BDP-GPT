@@ -41,7 +41,7 @@ El orden de esta lista es el orden en que se muestran los mercados en el resulta
   - Doble amarilla: suma 2, las dos amarillas. La roja que resulta no suma aparte (confirmado por el usuario).
   - Una amarilla y después una roja directa al mismo jugador suman 3 (1 + 2).
   - Como cada roja suma 2, el análisis de tarjetas indica también si habrá roja en el partido.
-  - No se cuentan las tarjetas anuladas por el VAR ni las mostradas a entrenadores o al cuerpo técnico, y en el partido completo tampoco las de la prórroga. Lo de los entrenadores es un supuesto que falta confirmar con las reglas de Betano.
+  - No se cuentan las tarjetas anuladas por el VAR, las mostradas a entrenadores o al cuerpo técnico, ni las de jugadores en el banco: suplentes que todavía no habían entrado o que ya habían salido (confirmado por el usuario). En el partido completo tampoco cuentan las de la prórroga.
 - **Básquet, primer tiempo:** 1.er y 2.º cuarto. No incluye prórroga.
 - **Básquet, tiempo completo:** incluye prórroga.
 - **Béisbol:** el ganador no tiene empate (hay entradas extra). El total incluye entradas extra.

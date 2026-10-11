@@ -7,8 +7,8 @@ import { fechaLocal } from '../../comun/rutas.js';
 /** Fecha de hoy en Lima (AAAA-MM-DD). */
 export const hoyEnLima = (ahora = new Date()) => fechaLocal(ahora);
 
-/** Segundos aproximados que toma leer la previa de un partido: unos 45 pedidos con una pausa entre ellos. */
-export const SEGUNDOS_POR_PARTIDO = 20;
+/** Segundos aproximados que toma leer la previa de un partido: unos 65 pedidos con una pausa entre ellos. */
+export const SEGUNDOS_POR_PARTIDO = 25;
 
 /**
  * Un partido real solo se puede analizar si todavía no empezó: los datos previos y las cuotas tienen que

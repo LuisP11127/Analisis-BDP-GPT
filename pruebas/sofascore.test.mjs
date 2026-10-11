@@ -148,6 +148,46 @@ test('sofascore: goles y tarjetas con su minuto; el autogol se asigna por el cam
   ]);
 });
 
+test('sofascore: no cuentan las tarjetas a jugadores en el banco', () => {
+  const evento = d.evento({ id: 610, inicio: '2026-10-04T20:00:00Z', local: pumas, visitante: toros, estado: 'finished', marcador: [0, 0, 0, 0] });
+  // En d.alineaciones() los titulares del local son 3000 a 3010 y los suplentes 3011 a 3013.
+  const jugador = (id) => ({ player: { id, name: `Jugador ${id}` } });
+  const incidencias = {
+    incidents: [
+      d.periodo('FT', 90, 0, 0),
+      d.tarjeta(70, true, 'yellow', jugador(3011)), // entró en el 60': cuenta
+      d.tarjeta(65, true, 'yellow', jugador(3000)), // salió en el 60': está en el banco
+      d.tarjeta(60, true, 'yellow', jugador(3013)), // entra en el mismo minuto del cambio: cuenta
+      { incidentType: 'substitution', time: 60, isHome: true, playerIn: { id: 3011 }, playerOut: { id: 3000 } },
+      { incidentType: 'substitution', time: 60, isHome: true, playerIn: { id: 3013 }, playerOut: { id: 3005 } },
+      d.tarjeta(50, false, 'red', jugador(4003)), // titular visitante: cuenta
+      d.tarjeta(30, true, 'yellow', jugador(3011)), // todavía no había entrado: no cuenta
+      d.tarjeta(20, true, 'yellow', jugador(3012)), // suplente que no entró: no cuenta
+      d.tarjeta(10, true, 'yellow', jugador(3001)), // titular: cuenta
+    ],
+  };
+  const est = s.estadisticasFutbol({ evento, estadisticas: null, incidencias, alineaciones: d.alineaciones(), extraidoEn: AHORA });
+  assert.deepEqual(est.completo.local, { goles: 0, amarillas: 3, rojas: 0, dobles_amarillas: 0 });
+  assert.deepEqual(est.completo.visitante, { goles: 0, amarillas: 0, rojas: 1, dobles_amarillas: 0 });
+  assert.equal(est.primer_tiempo.local.amarillas, 1);
+  assert.deepEqual(est.eventos.map((e) => `${e.minuto} ${e.tipo}`), ['10 amarilla', '50 roja', '60 amarilla', '70 amarilla']);
+  // Sin alineación no se sabe quién estaba en el banco: se cuentan todas las tarjetas a jugadores.
+  const sinAlineacion = s.estadisticasFutbol({ evento, estadisticas: null, incidencias, extraidoEn: AHORA });
+  assert.equal(sinAlineacion.completo.local.amarillas, 6);
+});
+
+test('sofascore: la alineación de un partido anterior se pide solo si hubo tarjetas', async () => {
+  const conTarjeta = d.evento({ id: 620, inicio: '2026-10-04T20:00:00Z', local: pumas, visitante: toros, estado: 'finished', marcador: [1, 0, 1, 0] });
+  const sinTarjeta = d.evento({ id: 621, inicio: '2026-10-05T20:00:00Z', local: toros, visitante: pumas, estado: 'finished', marcador: [0, 0, 0, 0] });
+  const { obtener, pedidas } = servidor({
+    [s.RUTAS.incidencias(620)]: { incidents: [d.gol(30, true, 1, 0), d.tarjeta(40, false, 'yellow')] },
+    [s.RUTAS.incidencias(621)]: { incidents: [d.periodo('FT', 90, 0, 0)] },
+  });
+  await s.cargarPartidoTerminado(obtener, conTarjeta, { ahora });
+  await s.cargarPartidoTerminado(obtener, sinTarjeta, { ahora });
+  assert.deepEqual(pedidas.filter((r) => r.endsWith('/lineups')), [s.RUTAS.alineaciones(620)]);
+});
+
 test('sofascore: sin prórroga se usan los valores del partido completo', () => {
   const evento = d.evento({ id: 601, inicio: '2026-10-04T20:00:00Z', local: pumas, visitante: toros, estado: 'finished', marcador: [2, 0, 1, 0] });
   const estadisticas = d.estadisticas({

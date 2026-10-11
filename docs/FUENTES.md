@@ -67,6 +67,7 @@ Si hubo prórroga, `ALL` la incluye: los conteos del partido salen de sumar el p
 - `yellowRed`: segunda amarilla. Suma una amarilla, una roja y una doble amarilla.
 - `red`: roja directa.
 - No se cuentan las tarjetas anuladas (`rescinded`), las que no tienen jugador (entrenadores o cuerpo técnico) ni las de la prórroga (minuto mayor que 90).
+- Tampoco las de jugadores en el banco. Quién estaba en la cancha sale de la alineación del partido (titulares: `substitute: false`) y de los cambios de las incidencias (`substitution`, con `playerIn`, `playerOut` y el minuto): los titulares desde el inicio y los suplentes desde que entraron, hasta que salieron. Si el cambio y la tarjeta son del mismo minuto, se toma que el jugador estaba en la cancha. La alineación se pide solo para los partidos con tarjetas a jugadores; si Sofascore no la tiene, se cuentan todas las tarjetas a jugadores.
 - Si aparece una clase de tarjeta desconocida, o el partido no tiene incidencias, las tarjetas quedan sin dato.
 
 En la muestra solo hubo amarillas. Los nombres `yellowRed` y `red` siguen los que Sofascore usa en sus estadísticas (`yellowRedCards`, `redCards`); falta confirmarlos con la muestra de un partido con roja.
@@ -89,7 +90,7 @@ Los partidos anteriores se guardan completos, con sus estadísticas, en `partido
 
 ### Cantidad de pedidos
 
-La lista de ligas pide una página por cada 100 torneos. Los partidos, uno por liga elegida. La previa de un partido, unos 45: detalle, alineaciones, tabla, la lista de últimos partidos de cada equipo y las estadísticas e incidencias de 20 partidos anteriores. La extensión hace los pedidos de a uno con 300 ms de pausa, así que cada partido toma unos 15 a 20 segundos. Las estadísticas e incidencias de partidos terminados se recuerdan mientras la página está abierta.
+La lista de ligas pide una página por cada 100 torneos. Los partidos, uno por liga elegida. La previa de un partido, hasta unos 65: detalle, alineaciones, tabla, la lista de últimos partidos de cada equipo y las estadísticas, incidencias y alineación de 20 partidos anteriores. La extensión hace los pedidos de a uno con 300 ms de pausa, así que cada partido toma unos 20 a 30 segundos. Las estadísticas e incidencias de partidos terminados se recuerdan mientras la página está abierta.
 
 ## Betano (fútbol)
 

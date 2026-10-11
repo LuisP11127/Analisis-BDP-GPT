@@ -44,7 +44,7 @@
           "estadistica": "tarjetas",
           "lado_a": "Más",
           "lado_b": "Menos",
-          "nota": "Como en Betano: amarilla = 1, roja directa = 2 y doble amarilla = 2 (las dos amarillas; la roja que resulta no suma aparte)."
+          "nota": "Como en Betano: amarilla = 1, roja directa = 2 y doble amarilla = 2 (las dos amarillas; la roja que resulta no suma aparte). No cuentan las tarjetas a entrenadores ni a jugadores en el banco."
         },
         {
           "codigo": "futbol_tiros_arco",

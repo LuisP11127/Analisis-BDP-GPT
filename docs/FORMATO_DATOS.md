@@ -143,6 +143,8 @@ total = amarillas + 2 × (rojas − dobles_amarillas)
 
 Así, una roja directa suma 2 y una doble amarilla suma 2 (las dos amarillas, sin contar aparte la roja que resulta). Si hubo rojas y no se sabe cuántas fueron por doble amarilla, el total queda como no disponible.
 
+Solo se guardan las tarjetas a jugadores en la cancha: no se cuentan las de entrenadores, cuerpo técnico ni jugadores en el banco.
+
 **Básquet.** `formato_periodos` (`cuartos` o `mitades`), `periodos` con los puntos de cada período, `prorrogas`, estadísticas de `equipos` (tiros, triples, libres, rebotes, asistencias, robos, tapones, pérdidas, faltas) y `jugadores` (minutos, si jugó, puntos, rebotes, asistencias, triples, robos, tapones, pérdidas).
 
 **Béisbol.** `carreras_por_entrada` con una posición por entrada, incluidas las extra. El local tiene `null` en la última entrada si no necesitó batear. También `equipos` (hits, errores, home runs, bases por bolas, ponches) y `lanzadores`, con `outs` en lugar de entradas: 6.1 entradas son 19 outs.

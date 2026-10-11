@@ -60,8 +60,8 @@ test('sofascore: ligas del día en Lima, sumando los grupos de una misma liga', 
     d.paginaTorneos([[d.COPA_B, 1], [sinUnico, 2], [otraZona, 0, 4]]),
   ]);
   assert.deepEqual(ligas, [
-    { id: 'sofascore:701', nombre: 'Primera Ficticia', pais: 'Inventia', partidos: 3, principal: true },
-    { id: 'sofascore:702', nombre: 'Copa Ficticia', pais: 'Inventia', partidos: 3, principal: false },
+    { id: 'sofascore:701', nombre: 'Primera Ficticia', pais: 'Inventia', region: 'inventia', partidos: 3, principal: true },
+    { id: 'sofascore:702', nombre: 'Copa Ficticia', pais: 'Inventia', region: 'inventia', partidos: 3, principal: false },
   ]);
 });
 

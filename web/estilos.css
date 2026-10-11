@@ -497,6 +497,23 @@ fieldset {
 
 .partido > p.apagado { margin: 0; padding: 0.6rem 1rem; }
 
+.casa-estado {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-top: 1px solid var(--borde);
+}
+
+.confirmar-casa {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.confirmar-casa .campo { flex: 1 1 18rem; }
+
+.confirmar-casa select { width: 100%; }
+
 .datos-fuente p { margin: 0.35rem 0; }
 
 /* ---------------------------------------------------------------- resultado */

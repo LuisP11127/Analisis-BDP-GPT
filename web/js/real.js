@@ -43,15 +43,15 @@ export function agruparLigasPorPais(ligas) {
 
 /**
  * Extracción del día con el formato de esquemas/extraccion.schema.json. Los partidos anteriores que no
- * usa ninguna previa se dejan fuera.
+ * usa ninguna previa se dejan fuera. `mercados` son las cuotas de las casas por partido y mercado.
  */
-export function armarExtraccion({ fecha, generadoEn, partidos, anteriores }) {
+export function armarExtraccion({ fecha, generadoEn, partidos, anteriores, mercados = [] }) {
   const usados = new Set(partidos.flatMap((p) => (p.previa ? [...p.previa.ultimos_partidos.local, ...p.previa.ultimos_partidos.visitante] : [])));
   const delDia = new Set(partidos.map((p) => p.id));
   const lista = [...anteriores.values()]
     .filter((p) => usados.has(p.id) && !delDia.has(p.id))
     .sort((a, b) => a.inicio.localeCompare(b.inicio) || a.id.localeCompare(b.id));
-  const extraccion = { version_formato: 1, fecha_local: fecha, generado_en: generadoEn, partidos, mercados: [] };
+  const extraccion = { version_formato: 1, fecha_local: fecha, generado_en: generadoEn, partidos, mercados };
   if (lista.length > 0) extraccion.partidos_anteriores = lista;
   return extraccion;
 }

@@ -85,6 +85,10 @@ Margen de la casa de una línea: `1/cuota_A + 1/cuota_B - 1`.
 
 Cada sitio escribe los nombres de los equipos de forma distinta (por ejemplo "Manchester United" y "Man Utd"). La página relaciona los partidos por fecha, hora y parecido de los nombres. Cuando no esté segura, pide confirmación y guarda la equivalencia para usarla después.
 
+- Primero se busca la liga: por país y parecido del nombre, y solo se acepta si en ella aparece alguno de los partidos a la misma hora.
+- Después el partido: misma hora, con 15 minutos de margen, y nombres parecidos. Si hay dudas o no aparece, la página muestra los partidos de esa liga en la casa para elegir el que corresponde.
+- Las equivalencias confirmadas se recuerdan en el navegador hasta que exista el guardado en el repositorio (paso 6). Detalle en `docs/FUENTES.md`.
+
 ### Muestras para construir los extractores
 
 Desde el entorno de desarrollo no se puede abrir Betano ni Sofascore. Para construir cada extractor, el usuario abre las herramientas de desarrollador de Brave (F12), pestaña "Red", carga un partido y guarda las respuestas (HAR). No se programan extractores adivinando el formato de los datos. La muestra se necesita una sola vez por sitio, o de nuevo si el sitio cambia su formato.
@@ -251,7 +255,7 @@ Se hacen después de que la red base funcione:
 1. Estructura del repositorio y formato de los datos (partido, mercado, análisis, registro del historial). Hecho: ver `docs/FORMATO_DATOS.md`.
 2. Página con datos de prueba: carga, filtros, análisis y sección de historial. Incluye la publicación en GitHub Pages con GitHub Actions. Hecho: ver `web/`.
 3. Extractor de Sofascore: partidos del día, ligas, estadísticas y resultados. Después, extractor de Flashscore para completar datos. En curso: la extensión y el extractor de Sofascore para fútbol están hechos (`extension/`, `web/js/fuentes/sofascore.js`). Faltan Flashscore y el básquet y el béisbol de Sofascore, que necesitan su muestra.
-4. Extractor de Betano: mercados y cuotas, y emparejamiento de partidos.
+4. Extractor de Betano: mercados y cuotas, y emparejamiento de partidos. En curso: las cuotas de fútbol y el emparejamiento están hechos (`web/js/fuentes/betano.js`); faltan básquet y béisbol.
 5. Motor de análisis real por deporte.
 6. Guardado del historial en el repositorio (la publicación con GitHub Actions ya quedó lista en el paso 2).
 7. Casas de referencia (Apuesta Total y Te Apuesto primero).

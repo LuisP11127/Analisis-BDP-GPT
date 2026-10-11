@@ -1,11 +1,11 @@
 {
   "manifest_version": 3,
   "name": "Análisis BDP",
-  "version": "0.1.0",
-  "description": "Lee partidos y estadísticas de Sofascore para la página Análisis BDP.",
+  "version": "0.2.0",
+  "description": "Lee partidos y estadísticas de Sofascore y cuotas de Betano para la página Análisis BDP.",
   "minimum_chrome_version": "120",
   "permissions": ["scripting", "storage", "alarms", "webRequest"],
-  "host_permissions": ["https://www.sofascore.com/*"],
+  "host_permissions": ["https://www.sofascore.com/*", "https://www.betano.pe/*"],
   "background": {
     "service_worker": "fondo.js",
     "type": "module"

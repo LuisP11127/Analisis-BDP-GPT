@@ -3,8 +3,12 @@
 import { NIVELES_CONFIANZA, nivelConfianza, tieneLinea } from '../../comun/reglas.js';
 import { agruparPartidos, analizar, modeloDeEjemplo, modeloSinAnalisis } from './analisis.js';
 import { FUENTES, cargarConfig, cargarExtraccion, cargarHistorial, listarExtracciones } from './datos.js';
+import { equivalenciasVacias } from './equivalencias.js';
 import { crearConexion, crearLector } from './extension.js';
 import * as f from './formato.js';
+import {
+  CASA as BETANO, buscarCuotas, cargarCuotas, mercadosDeOfertas, nombreDeLiga, recordarEquipos,
+} from './fuentes/betano.js';
 import { FUENTE as SOFASCORE, cargarLigas, cargarPartidos as cargarPartidosSofascore, cargarPrevia, rutaFija } from './fuentes/sofascore.js';
 import { acerto, filtrar, ordenar, resultadoApuesta, resumir, resumirPorConfianza } from './historial.js';
 import {
@@ -17,6 +21,8 @@ const CLAVE_FUENTE = 'bdp.fuente';
 const POR_PAGINA = 100;
 const FILTROS_VACIOS = { desde: '', hasta: '', liga: '', mercado: '' };
 const URL_EXTENSION = 'https://github.com/luisp11127/Analisis-BDP-GPT/tree/main/extension#readme';
+// Nombres de ligas y equipos en Betano ya confirmados. En el paso 6 se guardarán en datos/equivalencias/.
+const CLAVE_EQUIVALENCIAS = 'bdp.equivalencias.futbol';
 
 /** Estado del modo con datos reales: extensión, ligas del día y lo leído de Sofascore. */
 const estadoReal = () => ({
@@ -31,6 +37,8 @@ const estadoReal = () => ({
   eventos: new Map(),
   // Partidos anteriores leídos para las previas, por id.
   anteriores: new Map(),
+  // Resultado de buscar cada partido en Betano, por id de partido (ver buscarCuotas en fuentes/betano.js).
+  betano: new Map(),
   progreso: null,
   errores: [],
 });
@@ -58,6 +66,7 @@ const estado = {
 
 let conexion = null;
 let leerSofascore = null;
+let leerBetano = null;
 
 const $ = (selector) => document.querySelector(selector);
 const esPrueba = () => estado.fuente.codigo === 'prueba';
@@ -424,7 +433,10 @@ async function buscarExtension() {
   const encontrada = await conexion.detectar();
   if (esPrueba()) return;
   estado.real.extension = encontrada;
-  if (encontrada) leerSofascore ??= crearLector(conexion, SOFASCORE, { guardar: rutaFija });
+  if (encontrada) {
+    leerSofascore ??= crearLector(conexion, SOFASCORE, { guardar: rutaFija });
+    leerBetano ??= crearLector(conexion, BETANO);
+  }
   if (pestanaActual() === 'partidos') vistaPartidos();
 }
 
@@ -622,10 +634,63 @@ async function analizarReales() {
       if (/rechazó/.test(error.message)) break;
     }
   }
+  if (extensionLee(BETANO)) await leerCuotasBetano(elegidos);
   real.progreso = null;
+  rehacerExtraccion();
+}
+
+const extensionLee = (sitio) => Boolean(estado.real.extension?.sitios?.includes(sitio));
+
+/** Busca en Betano los partidos elegidos y lee sus cuotas. Los errores se informan sin detener el análisis. */
+async function leerCuotasBetano(partidos) {
+  const { real } = estado;
+  real.equivalencias ??= leerPreferencia(CLAVE_EQUIVALENCIAS, null) ?? equivalenciasVacias();
+  const ligas = new Map((real.ligas ?? []).map((l) => [l.id, l]));
+  try {
+    const resultados = await buscarCuotas(leerBetano, partidos, ligas, real.equivalencias, {
+      progreso: (texto) => mostrarProgreso(`Betano: ${texto}…`),
+    });
+    for (const [id, resultado] of resultados) real.betano.set(id, resultado);
+    guardarPreferencia(CLAVE_EQUIVALENCIAS, real.equivalencias);
+  } catch (error) {
+    real.errores.push(`Betano: ${error.message}`);
+  }
+}
+
+/** Arma la extracción con lo leído hasta ahora (previas y cuotas) y vuelve a mostrar el resultado. */
+function rehacerExtraccion() {
+  const { real } = estado;
+  const mercados = [];
+  for (const partido of estado.extraccion.partidos) {
+    const betano = real.betano.get(partido.id);
+    if (betano?.estado !== 'emparejado') continue;
+    partido.ids_externos = { ...partido.ids_externos, [BETANO]: betano.evento.id };
+    mercados.push(...mercadosDeOfertas(partido.id, betano.ofertas ?? new Map()));
+  }
   const ahora = ahoraIso();
-  estado.extraccion = armarExtraccion({ fecha: real.fecha, generadoEn: ahora, partidos: estado.extraccion.partidos, anteriores: real.anteriores });
+  estado.extraccion = armarExtraccion({ fecha: real.fecha, generadoEn: ahora, partidos: estado.extraccion.partidos, anteriores: real.anteriores, mercados });
+  estado.grupos = agruparPartidos(estado.extraccion, estado.config).filter((g) => g.ligas.length > 0);
   terminarAnalisis(ahora, modeloSinAnalisis);
+}
+
+/** El usuario eligió a mano el partido de Betano que corresponde a un partido de Sofascore. */
+async function confirmarBetano(idPartido, idEvento, boton) {
+  const { real } = estado;
+  const partido = estado.extraccion.partidos.find((p) => p.id === idPartido);
+  const anterior = real.betano.get(idPartido);
+  const evento = anterior?.eventosLiga?.find((e) => e.id === idEvento);
+  if (!partido || !evento) return;
+  boton.disabled = true;
+  boton.textContent = 'Leyendo cuotas…';
+  try {
+    const ofertas = await cargarCuotas(leerBetano, evento);
+    real.betano.set(idPartido, { ...anterior, estado: 'emparejado', evento, ofertas });
+    recordarEquipos(real.equivalencias, partido, evento, ahoraIso());
+    guardarPreferencia(CLAVE_EQUIVALENCIAS, real.equivalencias);
+  } catch (error) {
+    real.errores.push(`Betano: ${error.message}`);
+  }
+  rehacerExtraccion();
 }
 
 /** Descarga lo leído en el formato de la extracción del día, para revisarlo o compartirlo. */
@@ -721,6 +786,35 @@ function datosSofascore(partido) {
   </details>`;
 }
 
+/** Qué pasó al buscar el partido en Betano; si no es seguro, permite elegirlo a mano. */
+function estadoBetano(partido) {
+  const clase = 'chico casa-estado';
+  if (!extensionLee(BETANO)) {
+    return html`<p class="apagado ${clase}">Betano: para leer sus cuotas hay que actualizar la extensión
+      (<a href="${URL_EXTENSION}" target="_blank" rel="noopener">instrucciones</a>).</p>`;
+  }
+  const resultado = estado.real.betano.get(partido.id);
+  if (!resultado) return html`<p class="apagado ${clase}">Betano: no se buscó este partido.</p>`;
+  if (resultado.estado === 'emparejado') {
+    const cantidad = resultado.ofertas?.size ?? 0;
+    return html`<p class="${clase}">Betano: ${resultado.evento.nombre} · ${nombreDeLiga(resultado.liga)} ·
+      ${cantidad ? `${cantidad} de ${deporteDe(partido.deporte).mercados.length} mercados` : 'todavía sin los mercados del análisis'}</p>`;
+  }
+  if (resultado.estado === 'sin_liga') return html`<p class="apagado ${clase}">Betano: no se encontró esta liga.</p>`;
+  const inicio = Date.parse(partido.inicio);
+  const eventos = [...(resultado.eventosLiga ?? [])].sort((a, b) => Math.abs(Date.parse(a.inicio) - inicio) - Math.abs(Date.parse(b.inicio) - inicio));
+  const motivo = resultado.estado === 'dudoso'
+    ? 'no es seguro cuál es el partido.'
+    : `no hay un partido a esa hora en ${nombreDeLiga(resultado.liga)}.`;
+  if (eventos.length === 0) return html`<p class="apagado ${clase}">Betano: ${motivo}</p>`;
+  return html`<form class="${clase} confirmar-casa" onsubmit="return false">
+    <label class="campo">Betano: ${motivo} Elige el que corresponde
+      <select name="evento">${eventos.map((e) => html`<option value="${e.id}"${e.id === resultado.evento?.id ? html` selected` : ''}>${f.fechaHora(e.inicio)} · ${e.nombre}</option>`)}</select>
+    </label>
+    <button class="boton chico" type="button" data-accion="confirmar-betano" data-partido="${partido.id}">Usar este partido</button>
+  </form>`;
+}
+
 // ---------------------------------------------------------------- resultado
 
 function filaDeMercado(definicion, partido, fila, titulo) {
@@ -734,7 +828,9 @@ function filaDeMercado(definicion, partido, fila, titulo) {
       ${puedeApostar ? html`<button class="boton chico" type="button" data-accion="apostar" data-registro="${registro.id}">Registrar apuesta</button>` : ''}
     </div>
     ${lineaCandidata(definicion, partido, candidata)}
-    ${registro ? prediccion(definicion, partido, candidata.linea, estadistico, red) : html`<p class="prediccion apagado">Estadístico: sin datos suficientes para este mercado</p>`}
+    ${registro ? prediccion(definicion, partido, candidata.linea, estadistico, red) : html`<p class="prediccion apagado">${esPrueba()
+      ? 'Estadístico: sin datos suficientes para este mercado'
+      : 'Análisis estadístico: se construye en el paso 5'}</p>`}
     ${probabilidadRoja(estadistico)}
     ${apuestaRegistrada(definicion, registro)}
     ${detalle(definicion, entrada.ofertas, candidata, estadistico, red)}`;
@@ -775,8 +871,8 @@ function vistaResultado() {
       <p class="resumen">${partidos} ${partidos === 1 ? 'partido' : 'partidos'} · ${registros.length} mercados analizados · hecho a las ${f.hora(ahora)}</p>
       ${esPrueba() ? html`<p class="nota">Las probabilidades son de ejemplo: el análisis estadístico real se construye en el paso 5.
         Con datos de prueba, estos mercados se agregan al historial solo mientras la página esté abierta.</p>` : html`
-        <p class="nota">Los datos vienen de Sofascore. Todavía faltan las cuotas (paso 4) y el análisis estadístico (paso 5),
-          por eso los mercados aparecen sin cuotas.</p>
+        <p class="nota">Los datos vienen de Sofascore y las cuotas, de Betano. Todavía falta el análisis estadístico (paso 5):
+          por ahora se ve la línea candidata de cada mercado.</p>
         ${erroresReales()}
         <p><button class="boton" type="button" data-accion="descargar">Descargar los datos leídos (JSON)</button></p>`}
     </div>
@@ -787,7 +883,7 @@ function vistaResultado() {
           <p class="partido-liga">${partido.liga.nombre} · ${f.fechaHora(partido.inicio)}</p>
           <h3 class="partido-equipos">${partido.local.nombre} <span class="vs">vs</span> ${partido.visitante.nombre}</h3>
         </header>
-        ${esPrueba() ? '' : datosSofascore(partido)}
+        ${esPrueba() ? '' : html`${datosSofascore(partido)}${estadoBetano(partido)}`}
         <ol class="mercados">${mercados.map((m) => mercadoDelPartido(partido, m))}</ol>
       </article>`)}
     </section>`)}`);
@@ -1202,6 +1298,9 @@ document.addEventListener('click', (evento) => {
       break;
     case 'descargar':
       descargarExtraccion();
+      break;
+    case 'confirmar-betano':
+      confirmarBetano(boton.dataset.partido, boton.closest('form').evento.value, boton);
       break;
     default:
   }

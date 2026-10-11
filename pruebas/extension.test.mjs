@@ -5,6 +5,7 @@ import path from 'node:path';
 import { RAIZ } from '../herramientas/cargar.mjs';
 import { SITIOS, urlDelPedido } from '../extension/sitios.js';
 import { crearLector } from '../web/js/extension.js';
+import { RUTAS as BETANO } from '../web/js/fuentes/betano.js';
 import { rutaFija, RUTAS } from '../web/js/fuentes/sofascore.js';
 
 test('extensión: solo acepta pedidos a la API de los sitios conocidos', () => {
@@ -14,8 +15,18 @@ test('extensión: solo acepta pedidos a la API de los sitios conocidos', () => {
   for (const ruta of ['/api/v1/event/1?x=1', '/api/v1/../user', '/api/v1/event//1', '/usuario', 'https://otro.com/api/v1/x', '/api/v1/', 42, undefined]) {
     assert.throws(() => urlDelPedido('sofascore', ruta), /Ruta no permitida/, String(ruta));
   }
-  assert.throws(() => urlDelPedido('betano', '/api/v1/x'), /Sitio desconocido/);
+  assert.throws(() => urlDelPedido('apuesta_total', '/api/v1/x'), /Sitio desconocido/);
   assert.throws(() => urlDelPedido('toString', '/api/v1/x'), /Sitio desconocido/);
+});
+
+test('extensión: en Betano acepta páginas de liga y de partido con los parámetros de su página', () => {
+  assert.equal(urlDelPedido('betano', BETANO.pagina('/sport/futbol/peru/liga-1/17079/')),
+    'https://www.betano.pe/api/sport/futbol/peru/liga-1/17079/?req=la,s,stnf,c,mb');
+  assert.equal(urlDelPedido('betano', BETANO.pestana('/cuotas-de-partido/liverpool-fc-manchester-city/92398258/', '6')),
+    'https://www.betano.pe/api/cuotas-de-partido/liverpool-fc-manchester-city/92398258/?bt=6&req=la,s,stnf,c,mb');
+  for (const ruta of ['/api/kb-config/', '/api/sport/futbol/x/?otro=1', '/api/sport/../usuario/', '/api/cuotas-de-partido/x/1', '/api/v1/event/1']) {
+    assert.throws(() => urlDelPedido('betano', ruta), /Ruta no permitida/, ruta);
+  }
 });
 
 test('extensión: cada origen de sitios.js tiene permiso en el manifiesto', async () => {

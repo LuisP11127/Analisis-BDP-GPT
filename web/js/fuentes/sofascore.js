@@ -97,7 +97,8 @@ function ligaDe(torneo) {
 
 /**
  * Ligas con partidos en la fecha de Lima, a partir de las páginas de scheduled-tournaments, en el orden de
- * Sofascore (primero las que Sofascore destaca). `principal` marca las que Sofascore destaca.
+ * Sofascore (primero las que Sofascore destaca). `principal` marca las que Sofascore destaca y `region` es
+ * el código del país en Sofascore ("england"), que sirve para buscar la liga en las casas de apuestas.
  * Los torneos sin uniqueTournament se dejan fuera porque no hay muestra de cómo pedir sus partidos.
  */
 export function ligasDelDia(paginas) {
@@ -113,7 +114,7 @@ export function ligasDelDia(paginas) {
         existente.partidos += cantidad;
         existente.principal ||= destacada;
       } else {
-        ligas.set(liga.id, { ...liga, partidos: cantidad, principal: destacada });
+        ligas.set(liga.id, { ...liga, region: torneo.category?.slug ?? null, partidos: cantidad, principal: destacada });
       }
     }
   }

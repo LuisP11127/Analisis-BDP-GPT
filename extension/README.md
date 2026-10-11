@@ -1,8 +1,13 @@
 # Extensión de Brave
 
-Lee los datos de los sitios desde tu navegador y se los pasa a la página del proyecto. Por ahora lee **Sofascore** (fútbol): ligas y partidos del día, datos previos de cada partido (tabla, árbitro, bajas, alineación) y las estadísticas de los últimos partidos de cada equipo. Betano, Apuesta Total y Flashscore se agregan a medida que se construyen sus extractores.
+Lee los datos de los sitios desde tu navegador y se los pasa a la página del proyecto. Por ahora, solo fútbol:
 
-La página la usa sola: tú eliges ligas y partidos, y la extensión hace los pedidos. No hace falta abrir cada partido en Sofascore.
+- **Sofascore:** ligas y partidos del día, datos previos de cada partido (tabla, árbitro, bajas, alineación) y las estadísticas de los últimos partidos de cada equipo.
+- **Betano:** las cuotas de los 7 mercados de fútbol del proyecto.
+
+Apuesta Total y Flashscore se agregan a medida que se construyen sus extractores.
+
+La página la usa sola: tú eliges ligas y partidos, y la extensión hace los pedidos. No hace falta abrir cada partido en Sofascore ni en Betano.
 
 ## Instalación (una sola vez)
 
@@ -20,18 +25,18 @@ Para actualizarla cuando cambie el repositorio: reemplaza la carpeta por la nuev
 2. Arriba a la derecha, en **Datos**, elige **Reales**.
 3. Elige la fecha y pulsa **Cargar ligas**. Salen todas las ligas de fútbol que tienen partidos ese día en hora de Lima.
 4. Marca las ligas que te interesan y pulsa **Cargar partidos**. La página recuerda las ligas que analizaste la última vez.
-5. Elige los partidos y pulsa **Analizar**. Por cada partido se leen unos 45 datos de Sofascore (unos 15 a 20 segundos por partido).
+5. Elige los partidos y pulsa **Analizar**. Por cada partido se leen unos 45 datos de Sofascore (unos 15 a 20 segundos por partido) y después sus cuotas en Betano.
 
-Solo se pueden analizar partidos que todavía no empiezan. En **Resultado**, cada partido tiene una sección **Datos de Sofascore** con lo leído, y el botón **Descargar los datos leídos** guarda todo en un archivo JSON.
+Solo se pueden analizar partidos que todavía no empiezan. En **Resultado**, cada partido tiene una sección **Datos de Sofascore** con lo leído, una línea con el partido que se encontró en Betano y la línea candidata de cada mercado. Si la página no está segura de cuál es el partido en Betano, te muestra los partidos de esa liga para que elijas; la elección se recuerda para la próxima vez. El botón **Descargar los datos leídos** guarda todo en un archivo JSON.
 
-Si no hay una pestaña de Sofascore abierta, la extensión abre una en segundo plano y la cierra sola después de un minuto sin uso (si la estás mirando, la deja abierta).
+Si no hay una pestaña de Sofascore o de Betano abierta, la extensión abre una en segundo plano y la cierra sola después de un minuto sin uso (si la estás mirando, la deja abierta).
 
 ## Si algo falla
 
 Haz clic en el ícono de la extensión: se abre la página **Diagnóstico de la extensión**.
 
 1. Pulsa **Probar**.
-2. Si Sofascore falla, abre https://www.sofascore.com/ en una pestaña normal, espera a que cargue y vuelve a probar.
+2. Si un sitio falla, ábrelo en una pestaña normal (https://www.sofascore.com/ o https://www.betano.pe/), espera a que cargue y vuelve a probar. Betano puede pedir una verificación la primera vez.
 3. Pulsa **Copiar reporte** y compártelo.
 
 Si la página dice "Falta la extensión" aunque está instalada, recarga la página. Si dice que la extensión se actualizó, también.
@@ -40,8 +45,8 @@ Si la página dice "Falta la extensión" aunque está instalada, recarga la pág
 
 | Permiso | Para qué |
 |---|---|
-| `https://www.sofascore.com/*` | Hacer los pedidos a Sofascore desde una pestaña de Sofascore |
-| `scripting` | Ejecutar esos pedidos dentro de la pestaña de Sofascore |
+| `https://www.sofascore.com/*`, `https://www.betano.pe/*` | Hacer los pedidos a cada sitio desde una pestaña del sitio |
+| `scripting` | Ejecutar esos pedidos dentro de la pestaña del sitio |
 | `webRequest` | Ver la cabecera `x-requested-with` que manda la página de Sofascore a su API, para repetirla en los pedidos de la extensión |
 | `storage` | Recordar esa cabecera y las pestañas que abrió la extensión mientras el navegador está abierto |
 | `alarms` | Cerrar la pestaña que abrió la extensión cuando lleva un minuto sin uso |
@@ -51,14 +56,14 @@ La extensión no lee tus otras pestañas ni otros sitios. Solo responde a la pá
 ## Cómo funciona
 
 ```
-página del proyecto ──postMessage──► puente.js ──mensaje──► fondo.js ──► pestaña de Sofascore ──fetch──► API de Sofascore
+página del proyecto ──postMessage──► puente.js ──mensaje──► fondo.js ──► pestaña del sitio ──fetch──► API del sitio
 ```
 
 | Archivo | Contenido |
 |---|---|
 | `manifest.json` | Permisos y archivos de la extensión (Manifest V3) |
 | `sitios.js` | Sitios que se pueden leer, qué rutas acepta cada uno y la pausa entre pedidos |
-| `fondo.js` | Service worker: cola de pedidos por sitio (de a uno, con 300 ms de pausa), pestañas y cabeceras |
+| `fondo.js` | Service worker: cola de pedidos por sitio (de a uno, con 300 ms de pausa en Sofascore y 400 ms en Betano), pestañas y cabeceras |
 | `puente.js` | Corre dentro de la página del proyecto y pasa los mensajes entre la página y `fondo.js` |
 | `diagnostico.html`, `.js`, `.css` | Página de diagnóstico |
 
